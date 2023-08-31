@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::mem::size_of
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-mem.html">mem</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">size_of</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">size_of</a>() -&gt; size_t<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">!std::is_reference_v&lt;T&gt;</pre>
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Returns the size of the type <code>T</code>.</p>
+<p>This is the number of bytes that will be allocated for a type <code>T</code>, and
+includes any tail padding. Use <a href="sus-mem-fn.data_size_of.html"><code>data_size_of</code></a>
+to exclude tail padding for
+the purpose of
+<a href="https://en.cppreference.com/w/cpp/string/byte/memcpy"><code>memcpy</code></a> or
+<a href="sus-ptr-fn.copy.html"><code>sus::ptr::copy</code></a>.</p>
+<p>Returns the same value as the builtin
+<a href="https://en.cppreference.com/w/cpp/language/sizeof"><code>sizeof</code></a> operator,
+but disallows calls with a reference type to avoid surprises or bugs when
+working with references since <code>sizeof(T&amp;) == sizeof(T)</code>.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

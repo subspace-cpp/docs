@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Subspace
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="namespace">
+    <div class="section overview">
+      <div class="section-header">
+        <a class="project-name" href="#">Subspace</a>
+      </div>
+      <div class="description long">
+        <h1><a name="the-subspace-c++-library" href="#the-subspace-c++-library">The Subspace C++ Library</a></h1>
+<p>The Subspace C++ Library provides a concept-centered abstraction on top of
+the bare-metal C++ standard library. It provides the tools to build
+stable applications quickly, and to make your application performant through
+explicitly leveraging compiler optimizations without accidentally tripping
+over Undefined Behaviour and miscompilation. Stop spending time debugging
+tricky heisenbugs and start relying on the compiler to produce the program
+you wrote.</p>
+<p>Find Subspace on Github here:
+<a href="https://github.com/chromium/subspace">https://github.com/chromium/subspace</a></p>
+
+      </div>
+    </div>
+    <div class="section namespaces">
+      <div class="section-header">
+        Namespaces
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus.html">sus</a>
+          </div>
+          <div class="description short">
+            <p>The root namespace of the Subspace C++ library.</p>
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-assertions.html">assertions</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-boxed.html">boxed</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-choice_type.html">choice_type</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-collections.html">collections</a>
+          </div>
+          <div class="description short">
+            <p>Collection types.</p>
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-construct.html">construct</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-env.html">env</a>
+          </div>
+          <div class="description short">
+            <p>Inspection and manipulation of the process's environment.</p>
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-error.html">error</a>
+          </div>
+          <div class="description short">
+            <p>Interfaces for working with Errors.</p>
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-fn.html">fn</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-iter.html">iter</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-marker.html">marker</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-mem.html">mem</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-num.html">num</a>
+          </div>
+          <div class="description short">
+            <p>Safe integer and floating point numerics, and numeric concepts.</p>
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-ops.html">ops</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-option.html">option</a>
+          </div>
+          <div class="description short">
+            <p>The <a href="sus-option-Option.html"><code>Option</code></a> type, and the
+<a href="sus-option-fn.some.html"><code>some</code></a> and <a href="sus-option-fn.none.html"><code>none</code></a>
+type-deduction constructor functions.</p>
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-ptr.html">ptr</a>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-result.html">result</a>
+          </div>
+          <div class="description short">
+            <p>The <a href="sus-result-Result.html"><code>Result</code></a> type, and the
+<a href="sus-result-fn.ok.html"><code>ok</code></a> and <a href="sus-result-fn.err.html"><code>err</code></a>
+type-deduction functions.</p>
+          </div>
+        </li>
+        <li class="nested section-item">
+          <div class="item-name">
+            <a class="namespace-name" href="sus-tuple_type.html">tuple_type</a>
+          </div>
+          <div class="description short">
+            <p>The <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> type, and the
+<a href="sus-tuple_type-fn.tuple.html"><code>tuple</code></a> type-deduction function.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="section functions">
+      <div class="section-header">
+        Functions
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_f32.html">operator""_f32</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing [<a href="sus-num-f32.html"><code>f32</code></a>](sus-num-f32.html) literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_f64.html">operator""_f64</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing [<a href="sus-num-f32.html"><code>f64</code></a>](sus-num-f64.html) literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_i16.html">operator""_i16</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-i16.html"><code>i16</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_i32.html">operator""_i32</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-i32.html"><code>i32</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_i64.html">operator""_i64</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-i64.html"><code>i64</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_i8.html">operator""_i8</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-i8.html"><code>i8</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_isize.html">operator""_isize</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-isize.html"><code>isize</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_r.html">operator""_r</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Constructs a literal range that satisfies the
+<a href="sus-ops-RangeBounds.html"><code>RangeBounds&lt;usize&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_rs.html">operator""_rs</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Constructs a literal range that satisfies the
+<a href="sus-ops-RangeBounds.html"><code>RangeBounds&lt;isize&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_u16.html">operator""_u16</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-u16.html"><code>u16</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_u32.html">operator""_u32</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-u32.html"><code>u32</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_u64.html">operator""_u64</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-u64.html"><code>u64</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_u8.html">operator""_u8</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-u8.html"><code>u8</code></a> literals.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="fn.operator_literal_usize.html">operator""_usize</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>For writing <a href="sus-num-usize.html"><code>usize</code></a> literals.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::fn::Fn
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-fn.html">fn</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">Fn</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class F, class... S&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          Fn
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">requires {</pre>
+              <pre class="requires-constaint-line">  // Receives and passes along the signature as a pack instead of a single</pre>
+              <pre class="requires-constaint-line">  // argument in order to consistently provide a static_assert() in `Sig` when</pre>
+              <pre class="requires-constaint-line">  // `S` is not a function signature.</pre>
+              <pre class="requires-constaint-line">  {</pre>
+              <pre class="requires-constaint-line">    __private::InvokedFn&lt;F, typename __private::Sig&lt;S...&gt;::Args&gt;::returns()</pre>
+              <pre class="requires-constaint-line">  } -&gt; __private::ValidReturnType&lt;typename __private::Sig&lt;S...&gt;::Return&gt;;</pre>
+              <pre class="requires-constaint-line"></pre>
+              <pre class="requires-constaint-line">  requires FnMut&lt;F, S...&gt;;</pre>
+              <pre class="requires-constaint-line">  requires FnOnce&lt;F, S...&gt;;</pre>
+              <pre class="requires-constaint-line">}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>The version of a callable object that may be called multiple times without
+mutating internal state. A <code>Fn</code> is useful for a callable that is received as
+a const reference to indicate it and may be called one or more times and
+does not change between call. However when a template (or constexpr) is not
+required, receiving a <code>FnRef</code> instead of <code>const Fn auto&amp;</code> will typically
+produce less code by using type erasure to avoid template instantiation.</p>
+<p>Because a <code>FnMut</code> is able to mutate internal state, it may return different
+values each time it is called with the same inputs.</p>
+<p>A type that satisfies <code>FnMut</code> will return a type that can be converted to
+<code>R</code> when called with the arguments <code>Args...</code>. <code>FnMut</code> is satisfied by
+being callable as an lvalue (which is done by providing an operator() that
+is not <code>&amp;&amp;</code>-qualified). Mutable and const lambdas will satisfy
+<code>FnMut</code>.</p>
+<p>The second argument of <code>Fn&lt;F, S&gt;</code> is a function signature with the format
+<code>ReturnType(Args...)</code>, where <code>Args...</code> are the arguments that will be passed
+to the <code>Fn</code> and <code>ReturnType</code> is what is expected to be received back. It
+would appear as a matching concept as:</p>
+<pre><code>void function(const Fn&lt;ReturnType(Args...)&gt; auto&amp; f) { ... }
+</code></pre>
+<h1><a name="use-of-%60fn%60" href="#use-of-%60fn%60">Use of <code>Fn</code></a></h1>
+<p><code>Fn</code> should be received by const reference, so that calls to it can be sure
+to reach the intended const overload of operator() if there is more than
+one.</p>
+<p>A <code>Fn</code> should be called by passing it to <code>std::fn::call()</code> along with any
+arguments. A <code>Fn</code> may be called any number of times, unlike <code>FnOnce</code>, and
+should not be moved when called.</p>
+<h1><a name="compatibility" href="#compatibility">Compatibility</a></h1>
+<p>Any callable type that satisfies <code>Fn</code> will also satisfy <code>FnMut</code> and
+<code>FnOnce</code>. A <code>Fn</code> may be called multiple times, or a single time, which is
+compatible with both <code>FnMut</code> and <code>FnOnce</code>. And while <code>FnMut</code> and <code>FnOnce</code>
+are able to mutate state when run, they are not required to and a constant
+<code>Fn</code> satisfies them.</p>
+<h1><a name="subspace-types-that-satisfy-%60fnmut%60" href="#subspace-types-that-satisfy-%60fnmut%60">Subspace types that satisfy <code>FnMut</code></a></h1>
+<p>The <code>FnRef</code> and <code>FnBox</code> types in the Subspace library satisfy <code>Fn</code> (and thus
+<code>FnMut</code> and <code>FnOnce</code> as well). They may be called any number of times and
+are callable as a const object.</p>
+<p>Like the concepts, <code>FnRef</code> is convertible to <code>FnMutRef</code> is convertible to
+<code>FnOnceRef</code>. And <code>FnBox</code> is convertible to <code>FnMutBox</code> is convertible to
+<code>FnOnceBox</code>.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>A function that receives a <code>Fn</code> matching type and calls it:</p>
+<pre><code>// Accepts any type that can be called once with (Option&lt;i32&gt;) and returns
+// i32.
+static i32 do_stuff(const sus::fn::Fn&lt;i32(sus::Option&lt;i32&gt;)&gt; auto&amp; f) {
+  return sus::fn::call(f, sus::some(400)) +
+         sus::fn::call(f, sus::some(100));
+}
+
+i32 x = do_stuff([i = 1_i32](sus::Option&lt;i32&gt; o) -&gt; i32 {
+  return sus::move(o).unwrap_or_default() + i;
+});
+sus::check(x == 401 + 101);
+</code></pre>
+<p>A <code>Fn</code> whose first parameter is a class can be matched with a method from
+that same class if the remaining parameters match the method's signature:</p>
+<pre><code>struct Class {
+  Class(i32 value) : value_(value) {}
+  i32 value() const { return value_; }
+
+ private:
+  i32 value_;
+};
+
+i32 map_class(const Class&amp; c,
+              sus::fn::Fn&lt;i32(const Class&amp;)&gt; auto const&amp; f) {
+  return sus::fn::call(f, c);
+}
+
+// Map the class C to its value().
+auto c = Class(42);
+sus::check(map_class(c, &amp;Class::value) == 42);
+</code></pre>
+<p>Using a method pointer as the parameter for <code>Option::map()</code> will call that
+method on the object inside the Option:</p>
+<pre><code>struct Class {
+  Class(i32 value) : value_(value) {}
+  i32 value() const { return value_; }
+
+ private:
+  i32 value_;
+};
+
+auto o = sus::Option&lt;Class&gt;(Class(42));
+sus::check(o.map(&amp;Class::value) == sus::some(42));
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::collections::ArrayIntoIter
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record struct">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Struct
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-collections.html">collections</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">ArrayIntoIter</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class ItemT, size_t N&gt;</div>
+        <span class="struct">
+          struct
+        </span>
+        <span class="type-name">
+          ArrayIntoIter
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>An iterator that consumes an <code>Array</code> and returns the items from it.</p>
+<p>This type is returned from <code>Array::into_iter()</code>.</p>
+
+      </div>
+    </div>
+    <div class="section fields static">
+      <div class="section-header">
+        Static Data Members
+      </div>
+      <div class="section-items">
+        <div class="section-item">
+          <div class="item-name member-signature">
+            <span class="static">
+              static
+            </span>
+            <span class="const">
+              const
+            </span>
+            <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a>
+            <a class="field-name" name="field.Size" href="#field.Size">Size</a>
+          </div>
+          <div class="description long">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.ArrayIntoIter" href="sus-collections-ArrayIntoIter.html#method.ArrayIntoIter">ArrayIntoIter</a>(Array&lt;Item, N&gt; && array)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="sus-collections-ArrayIntoIter.html#method.clone">clone</a>() const -&gt; <a class="type-name" title="ArrayIntoIter&lt;T, N&gt;" href="sus-collections-ArrayIntoIter.html">ArrayIntoIter&lt;T, N&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.exact_size_hint" href="sus-collections-ArrayIntoIter.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::ExactSizeIterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next" href="sus-collections-ArrayIntoIter.html#method.next">next</a>() -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::Iterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next_back" href="sus-collections-ArrayIntoIter.html#method.next_back">next_back</a>() -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::DoubleEndedIterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.size_hint" href="sus-collections-ArrayIntoIter.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" title="struct ::sus::iter::SizeHint" href="sus-iter-SizeHint.html">SizeHint</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::Iterator trait.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

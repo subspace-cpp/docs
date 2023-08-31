@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::mem::IsMoveRef
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-mem.html">mem</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">IsMoveRef</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          IsMoveRef
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_rvalue_reference_v&lt;T&gt;</pre>
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">!std::is_const_v&lt;std::remove_reference_t&lt;T&gt;&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>A concept that can be used to constrain a universal reference parameter to
+ensure the caller provides something that was moved from, akin to receiving
+by value. This avoids inadvertantly moving out of an lvalue in the caller.</p>
+<p>In the common case, when you want to receive a parameter that will be moved,
+it should be received by value. However, library implementors sometimes with
+to receive an <em>rvalue reference</em>. That is a reference to an rvalue which can
+be moved from. This is unfortunately spelled the same as a universal
+reference, so it will also bind to an lvalue in the caller, and moving from
+the reference would move from the caller's lvalue.</p>
+<p>To receive an rvalue reference (and not a universal reference), constrain
+the input universal reference <code>T&amp;&amp;</code> by the <code>IsMoveRef</code> concept with
+<code>requires(IsMoveRef&lt;T&amp;&amp;&gt;)</code>. When this is satisfied, the input will
+need to be an rvalue. In this case, <code>sus::move()</code> will always perform a move
+from an rvalue and will not move out of an lvalue in the caller.</p>
+<p><code>sus::forward&lt;T&gt;</code> can also be used with universal references, but when
+constructing a v<code>alue type </code>T` it will implicitly copy from const
+references.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::ops::TryDefault
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-ops.html">ops</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">TryDefault</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          TryDefault
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              sus::ops::Try
+              &lt;
+              T
+              &gt;
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">requires {</pre>
+              <pre class="requires-constaint-line">  // from_default() construct the Try type with the default value for its</pre>
+              <pre class="requires-constaint-line">  // success type.</pre>
+              <pre class="requires-constaint-line">  { TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::from_default() } -&gt; std::same_as&lt;T&gt;;</pre>
+              <pre class="requires-constaint-line">}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Identifies Try types which can be constructed with a default success value.</p>
+<p>This takes the place of the void type in Rust types, such as <code>Option&lt;()&gt;</code>
+and <code>Result&lt;(), E&gt;</code> as <code>void</code> is not a constructible type in C++. But by
+satisfying <code>TryDefault</code>, <code>Result&lt;void, E&gt;</code> can be constructed with a default
+success value of nothing.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

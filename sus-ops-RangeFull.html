@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::ops::RangeFull
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record class">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Class
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-ops.html">ops</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">RangeFull</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T&gt;</div>
+        <span class="class">
+          class
+        </span>
+        <span class="type-name">
+          RangeFull
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="requires">
+          <span class="requires-keyword keyword">
+            requires
+          </span>
+          <div class="requires-constaint">
+            sus::ops::Ord
+            &lt;
+            T
+            &gt;
+          </div>
+        </div>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>An unbounded range (<code>..</code>).</p>
+<p>RangeFull is primarily used as a slicing index. It cannot serve as
+an Iterator because it doesn't have a starting point.</p>
+<p>A RangeFull<usize> can be constructed as a literal as <code>&quot;..&quot;_r</code>.</p>
+
+      </div>
+    </div>
+    <div class="section fields static">
+      <div class="section-header">
+        Static Data Members
+      </div>
+      <div class="section-items">
+        <div class="section-item">
+          <div class="item-name member-signature">
+            <span class="static">
+              static
+            </span>
+            <span class="const">
+              const
+            </span>
+            bool
+            <a class="field-name" name="field.SusUnsafeTrivialRelocate" href="#field.SusUnsafeTrivialRelocate">SusUnsafeTrivialRelocate</a>
+          </div>
+          <div class="description long">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.RangeFull" href="sus-ops-RangeFull.html#method.RangeFull">RangeFull</a>()</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.contains" href="sus-ops-RangeFull.html#method.contains">contains</a>(const T &) const -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns true if <code>item</code> is contained in the range. For RangeFull it is
+always true.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.end_at" href="sus-ops-RangeFull.html#method.end_at">end_at</a>(T t) const& -&gt; RangeTo&lt;T&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Return a new Range that has no start and ends at <code>t</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.end_bound" href="sus-ops-RangeFull.html#method.end_bound">end_bound</a>() const& -&gt; Option&lt;const T &&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns <code>None</code> for the end of the RangeBounds.</p>
+<p>Part of the sus::ops::RangeBounds<T> trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.start_at" href="sus-ops-RangeFull.html#method.start_at">start_at</a>(T t) const& -&gt; RangeFrom&lt;T&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Return a new Range that starts at <code>t</code> and has no end.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.start_bound" href="sus-ops-RangeFull.html#method.start_bound">start_bound</a>() const& -&gt; Option&lt;const T &&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns <code>None</code> for the start of the RangeBounds.</p>
+<p>Part of the sus::ops::RangeBounds<T> trait.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Operators
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator==" href="sus-ops-RangeFull.html#method.operator==">operator==</a>(<a class="type-name" title="const RangeFull&lt;T&gt; &" href="sus-ops-RangeFull.html">const RangeFull&lt;T&gt; &</a> rhs) const -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::mem::TrivialCopy
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-mem.html">mem</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">TrivialCopy</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          TrivialCopy
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              sus::mem::Copy
+              &lt;
+              T
+              &gt;
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_trivially_copyable_v&lt;</pre>
+              <pre class="requires-constaint-line">                   std::remove_const_t&lt;std::remove_reference_t&lt;T&gt;&gt;&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>A <code>TrivialCopy</code> type is <code>Copy</code> but may be copied with memcpy() or memmove()
+instead of calling the copy constructor/assignment. This allows groups of
+items to be copied in a single operation.</p>
+<p>Satisfying <code>TrivialCopy</code> also implies that the type satisfies both <code>Copy</code>
+and <code>Clone</code>.</p>
+<p>Typically types should only be <code>TrivialCopy</code> when performing a copy is very
+cheap, and thus unlikely to cause performance problems. For types that are
+larger, it is better to make them satisfy <code>Clone</code> instead so that copies are
+always explicit.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

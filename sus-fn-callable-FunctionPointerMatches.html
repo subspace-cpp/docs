@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::fn::callable::FunctionPointerMatches
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-fn.html">fn</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-fn-callable.html">callable</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">FunctionPointerMatches</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T, class R, class... Args&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          FunctionPointerMatches
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              sus::fn::callable::FunctionPointer
+              &lt;
+              T
+              &gt;
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">requires (R(*p)(Args...), T t) {</pre>
+              <pre class="requires-constaint-line">        { p = t };</pre>
+              <pre class="requires-constaint-line">    }</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Verifies that T is a function pointer (or captureless lambda) that receives
+exactly <code>Args</code> as its parameters without conversion, and returns <code>R</code> without
+conversion.</p>
+<p>This is concept is useful if you intend to store the pointer in a strongly
+typed function pointer, as the types must match exactly. If you only intend
+to call the function pointer, prefer <code>FunctionPointerReturns</code> which allows
+appropriate conversions.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

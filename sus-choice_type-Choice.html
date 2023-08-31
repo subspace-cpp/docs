@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::choice_type::Choice
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record class">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Class
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-choice_type.html">choice_type</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">Choice</a>
+      </div>
+      <div class="type-signature">
+        <span class="class">
+          class
+        </span>
+        <span class="type-name">
+          Choice
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.Choice" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<a class="type-name" title="Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &&" href="sus-choice_type-Choice.html">Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &&</a> o)</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.Choice" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<a class="type-name" title="const Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &" href="sus-choice_type-Choice.html">const Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &</a> o)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V, class U, int &... , class Arg = StorageTypeOfTag&lt;V&gt;&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.with" href="sus-choice_type-Choice.html#method.with">with</a>(U && values) -&gt; <a class="type-name" title="Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt;" href="sus-choice_type-Choice.html">Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt;</a></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V, int &... , class Arg = StorageTypeOfTag&lt;V&gt;&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.with" href="sus-choice_type-Choice.html#method.with">with</a>() -&gt; <a class="type-name" title="Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt;" href="sus-choice_type-Choice.html">Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.as" href="sus-choice_type-Choice.html#method.as">as</a>() const& -&gt; decltype(auto)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a const reference to the value(s) inside the Choice.</p>
+<p>The function has a template parameter specifying the tag of the active
+member in the choice.</p>
+<p>If the active member has a single value, a reference to it is returned
+directly, otherwise a Tuple of references is returned to all values in the
+active member.</p>
+<h1><a name="panics" href="#panics">Panics</a></h1>
+<p>The function will panic if the active member does not match the tag value
+passed as the template parameter.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.as_mut" href="sus-choice_type-Choice.html#method.as_mut">as_mut</a>() & -&gt; decltype(auto)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a mutable reference to the value(s) inside the Choice.</p>
+<p>The function has a template parameter specifying the tag of the active
+member in the choice.</p>
+<p>If the active member has a single value, a reference to it is returned
+directly, otherwise a Tuple of references is returned to all values in the
+active member.</p>
+<h1><a name="panics-1" href="#panics-1">Panics</a></h1>
+<p>The function will panic if the active member does not match the tag value
+passed as the template parameter.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="sus-choice_type-Choice.html#method.clone">clone</a>() const& -&gt; <a class="type-name" title="Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt;" href="sus-choice_type-Choice.html">Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get" href="sus-choice_type-Choice.html#method.get">get</a>() const& -&gt; Option&lt;AccessTypeOfTagConst&lt;V&gt; &gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a const reference to the value(s) inside the Choice.</p>
+<p>If the template parameter does not match the active member in the Choice,
+the function returns <code>None</code>.</p>
+<p>If the active member has a single value, a reference to it is returned
+directly, otherwise a Tuple of references is returned to all values in the
+active member.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_mut" href="sus-choice_type-Choice.html#method.get_mut">get_mut</a>() & -&gt; Option&lt;AccessTypeOfTagMut&lt;V&gt; &gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a mutable reference to the value(s) inside the Choice.</p>
+<p>If the template parameter does not match the active member in the Choice,
+the function returns <code>None</code>.</p>
+<p>If the active member has a single value, a reference to it is returned
+directly, otherwise a Tuple of references is returned to all values in the
+active member.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_unchecked" href="sus-choice_type-Choice.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) const& -&gt; decltype(auto)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a const reference to the value(s) inside the Choice.</p>
+<p>The function has a template parameter specifying the tag of the active
+member in the choice.</p>
+<p>If the active member has a single value, a reference to it is returned
+directly, otherwise a Tuple of references is returned to all values in the
+active member.</p>
+<h1><a name="safety" href="#safety">Safety</a></h1>
+<p>If the active member does not match the tag value passed as the template
+parameter, Undefined Behaviour results.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_unchecked_mut" href="sus-choice_type-Choice.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) & -&gt; decltype(auto)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a mutable reference to the value(s) inside the Choice.</p>
+<p>The function has a template parameter specifying the tag of the active
+member in the choice.</p>
+<p>If the active member has a single value, a reference to it is returned
+directly, otherwise a Tuple of references is returned to all values in the
+active member.</p>
+<h1><a name="safety-1" href="#safety-1">Safety</a></h1>
+<p>If the active member does not match the tag value passed as the template
+parameter, Undefined Behaviour results.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.into_inner" href="sus-choice_type-Choice.html#method.into_inner">into_inner</a>() && -&gt; decltype(auto)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Unwraps the Choice to move out the current value(s) inside the Choice.</p>
+<p>The function has a template parameter specifying the tag of the active
+member in the choice.</p>
+<p>If the active member has a single value, an rvalue reference to it is
+returned directly, otherwise a Tuple of rvalue references is returned to
+all values in the active member.</p>
+<h1><a name="panics-2" href="#panics-2">Panics</a></h1>
+<p>The function will panic if the active member does not match the tag value
+passed as the template parameter.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V, class U, int &... , class Arg = StorageTypeOfTag&lt;V&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.set" href="sus-choice_type-Choice.html#method.set">set</a>(U && values) & -&gt; void</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;TagsType V, int &... , class Arg = StorageTypeOfTag&lt;V&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.set" href="sus-choice_type-Choice.html#method.set">set</a>() & -&gt; void</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.which" href="sus-choice_type-Choice.html#method.which">which</a>() const& -&gt; TagsType</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns which is the active member of the Choice.</p>
+<p>Typically to access the data in the Choice, a switch statement would be
+used, so as to call the getter or setter methods with the right value
+specified as a template parameter. When used in a switch statement, the
+which() method can be omitted.</p>
+<h1><a name="example" href="#example">Example</a></h1>
+<pre><code>switch (my_union) {
+  case Value1: return my_union.as&lt;Value1&gt;().stuff;
+  case Value2: return my_union.as&lt;Value2&gt;().andmore;
+  case Value3: return my_union.as&lt;Value3&gt;().stufftoo;
+}
+</code></pre>
+<h1><a name="inspiration" href="#inspiration">Inspiration</a></h1>
+<pre><code class="language-txt">
+                      ████████
+                  ████▓▓░░▓▓██
+                ██▓▓▓▓▓▓▓▓██
+              ██▓▓▓▓░░▓▓██
+            ██░░▓▓▓▓▓▓██
+          ██▓▓▓▓▓▓▓▓▓▓██
+          ██▓▓▓▓░░▓▓▓▓██
+  ████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████
+██▓▓░░▓▓▓▓▓▓░░▓▓▓▓▓▓▓▓▓▓░░▓▓▓▓▓▓██
+██████████████████▓▓██████████████
+        ██      ██      ██
+        ██  ██  ██      ██
+        ██  ██  ████      ██
+        ██        ██      ██
+        ██▒▒      ██      ██
+        ██▒▒        ██      ██
+          ████████████████████
+                  ██  ██
+                ██  ██▓▓██
+                ▓▓  ██▓▓▓▓██
+              ██  ████░░▓▓▓▓██            ▓▓▓▓▓▓▓▓▓▓▓▓
+            ██  ██  ██▓▓▓▓░░▓▓██        ▓▓░░░░░░░░░░░░
+            ██  ██    ████▓▓▓▓▓▓██      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓▓▓      ██  ██    ██▓▓▓▓▓▓░░▓▓██    ▓▓▓▓░░░░░░░░░░░░
+▓▓▓▓▓▓▓▓▓▓██████▓▓▓▓██▓▓░░▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                    ██████████        ▓▓▓▓░░░░░░░░░░░░
+                      ██  ██            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                        ██  ██          ▓▓░░░░░░░░░░░░
+                          ██  ██          ▓▓▓▓▓▓▓▓▓▓▒▒
+                            ████
+</code></pre>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods conversion">
+      <div class="section-header">
+        Conversions
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.operator TagsType" href="sus-choice_type-Choice.html#method.operator TagsType">operator TagsType</a>() const&</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Support for using Choice in a <code>switch()</code> statment.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Operators
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<a class="type-name" title="Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &&" href="sus-choice_type-Choice.html">Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &&</a> o) -&gt; <a class="type-name" title="Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &" href="sus-choice_type-Choice.html">Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &</a></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<a class="type-name" title="const Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &" href="sus-choice_type-Choice.html">const Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &</a> o) -&gt; <a class="type-name" title="Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &" href="sus-choice_type-Choice.html">Choice&lt;TypeList&lt;type-parameter-0-0...&gt;, Tags...&gt; &</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
