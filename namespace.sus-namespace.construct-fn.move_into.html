@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::construct::move_into
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.construct.html">construct</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">move_into</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class FromType&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">move_into</a>(FromType & from) -&gt; auto<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">!std::is_const_v&lt;std::remove_reference_t&lt;FromType&gt;&gt;</pre>
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">!std::is_array_v&lt;FromType&gt;</pre>
+              </div>
+            </div></div>
+        </div>
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class FromType&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">move_into</a>(FromType && from) -&gt; auto<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">std::is_rvalue_reference_v&lt;FromType &&&gt;</pre>
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">!std::is_const_v&lt;std::remove_reference_t&lt;FromType&gt;&gt;</pre>
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">!std::is_array_v&lt;FromType&gt;</pre>
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Moves from and converts from the given value to whatever a receiver
+requires.</p>
+<p>This is sugar for <code>sus::into(sus::move(x))</code>, which can be written as
+<code>sus::move_into(x)</code>. The result will be receivable if <a href="namespace.sus-namespace.construct-Into.html"><code>Into&lt;FromType, ToType&gt;</code></a> is satisfied.</p>
+<p>To capture an rvalue, use <a href="namespace.sus-namespace.construct-fn.into.html"><code>into</code></a>. Note that arrays
+can not be moved, so can not be given to <code>move_into</code>.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

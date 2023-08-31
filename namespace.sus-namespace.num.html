@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::num - Subspace
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="namespace">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Namespace
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="#">num</a>
+      </div>
+      <div class="description long">
+        <p>Safe integer and floating point numerics, and numeric concepts.</p>
+<p>This namespace contains safe integer types (i8, i16, u32, usize, etc.) and
+floating point types (f32, f64).</p>
+<p>Additionally, there are Concepts that match against safe numerics, C++
+primitive types, and operations with numeric types.</p>
+<h1><a name="conversions" href="#conversions">Conversions</a></h1>
+<p>To convert to and from integer values, use
+<a href="sus-construct-fn.into.html"><code>sus::into</code></a> when
+<a href="sus-construct-Into.html"><code>Into&lt;From, To&gt;</code></a> is satisfied between the two
+types for lossless conversion. Otherwise use
+<a href="sus-construct-fn.try_into.html"><code>sus::try_into</code></a> when
+<a href="sus-construct-TryInto.html"><code>TryInto&lt;From, To&gt;</code></a> is satisfied to convert
+and handle cases where the value can not be represented in the target type.</p>
+<p>To convert between floating point types, use
+<a href="sus-construct-fn.into.html"><code>sus::into(x)</code></a> to losslessly promote <code>x</code> to a
+larger type (<a href="sus-num-f32.html"><code>f32</code></a> to <a href="sus-num-f32.html"><code>f64</code></a>) or
+<code>sus::try_into(x)</code> to convert <code>x</code> to a smaller type
+(<a href="sus-num-f32.html"><code>f64</code></a> to <a href="sus-num-f32.html"><code>f32</code></a>).</p>
+<p>Use <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;T&gt;()</code></a> to do a lossy type coercion
+(like <code>static_cast&lt;T&gt;()</code>) between integer and floating point types, or C++
+primitive integers, floating point, or enums. When converting to a larger
+signed integer type, the value will be sign-extended.</p>
+
+      </div>
+    </div>
+    <div class="section records classes">
+      <div class="section-header">
+        Classes
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-OverflowInteger.html">OverflowInteger</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An integer type that handles overflow instead of panicing.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-TryFromIntError.html">TryFromIntError</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>The error type returned when a checked integral type conversion fails.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-f32.html">f32</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A 32-bit floating point type (specifically, this type holds the same values
+as the <code>float</code> type specified by the C++ standard).</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-f64.html">f64</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A 64-bit floating point type (specifically, this type holds the same values
+as the <code>double</code> type specified by the C++ standard).</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-i16.html">i16</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A 16-bit signed integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-i32.html">i32</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A 32-bit signed integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-i64.html">i64</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A 64-bit signed integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-i8.html">i8</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An 8-bit signed integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-isize.html">isize</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An address-sized signed integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-u16.html">u16</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A 16-bit unsigned integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-u32.html">u32</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A 32-bit unsigned integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-u64.html">u64</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A 64-bit unsigned integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-u8.html">u8</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An 8-bit unsigned integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-uptr.html">uptr</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A pointer-sized unsigned integer.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-usize.html">usize</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An address-sized unsigned integer.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="section functions">
+      <div class="section-header">
+        Operators
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_rem.html">operator%</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_rem.float._rem.html">operator%</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_rem.signedint._rem.html">operator%</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_rem.unsignedint._rem.html">operator%</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_and.signedint._and.html">operator&</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-BitAnd.html"><code>BitAnd&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_and.unsignedint._and.html">operator&</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-BitAnd.html"><code>BitAnd&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_mul.html">operator*</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_mul.float._mul.html">operator*</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_mul.signedint._mul.html">operator*</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_mul.unsignedint._mul.html">operator*</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_plus.ptr.add.isize.html">operator+</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>sus::num::Add&lt;T*, isize&gt; trait.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_plus.ptr.add.usize.html">operator+</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>sus::num::Add&lt;T*, usize&gt; trait.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_plus.html">operator+</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_plus.float._plus.html">operator+</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Add.html"><code>Add&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_plus.unsignedint._plus.html">operator+</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Add.html"><code>Add&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_plus.signedint._plus.html">operator+</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Add.html"><code>Add&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_plus=.ptr.add.isize.html">operator+=</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>sus::num::AddAssign&lt;T*, isize&gt; trait.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_plus=.ptr.add.usize.html">operator+=</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>sus::num::AddAssign&lt;T*, usize&gt; trait.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_sub.ptr.sub.isize.html">operator-</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>sus::num::Sub&lt;T*, isize&gt; trait.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_sub.html">operator-</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_sub.ptr.sub.usize.html">operator-</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>sus::num::Sub&lt;T*, usize&gt; trait.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_sub.float._sub.html">operator-</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_sub.signedint._sub.html">operator-</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_sub.unsignedint._sub.html">operator-</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_sub=.ptr.sub.isize.html">operator-=</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>sus::num::SubAssign&lt;T*, isize&gt; trait.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_sub=.ptr.sub.usize.html">operator-=</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>sus::num::SubAssign&lt;T*, usize&gt; trait.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_div.html">operator/</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_div.float._div.html">operator/</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Div.html"><code>Div&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_div.signedint._div.html">operator/</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Div.html"><code>Div&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_div.unsignedint._div.html">operator/</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Div.html"><code>Div&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_leftshift.signedint._leftshift.html">operator&lt;&lt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_leftshift.unsignedint._leftshift.html">operator&lt;&lt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_spaceship.float.partialord.html">operator&lt;=&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="namespace.sus-namespace.ops-PartialOrd.html"><code>PartialOrd</code></a> concept for floating
+point numbers.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_spaceship.html">operator&lt;=&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_spaceship.int.strongord.html">operator&lt;=&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="namespace.sus-namespace.ops-StrongOrd.html"><code>StrongOrd</code></a> concept for signed
+integers.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_spaceship.uint.strongord.html">operator&lt;=&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="namespace.sus-namespace.ops-StrongOrd.html"><code>StrongOrd</code></a> concept for unsigned
+integers.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_eq.float.eq.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="namespace.sus-namespace.ops-Eq.html"><code>Eq</code></a> concept for floating point numbers.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_eq.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_eq.int.eq.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="namespace.sus-namespace.ops-Eq.html"><code>Eq</code></a> concept for signed integers.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_eq.uint.eq.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="namespace.sus-namespace.ops-Eq.html"><code>Eq</code></a> concept for unsigned integers.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_rightshift.html">operator&gt;&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_rightshift.signedint._rightshift.html">operator&gt;&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_rightshift.unsignedint._rightshift.html">operator&gt;&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_rightshift.unsignedint._leftshift.html">operator&gt;&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_xor.signedint._xor.html">operator^</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-BitXor.html"><code>BitXor&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_xor.unsignedint._xor.html">operator^</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-BitXor.html"><code>BitXor&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_or.signedint._or.html">operator|</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-BitOr.html"><code>BitOr&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="namespace.sus-namespace.num-fn.operator_or.unsignedint._or.html">operator|</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-num-BitOr.html"><code>BitOr&lt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="section concepts">
+      <div class="section-header">
+        Concepts
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Add.html">Add</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-AddAssign.html">AddAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-BitAnd.html">BitAnd</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-BitAndAssign.html">BitAndAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-BitNot.html">BitNot</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-BitOr.html">BitOr</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-BitOrAssign.html">BitOrAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-BitXor.html">BitXor</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-BitXorAssign.html">BitXorAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Div.html">Div</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-DivAssign.html">DivAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Float.html">Float</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Integer.html">Integer</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Signed or unsigned Subspace integer types (i8, u16, i32, u64, etc).</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Mul.html">Mul</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-MulAssign.html">MulAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Neg.html">Neg</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-PrimitiveEnum.html">PrimitiveEnum</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Enum types that are backed by a signed or unsigned value, excluding <code>enum class</code> types.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-PrimitiveEnumClass.html">PrimitiveEnumClass</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Enum class (scoped enum) types that are backed by a signed or unsigned
+value.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-PrimitiveFloat.html">PrimitiveFloat</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-PrimitiveInteger.html">PrimitiveInteger</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Signed or unsigned primitive integer types (char, int, unsigned int,
+unsigned long, etc).</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Rem.html">Rem</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-RemAssign.html">RemAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Shl.html">Shl</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-ShlAssign.html">ShlAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Shr.html">Shr</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-ShrAssign.html">ShrAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Signed.html">Signed</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Signed Subspace integer types (i8, i16, i32, etc).</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-SignedPrimitiveEnum.html">SignedPrimitiveEnum</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Enum types that are backed by a signed value, excluding <code>enum class</code> types.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-SignedPrimitiveEnumClass.html">SignedPrimitiveEnumClass</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Enum class (scoped enum) types that are backed by a signed value.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-SignedPrimitiveInteger.html">SignedPrimitiveInteger</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Signed primitive integer types (char, int, long, etc).</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Sub.html">Sub</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-SubAssign.html">SubAssign</a>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-Unsigned.html">Unsigned</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Unsigned Subspace integer types (u8, u16, u32, etc).</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-UnsignedPrimitiveEnum.html">UnsignedPrimitiveEnum</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Enum types that are backed by an unsigned value, excluding <code>enum class</code>
+types.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-UnsignedPrimitiveEnumClass.html">UnsignedPrimitiveEnumClass</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Enum class (scoped enum) types that are backed by an unsigned value.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="namespace.sus-namespace.num-UnsignedPrimitiveInteger.html">UnsignedPrimitiveInteger</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Unsigned primitive integer types (unsigned char, unsigned int, etc).</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>

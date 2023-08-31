@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::collections::SliceIter
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record struct">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Struct
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.collections.html">collections</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">SliceIter</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class ItemT&gt;</div>
+        <span class="struct">
+          struct
+        </span>
+        <span class="type-name">
+          SliceIter
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>An iterator over a contiguous array of objects with const access to them.</p>
+<p>This type is returned from <code>Vec::iter()</code> and <code>Slice::iter()</code> among others.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.SliceIter" href="namespace.sus-namespace.collections-SliceIter.html#method.SliceIter">SliceIter</a>(<a class="type-name" title="struct ::sus::iter::IterRef" href="namespace.sus-namespace.iter-IterRef.html">IterRef</a> ref, const RawItem * start, <a class="type-name" title="struct usize" href="namespace.sus-namespace.num-usize.html">usize</a> len)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_slice" href="namespace.sus-namespace.collections-SliceIter.html#method.as_slice">as_slice</a>() const& -&gt; Slice&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a slice of the items left to be iterated.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.exact_size_hint" href="namespace.sus-namespace.collections-SliceIter.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; <a class="type-name" title="struct ::sus::num::usize" href="namespace.sus-namespace.num-usize.html">usize</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::ExactSizeIterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next" href="namespace.sus-namespace.collections-SliceIter.html#method.next">next</a>() -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next_back" href="namespace.sus-namespace.collections-SliceIter.html#method.next_back">next_back</a>() -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.size_hint" href="namespace.sus-namespace.collections-SliceIter.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" title="struct ::sus::iter::SizeHint" href="namespace.sus-namespace.iter-SizeHint.html">SizeHint</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

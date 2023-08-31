@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::mem::Move
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.mem.html">mem</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">Move</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          Move
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_move_constructible_v&lt;</pre>
+              <pre class="requires-constaint-line">        std::remove_const_t&lt;std::remove_reference_t&lt;T&gt;&gt;&gt;</pre>
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_move_assignable_v&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt;&gt;&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>A <code>Move</code> type can be moved-from to construct a new object of the same type
+and can be assigned to by move.</p>
+<p>A type satisfies <code>Move</code> by implementing a move constructor and assignment
+operator.</p>
+<p>This concept tests the object type of <code>T</code>, not a reference type <code>T&amp;</code> or
+<code>const T&amp;</code>.</p>
+<p>A type that is <code>Copy</code> is also <code>Move</code>. However the type can opt out by
+explicitly deleting the move constructor and assignment operator. This is
+not recommended, unless deleting the copy operations too, as it tends to
+break things that want to move-or-fallback-to-copy.</p>
+<h1><a name="example" href="#example">Example</a></h1>
+<pre><code>struct S {
+  S() = default;
+  S(S&amp;&amp;) = default;
+  S&amp; operator=(S&amp;&amp;) = default;
+};
+static_assert(sus::mem::Move&lt;S&gt;);
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::iter::IterRefCounter
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record struct">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Struct
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">IterRefCounter</a>
+      </div>
+      <div class="type-signature">
+        <span class="struct">
+          struct
+        </span>
+        <span class="type-name">
+          IterRefCounter
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>Reference counting outstanding iterators (and view types since they need to
+be able to produce iterators) in order to catch iterator invalidation and
+prevent them from being used afterward. Mutating the collection should check
+that the <code>count</code> is empty. This is much like a <code>RefCell</code> in Rust, using
+runtime verfication that modification does not occur while there are
+outstanding references.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.empty_for_view" href="namespace.sus-namespace.iter-IterRefCounter.html#method.empty_for_view">empty_for_view</a>() -&gt; <a class="type-name" title="struct IterRefCounter" href="namespace.sus-namespace.iter-IterRefCounter.html">IterRefCounter</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.for_owner" href="namespace.sus-namespace.iter-IterRefCounter.html#method.for_owner">for_owner</a>() -&gt; <a class="type-name" title="struct IterRefCounter" href="namespace.sus-namespace.iter-IterRefCounter.html">IterRefCounter</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.count_from_owner" href="namespace.sus-namespace.iter-IterRefCounter.html#method.count_from_owner">count_from_owner</a>() const -&gt; <a class="type-name" title="struct usize" href="namespace.sus-namespace.num-usize.html">usize</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Only valid to be called on owning collections such as Vec.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.take_for_owner" href="namespace.sus-namespace.iter-IterRefCounter.html#method.take_for_owner">take_for_owner</a>() & -&gt; <a class="type-name" title="struct IterRefCounter" href="namespace.sus-namespace.iter-IterRefCounter.html">IterRefCounter</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Resets self to no ref counts, returning a new IterRefCounter containing
+the old ref counts.</p>
+<p>Only valid to be called on owning collections such as Vec.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.take_for_view" href="namespace.sus-namespace.iter-IterRefCounter.html#method.take_for_view">take_for_view</a>() & -&gt; <a class="type-name" title="struct IterRefCounter" href="namespace.sus-namespace.iter-IterRefCounter.html">IterRefCounter</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Resets self to no pointer to a ref count, returning a new IterRefCounter
+containing the old pointetr.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.to_iter_from_owner" href="namespace.sus-namespace.iter-IterRefCounter.html#method.to_iter_from_owner">to_iter_from_owner</a>() const -&gt; <a class="type-name" title="struct IterRef" href="namespace.sus-namespace.iter-IterRef.html">IterRef</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Only valid to be called on owning collections such as Vec.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.to_iter_from_view" href="namespace.sus-namespace.iter-IterRefCounter.html#method.to_iter_from_view">to_iter_from_view</a>() const -&gt; <a class="type-name" title="struct IterRef" href="namespace.sus-namespace.iter-IterRef.html">IterRef</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Only valid to be called on non-owning views such as Slice.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.to_view_from_owner" href="namespace.sus-namespace.iter-IterRefCounter.html#method.to_view_from_owner">to_view_from_owner</a>() const -&gt; <a class="type-name" title="struct IterRefCounter" href="namespace.sus-namespace.iter-IterRefCounter.html">IterRefCounter</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Only valid to be called on owning collections such as Vec.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.to_view_from_view" href="namespace.sus-namespace.iter-IterRefCounter.html#method.to_view_from_view">to_view_from_view</a>() const -&gt; <a class="type-name" title="struct IterRefCounter" href="namespace.sus-namespace.iter-IterRefCounter.html">IterRefCounter</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Only valid to be called on non-owning views such as Slice.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

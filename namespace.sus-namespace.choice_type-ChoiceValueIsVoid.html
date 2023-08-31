@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::choice_type::ChoiceValueIsVoid
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.choice_type.html">choice_type</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">ChoiceValueIsVoid</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class Choice, auto Tag&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          ChoiceValueIsVoid
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">!requires(const Choice& c) {</pre>
+              <pre class="requires-constaint-line">  { c.template get&lt;Tag&gt;() };</pre>
+              <pre class="requires-constaint-line">}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>A helper concept that reports if the value in a <code>Choice</code> for the given <code>Tag</code>
+is null. When true, the accessor and setter methods are not available.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

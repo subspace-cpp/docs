@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::mem::move
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.mem.html">mem</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">move</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">move</a>(T && t) -&gt; decltype(auto)<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">!std::is_const_v&lt;std::remove_reference_t&lt;T&gt;&gt;</pre>
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Cast <code>t</code> to an r-value reference so that it can be used to construct or be
+assigned to a (non-reference) object of type <code>T</code>.</p>
+<p><code>move()</code> requires that <code>t</code> can be moved from, so it requires that <code>t</code> is
+non-const. This differs from <code>std::move()</code>.</p>
+<p>The <code>move()</code> call itself does nothing to <code>t</code>, as it is just a cast, similar
+to <code>std::move()</code>. It enables an lvalue (a named object) to be used as an
+rvalue. The function does not require <code>T</code> to be <code>Move</code>, in order to call
+rvalue-qualified methods on <code>T</code> even if it is not <code>Move</code>.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

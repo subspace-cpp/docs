@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::collections::Array
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record class">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Class
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.collections.html">collections</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">Array</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T, size_t N&gt;</div>
+        <span class="class">
+          class
+        </span>
+        <span class="type-name">
+          Array
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>A collection of objects of type T, with a fixed size N.</p>
+<p>An Array can not be larger than <code>isize::MAX</code>, as subtracting a pointer at a
+greater distance results in Undefined Behaviour.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.Array.ctor.default" href="namespace.sus-namespace.collections-Array.html#method.Array.ctor.default">Array</a>()</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Default constructor of <code>Array</code> which default-constructs each object <code>T</code> in
+the array.</p>
+<p>This satisifies <code>sus::construct::Default&lt;Array&lt;T, N&gt;&gt;</code>, but requires hat
+<code>sus::construct::Default&lt;T&gt;</code> is true.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class... Ts&gt;</div><a class="function-name" name="method.Array.ctor.values" href="namespace.sus-namespace.collections-Array.html#method.Array.ctor.values">Array</a>(Ts &&... ts)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Constructs an <code>Array</code> with <code>N</code> elements from the <code>N</code> arguments given to
+the constructor.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.Array" href="namespace.sus-namespace.collections-Array.html#method.Array">Array</a>(<a class="type-name" title="Array&lt;T, N&gt; &&" href="namespace.sus-namespace.collections-Array.html">Array&lt;T, N&gt; &&</a>)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.with_initializer" href="namespace.sus-namespace.collections-Array.html#method.with_initializer">with_initializer</a>(FnMut&lt;T (void)&gt; auto f) -&gt; <a class="type-name" title="Array&lt;T, N&gt;" href="namespace.sus-namespace.collections-Array.html">Array&lt;T, N&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Constructs an <code>Array</code> with <code>N</code> elements, where each element is constructed
+from the given closure.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.with_value" href="namespace.sus-namespace.collections-Array.html#method.with_value">with_value</a>(const U & t) -&gt; <a class="type-name" title="Array&lt;T, N&gt;" href="namespace.sus-namespace.collections-Array.html">Array&lt;T, N&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Constructs an <code>Array</code> with <code>N</code> elements from a single argument, repeatedly
+using it to construct each element. The given argument must be <code>Copy</code> in
+order to do this.</p>
+<p>To construct an Array from a single value that is <code>Clone</code> but not <code>Copy</code>,
+use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut_ptr" href="namespace.sus-namespace.collections-Array.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; T *</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a mutable pointer to the first element in the array.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut_slice" href="namespace.sus-namespace.collections-Array.html#method.as_mut_slice">as_mut_slice</a>() & -&gt; SliceMut&lt;T&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ptr" href="namespace.sus-namespace.collections-Array.html#method.as_ptr">as_ptr</a>() const& -&gt; const T *</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a const pointer to the first element in the array.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_slice" href="namespace.sus-namespace.collections-Array.html#method.as_slice">as_slice</a>() const& -&gt; Slice&lt;T&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="namespace.sus-namespace.collections-Array.html#method.clone">clone</a>() const& -&gt; <a class="type-name" title="Array&lt;T, N&gt;" href="namespace.sus-namespace.collections-Array.html">Array&lt;T, N&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone_from" href="namespace.sus-namespace.collections-Array.html#method.clone_from">clone_from</a>(<a class="type-name" title="const Array&lt;T, N&gt; &" href="namespace.sus-namespace.collections-Array.html">const Array&lt;T, N&gt; &</a> source) & -&gt; void</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get" href="namespace.sus-namespace.collections-Array.html#method.get">get</a>(<a class="type-name" title="struct usize" href="namespace.sus-namespace.num-usize.html">usize</a> i) const& -&gt; Option&lt;const T &&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a const reference to the element at index <code>i</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_mut" href="namespace.sus-namespace.collections-Array.html#method.get_mut">get_mut</a>(<a class="type-name" title="struct usize" href="namespace.sus-namespace.num-usize.html">usize</a> i) & -&gt; Option&lt;T &&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a mutable reference to the element at index <code>i</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_unchecked" href="namespace.sus-namespace.collections-Array.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="namespace.sus-namespace.marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct usize" href="namespace.sus-namespace.num-usize.html">usize</a> i) const& -&gt; const T &</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a const reference to the element at index <code>i</code>.</p>
+<h1><a name="safety" href="#safety">Safety</a></h1>
+<p>The index <code>i</code> must be inside the bounds of the array or Undefined
+Behaviour results.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_unchecked_mut" href="namespace.sus-namespace.collections-Array.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="namespace.sus-namespace.marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct usize" href="namespace.sus-namespace.num-usize.html">usize</a> i) & -&gt; T &</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a mutable reference to the element at index <code>i</code>.</p>
+<h1><a name="safety-1" href="#safety-1">Safety</a></h1>
+<p>The index <code>i</code> must be inside the bounds of the array or Undefined
+Behaviour results.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;int &... , class U = T&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.into_iter" href="namespace.sus-namespace.collections-Array.html#method.into_iter">into_iter</a>() && -&gt; ArrayIntoIter&lt;U, N&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Converts the array into an iterator that consumes the array and returns
+each element in the same order they appear in the array.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter" href="namespace.sus-namespace.collections-Array.html#method.iter">iter</a>() const& -&gt; SliceIter&lt;const T &&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns an iterator over all the elements in the array, visited in the
+same order they appear in the array. The iterator gives const access to
+each element.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter_mut" href="namespace.sus-namespace.collections-Array.html#method.iter_mut">iter_mut</a>() & -&gt; SliceIterMut&lt;T &&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns an iterator over all the elements in the array, visited in the
+same order they appear in the array. The iterator gives mutable access to
+each element.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.len" href="namespace.sus-namespace.collections-Array.html#method.len">len</a>() const& -&gt; <a class="type-name" title="struct usize" href="namespace.sus-namespace.num-usize.html">usize</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the number of elements in the array.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &&, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map" href="namespace.sus-namespace.collections-Array.html#method.map">map</a>(MapFn f) && -&gt; Array&lt;R, N&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Consumes the array, and returns a new array, mapping each element of the
+array to a new type with the given function.</p>
+<p>To just walk each element and map them, consider using <code>iter()</code> and
+<code>Iterator::map</code>. This does not require consuming the array.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods conversion">
+      <div class="section-header">
+        Conversions
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.operator Slice&lt;T&gt;" href="namespace.sus-namespace.collections-Array.html#method.operator Slice&lt;T&gt;">operator Slice&lt;T&gt;</a>() const&</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.operator SliceMut&lt;T&gt;" href="namespace.sus-namespace.collections-Array.html#method.operator SliceMut&lt;T&gt;">operator SliceMut&lt;T&gt;</a>() &</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Operators
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="namespace.sus-namespace.collections-Array.html#method.operator=">operator=</a>(<a class="type-name" title="Array&lt;T, N&gt; &&" href="namespace.sus-namespace.collections-Array.html">Array&lt;T, N&gt; &&</a>) -&gt; <a class="type-name" title="Array&lt;T, N&gt; &" href="namespace.sus-namespace.collections-Array.html">Array&lt;T, N&gt; &</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.operator==" href="namespace.sus-namespace.collections-Array.html#method.operator==">operator==</a>(const Array&lt;U, N&gt; & r) const& -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Satisfies the <a href="namespace.sus-namespace.ops-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, Array&lt;U, N&gt;&gt;</code></a> concept.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator[]" href="namespace.sus-namespace.collections-Array.html#method.operator[]">operator[]</a>(<a class="type-name" title="struct usize" href="namespace.sus-namespace.num-usize.html">usize</a> i) const& -&gt; const T &</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

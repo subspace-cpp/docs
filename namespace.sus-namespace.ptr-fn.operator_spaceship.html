@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::ptr::operator<=>
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.ptr.html">ptr</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">operator&lt;=&gt;</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class T, class U&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">operator&lt;=&gt;</a>(const NonNull&lt;T&gt; & l, const NonNull&lt;U&gt; & r) -&gt; strong_ordering<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::ops::StrongOrd
+                &lt;
+                const T *
+                const U *
+                &gt;
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Satisfies the <a href="namespace.sus-namespace.ops-StrongOrd.html"><code>StrongOrd&lt;NonNull&lt;T&gt;&gt;</code></a> concept if the
+pointers are comparable and thus satisfy <code>StrongOrd</code> as well.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

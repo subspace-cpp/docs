@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::construct::TryInto
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.construct.html">construct</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">TryInto</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class FromType, class ToType&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          TryInto
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">::sus::construct::TryFrom&lt;ToType, FromType&gt; ||</pre>
+              <pre class="requires-constaint-line">                  std::same_as&lt;ToType, FromType&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>A concept that declares <code>FromType</code> can (sometimes) be converted to <code>ToType</code>
+through the <code>TryFrom</code> concept or through an identity transformation.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::iter::from_generator
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">from_generator</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">from_generator</a>(F && f) -&gt; Iterator&lt;typename R::Item&gt; auto<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::fn::FnOnce
+                &lt;
+                F
+                ::sus::fn::NonVoid (void)
+                &gt;
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">__private::IsGenerator&lt;R&gt;::value</pre>
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Produces an iterator over <code>Item</code> from a coroutine function that returns
+<code>Generator&lt;Item&gt;</code> and yields <code>Item</code>s.</p>
+<p>This is just a syntactic aid, as <code>Generator&lt;Item&gt;</code> is an iterator, so
+calling the generator function is what produces the iterator.</p>
+<h1><a name="example" href="#example">Example</a></h1>
+<pre><code>sus::iter::Iterator&lt;i32&gt; auto it =
+    sus::iter::from_generator([]() -&gt; Generator&lt;i32&gt; {
+      co_yield 1;
+      co_yield 5;
+    });
+sus::check(it.next() == sus::some(1));
+sus::check(it.next() == sus::some(5));
+sus::check(it.next() == sus::none());
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>

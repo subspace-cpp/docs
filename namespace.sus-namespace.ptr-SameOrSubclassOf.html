@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::ptr::SameOrSubclassOf
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.ptr.html">ptr</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">SameOrSubclassOf</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T, class U&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          SameOrSubclassOf
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_pointer_v&lt;T&gt;</pre>
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_pointer_v&lt;U&gt;</pre>
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_convertible_v&lt;T, U&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p><code>SameOrSubclassOf&lt;T*, U*&gt;</code> is true if <code>T</code> is the same type as <code>U</code> or
+inherits from <code>U</code>.</p>
+<p>This can replace the use of std::is_convertible_v for handling compatible
+pointers.</p>
+<p>The inputs must be pointer types, which helps avoid accidental conversions
+from arrays, as they are not pointers. Also helps prevent the decay from the
+array to a pointer before the concept is called.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

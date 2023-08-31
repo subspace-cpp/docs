@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::fn::FnRef
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record class">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Class
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus-namespace.fn.html">fn</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">FnRef</a>
+      </div>
+      <div class="type-signature">
+        <span class="class">
+          class
+        </span>
+        <span class="type-name">
+          FnRef
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>A closure that erases the type of the internal callable object (lambda). A
+FnMutRef may be called multiple times, and holds a const callable object, so
+it will return the same value each call with the same inputs.</p>
+<p>FnRef can be used as a FnMutRef, which can be used as a FnOnceRef. Lambdas
+can be converted into a FnOnceRef, FnMutRef, or FnRef directly.</p>
+<p>FnOnceRef, FnMutRef and FnRef are only safe to appear as lvalues when they
+are a function parameter, and a clang-tidy check is provided to enforce
+this. They only hold a reference to the underlying lambda so they must not
+outlive the lambda.</p>
+<h1><a name="why-can-a-%22const%22-fnref-convert-to-a-mutable-fnmutref-or-fnonceref?" href="#why-can-a-%22const%22-fnref-convert-to-a-mutable-fnmutref-or-fnonceref?">Why can a &quot;const&quot; FnRef convert to a mutable FnMutRef or FnOnceRef?</a></h1>
+<p>A FnMutRef or FnOnceRef is <em>allowed</em> to mutate its storage, but a &quot;const&quot;
+FnRef closure would just choose not to do so.</p>
+<p>However, a <code>const FnRef</code> requires that the storage is not mutated, so it is
+not useful if converted to a <code>const FnMutRef</code> or <code>const FnOnceRef</code> which are
+only callable as mutable objects.</p>
+<h1><a name="null-pointers" href="#null-pointers">Null pointers</a></h1>
+<p>A null function pointer is not allowed, constructing a FnOnceRef from a null
+pointer will panic.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnRef.ctor.fnpointer" href="namespace.sus-namespace.fn-FnRef.html#method.FnRef.ctor.fnpointer">FnRef</a>(F ptr)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construction from a function pointer.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnRef.ctor.lambda" href="namespace.sus-namespace.fn-FnRef.html#method.FnRef.ctor.lambda">FnRef</a>(F && object)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construction from a non-capturing lambda.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnRef.ctor.capturelambda" href="namespace.sus-namespace.fn-FnRef.html#method.FnRef.ctor.capturelambda">FnRef</a>(F && object)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construction from a capturing lambda or other callable object.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.FnRef" href="namespace.sus-namespace.fn-FnRef.html#method.FnRef">FnRef</a>(<a class="type-name" title="FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="namespace.sus-namespace.fn-FnRef.html">FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a> o)</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.FnRef" href="namespace.sus-namespace.fn-FnRef.html#method.FnRef">FnRef</a>(<a class="type-name" title="const FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="namespace.sus-namespace.fn-FnRef.html">const FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class ptr:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="namespace.sus-namespace.fn-FnRef.html#method.from">from</a>(FunctionPointer&lt;RCallArgs...&gt; auto ptr) -&gt; auto</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="namespace.sus-namespace.fn-FnRef.html#method.from">from</a>(F && object) -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><code>sus::construct::From</code> trait implementation.</p>
+<p>FnRef satisfies <code>From&lt;T&gt;</code> for the same types that it is constructible
+from: function pointers that exactly match its own signature, and
+const-callable objects (lambdas) that are compatible with its signature.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="namespace.sus-namespace.fn-FnRef.html#method.clone">clone</a>() const -&gt; <a class="type-name" title="FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt;" href="namespace.sus-namespace.fn-FnRef.html">FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::mem::Clone trait.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Operators
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator().call.const" href="namespace.sus-namespace.fn-FnRef.html#method.operator().call.const">operator()</a>(CallArgs... args) const& -&gt; R</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Runs the closure.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator().call.rvalue" href="namespace.sus-namespace.fn-FnRef.html#method.operator().call.rvalue">operator()</a>(CallArgs... args) && -&gt; R</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Runs and consumes the closure.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="namespace.sus-namespace.fn-FnRef.html#method.operator=">operator=</a>(<a class="type-name" title="FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="namespace.sus-namespace.fn-FnRef.html">FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a> o) -&gt; <a class="type-name" title="FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="namespace.sus-namespace.fn-FnRef.html">FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="namespace.sus-namespace.fn-FnRef.html#method.operator=">operator=</a>(<a class="type-name" title="const FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="namespace.sus-namespace.fn-FnRef.html">const FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>) -&gt; <a class="type-name" title="FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="namespace.sus-namespace.fn-FnRef.html">FnRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
