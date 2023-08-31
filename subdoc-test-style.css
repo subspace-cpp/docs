@@ -1,0 +1,216 @@
+body {
+    font-size: 12pt;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    margin: 1.2rem;
+    font-family: Arial, Verdana, sans-serif;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+
+.description pre, .description pre > code {
+    background-color: rgb(32, 26, 34);
+    color:rgb(230, 230, 230);
+}
+
+.section-header {
+    font-size: 125%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+:is(.fields, .functions, .methods, .records, .concepts, .namespaces) .section-header {
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid;
+}
+
+.overload .function-signature span {
+    margin-right: 0.4em;  /* Put back the space after other elements */
+}
+
+.description.short {
+    margin: 0;
+    line-height: 1.2;
+}
+.description.short p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.description.long {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 24px;
+    line-height: 1.4;
+}
+.overview .description :is(h1, h2, h3, h4, h5, h6) {
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
+.overview .description h1 {
+    font-size: 120%;
+}
+code {
+    color: rgb(124, 216, 204);
+}
+.description h1, .description h2 {
+    font-size: 100%;
+    font-weight: bold;
+    color: rgb(124, 216, 204);
+}
+.description pre {
+    padding: 1em;
+}
+.description a {
+    text-decoration: none;
+    color: rgb(250, 199, 121);
+}
+.description a code {
+    color: rgb(250, 199, 121);
+}
+.description :is(h1, h2) a {
+    color: rgb(250, 199, 121);
+}
+.description a:hover {
+    text-decoration: underline;
+}
+.description table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+.description td,th {
+    border: 1px solid;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.record .section-items :is(.type-signature, .function-signature) {
+    background-color: rgba(43, 43, 43, 1.0);
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.overview :is(.type-signature, .function-signature) {
+    background-color: rgba(43, 43, 43, 1.0);
+    margin-bottom: 0.2rem;
+    padding: 0.5rem;
+}
+.overview .type-signature :is(.struct, .class, .union, .final) {
+    color: rgb(125, 231, 235);
+}
+.overview .type-signature :is(.type-name) {
+    color: rgb(105, 223, 105);
+}
+
+.type .section:is(.fields, .methods) .static {
+    color: rgb(240, 147, 147);
+}
+.type .section:is(.fields, .methods) .type-name {
+    color: rgb(105, 223, 105);
+}
+.type .section:is(.fields, .methods) .volatile {
+    color: yellow;
+}
+.type .section:is(.fields, .methods) .const {
+    color: yellowgreen;
+}
+
+.overview .section-header a {
+    text-decoration: none;
+}
+.overview .section-header a:hover {
+    text-decoration: underline;
+}
+.overview .section-header .project-name {
+    color: rgb(207, 66, 184);
+}
+.overview .section-header .namespace-name {
+    color: rgb(142, 214, 236);
+}
+.overview .section-header .type-name {
+    color: rgb(166, 240, 176);
+}
+.overview .section-header .concept-name {
+    color: rgb(166, 240, 176);
+}
+
+:is(.type-signature, .function-signature, .member-signature, .requires, .deleted, .virtual) {
+    font-family: monospace;
+}
+
+.type .overload-set {
+    padding: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+a.function-name {
+    text-decoration: none;
+    color: rgb(191, 142, 236);
+}
+a.function-name:hover {
+    text-decoration: underline;
+}
+a.namespace-name {
+    text-decoration: none;
+    color: rgb(142, 214, 236);
+}
+a.namespace-name:hover {
+    text-decoration: underline;
+}
+a.type-name {
+    text-decoration: none;
+    color: rgb(142, 201, 236);
+}
+a.type-name:hover {
+    text-decoration: underline;
+}
+a.field-name {
+    text-decoration: none;
+    color: rgb(142, 201, 236);
+}
+a.field-name:hover {
+    text-decoration: underline;
+}
+
+:is(.type-signature, .overload) :is(.requires, .deleted, .virtual) {
+    margin-left: 36px;
+}
+:is(.type-signature, .overload) .requires .requires-keyword {
+    color: rgb(84, 194, 238)
+}
+:is(.type-signature, .overload) .requires .requires-paren {
+    color: rgb(180, 180, 180)
+}
+:is(.type-signature, .overload) .requires .requires-constaint {
+    margin-left: 36px;
+    color: rgb(87, 218, 218)
+}
+.requires-constaint-line {
+    margin: 0px;
+}
+.overload .deleted {
+    color: rgb(238, 84, 110)
+}
+.overload .virtual {
+    color: rgb(84, 238, 117)
+}
+
+.item-table {
+    display: table;
+    overflow-wrap: break-word;
+}
+.item-table > li {
+    display: table-row;
+}
+.item-table > li > div {
+    display: table-cell;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+.item-table > li.nested > div:first-child {
+    padding-left: 1.5rem;
+}
+.item-table .item-name {
+    padding-right: 1.25rem;
+}

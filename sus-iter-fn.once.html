@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::iter::once
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">once</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">once</a>(Option&lt;Item&gt; o) -&gt; Once&lt;Item&gt;</div>
+        </div>
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">once</a>(Option&lt;Item&gt; o) -&gt; Once&lt;Item&gt;</div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Constructs a <code>Once</code> iterator that will return <code>o</code> and then None. If <code>o</code> is
+<code>None</code>, then the iterator will be empty on construction.</p>
+<h1><a name="example" href="#example">Example</a></h1>
+<pre><code>auto o = sus::iter::once&lt;u16&gt;(sus::some(3_u16));
+sus::check(o.next().unwrap() == 3_u16);
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>

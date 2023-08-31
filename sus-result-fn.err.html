@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::result::err
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-result.html">result</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">err</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class E&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">err</a>(E && e) -&gt; auto</div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Used to construct a Result&lt;T, E&gt; with an Err(e) value.</p>
+<p>Calling err() produces a hint to make a Result&lt;T, E&gt; but does not actually
+construct Result&lt;T, E&gt;. This is to deduce the actual types <code>T</code> and <code>E</code>
+when it is constructed, avoid specifying them both here, and support
+conversions.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

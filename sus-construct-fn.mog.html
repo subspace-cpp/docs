@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::construct::mog
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-construct.html">construct</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">mog</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class To, class From&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">mog</a>(const From & from) -&gt; To<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::construct::Transmogrify
+                &lt;
+                To
+                From
+                &gt;
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>An infallible conversion (transmogrification) that may lose the original
+value in the process. If the input can not be represented in the output,
+some other value will be produced, which may lead to application bugs and
+memory unsafety if used incorrectly. This behaves like <code>static_cast&lt;To&gt;()</code>
+but without Undefined Behaviour.</p>
+<p>The <code>mog</code> operation is supported for types <code>To</code> and <code>From</code> that satisfy
+<code>Transmogrify&lt;To, From&gt;</code>.</p>
+<p>To convert between types while ensuring the values are preserved, use
+<code>sus::construct::Into</code> or <code>sus::construct::TryInto</code>. Usually prefer using
+<code>sus::into(x)</code> or <code>sus::try_into(x)</code> over <code>sus::mog&lt;Y&gt;(x)</code> as most code
+should preserve values across type transitions.</p>
+<p>See <code>Transmogrify</code> for how numeric and primitive values are converted.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>This converts <code>-1_i64</code> into a <code>u32</code>, which both changes its meaning,
+becoming a large positive number, and truncates the high 32 bits, losing the
+original.</p>
+<pre><code class="language-cpp">sus::check(u32::MAX == sus::mog&lt;u32&gt;(-1_i64));
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>

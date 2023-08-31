@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::tuple_type::Tuple
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record class">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Class
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-tuple_type.html">tuple_type</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">Tuple</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T, class... Ts&gt;</div>
+        <span class="class">
+          class
+        </span>
+        <span class="type-name">
+          Tuple
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>A Tuple is a finite sequence of one or more heterogeneous values.</p>
+<p>The Tuple is similar to
+<a href="https://en.cppreference.com/w/cpp/utility/tuple">std::tuple</a> with some
+differences:</p>
+<ul>
+<li>It allows storing reference types.</li>
+<li>It interacts with iterators through satisfying
+<a href="sus-iter-Extend.html"><code>Extend</code></a>, allowing an iterator to <code>unzip()</code> into
+a Tuple of collections that satisfy Extend.</li>
+<li>It provides explicit methods for const, mutable or rvalue access to
+its values.</li>
+<li>It satisfies <a href="sus-mem-Clone.html"><code>Clone</code></a> if its elements all satisfy
+<code>Clone</code>.</li>
+</ul>
+<p>Tuple elements can also be accessed through <code>get()</code> for code that wants to
+work generically over tuple-like objects including <code>sus::Tuple</code> and
+<code>std::tuple</code>.</p>
+<h1><a name="tail-padding" href="#tail-padding">Tail padding</a></h1>
+<p>The Tuple's tail padding may be reused when the Tuple is marked as
+<code>[[no_unique_address]]</code>. The Tuple will have tail padding if the first
+type has a size that is not a multiple of the Tuple's alignment. For
+example if it's smaller than the alignment, such as <code>Tuple&lt;u8, u64&gt;</code> which
+has <code>(alignof(u64) == sizeof(u64)) - sizeof(u8)</code> or 7 bytes of tail padding.</p>
+<pre><code>struct S {
+  [[no_unique_address]] Tuple&lt;u32, u64&gt; tuple;  // 16 bytes.
+  u32 val;  // 4 bytes.
+};  // 16 bytes, since `val` is stored inside `tuple`.
+</code></pre>
+<p>However note that this behaviour is compiler-dependent, and MSVC does not
+use the <code>[[no_unique_address]]</code> hint.</p>
+<p>Use <code>sus::data_size_of&lt;T&gt;()</code> to determine the size of T excluding its tail
+padding (so <code>sus::size_of&lt;T&gt;() - sus::data_size_of&lt;T&gt;()</code> is the tail
+padding), which can be useful to ensure you have the expected behaviour from
+your types.</p>
+<p>Additionally types within the tuple may be placed inside the tail padding of
+other types in the tuple, should such padding exist.</p>
+<p>Generally, but not always, use of tail padding in Tuple is optimized by
+ordering types (left-to-right in the template variables) from smallest-to-
+largest for simple types such as integers (which have no tail padding
+themselves), or in least-to-most tail-padding for more complex types.
+Elements in a Tuple are stored internally in reverse of the order they are
+specified, which is why the size of the <em>first</em> element matters for the
+Tuple's externally usable tail padding.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.Tuple.ctor.default" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.default">Tuple</a>()</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construct a Tuple with the default value for the types it contains.</p>
+<p>The Tuple's contained types must all be #Default, and will be
+constructed through that trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" name="method.Tuple.ctor.values" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.values">Tuple</a>(U && first, Us &&... more)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construct a Tuple with the given values.</p>
+<h1><a name="const-references" href="#const-references">Const References</a></h1>
+<p>For <code>Result&lt;const T&amp;, E&gt;</code> it is possible to bind to a temporary which
+would create a memory safety bug. The <code>[[clang::lifetimebound]]</code> attribute
+is used to prevent this via Clang. But additionally, the incoming type is
+required to match with <code>sus::construct::SafelyConstructibleFromReference</code>
+to prevent conversions that would construct a temporary.</p>
+<p>To force accepting a const reference anyway in cases where a type can
+convert to a reference without constructing a temporary, use an unsafe
+<code>static_cast&lt;const T&amp;&gt;()</code> at the callsite (and document it =)).</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.at" href="sus-tuple_type-Tuple.html#method.at">at</a>() const& -&gt; const auto &</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Gets a const reference to the <code>I</code>th element in the tuple.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.at_mut" href="sus-tuple_type-Tuple.html#method.at_mut">at_mut</a>() & -&gt; auto &</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Gets a mutable reference to the <code>I</code>th element in the tuple.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="sus-tuple_type-Tuple.html#method.clone">clone</a>() const& -&gt; <a class="type-name" title="Tuple&lt;T, Ts...&gt;" href="sus-tuple_type-Tuple.html">Tuple&lt;T, Ts...&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::mem::Clone trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U, class... Us, class ii:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.extend" href="sus-tuple_type-Tuple.html#method.extend">extend</a>(IntoIterator&lt;Tuple&lt;U, Us...&gt;&gt; auto && ii) -&gt; void</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Satisfies sus::iter::Extend for a Tuple of collections that each satisfies
+Extend for its position-relative type in the iterator of tuples.</p>
+<p>The tuple this is called on is a set of collections. The iterable passed
+in as an argument yields tuples of items that will be appended to the
+collections.</p>
+<p>The item types in the argument can not be deduced, so they must be
+explicitly specified by the caller, such as:</p>
+<pre><code class="language-cpp">collections.extend&lt;i32, std::string&gt;(iter_over_tuples_i32_string());
+</code></pre>
+<p>Allows to <code>extend</code> a tuple of collections that also implement <code>Extend</code>.</p>
+<p>See also: <code>IteratorBase::unzip</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.into_inner" href="sus-tuple_type-Tuple.html#method.into_inner">into_inner</a>() && -&gt; decltype(auto)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Removes the <code>I</code>th element from the tuple, leaving the Tuple in a
+moved-from state where it should no longer be used.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Operators
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator&lt;=&gt;" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<a class="type-name" title="const Tuple&lt;T, Ts...&gt; &" href="sus-tuple_type-Tuple.html">const Tuple&lt;T, Ts...&gt; &</a> r) const& -&gt; strong_ordering</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.operator&lt;=&gt;" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(const Tuple&lt;U, Us...&gt; & r) const& -&gt; strong_ordering</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Compares two Tuples.</p>
+<p>Satisfies sus::ops::StrongOrd&lt;Tuple&lt;...&gt;&gt; if sus::ops::StrongOrd&lt;...&gt;.
+Satisfies sus::ops::Ord&lt;Tuple&lt;...&gt;&gt; if sus::ops::Ord&lt;...&gt;.
+Satisfies sus::ops::PartialOrd&lt;Tuple&lt;...&gt;&gt; if sus::ops::PartialOrd&lt;...&gt;.</p>
+<p>The non-template overloads allow tuple() marker types to convert to
+Tuple for comparison.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator==" href="sus-tuple_type-Tuple.html#method.operator==">operator==</a>(<a class="type-name" title="const Tuple&lt;T, Ts...&gt; &" href="sus-tuple_type-Tuple.html">const Tuple&lt;T, Ts...&gt; &</a> r) const& -&gt; bool</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.operator==" href="sus-tuple_type-Tuple.html#method.operator==">operator==</a>(const Tuple&lt;U, Us...&gt; & r) const& -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq</code></a> concept if the types inside satisfy
+<code>Eq</code>.</p>
+<h1><a name="implementation-note" href="#implementation-note">Implementation Note</a></h1>
+<p>The non-template overload allows tuple() marker types to convert to
+Tuple for comparison.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

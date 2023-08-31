@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::iter::from_range
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">from_range</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class R&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">from_range</a>(R && r) -&gt; auto<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                std::ranges::input_range
+                &lt;
+                R
+                &gt;
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Constructs an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> from a
+<a href="https://en.cppreference.com/w/cpp/ranges/input_range"><code>std::ranges::input_range</code></a>.</p>
+<p>If the input is an lvalue reference, the <code>Iterator</code> will also
+iterate over references to the range's values. If the input is const, the
+<code>Iterator</code> will iterate over const references. To iterate over values
+instead, use <a href="sus-iter-IteratorBase.html#method.cloned"><code>Iterator::cloned</code></a> or
+<a href="sus-iter-IteratorBase.html#method.copied"><code>Iterator::copied</code></a>.</p>
+<p>If the input is an rvalue refernce, the <code>Iterator</code> will iterate over the
+moved items from the range.</p>
+<p>If the input range's iterators satisfy <code>std::ranges::bidiectional_iterator</code>,
+then the output <code>Iterator</code> will be a <code>DoubleEndedIterator</code>.</p>
+<p>If the end type (aka <code>std::ranges::sentinel_t</code>) of the input range satisfies
+<code>std::ranges::std::sized_sentinel_for&lt;end type, begin type&gt;</code>, then the
+output <code>Iterator</code> will be an <code>ExactSizeIterator</code>.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>Iterates over references of a vector, copying and summing:</p>
+<pre><code>const auto v = std::vector&lt;i32&gt;({1, 2, 3});
+sus::check(sus::iter::from_range(v).copied().sum() == 1 + 2 + 3);
+</code></pre>
+<p>Consumes a vector and iterates over its values, not as references.</p>
+<pre><code>auto v = std::vector&lt;i32&gt;({1, 2, 3});
+sus::check(sus::iter::from_range(sus::move(v)).sum() == 1 + 2 + 3);
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>

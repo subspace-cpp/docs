@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::iter::Iterator
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">Iterator</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T, class Item = typename std::remove_cvref_t&lt;T&gt;::Item&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          Iterator
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">requires(std::remove_cvref_t&lt;T&gt;& t, const std::remove_cvref_t&lt;T&gt;& c) {</pre>
+              <pre class="requires-constaint-line">      // Has a T::Item typename.</pre>
+              <pre class="requires-constaint-line">      requires(!std::is_void_v&lt;typename std::remove_cvref_t&lt;T&gt;::Item&gt;);</pre>
+              <pre class="requires-constaint-line">      // The T::Item matches the concept input.</pre>
+              <pre class="requires-constaint-line">      requires(std::same_as&lt;typename std::remove_cvref_t&lt;T&gt;::Item, Item&gt;);</pre>
+              <pre class="requires-constaint-line">      // Subclasses from IteratorBase&lt;T, T::Item&gt;.</pre>
+              <pre class="requires-constaint-line">      requires ::sus::ptr::SameOrSubclassOf&lt;</pre>
+              <pre class="requires-constaint-line">          std::remove_cvref_t&lt;T&gt;*, IteratorBase&lt;std::remove_cvref_t&lt;T&gt;, Item&gt;*&gt;;</pre>
+              <pre class="requires-constaint-line">      // Required methods.</pre>
+              <pre class="requires-constaint-line">      { t.next() } noexcept -&gt; std::same_as&lt;::sus::option::Option&lt;Item&gt;&gt;;</pre>
+              <pre class="requires-constaint-line">      { c.size_hint() } noexcept -&gt; std::same_as&lt;SizeHint&gt;;</pre>
+              <pre class="requires-constaint-line">    }</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>A concept for all implementations of iterators.</p>
+<p>Types that satisfy this concept can be used in for loops and provide
+all the methods of an iterator type, which are found in
+<code>sus::iter::IteratorBase</code>.</p>
+<p>Any Iterator's full definition includes a number of other methods as well,
+built on top of next, and so you get them for free.</p>
+<p>Iterators are also composable, and it's possible to chain them together to
+do more complex forms of processing.</p>
+<h1><a name="required-methods." href="#required-methods.">Required methods.</a></h1>
+<p>An iterator has two required methods.</p>
+<p><code>next()</code>, which when called, returns an <code>Option&lt;Item&gt;</code>. Calling next will
+return an <code>Option</code> containing the next <code>Item</code> as long as there are elements,
+and once they've all been exhausted, will return <code>None</code> to indicate that
+iteration is finished. Individual iterators may choose to resume iteration,
+and so calling next again may or may not eventually start returning an
+<code>Item</code> again at some point.</p>
+<p><code>size_hint()</code> that returns a <code>sus::iter::SizeHint</code> containing a lower bound
+and optional upper bound on the number of elements left to be yielded by the
+iterator. An upper bound of <code>None</code> indicates either an unknown upper bound
+or a bound that is larger than <code>usize</code>. Rerturning <code>lower = 0</code> and <code>upper = None</code> is correct for any iterator, but providing a more accurate bound can
+benefit performance optiomizations. Returning an incorrect bound is
+technically possible but is a violation of the Iterator protocol.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

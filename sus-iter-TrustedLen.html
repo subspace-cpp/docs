@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::iter::TrustedLen
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">TrustedLen</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          TrustedLen
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">requires(const std::remove_cvref_t&lt;T&gt;& t) {</pre>
+              <pre class="requires-constaint-line">  { t.trusted_len() } -&gt; std::same_as&lt;__private::TrustedLenMarker&gt;;</pre>
+              <pre class="requires-constaint-line">}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>An iterator that reports an accurate length.</p>
+<p>The iterator reports a size hint where it is either exact (lower bound is
+equal to upper bound), or the upper bound is None. The upper bound must
+only be None if the actual iterator length is larger than
+<a href="sus-num-usize.html#field.MAX"><code>usize::MAX</code></a>. In that case, the lower bound must be
+<a href="sus-num-usize.html#field.MAX"><code>usize::MAX</code></a>, resulting in an
+<code>Iterator::size_hint()</code> of <code>(usize::MAX, None)</code>.</p>
+<p>The iterator must produce exactly the number of elements it reported.</p>
+<h1><a name="implementing-trustedlen" href="#implementing-trustedlen">Implementing TrustedLen</a></h1>
+<p>To opt into implementing <code>TrustedLen</code> a <code>trusted_len() const</code> method should
+return the <code>TrustedLenMarker</code> type.</p>
+<h1><a name="when-shouldn%27t-an-adapter-be-trustedlen?" href="#when-shouldn%27t-an-adapter-be-trustedlen?">When shouldn't an adapter be TrustedLen?</a></h1>
+<p>If an adapter makes an iterator shorter by a given amount, then it's usually
+incorrect for that adapter to implement <code>TrustedLen</code>. The inner iterator
+might return more than <a href="sus-num-usize.html#field.MAX"><code>usize::MAX</code></a> items, but
+there's no way to know what <code>k</code> elements less than that will be, since the
+<code>size_hint</code> from the inner iterator has already saturated and lost that
+information.</p>
+<p>This is why <a href="sus-iter-Skip.html"><code>Skip&lt;I&gt;</code></a> isn't <code>TrustedLen</code>, even
+when <code>I</code> implements <code>TrustedLen</code>.</p>
+<h1><a name="safety" href="#safety">Safety</a></h1>
+<p>This trait must only be implemented when the contract is upheld. Consumers
+of this trait must inspect <code>Iterator::size_hint()</code>'s upper bound.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

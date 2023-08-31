@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::iter::zip
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">zip</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class iia:auto, class iib:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">zip</a>(IntoIteratorAny auto && iia, IntoIteratorAny auto && iib) -&gt; Iterator&lt; ::sus::Tuple&lt;typename IntoIteratorOutputType&lt;decltype(iia)&gt;::Item, typename IntoIteratorOutputType&lt;decltype(iib)&gt;::Item&gt; &gt; auto<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::mem::IsMoveRef
+                &lt;
+                decltype(iia)
+                &gt;
+              </div>
+              <div class="requires-constaint">
+                sus::mem::IsMoveRef
+                &lt;
+                decltype(iib)
+                &gt;
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Converts the arguments to iterators and zips them.</p>
+<p>See the documentation of [<code>Iterator::zip]</code>(sus::iter::IteratorBase::zip) for
+more.</p>
+<h1><a name="example" href="#example">Example</a></h1>
+<pre><code>auto a = sus::Array&lt;i32, 2&gt;(2, 3);
+auto b = sus::Array&lt;f32, 5&gt;(3.f, 4.f, 5.f, 6.f, 7.f);
+auto it = sus::iter::zip(::sus::move(a), ::sus::move(b));
+sus::check(it.next() == sus::some(sus::tuple(2, 3.f)));
+sus::check(it.next() == sus::some(sus::tuple(3, 4.f)));
+sus::check(it.next() == sus::none());
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>

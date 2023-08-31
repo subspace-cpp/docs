@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::iter::Peekable
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record class">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Class
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">Peekable</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class InnerSizedIter&gt;</div>
+        <span class="class">
+          class
+        </span>
+        <span class="type-name">
+          Peekable
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>An iterator with a <code>peek()</code> that returns an optional reference to the next
+element.</p>
+<p>This type is returned from <code>Iterator::peekable()</code>.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.Peekable" href="sus-iter-Peekable.html#method.Peekable">Peekable</a>(<a class="type-name" title="Peekable&lt;InnerSizedIter&gt; &&" href="sus-iter-Peekable.html">Peekable&lt;InnerSizedIter&gt; &&</a>)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="sus-iter-Peekable.html#method.clone">clone</a>() const -&gt; <a class="type-name" title="Peekable&lt;InnerSizedIter&gt;" href="sus-iter-Peekable.html">Peekable&lt;InnerSizedIter&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::mem::Clone implementation</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.exact_size_hint" href="sus-iter-Peekable.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::ExactSizeIterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next" href="sus-iter-Peekable.html#method.next">next</a>() -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::Iterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next_back" href="sus-iter-Peekable.html#method.next_back">next_back</a>() -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::DoubleEndedIterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next_if" href="sus-iter-Peekable.html#method.next_if">next_if</a>(FnOnceRef&lt;_Bool (const std::remove_reference_t&lt;Item&gt; &)&gt; pred) -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Consume and return the next value of this iterator if a condition is true.</p>
+<p>If <code>func</code> returns <code>true</code> for the next value of this iterator, consume and
+return it. Otherwise, return <code>None</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next_if_eq" href="sus-iter-Peekable.html#method.next_if_eq">next_if_eq</a>(remove_reference_t&lt;Item&gt; & expected) -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Consume and return the next item if it is equal to <code>expected</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.peek" href="sus-iter-Peekable.html#method.peek">peek</a>() -&gt; Option&lt;const std::remove_reference_t&lt;Item&gt; &&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a const reference to the <code>next()</code> value without advancing the
+iterator.</p>
+<p>Like <code>next()</code>, if there is a value, it is wrapped in a <code>Some(T)</code>.
+But if the iteration is over, <code>None</code> is returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.peek_mut" href="sus-iter-Peekable.html#method.peek_mut">peek_mut</a>() -&gt; Option&lt;Item &&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns a mutable reference to the <code>next()</code> value without advancing the
+iterator.</p>
+<p>Like <code>next()</code>, if there is a value, it is wrapped in a <code>Some(T)</code>.
+But if the iteration is over, <code>None</code> is returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.size_hint" href="sus-iter-Peekable.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" title="struct SizeHint" href="sus-iter-SizeHint.html">SizeHint</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::Iterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.trusted_len" href="sus-iter-Peekable.html#method.trusted_len">trusted_len</a>() const -&gt; TrustedLenMarker</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::TrustedLen trait.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Operators
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-iter-Peekable.html#method.operator=">operator=</a>(<a class="type-name" title="Peekable&lt;InnerSizedIter&gt; &&" href="sus-iter-Peekable.html">Peekable&lt;InnerSizedIter&gt; &&</a>) -&gt; <a class="type-name" title="Peekable&lt;InnerSizedIter&gt; &" href="sus-iter-Peekable.html">Peekable&lt;InnerSizedIter&gt; &</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

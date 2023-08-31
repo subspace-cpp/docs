@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    operator""_rs
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">operator""_rs</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;::sus::ops::__private::RangeLiteralDeducer&lt;true&gt; D&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">operator""_rs</a>() -&gt; auto</div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Constructs a literal range that satisfies the
+<a href="sus-ops-RangeBounds.html"><code>RangeBounds&lt;isize&gt;</code></a> concept.</p>
+<p>Numbers may be positive or negative.</p>
+<p>The syntax is:</p>
+<ul>
+<li><code>start..end</code> for a range including start and excluding end. This returns a
+<code>sus::ops::Range&lt;isize&gt;</code>.</li>
+<li><code>start..=end</code> for a range including start and including end. This returns
+a <code>sus::ops::Range&lt;isize&gt;</code>.</li>
+<li><code>start..</code> for a range including start and never ending. This returns a
+<code>sus::ops::RangeFrom&lt;isize&gt;</code>.</li>
+<li><code>..end</code> for a range including everything up end. This returns a
+<code>sus::ops::RangeTo&lt;isize&gt;</code>.</li>
+<li><code>..=end</code> for a range including everything up and including end. This
+returns a <code>sus::ops::RangeTo&lt;isize&gt;</code>.</li>
+<li><code>..</code> for a range that has no bounds at all. Typically for a slicing range
+to indicate the entire slice. This returns a <code>sus::ops::RangeFull&lt;isize&gt;</code>.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+</body>

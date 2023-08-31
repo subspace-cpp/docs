@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    sus::construct::From
+  </title>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="global-namespace.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-construct.html">construct</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">From</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class ToType, class FromType&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          From
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">requires(FromType&& from) {</pre>
+              <pre class="requires-constaint-line">  { ToType::from(::sus::forward&lt;FromType&gt;(from)) } -&gt; std::same_as&lt;ToType&gt;;</pre>
+              <pre class="requires-constaint-line">}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>A concept that indicates <code>ToType</code> can be constructed from a <code>FromType</code>, via
+<code>ToType::from(FromType)</code>.</p>
+<p>This concept is rarely used directly, instead prefer to use the
+<code>sus::construct::Into</code> concept, as it also supports identity
+transformations.</p>
+<p>When a type is <code>From&lt;T, O&gt;</code>, it is also <code>Into&lt;O, T&gt;</code>. Then a variable <code>o</code> of
+type <code>O</code> can be explicitly converted to <code>T</code>, with type deduction, via
+<code>sus::into(o)</code>.</p>
+<p>It is only possible to satisfy this concept for <code>ToType</code> that is not a
+reference, as it needs to be able to construct <code>ToType</code>.</p>
+<h1><a name="arrays" href="#arrays">Arrays</a></h1>
+<p>It's possible to convert from an array, in which case <code>From&lt;T, O(&amp;)[]&gt;</code> is
+satisfied. To do so, implement <code>from()</code> as a templated method,
+with a <code>size_t</code> template parameter for the size of the incoming array. For
+example:</p>
+<pre><code>// sus::construct::From&lt;Slice&lt;T&gt;, O[]&gt; trait.
+template &lt;size_t N&gt;
+static constexpr inline Slice from(T (&amp;data)[N]) {
+  return Slice(data, N);
+}
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>
