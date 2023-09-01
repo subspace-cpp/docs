@@ -3,8 +3,16 @@
 <head>
   <meta name="generator" content="subdoc"></meta>
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::fn::FnOnce - Subspace</title>
+  <meta property="og:title" content="sus::fn::FnOnce - Subspace"></meta>
   <meta name="description" content="The version of a callable object that is called on an rvalue (moved-from)
+receiver. A FnOnce is typically the best fit for any callable that will
+only be called at most once. However when a template (or constexpr) is not
+required, receiving a FnOnceRef instead of FnOnce auto&amp;&amp; will typically
+produce less code by using type erasure to avoid template instantiation."></meta>
+  <meta property="og:description" content="The version of a callable object that is called on an rvalue (moved-from)
 receiver. A FnOnce is typically the best fit for any callable that will
 only be called at most once. However when a template (or constexpr) is not
 required, receiving a FnOnceRef instead of FnOnce auto&amp;&amp; will typically
@@ -13,6 +21,7 @@ produce less code by using type erasure to avoid template instantiation."></meta
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
   <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
 </head>
 
 <body>
