@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::ptr::swap_nonoverlapping - Subspace</title>
+  <meta name="description" content="Swaps the object array at x with the object array at y, where both
+arrays have a length of count."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.ptr.html">ptr</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">swap_nonoverlapping</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">swap_nonoverlapping</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, T * x, T * y, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> count) -&gt; void<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::mem::Move
+                &lt;
+                T
+                &gt;
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">!std::is_const_v&lt;T&gt;</pre>
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Swaps the object array at <code>x</code> with the object array at <code>y</code>, where both
+arrays have a length of <code>count</code>.</p>
+<p>If <code>T</code> is trivially relocatable (<code>sus::mem::relocate_by_memcpy&lt;T&gt;</code> is true),
+then the swap may be done by memcpy() or equivalent to be more efficient.</p>
+<h1><a name="safety" href="#safety">Safety</a></h1>
+<p>To avoid Undefined Behaviour, the following must be met:</p>
+<ul>
+<li>The pointers <code>x</code> and <code>y</code> must both be non-null and properly aligned for
+<code>T</code>.</li>
+<li>The memory region at <code>x</code> and including <code>count</code> elements must not overlap
+the region at <code>y</code> including <code>count</code> elements.</li>
+<li>The objects at <code>x</code> and <code>y</code> must not have an overlapping object in their
+tail padding. If <code>x</code> and <code>y</code> are arrays, or were heap allocated, then this
+will always be satisfied.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+</body>

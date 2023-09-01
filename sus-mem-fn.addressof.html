@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::mem::addressof - Subspace</title>
+  <meta name="description" content="Returns the address of an object, regardless of whether a class type
+overrides operator&amp;."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.mem.html">mem</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">addressof</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">addressof</a>(T & arg) -&gt; T *</div>
+        </div>
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">addressof</a>(T && arg) -&gt; T *<div class="deleted">
+              deleted
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Returns the address of an object, regardless of whether a class type
+overrides <code>operator&amp;</code>.</p>
+<p>This is like
+<a href="https://en.cppreference.com/w/cpp/memory/addressof"><code>std::addressof</code></a>,
+without pulling in all of the <code>&lt;memory&gt;</code> header. It also supports Obj-C ARC
+pointers.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

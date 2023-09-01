@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::fn::callable::FunctionPointerReturns - Subspace</title>
+  <meta name="description" content="Verifies that T is a function pointer (or captureless lambda) that returns
+a type convertible to R when called with Args."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.fn.html">fn</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-fn-namespace.callable.html">callable</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">FunctionPointerReturns</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T, class R, class... Args&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          FunctionPointerReturns
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              sus::fn::callable::FunctionPointer
+              &lt;
+              T
+              &gt;
+            </div>
+            <div class="requires-constaint">
+              std::convertible_to
+              &lt;
+              std::invoke_result_t&lt;T, Args...&gt;
+              R
+              &gt;
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">requires (R(*p)(Args...), T t) {</pre>
+              <pre class="requires-constaint-line">        { p = t };</pre>
+              <pre class="requires-constaint-line">    }</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Verifies that T is a function pointer (or captureless lambda) that returns
+a type convertible to <code>R</code> when called with <code>Args</code>.</p>
+<p>This concept allows conversion of <code>Args</code> to the function's actual receiving
+types and conversion from the function's return type to <code>R</code>.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

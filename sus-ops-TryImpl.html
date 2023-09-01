@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::ops::TryImpl - Subspace</title>
+  <meta name="description" content=""></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record struct">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Struct
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">TryImpl</a>
+      </div>
+      <div class="type-signature">
+        <span class="struct">
+          struct
+        </span>
+        <span class="type-name">
+          TryImpl
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_default" href="sus-ops-TryImpl.html#method.from_default">from_default</a>() -&gt; Option&lt;T&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_output" href="sus-ops-TryImpl.html#method.from_output">from_output</a>(Output t) -&gt; Option&lt;T&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.into_output" href="sus-ops-TryImpl.html#method.into_output">into_output</a>(Option&lt;T&gt; t) -&gt; Output</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.into_output" href="sus-ops-TryImpl.html#method.into_output">into_output</a>(Result&lt;T, E&gt; t) -&gt; Output</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.into_output" href="sus-ops-TryImpl.html#method.into_output">into_output</a>(Result&lt;void, E&gt; t) -&gt; void</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.into_output" href="sus-ops-TryImpl.html#method.into_output">into_output</a>(optional&lt;T&gt; t) -&gt; Output</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.is_success" href="sus-ops-TryImpl.html#method.is_success">is_success</a>(Option&lt;T&gt; & t) -&gt; bool</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.is_success" href="sus-ops-TryImpl.html#method.is_success">is_success</a>(Result&lt;T, E&gt; & t) -&gt; bool</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.is_success" href="sus-ops-TryImpl.html#method.is_success">is_success</a>(Result&lt;void, E&gt; & t) -&gt; bool</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.is_success" href="sus-ops-TryImpl.html#method.is_success">is_success</a>(optional&lt;T&gt; & t) -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.preserve_error" href="sus-ops-TryImpl.html#method.preserve_error">preserve_error</a>(Option&lt;U&gt;) -&gt; Option&lt;T&gt;</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.preserve_error" href="sus-ops-TryImpl.html#method.preserve_error">preserve_error</a>(Result&lt;U, E&gt; t) -&gt; Result&lt;T, E&gt;</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.preserve_error" href="sus-ops-TryImpl.html#method.preserve_error">preserve_error</a>(Result&lt;void, E&gt; t) -&gt; Result&lt;void, E&gt;</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.preserve_error" href="sus-ops-TryImpl.html#method.preserve_error">preserve_error</a>(optional&lt;U&gt;) -&gt; optional&lt;T&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::iter::empty - Subspace</title>
+  <meta name="description" content="Constructs an Empty iterator, which is an empty iterator that returns
+nothing."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">empty</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">empty</a>() -&gt; Empty&lt;Item&gt;</div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Constructs an <code>Empty</code> iterator, which is an empty iterator that returns
+nothing.</p>
+<h1><a name="example" href="#example">Example</a></h1>
+<pre><code>auto empty = sus::iter::empty&lt;u16&gt;();
+sus::check(empty.next().is_none());
+</code></pre>
+
+      </div>
+    </div>
+  </div>
+</body>

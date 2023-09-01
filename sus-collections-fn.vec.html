@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::collections::vec - Subspace</title>
+  <meta name="description" content="Used to construct a Vec&lt;T&gt; with the parameters as its values."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.collections.html">collections</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">vec</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class... Ts&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">vec</a>(Ts &&... vs) -&gt; auto</div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Used to construct a <code>Vec&lt;T&gt;</code> with the parameters as its values.</p>
+<p>Calling <code>vec()</code> produces a hint to make a <code>Vec&lt;T&gt;</code> but does not actually
+construct <code>Vec&lt;T&gt;</code>, as the type <code>T</code> is not known here. The <code>Vec&lt;T&gt;</code> will be
+constructed once the <code>T</code> is deduced by converting the marker to the <code>Vec&lt;T&gt;</code>
+type.</p>
+<p>Passing no arguments will produce an empty <code>Vec&lt;T&gt;</code>.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

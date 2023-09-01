@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::construct::SafelyConstructibleFromReference - Subspace</title>
+  <meta name="description" content="Returns if a type From is safely constructible from a reference of type
+To. This is useful for marker types which hold a reference internally and
+are used to construct another type."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.construct.html">construct</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">SafelyConstructibleFromReference</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class To, class From&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          SafelyConstructibleFromReference
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">!__private::IsConstLvalueReference&lt;To&gt; ||</pre>
+              <pre class="requires-constaint-line">    // If the type is the same then no temporary will be created.</pre>
+              <pre class="requires-constaint-line">    std::same_as&lt;std::remove_cvref_t&lt;From&gt;, std::remove_cvref_t&lt;To&gt;&gt; ||</pre>
+              <pre class="requires-constaint-line">    // If the type is a base class then no temporary will be created.</pre>
+              <pre class="requires-constaint-line">    sus::ptr::SameOrSubclassOf&lt;std::remove_cvref_t&lt;From&gt;*,</pre>
+              <pre class="requires-constaint-line">                                   std::remove_cvref_t&lt;To&gt;*&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Returns if a type <code>From</code> is safely constructible from a reference of type
+<code>To</code>. This is useful for marker types which hold a reference internally and
+are used to construct another type.</p>
+<p>If <code>To</code> is a const reference, then they types must match, as a conversion
+would create a reference to a temporary.</p>
+<p>This concept only produces a useful result when <code>From</code> is a reference type
+which may not outlive the storage of <code>To</code>, such as with a reference to a
+temporary.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

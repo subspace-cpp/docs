@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::result::operator&lt;=&gt; - Subspace</title>
+  <meta name="description" content="Compares two Results for their ordering if the
+types inside can be compared."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.result.html">result</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">operator&lt;=&gt;</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">operator&lt;=&gt;</a>(<a class="type-name" title="const Result&lt;T, E&gt; &" href="sus-result-Result.html">const Result&lt;T, E&gt; &</a> l, <a class="type-name" title="const Result&lt;T, E&gt; &" href="sus-result-Result.html">const Result&lt;T, E&gt; &</a> r) -&gt; strong_ordering<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::ops::__private::VoidOrOrd
+                &lt;
+                T
+                &gt;
+              </div>
+              <div class="requires-constaint">
+                sus::ops::StrongOrd
+                &lt;
+                E
+                &gt;
+              </div>
+            </div></div>
+        </div>
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class U, class F&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">operator&lt;=&gt;</a>(<a class="type-name" title="const Result&lt;T, E&gt; &" href="sus-result-Result.html">const Result&lt;T, E&gt; &</a> l, const Result&lt;U, F&gt; & r) -&gt; strong_ordering<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::ops::__private::VoidOrOrd
+                &lt;
+                T
+                U
+                &gt;
+              </div>
+              <div class="requires-constaint">
+                sus::ops::StrongOrd
+                &lt;
+                E
+                F
+                &gt;
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Compares two <a href="sus-result-Result.html"><code>Result</code></a>s for their ordering if the
+types inside can be compared.</p>
+<p>Satisfies the <a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a>,
+<a href="sus-ops-Ord.html"><code>Ord</code></a>, or
+<a href="sus-ops-PartialOrd.html"><code>PartialOrd</code></a> concept, depending on whether the
+internal types do. The <code>Result</code> will satisfy the strongest possible
+ordering.</p>
+<h1><a name="implementation-note" href="#implementation-note">Implementation Note</a></h1>
+<p>The non-template overloads allow ok/err marker types to convert to
+Option for comparison.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

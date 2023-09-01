@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::collections - Subspace</title>
+  <meta name="description" content="Collection types."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="namespace">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Namespace
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="#">collections</a>
+      </div>
+      <div class="description long">
+        <p>Collection types.</p>
+<p>The Subspace library provides implementations of common general purpose
+programming data structures, with rich APIs that allow for interactions with
+<a href="sus-iter.html">Iterators</a>, and with APIs that provide safe defaults.</p>
+<p>The collections offer similar functionality to the <a href="https://en.cppreference.com/w/cpp/container">C++ standard containers
+library</a> but differ in some
+key ways.</p>
+<ul>
+<li>Introduce compiler errors for common mistakes instead of runtime failures
+and Undefined Behaviour which leads to miscompiles. Subspace relies on
+the latest C++ standards to achieve this, and does not provide less-safe
+APIs compatible with old C++ standards.</li>
+<li>Providing safe defaults. All API methods will do what is asked of them, or
+fail to compile. And in some cases, will perform runtime checks and
+terminate in the case of a software bug, which is represented in the
+method documentation.</li>
+<li>Providing explicit unsafe backdoors. Occasionally runtime checks can't be
+elided by the compiler and they are in hot code that has visible
+performance impact. Explicit unsafe backdoors allow individual callsites
+to opt out of runtime checks as needed, with this choice being fully
+visible in the syntax of the code. This allows them to be properly
+scrutinized in code review or checked for with tooling.</li>
+<li>Providing fallible APIs for element access that hook into the rich,
+composable APIs of <a href="sus-option-Option.html"><code>Option</code></a> in order to clearly
+and easily write error handling instead of Undefined Behaviour or
+crashes.</li>
+<li>No accidental copies. Subspace collections (that are not view types) do
+not satisfy the <a href="sus-mem-Copy.html"><code>Copy</code></a> concept, and instead must be explicitly
+cloned via <code>sus::clone(x)</code> to make a copy. This allows them to be passed
+by value without introducing a copy at a caller that was expecting it to
+be received by reference.</li>
+<li>Catch iterator invalidation. By default Subspace containers are built with
+runtime protection against iterator invalidation. Iterators produced by
+collections are tracked and if the collection is mutated while an iterator
+still exists, the collection will panic and terminate the program.</li>
+</ul>
+<p>Subspace's collections can be grouped into four major categories:</p>
+<ul>
+<li>Sequences: <a href="sus-collections-Vec.html"><code>Vec</code></a>, <a href="sus-collections-Array.html"><code>Array</code></a>
+(TODO: VecDeque, LinkedList,
+<a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p0447r16.html">Hive</a>)</li>
+<li>Maps: (TODO: HashMap, BTreeMap, FlatMap)</li>
+<li>Sets: (TODO: HashSet, BTreeSet, FlatSet)</li>
+<li>Misc: (TODO: BinaryHeap)</li>
+</ul>
+<h1><a name="when-should-you-use-which-collection" href="#when-should-you-use-which-collection">When Should You Use Which Collection</a></h1>
+<p>These are fairly high-level and quick break-downs of when each collection
+should be considered. Detailed discussions of strengths and weaknesses of
+individual collections can be found on their own documentation pages.</p>
+<h2><a name="use-a-vec-when:" href="#use-a-vec-when:">Use a Vec when:</a></h2>
+<ul>
+<li>You want to collect items up to be processed or sent elsewhere later, and
+don't care about any properties of the actual values being stored.</li>
+<li>You want a sequence of elements in a particular order, and will only be
+appending to (or near) the end.</li>
+<li>You want a stack.</li>
+<li>You want a resizable array.</li>
+<li>You want a heap-allocated array.</li>
+</ul>
+<h2><a name="use-an-array-when:" href="#use-an-array-when:">Use an Array when:</a></h2>
+<ul>
+<li>You want a fixed-size array of items that are all constructed up front
+and share a single lifetime.</li>
+<li>You want to store a sequence of compile-time constants.</li>
+<li>You want the sequence to live on the stack.</li>
+</ul>
+<p>TODO: More collections here as they exist!</p>
+<p>TODO: Performance info/comparisons when there's more types.</p>
+<h1><a name="slices-vs-spans" href="#slices-vs-spans">Slices vs spans</a></h1>
+<p><a href="sus-collections-Slice.html"><code>Slice</code></a> and <a href="sus-collections-SliceMut.html"><code>SliceMut</code></a>
+are how the Subspace library exposes views of
+contiguous sequences of elements with O(1) random access. They provide const
+and mutable access to the underlying objects, respectively.</p>
+<p><a href="sus-collections-Slice.html"><code>Slice&lt;T&gt;</code></a> is similar to
+<a href="https://en.cppreference.com/w/cpp/container/span"><code>std::span&lt;const T&gt;</code></a>
+and <a href="sus-collections-SliceMut.html"><code>SliceMut&lt;T&gt;</code></a> is similar
+to <a href="https://en.cppreference.com/w/cpp/container/span"><code>std::span&lt;T&gt;</code></a>.
+All contiguous sequence collections in this library can
+implicitly convert to a <a href="sus-collections-Slice.html"><code>Slice</code></a> (always) or
+to a <a href="sus-collections-SliceMut.html"><code>SliceMut</code></a> (if the collection is
+mutable).</p>
+<p>Slices and owning contiguous collections like
+<a href="sus-collections-Vec.html"><code>Vec</code></a> share most of the same API surface,
+including methods such as
+<a href="sus-collections-SliceMut.html#method.sort"><code>sort</code></a>,
+<a href="sus-collections-Slice.html#method.chunks"><code>chunks</code></a>,
+<a href="sus-collections-Slice.html#method.iter"><code>iter</code></a>, and
+<a href="sus-collections-Slice.html#method.concat"><code>concat</code></a>.</p>
+<h1><a name="capacity-management" href="#capacity-management">Capacity Management</a></h1>
+<p>Many collections provide several constructors and methods that refer to
+&quot;capacity&quot;. These collections are generally built on top of an array.
+Optimally, this array would be exactly the right size to fit only the
+elements stored in the collection, but for the collection to do this would
+be very inefficient. If the backing array was exactly the right size at all
+times, then every time an element is inserted, the collection would have to
+grow the array to fit it. Due to the way memory is allocated and managed on
+most computers, this would almost surely require allocating an entirely new
+array and copying every single element from the old one into the new one.
+Hopefully you can see that this wouldn't be very efficient to do on every
+operation.</p>
+<p>Most collections therefore use an amortized allocation strategy. They
+generally let themselves have a fair amount of unoccupied space so that they
+only have to grow on occasion. When they do grow, they allocate a
+substantially larger array to move the elements into so that it will take a
+while for another grow to be required. While this strategy is great in
+general, it would be even better if the collection never had to resize its
+backing array. Unfortunately, the collection itself doesn't have enough
+information to do this itself. Therefore, it is up to us programmers to give
+it hints.</p>
+<p>Any <code>with_capacity()</code> constructor will instruct the collection to allocate
+enough space for the specified number of elements. Ideally this will be for
+exactly that many elements, but some implementation details may prevent
+this. See collection-specific documentation for details. In general, use
+<code>with_capacity()</code> when you know exactly how many elements will be inserted,
+or at least have a reasonable upper-bound on that number.</p>
+<p>When anticipating a large influx of elements, the reserve family of methods
+can be used to hint to the collection how much room it should make for the
+coming items. As with with_capacity, the precise behavior of these methods
+will be specific to the collection of interest.</p>
+<p>For optimal performance, collections will generally avoid shrinking
+themselves. If you believe that a collection will not soon contain any more
+elements, or just really need the memory, the <code>shrink_to_fit()</code> method
+prompts the collection to shrink the backing array to the minimum size
+capable of holding its elements.</p>
+<p>Finally, if ever you're interested in what the actual capacity of the
+collection is, most collections provide a <code>capacity()</code> method to query this
+information on demand. This can be useful for debugging purposes, or for use
+with the <code>reserve()</code> methods.</p>
+<h1><a name="iterators" href="#iterators">Iterators</a></h1>
+<p><a href="sus-namespace.iter.html">Iterators</a> are a powerful and robust mechanism used throughout the Subspace
+C++ library. <a href="sus-namespace.iter.html">Iterators</a> provide a sequence of values in a generic, safe,
+efficient and convenient way. The contents of an iterator are usually lazily
+evaluated, so that only the values that are actually needed are ever
+actually produced, and no allocation need be done to temporarily store them.
+Iterators are primarily consumed using a for loop, although many functions
+also take iterators where a collection or sequence of values is desired.</p>
+<p>All of the collections in Subspace provide several iterators for performing
+bulk manipulation of their contents. The three primary iterators almost
+every collection should provide are <code>iter()</code>, <code>iter_mut()</code>, and
+<code>into_iter()</code>. Some of these may not be provided on collections where it
+would not be reasonable to provide them.</p>
+<p><code>iter()</code> provides an iterator of immutable references to all the contents of
+a collection in the most “natural” order. For sequence collections like Vec,
+this means the items will be yielded in increasing order of index starting
+at 0. For ordered collections like BTreeMap, this means that the items will
+be yielded in sorted order. For unordered collections like HashMap, the
+items will be yielded in whatever order the internal representation made
+most convenient. This is great for reading through all the contents of the
+collection.</p>
+<pre><code>const auto vec = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
+for (const auto&amp; x: vec.iter()) {
+   fmt::println(&quot;vec contained {}&quot;, x);
+}
+</code></pre>
+<p><code>iter_mut()</code> provides an iterator of mutable references in the same order as
+iter. This is great for mutating all the contents of the collection.</p>
+<pre><code>auto vec = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
+for (auto&amp; x: vec.iter_mut()) {
+   x += 1;
+}
+</code></pre>
+<p><code>into_iter()</code> transforms the actual collection into an iterator over its
+contents by-value. This is great when the collection itself is no longer
+needed, and the values are needed elsewhere. Using <code>extend()</code> with
+<code>into_iter()</code> is the main way that contents of one collection are moved into
+another. <code>extend()</code> automatically calls <code>into_iter()</code>, and takes any <code>T</code>
+that satisfies <code>IntoIterator</code>. Calling <code>collect()</code> on an iterator itself is
+also a great way to convert one collection into another. Both of these
+methods should internally use the capacity management tools discussed in the
+previous section to do this as efficiently as possible.</p>
+<pre><code>auto vec1 = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
+auto vec2 = sus::Vec&lt;i32&gt;(10, 20, 30, 40);
+vec1.extend(sus::move(vec2));
+</code></pre>
+<pre><code>#include &quot;sus/collections/vec_deque.h&quot;
+
+auto vec = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
+auto deque = sus::move(vec).into_iter().collect&lt;sus::VecDeque&lt;i32&gt;&gt;();
+</code></pre>
+<p>Iterators also provide a series of adapter methods for performing common
+threads to sequences. Among the adapters are functional favorites like map,
+fold, skip and take. Of particular interest to collections is the rev
+adapter, which reverses any iterator that supports this operation. Most
+collections provide reversible iterators as the way to iterate over them in
+reverse order.</p>
+<pre><code>auto vec = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
+for (const auto&amp; x: vec.iter().rev()) {
+   fmt::println(&quot;vec contained {}&quot;, x);
+}
+</code></pre>
+<p>Several other collection methods also return iterators to yield a sequence
+of results but avoid allocating an entire collection to store the result in.
+This provides maximum flexibility as collect or extend can be called to
+“pipe” the sequence into any collection if desired. Otherwise, the sequence
+can be looped over with a for loop. The iterator can also be discarded after
+partial use, preventing the computation of the unused items.</p>
+<h1><a name="ranges" href="#ranges">Ranges</a></h1>
+<p>The collections in the Subspace C++ library can be used with standard ranges
+by calling the <a href="sus-iter-IteratorBase.html#method.range"><code>range()</code></a> adaptor on any
+Subspace iterator. It will return an object that satisfies
+<a href="https://en.cppreference.com/w/cpp/ranges/input_range"><code>std::ranges::input_range</code></a>
+and
+<a href="https://en.cppreference.com/w/cpp/ranges/viewable_range"><code>std::ranges::viewable_range</code></a>,
+such as with <code>vec.iter().range()</code>.</p>
+<p>Iterators over value types or mutable references when converted by <code>range()</code>
+will also satisfy
+<a href="https://en.cppreference.com/w/cpp/ranges/input_range"><code>std::ranges::output_range</code></a>,
+such as with <code>vec.iter_mut().range()</code>.</p>
+<p>Conversely, standard ranges, such as the types in the standard containers
+library, can be used to construct a Subspace iterator through
+<a href="sus-iter-fn.from_range.html"><code>sus::iter::from_range</code></a>.</p>
+<h1><a name="familiarity-with-rust-apis" href="#familiarity-with-rust-apis">Familiarity with Rust APIs</a></h1>
+<p>These collections were inspired by porting Rust
+<a href="https://doc.rust-lang.org/stable/std/collections/index.html">std::collections</a>
+and traits/concepts into C++. Additional changes are minimized to aid with
+familiarity and working across languages, but some are necessary for use in
+C++ or interop with the standard library. Subspace also provides additional
+containers specific to C++ when needed, such as <code>Array</code> (and TODO: FlatMap).</p>
+
+      </div>
+    </div>
+    <div class="section records classes">
+      <div class="section-header">
+        Classes
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Array.html">Array</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A collection of objects of type T, with a fixed size N.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-ArrayIntoIter.html">ArrayIntoIter</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator that consumes an <code>Array</code> and returns the items from it.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Chunks.html">Chunks</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+at a time), starting at the beginning of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-ChunksExact.html">ChunksExact</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+at a time), starting at the beginning of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-ChunksExactMut.html">ChunksExactMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+elements at a time), starting at the beginning of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-ChunksMut.html">ChunksMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over mutable a slice in (non-overlapping) chunks (<code>chunk_size</code>
+elements at a time), starting at the beginning of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Drain.html">Drain</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A draining iterator for <code>Vec&lt;T&gt;</code>.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-RChunks.html">RChunks</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+at a time), starting at the end of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-RChunksExact.html">RChunksExact</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+at a time), starting at the end of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-RChunksExactMut.html">RChunksExactMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+elements at a time), starting at the end of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-RChunksMut.html">RChunksMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+elements at a time), starting at the end of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-RSplit.html">RSplit</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over subslices separated by elements that match a predicate
+function, starting from the end of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-RSplitMut.html">RSplitMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over the subslices of the vector which are separated by elements
+that match pred, starting from the end of the slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-RSplitN.html">RSplitN</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over subslices separated by elements that match a predicate
+function, limited to a given number of splits, starting from the end of the
+slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-RSplitNMut.html">RSplitNMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over subslices separated by elements that match a predicate
+function, limited to a given number of splits, starting from the end of the
+slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Slice.html">Slice</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A dynamically-sized const view into a contiguous sequence of objects of type
+<code>const T</code>.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-SliceIter.html">SliceIter</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a contiguous array of objects with const access to them.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-SliceIterMut.html">SliceIterMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over a contiguous array of objects with mutable access to them.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-SliceMut.html">SliceMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A dynamically-sized mutable view into a contiguous sequence of objects of
+type <code>T</code>.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Split.html">Split</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over subslices separated by elements that match a predicate
+function.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-SplitInclusive.html">SplitInclusive</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over subslices separated by elements that match a predicate
+function. Unlike <code>Split</code>, it contains the matched part as a terminator
+of the subslice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-SplitInclusiveMut.html">SplitInclusiveMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over subslices separated by elements that match a predicate
+function. Unlike <code>Split</code>, it contains the matched part as a terminator
+of the subslice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-SplitMut.html">SplitMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over subslices separated by elements that match a predicate
+function.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-SplitN.html">SplitN</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over subslices separated by elements that match a predicate
+function, limited to a given number of splits.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-SplitNMut.html">SplitNMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over mutable subslices separated by elements that match a
+predicate function, limited to a given number of splits.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Vec.html">Vec</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>A resizeable contiguous buffer of type <code>T</code>.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-VecIntoIter.html">VecIntoIter</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator that consumes a <code>Vec</code> and returns the items from it.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Windows.html">Windows</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over overlapping subslices of length <code>size</code>.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-WindowsMut.html">WindowsMut</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>An iterator over overlapping subslices of length <code>size</code>.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="section functions">
+      <div class="section-header">
+        Functions
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.array.html">array</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Used to construct an Array&lt;T, N&gt; with the parameters as its values.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.get.array.structured.bindings.html">get</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Support for using structured bindings with <code>Array</code>.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.vec.html">vec</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Used to construct a <code>Vec&lt;T&gt;</code> with the parameters as its values.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="section functions">
+      <div class="section-header">
+        Operators
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.array.html">operator&lt;=&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Compares two Arrays.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slice.html">operator&lt;=&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Compares an Array and a Slice.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slicemut.html">operator&lt;=&gt;</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Compares an Array and a SliceMut.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.slice.eq.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Slice&lt;T&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.array.eq.slice.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.array.eq.slicemut.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.slicemut.eq.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;SliceMut&lt;T&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.vec.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, Vec&lt;U&gt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.slice.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.slicemut.html">operator==</a></div>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="section concepts">
+      <div class="section-header">
+        Concepts
+      </div>
+      <ul class="section-items item-table">
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Concat.html">Concat</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Types that support being flattened and concatenated together into a
+collection.</p>
+          </div>
+        </li>
+        <li class="section-item">
+          <div class="item-name">
+            <div class="type-signature">
+              <a class="type-name" href="sus-collections-Join.html">Join</a>
+            </div>
+          </div>
+          <div class="description short">
+            <p>Types that support being flattened and concatenated together into a
+collection, with a separator between each item. This is similar to <code>Concat</code>
+but with a separator.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>

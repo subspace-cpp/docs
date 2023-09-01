@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::construct::Into - Subspace</title>
+  <meta name="description" content="A concept that declares FromType can be converted to ToType through the
+From concept or through an identity
+transformation."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.construct.html">construct</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">Into</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class FromType, class ToType&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          Into
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">::sus::construct::From&lt;ToType, FromType&gt; || std::same_as&lt;ToType, FromType&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>A concept that declares <code>FromType</code> can be converted to <code>ToType</code> through the
+<a href="sus-construct-From.html"><code>From</code></a> concept or through an identity
+transformation.</p>
+<p>When true, <code>ToType::from(FromType)</code> can be used to construct <code>ToType</code>,
+or <code>ToType</code> is the same as <code>FromType</code>.</p>
+<p>This is the inverse of the <a href="sus-construct-From.html"><code>From</code></a> concept, meant to
+be used on methods that want to receive any type and which will explicitly
+convert what they are given type.</p>
+<p>This concept is not implementable directly, as it's satisfied for <code>T</code> by
+implementing the <a href="sus-construct-From.html"><code>From&lt;T&gt;</code></a> concept on a different
+type. It is only possible to satisfy this concept for <code>ToType</code> that is not a
+reference, as it needs to be able to construct <code>ToType</code>.</p>
+<h1><a name="templates" href="#templates">Templates</a></h1>
+<p>To receive <a href="sus-construct-fn.into.html"><code>into()</code></a> correctly for a templated
+function argument:</p>
+<ul>
+<li>Avoid
+<a href="https://en.cppreference.com/w/cpp/concepts/same_as"><code>std::same_as&lt;T&gt;</code></a>, use
+<a href="https://en.cppreference.com/w/cpp/concepts/convertible_to"><code>std::convertible_to&lt;T&gt;</code></a>
+instead, as this will
+accept the marker type returned from <a href="sus-construct-fn.into.html">into</a>.</li>
+<li>If the argument is a fixed dependent type, like the following:<pre><code>template &lt;class T, class In = Foo&lt;T&gt;&gt;
+void f(In i) {}
+</code></pre>
+Insert an extra template parameter that uses
+<a href="https://en.cppreference.com/w/cpp/concepts/convertible_to"><code>std::convertible_to</code></a>
+and the template type, such as:<pre><code>template &lt;class T, class Exact = Foo&lt;T&gt;, std::convertible_to&lt;Exact&gt; In&gt;
+void f(In i) {}
+</code></pre>
+As this will allow receiving types converted to <code>Exact</code> by the caller
+using <a href="sus-construct-fn.into.html"><code>into</code></a>.</li>
+</ul>
+<h1><a name="arrays" href="#arrays">Arrays</a></h1>
+<p>Receiving an array is possible by implementing
+<a href="sus-construct-From.html"><code>From</code></a> with <code>from()</code> being a templated method
+templated on a <code>size_t</code> template parameter which represents the size of the
+incoming array. For example:</p>
+<pre><code>// sus::construct::Into&lt;Slice&lt;T&gt;, T[N]&gt; trait.
+template &lt;size_t N&gt;
+static constexpr Slice from(T (&amp;data)[N]) noexcept {
+  return Slice(data, N);
+}
+</code></pre>
+<p>Then <code>sus::into(an_array)</code> can be used to construct
+<a href="sus-collections-Slice.html"><code>Slice&lt;T&gt;</code></a>.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

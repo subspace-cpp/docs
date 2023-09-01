@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::iter::Extend - Subspace</title>
+  <meta name="description" content="Extend a collection with the contents of an iterator."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">Extend</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class Collection, class ItemType&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          Extend
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">requires(Collection c, __private::IntoIteratorArchetype&lt;ItemType&gt;&& iter) {</pre>
+              <pre class="requires-constaint-line">      { c.extend(::sus::move(iter)) } -&gt; std::same_as&lt;void&gt;;</pre>
+              <pre class="requires-constaint-line">    }</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Extend a collection with the contents of an iterator.</p>
+<p>Iterators produce a series of values, and collections can also be thought of
+as a series of values. The <code>Extend</code> concept bridges this gap, allowing you to
+extend a collection by including the contents of that iterator. When
+extending a collection with an already existing key, that entry is updated
+or, in the case of collections that permit multiple entries with equal keys,
+that entry is inserted.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

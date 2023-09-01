@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::error::DynErrorTyped - Subspace</title>
+  <meta name="description" content="The wrapper around an Error object that allows it
+to be type-erased as DynError."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record struct">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Struct
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.error.html">error</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">DynErrorTyped</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class E&gt;</div>
+        <span class="struct">
+          struct
+        </span>
+        <span class="type-name">
+          DynErrorTyped
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>The wrapper around an <a href="sus-error-Error.html"><code>Error</code></a> object that allows it
+to be type-erased as <a href="sus-error-DynError.html"><code>DynError</code></a>.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.DynErrorTyped" href="sus-error-DynErrorTyped.html#method.DynErrorTyped">DynErrorTyped</a>(E && error)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.display" href="sus-error-DynErrorTyped.html#method.display">display</a>() const -&gt; string</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Forwards to the <a href="sus-error-Error.html"><code>Error</code></a> implementation of <code>E</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.into_inner" href="sus-error-DynErrorTyped.html#method.into_inner">into_inner</a>() && -&gt; E</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Unwraps and returns the inner error type <code>E</code>, discarding the
+<code>DynErrorTyped</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.source" href="sus-error-DynErrorTyped.html#method.source">source</a>() const -&gt; <a class="type-name" title="class sus::Option&lt;const DynError &&gt;" href="sus-option-Option.html">Option&lt;const DynError &&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Forwards to the <a href="sus-error-Error.html"><code>Error</code></a> implementation of <code>E</code>.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

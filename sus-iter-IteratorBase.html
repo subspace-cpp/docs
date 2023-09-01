@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::iter::IteratorBase - Subspace</title>
+  <meta name="description" content="The base class for all Iterator types."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record class">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Class
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">IteratorBase</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class Iter, class ItemT&gt;</div>
+        <span class="class">
+          class
+        </span>
+        <span class="type-name">
+          IteratorBase
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>The base class for all Iterator types.</p>
+<p>The <code>sus::iter::Iterator</code> concept requires that a type subclasses from
+IteratorBase and is <code>final</code> in order to be considered an Iterator. No
+code should refer to <code>IteratorBase</code> except for defining the base class
+of an iterator, and it should be treated as an implementation detail only.</p>
+
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.all" href="sus-iter-IteratorBase.html#method.all">all</a>(FnMut&lt;_Bool (Item)&gt; auto f) -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Tests whether all elements of the iterator match a predicate.</p>
+<p>If the predicate returns <code>true</code> for all elements in the iterator, this
+functions returns <code>true</code>, otherwise <code>false</code>. The function is
+short-circuiting; it stops iterating on the first <code>false</code> returned
+from the predicate.</p>
+<p>Returns <code>true</code> if the iterator is empty.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.any" href="sus-iter-IteratorBase.html#method.any">any</a>(FnMut&lt;_Bool (Item)&gt; auto f) -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Tests whether any elements of the iterator match a predicate.</p>
+<p>If the predicate returns <code>true</code> for any elements in the iterator, this
+functions returns <code>true</code>, otherwise <code>false</code>. The function is
+short-circuiting; it stops iterating on the first <code>true</code> returned from
+the predicate.</p>
+<p>Returns <code>false</code> if the iterator is empty.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.begin" href="sus-iter-IteratorBase.html#method.begin">begin</a>() & -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Adaptor for use in ranged for loops.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.by_ref" href="sus-iter-IteratorBase.html#method.by_ref">by_ref</a>() & -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns an iterator that refers to this iterator, and for which operations
+on it will also be applied to this iterator.</p>
+<p>This is useful to allow applying iterator adapters while still retaining
+ownership of the original iterator.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.chain" href="sus-iter-IteratorBase.html#method.chain">chain</a>(Other && other) && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Takes two iterators and creates a new iterator over both in sequence.</p>
+<p><code>chain()</code> will return a new iterator which will first iterate over values
+from the first iterator and then over values from the second iterator.</p>
+<p>In other words, it links two iterators together, in a chain. 🔗</p>
+<p><code>sus::iter::Once</code> is commonly used to adapt a single value into a chain of
+other kinds of iteration.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.cloned" href="sus-iter-IteratorBase.html#method.cloned">cloned</a>() && -&gt; Iterator&lt;std::remove_cvref_t&lt;Item&gt; &gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator which clones all of its elements.</p>
+<p>This is useful when you have an iterator over <code>&amp;T</code>, but you need an
+iterator over <code>T</code>.</p>
+<p>There is no guarantee whatsoever about the clone method actually being
+called or optimized away. So code should not depend on either.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.cmp" href="sus-iter-IteratorBase.html#method.cmp">cmp</a>(Other && other) && -&gt; weak_ordering</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
+compares the elements of this <code>Iterator</code> with those of another.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.cmp_by" href="sus-iter-IteratorBase.html#method.cmp_by">cmp_by</a>(Other && other, FnMut&lt;std::weak_ordering (const std::remove_reference_t&lt;Item&gt; &, const std::remove_reference_t&lt;OtherItem&gt; &)&gt; auto cmp) && -&gt; weak_ordering</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
+compares the elements of this <code>Iterator</code> with those of another with
+respect to the specified comparison function.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class C&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.collect" href="sus-iter-IteratorBase.html#method.collect">collect</a>() && -&gt; C</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Transforms an iterator into a collection.</p>
+<p>collect() can turn anything iterable into a relevant collection. If this
+is used anything like in Rust, it would be one of the more powerful
+methods in the subspace library, used in a variety of contexts.</p>
+<p>The most basic pattern in which collect() is used is to turn one
+collection into another. You take a collection, call iter on it, do a
+bunch of transformations, and then collect() at the end.</p>
+<p>collect() can also create instances of types that are not typical
+collections. For example, a string can be built from chars, and an
+iterator of Result&lt;T, E&gt; items can be collected into Result&lt;Collection<T>,
+E&gt;. Or an iterator of Option<T> can be collected into
+Option&lt;Collection<T>&gt;.</p>
+<p>Because collect() is so general, and C++ lacks strong type inference,
+collect() doesn't know the type of collection that you want to produce, so
+you will always need to pass it a type argument, such as:</p>
+<pre><code class="language-cpp">sus::move(iter).collect&lt;MyCollection&lt;i32&gt;&gt;()
+</code></pre>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.collect_vec" href="sus-iter-IteratorBase.html#method.collect_vec">collect_vec</a>() && -&gt; Vec&lt;ItemT&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Transforms an iterator into a Vec.</p>
+<p>This function is a shorthand for <code>it.collect&lt;Vec&lt;Item&gt;&gt;()</code> in order to
+avoid the need for specifying a template argument.</p>
+<p>See <code>collect()</code> for more details.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.copied" href="sus-iter-IteratorBase.html#method.copied">copied</a>() && -&gt; Iterator&lt;std::remove_cvref_t&lt;Item&gt; &gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator which copies all of its elements.</p>
+<p>This is useful when you have an iterator over &amp;T, but you need an iterator
+over T.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.count" href="sus-iter-IteratorBase.html#method.count">count</a>() && -&gt; <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Consumes the iterator, and returns the number of elements that were in
+it.</p>
+<p>The function walks the iterator until it sees an Option holding #None.</p>
+<h1><a name="panics" href="#panics">Panics</a></h1>
+<p>If the iterator has more than <code>usize::MAX</code> elements in it the <code>usize</code> will
+catch overflow and panic. To avoid panic, you may use a fold over
+<code>OverflowInteger&lt;usize&gt;</code> that increments the count each iteration.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.cycle" href="sus-iter-IteratorBase.html#method.cycle">cycle</a>() && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Repeats an iterator endlessly.</p>
+<pre><code>asdaa
+</code></pre>
+<p>Instead of stopping at <code>None</code>, the iterator will instead start again, from
+the beginning. After iterating again, it will start at the beginning
+again. And again. And again. Forever. Note that in case the original
+iterator is empty, the resulting iterator will also be empty.</p>
+<p>The iterator must be <code>Clone</code> as it will be cloned in order to be
+repeatedly iterated.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.end" href="sus-iter-IteratorBase.html#method.end">end</a>() & -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Adaptor for use in ranged for loops.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.enumerate" href="sus-iter-IteratorBase.html#method.enumerate">enumerate</a>() && -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator which gives the current iteration count as well as the
+next value.</p>
+<p>The iterator returned yields pairs <code>(i, val)</code>, where <code>i</code> is the current
+index of iteration and <code>val</code> is the value returned by the iterator.</p>
+<p><code>enumerate()</code> keeps its count as a <code>usize</code>. If you want to count by a
+different sized integer, the <code>zip()</code> function provides similar
+functionality.</p>
+<h1><a name="overflow-behavior" href="#overflow-behavior">Overflow Behavior</a></h1>
+<p>The method does no guarding against overflows, so enumerating more than
+<code>usize::MAX</code> elements either produces the wrong result or panics depending
+on your build configuration. If debug assertions are enabled, a panic is
+guaranteed.</p>
+<h1><a name="panics-1" href="#panics-1">Panics</a></h1>
+<p>The returned iterator might panic if the to-be-returned index would
+overflow a <code>usize</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.eq" href="sus-iter-IteratorBase.html#method.eq">eq</a>(Other && other) && -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Determines if the elements of this <code>Iterator</code> are equal to those of
+another.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class eq_fn:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.eq_by" href="sus-iter-IteratorBase.html#method.eq_by">eq_by</a>(Other && other, FnMut&lt;_Bool (const std::remove_reference_t&lt;Item&gt; &, const std::remove_reference_t&lt;OtherItem&gt; &)&gt; auto eq_fn) && -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Determines if the elements of this <code>Iterator</code> are equal to those of
+another with respect to the specified equality function.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.filter" href="sus-iter-IteratorBase.html#method.filter">filter</a>(FnMut&lt;_Bool (const std::remove_reference_t&lt;Item&gt; &)&gt; auto pred) && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator which uses a closure to determine if an element should
+be yielded.</p>
+<p>Given an element the closure must return true or false. The returned
+iterator will yield only the elements for which the closure returns true.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &, ItemT &&&gt;, class InnerR = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.filter_map" href="sus-iter-IteratorBase.html#method.filter_map">filter_map</a>(MapFn f) && -&gt; Iterator&lt;InnerR&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.find" href="sus-iter-IteratorBase.html#method.find">find</a>(FnMut&lt;_Bool (const std::remove_reference_t&lt;Item&gt; &)&gt; auto pred) -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Searches for an element of an iterator that satisfies a predicate.</p>
+<p><code>find()</code> takes a closure that returns <code>true</code> or <code>false</code>. It applies this
+predicate to each element of the iterator, and if any of them return true,
+then <code>find()</code> returns <code>Some(element)</code>. If they all return <code>false</code>, it
+returns <code>None</code>.</p>
+<p><code>find()</code> is short-circuiting; in other words, it will stop processing as
+soon as the predicate returns <code>true</code>.</p>
+<p>If you need the index of the element, see <a href=""><code>position()</code></a>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class FindFn, int &... , class R = std::invoke_result_t&lt;FindFn &, ItemT &&&gt;, class InnerR = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.find_map" href="sus-iter-IteratorBase.html#method.find_map">find_map</a>(FindFn f) -&gt; Option&lt;InnerR&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Applies function to the elements of iterator and returns the first
+non-none result.</p>
+<p><code>sus::move(iter).find_map(f)</code> is equivalent to
+<code>sus::move(iter).filter_map(f).next()</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &, ItemT &&&gt;, class InnerR = typename IntoIteratorOutputType&lt;R&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.flat_map" href="sus-iter-IteratorBase.html#method.flat_map">flat_map</a>(F f) && -&gt; Iterator&lt;InnerR&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator that works like map, but flattens nested structure.</p>
+<p>The <code>map()</code> adapter is very useful, but only when the closure argument
+produces values. If it produces an iterator instead, there’s an extra
+layer of indirection. <code>flat_map()</code> will remove this extra layer on its
+own.</p>
+<p>You can think of <code>flat_map(f)</code> as the semantic equivalent of mapping, and
+then flattening as in <code>map(f).flatten()</code>.</p>
+<p>Another way of thinking about <code>flat_map()</code>: <code>map()</code>'s closure returns one
+item for each element, and <code>flat_map()</code>'s closure returns an iterator for
+each element.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.flatten" href="sus-iter-IteratorBase.html#method.flatten">flatten</a>() && -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator that flattens nested structure.</p>
+<p>This is useful when you have an iterator of iterators or an iterator of
+things that can be turned into iterators and you want to remove one level
+of indirection.</p>
+<p>In other words, this type maps <code>Iterator[Iterable[T]]</code> into <code>Iterator[T]</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class B, class F&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.fold" href="sus-iter-IteratorBase.html#method.fold">fold</a>(B init, F f) && -&gt; B</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Folds every element into an accumulator by applying an operation,
+returning the final result.</p>
+<p><code>fold()</code> takes two arguments: an initial value, and a closure with two
+arguments: an &quot;accumulator&quot;, and an element. The closure returns the value
+that the accumulator should have for the next iteration.</p>
+<p>The initial value is the value the accumulator will have on the first
+call.</p>
+<p>After applying this closure to every element of the iterator, <code>fold()</code>
+returns the accumulator.</p>
+<p>This operation is sometimes called &quot;reduce&quot; or &quot;inject&quot;.</p>
+<p>Folding is useful whenever you have a collection of something, and want to
+produce a single value from it.</p>
+<p>Note: <code>fold()</code>, and similar methods that traverse the entire iterator,
+might not terminate for infinite iterators, even on traits for which a
+result is determinable in finite time.</p>
+<p>Note: <code>reduce()</code> can be used to use the first element as the initial
+value, if the accumulator type and item type is the same.</p>
+<p>Note: <code>fold()</code> combines elements in a left-associative fashion. For
+associative operators like <code>+</code>, the order the elements are combined in is
+not important, but for non-associative operators like <code>-</code> the order will
+affect the final result. For a right-associative version of <code>fold()</code>, see
+<code>rfold()</code> if the <code>Iterator</code> also satisfies <code>DoubleEndedIterator</code>.</p>
+<h1><a name="folding-over-references" href="#folding-over-references">Folding over References</a></h1>
+<p>The initial value type for fold will decay to a value (non-reference) by
+default, due to the way C++ templates resolve types. In order to fold over
+reference types, pass the type of the initial value explicitly as in the
+following example, which will return the last reference in the
+<code>Iterator&lt;i32&amp;&gt;</code>.</p>
+<pre><code class="language-cpp">auto v = sus::Vec&lt;i32&gt;(1, 2, 3);
+i32 init;
+i32&amp; out = v.iter_mut().fold&lt;i32&amp;&gt;(
+    init, [](i32&amp;, i32&amp; v) -&gt; i32&amp; { return v; });
+::sus::check(&amp;out == &amp;v.last().unwrap());
+</code></pre>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.for_each" href="sus-iter-IteratorBase.html#method.for_each">for_each</a>(F f) && -&gt; void</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Calls a closure on each element of an iterator.</p>
+<p>This is equivalent to using a for loop on the iterator, although break and
+continue are not possible from a closure. It’s generally more idiomatic to
+use a for loop, but for_each may be more legible when processing items at
+the end of longer iterator chains. In some cases for_each may also be
+faster than a loop, because it avoids constructing a proxy type for the
+loop to consume.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.fuse" href="sus-iter-IteratorBase.html#method.fuse">fuse</a>() && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator which ends after the first None.</p>
+<p>After an iterator returns <code>None</code>, future calls may or may not yield
+<code>Some(T)</code> again. <code>fuse()</code> adapts an iterator, ensuring that after a <code>None</code>
+is given, it will always return None forever.</p>
+<p>This is useful for cases where the iterator may continue to be polled
+after it has returned None.</p>
+<p>TODO: Implement a FusedIterator concept though a tag of some sort, so that
+fuse() can be a no-op in that case?</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.ge" href="sus-iter-IteratorBase.html#method.ge">ge</a>(Other && other) && -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Determines if the elements of this Iterator are
+<a href="sus-ops-Ord.html#how-can-i-implement-ord?">lexicographically</a>
+greater than or equal to those of another.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class GenFn, int &... , class R = std::invoke_result_t&lt;GenFn &&, Iter &&&gt;, class GenR = typename __private::IsGenerator&lt;R&gt;::type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.generate" href="sus-iter-IteratorBase.html#method.generate">generate</a>(GenFn generator_fn) && -&gt; Iterator&lt;GenR&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator from a generator function that consumes the current
+iterator.</p>
+<p>Coroutines can not be constexpr, so this function is not constexpr to
+avoid deeper compiler errors.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.gt" href="sus-iter-IteratorBase.html#method.gt">gt</a>(Other && other) && -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Determines if the elements of this Iterator are
+<a href="sus-ops-Ord.html#how-can-i-implement-ord?">lexicographically</a>
+greater than those of another.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class fn:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.inspect" href="sus-iter-IteratorBase.html#method.inspect">inspect</a>(FnMut&lt;void (const std::remove_reference_t&lt;Item&gt; &)&gt; auto fn) && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Does something with each element of an iterator, passing the value on.</p>
+<p>When using iterators, you’ll often chain several of them together. While
+working on such code, you might want to check out what’s happening at
+various parts in the pipeline. To do that, insert a call to <code>inspect()</code>.</p>
+<p>It’s more common for <code>inspect()</code> to be used as a debugging tool than to
+exist in your final code, but applications may find it useful in certain
+situations when errors need to be logged before being discarded.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.into_iter" href="sus-iter-IteratorBase.html#method.into_iter">into_iter</a>() && -&gt; Iter &&</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>An Iterator also satisfies IntoIterator, which simply returns itself.</p>
+<p>sus::iter::IntoIterator trait implementation.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_sorted" href="sus-iter-IteratorBase.html#method.is_sorted">is_sorted</a>() -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Checks if the elements of this iterator are sorted.</p>
+<p>That is, it returns true if for each consecutive element <code>a</code> and <code>b</code>,
+<code>a &lt;= b</code> is true. If the iterator yields exactly zero or one element, true
+is returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.is_sorted_by" href="sus-iter-IteratorBase.html#method.is_sorted_by">is_sorted_by</a>(FnMut&lt;std::weak_ordering (const std::remove_reference_t&lt;Item&gt; &, const std::remove_reference_t&lt;Item&gt; &)&gt; auto compare) -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Checks if the elements of this iterator are sorted using the given
+comparator function.</p>
+<p>Returns true if for each consecutive element <code>a</code> and <code>b</code>, <code>a &lt;= b</code> is
+true. If the iterator yields exactly zero or one element, true is
+returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.last" href="sus-iter-IteratorBase.html#method.last">last</a>() && -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Consumes the iterator, returning the last element.</p>
+<p>This method will evaluate the iterator until it returns <code>None</code>. While
+doing so, it keeps track of the current element. After <code>None</code> is returned,
+<code>last()</code> will then return the last element it saw.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.le" href="sus-iter-IteratorBase.html#method.le">le</a>(Other && other) && -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Determines if the elements of this Iterator are
+<a href="sus-ops-Ord.html#how-can-i-implement-ord?">lexicographically</a>
+less than or equal to those of another.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.lt" href="sus-iter-IteratorBase.html#method.lt">lt</a>(Other && other) && -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Determines if the elements of this Iterator are
+<a href="sus-ops-Ord.html#how-can-i-implement-ord?">lexicographically</a>
+less than those of another.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map" href="sus-iter-IteratorBase.html#method.map">map</a>(MapFn fn) && -&gt; Iterator&lt;R&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator which uses a closure to map each element to another
+type.</p>
+<p>The returned iterator's type is whatever is returned by the closure.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &, ItemT &&&gt;, class InnerR = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_while" href="sus-iter-IteratorBase.html#method.map_while">map_while</a>(MapFn fn) && -&gt; Iterator&lt;InnerR&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator that both yields elements based on a predicate and
+maps.</p>
+<p><code>map_while()</code> takes a closure as an argument that returns Options. It will
+call this closure on each element of the iterator, and yield elements
+while it returns an Option with a value in it.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.max" href="sus-iter-IteratorBase.html#method.max">max</a>() && -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the maximum element of an iterator.</p>
+<p>If several elements are equally maximum, the last element is returned. If
+the iterator is empty, None is returned.</p>
+<p>Note that <code>f32</code>/<code>f64</code> doesn’t implement <code>StrongOrd</code> due to NaN being
+incomparable. You can work around this by using <a href="sus::iter::IteratorBase::reduce"><code>Iterator::reduce</code></a>:</p>
+<pre><code class="language-cpp">sus::check(
+    sus::Array&lt;f32, 3&gt;(2.4, f32::NAN, 1.3)
+        .into_iter()
+        .reduce(&amp;f32::max)
+        .unwrap() ==
+    2.4
+);
+</code></pre>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.max_by" href="sus-iter-IteratorBase.html#method.max_by">max_by</a>(FnMut&lt;std::weak_ordering (const std::remove_reference_t&lt;Item&gt; &, const std::remove_reference_t&lt;Item&gt; &)&gt; auto compare) && -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the element that gives the maximum value with respect to the
+specified comparison function.</p>
+<p>If several elements are equally maximum, the last element is returned. If
+the iterator is empty, None is returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;ItemT&gt; &&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.max_by_key" href="sus-iter-IteratorBase.html#method.max_by_key">max_by_key</a>(KeyFn fn) && -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the element that gives the maximum value from the specified
+function.</p>
+<p>If several elements are equally maximum, the last element is returned. If
+the iterator is empty, <code>None</code> is returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.min" href="sus-iter-IteratorBase.html#method.min">min</a>() && -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the minimum element of an iterator.</p>
+<p>If several elements are equally minimum, the first element is returned. If
+the iterator is empty, None is returned.</p>
+<p>Note that <code>f32</code>/<code>f64</code> doesn’t implement <code>StrongOrd</code> due to NaN being
+incomparable. You can work around this by using <a href="sus::iter::IteratorBase::reduce"><code>Iterator::reduce</code></a>:</p>
+<pre><code class="language-cpp">sus::check(
+    sus::Array&lt;f32, 3&gt;(2.4, f32::NAN, 1.3)
+        .into_iter()
+        .reduce(&amp;f32::min)
+        .unwrap() ==
+    2.4
+);
+</code></pre>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.min_by" href="sus-iter-IteratorBase.html#method.min_by">min_by</a>(FnMut&lt;std::weak_ordering (const std::remove_reference_t&lt;Item&gt; &, const std::remove_reference_t&lt;Item&gt; &)&gt; auto compare) && -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the element that gives the minimum value with respect to the
+specified comparison function.</p>
+<p>If several elements are equally minimum, the first element is returned. If
+the iterator is empty, None is returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;ItemT&gt; &&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.min_by_key" href="sus-iter-IteratorBase.html#method.min_by_key">min_by_key</a>(KeyFn fn) && -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the element that gives the minimum value from the specified
+function.</p>
+<p>If several elements are equally minimum, the first element is returned. If
+the iterator is empty, <code>None</code> is returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.ne" href="sus-iter-IteratorBase.html#method.ne">ne</a>(Other && other) && -&gt; bool</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Determines if the elements of this <code>Iterator</code> are not equal to those of
+another.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.nth" href="sus-iter-IteratorBase.html#method.nth">nth</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n) -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the nth element of the iterator.</p>
+<p>Like most indexing operations, the count starts from zero, so <code>nth(0u)</code>
+returns the first value, <code>nth(1u)</code> the second, and so on.</p>
+<p>Note that all preceding elements, as well as the returned element, will be
+consumed from the iterator. That means that the preceding elements will be
+discarded, and also that calling <code>nth(0u)</code> multiple times on the same
+iterator will return different elements.</p>
+<p><code>nth()</code> will return <code>None</code> if <code>n</code> is greater than or equal to the length
+of the iterator. It will stop at the first <code>None</code> encountered in the
+iterator and return <code>None</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.nth_back" href="sus-iter-IteratorBase.html#method.nth_back">nth_back</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n) -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the nth element from the end of the iterator.</p>
+<p>This is essentially the reversed version of Iterator::nth(). Although like
+most indexing operations, the count starts from zero, so nth_back(0)
+returns the first value from the end, nth_back(1) the second, and so on.</p>
+<p>Note that all elements between the end and the returned element will be
+consumed, including the returned element. This also means that calling
+nth_back(0) multiple times on the same iterator will return different
+elements.</p>
+<p>nth_back() will return None if n is greater than or equal to the length of
+the iterator.  It will stop at the first <code>None</code> encountered in the
+iterator and return <code>None</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.partial_cmp" href="sus-iter-IteratorBase.html#method.partial_cmp">partial_cmp</a>(Other && other) && -&gt; partial_ordering</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
+compares the elements of this <code>Iterator</code> with those of another.</p>
+<p>The comparison works like short-circuit evaluation, returning a result
+without comparing the remaining elements. As soon as an order can be
+determined, the evaluation stops and a result is returned.</p>
+<p>For floating-point numbers, NaN does not have a total order and will
+result in <code>std::partial_ordering::unordered</code> when compared.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.partial_cmp_by" href="sus-iter-IteratorBase.html#method.partial_cmp_by">partial_cmp_by</a>(Other && other, FnMut&lt;std::partial_ordering (const std::remove_reference_t&lt;Item&gt; &, const std::remove_reference_t&lt;OtherItem&gt; &)&gt; auto cmp) && -&gt; partial_ordering</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
+compares the elements of this <code>Iterator</code> with those of another with
+respect to the specified comparison function.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class B, class pred:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.partition" href="sus-iter-IteratorBase.html#method.partition">partition</a>(FnMut&lt;_Bool (const std::remove_reference_t&lt;Item&gt; &)&gt; auto pred) && -&gt; Tuple&lt;B, B&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Consumes an iterator, creating two disjoint collections from it.</p>
+<p>The predicate passed to <code>partition()</code> can return <code>true</code> or <code>false</code>.
+<code>partition()</code> returns a pair, all of the elements for which the predicate
+returned <code>true</code>, and all of the elements for which it returned <code>false</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.peekable" href="sus-iter-IteratorBase.html#method.peekable">peekable</a>() && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator which can use the <code>peek()</code> and <code>peek_mut()</code> methods to
+look at the next element of the iterator without consuming it. See their
+documentation for more information.</p>
+<p>A peekable iterator also supports conditionally pulling the next item out
+of the iterator, which is built on top of <code>peek()</code>.</p>
+<p>Note that the underlying iterator is still advanced when <code>peek()</code> or
+<code>peek_mut()</code> are called for the first time: In order to retrieve the next
+element, <code>next()</code> is called on the underlying iterator, hence any side
+effects (i.e. anything other than fetching the next value) of the <code>next()</code>
+method will occur.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.position" href="sus-iter-IteratorBase.html#method.position">position</a>(FnMut&lt;_Bool (Item &&)&gt; auto pred) -&gt; <a class="type-name" title="class Option&lt;usize&gt;" href="sus-option-Option.html">Option&lt;usize&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Searches for an element in an iterator, returning its index.</p>
+<p><code>position()</code> takes a closure that returns <code>true</code> or <code>false</code>. It applies
+this closure to each element of the iterator, and if one of them
+returns <code>true</code>, then <code>position()</code> returns <code>Some(index)</code>. If all of
+them return <code>false</code>, it returns <code>None</code>.</p>
+<p><code>position()</code> is short-circuiting; in other words, it will stop
+processing as soon as it finds a <code>true</code>.</p>
+<p>If position is called multiple times on the same iterator, the second
+search starts where the first left off, but always considers the first
+element seen to be at position 0.</p>
+<h1><a name="panics-2" href="#panics-2">Panics</a></h1>
+<p>The method does no guarding against overflows, so if there are more
+than [<code>usize::MAX</code>] non-matching elements, it will panic.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class P = ItemT&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.product" href="sus-iter-IteratorBase.html#method.product">product</a>() && -&gt; P</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Iterates over the entire iterator, multiplying all the elements.</p>
+<p>An empty iterator returns the &quot;one&quot; value of the type.</p>
+<p><code>product()</code> can be used to multiply any type implementing <code>Product</code>,
+including <code>Option</code> and <code>Result</code>.</p>
+<h1><a name="panics-3" href="#panics-3">Panics</a></h1>
+<p>/
+When calling <code>product()</code> and a primitive integer type is being returned,
+method will panic if the computation overflows.</p>
+<p>Using <code>product&lt;OverflowInteger&lt;T&gt;&gt;()</code> will allow the caller to handle
+overflow without a panic.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.range" href="sus-iter-IteratorBase.html#method.range">range</a>() && -&gt; IteratorRange&lt;Iter&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Converts the iterator into a <code>std::ranges::range</code> for use with the std
+ranges library.</p>
+<p>This provides stdlib compatibility for iterators in libraries that
+expect stdlib types.</p>
+<p>The <code>sus/iter/compat_ranges.h</code> header must be included separately
+to use this method, to avoid pulling in large stdlib headers by
+default.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &, ItemT &&, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.reduce" href="sus-iter-IteratorBase.html#method.reduce">reduce</a>(F f) && -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Reduces the elements to a single one, by repeatedly applying a reducing
+operation.</p>
+<p>If the iterator is empty, returns <code>None</code>; otherwise, returns the
+result of the reduction.</p>
+<p>The reducing function is a closure with two arguments: an 'accumulator',
+and an element. For iterators with at least one element, this is the same
+as <code>fold()</code> with the first element of the iterator as the initial
+accumulator value, folding every subsequent element into it.</p>
+<h1><a name="reducing-references" href="#reducing-references">Reducing References</a></h1>
+<p>If the iterator is over references, the <code>reduce()</code> function will be
+limited to returning a reference; in most cases to one of the members in
+the iterator.</p>
+<p>To reduce and produce a new value, first apply <code>.copied()</code> or <code>.cloned()</code>
+and then <code>reduce()</code> that, such as <code>it.copied().reduce(...)</code> which will
+ensure the <code>reduce()</code> function is able to work with values instead of
+references.</p>
+<p>This example uses <code>copied()</code> to copy each <code>i32</code> and sum them.</p>
+<pre><code class="language-cpp">auto a = sus::Array&lt;i32, 3&gt;(2, 3, 4);
+auto out = a.iter().copied().reduce(
+    [](i32 acc, i32 v) { return acc + v; });
+sus::check(out.as_value() == 2 + 3 + 4);
+</code></pre>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rev" href="sus-iter-IteratorBase.html#method.rev">rev</a>() && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Reverses an iterator's direction.</p>
+<p>Usually, iterators iterate from front to back. After using <code>rev()</code>, an
+iterator will instead iterate from back to front.</p>
+<p>This is only possible if the iterator has an end, so <code>rev()</code> only works on
+<code>DoubleEndedIterator</code>s.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.rfind" href="sus-iter-IteratorBase.html#method.rfind">rfind</a>(FnMut&lt;_Bool (const std::remove_reference_t&lt;Item&gt; &)&gt; auto pred) -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Searches for an element of an iterator from the back that satisfies a
+predicate.</p>
+<p><code>rfind()</code> takes a closure that returns <code>true</code> or <code>false</code>. It applies this
+closure to each element of the iterator, starting at the end, and if any
+of them return <code>true</code>, then <code>rfind()</code> returns <code>Some(element)</code>. If they all
+return <code>false</code>, it returns <code>None</code>.</p>
+<p><code>rfind()</code> is short-circuiting; in other words, it will stop processing as
+soon as the closure returns <code>true</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class B, class F&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.rfold" href="sus-iter-IteratorBase.html#method.rfold">rfold</a>(B init, F f) && -&gt; B</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>An iterator method that reduces the iterator’s elements to a single, final
+value, starting from the back.</p>
+<p>This is the reverse version of
+<a href="sus-iter-IteratorBase.html#method.fold"><code>Iterator::fold()</code></a>: it takes
+elements starting from the back of the iterator.</p>
+<p><code>rfold()</code> takes two arguments: an initial value, and a closure with two
+arguments: an &quot;accumulator&quot;, and an element. The closure returns the value
+that the accumulator should have for the next iteration.</p>
+<p>The initial value is the value the accumulator will have on the first
+call.</p>
+<p>After applying this closure to every element of the iterator, <code>rfold()</code>
+returns the accumulator.</p>
+<p>This operation is sometimes called &quot;reduce&quot; or &quot;inject&quot;.</p>
+<p>Folding is useful whenever you have a collection of something, and want to
+produce a single value from it.</p>
+<p>Note: <code>rfold()</code> combines elements in a right-associative fashion. For
+associative operators like <code>+</code>, the order the elements are combined in is
+not important, but for non-associative operators like <code>-</code> the order will
+affect the final result. For a left-associative version of <code>rfold()</code>, see
+<a href="sus-iter-IteratorBase.html#method.fold"><code>Iterator::fold()</code></a>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.rposition" href="sus-iter-IteratorBase.html#method.rposition">rposition</a>(FnMut&lt;_Bool (Item &&)&gt; auto pred) -&gt; <a class="type-name" title="class Option&lt;usize&gt;" href="sus-option-Option.html">Option&lt;usize&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Searches for an element in an iterator from the right, returning its
+index.</p>
+<p><code>rposition()</code> takes a closure that returns <code>true</code> or <code>false</code>. It applies
+this closure to each element of the iterator, starting from the end,
+and if one of them returns <code>true</code>, then <code>rposition()</code> returns
+<code>Some(index)</code>. If all of them return <code>false</code>, it returns <code>None</code>.</p>
+<p><code>rposition()</code> is short-circuiting; in other words, it will stop
+processing as soon as it finds a <code>true</code>.</p>
+<p>Because this requires the iterator to satisfy ExactSizeIterator, which
+means its length can be represented in a <code>usize</code>, this function can not
+overflow and will not panic.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class State, class F, int &... , class R = std::invoke_result_t&lt;F &, State &, ItemT &&&gt;, class InnerR = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.scan" href="sus-iter-IteratorBase.html#method.scan">scan</a>(State initial_state, F f) && -&gt; Iterator&lt;InnerR&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>An iterator adapter which, like <code>fold()</code>, holds internal state, but unlike
+<code>fold()</code>, produces a new iterator.</p>
+<p>To write a function with internal state that receives the current iterator
+as input and yields items in arbitrary ways, see <code>generate()</code>. <code>scan()</code> is
+a less general tool where the given function is executed for each item in
+the iterator in order. However <code>scan()</code> is constexpr while generator
+coroutiunes can not be.</p>
+<p><code>scan()</code> takes two arguments: an initial value which seeds the internal
+state, and a closure with two arguments, the first being a mutable
+reference to the internal state and the second an iterator element. The
+closure can mutate the internal state to share state between iterations.</p>
+<p>On iteration, the closure will be applied to each element of the iterator
+and the return value from the closure, an <code>Option</code>, is returned by the
+next method. Thus the closure can return <code>Some(value)</code> to yield value, or
+<code>None</code> to end the iteration.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.skip" href="sus-iter-IteratorBase.html#method.skip">skip</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n) && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator that skips the first <code>n</code> elements.</p>
+<p><code>skip(n)</code> skips elements until <code>n</code> elements are skipped or the end of the
+iterator is reached (whichever happens first). After that, all the
+remaining elements are yielded. In particular, if the original iterator is
+too short, then the returned iterator is empty.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.skip_while" href="sus-iter-IteratorBase.html#method.skip_while">skip_while</a>(FnMut&lt;_Bool (const std::remove_reference_t&lt;Item&gt; &)&gt; auto pred) && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator that skips elements based on a predicate.</p>
+<p>skip_while() takes a closure as an argument. It will call this closure on
+each element of the iterator, and ignore elements until it returns false.</p>
+<p>After false is returned, the closure is not called again, and the
+remaining elements are all yielded.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.step_by" href="sus-iter-IteratorBase.html#method.step_by">step_by</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> step) && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator starting at the same point, but stepping by the given
+amount at each iteration.</p>
+<p>The first element of the iterator will always be returned, regardless of
+the step given. After that, skipped elements will be lazily walked
+over as needed.</p>
+<p><code>step_by()</code> behaves like the sequence <code>next()</code>, <code>nth(step-1)</code>,
+<code>self.nth(step-1)</code>, ...</p>
+<h1><a name="panics-4" href="#panics-4">Panics</a></h1>
+<p>The <code>step</code> must be greater than 0, or the function will panic. A step size
+of 1 returns every element.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.strong_cmp" href="sus-iter-IteratorBase.html#method.strong_cmp">strong_cmp</a>(Other && other) && -&gt; strong_ordering</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
+compares the elements of this <code>Iterator</code> with those of another.</p>
+<p>Strong ordering requires each item being compared that compares equal to
+share the same identity (be replaceable). Typically <code>Ord</code> is
+sufficient, which is required for <code>cmp()</code> and <code>cmp_by()</code>, where items that
+compare equivalent may still have different internal state.</p>
+<p>The comparison works like short-circuit evaluation, returning a result
+without comparing the remaining elements. As soon as an order can be
+determined, the evaluation stops and a result is returned.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.strong_cmp_by" href="sus-iter-IteratorBase.html#method.strong_cmp_by">strong_cmp_by</a>(Other && other, FnMut&lt;std::strong_ordering (const std::remove_reference_t&lt;Item&gt; &, const std::remove_reference_t&lt;OtherItem&gt; &)&gt; auto cmp) && -&gt; strong_ordering</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
+compares the elements of this <code>Iterator</code> with those of another with
+respect to the specified comparison function.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class P = ItemT&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.sum" href="sus-iter-IteratorBase.html#method.sum">sum</a>() && -&gt; P</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Sums the elements of an iterator.</p>
+<p>Takes each element, adds them together, and returns the result.</p>
+<p>An empty iterator returns the zero value of the type.</p>
+<p><code>sum()</code> can be used to sum any type implementing <code>Sum</code>, including <code>Option</code>
+and <code>Result</code>.</p>
+<h1><a name="panics-5" href="#panics-5">Panics</a></h1>
+<p>/
+When calling <code>sum()</code> and a primitive integer type is being returned,
+method will panic if the computation overflows.</p>
+<p>Using <code>sum&lt;OverflowInteger&lt;T&gt;&gt;()</code> will allow the caller to handle overflow
+without a panic.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.take" href="sus-iter-IteratorBase.html#method.take">take</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n) && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator that yields the first <code>n</code> elements, or fewer if the
+underlying iterator ends sooner.</p>
+<p><code>take(n)</code> yields elements until <code>n</code> elements are yielded or the end of the
+iterator is reached (whichever happens first). The returned iterator is a
+prefix of length <code>n</code> if the original iterator contains at least <code>n</code>
+elements, otherwise it contains all of the (fewer than <code>n</code>) elements of
+the original iterator.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.take_while" href="sus-iter-IteratorBase.html#method.take_while">take_while</a>(FnMut&lt;_Bool (const std::remove_reference_t&lt;Item&gt; &)&gt; auto pred) && -&gt; Iterator&lt;Item&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates an iterator that yields elements based on a predicate.</p>
+<p><code>take_while()</code> takes a closure as an argument. It will call this closure
+on each element of the iterator, and yield elements while it returns
+<code>true</code>.</p>
+<p>After false is returned, the closure is not called again, and the
+remaining elements will not be yielded.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class C&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.try_collect" href="sus-iter-IteratorBase.html#method.try_collect">try_collect</a>() -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Fallibly transforms an iterator into a collection, short circuiting if a
+failure is encountered.</p>
+<p><code>try_collect()</code> is a variation of <code>collect()</code> that allows fallible
+conversions during collection. Its main use case is simplifying
+conversions from iterators yielding <code>Option&lt;T&gt;</code> into
+<code>Option&lt;Collection&lt;T&gt;&gt;</code>, or similarly for other Try types (e.g. <code>Result</code>
+or <code>std::optional</code>).</p>
+<p>Importantly, <code>try_collect()</code> doesn’t require that the outer <code>Try</code> type
+also implements FromIterator; only the <code>Try</code> type's <code>Output</code> type must
+implement it. Concretely, this means that collecting into
+<code>TryThing&lt;Vec&lt;i32&gt;, _&gt;</code> can be valid because <code>Vec&lt;i32&gt;</code> implements
+FromIterator, even if <code>TryThing</code> doesn’t.</p>
+<p>Also, if a failure is encountered during <code>try_collect()</code>, the iterator is
+still valid and may continue to be used, in which case it will continue
+iterating starting after the element that triggered the failure. See the
+last example below for an example of how this works.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>Successfully collecting an iterator of <code>Option&lt;i32&gt;</code> into
+<code>Option&lt;Vec&lt;i32&gt;&gt;</code>:</p>
+<pre><code>auto u = Vec&lt;Option&lt;i32&gt;&gt;(some(1), some(2), some(3));
+auto v = sus::move(u).into_iter().try_collect&lt;Vec&lt;i32&gt;&gt;();
+sus::check(v == some(Vec&lt;i32&gt;(1, 2, 3 )));
+</code></pre>
+<p>Failing to collect in the same way:</p>
+<pre><code>auto u = Vec&lt;Option&lt;i32&gt;&gt;(some(1), some(2), none(), some(3));
+auto v = sus::move(u).into_iter().try_collect&lt;Vec&lt;i32&gt;&gt;();
+sus::check(v == none());
+</code></pre>
+<p>A similar example, but with <a href="sus-result-Result.html"><code>Result</code></a>:</p>
+<pre><code>enum Error { ERROR };
+auto u = Vec&lt;Result&lt;i32, Error&gt;&gt;(ok(1), ok(2), ok(3));
+auto v = sus::move(u).into_iter().try_collect&lt;Vec&lt;i32&gt;&gt;();
+sus::check(v == ok(Vec&lt;i32&gt;(1, 2, 3)));
+auto w = Vec&lt;Result&lt;i32, Error&gt;&gt;(ok(1), ok(2), err(ERROR), ok(3));
+auto x = sus::move(w).into_iter().try_collect&lt;Vec&lt;i32&gt;&gt;();
+sus::check(x == err(ERROR));
+</code></pre>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class B, class F, int &... , class R = std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.try_fold" href="sus-iter-IteratorBase.html#method.try_fold">try_fold</a>(B init, F f) -&gt; R</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>This function acts like <code>fold()</code> but the closure returns a type that
+satisfies <code>sus::ops::Try</code> and which converts to the accumulator type on
+success through the Try concept. If the closure ever returns failure, the
+fold operation immediately stops and returns the failure
+(short-circuiting).</p>
+<p>See <code>fold()</code> for more on how to use this function.</p>
+<p>Unlike <code>fold()</code> this function may be used on an iterator without fully
+consuming it, since it can stop iterating early.</p>
+<p>Also unlike <code>fold()</code> the <code>sus::ops::Try</code> concept limits the accumulator
+value to not being a reference.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.try_for_each" href="sus-iter-IteratorBase.html#method.try_for_each">try_for_each</a>(F f) -&gt; R</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>An iterator method that applies a fallible function to each item in the
+iterator, stopping at the first error and returning that error.</p>
+<p>This can also be thought of as the fallible form of <code>for_each()</code> or as the
+stateless version of <code>try_fold()</code>.</p>
+<p>The closure must return a type that satisfies <code>sus::ops::Try</code>Default. For
+each success value returned, the iteration will continue. When a failure
+is returned from the closure, iteration will stop and the failure will be
+returned from <code>for_each()</code>. On success, the default success value of the
+<code>TryDefault</code> is returned.</p>
+<p>Unlike <code>for_each()</code> this function may be used on an iterator without fully
+consuming it, since it can stop iterating early.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class B, class F, int &... , class R = std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.try_rfold" href="sus-iter-IteratorBase.html#method.try_rfold">try_rfold</a>(B init, F f) -&gt; R</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>This is the reverse version of
+<a href="sus-iter-IteratorBase.html#method.try_fold"><code>Iterator::try_fold()</code></a>: it
+takes elements starting from the back of the iterator.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class CollectionA, class CollectionB, int &... , class ItemA = typename ::sus::option::__private::IsTupleOfSizeTwo&lt;ItemT&gt;::first_type, class ItemB = typename ::sus::option::__private::IsTupleOfSizeTwo&lt;ItemT&gt;::second_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.unzip" href="sus-iter-IteratorBase.html#method.unzip">unzip</a>() && -&gt; Tuple&lt;CollectionA, CollectionB&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Converts an iterator of pairs into a pair of collections.</p>
+<p><code>unzip()</code> consumes an entire iterator of pairs, producing two collections:
+one from the left elements of the pairs, and one from the right elements.</p>
+<p>This function is, in some sense, the opposite of <code>zip()</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.zip" href="sus-iter-IteratorBase.html#method.zip">zip</a>(Other && other) && -&gt; Iterator&lt;sus::Tuple&lt;ItemT, OtherItem&gt; &gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>&quot;Zips up&quot; two iterators into a single iterator of pairs.</p>
+<p><code>zip()</code> returns a new iterator that will iterate over two other iterators,
+returning a tuple where the first element comes from the first iterator,
+and the second element comes from the second iterator.</p>
+<p>In other words, it zips two iterators together, into a single one.</p>
+<p>If either iterator returns <code>None</code>, <code>next()</code> from the zipped iterator will
+return <code>None</code>. If the zipped iterator has returned <code>None</code>, further calls
+to <code>next()</code> will try advance both iterators, and if either returns <code>None</code>
+the zipped iterator will continue to return <code>None</code>. The zipped iterator is
+not fused if both iterators are not fused, and both resume returning
+values.</p>
+<p>To &quot;undo&quot; the result of zipping up two iterators, see unzip.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

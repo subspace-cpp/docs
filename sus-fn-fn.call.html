@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::fn::call - Subspace</title>
+  <meta name="description" content="Invokes the Fn, passing any given arguments along, and returning the
+result."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.fn.html">fn</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">call</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class F, class... Args&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">call</a>(F && f, Args &&... args) -&gt; decltype(auto)</div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Invokes the <code>Fn</code>, passing any given arguments along, and returning the
+result.</p>
+<p>This function is like
+<a href="https://en.cppreference.com/w/cpp/utility/functional/invoke"><code>std::invoke()</code></a>
+but it provides the following additional guiderails:</p>
+<ul>
+<li>Verifies that the thing being invoked is called as a const lvalue so
+that the correct overload will be invoked.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+</body>

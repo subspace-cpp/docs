@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::fn::FnBox - Subspace</title>
+  <meta name="description" content="A closure that erases the type of the internal callable object (lambda). A
+FnBox may be called a multiple times, and will not mutate its storage."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record class">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Class
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.fn.html">fn</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">FnBox</a>
+      </div>
+      <div class="type-signature">
+        <span class="class">
+          class
+        </span>
+        <span class="type-name">
+          FnBox
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>A closure that erases the type of the internal callable object (lambda). A
+FnBox may be called a multiple times, and will not mutate its storage.</p>
+<p>FnBox can be used as a FnMutBox, which can be used as a FnOnceBox.</p>
+<p>Lambdas without captures can be converted into a FnOnceBox, FnMutBox, or
+FnBox directly. If the lambda has captured, it must be given to one of:</p>
+<ul>
+<li><p><code>sus_bind(sus_store(..captures..), lambda)</code> to bind a const lambda which
+captures variables from local state. Variables to be captured in the
+lambda must also be named in sus_store(). <code>sus_bind()</code> only allows those
+named variables to be captured, and ensures they are stored by value
+instead of by reference.</p>
+</li>
+<li><p><code>sus_bind0(lambda)</code> to bind a const lambda which has bound variables
+that don't capture state from outside the lambda, such as <code>[i = 2]() { return i; }</code>.</p>
+</li>
+<li><p><code>sus_bind_mut(sus_store(...captures...), lambda)</code> to bind a mutable
+lambda which captures variables from local state.</p>
+</li>
+<li><p><code>sus_bind0_mut(lambda)</code> to bind a mutable lambda which has bound
+variables that don't capture state from outside the lambda, such as <code>[i = 2]() { return ++i; }</code>.</p>
+</li>
+</ul>
+<p>Within sus_store(), a variable name can be wrapped with a helper to
+capture in different ways:</p>
+<ul>
+<li><p><code>sus_take(x)</code> will move <code>x</code> into the closure instead of copying it.</p>
+</li>
+<li><p><code>sus_unsafe_pointer(x)</code> will allow capturing a pointer. Otherwise it be
+disallowed, and it is strongly discouraged as it requires careful present
+and future understanding of the pointee's lifetime.</p>
+</li>
+</ul>
+<h1><a name="example" href="#example">Example</a></h1>
+<p>Moves <code>a</code> into the closure's storage, and copies b. The lambda then refers
+to the closure's stored values by reference.</p>
+<pre><code>int a = 1;
+int b = 2;
+FnBox&lt;int()&gt; f = sus_bind(
+  sus_store(sus_take(a), b), [&amp;a, &amp;b]() { return a + b; }
+);
+</code></pre>
+<h1><a name="why-can-a-%22const%22-fnbox-convert-to-a-mutable-fnmutbox-or-fnoncebox?" href="#why-can-a-%22const%22-fnbox-convert-to-a-mutable-fnmutbox-or-fnoncebox?">Why can a &quot;const&quot; FnBox convert to a mutable FnMutBox or FnOnceBox?</a></h1>
+<p>A FnMutBox or FnOnceBox is <em>allowed</em> to mutate its storage, but a &quot;const&quot;
+FnBox closure would just choose not to do so.</p>
+<p>However, a <code>const FnBox</code> requires that the storage is not mutated, so it
+is not useful if converted to a <code>const FnMutBox</code> or <code>const FnOnceBox</code>
+which are only callable as mutable objects.</p>
+<h1><a name="null-pointers" href="#null-pointers">Null pointers</a></h1>
+<p>A null function pointer is not allowed, constructing a FnBox from a null
+pointer will panic.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnBox.ctor.fnpointer" href="sus-fn-FnBox.html#method.FnBox.ctor.fnpointer">FnBox</a>(F ptr)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construction from a function pointer or captureless lambda.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnBox.ctor.methodpointer" href="sus-fn-FnBox.html#method.FnBox.ctor.methodpointer">FnBox</a>(F ptr)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construction from a method or data member pointer.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnBox.ctor.fnbox" href="sus-fn-FnBox.html#method.FnBox.ctor.fnbox">FnBox</a>(FnBox&lt;U, UArgs...&gt; && box)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construction from a compatible FnBox.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnBox.ctor.bind" href="sus-fn-FnBox.html#method.FnBox.ctor.bind">FnBox</a>(SusBind&lt;F&gt; && holder)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construction from the output of <code>sus_bind()</code>.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.FnBox" href="sus-fn-FnBox.html#method.FnBox">FnBox</a>(<a class="type-name" title="FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="sus-fn-FnBox.html">FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a>)</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.FnBox" href="sus-fn-FnBox.html#method.FnBox">FnBox</a>(<a class="type-name" title="const FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnBox.html">const FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.fnpointer" href="sus-fn-FnBox.html#method.from.from.fnpointer">from</a>(F fn) -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><code>sus::construct::From</code> trait implementation for function pointers or
+lambdas without captures.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.method" href="sus-fn-FnBox.html#method.from.from.method">from</a>(F fn) -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><code>sus::construct::From</code> trait implementation for method or data member
+pointers.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.fnbox" href="sus-fn-FnBox.html#method.from.from.fnbox">from</a>(FnBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><code>sus::construct::From</code> compatible FnBox.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.1" href="sus-fn-FnBox.html#method.from.1">from</a>(SusBind&lt;F&gt; && holder) -&gt; auto</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p><code>sus::construct::From</code> trait implementation for the output of
+<code>sus_bind()</code>.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Operators
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator()" href="sus-fn-FnBox.html#method.operator()">operator()</a>(CallArgs... args) const& -&gt; R</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Runs the closure.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-fn-FnBox.html#method.operator=">operator=</a>(<a class="type-name" title="FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="sus-fn-FnBox.html">FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a>) -&gt; <a class="type-name" title="FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnBox.html">FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-fn-FnBox.html#method.operator=">operator=</a>(<a class="type-name" title="const FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnBox.html">const FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>) -&gt; <a class="type-name" title="FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnBox.html">FnBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

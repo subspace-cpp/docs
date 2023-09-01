@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::num::UnsignedPrimitiveEnum - Subspace</title>
+  <meta name="description" content="Enum types that are backed by an unsigned value, excluding enum class
+types."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="concept">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Concept
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.num.html">num</a>
+        <span class="namespace-dots">::</span>
+        <a class="concept-name" href="#">UnsignedPrimitiveEnum</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class T&gt;</div>
+        <span class="concept">
+          concept
+        </span>
+        <span class="type-name">
+          UnsignedPrimitiveEnum
+        </span>
+        <div>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_enum_v&lt;T&gt;</pre>
+            </div>
+            <div class="requires-constaint">
+              sus::num::UnsignedPrimitiveInteger
+              &lt;
+              std::underlying_type_t&lt;T&gt;
+              &gt;
+            </div>
+            <div class="requires-constaint">
+              <pre class="requires-constaint-line">std::is_convertible_v&lt;T, std::underlying_type_t&lt;T&gt;&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Enum types that are backed by an unsigned value, excluding <code>enum class</code>
+types.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

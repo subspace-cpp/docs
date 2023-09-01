@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::env::var - Subspace</title>
+  <meta name="description" content="Fetches the environment variable key from the current process."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.env.html">env</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">var</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">var</a>(string & key) -&gt; <a class="type-name" title="class sus::Result&lt;std::string, VarError&gt;" href="sus-result-Result.html">Result&lt;std::string, VarError&gt;</a></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Fetches the environment variable <code>key</code> from the current process.</p>
+<h1><a name="errors" href="#errors">Errors</a></h1>
+<p>This function will return an error if the environment variable isn't set.</p>
+<p>This function may return an error if the <code>key</code> is not a valid multi-byte
+encoding for the current locale (typically utf8).</p>
+<p>This function may return an error if the environment variable's name
+contains the equal sign character <code>'='</code> or the NUL character <code>'\0'</code>.</p>
+<p>TODO: <a href="https://github.com/chromium/subspace/issues/326">Figure out</a> a nicer
+way to receive unowned possibly-null-terminated strings. string_view reports
+a size before the null so you can't tell and you need to copy from it.</p>
+
+      </div>
+    </div>
+  </div>
+</body>

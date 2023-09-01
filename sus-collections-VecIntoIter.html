@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::collections::VecIntoIter - Subspace</title>
+  <meta name="description" content="An iterator that consumes a Vec and returns the items from it."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="type record struct">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Struct
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.collections.html">collections</a>
+        <span class="namespace-dots">::</span>
+        <a class="type-name" href="#">VecIntoIter</a>
+      </div>
+      <div class="type-signature">
+        <div class="template">template &lt;class ItemT&gt;</div>
+        <span class="struct">
+          struct
+        </span>
+        <span class="type-name">
+          VecIntoIter
+        </span>
+        <span class="final">
+          final
+        </span>
+        <div class="record-body">
+          { ... };
+        </div>
+      </div>
+      <div class="description long">
+        <p>An iterator that consumes a <code>Vec</code> and returns the items from it.</p>
+<p>This type is returned from <code>Vec::into_iter()</code>.</p>
+
+      </div>
+    </div>
+    <div class="section methods static">
+      <div class="section-header">
+        Static Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><a class="function-name" name="method.VecIntoIter" href="sus-collections-VecIntoIter.html#method.VecIntoIter">VecIntoIter</a>(Vec&lt;Item&gt; && vec)</div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+      </div>
+    </div>
+    <div class="section methods nonstatic">
+      <div class="section-header">
+        Methods
+      </div>
+      <div class="section-items">
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="sus-collections-VecIntoIter.html#method.clone">clone</a>() const -&gt; <a class="type-name" title="VecIntoIter&lt;T&gt;" href="sus-collections-VecIntoIter.html">VecIntoIter&lt;T&gt;</a></div>
+          </div>
+        </div>
+        <div class="description long">
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.exact_size_hint" href="sus-collections-VecIntoIter.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::ExactSizeIterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next" href="sus-collections-VecIntoIter.html#method.next">next</a>() -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::Iterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.next_back" href="sus-collections-VecIntoIter.html#method.next_back">next_back</a>() -&gt; Option&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::DoubleEndedIterator trait.</p>
+
+        </div>
+        <div class="overload-set item-name">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.size_hint" href="sus-collections-VecIntoIter.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" title="struct ::sus::iter::SizeHint" href="sus-iter-SizeHint.html">SizeHint</a></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>sus::iter::Iterator trait.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

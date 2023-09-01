@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::option::operator&lt;=&gt; - Subspace</title>
+  <meta name="description" content="Compares two options."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+</head>
+
+<body>
+  <div class="function">
+    <div class="section overview">
+      <div class="section-header">
+        <span>
+          Function
+        </span>
+        <a class="project-name" href="index.html">Subspace</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="namespace.sus.html">sus</a>
+        <span class="namespace-dots">::</span>
+        <a class="namespace-name" href="sus-namespace.option.html">option</a>
+        <span class="namespace-dots">::</span>
+        <a class="function-name" href="#">operator&lt;=&gt;</a>
+      </div>
+      <div class="overload-set">
+        <div class="overload">
+          <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">operator&lt;=&gt;</a>(<a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> l, <a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> r) -&gt; strong_ordering<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::ops::ExclusiveStrongOrd
+                &lt;
+                T
+                &gt;
+              </div>
+            </div></div>
+        </div>
+        <div class="overload">
+          <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">operator&lt;=&gt;</a>(<a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> l, const Option&lt;U&gt; & r) -&gt; strong_ordering<div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::ops::ExclusiveStrongOrd
+                &lt;
+                T
+                U
+                &gt;
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="description long">
+        <p>Compares two options.</p>
+<ul>
+<li>Satisfies <a href="sus-ops-StrongOrd.html"><code>StrongOrd&lt;Option&lt;T&gt;&gt;</code></a> if
+<a href="sus-ops-StrongOrd.html"><code>StrongOrd&lt;T&gt;</code></a>.</li>
+<li>Satisfies <a href="sus-ops-Ord.html"><code>Ord&lt;Option&lt;T&gt;&gt;</code></a> if
+<a href="sus-ops-Ord.html"><code>Ord&lt;T&gt;</code></a>.</li>
+<li>Satisfies <a href="sus-ops-PartialOrd.html"><code>PartialOrd&lt;Option&lt;T&gt;&gt;</code></a> if
+<a href="sus-ops-PartialOrd.html"><code>PartialOrd&lt;T&gt;</code></a>.</li>
+</ul>
+<p>The non-template overloads allow some/none marker types to convert to
+an option for comparison.</p>
+
+      </div>
+    </div>
+  </div>
+</body>
