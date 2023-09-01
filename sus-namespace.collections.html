@@ -12,20 +12,50 @@
 </head>
 
 <body>
-  <div class="namespace">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Namespace
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="#">collections</a>
-      </div>
-      <div class="description long">
-        <p>Collection types.</p>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      namespace
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">collections</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+        <li>
+          <a href="#classes">Classes</a>
+        </li>
+        <li>
+          <a href="#functions">Functions</a>
+        </li>
+        <li>
+          <a href="#operators">Operators</a>
+        </li>
+        <li>
+          <a href="#concepts">Concepts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="namespace">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Namespace
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="#">collections</a>
+        </div>
+        <div class="description long">
+          <p>Collection types.</p>
 <p>The Subspace library provides implementations of common general purpose
 programming data structures, with rich APIs that allow for interactions with
 <a href="sus-namespace.iter.html">Iterators</a>, and with APIs that provide safe defaults.</p>
@@ -244,511 +274,512 @@ familiarity and working across languages, but some are necessary for use in
 C++ or interop with the standard library. Subspace also provides additional
 containers specific to C++ when needed, such as <code>Array</code> (and TODO: FlatMap).</p>
 
+        </div>
       </div>
-    </div>
-    <div class="section records classes">
-      <div class="section-header">
-        Classes
-      </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Array.html">Array</a>
+      <div class="section records classes">
+        <div class="section-header">
+          <a name="classes" href="#classes">Classes</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Array.html">Array</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>A collection of objects of type T, with a fixed size N.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-ArrayIntoIter.html">ArrayIntoIter</a>
+            <div class="description short">
+              <p>A collection of objects of type T, with a fixed size N.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator that consumes an <code>Array</code> and returns the items from it.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Chunks.html">Chunks</a>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-ArrayIntoIter.html">ArrayIntoIter</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+            <div class="description short">
+              <p>An iterator that consumes an <code>Array</code> and returns the items from it.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Chunks.html">Chunks</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
 at a time), starting at the beginning of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-ChunksExact.html">ChunksExact</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-ChunksExact.html">ChunksExact</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
 at a time), starting at the beginning of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-ChunksExactMut.html">ChunksExactMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-ChunksExactMut.html">ChunksExactMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
 elements at a time), starting at the beginning of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-ChunksMut.html">ChunksMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over mutable a slice in (non-overlapping) chunks (<code>chunk_size</code>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-ChunksMut.html">ChunksMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over mutable a slice in (non-overlapping) chunks (<code>chunk_size</code>
 elements at a time), starting at the beginning of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Drain.html">Drain</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A draining iterator for <code>Vec&lt;T&gt;</code>.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-RChunks.html">RChunks</a>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Drain.html">Drain</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+            <div class="description short">
+              <p>A draining iterator for <code>Vec&lt;T&gt;</code>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-RChunks.html">RChunks</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
 at a time), starting at the end of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-RChunksExact.html">RChunksExact</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-RChunksExact.html">RChunksExact</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
 at a time), starting at the end of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-RChunksExactMut.html">RChunksExactMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-RChunksExactMut.html">RChunksExactMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
 elements at a time), starting at the end of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-RChunksMut.html">RChunksMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-RChunksMut.html">RChunksMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
 elements at a time), starting at the end of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-RSplit.html">RSplit</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over subslices separated by elements that match a predicate
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-RSplit.html">RSplit</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over subslices separated by elements that match a predicate
 function, starting from the end of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-RSplitMut.html">RSplitMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over the subslices of the vector which are separated by elements
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-RSplitMut.html">RSplitMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over the subslices of the vector which are separated by elements
 that match pred, starting from the end of the slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-RSplitN.html">RSplitN</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over subslices separated by elements that match a predicate
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-RSplitN.html">RSplitN</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over subslices separated by elements that match a predicate
 function, limited to a given number of splits, starting from the end of the
 slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-RSplitNMut.html">RSplitNMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over subslices separated by elements that match a predicate
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-RSplitNMut.html">RSplitNMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over subslices separated by elements that match a predicate
 function, limited to a given number of splits, starting from the end of the
 slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Slice.html">Slice</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A dynamically-sized const view into a contiguous sequence of objects of type
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Slice.html">Slice</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A dynamically-sized const view into a contiguous sequence of objects of type
 <code>const T</code>.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-SliceIter.html">SliceIter</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a contiguous array of objects with const access to them.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-SliceIterMut.html">SliceIterMut</a>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-SliceIter.html">SliceIter</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over a contiguous array of objects with mutable access to them.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-SliceMut.html">SliceMut</a>
+            <div class="description short">
+              <p>An iterator over a contiguous array of objects with const access to them.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>A dynamically-sized mutable view into a contiguous sequence of objects of
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-SliceIterMut.html">SliceIterMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over a contiguous array of objects with mutable access to them.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-SliceMut.html">SliceMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A dynamically-sized mutable view into a contiguous sequence of objects of
 type <code>T</code>.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Split.html">Split</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over subslices separated by elements that match a predicate
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Split.html">Split</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over subslices separated by elements that match a predicate
 function.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-SplitInclusive.html">SplitInclusive</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over subslices separated by elements that match a predicate
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-SplitInclusive.html">SplitInclusive</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over subslices separated by elements that match a predicate
 function. Unlike <code>Split</code>, it contains the matched part as a terminator
 of the subslice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-SplitInclusiveMut.html">SplitInclusiveMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over subslices separated by elements that match a predicate
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-SplitInclusiveMut.html">SplitInclusiveMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over subslices separated by elements that match a predicate
 function. Unlike <code>Split</code>, it contains the matched part as a terminator
 of the subslice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-SplitMut.html">SplitMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over subslices separated by elements that match a predicate
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-SplitMut.html">SplitMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over subslices separated by elements that match a predicate
 function.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-SplitN.html">SplitN</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over subslices separated by elements that match a predicate
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-SplitN.html">SplitN</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over subslices separated by elements that match a predicate
 function, limited to a given number of splits.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-SplitNMut.html">SplitNMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over mutable subslices separated by elements that match a
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-SplitNMut.html">SplitNMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over mutable subslices separated by elements that match a
 predicate function, limited to a given number of splits.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Vec.html">Vec</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A resizeable contiguous buffer of type <code>T</code>.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-VecIntoIter.html">VecIntoIter</a>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Vec.html">Vec</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator that consumes a <code>Vec</code> and returns the items from it.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Windows.html">Windows</a>
+            <div class="description short">
+              <p>A resizeable contiguous buffer of type <code>T</code>.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over overlapping subslices of length <code>size</code>.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-WindowsMut.html">WindowsMut</a>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-VecIntoIter.html">VecIntoIter</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>An iterator over overlapping subslices of length <code>size</code>.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="section functions">
-      <div class="section-header">
-        Functions
+            <div class="description short">
+              <p>An iterator that consumes a <code>Vec</code> and returns the items from it.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Windows.html">Windows</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over overlapping subslices of length <code>size</code>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-WindowsMut.html">WindowsMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>An iterator over overlapping subslices of length <code>size</code>.</p>
+            </div>
+          </li>
+        </ul>
       </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.array.html">array</a></div>
+      <div class="section functions">
+        <div class="section-header">
+          <a name="functions" href="#functions">Functions</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.array.html">array</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Used to construct an Array&lt;T, N&gt; with the parameters as its values.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.get.array.structured.bindings.html">get</a></div>
+            <div class="description short">
+              <p>Used to construct an Array&lt;T, N&gt; with the parameters as its values.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>Support for using structured bindings with <code>Array</code>.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.vec.html">vec</a></div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.get.array.structured.bindings.html">get</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Used to construct a <code>Vec&lt;T&gt;</code> with the parameters as its values.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="section functions">
-      <div class="section-header">
-        Operators
+            <div class="description short">
+              <p>Support for using structured bindings with <code>Array</code>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.vec.html">vec</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Used to construct a <code>Vec&lt;T&gt;</code> with the parameters as its values.</p>
+            </div>
+          </li>
+        </ul>
       </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.array.html">operator&lt;=&gt;</a></div>
+      <div class="section functions">
+        <div class="section-header">
+          <a name="operators" href="#operators">Operators</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.array.html">operator&lt;=&gt;</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Compares two Arrays.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slice.html">operator&lt;=&gt;</a></div>
+            <div class="description short">
+              <p>Compares two Arrays.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>Compares an Array and a Slice.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slicemut.html">operator&lt;=&gt;</a></div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slice.html">operator&lt;=&gt;</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Compares an Array and a SliceMut.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.slice.eq.html">operator==</a></div>
+            <div class="description short">
+              <p>Compares an Array and a Slice.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Slice&lt;T&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.html">operator==</a></div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slicemut.html">operator&lt;=&gt;</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.array.eq.slice.html">operator==</a></div>
+            <div class="description short">
+              <p>Compares an Array and a SliceMut.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.array.eq.slicemut.html">operator==</a></div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.slice.eq.html">operator==</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.slicemut.eq.html">operator==</a></div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Slice&lt;T&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;SliceMut&lt;T&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.vec.html">operator==</a></div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.html">operator==</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, Vec&lt;U&gt;&gt;</code></a> concept.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.slice.html">operator==</a></div>
+            <div class="description short">
             </div>
-          </div>
-          <div class="description short">
-            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.slicemut.html">operator==</a></div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.array.eq.slice.html">operator==</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="section concepts">
-      <div class="section-header">
-        Concepts
+            <div class="description short">
+              <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.array.eq.slicemut.html">operator==</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.slicemut.eq.html">operator==</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;SliceMut&lt;T&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.vec.html">operator==</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, Vec&lt;U&gt;&gt;</code></a> concept.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.slice.html">operator==</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, Slice&lt;U&gt;&gt;</code></a> concept.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_eq.vec.eq.slicemut.html">operator==</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-ops-Eq.html"><code>Eq&lt;Vec&lt;T&gt;, SliceMut&lt;U&gt;&gt;</code></a> concept.</p>
+            </div>
+          </li>
+        </ul>
       </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Concat.html">Concat</a>
+      <div class="section concepts">
+        <div class="section-header">
+          <a name="concepts" href="#concepts">Concepts</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Concat.html">Concat</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Types that support being flattened and concatenated together into a
+            <div class="description short">
+              <p>Types that support being flattened and concatenated together into a
 collection.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-collections-Join.html">Join</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>Types that support being flattened and concatenated together into a
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-collections-Join.html">Join</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Types that support being flattened and concatenated together into a
 collection, with a separator between each item. This is similar to <code>Concat</code>
 but with a separator.</p>
-          </div>
-        </li>
-      </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </main>
 </body>

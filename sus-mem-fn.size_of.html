@@ -12,34 +12,52 @@
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.mem.html">mem</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">size_of</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">size_of</a>() -&gt; size_t<div class="requires">
-              <span class="requires-keyword keyword">
-                requires
-              </span>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">!std::is_reference_v&lt;T&gt;</pre>
-              </div>
-            </div></div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">size_of</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.mem.html">mem</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">size_of</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>Returns the size of the type <code>T</code>.</p>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">size_of</a>() -&gt; size_t<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constaint">
+                  <pre class="requires-constaint-line">!std::is_reference_v&lt;T&gt;</pre>
+                </div>
+              </div></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Returns the size of the type <code>T</code>.</p>
 <p>This is the number of bytes that will be allocated for a type <code>T</code>, and
 includes any tail padding. Use <a href="sus-mem-fn.data_size_of.html"><code>data_size_of</code></a>
 to exclude tail padding for
@@ -51,7 +69,8 @@ the purpose of
 but disallows calls with a reference type to avoid surprises or bugs when
 working with references since <code>sizeof(T&amp;) == sizeof(T)</code>.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

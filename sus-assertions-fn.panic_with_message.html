@@ -12,27 +12,45 @@
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">panic_with_message</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">panic_with_message</a>(const char & msg, source_location location) -&gt; void</div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">panic_with_message</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">panic_with_message</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>Terminate the program, after printing a message.</p>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">panic_with_message</a>(const char & msg, source_location location) -&gt; void</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Terminate the program, after printing a message.</p>
 <p>The default behaviour of this function is to abort(). The behaviour of this
 function can be overridden by defining a <code>SUS_PROVIDE_PANIC_HANDLER()</code> macro
 when compiling the library.</p>
@@ -40,7 +58,8 @@ when compiling the library.</p>
 can be overridden by defining a <code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER()</code>
 macro when compiling the library.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

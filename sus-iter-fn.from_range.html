@@ -13,37 +13,55 @@ std::ranges::input_range."></meta>
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">from_range</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class R&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">from_range</a>(R && r) -&gt; auto<div class="requires">
-              <span class="requires-keyword keyword">
-                requires
-              </span>
-              <div class="requires-constaint">
-                std::ranges::input_range
-                &lt;
-                R
-                &gt;
-              </div>
-            </div></div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">from_range</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">from_range</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>Constructs an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> from a
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class R&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">from_range</a>(R && r) -&gt; auto<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constaint">
+                  std::ranges::input_range
+                  &lt;
+                  R
+                  &gt;
+                </div>
+              </div></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Constructs an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> from a
 <a href="https://en.cppreference.com/w/cpp/ranges/input_range"><code>std::ranges::input_range</code></a>.</p>
 <p>If the input is an lvalue reference, the <code>Iterator</code> will also
 iterate over references to the range's values. If the input is const, the
@@ -67,7 +85,8 @@ sus::check(sus::iter::from_range(v).copied().sum() == 1 + 2 + 3);
 sus::check(sus::iter::from_range(sus::move(v)).sum() == 1 + 2 + 3);
 </code></pre>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

@@ -12,30 +12,48 @@
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.mem.html">mem</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">forward</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">forward</a>(remove_reference_t&lt;T&gt; & t) -&gt; T &&</div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">forward</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.mem.html">mem</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">forward</a>
         </div>
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">forward</a>(remove_reference_t&lt;T&gt; && t) -&gt; T &&</div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">forward</a>(remove_reference_t&lt;T&gt; & t) -&gt; T &&</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">forward</a>(remove_reference_t&lt;T&gt; && t) -&gt; T &&</div>
+          </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>Passes a reference as an argument while preserving the reference type.</p>
+        <div class="description long">
+          <p>Passes a reference as an argument while preserving the reference type.</p>
 <p>Typically, passing an rvalue reference will convert it to an lvalue. Using
 <code>sus::forward&lt;T&gt;(t)</code> on an rvalue reference <code>T&amp;&amp; t</code> will preserve the rvalue
 nature of the reference. Other reference types are also forwarded unchanged.</p>
@@ -51,7 +69,8 @@ value type <code>T</code> from a universal reference <code>T&amp;&amp;</code> wi
 use <code>IsMoveRef</code> to constrain the universal reference to be an rvalue, and
 use <code>move()</code> instead of <code>forward()</code>.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

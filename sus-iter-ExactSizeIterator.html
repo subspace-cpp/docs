@@ -12,50 +12,68 @@
 </head>
 
 <body>
-  <div class="concept">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Concept
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-        <span class="namespace-dots">::</span>
-        <a class="concept-name" href="#">ExactSizeIterator</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class T, class Item = typename std::remove_cvref_t&lt;T&gt;::Item&gt;</div>
-        <span class="concept">
-          concept
-        </span>
-        <span class="type-name">
-          ExactSizeIterator
-        </span>
-        <div>
-          <div class="requires">
-            <span class="requires-keyword keyword">
-              requires
-            </span>
-            <div class="requires-constaint">
-              sus::iter::Iterator
-              &lt;
-              T
-              Item
-              &gt;
-            </div>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">requires(const std::remove_cvref_t&lt;T&gt;& t) {</pre>
-              <pre class="requires-constaint-line">      { t.exact_size_hint() } noexcept -&gt; std::same_as&lt;::sus::num::usize&gt;;</pre>
-              <pre class="requires-constaint-line">    }</pre>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">ExactSizeIterator</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">ExactSizeIterator</a>
+        </div>
+        <div class="type-signature">
+          <div class="template">template &lt;class T, class Item = typename std::remove_cvref_t&lt;T&gt;::Item&gt;</div>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            ExactSizeIterator
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::iter::Iterator
+                &lt;
+                T
+                Item
+                &gt;
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">requires(const std::remove_cvref_t&lt;T&gt;& t) {</pre>
+                <pre class="requires-constaint-line">      { t.exact_size_hint() } noexcept -&gt; std::same_as&lt;::sus::num::usize&gt;;</pre>
+                <pre class="requires-constaint-line">    }</pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>An iterator that knows its exact length.</p>
+        <div class="description long">
+          <p>An iterator that knows its exact length.</p>
 <p>Many Iterators don’t know how many times they will iterate, but some do. If
 an iterator knows how many times it can iterate, providing access to that
 information can be useful. For example, if you want to iterate backwards, a
@@ -67,7 +85,8 @@ method that returns the exact size of the iterator. The implementation of
 <code>Iterator::size_hint()</code> must also return the exact size of the iterator
 (usually by calling <code>exact_size_hint()</code>).</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

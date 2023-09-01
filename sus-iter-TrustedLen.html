@@ -12,43 +12,61 @@
 </head>
 
 <body>
-  <div class="concept">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Concept
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-        <span class="namespace-dots">::</span>
-        <a class="concept-name" href="#">TrustedLen</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class T&gt;</div>
-        <span class="concept">
-          concept
-        </span>
-        <span class="type-name">
-          TrustedLen
-        </span>
-        <div>
-          <div class="requires">
-            <span class="requires-keyword keyword">
-              requires
-            </span>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">requires(const std::remove_cvref_t&lt;T&gt;& t) {</pre>
-              <pre class="requires-constaint-line">  { t.trusted_len() } -&gt; std::same_as&lt;__private::TrustedLenMarker&gt;;</pre>
-              <pre class="requires-constaint-line">}</pre>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">TrustedLen</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">TrustedLen</a>
+        </div>
+        <div class="type-signature">
+          <div class="template">template &lt;class T&gt;</div>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            TrustedLen
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">requires(const std::remove_cvref_t&lt;T&gt;& t) {</pre>
+                <pre class="requires-constaint-line">  { t.trusted_len() } -&gt; std::same_as&lt;__private::TrustedLenMarker&gt;;</pre>
+                <pre class="requires-constaint-line">}</pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>An iterator that reports an accurate length.</p>
+        <div class="description long">
+          <p>An iterator that reports an accurate length.</p>
 <p>The iterator reports a size hint where it is either exact (lower bound is
 equal to upper bound), or the upper bound is None. The upper bound must
 only be None if the actual iterator length is larger than
@@ -72,7 +90,8 @@ when <code>I</code> implements <code>TrustedLen</code>.</p>
 <p>This trait must only be implemented when the contract is upheld. Consumers
 of this trait must inspect <code>Iterator::size_hint()</code>'s upper bound.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

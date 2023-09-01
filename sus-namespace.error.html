@@ -12,20 +12,47 @@
 </head>
 
 <body>
-  <div class="namespace">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Namespace
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="#">error</a>
-      </div>
-      <div class="description long">
-        <p>Interfaces for working with Errors.</p>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      namespace
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">error</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+        <li>
+          <a href="#classes">Classes</a>
+        </li>
+        <li>
+          <a href="#functions">Functions</a>
+        </li>
+        <li>
+          <a href="#concepts">Concepts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="namespace">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Namespace
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="#">error</a>
+        </div>
+        <div class="description long">
+          <p>Interfaces for working with Errors.</p>
 <h1><a name="error-handling-with-subspace" href="#error-handling-with-subspace">Error Handling With Subspace</a></h1>
 <p>The Subspace C++ library provides two complementary systems for
 constructing/representing, reporting, propagating, and reacting to errors.
@@ -131,90 +158,91 @@ expect-as-precondition style error messages remember to focus on the word
 “should” as in “env variable should be set by blah” or “the given binary
 should be available and executable by the current user”.</p>
 
+        </div>
       </div>
-    </div>
-    <div class="section records classes">
-      <div class="section-header">
-        Classes
-      </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-error-DynError.html">DynError</a>
+      <div class="section records classes">
+        <div class="section-header">
+          <a name="classes" href="#classes">Classes</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-error-DynError.html">DynError</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>A type-erased <a href="sus-error-Error.html"><code>Error</code></a> object.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-error-DynErrorTyped.html">DynErrorTyped</a>
+            <div class="description short">
+              <p>A type-erased <a href="sus-error-Error.html"><code>Error</code></a> object.</p>
             </div>
-          </div>
-          <div class="description short">
-            <p>The wrapper around an <a href="sus-error-Error.html"><code>Error</code></a> object that allows it
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-error-DynErrorTyped.html">DynErrorTyped</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>The wrapper around an <a href="sus-error-Error.html"><code>Error</code></a> object that allows it
 to be type-erased as <a href="sus-error-DynError.html"><code>DynError</code></a>.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-error-ErrorImpl.html">ErrorImpl</a>
             </div>
-          </div>
-          <div class="description short">
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="section functions">
-      <div class="section-header">
-        Functions
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-error-ErrorImpl.html">ErrorImpl</a>
+              </div>
+            </div>
+            <div class="description short">
+            </div>
+          </li>
+        </ul>
       </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-error-fn.error_display.html">error_display</a></div>
+      <div class="section functions">
+        <div class="section-header">
+          <a name="functions" href="#functions">Functions</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-error-fn.error_display.html">error_display</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Gets a string describing the <code>error</code> from an <a href="sus-error-Error.html"><code>Error</code></a>
+            <div class="description short">
+              <p>Gets a string describing the <code>error</code> from an <a href="sus-error-Error.html"><code>Error</code></a>
 object.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-error-fn.error_source.html">error_source</a></div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Gets a the source <a href="sus-error-Error.html"><code>Error</code></a>, type-erased as
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-error-fn.error_source.html">error_source</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Gets a the source <a href="sus-error-Error.html"><code>Error</code></a>, type-erased as
 <a href="sus-error-DynError.html"><code>DynError</code></a>, which caused the <code>error</code> to occur.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="section concepts">
-      <div class="section-header">
-        Concepts
-      </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-error-Error.html">Error</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>Error</p>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="section concepts">
+        <div class="section-header">
+          <a name="concepts" href="#concepts">Concepts</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-error-Error.html">Error</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Error</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </main>
 </body>

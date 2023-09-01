@@ -12,75 +12,93 @@
 </head>
 
 <body>
-  <div class="concept">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Concept
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
-        <span class="namespace-dots">::</span>
-        <a class="concept-name" href="#">Try</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class T&gt;</div>
-        <span class="concept">
-          concept
-        </span>
-        <span class="type-name">
-          Try
-        </span>
-        <div>
-          <div class="requires">
-            <span class="requires-keyword keyword">
-              requires
-            </span>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">requires {</pre>
-              <pre class="requires-constaint-line">      // The Try type is not a reference, conversions require concrete types.</pre>
-              <pre class="requires-constaint-line">      requires !std::is_reference_v&lt;T&gt;;</pre>
-              <pre class="requires-constaint-line">      // The Output success type can be converted to/from the Try type.</pre>
-              <pre class="requires-constaint-line">      typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output;</pre>
-              <pre class="requires-constaint-line">#if !defined(sus_gcc_bug_110927_exists)</pre>
-              <pre class="requires-constaint-line">      // The Try type can be used to produce another Try type with a different</pre>
-              <pre class="requires-constaint-line">      // Output type but the same error type.</pre>
-              <pre class="requires-constaint-line">      typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::template RemapOutput&lt;</pre>
-              <pre class="requires-constaint-line">          typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt;;</pre>
-              <pre class="requires-constaint-line">#endif</pre>
-              <pre class="requires-constaint-line">    }</pre>
-            </div>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">requires(const T& t, T&& tt) {</pre>
-              <pre class="requires-constaint-line">      // is_success() reports if the Try type is in a success state.</pre>
-              <pre class="requires-constaint-line">      { TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::is_success(t) } -&gt; std::same_as&lt;bool&gt;;</pre>
-              <pre class="requires-constaint-line">      // into_output() unwraps from the Try type to its success type. It may</pre>
-              <pre class="requires-constaint-line">      // assume that the input is in a success state (`is_success()` would</pre>
-              <pre class="requires-constaint-line">      // return true), as the `try_into_output()` method verifies this.</pre>
-              <pre class="requires-constaint-line">      {</pre>
-              <pre class="requires-constaint-line">        TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::into_output(::sus::move(tt))</pre>
-              <pre class="requires-constaint-line">      } -&gt; std::same_as&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt;;</pre>
-              <pre class="requires-constaint-line">    }</pre>
-            </div>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">std::is_void_v&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt; ||  //</pre>
-              <pre class="requires-constaint-line">     requires(typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&& output) {</pre>
-              <pre class="requires-constaint-line">       // from_output() converts a success type to the Try type.</pre>
-              <pre class="requires-constaint-line">       {</pre>
-              <pre class="requires-constaint-line">         TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::from_output(</pre>
-              <pre class="requires-constaint-line">             ::sus::forward&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt;(</pre>
-              <pre class="requires-constaint-line">                 output))</pre>
-              <pre class="requires-constaint-line">       } -&gt; std::same_as&lt;T&gt;;</pre>
-              <pre class="requires-constaint-line">     }</pre>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">Try</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">Try</a>
+        </div>
+        <div class="type-signature">
+          <div class="template">template &lt;class T&gt;</div>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            Try
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">requires {</pre>
+                <pre class="requires-constaint-line">      // The Try type is not a reference, conversions require concrete types.</pre>
+                <pre class="requires-constaint-line">      requires !std::is_reference_v&lt;T&gt;;</pre>
+                <pre class="requires-constaint-line">      // The Output success type can be converted to/from the Try type.</pre>
+                <pre class="requires-constaint-line">      typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output;</pre>
+                <pre class="requires-constaint-line">#if !defined(sus_gcc_bug_110927_exists)</pre>
+                <pre class="requires-constaint-line">      // The Try type can be used to produce another Try type with a different</pre>
+                <pre class="requires-constaint-line">      // Output type but the same error type.</pre>
+                <pre class="requires-constaint-line">      typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::template RemapOutput&lt;</pre>
+                <pre class="requires-constaint-line">          typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt;;</pre>
+                <pre class="requires-constaint-line">#endif</pre>
+                <pre class="requires-constaint-line">    }</pre>
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">requires(const T& t, T&& tt) {</pre>
+                <pre class="requires-constaint-line">      // is_success() reports if the Try type is in a success state.</pre>
+                <pre class="requires-constaint-line">      { TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::is_success(t) } -&gt; std::same_as&lt;bool&gt;;</pre>
+                <pre class="requires-constaint-line">      // into_output() unwraps from the Try type to its success type. It may</pre>
+                <pre class="requires-constaint-line">      // assume that the input is in a success state (`is_success()` would</pre>
+                <pre class="requires-constaint-line">      // return true), as the `try_into_output()` method verifies this.</pre>
+                <pre class="requires-constaint-line">      {</pre>
+                <pre class="requires-constaint-line">        TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::into_output(::sus::move(tt))</pre>
+                <pre class="requires-constaint-line">      } -&gt; std::same_as&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt;;</pre>
+                <pre class="requires-constaint-line">    }</pre>
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">std::is_void_v&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt; ||  //</pre>
+                <pre class="requires-constaint-line">     requires(typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&& output) {</pre>
+                <pre class="requires-constaint-line">       // from_output() converts a success type to the Try type.</pre>
+                <pre class="requires-constaint-line">       {</pre>
+                <pre class="requires-constaint-line">         TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::from_output(</pre>
+                <pre class="requires-constaint-line">             ::sus::forward&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt;(</pre>
+                <pre class="requires-constaint-line">                 output))</pre>
+                <pre class="requires-constaint-line">       } -&gt; std::same_as&lt;T&gt;;</pre>
+                <pre class="requires-constaint-line">     }</pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>A concept for types that can indicate success and failure.</p>
+        <div class="description long">
+          <p>A concept for types that can indicate success and failure.</p>
 <p>The Try concept is implemented by specializing <code>TryImpl</code> for a type <code>T</code>
 with:</p>
 <ul>
@@ -97,7 +115,8 @@ useable. To support <code>void</code>, the <code>TryDefault</code> concept can b
 <code>Try</code>. The <code>TryDefault</code> concept allows construction of the <code>Try</code> type with a
 default success value which can be <code>void</code>.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

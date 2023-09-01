@@ -12,67 +12,97 @@
 </head>
 
 <body>
-  <div class="type record class">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Class
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.option.html">option</a>
-        <span class="namespace-dots">::</span>
-        <a class="type-name" href="#">Option</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class T&gt;</div>
-        <span class="class">
-          class
-        </span>
-        <span class="type-name">
-          Option
-        </span>
-        <span class="final">
-          final
-        </span>
-        <div class="record-body">
-          { ... };
-        </div>
-      </div>
-      <div class="description long">
-        <p>The <a href="sus-option-Option.html"><code>Option</code></a> type.</p>
-<p>See the <a href="sus-namespace.option.html">namespace level documentation</a> for more.</p>
-
-      </div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      class
     </div>
-    <div class="section methods static">
-      <div class="section-header">
-        Static Methods
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.Option.ctor.none" href="sus-option-Option.html#method.Option.ctor.none">Option</a>()</div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">Option</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+        <li>
+          <a href="#static-methods">Static Methods</a>
+        </li>
+        <li>
+          <a href="#methods">Methods</a>
+        </li>
+        <li>
+          <a href="#conversions">Conversions</a>
+        </li>
+        <li>
+          <a href="#operators">Operators</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="type record class">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Class
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.option.html">option</a>
+          <span class="namespace-dots">::</span>
+          <a class="type-name" href="#">Option</a>
+        </div>
+        <div class="type-signature">
+          <div class="template">template &lt;class T&gt;</div>
+          <span class="class">
+            class
+          </span>
+          <span class="type-name">
+            Option
+          </span>
+          <span class="final">
+            final
+          </span>
+          <div class="record-body">
+            { ... };
           </div>
         </div>
         <div class="description long">
-          <p>Default-construct an option that is holding no value.</p>
+          <p>The <a href="sus-option-Option.html"><code>Option</code></a> type.</p>
+<p>See the <a href="sus-namespace.option.html">namespace level documentation</a> for more.</p>
+
+        </div>
+      </div>
+      <div class="section methods static">
+        <div class="section-header">
+          <a name="static-methods" href="#static-methods">Static Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.Option.ctor.none" href="sus-option-Option.html#method.Option.ctor.none">Option</a>()</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Default-construct an option that is holding no value.</p>
 <p>This satisfies <a href="sus-construct-Default.html"><code>Default</code></a> for
 <a href="sus-option-Option.html"><code>Option</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.Option.ctor.some" href="sus-option-Option.html#method.Option.ctor.some">Option</a>(const T & t)</div>
           </div>
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><a class="function-name" name="method.Option.ctor.some" href="sus-option-Option.html#method.Option.ctor.some">Option</a>(U && t)</div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.Option.ctor.some" href="sus-option-Option.html#method.Option.ctor.some">Option</a>(const T & t)</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><a class="function-name" name="method.Option.ctor.some" href="sus-option-Option.html#method.Option.ctor.some">Option</a>(U && t)</div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Construct an option that is holding the given value.</p>
+          <div class="description long">
+            <p>Construct an option that is holding the given value.</p>
 <h1><a name="const-references" href="#const-references">Const References</a></h1>
 <p>For <a href="sus-option-Option.html"><code>Option&lt;const T&amp;&gt;</code></a> it is possible to bind to
 a temporary which would create a memory safety bug. The
@@ -85,27 +115,27 @@ convert to a reference without constructing a temporary, use an unsafe
 <code>static_cast&lt;const T&amp;&gt;()</code> at the callsite and document why a temporary is
 not constructed.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.Option.copy" href="sus-option-Option.html#method.Option.copy">Option</a>(<a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> o)</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Copy constructor for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.Option.copy" href="sus-option-Option.html#method.Option.copy">Option</a>(<a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> o)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Copy constructor for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
 satisfy <a href="sus-mem-Copy.html"><code>Copy&lt;Option&lt;T&gt;&gt;</code></a> if
 <a href="sus-mem-Copy.html"><code>Copy&lt;T&gt;</code></a> is satisfied.</p>
 <p>If <code>T</code> can be trivially copy-constructed, then <code>Option&lt;T&gt;</code> can also be
 trivially copy-constructed.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.Option.move" href="sus-option-Option.html#method.Option.move">Option</a>(<a class="type-name" title="Option&lt;T&gt; &&" href="sus-option-Option.html">Option&lt;T&gt; &&</a> o)</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Move constructor for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.Option.move" href="sus-option-Option.html#method.Option.move">Option</a>(<a class="type-name" title="Option&lt;T&gt; &&" href="sus-option-Option.html">Option&lt;T&gt; &&</a> o)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Move constructor for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
 satisfy <a href="sus-mem-Move.html"><code>Move&lt;Option&lt;T&gt;&gt;</code></a> if
 <a href="sus-mem-Move.html"><code>Move&lt;T&gt;</code></a> is satisfied.</p>
 <p>If <code>T</code> can be trivially move-constructed, then <code>Option&lt;T&gt;</code> can also be
@@ -114,63 +144,63 @@ move, and the moved-from Option is unchanged but should still not be used
 thereafter without reinitializing it. Use <code>take()</code> instead to move the
 value out of the option when the option may be used again afterward.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class s:auto&gt;</div><a class="function-name" name="method.Option.ctor.optional" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(same_as&lt;std::optional&lt;std::remove_reference_t&lt;T&gt; &gt;&gt; auto s)</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Implicit conversion from <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class s:auto&gt;</div><a class="function-name" name="method.Option.ctor.optional" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(same_as&lt;std::optional&lt;std::remove_reference_t&lt;T&gt; &gt;&gt; auto s)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Implicit conversion from <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
 <p>Prevents conversions from <code>U</code> to <code>optional&lt;T&gt;</code> when constructing
 <code>Option&lt;optional&lt;T&gt;&gt;</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.t" href="sus-option-Option.html#method.from.from.t">from</a>(U && val) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Moves <code>val</code> into a new option holding <code>Some(val)</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.t" href="sus-option-Option.html#method.from.from.t">from</a>(U && val) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Moves <code>val</code> into a new option holding <code>Some(val)</code>.</p>
 <p>Implements <a href="sus-construct-From.html"><code>From&lt;Option&lt;T&gt;, T&gt;</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.optional" href="sus-option-Option.html#method.from.from.optional">from</a>(optional&lt;std::remove_reference_t&lt;T&gt; &gt; & s) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-          <div class="overload">
-            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.optional" href="sus-option-Option.html#method.from.from.optional">from</a>(optional&lt;std::remove_reference_t&lt;T&gt; &gt; && s) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.optional" href="sus-option-Option.html#method.from.from.optional">from</a>(optional&lt;std::remove_reference_t&lt;T&gt; &gt; & s) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.optional" href="sus-option-Option.html#method.from.from.optional">from</a>(optional&lt;std::remove_reference_t&lt;T&gt; &gt; && s) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Implements <a href="sus-construct-From.html"><code>From&lt;std::optional&gt;</code></a>.</p>
+          <div class="description long">
+            <p>Implements <a href="sus-construct-From.html"><code>From&lt;std::optional&gt;</code></a>.</p>
 <p>This also allows <code>sus::into()</code> to convert with type deduction from
 <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>
 to <a href="sus-option-Option.html"><code>sus::Option</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.optional.u" href="sus-option-Option.html#method.from.from.optional.u">from</a>(optional&lt;U&gt; & s) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.optional.u" href="sus-option-Option.html#method.from.from.optional.u">from</a>(optional&lt;U&gt; && s) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.optional.u" href="sus-option-Option.html#method.from.from.optional.u">from</a>(optional&lt;U&gt; & s) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.optional.u" href="sus-option-Option.html#method.from.from.optional.u">from</a>(optional&lt;U&gt; && s) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Implements <a href="sus-construct-From.html"><code>From&lt;std::optional&lt;U&gt;&gt;</code></a> when <code>U</code>
+          <div class="description long">
+            <p>Implements <a href="sus-construct-From.html"><code>From&lt;std::optional&lt;U&gt;&gt;</code></a> when <code>U</code>
 can be converted to <code>T</code>, i.e. <a href="sus-construct-Into.html"><code>Into&lt;U, T&gt;</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_product" href="sus-option-Option.html#method.from_product">from_product</a>(Iter && it) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Computes the product of an iterator over
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_product" href="sus-option-Option.html#method.from_product">from_product</a>(Iter && it) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Computes the product of an iterator over
 <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> as long as there is no <code>None</code> found.
 If a <code>None</code> is found, the function returns <code>None</code>.</p>
 <p>Prefer to call <code>product()</code> on the iterator rather than calling
@@ -179,14 +209,14 @@ If a <code>None</code> is found, the function returns <code>None</code>.</p>
 <p>The product is computed using the implementation of the inner type <code>T</code>
 which also satisfies <a href="sus-iter-Product.html"><code>sus::iter::Product&lt;T&gt;</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_sum" href="sus-option-Option.html#method.from_sum">from_sum</a>(Iter && it) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Computes the sum of an iterator over <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_sum" href="sus-option-Option.html#method.from_sum">from_sum</a>(Iter && it) -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Computes the sum of an iterator over <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>
 as long as there is no <code>None</code> found. If a <code>None</code> is found, the function
 returns <code>None</code>.</p>
 <p>Prefer to call <code>sum()</code> on the iterator rather than calling <code>from_sum()</code>
@@ -195,56 +225,56 @@ directly.</p>
 <p>The sum is computed using the implementation of the inner type <code>T</code>
 which also satisfies <a href="sus-iter-Sum.html"><code>sus::iter::Sum&lt;T&gt;</code></a>.</p>
 
-        </div>
-      </div>
-    </div>
-    <div class="section methods nonstatic">
-      <div class="section-header">
-        Methods
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.and_that" href="sus-option-Option.html#method.and_that">and_that</a>(Option&lt;U&gt; that) && -&gt; Option&lt;U&gt;</div>
           </div>
         </div>
-        <div class="description long">
-          <p>Consumes this option and returns an option with <code>None</code> if this option
+      </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="methods" href="#methods">Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.and_that" href="sus-option-Option.html#method.and_that">and_that</a>(Option&lt;U&gt; that) && -&gt; Option&lt;U&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Consumes this option and returns an option with <code>None</code> if this option
 holds <code>None</code>, otherwise returns <code>that</code> option.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class AndFn, int &... , class R = std::invoke_result_t&lt;AndFn, T &&&gt;, class U = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.and_then" href="sus-option-Option.html#method.and_then">and_then</a>(AndFn && f) && -&gt; Option&lt;U&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Consumes this option and returns an option with <code>None</code> if this option
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class AndFn, int &... , class R = std::invoke_result_t&lt;AndFn, T &&&gt;, class U = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.and_then" href="sus-option-Option.html#method.and_then">and_then</a>(AndFn && f) && -&gt; Option&lt;U&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Consumes this option and returns an option with <code>None</code> if this option
 holds <code>None</code>, otherwise calls <code>f</code> with the contained value and returns the
 result.</p>
 <p>The function <code>f</code> receives the option's inner <code>T</code> and can return any
 <a href="sus-option-Option.html"><code>Option&lt;U&gt;</code></a>.</p>
 <p>Some languages call this operation flatmap.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut" href="sus-option-Option.html#method.as_mut">as_mut</a>() & -&gt; Option&lt;T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an <a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a> from this
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut" href="sus-option-Option.html#method.as_mut">as_mut</a>() & -&gt; Option&lt;T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an <a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a> from this
 <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>, that either holds <code>None</code> or a
 reference to the value in this option.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ref" href="sus-option-Option.html#method.as_ref">as_ref</a>() const& -&gt; Option&lt;const std::remove_reference_t&lt;T&gt; &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an <a href="sus-option-Option.html"><code>Option&lt;const T&amp;&gt;</code></a> from this
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ref" href="sus-option-Option.html#method.as_ref">as_ref</a>() const& -&gt; Option&lt;const std::remove_reference_t&lt;T&gt; &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an <a href="sus-option-Option.html"><code>Option&lt;const T&amp;&gt;</code></a> from this
 <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>, that either holds <code>None</code> or a
 reference to the value in this option.</p>
 <h1><a name="implementation-notes" href="#implementation-notes">Implementation Notes</a></h1>
@@ -252,14 +282,14 @@ reference to the value in this option.</p>
 contained value is a reference, otherwise we are returning a reference to
 a short-lived object which leads to common C++ memory bugs.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value" href="sus-option-Option.html#method.as_value">as_value</a>() const& -&gt; remove_reference_t&lt;T&gt; &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a const reference to the contained value inside the option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value" href="sus-option-Option.html#method.as_value">as_value</a>() const& -&gt; remove_reference_t&lt;T&gt; &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a const reference to the contained value inside the option.</p>
 <p>To extract the value inside an option, use
 <a href="sus-option-Option.html#method.unwrap"><code>unwrap</code></a> on
 an rvalue, and <a href="sus-option-Option.html#method.take"><code>take</code></a> to move the
@@ -272,14 +302,14 @@ currently <code>None</code>.</p>
 contained value is a reference, otherwise we are returning a reference to
 a short-lived object which leads to common C++ memory bugs.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_mut" href="sus-option-Option.html#method.as_value_mut">as_value_mut</a>() & -&gt; remove_reference_t&lt;T&gt; &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a mutable reference to the contained value inside the option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_mut" href="sus-option-Option.html#method.as_value_mut">as_value_mut</a>() & -&gt; remove_reference_t&lt;T&gt; &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable reference to the contained value inside the option.</p>
 <p>To extract the value inside an option, use
 <a href="sus-option-Option.html#method.unwrap"><code>unwrap</code></a> on
 an rvalue, and <a href="sus-option-Option.html#method.take"><code>take</code></a> to move the
@@ -292,14 +322,14 @@ currently <code>None</code>.</p>
 contained value is a reference, otherwise we are returning a reference to
 a short-lived object which leads to common C++ memory bugs.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_unchecked" href="sus-option-Option.html#method.as_value_unchecked">as_value_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) const& -&gt; remove_reference_t&lt;T&gt; &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a const reference to the contained value inside the option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_unchecked" href="sus-option-Option.html#method.as_value_unchecked">as_value_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) const& -&gt; remove_reference_t&lt;T&gt; &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a const reference to the contained value inside the option.</p>
 <p>To extract the value inside an option, use
 <a href="sus-option-Option.html#method.unwrap_unchecked"><code>unwrap_unchecked</code></a> on
 an rvalue, and <a href="sus-option-Option.html#method.take"><code>take</code></a> to move the
@@ -311,14 +341,14 @@ contents of an lvalue option to an rvalue.</p>
 contained value is a reference, otherwise we are returning a reference to
 a short-lived object which leads to common C++ memory bugs.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_unchecked_mut" href="sus-option-Option.html#method.as_value_unchecked_mut">as_value_unchecked_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) & -&gt; remove_reference_t&lt;T&gt; &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a mutable reference to the contained value inside the option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_unchecked_mut" href="sus-option-Option.html#method.as_value_unchecked_mut">as_value_unchecked_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) & -&gt; remove_reference_t&lt;T&gt; &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable reference to the contained value inside the option.</p>
 <p>To extract the value inside an option, use
 <a href="sus-option-Option.html#method.unwrap_unchecked"><code>unwrap_unchecked</code></a> on
 an rvalue, and <a href="sus-option-Option.html#method.take"><code>take</code></a> to move the
@@ -330,101 +360,101 @@ contents of an lvalue option to an rvalue.</p>
 contained value is a reference, otherwise we are returning a reference to
 a short-lived object which leads to common C++ memory bugs.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="sus-option-Option.html#method.clone">clone</a>() const& -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Satisifies the <a href="sus-mem-Clone.html"><code>Clone</code></a> concept when <code>Option</code> is not
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="sus-option-Option.html#method.clone">clone</a>() const& -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Satisifies the <a href="sus-mem-Clone.html"><code>Clone</code></a> concept when <code>Option</code> is not
 <a href="sus-mem-Copy.html"><code>Copy</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone_from" href="sus-option-Option.html#method.clone_from">clone_from</a>(<a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> source) & -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Satisifies the <a href="sus-mem-CloneFrom.html"><code>CloneFrom</code></a> concept.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone_from" href="sus-option-Option.html#method.clone_from">clone_from</a>(<a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> source) & -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Satisifies the <a href="sus-mem-CloneFrom.html"><code>CloneFrom</code></a> concept.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.cloned" href="sus-option-Option.html#method.cloned">cloned</a>() const& -&gt; Option&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Maps an <a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a> to an
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.cloned" href="sus-option-Option.html#method.cloned">cloned</a>() const& -&gt; Option&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Maps an <a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a> to an
 <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> by cloning the referenced <code>T</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.copied" href="sus-option-Option.html#method.copied">copied</a>() const& -&gt; Option&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Maps an <a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a> to an
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.copied" href="sus-option-Option.html#method.copied">copied</a>() const& -&gt; Option&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Maps an <a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a> to an
 <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> by copying the referenced <code>T</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.expect" href="sus-option-Option.html#method.expect">expect</a>(const char * _Nonnull message) && -&gt; T</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the contained value inside the option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.expect" href="sus-option-Option.html#method.expect">expect</a>(const char * _Nonnull message) && -&gt; T</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the contained value inside the option.</p>
 <p>The function will panic with the given <code>message</code> if the option's state is
 currently <code>None</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class p:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.filter" href="sus-option-Option.html#method.filter">filter</a>(FnOnce&lt;_Bool (const std::remove_reference_t&lt;T&gt; &)&gt; auto && p) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Consumes the option and applies a predicate function to the value
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class p:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.filter" href="sus-option-Option.html#method.filter">filter</a>(FnOnce&lt;_Bool (const std::remove_reference_t&lt;T&gt; &)&gt; auto && p) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Consumes the option and applies a predicate function to the value
 contained in the option. Returns a new option with the same value if the
 predicate returns true, otherwise returns an Option with its state set to
 <code>None</code>.</p>
 <p>The predicate function must be able to receive <code>const T&amp;</code> and return a
 value that converts to<code>bool</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.flatten" href="sus-option-Option.html#method.flatten">flatten</a>() && -&gt; T</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Maps an <a href="sus-option-Option.html"><code>Option&lt;Option&lt;T&gt;&gt;</code></a> to an
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.flatten" href="sus-option-Option.html#method.flatten">flatten</a>() && -&gt; T</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Maps an <a href="sus-option-Option.html"><code>Option&lt;Option&lt;T&gt;&gt;</code></a> to an
 <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_or_insert" href="sus-option-Option.html#method.get_or_insert">get_or_insert</a>(T value) & -&gt; T &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>If the Option holds a value, returns a mutable reference to it. Otherwise,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_or_insert" href="sus-option-Option.html#method.get_or_insert">get_or_insert</a>(T value) & -&gt; T &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>If the Option holds a value, returns a mutable reference to it. Otherwise,
 stores <code>value</code> inside the Option and returns a mutable reference to it.</p>
 <p>If it is non-trivial to construct <code>T</code>, the
 <a href="sus-option-Option.html#method.get_or_insert_with"><code>Option::get_or_insert_with</code></a>
 method would be preferable, as it only constructs a <code>T</code> if needed.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_or_insert_default" href="sus-option-Option.html#method.get_or_insert_default">get_or_insert_default</a>() & -&gt; T &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>If the Option holds a value, returns a mutable reference to it. Otherwise,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_or_insert_default" href="sus-option-Option.html#method.get_or_insert_default">get_or_insert_default</a>() & -&gt; T &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>If the Option holds a value, returns a mutable reference to it. Otherwise,
 constructs a default value <code>T</code>, stores it inside the option and returns a
 mutable reference to the new value.</p>
 <p>This method differs from
@@ -437,14 +467,14 @@ on rvalues.</p>
 <a href="sus-construct-Default.html"><code>Default</code></a> so it can be constructed with its
 default value.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_or_insert_with" href="sus-option-Option.html#method.get_or_insert_with">get_or_insert_with</a>(FnOnce&lt;T (void)&gt; auto && f) & -&gt; T &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>If the Option holds a value, returns a mutable reference to it. Otherwise,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_or_insert_with" href="sus-option-Option.html#method.get_or_insert_with">get_or_insert_with</a>(FnOnce&lt;T (void)&gt; auto && f) & -&gt; T &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>If the Option holds a value, returns a mutable reference to it. Otherwise,
 constructs a <code>T</code> by calling <code>f</code>, stores it inside the option and returns a
 mutable reference to the new value.</p>
 <p>This method differs from
@@ -452,43 +482,43 @@ mutable reference to the new value.</p>
 it does not consume the option, and instead it can not be called on
 rvalues.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.insert" href="sus-option-Option.html#method.insert">insert</a>(T value) & -&gt; T &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Inserts <code>value</code> into the option, then returns a mutable reference to it.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.insert" href="sus-option-Option.html#method.insert">insert</a>(T value) & -&gt; T &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Inserts <code>value</code> into the option, then returns a mutable reference to it.</p>
 <p>If the option already contains a value, the old value is dropped.</p>
 <p>See also
 <a href="sus-option-Option.html#method.get_or_insert"><code>Option::get_or_insert</code></a>,
 which doesn’t update the value if the option already contains <code>Some</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.into_iter" href="sus-option-Option.html#method.into_iter">into_iter</a>() && -&gt; Once&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_none" href="sus-option-Option.html#method.is_none">is_none</a>() const -&gt; bool</div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.into_iter" href="sus-option-Option.html#method.into_iter">into_iter</a>() && -&gt; Once&lt;T&gt;</div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns whether the option is currently empty, containing no value.</p>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_none" href="sus-option-Option.html#method.is_none">is_none</a>() const -&gt; bool</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns whether the option is currently empty, containing no value.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_some" href="sus-option-Option.html#method.is_some">is_some</a>() const -&gt; bool</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns whether the option currently contains a value.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_some" href="sus-option-Option.html#method.is_some">is_some</a>() const -&gt; bool</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns whether the option currently contains a value.</p>
 <p>If there is a value present, it can be extracted with
 <a href="sus-option-Option.html#method.unwrap"><code>unwrap</code></a> or
 <a href="sus-option-Option.html#method.expect"><code>expect</code></a>. For lvalues, it can be
@@ -499,28 +529,28 @@ const/mutable access, or through
 <a href="sus-option-Option.html#method.operator*"><code>operator*</code></a>
 and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; Once&lt;const std::remove_reference_t&lt;T&gt; &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter_mut" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() & -&gt; Once&lt;T &&gt;</div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; Once&lt;const std::remove_reference_t&lt;T&gt; &&gt;</div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &&, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map" href="sus-option-Option.html#method.map">map</a>(MapFn && m) && -&gt; Option&lt;R&gt;</div>
+          <div class="description long">
           </div>
-        </div>
-        <div class="description long">
-          <p>Maps the option's value through a function.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter_mut" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() & -&gt; Once&lt;T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &&, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map" href="sus-option-Option.html#method.map">map</a>(MapFn && m) && -&gt; Option&lt;R&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Maps the option's value through a function.</p>
 <p>When called on an rvalue, it consumes the option, passing the value
 through the map function, and returning an
 <a href="sus-option-Option.html"><code>Option&lt;R&gt;</code></a> where <code>R</code> is the
@@ -528,38 +558,38 @@ return type of the map function.</p>
 <p>Returns an <a href="sus-option-Option.html"><code>Option&lt;R&gt;</code></a> in state <code>None</code>
 if the current option is in state <code>None</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &&, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_or" href="sus-option-Option.html#method.map_or">map_or</a>(R default_result, MapFn && m) && -&gt; R</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the provided default result (if none), or applies a function to
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &&, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_or" href="sus-option-Option.html#method.map_or">map_or</a>(R default_result, MapFn && m) && -&gt; R</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the provided default result (if none), or applies a function to
 the contained value (if any).</p>
 <p>Arguments passed to <code>map_or</code> are eagerly evaluated; if you are passing the
 result of a function call, it is recommended to use
 <a href="sus-option-Option.html#method.map_or_else"><code>map_or_else</code></a>, which is
 lazily evaluated.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class DefaultFn, class MapFn, int &... , class D = std::invoke_result_t&lt;DefaultFn&gt;, class R = std::invoke_result_t&lt;MapFn, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_or_else" href="sus-option-Option.html#method.map_or_else">map_or_else</a>(DefaultFn && default_fn, MapFn && m) && -&gt; R</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Computes a default function result (if none), or applies a different
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class DefaultFn, class MapFn, int &... , class D = std::invoke_result_t&lt;DefaultFn&gt;, class R = std::invoke_result_t&lt;MapFn, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_or_else" href="sus-option-Option.html#method.map_or_else">map_or_else</a>(DefaultFn && default_fn, MapFn && m) && -&gt; R</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Computes a default function result (if none), or applies a different
 function to the contained value (if any).</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class E, int &... , class Result = ::sus::result::Result&lt;T, E&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.ok_or" href="sus-option-Option.html#method.ok_or">ok_or</a>(E e) && -&gt; Result</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Transforms the <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> into a
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class E, int &... , class Result = ::sus::result::Result&lt;T, E&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.ok_or" href="sus-option-Option.html#method.ok_or">ok_or</a>(E e) && -&gt; Result</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Transforms the <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> into a
 <a href="sus-result-Result.html"><code>Result&lt;T, E&gt;</code></a>, mapping <code>Some(v)</code> to <code>Ok(v)</code> and
 <code>None</code> to <code>Err(e)</code>.</p>
 <p>Arguments passed to <code>ok_or</code> are eagerly evaluated; if you are passing the
@@ -567,129 +597,129 @@ result of a function call, it is recommended to use
 <a href="sus-option-Option.html#method.ok_or_else"><code>ok_or_else</code></a>, which is
 lazily evaluated.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class ElseFn, int &... , class E = std::invoke_result_t&lt;ElseFn&gt;, class Result = ::sus::result::Result&lt;T, E&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.ok_or_else" href="sus-option-Option.html#method.ok_or_else">ok_or_else</a>(ElseFn && f) && -&gt; Result</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Transforms the <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> into a
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class ElseFn, int &... , class E = std::invoke_result_t&lt;ElseFn&gt;, class Result = ::sus::result::Result&lt;T, E&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.ok_or_else" href="sus-option-Option.html#method.ok_or_else">ok_or_else</a>(ElseFn && f) && -&gt; Result</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Transforms the <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> into a
 <a href="sus-result-Result.html"><code>Result&lt;T, E&gt;</code></a>, mapping <code>Some(v)</code> to <code>Ok(v)</code> and
 <code>None</code> to <code>Err(f())</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.or_else" href="sus-option-Option.html#method.or_else">or_else</a>(FnOnce&lt;Option&lt;T&gt; (void)&gt; auto && f) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Consumes and returns an option with the same value if this option contains
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.or_else" href="sus-option-Option.html#method.or_else">or_else</a>(FnOnce&lt;Option&lt;T&gt; (void)&gt; auto && f) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Consumes and returns an option with the same value if this option contains
 a value, otherwise returns the option returned by <code>f</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.or_that" href="sus-option-Option.html#method.or_that">or_that</a>(<a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a> that) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Consumes and returns an option with the same value if this option contains
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.or_that" href="sus-option-Option.html#method.or_that">or_that</a>(<a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a> that) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Consumes and returns an option with the same value if this option contains
 a value, otherwise returns <code>that</code> option.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.replace" href="sus-option-Option.html#method.replace">replace</a>(T t) & -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Replaces whatever the Option is currently holding with <code>Some</code> value <code>t</code>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.replace" href="sus-option-Option.html#method.replace">replace</a>(T t) & -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Replaces whatever the Option is currently holding with <code>Some</code> value <code>t</code>
 and returns an Option holding what was there previously.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.take" href="sus-option-Option.html#method.take">take</a>() & -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a new option containing whatever was inside the current option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.take" href="sus-option-Option.html#method.take">take</a>() & -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a new option containing whatever was inside the current option.</p>
 <p>If this option contains <code>None</code> then it is left unchanged and returns an
 option containing <code>None</code>. If this option contains <code>Some</code> with a value, the
 value is moved into the returned option and this option will contain
 <code>None</code> afterward.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;int &... , class OkType = typename ::sus::result::__private::IsResultType&lt;T&gt;::ok_type, class ErrType = typename ::sus::result::__private::IsResultType&lt;T&gt;::err_type, class Result = ::sus::result::Result&lt;Option&lt;OkType&gt;, ErrType&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.transpose" href="sus-option-Option.html#method.transpose">transpose</a>() && -&gt; Result</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Transposes an <a href="sus-option-Option.html"><code>Option</code></a> of a
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;int &... , class OkType = typename ::sus::result::__private::IsResultType&lt;T&gt;::ok_type, class ErrType = typename ::sus::result::__private::IsResultType&lt;T&gt;::err_type, class Result = ::sus::result::Result&lt;Option&lt;OkType&gt;, ErrType&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.transpose" href="sus-option-Option.html#method.transpose">transpose</a>() && -&gt; Result</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Transposes an <a href="sus-option-Option.html"><code>Option</code></a> of a
 <a href="sus-result-Result.html"><code>Result</code></a> into a
 <a href="sus-result-Result.html"><code>Result</code></a> of an
 <a href="sus-option-Option.html"><code>Option</code></a>.</p>
 <p><code>None</code> will be mapped to <code>Ok(None)</code>. <code>Some(Ok(_))</code> and <code>Some(Err(_))</code> will
 be mapped to <code>Ok(Some(_))</code> and <code>Err(_)</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap" href="sus-option-Option.html#method.unwrap">unwrap</a>() && -&gt; T</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the contained value inside the option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap" href="sus-option-Option.html#method.unwrap">unwrap</a>() && -&gt; T</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the contained value inside the option.</p>
 <p>The function will panic without a message if the option's state is
 currently <code>None</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_or" href="sus-option-Option.html#method.unwrap_or">unwrap_or</a>(T default_result) && -&gt; T</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the contained value inside the option, if there is one. Otherwise,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_or" href="sus-option-Option.html#method.unwrap_or">unwrap_or</a>(T default_result) && -&gt; T</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the contained value inside the option, if there is one. Otherwise,
 returns <code>default_result</code>.</p>
 <p>Note that if it is non-trivial to construct a <code>default_result</code>, that
 <a href="sus-option-Option.html#method.unwrap_or_else"><code>unwrap_or_else</code></a> should be
 used instead, as it will only construct the default value if required.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_or_default" href="sus-option-Option.html#method.unwrap_or_default">unwrap_or_default</a>() && -&gt; T</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the contained value inside the option, if there is one.
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_or_default" href="sus-option-Option.html#method.unwrap_or_default">unwrap_or_default</a>() && -&gt; T</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the contained value inside the option, if there is one.
 Otherwise, constructs a default value for the type and returns that.</p>
 <p>The option's contained type <code>T</code> must be
 <a href="sus-construct-Default.html"><code>Default</code></a> in order to be constructed with a
 default value.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_or_else" href="sus-option-Option.html#method.unwrap_or_else">unwrap_or_else</a>(FnOnce&lt;T (void)&gt; auto && f) && -&gt; T</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the contained value inside the Option, if there is one.
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_or_else" href="sus-option-Option.html#method.unwrap_or_else">unwrap_or_else</a>(FnOnce&lt;T (void)&gt; auto && f) && -&gt; T</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the contained value inside the Option, if there is one.
 Otherwise, returns the result of the given function.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_unchecked" href="sus-option-Option.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) && -&gt; T</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the contained value inside the option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_unchecked" href="sus-option-Option.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) && -&gt; T</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the contained value inside the option.</p>
 <h1><a name="safety-2" href="#safety-2">Safety</a></h1>
 <p>It is Undefined Behaviour to call this function when the option's state is
 <code>None</code>. The caller is responsible for ensuring the option contains a value
@@ -698,14 +728,14 @@ or <a href="sus-option-Option.html#method.expect"><code>expect</code></a> should
 be preferred. The compiler will typically elide the checks if they program
 verified the value appropriately before use in order to not panic.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unzip" href="sus-option-Option.html#method.unzip">unzip</a>() && -&gt; auto</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Unzips an option holding a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of two
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unzip" href="sus-option-Option.html#method.unzip">unzip</a>() && -&gt; auto</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Unzips an option holding a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of two
 values into a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of two
 <a href="sus-option-Option.html"><code>Option</code></a>s.</p>
 <p><a href="sus-option-Option.html"><code>Option&lt;Tuple&lt;i32, u32&gt;&gt;</code></a> is unzipped to
@@ -714,43 +744,43 @@ values into a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of two
 values from self. Otherwise, the result is a tuple of two options set to
 None.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.xor_that" href="sus-option-Option.html#method.xor_that">xor_that</a>(<a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a> that) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Consumes this option and returns an option holding the value from either
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.xor_that" href="sus-option-Option.html#method.xor_that">xor_that</a>(<a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a> that) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Consumes this option and returns an option holding the value from either
 this option or <code>that</code> option if exactly one of them holds a value,
 otherwise returns an Option that holds <code>None</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U, int &... , class Tuple = ::sus::tuple_type::Tuple&lt;T, U&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.zip" href="sus-option-Option.html#method.zip">zip</a>(Option&lt;U&gt; o) && -&gt; Option&lt;Tuple&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Zips self with another option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U, int &... , class Tuple = ::sus::tuple_type::Tuple&lt;T, U&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.zip" href="sus-option-Option.html#method.zip">zip</a>(Option&lt;U&gt; o) && -&gt; Option&lt;Tuple&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Zips self with another option.</p>
 <p>If self is <code>Some(s)</code> and other is <code>Some(o)</code>, this method returns
 <code>Some(Tuple(s, o))</code>. Otherwise, <code>None</code> is returned.</p>
 
-        </div>
-      </div>
-    </div>
-    <div class="section methods conversion">
-      <div class="section-header">
-        Conversions
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.operator State" href="sus-option-Option.html#method.operator State">operator State</a>() const&</div>
           </div>
         </div>
-        <div class="description long">
-          <p>An operator which returns the state of the option, either <code>Some</code> or
+      </div>
+      <div class="section methods conversion">
+        <div class="section-header">
+          <a name="conversions" href="#conversions">Conversions</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.operator State" href="sus-option-Option.html#method.operator State">operator State</a>() const&</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>An operator which returns the state of the option, either <code>Some</code> or
 <code>None</code>.</p>
 <p>This supports the use of an option in a switch, allowing it to act as
 a tagged union between &quot;some value&quot; and &quot;no value&quot;.</p>
@@ -764,51 +794,51 @@ switch (x) {
 }
 </code></pre>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.operator optional&lt;const std::remove_reference_t&lt;T&gt; *&gt;.convert.optional" href="sus-option-Option.html#method.operator optional&lt;const std::remove_reference_t&lt;T&gt; *&gt;.convert.optional">operator optional&lt;const std::remove_reference_t&lt;T&gt; *&gt;</a>() const&</div>
           </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.operator optional&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;.convert.optional" href="sus-option-Option.html#method.operator optional&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;.convert.optional">operator optional&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;</a>() const&</div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.operator optional&lt;const std::remove_reference_t&lt;T&gt; *&gt;.convert.optional" href="sus-option-Option.html#method.operator optional&lt;const std::remove_reference_t&lt;T&gt; *&gt;.convert.optional">operator optional&lt;const std::remove_reference_t&lt;T&gt; *&gt;</a>() const&</div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Implicit conversion to <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.operator optional&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;.convert.optional" href="sus-option-Option.html#method.operator optional&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;.convert.optional">operator optional&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt; &gt;</a>() const&</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Implicit conversion to <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.operator optional&lt;std::remove_reference_t&lt;T&gt; *&gt;.convert.optional" href="sus-option-Option.html#method.operator optional&lt;std::remove_reference_t&lt;T&gt; *&gt;.convert.optional">operator optional&lt;std::remove_reference_t&lt;T&gt; *&gt;</a>() const&</div>
           </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.operator optional&lt;std::remove_reference_t&lt;T&gt; &gt;.convert.optional" href="sus-option-Option.html#method.operator optional&lt;std::remove_reference_t&lt;T&gt; &gt;.convert.optional">operator optional&lt;std::remove_reference_t&lt;T&gt; &gt;</a>() &&</div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.operator optional&lt;std::remove_reference_t&lt;T&gt; *&gt;.convert.optional" href="sus-option-Option.html#method.operator optional&lt;std::remove_reference_t&lt;T&gt; *&gt;.convert.optional">operator optional&lt;std::remove_reference_t&lt;T&gt; *&gt;</a>() const&</div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.operator optional&lt;std::remove_reference_t&lt;T&gt; &gt;.convert.optional" href="sus-option-Option.html#method.operator optional&lt;std::remove_reference_t&lt;T&gt; &gt;.convert.optional">operator optional&lt;std::remove_reference_t&lt;T&gt; &gt;</a>() &&</div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="section methods nonstatic">
-      <div class="section-header">
-        Operators
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator*" href="sus-option-Option.html#method.operator*">operator*</a>() const& -&gt; remove_reference_t&lt;T&gt; &</div>
-          </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="operators" href="#operators">Operators</a>
         </div>
-        <div class="description long">
-          <p>Returns a reference to the contained value inside the option.</p>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator*" href="sus-option-Option.html#method.operator*">operator*</a>() const& -&gt; remove_reference_t&lt;T&gt; &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a reference to the contained value inside the option.</p>
 <p>The reference is const if the option is const, and is mutable otherwise.
 This method allows calling methods directly on the type inside the option
 without unwrapping.</p>
@@ -840,14 +870,14 @@ through <a href="sus-option-Option.html#method.operator*"><code>operator*</code>
 <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</code></a>.</li>
 </ul>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator-&gt;" href="sus-option-Option.html#method.operator-&gt;">operator-&gt;</a>() const& -&gt; remove_reference_t&lt;T&gt; *</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a pointer to the contained value inside the option.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator-&gt;" href="sus-option-Option.html#method.operator-&gt;">operator-&gt;</a>() const& -&gt; remove_reference_t&lt;T&gt; *</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a pointer to the contained value inside the option.</p>
 <p>The pointer is const if the option is const, and is mutable otherwise.
 This method allows calling methods directly on the type inside the option
 without unwrapping.</p>
@@ -879,28 +909,28 @@ through <a href="sus-option-Option.html#method.operator*"><code>operator*</code>
 <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</code></a>.</li>
 </ul>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=.copy" href="sus-option-Option.html#method.operator=.copy">operator=</a>(<a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> o) -&gt; <a class="type-name" title="Option&lt;T&gt; &" href="sus-option-Option.html">Option&lt;T&gt; &</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Copy assignment for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=.copy" href="sus-option-Option.html#method.operator=.copy">operator=</a>(<a class="type-name" title="const Option&lt;T&gt; &" href="sus-option-Option.html">const Option&lt;T&gt; &</a> o) -&gt; <a class="type-name" title="Option&lt;T&gt; &" href="sus-option-Option.html">Option&lt;T&gt; &</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Copy assignment for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
 satisfy <a href="sus-mem-Copy.html"><code>Copy&lt;Option&lt;T&gt;&gt;</code></a> if
 <a href="sus-mem-Copy.html"><code>Copy&lt;T&gt;</code></a> is satisfied.</p>
 <p>If <code>T</code> can be trivially copy-assigned, then
 <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> can also be
 trivially copy-assigned.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=.move" href="sus-option-Option.html#method.operator=.move">operator=</a>(<a class="type-name" title="Option&lt;T&gt; &&" href="sus-option-Option.html">Option&lt;T&gt; &&</a> o) -&gt; <a class="type-name" title="Option&lt;T&gt; &" href="sus-option-Option.html">Option&lt;T&gt; &</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Move assignment for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=.move" href="sus-option-Option.html#method.operator=.move">operator=</a>(<a class="type-name" title="Option&lt;T&gt; &&" href="sus-option-Option.html">Option&lt;T&gt; &&</a> o) -&gt; <a class="type-name" title="Option&lt;T&gt; &" href="sus-option-Option.html">Option&lt;T&gt; &</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Move assignment for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
 satisfy <a href="sus-mem-Move.html"><code>Move&lt;Option&lt;T&gt;&gt;</code></a> if
 <a href="sus-mem-Move.html"><code>Move&lt;T&gt;</code></a> is satisfied.</p>
 <p>If <code>T</code> can be trivially move-assigned, then
@@ -910,8 +940,9 @@ option is unchanged but should still not be used thereafter without
 reinitializing it. Use <code>take()</code> instead to move the value out of the
 option when the option may be used again afterward.</p>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

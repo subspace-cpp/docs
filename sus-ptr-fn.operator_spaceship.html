@@ -13,41 +13,60 @@ pointers are comparable and thus satisfy StrongOrd as well."></meta>
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.ptr.html">ptr</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">operator&lt;=&gt;</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class T, class U&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">operator&lt;=&gt;</a>(const NonNull&lt;T&gt; & l, const NonNull&lt;U&gt; & r) -&gt; strong_ordering<div class="requires">
-              <span class="requires-keyword keyword">
-                requires
-              </span>
-              <div class="requires-constaint">
-                sus::ops::StrongOrd
-                &lt;
-                const T *
-                const U *
-                &gt;
-              </div>
-            </div></div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">operator&lt;=&gt;</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.ptr.html">ptr</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">operator&lt;=&gt;</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>Satisfies the <a href="sus-ops-StrongOrd.html"><code>StrongOrd&lt;NonNull&lt;T&gt;&gt;</code></a> concept if the
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class T, class U&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">operator&lt;=&gt;</a>(const NonNull&lt;T&gt; & l, const NonNull&lt;U&gt; & r) -&gt; strong_ordering<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constaint">
+                  sus::ops::StrongOrd
+                  &lt;
+                  const T *
+                  const U *
+                  &gt;
+                </div>
+              </div></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Satisfies the <a href="sus-ops-StrongOrd.html"><code>StrongOrd&lt;NonNull&lt;T&gt;&gt;</code></a> concept if the
 pointers are comparable and thus satisfy <code>StrongOrd</code> as well.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

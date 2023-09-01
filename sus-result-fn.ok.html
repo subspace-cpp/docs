@@ -12,30 +12,48 @@
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.result.html">result</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">ok</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">ok</a>(T && t) -&gt; auto</div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">ok</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.result.html">result</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">ok</a>
         </div>
-        <div class="overload">
-          <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">ok</a>() -&gt; OkVoidMarker</div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">ok</a>(T && t) -&gt; auto</div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">ok</a>() -&gt; OkVoidMarker</div>
+          </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>Used to construct a Result&lt;T, E&gt; with an Ok(t) value.</p>
+        <div class="description long">
+          <p>Used to construct a Result&lt;T, E&gt; with an Ok(t) value.</p>
 <p>Calling <code>ok()</code> produces a hint to make a Result&lt;T, E&gt; but does not actually
 construct <code>Result&lt;T, E&gt;</code>. This is to deduce the actual types <code>T</code> and <code>E</code>
 when it is constructed, avoid specifying them both here, and support
@@ -43,7 +61,8 @@ conversions.</p>
 <p><code>Result&lt;void, E&gt;</code> can also be constructed from calling <code>ok()</code> without an
 argument.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

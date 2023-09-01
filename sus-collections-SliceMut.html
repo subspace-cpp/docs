@@ -13,37 +13,67 @@ type T."></meta>
 </head>
 
 <body>
-  <div class="type record class">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Class
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.collections.html">collections</a>
-        <span class="namespace-dots">::</span>
-        <a class="type-name" href="#">SliceMut</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class T&gt;</div>
-        <span class="class">
-          class
-        </span>
-        <span class="type-name">
-          SliceMut
-        </span>
-        <span class="final">
-          final
-        </span>
-        <div class="record-body">
-          { ... };
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      class
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">SliceMut</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+        <li>
+          <a href="#static-methods">Static Methods</a>
+        </li>
+        <li>
+          <a href="#methods">Methods</a>
+        </li>
+        <li>
+          <a href="#conversions">Conversions</a>
+        </li>
+        <li>
+          <a href="#operators">Operators</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="type record class">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Class
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.collections.html">collections</a>
+          <span class="namespace-dots">::</span>
+          <a class="type-name" href="#">SliceMut</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>A dynamically-sized mutable view into a contiguous sequence of objects of
+        <div class="type-signature">
+          <div class="template">template &lt;class T&gt;</div>
+          <span class="class">
+            class
+          </span>
+          <span class="type-name">
+            SliceMut
+          </span>
+          <span class="final">
+            final
+          </span>
+          <div class="record-body">
+            { ... };
+          </div>
+        </div>
+        <div class="description long">
+          <p>A dynamically-sized mutable view into a contiguous sequence of objects of
 type <code>T</code>.</p>
 <p>Contiguous here means that elements are laid out so that every element is
 the same distance from its neighbors, where there are
@@ -53,39 +83,39 @@ of each element.</p>
 length.</p>
 <p>A <code>SliceMut&lt;T&gt;</code> can be implicitly converted to a <code>Slice&lt;T&gt;</code>.</p>
 
-      </div>
-    </div>
-    <div class="section methods static">
-      <div class="section-header">
-        Static Methods
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.SliceMut" href="sus-collections-SliceMut.html#method.SliceMut">SliceMut</a>()</div>
-          </div>
         </div>
-        <div class="description long">
-          <p>Constructs an empty SliceMut, which has no elements.</p>
+      </div>
+      <div class="section methods static">
+        <div class="section-header">
+          <a name="static-methods" href="#static-methods">Static Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.SliceMut" href="sus-collections-SliceMut.html#method.SliceMut">SliceMut</a>()</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Constructs an empty SliceMut, which has no elements.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;size_t N&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.array" href="sus-collections-SliceMut.html#method.from.from.array">from</a>(T (&)[N] data) -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>sus::construct::From&lt;T[N]&gt; trait.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;size_t N&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.array" href="sus-collections-SliceMut.html#method.from.from.array">from</a>(T (&)[N] data) -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>sus::construct::From&lt;T[N]&gt; trait.</p>
 <p>Returns a SliceMut that refers to all elements of the <code>data</code> array.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_raw_collection_mut" href="sus-collections-SliceMut.html#method.from_raw_collection_mut">from_raw_collection_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::iter::IterRefCounter" href="sus-iter-IterRefCounter.html">IterRefCounter</a> refs, T * data, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> len) -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Constructs a slice from its raw parts with iterator invalidation tracking.
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_raw_collection_mut" href="sus-collections-SliceMut.html#method.from_raw_collection_mut">from_raw_collection_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::iter::IterRefCounter" href="sus-iter-IterRefCounter.html">IterRefCounter</a> refs, T * data, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> len) -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Constructs a slice from its raw parts with iterator invalidation tracking.
 Iterators produced from this slice will interact with the collection to
 allow it to know when they are being invalidated by the collection.</p>
 <p>For building a SliceMut from primitive pointer, use
@@ -108,14 +138,14 @@ which is Undefined Behaviour in C++. To support dangling pointers, those
 methods would need <code>length == 0</code> branches. Care must be applied when
 converting slices between languages as a result.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_raw_parts_mut" href="sus-collections-SliceMut.html#method.from_raw_parts_mut">from_raw_parts_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, T * data, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> len) -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Constructs a slice from its raw parts.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_raw_parts_mut" href="sus-collections-SliceMut.html#method.from_raw_parts_mut">from_raw_parts_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, T * data, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> len) -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Constructs a slice from its raw parts.</p>
 <p>For building a SliceMut from a collection, use <code>from_raw_collection_mut()</code>
 in order to participate in iterator invalidation tracking.</p>
 <h1><a name="safety-1" href="#safety-1">Safety</a></h1>
@@ -136,34 +166,34 @@ which is Undefined Behaviour in C++. To support dangling pointers, those
 methods would need <code>length == 0</code> branches. Care must be applied when
 converting slices between languages as a result.</p>
 
-        </div>
-      </div>
-    </div>
-    <div class="section methods nonstatic">
-      <div class="section-header">
-        Methods
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut_ptr" href="sus-collections-SliceMut.html#method.as_mut_ptr">as_mut_ptr</a>() const& -&gt; T *</div>
           </div>
         </div>
-        <div class="description long">
-          <p>Returns a mutable pointer to the first element in the slice.</p>
+      </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="methods" href="#methods">Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut_ptr" href="sus-collections-SliceMut.html#method.as_mut_ptr">as_mut_ptr</a>() const& -&gt; T *</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable pointer to the first element in the slice.</p>
 <p>The caller must ensure that the collection outlives the pointer this
 function returns, or else it will end up pointing to garbage.</p>
 <p>Modifying the collection referenced by this slice may cause its buffer to
 be reallocated, which would also make any pointers to it invalid.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut_ptr_range" href="sus-collections-SliceMut.html#method.as_mut_ptr_range">as_mut_ptr_range</a>() const& -&gt; Range&lt;T *&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the two mutable pointers spanning the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut_ptr_range" href="sus-collections-SliceMut.html#method.as_mut_ptr_range">as_mut_ptr_range</a>() const& -&gt; Range&lt;T *&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the two mutable pointers spanning the slice.</p>
 <p>The returned range is half-open, which means that the end pointer points
 one past the last element of the slice. This way, an empty slice is
 represented by two equal pointers, and the difference between the two
@@ -175,27 +205,27 @@ pointers to refer to a range of elements in memory, as is common in C++
 stdlib algorthms. Note that the pointers can be unpacked from the Range
 with structured bindings as in <code>auto [a, b] = s.as_mut_ptr_range();</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ptr" href="sus-collections-SliceMut.html#method.as_ptr">as_ptr</a>() const& -&gt; const T *</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a const pointer to the first element in the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ptr" href="sus-collections-SliceMut.html#method.as_ptr">as_ptr</a>() const& -&gt; const T *</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a const pointer to the first element in the slice.</p>
 <p>The caller must ensure that the collection outlives the pointer this
 function returns, or else it will end up pointing to garbage.</p>
 <p>Modifying the collection referenced by this slice may cause its buffer to
 be reallocated, which would also make any pointers to it invalid.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ptr_range" href="sus-collections-SliceMut.html#method.as_ptr_range">as_ptr_range</a>() const& -&gt; Range&lt;const T *&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the two const pointers spanning the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ptr_range" href="sus-collections-SliceMut.html#method.as_ptr_range">as_ptr_range</a>() const& -&gt; Range&lt;const T *&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the two const pointers spanning the slice.</p>
 <p>The returned range is half-open, which means that the end pointer points
 one past the last element of the slice. This way, an empty slice is
 represented by two equal pointers, and the difference between the two
@@ -207,21 +237,21 @@ pointers to refer to a range of elements in memory, as is common in C++
 stdlib algorthms. Note that the pointers can be unpacked from the Range
 with structured bindings as in <code>auto [a, b] = s.as_ptr_range();</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_slice" href="sus-collections-SliceMut.html#method.as_slice">as_slice</a>() const& -&gt; Slice&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.binary_search" href="sus-collections-SliceMut.html#method.binary_search">binary_search</a>(const T & x) const& -&gt; <a class="type-name" title="class ::sus::result::Result&lt; ::sus::num::usize, ::sus::num::usize&gt;" href="sus-result-Result.html">Result&lt; ::sus::num::usize, ::sus::num::usize&gt;</a></div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_slice" href="sus-collections-SliceMut.html#method.as_slice">as_slice</a>() const& -&gt; Slice&lt;T&gt;</div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Binary searches this slice for a given element. This behaves similarly
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.binary_search" href="sus-collections-SliceMut.html#method.binary_search">binary_search</a>(const T & x) const& -&gt; <a class="type-name" title="class ::sus::result::Result&lt; ::sus::num::usize, ::sus::num::usize&gt;" href="sus-result-Result.html">Result&lt; ::sus::num::usize, ::sus::num::usize&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Binary searches this slice for a given element. This behaves similarly
 to contains if this slice is sorted.</p>
 <p>If the value is found then <code>sus::Ok</code> is returned, with the index
 of the matching element. If there are multiple matches, then any one of
@@ -230,14 +260,14 @@ is subject to change in future versions of Subspace. If the value is not
 found then <code>sus::Err</code> is returned, with the index where a matching
 element could be inserted while maintaining sorted order.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.binary_search_by" href="sus-collections-SliceMut.html#method.binary_search_by">binary_search_by</a>(FnMutRef&lt;std::weak_ordering (const T &)&gt; f) const& -&gt; <a class="type-name" title="class ::sus::result::Result&lt; ::sus::num::usize, ::sus::num::usize&gt;" href="sus-result-Result.html">Result&lt; ::sus::num::usize, ::sus::num::usize&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Binary searches this slice with a comparator function. This behaves
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.binary_search_by" href="sus-collections-SliceMut.html#method.binary_search_by">binary_search_by</a>(FnMutRef&lt;std::weak_ordering (const T &)&gt; f) const& -&gt; <a class="type-name" title="class ::sus::result::Result&lt; ::sus::num::usize, ::sus::num::usize&gt;" href="sus-result-Result.html">Result&lt; ::sus::num::usize, ::sus::num::usize&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Binary searches this slice with a comparator function. This behaves
 similarly to <code>contains</code> if this slice is sorted.</p>
 <p>The comparator function should implement an order consistent with the
 sort order of the underlying slice, returning a <code>std::strong_ordering</code>
@@ -250,14 +280,14 @@ is subject to change in future versions of Subspace. If the value is not
 found then <code>sus::Err</code> is returned, with the index where a matching
 element could be inserted while maintaining sorted order.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Key, class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.binary_search_by_key" href="sus-collections-SliceMut.html#method.binary_search_by_key">binary_search_by_key</a>(const Key & key, FnMut&lt;Key (const T &)&gt; auto && f) const& -&gt; <a class="type-name" title="class ::sus::result::Result&lt; ::sus::num::usize, ::sus::num::usize&gt;" href="sus-result-Result.html">Result&lt; ::sus::num::usize, ::sus::num::usize&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Binary searches this slice with a key extraction function. This behaves
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class Key, class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.binary_search_by_key" href="sus-collections-SliceMut.html#method.binary_search_by_key">binary_search_by_key</a>(const Key & key, FnMut&lt;Key (const T &)&gt; auto && f) const& -&gt; <a class="type-name" title="class ::sus::result::Result&lt; ::sus::num::usize, ::sus::num::usize&gt;" href="sus-result-Result.html">Result&lt; ::sus::num::usize, ::sus::num::usize&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Binary searches this slice with a key extraction function. This behaves
 similarly to <code>contains</code> if this slice is sorted.</p>
 <p>Assumes that the slice is sorted by the key, for instance with
 sort_by_key using the same key extraction function.</p>
@@ -268,14 +298,14 @@ is subject to change in future versions of Subspace. If the value is not
 found then <code>sus::Err</code> is returned, with the index where a matching
 element could be inserted while maintaining sorted order.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.chunks" href="sus-collections-SliceMut.html#method.chunks">chunks</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; Chunks&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.chunks" href="sus-collections-SliceMut.html#method.chunks">chunks</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; Chunks&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
 starting at the beginning of the slice.</p>
 <p>The chunks are slices and do not overlap. If <code>chunk_size</code> does not divide
 the length of the slice, then the last chunk will not have length
@@ -286,14 +316,14 @@ iterator but starting at the end of the slice.</p>
 <h1><a name="panics" href="#panics">Panics</a></h1>
 <p>Panics if chunk_size is 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.chunks_exact" href="sus-collections-SliceMut.html#method.chunks_exact">chunks_exact</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; ChunksExact&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.chunks_exact" href="sus-collections-SliceMut.html#method.chunks_exact">chunks_exact</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; ChunksExact&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
 starting at the beginning of the slice.</p>
 <p>The chunks are slices and do not overlap. If <code>chunk_size</code> does not divide
 the length of the slice, then the last up to <code>chunk_size-1</code> elements will
@@ -308,14 +338,14 @@ but starting at the end of the slice.</p>
 <h1><a name="panics-1" href="#panics-1">Panics</a></h1>
 <p>Panics if <code>chunk_size</code> is 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.chunks_exact_mut" href="sus-collections-SliceMut.html#method.chunks_exact_mut">chunks_exact_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; ChunksExactMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.chunks_exact_mut" href="sus-collections-SliceMut.html#method.chunks_exact_mut">chunks_exact_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; ChunksExactMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
 starting at the beginning of the slice.</p>
 <p>The chunks are mutable slices, and do not overlap. If <code>chunk_size</code> does
 not divide the length of the slice, then the last up to <code>chunk_size-1</code>
@@ -328,14 +358,14 @@ case of chunks_mut.</p>
 remainder as a smaller chunk, and <code>rchunks_exact_mut()</code> for the same
 iterator but starting at the end of the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.chunks_mut" href="sus-collections-SliceMut.html#method.chunks_mut">chunks_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; ChunksMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over chunk_size elements of the slice at a time,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.chunks_mut" href="sus-collections-SliceMut.html#method.chunks_mut">chunks_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; ChunksMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over chunk_size elements of the slice at a time,
 starting at the beginning of the slice.</p>
 <p>The chunks are mutable slices, and do not overlap. If chunk_size does not
 divide the length of the slice, then the last chunk will not have length
@@ -346,26 +376,26 @@ same iterator but starting at the end of the slice.</p>
 <h1><a name="panics-2" href="#panics-2">Panics</a></h1>
 <p>Panics if chunk_size is 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone_from_slice" href="sus-collections-SliceMut.html#method.clone_from_slice">clone_from_slice</a>(const Slice&lt;T&gt; & src) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Copies the elements from <code>src</code> into <code>*this</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone_from_slice" href="sus-collections-SliceMut.html#method.clone_from_slice">clone_from_slice</a>(const Slice&lt;T&gt; & src) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Copies the elements from <code>src</code> into <code>*this</code>.</p>
 <p>The length of <code>src</code> must be the same as <code>*this</code>.</p>
 <h1><a name="panics-3" href="#panics-3">Panics</a></h1>
 <p>This function will panic if the two slices have different lengths.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.concat" href="sus-collections-SliceMut.html#method.concat">concat</a>() const& -&gt; auto</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Flattens and concatenates the items in the Slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.concat" href="sus-collections-SliceMut.html#method.concat">concat</a>() const& -&gt; auto</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Flattens and concatenates the items in the Slice.</p>
 <p>The items of type <code>T</code> are flattened into a collection of type
 <code>T::ConcatOutputType</code>. This method is only supported for types that
 satisfy the <code>sus::collections::Concat&lt;T&gt;</code> concept.</p>
@@ -378,36 +408,36 @@ Vec&lt;i32&gt; v = Slice&lt;Slice&lt;i32&gt;&gt;::from(as).concat();
 sus::check(v == Slice&lt;i32&gt;::from({1, 2, 3, 4}));
 </code></pre>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.concat_into" href="sus-collections-SliceMut.html#method.concat_into">concat_into</a>(Vec&lt;T&gt; & vec) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Concatenates a clone of each element in the slice into <code>vec</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.concat_into" href="sus-collections-SliceMut.html#method.concat_into">concat_into</a>(Vec&lt;T&gt; & vec) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Concatenates a clone of each element in the slice into <code>vec</code>.</p>
 <p>This method exists to satisfy <code>sus::collections::Concat&lt;Slice&lt;T&gt;&gt;</code>, for
 <code>concat()</code> to append the elements in each Slice onto <code>vec</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.contains" href="sus-collections-SliceMut.html#method.contains">contains</a>(const T & x) const& -&gt; bool</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns <code>true</code> if the slice contains an element with the given value.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.contains" href="sus-collections-SliceMut.html#method.contains">contains</a>(const T & x) const& -&gt; bool</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns <code>true</code> if the slice contains an element with the given value.</p>
 <p>This operation is O(n).</p>
 <p>Note that if you have a sorted slice, <code>binary_search()</code> may be faster.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.copy_from_slice" href="sus-collections-SliceMut.html#method.copy_from_slice">copy_from_slice</a>(const Slice&lt;T&gt; & src) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Copies all elements from src into <code>*this</code>, using a <code>memcpy()</code> or equivalent.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.copy_from_slice" href="sus-collections-SliceMut.html#method.copy_from_slice">copy_from_slice</a>(const Slice&lt;T&gt; & src) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Copies all elements from src into <code>*this</code>, using a <code>memcpy()</code> or equivalent.</p>
 <p>The length of <code>src</code> must be the same as <code>*this</code>.</p>
 <p>This function requires that <code>T</code> is <code>TrivialCopy</code> in order to give consistent
 performance across types. If <code>T</code> is not <code>TrivialCopy</code>, use
@@ -415,14 +445,14 @@ performance across types. If <code>T</code> is not <code>TrivialCopy</code>, use
 <h1><a name="panics-this-function-will-panic-if-the-two-slices-have-different-lengths," href="#panics-this-function-will-panic-if-the-two-slices-have-different-lengths,">Panics This function will panic if the two slices have different lengths,</a></h1>
 <p>or if the two slices overlap.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.copy_from_slice_unchecked" href="sus-collections-SliceMut.html#method.copy_from_slice_unchecked">copy_from_slice_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, const Slice&lt;T&gt; & src) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Copies all elements from src into <code>*this</code>, using a <code>memcpy()</code> or equivalent.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.copy_from_slice_unchecked" href="sus-collections-SliceMut.html#method.copy_from_slice_unchecked">copy_from_slice_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, const Slice&lt;T&gt; & src) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Copies all elements from src into <code>*this</code>, using a <code>memcpy()</code> or equivalent.</p>
 <p>This function requires that <code>T</code> is trivially copy-assignable in order to
 give consistent performance across types. If <code>T</code> is not trivially copy-
 assignable, use <code>clone_from_slice()</code>.</p>
@@ -435,14 +465,14 @@ overflow when multiplied by the size of <code>T</code>.</li>
 <li>The <code>src</code> slice must not overlap (aka alias) with <code>*this</code> in memory.</li>
 </ul>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.drop_iterator_invalidation_tracking" href="sus-collections-SliceMut.html#method.drop_iterator_invalidation_tracking">drop_iterator_invalidation_tracking</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Stops tracking iterator invalidation.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.drop_iterator_invalidation_tracking" href="sus-collections-SliceMut.html#method.drop_iterator_invalidation_tracking">drop_iterator_invalidation_tracking</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Stops tracking iterator invalidation.</p>
 <h1><a name="safety-3" href="#safety-3">Safety</a></h1>
 <p>If the Slice points into a collection and that collection is invalidated,
 it will no longer be caught. The caller must provide conditions that can
@@ -454,92 +484,92 @@ valid, but the collection itself may be moved, which would invalidate the
 tracking and be treated as invalidating the iterator. There is no way to
 restore tracking.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.ends_with" href="sus-collections-SliceMut.html#method.ends_with">ends_with</a>(const Slice&lt;T&gt; & suffix) const& -&gt; bool</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns <code>true</code> if <code>suffix</code> is a suffix of the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.ends_with" href="sus-collections-SliceMut.html#method.ends_with">ends_with</a>(const Slice&lt;T&gt; & suffix) const& -&gt; bool</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns <code>true</code> if <code>suffix</code> is a suffix of the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.fill" href="sus-collections-SliceMut.html#method.fill">fill</a>(T value) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Fills the slice with elements by cloning <code>value</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.fill" href="sus-collections-SliceMut.html#method.fill">fill</a>(T value) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Fills the slice with elements by cloning <code>value</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.fill_with" href="sus-collections-SliceMut.html#method.fill_with">fill_with</a>(FnMutRef&lt;T (void)&gt; f) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Fills the slice with elements returned by calling a closure repeatedly.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.fill_with" href="sus-collections-SliceMut.html#method.fill_with">fill_with</a>(FnMutRef&lt;T (void)&gt; f) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Fills the slice with elements returned by calling a closure repeatedly.</p>
 <p>This method uses a closure to create new values. If you’d rather <code>Clone</code> a
 given value, use <code>fill()</code>. If you want to default-construct elements for a
 type that satisfies <code>sus::construct::Default</code>, use <code>fill_with_default()</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.fill_with_default" href="sus-collections-SliceMut.html#method.fill_with_default">fill_with_default</a>() const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Fills the slice with default-constructed elements of type <code>T</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.fill_with_default" href="sus-collections-SliceMut.html#method.fill_with_default">fill_with_default</a>() const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Fills the slice with default-constructed elements of type <code>T</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.first" href="sus-collections-SliceMut.html#method.first">first</a>() const& -&gt; Option&lt;const T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the first element of the slice, or <code>None</code> if it is empty.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.first" href="sus-collections-SliceMut.html#method.first">first</a>() const& -&gt; Option&lt;const T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the first element of the slice, or <code>None</code> if it is empty.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.first_mut" href="sus-collections-SliceMut.html#method.first_mut">first_mut</a>() const& -&gt; Option&lt;T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a mutable reference to the first element of the slice, or None if it
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.first_mut" href="sus-collections-SliceMut.html#method.first_mut">first_mut</a>() const& -&gt; Option&lt;T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable reference to the first element of the slice, or None if it
 is empty.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get" href="sus-collections-SliceMut.html#method.get">get</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> i) const& -&gt; Option&lt;const T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a const reference to the element at index <code>i</code>, or <code>None</code> if
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get" href="sus-collections-SliceMut.html#method.get">get</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> i) const& -&gt; Option&lt;const T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a const reference to the element at index <code>i</code>, or <code>None</code> if
 <code>i</code> is beyond the end of the Slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_mut" href="sus-collections-SliceMut.html#method.get_mut">get_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> i) const& -&gt; Option&lt;T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a mutable reference to the element at index <code>i</code>, or <code>None</code> if
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_mut" href="sus-collections-SliceMut.html#method.get_mut">get_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> i) const& -&gt; Option&lt;T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable reference to the element at index <code>i</code>, or <code>None</code> if
 <code>i</code> is beyond the end of the Slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_range" href="sus-collections-SliceMut.html#method.get_range">get_range</a>(RangeBounds&lt;::sus::num::usize&gt; auto range) const& -&gt; Option&lt;Slice&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_range" href="sus-collections-SliceMut.html#method.get_range">get_range</a>(RangeBounds&lt;::sus::num::usize&gt; auto range) const& -&gt; Option&lt;Slice&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
 start and a length.</p>
 <p>The start is the index of the first element to be returned in the
 subslice, and the length is the number of elements in the output slice.
@@ -548,14 +578,14 @@ set of elements in <code>r</code>.</p>
 <p>Returns None if the Range would otherwise contain an element that is out
 of bounds.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_range_mut" href="sus-collections-SliceMut.html#method.get_range_mut">get_range_mut</a>(RangeBounds&lt;::sus::num::usize&gt; auto range) const& -&gt; Option&lt;SliceMut&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_range_mut" href="sus-collections-SliceMut.html#method.get_range_mut">get_range_mut</a>(RangeBounds&lt;::sus::num::usize&gt; auto range) const& -&gt; Option&lt;SliceMut&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
 start and a length.</p>
 <p>The start is the index of the first element to be returned in the
 subslice, and the length is the number of elements in the output slice.
@@ -564,14 +594,14 @@ set of elements in <code>r</code>.</p>
 <p>Returns None if the Range would otherwise contain an element that is out
 of bounds.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_range_mut_unchecked" href="sus-collections-SliceMut.html#method.get_range_mut_unchecked">get_range_mut_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, RangeBounds&lt;::sus::num::usize&gt; auto range) const& -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_range_mut_unchecked" href="sus-collections-SliceMut.html#method.get_range_mut_unchecked">get_range_mut_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, RangeBounds&lt;::sus::num::usize&gt; auto range) const& -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
 start and a length.</p>
 <p>The start is the index of the first element to be returned in the
 subslice, and the length is the number of elements in the output slice.
@@ -581,14 +611,14 @@ set of elements in <code>r</code>.</p>
 <p>It is possible to specify a Range contains an element that is out
 of bounds of the Slice, which can result in Undefined Behaviour.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_range_unchecked" href="sus-collections-SliceMut.html#method.get_range_unchecked">get_range_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, RangeBounds&lt;::sus::num::usize&gt; auto range) const& -&gt; Slice&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_range_unchecked" href="sus-collections-SliceMut.html#method.get_range_unchecked">get_range_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, RangeBounds&lt;::sus::num::usize&gt; auto range) const& -&gt; Slice&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
 start and a length.</p>
 <p>The start is the index of the first element to be returned in the
 subslice, and the length is the number of elements in the output slice.
@@ -598,81 +628,81 @@ set of elements in <code>r</code>.</p>
 <p>It is possible to specify a Range contains an element that is out
 of bounds of the Slice, which can result in Undefined Behaviour.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_unchecked" href="sus-collections-SliceMut.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> i) const& -&gt; const T &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a const reference to the element at index <code>i</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_unchecked" href="sus-collections-SliceMut.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> i) const& -&gt; const T &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a const reference to the element at index <code>i</code>.</p>
 <h1><a name="safety-6" href="#safety-6">Safety</a></h1>
 <p>The index <code>i</code> must be inside the bounds of the slice or Undefined
 Behaviour results. The size of the slice must therefore also have a
 length of at least 1.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_unchecked_mut" href="sus-collections-SliceMut.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> i) const& -&gt; T &</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a mutable reference to the element at index <code>i</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.get_unchecked_mut" href="sus-collections-SliceMut.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> i) const& -&gt; T &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable reference to the element at index <code>i</code>.</p>
 <h1><a name="safety-7" href="#safety-7">Safety</a></h1>
 <p>The index <code>i</code> must be inside the bounds of the slice or Undefined
 Behaviour results. The size of the slice must therefore also have a
 length of at least 1.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.into_iter" href="sus-collections-SliceMut.html#method.into_iter">into_iter</a>() && -&gt; SliceIterMut&lt;T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Converts the slice into an iterator that consumes the slice and returns
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.into_iter" href="sus-collections-SliceMut.html#method.into_iter">into_iter</a>() && -&gt; SliceIterMut&lt;T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Converts the slice into an iterator that consumes the slice and returns
 each element in the same order they appear in the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_empty" href="sus-collections-SliceMut.html#method.is_empty">is_empty</a>() const& -&gt; bool</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns true if the slice has a length of 0.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_empty" href="sus-collections-SliceMut.html#method.is_empty">is_empty</a>() const& -&gt; bool</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns true if the slice has a length of 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter" href="sus-collections-SliceMut.html#method.iter">iter</a>() const& -&gt; SliceIter&lt;const T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over all the elements in the slice, visited in the
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter" href="sus-collections-SliceMut.html#method.iter">iter</a>() const& -&gt; SliceIter&lt;const T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over all the elements in the slice, visited in the
 same order they appear in the slice. The iterator gives const access to
 each element.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter_mut" href="sus-collections-SliceMut.html#method.iter_mut">iter_mut</a>() const& -&gt; SliceIterMut&lt;T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over all the elements in the slice, visited in the
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.iter_mut" href="sus-collections-SliceMut.html#method.iter_mut">iter_mut</a>() const& -&gt; SliceIterMut&lt;T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over all the elements in the slice, visited in the
 same order they appear in the slice. The iterator gives mutable access to
 each element.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Sep&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.join" href="sus-collections-SliceMut.html#method.join">join</a>(const Sep & separator) const& -&gt; auto</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Flattens and concatenates the items in the Slice, cloning a <code>separator</code>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class Sep&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.join" href="sus-collections-SliceMut.html#method.join">join</a>(const Sep & separator) const& -&gt; auto</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Flattens and concatenates the items in the Slice, cloning a <code>separator</code>
 between each item.</p>
 <p>The items of type <code>T</code> are flattened into a collection of type
 <code>T::JoinOutputType</code>. This method is only supported for types that
@@ -692,53 +722,53 @@ Vec&lt;i32&gt; v2 = Slice&lt;Slice&lt;i32&gt;&gt;::from(as).join(99);
 sus::check(v2 == sus::Vec&lt;i32&gt;(1, 2, 99, 3, 4));
 </code></pre>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.join_into" href="sus-collections-SliceMut.html#method.join_into">join_into</a>(Vec&lt;T&gt; & vec) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Joins a clone of each element in the slice into <code>vec</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.join_into" href="sus-collections-SliceMut.html#method.join_into">join_into</a>(Vec&lt;T&gt; & vec) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Joins a clone of each element in the slice into <code>vec</code>.</p>
 <p>This method exists to satisfy <code>sus::collections::Join&lt;Slice&lt;T&gt;, U&gt;</code>,
 for join() to append the elements in each Slice onto <code>vec</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.last" href="sus-collections-SliceMut.html#method.last">last</a>() const& -&gt; Option&lt;const T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the last element of the slice, or <code>None</code> if it is empty.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.last" href="sus-collections-SliceMut.html#method.last">last</a>() const& -&gt; Option&lt;const T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the last element of the slice, or <code>None</code> if it is empty.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.last_mut" href="sus-collections-SliceMut.html#method.last_mut">last_mut</a>() const& -&gt; Option&lt;T &&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a mutable reference to the last element of the slice, or None if it
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.last_mut" href="sus-collections-SliceMut.html#method.last_mut">last_mut</a>() const& -&gt; Option&lt;T &&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable reference to the last element of the slice, or None if it
 is empty.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.len" href="sus-collections-SliceMut.html#method.len">len</a>() const& -&gt; <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the number of elements in the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.len" href="sus-collections-SliceMut.html#method.len">len</a>() const& -&gt; <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the number of elements in the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.partition_point" href="sus-collections-SliceMut.html#method.partition_point">partition_point</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the index of the partition point according to the given predicate
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.partition_point" href="sus-collections-SliceMut.html#method.partition_point">partition_point</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the index of the partition point according to the given predicate
 (the index of the first element of the second partition).</p>
 <p>The slice is assumed to be partitioned according to the given predicate.
 This means that all elements for which the predicate returns true are at the
@@ -751,14 +781,14 @@ meaningless, as this method performs a kind of binary search.</p>
 <p>See also <code>binary_search()</code>, <code>binary_search_by()</code>, and
 <code>binary_search_by_key()</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rchunks" href="sus-collections-SliceMut.html#method.rchunks">rchunks</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; RChunks&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rchunks" href="sus-collections-SliceMut.html#method.rchunks">rchunks</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; RChunks&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
 starting at the end of the slice.</p>
 <p>The chunks are slices and do not overlap. If <code>chunk_size</code> does not divide
 the length of the slice, then the last chunk will not have length
@@ -769,14 +799,14 @@ but starting at the beginning of the slice.</p>
 <h1><a name="panics-4" href="#panics-4">Panics</a></h1>
 <p>Panics if <code>chunk_size</code> is 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rchunks_exact" href="sus-collections-SliceMut.html#method.rchunks_exact">rchunks_exact</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; RChunksExact&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rchunks_exact" href="sus-collections-SliceMut.html#method.rchunks_exact">rchunks_exact</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; RChunksExact&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
 starting at the end of the slice.</p>
 <p>The chunks are slices and do not overlap. If <code>chunk_size</code> does not divide
 the length of the slice, then the last up to <code>chunk_size-1</code> elements will be
@@ -791,14 +821,14 @@ starting at the beginning of the slice.</p>
 <h1><a name="panics-5" href="#panics-5">Panics</a></h1>
 <p>Panics if <code>chunk_size</code> is 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rchunks_exact_mut" href="sus-collections-SliceMut.html#method.rchunks_exact_mut">rchunks_exact_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; RChunksExactMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rchunks_exact_mut" href="sus-collections-SliceMut.html#method.rchunks_exact_mut">rchunks_exact_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; RChunksExactMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
 starting at the end of the slice.</p>
 <p>The chunks are mutable slices, and do not overlap. If <code>chunk_size</code> does not
 divide the length of the slice, then the last up to <code>chunk_size-1</code> elements
@@ -812,14 +842,14 @@ but starting at the beginning of the slice.</p>
 <h1><a name="panics-6" href="#panics-6">Panics</a></h1>
 <p>Panics if <code>chunk_size</code> is 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rchunks_mut" href="sus-collections-SliceMut.html#method.rchunks_mut">rchunks_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; RChunksMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rchunks_mut" href="sus-collections-SliceMut.html#method.rchunks_mut">rchunks_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> chunk_size) const& -&gt; RChunksMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over <code>chunk_size</code> elements of the slice at a time,
 starting at the end of the slice.</p>
 <p>The chunks are mutable slices, and do not overlap. If <code>chunk_size</code> does not
 divide the length of the slice, then the last chunk will not have length
@@ -830,14 +860,14 @@ iterator but starting at the beginning of the slice.</p>
 <h1><a name="panics-7" href="#panics-7">Panics</a></h1>
 <p>Panics if <code>chunk_size</code> is 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.repeat" href="sus-collections-SliceMut.html#method.repeat">repeat</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n) const& -&gt; Vec&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Creates a vector by copying a slice n times.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.repeat" href="sus-collections-SliceMut.html#method.repeat">repeat</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n) const& -&gt; Vec&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Creates a vector by copying a slice n times.</p>
 <h1><a name="panics-8" href="#panics-8">Panics</a></h1>
 <p>This function will panic if the capacity would become larger than
 <code>isize::MAX</code>.</p>
@@ -846,14 +876,14 @@ iterator but starting at the beginning of the slice.</p>
 check(v[&quot;..&quot;_r].repeat(3) == sus::vec(1, 2, 1, 2, 1, 2).construct&lt;i32&gt;());
 </code></pre>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.reverse" href="sus-collections-SliceMut.html#method.reverse">reverse</a>() const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Reverses the order of elements in the slice, in place.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.reverse" href="sus-collections-SliceMut.html#method.reverse">reverse</a>() const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Reverses the order of elements in the slice, in place.</p>
 <h1><a name="examples-1" href="#examples-1">Examples</a></h1>
 <pre><code>auto forward = sus::Vec&lt;i32&gt;(1, 2, 3);
 auto sf = forward[&quot;..&quot;_r];
@@ -863,14 +893,14 @@ sf.reverse();
 sus::check(sf == sb);
 </code></pre>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rotate_left" href="sus-collections-SliceMut.html#method.rotate_left">rotate_left</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Rotates the slice in-place such that the first <code>mid</code> elements of the slice
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rotate_left" href="sus-collections-SliceMut.html#method.rotate_left">rotate_left</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Rotates the slice in-place such that the first <code>mid</code> elements of the slice
 move to the end while the last <code>self.len() - mid</code> elements move to the
 front. After calling <code>rotate_left()</code>, the element previously at index <code>mid</code>
 will become the first element in the slice.</p>
@@ -880,14 +910,14 @@ Note that <code>mid == len()</code> does not panic and is a no-op rotation.</p>
 <h1><a name="complexity" href="#complexity">Complexity</a></h1>
 <p>Takes linear (in <code>len()</code>) time.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rotate_right" href="sus-collections-SliceMut.html#method.rotate_right">rotate_right</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> k) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Rotates the slice in-place such that the first <code>len() - k</code> elements of
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rotate_right" href="sus-collections-SliceMut.html#method.rotate_right">rotate_right</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> k) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Rotates the slice in-place such that the first <code>len() - k</code> elements of
 the slice move to the end while the last <code>k</code> elements move to the front.
 After calling <code>rotate_right()</code>, the element previously at index <code>len() - k</code>
 will become the first element in the slice.</p>
@@ -897,64 +927,64 @@ Note that <code>k == len()</code> does not panic and is a no-op rotation.</p>
 <h1><a name="complexity-1" href="#complexity-1">Complexity</a></h1>
 <p>Takes linear (in <code>len()</code>) time.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rsplit" href="sus-collections-SliceMut.html#method.rsplit">rsplit</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; RSplit&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over subslices separated by elements that match <code>pred</code>,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rsplit" href="sus-collections-SliceMut.html#method.rsplit">rsplit</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; RSplit&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over subslices separated by elements that match <code>pred</code>,
 starting at the end of the slice and working backwards. The matched element
 is not contained in the subslices.</p>
 <p>As with <code>split()</code>, if the first or last element is matched, an empty slice
 will be the first (or last) item returned by the iterator.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rsplit_mut" href="sus-collections-SliceMut.html#method.rsplit_mut">rsplit_mut</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; RSplitMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over mutable subslices separated by elements that match
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rsplit_mut" href="sus-collections-SliceMut.html#method.rsplit_mut">rsplit_mut</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; RSplitMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over mutable subslices separated by elements that match
 <code>pred</code>, starting at the end of the slice and working backwards. The matched
 element is not contained in the subslices.</p>
 <p>As with <code>split_mut()</code>, if the first or last element is matched, an empty
 slice will be the first (or last) item returned by the iterator.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rsplitn" href="sus-collections-SliceMut.html#method.rsplitn">rsplitn</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n, FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; RSplitN&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over subslices separated by elements that match <code>pred</code>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rsplitn" href="sus-collections-SliceMut.html#method.rsplitn">rsplitn</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n, FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; RSplitN&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over subslices separated by elements that match <code>pred</code>
 limited to returning at most <code>n</code> items. This starts at the end of the slice
 and works backwards. The matched element is not contained in the subslices.</p>
 <p>The last element returned, if any, will contain the remainder of the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rsplitn_mut" href="sus-collections-SliceMut.html#method.rsplitn_mut">rsplitn_mut</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n, FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; RSplitNMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over subslices separated by elements that match <code>pred</code>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.rsplitn_mut" href="sus-collections-SliceMut.html#method.rsplitn_mut">rsplitn_mut</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n, FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; RSplitNMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over subslices separated by elements that match <code>pred</code>
 limited to returning at most <code>n</code> items. This starts at the end of the slice
 and works backwards. The matched element is not contained in the subslices.</p>
 <p>The last element returned, if any, will contain the remainder of the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.sort" href="sus-collections-SliceMut.html#method.sort">sort</a>() const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Sorts the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.sort" href="sus-collections-SliceMut.html#method.sort">sort</a>() const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Sorts the slice.</p>
 <p>This sort is stable (i.e., does not reorder equal elements) and
 O(n * log(n)^2) worst-case.</p>
 <p>When applicable, unstable sorting is preferred because it is generally
@@ -965,14 +995,14 @@ faster than stable sorting and it doesn’t allocate auxiliary memory. See
 <p>TODO: Rust's stable sort is O(n * log(n)), so this can be improved. It can
 also be constexpr?</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.sort_by" href="sus-collections-SliceMut.html#method.sort_by">sort_by</a>(FnMutRef&lt;std::weak_ordering (const T &, const T &)&gt; compare) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Sorts the slice with a comparator function.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.sort_by" href="sus-collections-SliceMut.html#method.sort_by">sort_by</a>(FnMutRef&lt;std::weak_ordering (const T &, const T &)&gt; compare) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Sorts the slice with a comparator function.</p>
 <p>This sort is stable (i.e., does not reorder equal elements) and O(n *
 log(n)^2) worst-case.</p>
 <p>The comparator function must define a total ordering for the elements in
@@ -983,21 +1013,21 @@ unspecified.</p>
 <p>TODO: Rust's stable sort is O(n * log(n)), so this can be improved. It can
 also be constexpr?</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const T &&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.sort_by_cached_key" href="sus-collections-SliceMut.html#method.sort_by_cached_key">sort_by_cached_key</a>(KeyFn f) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const T &&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.sort_by_key" href="sus-collections-SliceMut.html#method.sort_by_key">sort_by_key</a>(KeyFn f) const& -&gt; void</div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const T &&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.sort_by_cached_key" href="sus-collections-SliceMut.html#method.sort_by_cached_key">sort_by_cached_key</a>(KeyFn f) const& -&gt; void</div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Sorts the slice with a key extraction function.</p>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const T &&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.sort_by_key" href="sus-collections-SliceMut.html#method.sort_by_key">sort_by_key</a>(KeyFn f) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Sorts the slice with a key extraction function.</p>
 <p>This sort is stable (i.e., does not reorder equal elements) and O(m * n *
 log(n)) worst-case, where the key function is O(m).</p>
 <p>For expensive key functions (e.g. functions that are not simple property
@@ -1011,28 +1041,28 @@ faster than stable sorting and it doesn’t allocate auxiliary memory. See
 <p>TODO: Rust's stable sort is O(n * log(n)), so this can be improved. It can
 also be constexpr?</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.sort_unstable" href="sus-collections-SliceMut.html#method.sort_unstable">sort_unstable</a>() const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Sorts the slice, but might not preserve the order of equal elements.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.sort_unstable" href="sus-collections-SliceMut.html#method.sort_unstable">sort_unstable</a>() const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Sorts the slice, but might not preserve the order of equal elements.</p>
 <h1><a name="current-implementation-3" href="#current-implementation-3">Current implementation</a></h1>
 <p>The current implementation is std::sort(), which is O(n * log(n)) but can
 allocate while sorting.</p>
 <p>TODO: Rust's sort is unstable (i.e., may reorder equal elements), in-place
 (i.e., does not allocate), and O(n * log(n)) worst-case.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.sort_unstable_by" href="sus-collections-SliceMut.html#method.sort_unstable_by">sort_unstable_by</a>(FnMutRef&lt;std::weak_ordering (const T &, const T &)&gt; compare) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Sorts the slice with a comparator function, but might not preserve the
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.sort_unstable_by" href="sus-collections-SliceMut.html#method.sort_unstable_by">sort_unstable_by</a>(FnMutRef&lt;std::weak_ordering (const T &, const T &)&gt; compare) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Sorts the slice with a comparator function, but might not preserve the
 order of equal elements.</p>
 <p>The comparator function must define a total ordering for the elements in
 the slice. If the ordering is not total, the order of the elements is
@@ -1043,14 +1073,14 @@ allocate while sorting.</p>
 <p>TODO: Rust's sort is unstable (i.e., may reorder equal elements), in-place
 (i.e., does not allocate), and O(n * log(n)) worst-case.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const T &&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.sort_unstable_by_key" href="sus-collections-SliceMut.html#method.sort_unstable_by_key">sort_unstable_by_key</a>(KeyFn f) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Sorts the slice with a key extraction function, but might not preserve the
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const T &&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.sort_unstable_by_key" href="sus-collections-SliceMut.html#method.sort_unstable_by_key">sort_unstable_by_key</a>(KeyFn f) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Sorts the slice with a key extraction function, but might not preserve the
 order of equal elements.</p>
 <h1><a name="current-implementation-5" href="#current-implementation-5">Current implementation</a></h1>
 <p>The current implementation is std::sort(), which is O(n * log(n)) but can
@@ -1058,55 +1088,55 @@ allocate while sorting.</p>
 <p>TODO: Rust's sort is unstable (i.e., may reorder equal elements), in-place
 (i.e., does not allocate), and O(n * log(n)) worst-case.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split" href="sus-collections-SliceMut.html#method.split">split</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; Split&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over subslices separated by elements that match <code>pred</code>.
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split" href="sus-collections-SliceMut.html#method.split">split</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; Split&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over subslices separated by elements that match <code>pred</code>.
 The matched element is not contained in the subslices.</p>
 <p>If the first element is matched, an empty slice will be the first item
 returned by the iterator. Similarly, if the last element in the slice is
 matched, an empty slice will be the last item returned by the iterator.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_at" href="sus-collections-SliceMut.html#method.split_at">split_at</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; Tuple&lt;Slice&lt;T&gt;, Slice&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Divides one slice into two at an index.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_at" href="sus-collections-SliceMut.html#method.split_at">split_at</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; Tuple&lt;Slice&lt;T&gt;, Slice&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Divides one slice into two at an index.</p>
 <p>The first will contain all indices from <code>[0, mid)</code> (excluding the index
 <code>mid</code> itself) and the second will contain all indices from <code>[mid, len())</code>
 (excluding the index <code>len()</code> itself).</p>
 <h1><a name="panics-11" href="#panics-11">Panics</a></h1>
 <p>Panics if <code>mid &gt; len()</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_at_mut" href="sus-collections-SliceMut.html#method.split_at_mut">split_at_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; Tuple&lt;SliceMut&lt;T&gt;, SliceMut&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Divides one mutable slice into two at an index.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_at_mut" href="sus-collections-SliceMut.html#method.split_at_mut">split_at_mut</a>(<a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; Tuple&lt;SliceMut&lt;T&gt;, SliceMut&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Divides one mutable slice into two at an index.</p>
 <p>The first will contain all indices from <code>[0, mid)</code> (excluding the index
 <code>mid</code> itself) and the second will contain all indices from <code>[mid, len())</code>
 (excluding the index <code>len()</code> itself).</p>
 <h1><a name="panics-21" href="#panics-21">Panics</a></h1>
 <p>Panics if <code>mid &gt; len()</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_at_mut_unchecked" href="sus-collections-SliceMut.html#method.split_at_mut_unchecked">split_at_mut_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; Tuple&lt;SliceMut&lt;T&gt;, SliceMut&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Divides one slice of mutable references into two at an index, without
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_at_mut_unchecked" href="sus-collections-SliceMut.html#method.split_at_mut_unchecked">split_at_mut_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; Tuple&lt;SliceMut&lt;T&gt;, SliceMut&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Divides one slice of mutable references into two at an index, without
 doing bounds checking.</p>
 <p>The first will contain all indices from [0, mid) (excluding the index mid
 itself) and the second will contain all indices from [mid, len)
@@ -1117,14 +1147,14 @@ itself) and the second will contain all indices from [mid, len)
 even if the resulting reference is not used. The caller has to ensure
 that <code>0 &lt;= mid &lt;= len()</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_at_unchecked" href="sus-collections-SliceMut.html#method.split_at_unchecked">split_at_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; Tuple&lt;Slice&lt;T&gt;, Slice&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Divides one slice into two at an index, without doing bounds checking.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_at_unchecked" href="sus-collections-SliceMut.html#method.split_at_unchecked">split_at_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct ::sus::num::usize" href="sus-num-usize.html">usize</a> mid) const& -&gt; Tuple&lt;Slice&lt;T&gt;, Slice&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Divides one slice into two at an index, without doing bounds checking.</p>
 <p>The first will contain all indices from [0, mid) (excluding the index mid
 itself) and the second will contain all indices from [mid, len)
 (excluding the index len itself).</p>
@@ -1134,192 +1164,192 @@ itself) and the second will contain all indices from [mid, len)
 even if the resulting reference is not used. The caller has to ensure
 that <code>0 &lt;= mid &lt;= len()</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_first" href="sus-collections-SliceMut.html#method.split_first">split_first</a>() const& -&gt; Option&lt; ::sus::Tuple&lt;const T &, Slice&lt;T&gt; &gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the first and all the rest of the elements of the slice, or <code>None</code>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_first" href="sus-collections-SliceMut.html#method.split_first">split_first</a>() const& -&gt; Option&lt; ::sus::Tuple&lt;const T &, Slice&lt;T&gt; &gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the first and all the rest of the elements of the slice, or <code>None</code>
 if it is empty.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_first_mut" href="sus-collections-SliceMut.html#method.split_first_mut">split_first_mut</a>() const& -&gt; Option&lt; ::sus::Tuple&lt;T &, SliceMut&lt;T&gt; &gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the first and all the rest of the elements of the slice, or <code>None</code>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_first_mut" href="sus-collections-SliceMut.html#method.split_first_mut">split_first_mut</a>() const& -&gt; Option&lt; ::sus::Tuple&lt;T &, SliceMut&lt;T&gt; &gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the first and all the rest of the elements of the slice, or <code>None</code>
 if it is empty.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_inclusive" href="sus-collections-SliceMut.html#method.split_inclusive">split_inclusive</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitInclusive&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over subslices separated by elements that match <code>pred</code>.
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_inclusive" href="sus-collections-SliceMut.html#method.split_inclusive">split_inclusive</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitInclusive&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over subslices separated by elements that match <code>pred</code>.
 The matched element is contained in the end of the previous subslice as a
 terminator.</p>
 <p>If the last element of the slice is matched, that element will be considered
 the terminator of the preceding slice. That slice will be the last item
 returned by the iterator.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_inclusive_mut" href="sus-collections-SliceMut.html#method.split_inclusive_mut">split_inclusive_mut</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitInclusiveMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over subslices separated by elements that match <code>pred</code>.
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_inclusive_mut" href="sus-collections-SliceMut.html#method.split_inclusive_mut">split_inclusive_mut</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitInclusiveMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over subslices separated by elements that match <code>pred</code>.
 The matched element is contained in the end of the previous subslice as a
 terminator.</p>
 <p>If the last element of the slice is matched, that element will be considered
 the terminator of the preceding slice. That slice will be the last item
 returned by the iterator.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_last" href="sus-collections-SliceMut.html#method.split_last">split_last</a>() const& -&gt; Option&lt; ::sus::Tuple&lt;const T &, Slice&lt;T&gt; &gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the last and all the rest of the elements of the slice, or <code>None</code> if
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_last" href="sus-collections-SliceMut.html#method.split_last">split_last</a>() const& -&gt; Option&lt; ::sus::Tuple&lt;const T &, Slice&lt;T&gt; &gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the last and all the rest of the elements of the slice, or <code>None</code> if
 it is empty.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_last_mut" href="sus-collections-SliceMut.html#method.split_last_mut">split_last_mut</a>() const& -&gt; Option&lt; ::sus::Tuple&lt;T &, SliceMut&lt;T&gt; &gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns the last and all the rest of the elements of the slice, or <code>None</code> if
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_last_mut" href="sus-collections-SliceMut.html#method.split_last_mut">split_last_mut</a>() const& -&gt; Option&lt; ::sus::Tuple&lt;T &, SliceMut&lt;T&gt; &gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the last and all the rest of the elements of the slice, or <code>None</code> if
 it is empty.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_mut" href="sus-collections-SliceMut.html#method.split_mut">split_mut</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over mutable subslices separated by elements that match
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.split_mut" href="sus-collections-SliceMut.html#method.split_mut">split_mut</a>(FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over mutable subslices separated by elements that match
 <code>pred</code>. The matched element is not contained in the subslices.</p>
 <p>If the first element is matched, an empty slice will be the first item
 returned by the iterator. Similarly, if the last element in the slice is
 matched, an empty slice will be the last item returned by the iterator.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.splitn" href="sus-collections-SliceMut.html#method.splitn">splitn</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n, FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitN&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over subslices separated by elements that match <code>pred</code>,
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.splitn" href="sus-collections-SliceMut.html#method.splitn">splitn</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n, FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitN&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over subslices separated by elements that match <code>pred</code>,
 limited to returning at most <code>n</code> items. The matched element is not contained
 in the subslices.</p>
 <p>The last element returned, if any, will contain the remainder of the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.splitn_mut" href="sus-collections-SliceMut.html#method.splitn_mut">splitn_mut</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n, FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitNMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over mutable subslices separated by elements that match
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.splitn_mut" href="sus-collections-SliceMut.html#method.splitn_mut">splitn_mut</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> n, FnMutRef&lt;_Bool (const T &)&gt; pred) const& -&gt; SplitNMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over mutable subslices separated by elements that match
 <code>pred</code>, limited to returning at most <code>n</code> items. The matched element is not
 contained in the subslices.</p>
 <p>The last element returned, if any, will contain the remainder of the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.starts_with" href="sus-collections-SliceMut.html#method.starts_with">starts_with</a>(const Slice&lt;T&gt; & needle) const& -&gt; bool</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns <code>true</code> if <code>needle</code> is a prefix of the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.starts_with" href="sus-collections-SliceMut.html#method.starts_with">starts_with</a>(const Slice&lt;T&gt; & needle) const& -&gt; bool</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns <code>true</code> if <code>needle</code> is a prefix of the slice.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.strip_prefix" href="sus-collections-SliceMut.html#method.strip_prefix">strip_prefix</a>(const Slice&lt;T&gt; & prefix) const& -&gt; Option&lt;Slice&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice with the <code>prefix</code> removed.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.strip_prefix" href="sus-collections-SliceMut.html#method.strip_prefix">strip_prefix</a>(const Slice&lt;T&gt; & prefix) const& -&gt; Option&lt;Slice&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice with the <code>prefix</code> removed.</p>
 <p>If the slice starts with <code>prefix</code>, returns the subslice after the <code>prefix</code>,
 wrapped in <code>Some</code>. If <code>prefix</code> is empty, simply returns the original slice.</p>
 <p>If the slice does not start with <code>prefix</code>, returns <code>None</code>.</p>
 <p>TODO: Accept a <code>SlicePattern&lt;T&gt;</code> concept instead of just a <code>Slice&lt;T&gt;</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.strip_prefix_mut" href="sus-collections-SliceMut.html#method.strip_prefix_mut">strip_prefix_mut</a>(const Slice&lt;T&gt; & prefix) const& -&gt; Option&lt;SliceMut&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice with the <code>prefix</code> removed.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.strip_prefix_mut" href="sus-collections-SliceMut.html#method.strip_prefix_mut">strip_prefix_mut</a>(const Slice&lt;T&gt; & prefix) const& -&gt; Option&lt;SliceMut&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice with the <code>prefix</code> removed.</p>
 <p>If the slice starts with <code>prefix</code>, returns the subslice after the <code>prefix</code>,
 wrapped in <code>Some</code>. If <code>prefix</code> is empty, simply returns the original slice.</p>
 <p>If the slice does not start with <code>prefix</code>, returns <code>None</code>.</p>
 <p>TODO: Accept a <code>SlicePattern&lt;T&gt;</code> concept instead of just a <code>Slice&lt;T&gt;</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.strip_suffix" href="sus-collections-SliceMut.html#method.strip_suffix">strip_suffix</a>(const Slice&lt;T&gt; & suffix) const& -&gt; Option&lt;Slice&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice with the <code>suffix</code> removed.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.strip_suffix" href="sus-collections-SliceMut.html#method.strip_suffix">strip_suffix</a>(const Slice&lt;T&gt; & suffix) const& -&gt; Option&lt;Slice&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice with the <code>suffix</code> removed.</p>
 <p>If the slice ends with <code>suffix</code>, returns the subslice before the <code>suffix</code>,
 wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns the original slice.</p>
 <p>If the slice does not end with <code>suffix</code>, returns <code>None</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.strip_suffix_mut" href="sus-collections-SliceMut.html#method.strip_suffix_mut">strip_suffix_mut</a>(const Slice&lt;T&gt; & suffix) const& -&gt; Option&lt;SliceMut&lt;T&gt; &gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice with the <code>suffix</code> removed.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.strip_suffix_mut" href="sus-collections-SliceMut.html#method.strip_suffix_mut">strip_suffix_mut</a>(const Slice&lt;T&gt; & suffix) const& -&gt; Option&lt;SliceMut&lt;T&gt; &gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice with the <code>suffix</code> removed.</p>
 <p>If the slice ends with <code>suffix</code>, returns the subslice before the <code>suffix</code>,
 wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns the original slice.</p>
 <p>If the slice does not end with <code>suffix</code>, returns <code>None</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.swap" href="sus-collections-SliceMut.html#method.swap">swap</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> a, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> b) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Swaps two elements in the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.swap" href="sus-collections-SliceMut.html#method.swap">swap</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> a, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> b) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Swaps two elements in the slice.</p>
 <h1><a name="arguments" href="#arguments">Arguments</a></h1>
 <p><code>a</code> - The index of the first element
 <code>b</code> - The index of the second element</p>
 <h1><a name="panics-31" href="#panics-31">Panics</a></h1>
 <p>Panics if a or b are out of bounds.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.swap_nonoverlapping" href="sus-collections-SliceMut.html#method.swap_nonoverlapping">swap_nonoverlapping</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> a, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> b) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Swaps two elements in the slice. The arguments must not both refer to the
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.swap_nonoverlapping" href="sus-collections-SliceMut.html#method.swap_nonoverlapping">swap_nonoverlapping</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> a, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> b) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Swaps two elements in the slice. The arguments must not both refer to the
 same element.</p>
 <p>For a safe alternative see <code>swap()</code>. For an unsafe variant that allows
 overlapping <code>a</code> and <code>b</code>, see <code>swap_unchecked()</code>.</p>
@@ -1330,14 +1360,14 @@ overlapping <code>a</code> and <code>b</code>, see <code>swap_unchecked()</code>
 <p>If <code>a</code> or <code>b</code> are out of bounds, or if <code>a</code> and <code>b</code> refer to the same
 element, Undefined Behaviour will occur.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.swap_unchecked" href="sus-collections-SliceMut.html#method.swap_unchecked">swap_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> a, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> b) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Swaps two elements in the slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.swap_unchecked" href="sus-collections-SliceMut.html#method.swap_unchecked">swap_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> a, <a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> b) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Swaps two elements in the slice.</p>
 <p>For a safe alternative see <code>swap()</code>.</p>
 <h1><a name="arguments-2" href="#arguments-2">Arguments</a></h1>
 <p><code>a</code> - The index of the first element
@@ -1345,109 +1375,109 @@ element, Undefined Behaviour will occur.</p>
 <h1><a name="safety-11" href="#safety-11">Safety</a></h1>
 <p>If <code>a</code> or <code>b</code> are out of bounds, Undefined Behaviour will occur.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.swap_with_slice" href="sus-collections-SliceMut.html#method.swap_with_slice">swap_with_slice</a>(<a class="type-name" title="const SliceMut&lt;T&gt; &" href="sus-collections-SliceMut.html">const SliceMut&lt;T&gt; &</a> other) const& -&gt; void</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Swaps all elements in <code>*this</code> with those in <code>other</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.swap_with_slice" href="sus-collections-SliceMut.html#method.swap_with_slice">swap_with_slice</a>(<a class="type-name" title="const SliceMut&lt;T&gt; &" href="sus-collections-SliceMut.html">const SliceMut&lt;T&gt; &</a> other) const& -&gt; void</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Swaps all elements in <code>*this</code> with those in <code>other</code>.</p>
 <p>The length of <code>other</code> must be the same as <code>*this</code>.</p>
 <h1><a name="panics-41" href="#panics-41">Panics</a></h1>
 <p>This function will panic if the two slices have different lengths, or if
 other overlaps with <code>*this</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.to_vec" href="sus-collections-SliceMut.html#method.to_vec">to_vec</a>() const& -&gt; Vec&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Constructs a <code>Vec&lt;T&gt;</code> by cloning each value in the Slice.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.to_vec" href="sus-collections-SliceMut.html#method.to_vec">to_vec</a>() const& -&gt; Vec&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Constructs a <code>Vec&lt;T&gt;</code> by cloning each value in the Slice.</p>
 <p>The caller can choose traits for the Vec by specifying the trait type.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.windows" href="sus-collections-SliceMut.html#method.windows">windows</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> size) const& -&gt; Windows&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over all contiguous windows of length <code>size</code>. The
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.windows" href="sus-collections-SliceMut.html#method.windows">windows</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> size) const& -&gt; Windows&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over all contiguous windows of length <code>size</code>. The
 windows overlap. If the slice is shorter than <code>size</code>, the iterator returns
 no values.</p>
 <h1><a name="panics-51" href="#panics-51">Panics</a></h1>
 <p>Panics if <code>size</code> is 0.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.windows_mut" href="sus-collections-SliceMut.html#method.windows_mut">windows_mut</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> size) const& -&gt; WindowsMut&lt;T&gt;</div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns an iterator over all contiguous windows of length <code>size</code>. The
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.windows_mut" href="sus-collections-SliceMut.html#method.windows_mut">windows_mut</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> size) const& -&gt; WindowsMut&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns an iterator over all contiguous windows of length <code>size</code>. The
 windows overlap. If the slice is shorter than <code>size</code>, the iterator returns
 no values.</p>
 <h1><a name="panics-61" href="#panics-61">Panics</a></h1>
 <p>Panics if <code>size</code> is 0.</p>
 
-        </div>
-      </div>
-    </div>
-    <div class="section methods conversion">
-      <div class="section-header">
-        Conversions
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.operator Slice&lt;T&gt;" href="sus-collections-SliceMut.html#method.operator Slice&lt;T&gt;">operator Slice&lt;T&gt;</a>() &&</div>
           </div>
         </div>
-        <div class="description long">
+      </div>
+      <div class="section methods conversion">
+        <div class="section-header">
+          <a name="conversions" href="#conversions">Conversions</a>
         </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.operator Slice&lt;T&gt; &" href="sus-collections-SliceMut.html#method.operator Slice&lt;T&gt; &">operator Slice&lt;T&gt; &</a>() &</div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.operator Slice&lt;T&gt;" href="sus-collections-SliceMut.html#method.operator Slice&lt;T&gt;">operator Slice&lt;T&gt;</a>() &&</div>
+            </div>
           </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.operator const Slice&lt;T&gt; &" href="sus-collections-SliceMut.html#method.operator const Slice&lt;T&gt; &">operator const Slice&lt;T&gt; &</a>() const&</div>
+          <div class="description long">
           </div>
-        </div>
-        <div class="description long">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.operator Slice&lt;T&gt; &" href="sus-collections-SliceMut.html#method.operator Slice&lt;T&gt; &">operator Slice&lt;T&gt; &</a>() &</div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.operator const Slice&lt;T&gt; &" href="sus-collections-SliceMut.html#method.operator const Slice&lt;T&gt; &">operator const Slice&lt;T&gt; &</a>() const&</div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="section methods nonstatic">
-      <div class="section-header">
-        Operators
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator[].slicemut.index.usize" href="sus-collections-SliceMut.html#method.operator[].slicemut.index.usize">operator[]</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> i) const& -&gt; T &</div>
-          </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="operators" href="#operators">Operators</a>
         </div>
-        <div class="description long">
-          <p>Returns a reference to the element at position <code>i</code> in the Slice.</p>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator[].slicemut.index.usize" href="sus-collections-SliceMut.html#method.operator[].slicemut.index.usize">operator[]</a>(<a class="type-name" title="struct usize" href="sus-num-usize.html">usize</a> i) const& -&gt; T &</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a reference to the element at position <code>i</code> in the Slice.</p>
 <h1><a name="panics-71" href="#panics-71">Panics</a></h1>
 <p>If the index <code>i</code> is beyond the end of the slice, the function will panic.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.operator[].slice.index.range" href="sus-collections-SliceMut.html#method.operator[].slice.index.range">operator[]</a>(RangeBounds&lt;usize&gt; auto range) const& -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.operator[].slice.index.range" href="sus-collections-SliceMut.html#method.operator[].slice.index.range">operator[]</a>(RangeBounds&lt;usize&gt; auto range) const& -&gt; <a class="type-name" title="SliceMut&lt;T&gt;" href="sus-collections-SliceMut.html">SliceMut&lt;T&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
 start and a length.</p>
 <p>The start is the index of the first element to be returned in the
 subslice, and the length is the number of elements in the output slice.
@@ -1457,8 +1487,9 @@ full set of elements in <code>r</code>.</p>
 <p>If the Range would otherwise contain an element that is out of bounds,
 the function will panic.</p>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

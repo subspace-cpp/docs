@@ -13,65 +13,84 @@ such that an error in one can be used to construct the other type."></meta>
 </head>
 
 <body>
-  <div class="concept">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Concept
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
-        <span class="namespace-dots">::</span>
-        <a class="concept-name" href="#">TryErrorConvertibleTo</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class From, class To&gt;</div>
-        <span class="concept">
-          concept
-        </span>
-        <span class="type-name">
-          TryErrorConvertibleTo
-        </span>
-        <div>
-          <div class="requires">
-            <span class="requires-keyword keyword">
-              requires
-            </span>
-            <div class="requires-constaint">
-              sus::ops::Try
-              &lt;
-              From
-              &gt;
-            </div>
-            <div class="requires-constaint">
-              sus::ops::Try
-              &lt;
-              To
-              &gt;
-            </div>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">requires(From&& f) {</pre>
-              <pre class="requires-constaint-line">      // preserve_error() constructs a Try type from another related type while</pre>
-              <pre class="requires-constaint-line">      // passing the error state along.</pre>
-              <pre class="requires-constaint-line">      {</pre>
-              <pre class="requires-constaint-line">        TryImpl&lt;To&gt;::template preserve_error(::sus::move(f))</pre>
-              <pre class="requires-constaint-line">      } -&gt; std::same_as&lt;To&gt;;</pre>
-              <pre class="requires-constaint-line">    }</pre>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">TryErrorConvertibleTo</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">TryErrorConvertibleTo</a>
+        </div>
+        <div class="type-signature">
+          <div class="template">template &lt;class From, class To&gt;</div>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            TryErrorConvertibleTo
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                sus::ops::Try
+                &lt;
+                From
+                &gt;
+              </div>
+              <div class="requires-constaint">
+                sus::ops::Try
+                &lt;
+                To
+                &gt;
+              </div>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">requires(From&& f) {</pre>
+                <pre class="requires-constaint-line">      // preserve_error() constructs a Try type from another related type while</pre>
+                <pre class="requires-constaint-line">      // passing the error state along.</pre>
+                <pre class="requires-constaint-line">      {</pre>
+                <pre class="requires-constaint-line">        TryImpl&lt;To&gt;::template preserve_error(::sus::move(f))</pre>
+                <pre class="requires-constaint-line">      } -&gt; std::same_as&lt;To&gt;;</pre>
+                <pre class="requires-constaint-line">    }</pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>Can be used to further constrain the relationship between two <code>Try</code> types
+        <div class="description long">
+          <p>Can be used to further constrain the relationship between two <code>Try</code> types
 such that an error in one can be used to construct the other type.</p>
 <p>This allows <code>Try&lt;A, E&gt;</code> to be returned from a function working with
 <code>Try&lt;B, E&gt;</code> in the case of an error, as <code>sus::ops::try_preserve_error&lt;A&gt;()</code>
 can be used to construct the error return type.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

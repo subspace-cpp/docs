@@ -12,53 +12,72 @@
 </head>
 
 <body>
-  <div class="concept">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Concept
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-        <span class="namespace-dots">::</span>
-        <a class="concept-name" href="#">IntoIteratorAny</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class T&gt;</div>
-        <span class="concept">
-          concept
-        </span>
-        <span class="type-name">
-          IntoIteratorAny
-        </span>
-        <div>
-          <div class="requires">
-            <span class="requires-keyword keyword">
-              requires
-            </span>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">requires(std::remove_cvref_t&lt;T&gt; t) {</pre>
-              <pre class="requires-constaint-line">  {</pre>
-              <pre class="requires-constaint-line">    ::sus::move(t).into_iter()</pre>
-              <pre class="requires-constaint-line">  } -&gt; Iterator&lt;</pre>
-              <pre class="requires-constaint-line">      typename std::decay_t&lt;decltype(::sus::move(t).into_iter())&gt;::Item&gt;;</pre>
-              <pre class="requires-constaint-line">}</pre>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">IntoIteratorAny</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">IntoIteratorAny</a>
+        </div>
+        <div class="type-signature">
+          <div class="template">template &lt;class T&gt;</div>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            IntoIteratorAny
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">requires(std::remove_cvref_t&lt;T&gt; t) {</pre>
+                <pre class="requires-constaint-line">  {</pre>
+                <pre class="requires-constaint-line">    ::sus::move(t).into_iter()</pre>
+                <pre class="requires-constaint-line">  } -&gt; Iterator&lt;</pre>
+                <pre class="requires-constaint-line">      typename std::decay_t&lt;decltype(::sus::move(t).into_iter())&gt;::Item&gt;;</pre>
+                <pre class="requires-constaint-line">}</pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>Conversion into an <code>Iterator</code> over any type of values.</p>
+        <div class="description long">
+          <p>Conversion into an <code>Iterator</code> over any type of values.</p>
 <p>Like <code>IntoIterator</code> but is only satisfied for an iterator over any type of
 item, without needing to know the <code>Item</code> apriori.</p>
 <p>This is useful to work around the limits of type deduction in templates,
 along with <code>IntoIteratorOutputType</code> to extract the <code>Item</code> being iterated
 over in the resulting iterator.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

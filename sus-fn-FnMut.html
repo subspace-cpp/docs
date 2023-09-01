@@ -16,50 +16,68 @@ template instantiation."></meta>
 </head>
 
 <body>
-  <div class="concept">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Concept
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.fn.html">fn</a>
-        <span class="namespace-dots">::</span>
-        <a class="concept-name" href="#">FnMut</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class F, class... S&gt;</div>
-        <span class="concept">
-          concept
-        </span>
-        <span class="type-name">
-          FnMut
-        </span>
-        <div>
-          <div class="requires">
-            <span class="requires-keyword keyword">
-              requires
-            </span>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">requires {</pre>
-              <pre class="requires-constaint-line">  // Receives and passes along the signature as a pack instead of a single</pre>
-              <pre class="requires-constaint-line">  // argument in order to consistently provide a static_assert() in `Sig` when</pre>
-              <pre class="requires-constaint-line">  // `S` is not a function signature.</pre>
-              <pre class="requires-constaint-line">  {</pre>
-              <pre class="requires-constaint-line">    __private::InvokedFnMut&lt;F, typename __private::Sig&lt;S...&gt;::Args&gt;::returns()</pre>
-              <pre class="requires-constaint-line">  } -&gt; __private::ValidReturnType&lt;typename __private::Sig&lt;S...&gt;::Return&gt;;</pre>
-              <pre class="requires-constaint-line"></pre>
-              <pre class="requires-constaint-line">  requires FnOnce&lt;F, S...&gt;;</pre>
-              <pre class="requires-constaint-line">}</pre>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">FnMut</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.fn.html">fn</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">FnMut</a>
+        </div>
+        <div class="type-signature">
+          <div class="template">template &lt;class F, class... S&gt;</div>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            FnMut
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">requires {</pre>
+                <pre class="requires-constaint-line">  // Receives and passes along the signature as a pack instead of a single</pre>
+                <pre class="requires-constaint-line">  // argument in order to consistently provide a static_assert() in `Sig` when</pre>
+                <pre class="requires-constaint-line">  // `S` is not a function signature.</pre>
+                <pre class="requires-constaint-line">  {</pre>
+                <pre class="requires-constaint-line">    __private::InvokedFnMut&lt;F, typename __private::Sig&lt;S...&gt;::Args&gt;::returns()</pre>
+                <pre class="requires-constaint-line">  } -&gt; __private::ValidReturnType&lt;typename __private::Sig&lt;S...&gt;::Return&gt;;</pre>
+                <pre class="requires-constaint-line"></pre>
+                <pre class="requires-constaint-line">  requires FnOnce&lt;F, S...&gt;;</pre>
+                <pre class="requires-constaint-line">}</pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>The version of a callable object that is allowed to mutate internal state
+        <div class="description long">
+          <p>The version of a callable object that is allowed to mutate internal state
 and may be called multiple times. A <code>FnMut</code> is typically the best fit for
 any callable that may be called one or more times. However when a template
 (or constexpr) is not required, receiving a <code>FnMutRef</code> instead of <code>FnMut auto</code> will typically produce less code by using type erasure to avoid
@@ -146,7 +164,8 @@ auto o = sus::Option&lt;Class&gt;(Class(42));
 sus::check(o.map(&amp;Class::value) == sus::some(42));
 </code></pre>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

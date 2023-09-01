@@ -13,53 +13,72 @@ of t."></meta>
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.mem.html">mem</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">take</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">take</a>(T & t) -&gt; T<div class="requires">
-              <span class="requires-keyword keyword">
-                requires
-              </span>
-              <div class="requires-constaint">
-                sus::mem::Move
-                &lt;
-                T
-                &gt;
-              </div>
-              <div class="requires-constaint">
-                sus::construct::Default
-                &lt;
-                T
-                &gt;
-              </div>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">std::is_final_v&lt;T&gt;</pre>
-              </div>
-            </div></div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">take</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.mem.html">mem</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">take</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>Moves from <code>t</code> and constructs a new <code>T</code> in its place. Returns the old value
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">take</a>(T & t) -&gt; T<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constaint">
+                  sus::mem::Move
+                  &lt;
+                  T
+                  &gt;
+                </div>
+                <div class="requires-constaint">
+                  sus::construct::Default
+                  &lt;
+                  T
+                  &gt;
+                </div>
+                <div class="requires-constaint">
+                  <pre class="requires-constaint-line">std::is_final_v&lt;T&gt;</pre>
+                </div>
+              </div></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Moves from <code>t</code> and constructs a new <code>T</code> in its place. Returns the old value
 of <code>t</code>.</p>
 <p>Requires that the type is <code>final</code> because calling take() on a base class
 could lead to Undefined Behaviour if the now-reconstructed object is
 accessed without std::launder thereafter, as replacing a subclass with the
 base class would change the underlying storage.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

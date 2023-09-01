@@ -12,209 +12,237 @@
 </head>
 
 <body>
-  <div class="namespace">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Namespace
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="#">fn</a>
-      </div>
-      <div class="description long">
-      </div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      namespace
     </div>
-    <div class="section records classes">
-      <div class="section-header">
-        Classes
+    <div class="sidebar-title sidebar-text">
+      <a href="#">fn</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+        <li>
+          <a href="#classes">Classes</a>
+        </li>
+        <li>
+          <a href="#functions">Functions</a>
+        </li>
+        <li>
+          <a href="#concepts">Concepts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="namespace">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Namespace
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="#">fn</a>
+        </div>
+        <div class="description long">
+        </div>
       </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-Anything.html">Anything</a>
+      <div class="section records classes">
+        <div class="section-header">
+          <a name="classes" href="#classes">Classes</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-Anything.html">Anything</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>When used as the return type of the function signature in <code>Fn</code>, <code>FnMut</code> and
+            <div class="description short">
+              <p>When used as the return type of the function signature in <code>Fn</code>, <code>FnMut</code> and
 <code>FnOnce</code>, the concepts will match against any return type from a functor
 including <code>void</code>.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-FnBox.html">FnBox</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A closure that erases the type of the internal callable object (lambda). A
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-FnBox.html">FnBox</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A closure that erases the type of the internal callable object (lambda). A
 FnBox may be called a multiple times, and will not mutate its storage.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-FnMutBox.html">FnMutBox</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A closure that erases the type of the internal callable object (lambda). A
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-FnMutBox.html">FnMutBox</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A closure that erases the type of the internal callable object (lambda). A
 FnMutBox may be called a multiple times, and may mutate its storage.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-FnMutRef.html">FnMutRef</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A closure that erases the type of the internal callable object (lambda) that
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-FnMutRef.html">FnMutRef</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A closure that erases the type of the internal callable object (lambda) that
 may mutate internal state. A FnMutRef may be called multiple times, and may
 return a different value on each call with the same inputs.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-FnOnceBox.html">FnOnceBox</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A closure that erases the type of the internal callable object (lambda). A
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-FnOnceBox.html">FnOnceBox</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A closure that erases the type of the internal callable object (lambda). A
 FnOnceBox may only be called a single time.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-FnOnceRef.html">FnOnceRef</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A closure that erases the type of the internal callable object (lambda). A
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-FnOnceRef.html">FnOnceRef</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A closure that erases the type of the internal callable object (lambda). A
 FnOnceRef may only be called a single time.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-FnRef.html">FnRef</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>A closure that erases the type of the internal callable object (lambda). A
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-FnRef.html">FnRef</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A closure that erases the type of the internal callable object (lambda). A
 FnMutRef may be called multiple times, and holds a const callable object, so
 it will return the same value each call with the same inputs.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-NonVoid.html">NonVoid</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>When used as the return type of the function signature in <code>Fn</code>, <code>FnMut</code> and
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-NonVoid.html">NonVoid</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>When used as the return type of the function signature in <code>Fn</code>, <code>FnMut</code> and
 <code>FnOnce</code>, the concepts will match against any return type from a functor
 except <code>void</code>.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="section functions">
-      <div class="section-header">
-        Functions
+            </div>
+          </li>
+        </ul>
       </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-fn-fn.call.html">call</a></div>
+      <div class="section functions">
+        <div class="section-header">
+          <a name="functions" href="#functions">Functions</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-fn-fn.call.html">call</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Invokes the <code>Fn</code>, passing any given arguments along, and returning the
+            <div class="description short">
+              <p>Invokes the <code>Fn</code>, passing any given arguments along, and returning the
 result.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-fn-fn.call_mut.html">call_mut</a></div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Invokes the <code>FnMut</code>, passing any given arguments along, and returning the
-result.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a class="function-name" href="sus-fn-fn.call_once.html">call_once</a></div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-fn-fn.call_mut.html">call_mut</a></div>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>Invokes the <code>FnOnce</code>, passing any given arguments along, and returning the
+            <div class="description short">
+              <p>Invokes the <code>FnMut</code>, passing any given arguments along, and returning the
 result.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="section concepts">
-      <div class="section-header">
-        Concepts
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-fn-fn.call_once.html">call_once</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Invokes the <code>FnOnce</code>, passing any given arguments along, and returning the
+result.</p>
+            </div>
+          </li>
+        </ul>
       </div>
-      <ul class="section-items item-table">
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-Fn.html">Fn</a>
+      <div class="section concepts">
+        <div class="section-header">
+          <a name="concepts" href="#concepts">Concepts</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-Fn.html">Fn</a>
+              </div>
             </div>
-          </div>
-          <div class="description short">
-            <p>The version of a callable object that may be called multiple times without
+            <div class="description short">
+              <p>The version of a callable object that may be called multiple times without
 mutating internal state. A <code>Fn</code> is useful for a callable that is received as
 a const reference to indicate it and may be called one or more times and
 does not change between call. However when a template (or constexpr) is not
 required, receiving a <code>FnRef</code> instead of <code>const Fn auto&amp;</code> will typically
 produce less code by using type erasure to avoid template instantiation.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-FnMut.html">FnMut</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>The version of a callable object that is allowed to mutate internal state
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-FnMut.html">FnMut</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>The version of a callable object that is allowed to mutate internal state
 and may be called multiple times. A <code>FnMut</code> is typically the best fit for
 any callable that may be called one or more times. However when a template
 (or constexpr) is not required, receiving a <code>FnMutRef</code> instead of <code>FnMut auto</code> will typically produce less code by using type erasure to avoid
 template instantiation.</p>
-          </div>
-        </li>
-        <li class="section-item">
-          <div class="item-name">
-            <div class="type-signature">
-              <a class="type-name" href="sus-fn-FnOnce.html">FnOnce</a>
             </div>
-          </div>
-          <div class="description short">
-            <p>The version of a callable object that is called on an rvalue (moved-from)
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-fn-FnOnce.html">FnOnce</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>The version of a callable object that is called on an rvalue (moved-from)
 receiver. A <code>FnOnce</code> is typically the best fit for any callable that will
 only be called at most once. However when a template (or constexpr) is not
 required, receiving a <code>FnOnceRef</code> instead of <code>FnOnce auto&amp;&amp;</code> will typically
 produce less code by using type erasure to avoid template instantiation.</p>
-          </div>
-        </li>
-      </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </main>
 </body>

@@ -14,52 +14,71 @@ and that this is the strongest ordering that exists between the types."></meta>
 </head>
 
 <body>
-  <div class="concept">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Concept
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
-        <span class="namespace-dots">::</span>
-        <a class="concept-name" href="#">ExclusiveOrd</a>
-      </div>
-      <div class="type-signature">
-        <div class="template">template &lt;class Lhs, class Rhs = Lhs&gt;</div>
-        <span class="concept">
-          concept
-        </span>
-        <span class="type-name">
-          ExclusiveOrd
-        </span>
-        <div>
-          <div class="requires">
-            <span class="requires-keyword keyword">
-              requires
-            </span>
-            <div class="requires-constaint">
-              <pre class="requires-constaint-line">!StrongOrd&lt;Lhs, Rhs&gt;</pre>
-            </div>
-            <div class="requires-constaint">
-              sus::ops::Ord
-              &lt;
-              Lhs
-              Rhs
-              &gt;
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">ExclusiveOrd</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">ExclusiveOrd</a>
+        </div>
+        <div class="type-signature">
+          <div class="template">template &lt;class Lhs, class Rhs = Lhs&gt;</div>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            ExclusiveOrd
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constaint">
+                <pre class="requires-constaint-line">!StrongOrd&lt;Lhs, Rhs&gt;</pre>
+              </div>
+              <div class="requires-constaint">
+                sus::ops::Ord
+                &lt;
+                Lhs
+                Rhs
+                &gt;
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="description long">
-        <p>Determines if the types <code>Lhs</code> and <code>Rhs</code> have total ordering (aka
+        <div class="description long">
+          <p>Determines if the types <code>Lhs</code> and <code>Rhs</code> have total ordering (aka
 <a href="https://en.cppreference.com/w/cpp/utility/compare/weak_ordering"><code>std::weak_ordering</code></a>),
 and that this is the strongest ordering that exists between the types.</p>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

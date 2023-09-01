@@ -13,33 +13,57 @@ FnOnceBox may only be called a single time."></meta>
 </head>
 
 <body>
-  <div class="type record class">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Class
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.fn.html">fn</a>
-        <span class="namespace-dots">::</span>
-        <a class="type-name" href="#">FnOnceBox</a>
-      </div>
-      <div class="type-signature">
-        <span class="class">
-          class
-        </span>
-        <span class="type-name">
-          FnOnceBox
-        </span>
-        <div class="record-body">
-          { ... };
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      class
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">FnOnceBox</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+        <li>
+          <a href="#static-methods">Static Methods</a>
+        </li>
+        <li>
+          <a href="#operators">Operators</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="type record class">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Class
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.fn.html">fn</a>
+          <span class="namespace-dots">::</span>
+          <a class="type-name" href="#">FnOnceBox</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>A closure that erases the type of the internal callable object (lambda). A
+        <div class="type-signature">
+          <span class="class">
+            class
+          </span>
+          <span class="type-name">
+            FnOnceBox
+          </span>
+          <div class="record-body">
+            { ... };
+          </div>
+        </div>
+        <div class="description long">
+          <p>A closure that erases the type of the internal callable object (lambda). A
 FnOnceBox may only be called a single time.</p>
 <p>FnBox can be used as a FnMutBox, which can be used as a FnOnceBox.</p>
 <p>Lambdas without captures can be converted into a FnOnceBox, FnMutBox, or
@@ -104,128 +128,129 @@ only callable as mutable objects.</p>
 <p>A null function pointer is not allowed, constructing a FnOnceBox from a null
 pointer will panic.</p>
 
+        </div>
+      </div>
+      <div class="section methods static">
+        <div class="section-header">
+          <a name="static-methods" href="#static-methods">Static Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.fnpointer" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.fnpointer">FnOnceBox</a>(F ptr)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from a function pointer or captureless lambda.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.methodpointer" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.methodpointer">FnOnceBox</a>(F ptr)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from a method or data member pointer.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.fnoncebox" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.fnoncebox">FnOnceBox</a>(FnOnceBox&lt;U, UArgs...&gt; && box)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from a compatible FnOnceBox.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.fnmutbox" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.fnmutbox">FnOnceBox</a>(FnMutBox&lt;U, UArgs...&gt; && box)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from a compatible FnMutBox.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.fnbox" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.fnbox">FnOnceBox</a>(FnBox&lt;U, UArgs...&gt; && box)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from a compatible FnBox.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.bind" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.bind">FnOnceBox</a>(SusBind&lt;F&gt; && holder)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from the output of <code>sus_bind()</code>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.FnOnceBox" href="sus-fn-FnOnceBox.html#method.FnOnceBox">FnOnceBox</a>(<a class="type-name" title="FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="sus-fn-FnOnceBox.html">FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a> o)</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.FnOnceBox" href="sus-fn-FnOnceBox.html#method.FnOnceBox">FnOnceBox</a>(<a class="type-name" title="const FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnOnceBox.html">const FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>)</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnOnceBox" href="sus-fn-FnOnceBox.html#method.FnOnceBox">FnOnceBox</a>(F ptr)</div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(F fn) -&gt; auto</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(FnOnceBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(FnMutBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(FnBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(SusBind&lt;F&gt; && holder) -&gt; auto</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p><code>sus::construct::From</code> trait implementation.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="operators" href="#operators">Operators</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator()" href="sus-fn-FnOnceBox.html#method.operator()">operator()</a>(CallArgs... args) && -&gt; R</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Runs and consumes the closure.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-fn-FnOnceBox.html#method.operator=">operator=</a>(<a class="type-name" title="FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="sus-fn-FnOnceBox.html">FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a> o) -&gt; <a class="type-name" title="FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnOnceBox.html">FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-fn-FnOnceBox.html#method.operator=">operator=</a>(<a class="type-name" title="const FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnOnceBox.html">const FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>) -&gt; <a class="type-name" title="FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnOnceBox.html">FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="section methods static">
-      <div class="section-header">
-        Static Methods
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.fnpointer" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.fnpointer">FnOnceBox</a>(F ptr)</div>
-          </div>
-        </div>
-        <div class="description long">
-          <p>Construction from a function pointer or captureless lambda.</p>
-
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.methodpointer" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.methodpointer">FnOnceBox</a>(F ptr)</div>
-          </div>
-        </div>
-        <div class="description long">
-          <p>Construction from a method or data member pointer.</p>
-
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.fnoncebox" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.fnoncebox">FnOnceBox</a>(FnOnceBox&lt;U, UArgs...&gt; && box)</div>
-          </div>
-        </div>
-        <div class="description long">
-          <p>Construction from a compatible FnOnceBox.</p>
-
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.fnmutbox" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.fnmutbox">FnOnceBox</a>(FnMutBox&lt;U, UArgs...&gt; && box)</div>
-          </div>
-        </div>
-        <div class="description long">
-          <p>Construction from a compatible FnMutBox.</p>
-
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.fnbox" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.fnbox">FnOnceBox</a>(FnBox&lt;U, UArgs...&gt; && box)</div>
-          </div>
-        </div>
-        <div class="description long">
-          <p>Construction from a compatible FnBox.</p>
-
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnOnceBox.ctor.bind" href="sus-fn-FnOnceBox.html#method.FnOnceBox.ctor.bind">FnOnceBox</a>(SusBind&lt;F&gt; && holder)</div>
-          </div>
-        </div>
-        <div class="description long">
-          <p>Construction from the output of <code>sus_bind()</code>.</p>
-
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.FnOnceBox" href="sus-fn-FnOnceBox.html#method.FnOnceBox">FnOnceBox</a>(<a class="type-name" title="FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="sus-fn-FnOnceBox.html">FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a> o)</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.FnOnceBox" href="sus-fn-FnOnceBox.html#method.FnOnceBox">FnOnceBox</a>(<a class="type-name" title="const FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnOnceBox.html">const FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>)</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnOnceBox" href="sus-fn-FnOnceBox.html#method.FnOnceBox">FnOnceBox</a>(F ptr)</div>
-          </div>
-        </div>
-        <div class="description long">
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(F fn) -&gt; auto</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(FnOnceBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(FnMutBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(FnBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-fn-FnOnceBox.html#method.from">from</a>(SusBind&lt;F&gt; && holder) -&gt; auto</div>
-          </div>
-        </div>
-        <div class="description long">
-          <p><code>sus::construct::From</code> trait implementation.</p>
-
-        </div>
-      </div>
-    </div>
-    <div class="section methods nonstatic">
-      <div class="section-header">
-        Operators
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator()" href="sus-fn-FnOnceBox.html#method.operator()">operator()</a>(CallArgs... args) && -&gt; R</div>
-          </div>
-        </div>
-        <div class="description long">
-          <p>Runs and consumes the closure.</p>
-
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-fn-FnOnceBox.html#method.operator=">operator=</a>(<a class="type-name" title="FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="sus-fn-FnOnceBox.html">FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a> o) -&gt; <a class="type-name" title="FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnOnceBox.html">FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-fn-FnOnceBox.html#method.operator=">operator=</a>(<a class="type-name" title="const FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnOnceBox.html">const FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>) -&gt; <a class="type-name" title="FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnOnceBox.html">FnOnceBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
-          </div>
-        </div>
-        <div class="description long">
-        </div>
-      </div>
-    </div>
-  </div>
+  </main>
 </body>

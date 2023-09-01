@@ -13,41 +13,59 @@ Generator&lt;Item&gt; and yields Items."></meta>
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">from_generator</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">from_generator</a>(F && f) -&gt; Iterator&lt;typename R::Item&gt; auto<div class="requires">
-              <span class="requires-keyword keyword">
-                requires
-              </span>
-              <div class="requires-constaint">
-                sus::fn::FnOnce
-                &lt;
-                F
-                ::sus::fn::NonVoid (void)
-                &gt;
-              </div>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">__private::IsGenerator&lt;R&gt;::value</pre>
-              </div>
-            </div></div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">from_generator</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">from_generator</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>Produces an iterator over <code>Item</code> from a coroutine function that returns
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">from_generator</a>(F && f) -&gt; Iterator&lt;typename R::Item&gt; auto<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constaint">
+                  sus::fn::FnOnce
+                  &lt;
+                  F
+                  ::sus::fn::NonVoid (void)
+                  &gt;
+                </div>
+                <div class="requires-constaint">
+                  <pre class="requires-constaint-line">__private::IsGenerator&lt;R&gt;::value</pre>
+                </div>
+              </div></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Produces an iterator over <code>Item</code> from a coroutine function that returns
 <code>Generator&lt;Item&gt;</code> and yields <code>Item</code>s.</p>
 <p>This is just a syntactic aid, as <code>Generator&lt;Item&gt;</code> is an iterator, so
 calling the generator function is what produces the iterator.</p>
@@ -62,7 +80,8 @@ sus::check(it.next() == sus::some(5));
 sus::check(it.next() == sus::none());
 </code></pre>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

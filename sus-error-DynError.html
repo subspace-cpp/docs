@@ -12,33 +12,60 @@
 </head>
 
 <body>
-  <div class="type record struct">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Struct
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.error.html">error</a>
-        <span class="namespace-dots">::</span>
-        <a class="type-name" href="#">DynError</a>
-      </div>
-      <div class="type-signature">
-        <span class="struct">
-          struct
-        </span>
-        <span class="type-name">
-          DynError
-        </span>
-        <div class="record-body">
-          { ... };
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      struct
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">DynError</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+        <li>
+          <a href="#static-methods">Static Methods</a>
+        </li>
+        <li>
+          <a href="#methods">Methods</a>
+        </li>
+        <li>
+          <a href="#operators">Operators</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="type record struct">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Struct
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.error.html">error</a>
+          <span class="namespace-dots">::</span>
+          <a class="type-name" href="#">DynError</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>A type-erased <a href="sus-error-Error.html"><code>Error</code></a> object.</p>
+        <div class="type-signature">
+          <span class="struct">
+            struct
+          </span>
+          <span class="type-name">
+            DynError
+          </span>
+          <div class="record-body">
+            { ... };
+          </div>
+        </div>
+        <div class="description long">
+          <p>A type-erased <a href="sus-error-Error.html"><code>Error</code></a> object.</p>
 <p>Using this allows the error type to be placed in heap-allocated smart
 pointers without templates, and thus without knowing the concrete type.
 For example a <code>void foo(Box&lt;DynError&gt;)</code> function can work with any
@@ -50,63 +77,64 @@ and it can not be moved similar to
 <a href="https://doc.rust-lang.org/std/pin/struct.Pin.html"><code>Pin&lt;T&gt;</code></a> types in
 Rust.</p>
 
-      </div>
-    </div>
-    <div class="section methods static">
-      <div class="section-header">
-        Static Methods
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.DynError" href="sus-error-DynError.html#method.DynError">DynError</a>()</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><a class="function-name" name="method.DynError" href="sus-error-DynError.html#method.DynError">DynError</a>(<a class="type-name" title="DynError &&" href="sus-error-DynError.html">DynError &&</a>)</div>
-          </div>
-        </div>
-        <div class="description long">
         </div>
       </div>
-    </div>
-    <div class="section methods nonstatic">
-      <div class="section-header">
-        Methods
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.display" href="sus-error-DynError.html#method.display">display</a>() const -&gt; string</div>
+      <div class="section methods static">
+        <div class="section-header">
+          <a name="static-methods" href="#static-methods">Static Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.DynError" href="sus-error-DynError.html#method.DynError">DynError</a>()</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a class="function-name" name="method.DynError" href="sus-error-DynError.html#method.DynError">DynError</a>(<a class="type-name" title="DynError &&" href="sus-error-DynError.html">DynError &&</a>)</div>
+            </div>
+          </div>
+          <div class="description long">
           </div>
         </div>
-        <div class="description long">
-          <p>Forwards to the <a href="sus-error-Error.html"><code>Error</code></a> implementation of <code>E</code>.</p>
+      </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="methods" href="#methods">Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.display" href="sus-error-DynError.html#method.display">display</a>() const -&gt; string</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Forwards to the <a href="sus-error-Error.html"><code>Error</code></a> implementation of <code>E</code>.</p>
 
-        </div>
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.source" href="sus-error-DynError.html#method.source">source</a>() const -&gt; <a class="type-name" title="class sus::Option&lt;const DynError &&gt;" href="sus-option-Option.html">Option&lt;const DynError &&gt;</a></div>
           </div>
-        </div>
-        <div class="description long">
-          <p>Forwards to the <a href="sus-error-Error.html"><code>Error</code></a> implementation of <code>E</code>.</p>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.source" href="sus-error-DynError.html#method.source">source</a>() const -&gt; <a class="type-name" title="class sus::Option&lt;const DynError &&gt;" href="sus-option-Option.html">Option&lt;const DynError &&gt;</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Forwards to the <a href="sus-error-Error.html"><code>Error</code></a> implementation of <code>E</code>.</p>
 
-        </div>
-      </div>
-    </div>
-    <div class="section methods nonstatic">
-      <div class="section-header">
-        Operators
-      </div>
-      <div class="section-items">
-        <div class="overload-set item-name">
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-error-DynError.html#method.operator=">operator=</a>(<a class="type-name" title="DynError &&" href="sus-error-DynError.html">DynError &&</a>) -&gt; <a class="type-name" title="DynError &&" href="sus-error-DynError.html">DynError &&</a></div>
           </div>
         </div>
-        <div class="description long">
+      </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="operators" href="#operators">Operators</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-error-DynError.html#method.operator=">operator=</a>(<a class="type-name" title="DynError &&" href="sus-error-DynError.html">DynError &&</a>) -&gt; <a class="type-name" title="DynError &&" href="sus-error-DynError.html">DynError &&</a></div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>

@@ -13,27 +13,45 @@ applying the provided closure, the repeater, FnMut&lt;Item()&gt;."></meta>
 </head>
 
 <body>
-  <div class="function">
-    <div class="section overview">
-      <div class="section-header">
-        <span>
-          Function
-        </span>
-        <a class="project-name" href="index.html">Subspace</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="namespace.sus.html">sus</a>
-        <span class="namespace-dots">::</span>
-        <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-        <span class="namespace-dots">::</span>
-        <a class="function-name" href="#">repeat_with</a>
-      </div>
-      <div class="overload-set">
-        <div class="overload">
-          <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">repeat_with</a>(FnMutBox&lt;Item (void)&gt; gen) -&gt; RepeatWith&lt;Item&gt;</div>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">repeat_with</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">repeat_with</a>
         </div>
-      </div>
-      <div class="description long">
-        <p>Creates a new iterator that repeats elements of type <code>Item</code> endlessly by
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">repeat_with</a>(FnMutBox&lt;Item (void)&gt; gen) -&gt; RepeatWith&lt;Item&gt;</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Creates a new iterator that repeats elements of type <code>Item</code> endlessly by
 applying the provided closure, the repeater, <code>FnMut&lt;Item()&gt;</code>.</p>
 <p>The <code>repeat_with()</code> function calls the repeater over and over again.</p>
 <p>Infinite iterators like <code>repeat_with()</code> are often used with adapters like
@@ -49,7 +67,8 @@ sus::check(r.next().unwrap() == 3_u16);
 sus::check(r.next().unwrap() == 3_u16);
 </code></pre>
 
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>
