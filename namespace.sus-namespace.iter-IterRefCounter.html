@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 
 <head>
-  <title>
-    sus::iter::IterRefCounter
-  </title>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::iter::IterRefCounter - Subspace</title>
+  <meta name="description" content="Reference counting outstanding iterators (and view types since they need to
+be able to produce iterators) in order to catch iterator invalidation and
+prevent them from being used afterward. Mutating the collection should check
+that the count is empty. This is much like a RefCell in Rust, using
+runtime verfication that modification does not occur while there are
+outstanding references."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
 </head>
 

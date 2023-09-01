@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 
 <head>
-  <title>
-    sus::fn::Fn
-  </title>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::fn::Fn - Subspace</title>
+  <meta name="description" content="The version of a callable object that may be called multiple times without
+mutating internal state. A Fn is useful for a callable that is received as
+a const reference to indicate it and may be called one or more times and
+does not change between call. However when a template (or constexpr) is not
+required, receiving a FnRef instead of const Fn auto&amp; will typically
+produce less code by using type erasure to avoid template instantiation."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
 </head>
 

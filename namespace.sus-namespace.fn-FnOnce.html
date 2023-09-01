@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 
 <head>
-  <title>
-    sus::fn::FnOnce
-  </title>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <title>sus::fn::FnOnce - Subspace</title>
+  <meta name="description" content="The version of a callable object that is called on an rvalue (moved-from)
+receiver. A FnOnce is typically the best fit for any callable that will
+only be called at most once. However when a template (or constexpr) is not
+required, receiving a FnOnceRef instead of FnOnce auto&amp;&amp; will typically
+produce less code by using type erasure to avoid template instantiation."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
 </head>
 
