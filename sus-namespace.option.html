@@ -53,9 +53,9 @@ lvalue as empty instead of leaving a moved-from value behind as with
 <code>std::move(optional).value()</code>.</li>
 <li>A custom message can be printed when trying to unwrap an empty
 <a href="sus-option-Option.html"><code>Option</code></a>.</li>
-<li>Subspace <a href="sus-iter.html">Iterator</a> integration.
+<li>Subspace <a href="sus-namespace.iter.html">Iterator</a> integration.
 <a href="sus-option-Option.html"><code>Option</code></a> can be iterated
-over, acting like a single-element <a href="sus-collections.html">collection</a>,
+over, acting like a single-element <a href="sus-namespace.collections.html">collection</a>,
 which allows it to be chained together with other iterators, filtered,
 etc.</li>
 </ul>
@@ -246,10 +246,12 @@ of evaluating the provided fallback function if the
 <ul>
 <li><a href="sus-option-Option.html#method.zip"><code>zip</code></a> returns <code>Some(Tuple&lt;S, O&gt;(s, o)))</code> if the
 <a href="sus-option-Option.html"><code>Option</code></a> is <code>Some(s)</code>
-and the method is called with an <a href="sus-option-Option.html"><code>Option</code></a> value of <code>Some(o)</code>; otherwise,
-returns <code>None</code></li>
-<li>TODO: <a href="sus-option-Option.html#method.zip_with"><code>zip_with</code></a> calls the provided function <code>f</code> and returns
-<code>Some(f(s, o))</code> if the <a href="sus-option-Option.html"><code>Option</code></a> is Some(s)
+and the method is called with an <a href="sus-option-Option.html"><code>Option</code></a> value
+of <code>Some(o)</code>; otherwise, returns <code>None</code></li>
+<li>TODO: <a href="https://github.com/chromium/subspace/issues/341"><code>zip_with</code></a> calls
+the provided
+function <code>f</code> and returns <code>Some(f(s, o))</code> if the
+<a href="sus-option-Option.html"><code>Option</code></a> is <code>Some(s)</code>
 and the method is called with an <a href="sus-option-Option.html"><code>Option</code></a>
 value of <code>Some(o)</code>; otherwise, returns <code>None</code>.</li>
 </ul>
@@ -265,8 +267,8 @@ and <a href="sus-option-Option.html#method.xor_that"><code>xor_that</code></a> m
 another <a href="sus-option-Option.html"><code>Option</code></a> as input, and produce an
 <a href="sus-option-Option.html"><code>Option</code></a> as output.
 Only the <a href="sus-option-Option.html#method.and_that"><code>and_that</code></a>
-method can produce an <a href="sus-option-Option.html"><code>Option&lt;U&gt;</code></a> value having a different inner type <code>U</code>
-than <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>.</p>
+method can produce an <a href="sus-option-Option.html"><code>Option&lt;U&gt;</code></a> value having a
+different inner type <code>U</code> than <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>.</p>
 <table>
 <thead>
 <tr>

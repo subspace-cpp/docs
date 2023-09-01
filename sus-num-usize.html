@@ -52,7 +52,7 @@ capabilities. See <a href="https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-947.p
 this type is not always the same size as a pointer and should not be used to
 hold a pointer value without acknowledging that it is only the address part
 of the pointer.</p>
-<p>See the <a href="sus-num.html">namespace level documentation</a> for more.</p>
+<p>See the <a href="sus-namespace.num.html">namespace level documentation</a> for more.</p>
 
       </div>
     </div>
@@ -162,7 +162,7 @@ of the pointer.</p>
 <p>For conversions from types with a larger range use
 <a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;()</code></a>.</p>
+<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
         </div>
         <div class="overload-set item-name">
@@ -175,7 +175,7 @@ of the pointer.</p>
 <p>For conversions from types with a larger range use
 <a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;()</code></a>.</p>
+<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
         </div>
         <div class="overload-set item-name">
@@ -188,7 +188,7 @@ of the pointer.</p>
 <p>For conversions from types with a larger range use
 <a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;()</code></a>.</p>
+<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
         </div>
         <div class="overload-set item-name">
@@ -211,7 +211,7 @@ of the pointer.</p>
 <p>For conversions from types with a larger range use
 <a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;()</code></a>.</p>
+<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
         </div>
         <div class="overload-set item-name">
@@ -306,7 +306,7 @@ wants to use <code>from_be_bytes()</code> or <code>from_le_bytes()</code>, as ap
 elements in the iterator.</p>
 <p>This method should rarely be called directly, as it is used to satisfy the
 <a href="sus-iter-Product.html"><code>Product</code></a> concept so that
-<a href="sus-iter-IteratorBase.html#method.product"><code>Iterator::product()</code></a> can be
+<a href="sus-iter-IteratorBase.html#method.product"><code>Iterator::product</code></a> can be
 called for iterators over usize.</p>
 <p>To handle overflow without panicing, instead of <code>iter.product()</code>, use
 <code>iter.product&lt;OverflowInteger&lt;usize&gt;&gt;()</code>.</p>
@@ -324,7 +324,7 @@ called for iterators over usize.</p>
 elements in the itertor.</p>
 <p>This method should rarely be called directly, as it is used to satisfy the
 <a href="sus-iter-Sum.html"><code>Sum</code></a> concept so that
-<a href="sus-iter-IteratorBase.html#method.sum"><code>Iterator::sum()</code></a> can be called for
+<a href="sus-iter-IteratorBase.html#method.sum"><code>Iterator::sum</code></a> can be called for
 iterators over usize.</p>
 <p>To handle overflow without panicing, instead of <code>iter.sum()</code>, use
 <code>iter.sum&lt;OverflowInteger&lt;usize&gt;&gt;()</code>.</p>
@@ -1356,7 +1356,7 @@ concept.</p>
 <p>For conversions from types with a larger range use
 <a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;()</code></a>.</p>
+<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
         </div>
         <div class="overload-set item-name">
@@ -1370,7 +1370,7 @@ where no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;()</code></a>.</p>
+<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
         </div>
         <div class="overload-set item-name">
@@ -1383,7 +1383,7 @@ where no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;()</code></a>.</p>
+<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
         </div>
         <div class="overload-set item-name">

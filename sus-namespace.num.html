@@ -40,9 +40,9 @@ types for lossless conversion. Otherwise use
 and handle cases where the value can not be represented in the target type.</p>
 <p>To convert between floating point types, use
 <a href="sus-construct-fn.into.html"><code>sus::into(x)</code></a> to losslessly promote <code>x</code> to a
-larger type (<a href="sus-num-f32.html"><code>f32</code></a> to <a href="sus-num-f32.html"><code>f64</code></a>) or
+larger type (<a href="sus-num-f32.html"><code>f32</code></a> to <a href="sus-num-f64.html"><code>f64</code></a>) or
 <code>sus::try_into(x)</code> to convert <code>x</code> to a smaller type
-(<a href="sus-num-f32.html"><code>f64</code></a> to <a href="sus-num-f32.html"><code>f32</code></a>).</p>
+(<a href="sus-num-f64.html"><code>f64</code></a> to <a href="sus-num-f32.html"><code>f32</code></a>).</p>
 <p>Use <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;T&gt;()</code></a> to do a lossy type coercion
 (like <code>static_cast&lt;T&gt;()</code>) between integer and floating point types, or C++
 primitive integers, floating point, or enums. When converting to a larger
