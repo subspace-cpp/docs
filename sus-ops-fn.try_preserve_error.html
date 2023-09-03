@@ -76,16 +76,16 @@
                   &gt;
                 </div>
                 <div class="requires-constaint">
-                  sus::mem::IsMoveRef
-                  &lt;
-                  T &&
-                  &gt;
-                </div>
-                <div class="requires-constaint">
                   <pre class="requires-constaint-line">!std::is_const_v&lt;U&gt;</pre>
                 </div>
                 <div class="requires-constaint">
                   <pre class="requires-constaint-line">!std::is_reference_v&lt;U&gt;</pre>
+                </div>
+                <div class="requires-constaint">
+                  sus::mem::IsMoveRef
+                  &lt;
+                  decltype(t)
+                  &gt;
                 </div>
               </div></div>
           </div>

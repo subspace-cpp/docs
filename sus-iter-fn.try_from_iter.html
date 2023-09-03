@@ -75,12 +75,6 @@
                   &gt;
                 </div>
                 <div class="requires-constaint">
-                  sus::mem::IsMoveRef
-                  &lt;
-                  IntoIter &&
-                  &gt;
-                </div>
-                <div class="requires-constaint">
                   sus::ops::Try
                   &lt;
                   FromType
@@ -95,6 +89,12 @@
                 </div>
                 <div class="requires-constaint">
                   <pre class="requires-constaint-line">!std::is_void_v&lt;::sus::ops::TryOutputType&lt;FromType&gt;&gt;</pre>
+                </div>
+                <div class="requires-constaint">
+                  sus::mem::IsMoveRef
+                  &lt;
+                  decltype(into_iter)
+                  &gt;
                 </div>
               </div></div>
           </div>

@@ -207,7 +207,7 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class AndFn, int &... , class R = std::invoke_result_t&lt;AndFn, TUnlessVoid &&&gt;, class OkType = typename __private::IsResultType&lt;R&gt;::ok_type, class ErrType = typename __private::IsResultType&lt;R&gt;::err_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.and_then" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn && op) && -&gt; Result&lt;OkType, ErrType&gt;</div>
+              <div class="function-signature"><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.and_then" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn op) && -&gt; ReturnOnce&lt;AndFn, TUnlessVoid &&&gt;</div>
             </div>
           </div>
           <div class="description long">

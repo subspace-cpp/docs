@@ -97,18 +97,18 @@ produce less code by using type erasure to avoid template instantiation.</p>
 <p>A type that satisfies <code>FnOnce</code> will return a type that can be converted to
 <code>R</code> when called with the arguments <code>Args...</code>. <code>FnOnce</code> is satisfied by
 being callable as an rvalue (which is done by providing an operator() that
-is not <code>&amp;</code>-qualified). Mutable and const lambdas will satisfy
-<code>FnOnce</code>.</p>
+is not <code>&amp;</code>-qualified). Mutable and const lambdas will satisfy <code>FnOnce</code>.</p>
 <p>The second argument of <code>FnOnce&lt;F, S&gt;</code> is a function signature with the
 format <code>ReturnType(Args...)</code>, where <code>Args...</code> are the arguments that will
 be passed to the <code>FnOnce</code> and <code>ReturnType</code> is what is expected to be
 received back. It would appear as a matching concept as:</p>
-<pre><code>void function(FnOnce&lt;ReturnType(Args...)&gt; auto&amp;&amp; f) { ... }
+<pre><code>void function(FnOnce&lt;ReturnType(Args...)&gt; auto f) { ... }
 </code></pre>
 <h1><a name="use-of-%60fnonce%60" href="#use-of-%60fnonce%60">Use of <code>FnOnce</code></a></h1>
-<p><code>FnOnce</code> should be received as an rvalue (universal) reference typically, to
-avoid an unnecessary copy or move operation, but may also be received by
-value.</p>
+<p><code>FnOnce</code> should be received by value typically. If received as a rvalue
+(universal) reference, it should be constrained by
+<a href="sus-mem-IsMoveRef.html"><code>IsMoveRef&lt;decltype(f)&gt;</code></a> to avoid moving out of
+an lvalue in the caller.</p>
 <p>A <code>FnOnce</code> should be called by moving it with <code>sus::move()</code> when passing it
 to <code>sus::fn::call_once()</code> along with any arguments. It is moved-from after
 calling, and it should only be called once.</p>
@@ -133,7 +133,7 @@ than once, as that implies a use-after-move.</p>
 <p>A function that receives a <code>FnOnce</code> matching type and calls it:</p>
 <pre><code>// Accepts any type that can be called once with (Option&lt;i32&gt;) and returns
 // i32.
-i32 do_stuff_once(sus::fn::FnOnce&lt;i32(sus::Option&lt;i32&gt;)&gt; auto&amp;&amp; f) {
+i32 do_stuff_once(sus::fn::FnOnce&lt;i32(sus::Option&lt;i32&gt;)&gt; auto f) {
   return sus::fn::call_once(sus::move(f), sus::some(400));
 }
 
@@ -154,7 +154,7 @@ signature:</p>
 };
 
 i32 map_class_once(const Class&amp; c,
-                   sus::fn::FnOnce&lt;i32(const Class&amp;)&gt; auto&amp;&amp; f) {
+                   sus::fn::FnOnce&lt;i32(const Class&amp;)&gt; auto f) {
   return sus::fn::call_once(sus::move(f), c);
 }
 

@@ -112,12 +112,12 @@ would appear as a matching concept as:</p>
 <pre><code>void function(const Fn&lt;ReturnType(Args...)&gt; auto&amp; f) { ... }
 </code></pre>
 <h1><a name="use-of-%60fn%60" href="#use-of-%60fn%60">Use of <code>Fn</code></a></h1>
-<p><code>Fn</code> should be received by const reference, so that calls to it can be sure
-to reach the intended const overload of operator() if there is more than
-one.</p>
+<p><code>Fn</code> should be received by value typically, but can also be received as a
+const reference.</p>
 <p>A <code>Fn</code> should be called by passing it to <code>std::fn::call()</code> along with any
-arguments. A <code>Fn</code> may be called any number of times, unlike <code>FnOnce</code>, and
-should not be moved when called.</p>
+arguments. This ensures the correct overload is called on the object. A <code>Fn</code>
+may be called any number of times, unlike <code>FnOnce</code>, and should not be moved
+when called.</p>
 <h1><a name="compatibility" href="#compatibility">Compatibility</a></h1>
 <p>Any callable type that satisfies <code>Fn</code> will also satisfy <code>FnMut</code> and
 <code>FnOnce</code>. A <code>Fn</code> may be called multiple times, or a single time, which is

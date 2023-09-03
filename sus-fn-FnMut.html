@@ -107,13 +107,13 @@ is not <code>&amp;&amp;</code>-qualified). Mutable and const lambdas will satisf
 format <code>ReturnType(Args...)</code>, where <code>Args...</code> are the arguments that will
 be passed to the <code>FnMut</code> and <code>ReturnType</code> is what is expected to be
 received back. It would appear as a matching concept as:</p>
-<pre><code>void function(FnMut&lt;ReturnType(Args...)&gt; auto&amp;&amp; f) { ... }
+<pre><code>void function(FnMut&lt;ReturnType(Args...)&gt; auto f) { ... }
 </code></pre>
 <h1><a name="use-of-%60fnmut%60" href="#use-of-%60fnmut%60">Use of <code>FnMut</code></a></h1>
-<p><code>FnMut</code> should be received as an rvalue (universal) reference typically,
-to avoid an unnecessary copy or move operation, but may also be received by
-value in order to isolate any mutation that occurs to stay within the
-function, or to take ownership of the closure.</p>
+<p><code>FnMut</code> should be received by value typically. If received as a rvalue
+(universal) reference, it should be constrained by
+<a href="sus-mem-IsMoveRef.html"><code>IsMoveRef&lt;decltype(f)&gt;</code></a> to avoid moving out of
+an lvalue in the caller.</p>
 <p>A <code>FnMut</code> should be called by passing it to <code>sus::fn::call_mut()</code> along with
 any arguments. A <code>FnMut</code> may be called any number of times, unlike <code>FnOnce</code>,
 and should not be moved when called.</p>
@@ -134,7 +134,7 @@ able to mutate internal state.</p>
 <p>A function that receives a <code>FnMut</code> matching type and calls it:</p>
 <pre><code>// Accepts any type that can be called once with (Option&lt;i32&gt;) and returns
 // i32.
-static i32 do_stuff_mut(sus::fn::FnMut&lt;i32(sus::Option&lt;i32&gt;)&gt; auto&amp;&amp; f) {
+static i32 do_stuff_mut(sus::fn::FnMut&lt;i32(sus::Option&lt;i32&gt;)&gt; auto f) {
   return sus::fn::call_mut(f, sus::some(400)) +
          sus::fn::call_mut(f, sus::some(100));
 }
@@ -156,7 +156,7 @@ that same class if the remaining parameters match the method's signature:</p>
 };
 
 i32 map_class_mut(const Class&amp; c,
-                  sus::fn::FnMut&lt;i32(const Class&amp;)&gt; auto&amp;&amp; f) {
+                  sus::fn::FnMut&lt;i32(const Class&amp;)&gt; auto f) {
   return sus::fn::call_mut(f, c);
 }
 

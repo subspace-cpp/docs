@@ -116,7 +116,7 @@
               <div class="function-signature"><a class="function-name" name="method.Option.ctor.some" href="sus-option-Option.html#method.Option.ctor.some">Option</a>(const T & t)</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><a class="function-name" name="method.Option.ctor.some" href="sus-option-Option.html#method.Option.ctor.some">Option</a>(U && t)</div>
+              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><a class="function-name" name="method.Option.ctor.some" href="sus-option-Option.html#method.Option.ctor.some">Option</a>(U && u)</div>
             </div>
           </div>
           <div class="description long">
@@ -263,7 +263,7 @@ holds <code>None</code>, otherwise returns <code>that</code> option.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class AndFn, int &... , class R = std::invoke_result_t&lt;AndFn, T &&&gt;, class U = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.and_then" href="sus-option-Option.html#method.and_then">and_then</a>(AndFn && f) && -&gt; Option&lt;U&gt;</div>
+              <div class="function-signature"><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.and_then" href="sus-option-Option.html#method.and_then">and_then</a>(AndFn f) && -&gt; ReturnOnce&lt;AndFn, T &&&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -431,7 +431,7 @@ currently <code>None</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class p:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.filter" href="sus-option-Option.html#method.filter">filter</a>(FnOnce&lt;_Bool (const std::remove_reference_t&lt;T&gt; &)&gt; auto && p) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+              <div class="function-signature"><div class="template">template &lt;class p:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.filter" href="sus-option-Option.html#method.filter">filter</a>(FnOnce&lt;_Bool (const std::remove_reference_t&lt;T&gt; &)&gt; auto p) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
             </div>
           </div>
           <div class="description long">
@@ -488,7 +488,7 @@ default value.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_or_insert_with" href="sus-option-Option.html#method.get_or_insert_with">get_or_insert_with</a>(FnOnce&lt;T (void)&gt; auto && f) & -&gt; T &</div>
+              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.get_or_insert_with" href="sus-option-Option.html#method.get_or_insert_with">get_or_insert_with</a>(FnOnce&lt;T (void)&gt; auto f) & -&gt; T &</div>
             </div>
           </div>
           <div class="description long">
@@ -564,7 +564,7 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &&, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map" href="sus-option-Option.html#method.map">map</a>(MapFn && m) && -&gt; Option&lt;R&gt;</div>
+              <div class="function-signature"><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map" href="sus-option-Option.html#method.map">map</a>(MapFn m) && -&gt; Option&lt;sus::fn::ReturnOnce&lt;MapFn, T &&&gt; &gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -579,7 +579,7 @@ if the current option is in state <code>None</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &&, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_or" href="sus-option-Option.html#method.map_or">map_or</a>(R default_result, MapFn && m) && -&gt; R</div>
+              <div class="function-signature"><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_or" href="sus-option-Option.html#method.map_or">map_or</a>(ReturnOnce&lt;MapFn, T &&&gt; default_result, MapFn m) && -&gt; ReturnOnce&lt;MapFn, T &&&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -593,7 +593,7 @@ lazily evaluated.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class DefaultFn, class MapFn, int &... , class D = std::invoke_result_t&lt;DefaultFn&gt;, class R = std::invoke_result_t&lt;MapFn, T &&&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_or_else" href="sus-option-Option.html#method.map_or_else">map_or_else</a>(DefaultFn && default_fn, MapFn && m) && -&gt; R</div>
+              <div class="function-signature"><div class="template">template &lt;class DefaultFn, class MapFn&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.map_or_else" href="sus-option-Option.html#method.map_or_else">map_or_else</a>(DefaultFn default_fn, MapFn m) && -&gt; ReturnOnce&lt;DefaultFn&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -618,7 +618,7 @@ lazily evaluated.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class ElseFn, int &... , class E = std::invoke_result_t&lt;ElseFn&gt;, class Result = ::sus::result::Result&lt;T, E&gt;&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.ok_or_else" href="sus-option-Option.html#method.ok_or_else">ok_or_else</a>(ElseFn && f) && -&gt; Result</div>
+              <div class="function-signature"><div class="template">template &lt;class ElseFn&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.ok_or_else" href="sus-option-Option.html#method.ok_or_else">ok_or_else</a>(ElseFn f) && -&gt; Result&lt;T, sus::fn::ReturnOnce&lt;ElseFn&gt; &gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -629,7 +629,7 @@ lazily evaluated.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.or_else" href="sus-option-Option.html#method.or_else">or_else</a>(FnOnce&lt;Option&lt;T&gt; (void)&gt; auto && f) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
+              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.or_else" href="sus-option-Option.html#method.or_else">or_else</a>(FnOnce&lt;Option&lt;T&gt; (void)&gt; auto f) && -&gt; <a class="type-name" title="Option&lt;T&gt;" href="sus-option-Option.html">Option&lt;T&gt;</a></div>
             </div>
           </div>
           <div class="description long">
@@ -723,7 +723,7 @@ default value.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_or_else" href="sus-option-Option.html#method.unwrap_or_else">unwrap_or_else</a>(FnOnce&lt;T (void)&gt; auto && f) && -&gt; T</div>
+              <div class="function-signature"><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_or_else" href="sus-option-Option.html#method.unwrap_or_else">unwrap_or_else</a>(FnOnce&lt;T (void)&gt; auto f) && -&gt; T</div>
             </div>
           </div>
           <div class="description long">
