@@ -45,13 +45,22 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
-          <a href="#static-methods">Static Methods</a>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a href="#operators">Operators</a>
+          <a class="sidebar-item" href="sus-env-VarError.html#method.VarError">VarError</a>
         </li>
         <li>
-          <a href="#data-members">Data Members</a>
+          <a class="sidebar-header" href="#operators">Operators</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-env-VarError.html#method.operator==">operator==</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#data-members">Data Members</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-env-VarError.html#field.reason">reason</a>
         </li>
       </ul>
     </div>
@@ -95,7 +104,7 @@ Possibly returned from <a href="sus-env-fn.var.html"><code>env::var()</code></a>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a class="function-name" name="method.VarError" href="sus-env-VarError.html#method.VarError">VarError</a>(Reason r)</div>
+              <div class="function-signature"><a name="method.VarError"></a><a class="function-name" href="sus-env-VarError.html#method.VarError">VarError</a>(Reason r)</div>
             </div>
           </div>
           <div class="description long">
@@ -112,7 +121,7 @@ constructed from the reason value.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator==" href="sus-env-VarError.html#method.operator==">operator==</a>(<a class="type-name" title="const VarError &" href="sus-env-VarError.html">const VarError &</a> rhs) const -&gt; bool</div>
+              <div class="function-signature"><a name="method.operator=="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-env-VarError.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-env-VarError.html" title="sus::env::VarError">VarError</a>& rhs) const -&gt; bool </div>
             </div>
           </div>
           <div class="description long">
@@ -127,10 +136,7 @@ constructed from the reason value.</p>
         </div>
         <div class="section-items">
           <div class="section-item">
-            <div class="item-name member-signature">
-              Reason
-              <a class="field-name" name="field.reason" href="#field.reason">reason</a>
-            </div>
+            <div class="item-name member-signature"><a name="field.reason"></a>Reason <a class="field-name" href="sus-env-VarError.html#field.reason">reason</a></div>
             <div class="description long">
             </div>
           </div>

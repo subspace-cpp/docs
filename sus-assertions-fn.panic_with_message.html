@@ -64,7 +64,13 @@
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">panic_with_message</a>(const char & msg, source_location location) -&gt; void</div>
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">panic_with_message</a>(<span class="const">const</span> char* msg, <span class="const">const</span> source_location location) -&gt; void </div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">panic_with_message</a>(string_view msg, <span class="const">const</span> source_location location) -&gt; void </div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">panic_with_message</a>(<span class="const">const</span> string& msg, <span class="const">const</span> source_location location) -&gt; void </div>
           </div>
         </div>
         <div class="description long">

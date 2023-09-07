@@ -91,16 +91,26 @@
           </div>
         </div>
         <div class="description long">
-          <p>An <code>Iterator</code> able to yield elements from both ends.</p>
+          <p>An <a href="sus-iter-Iterator.html"><code>Iterator</code></a> able to yield elements from both ends.</p>
 <p>Something that implements <code>DoubleEndedIterator</code> has one extra capability
 over something that implements <code>Iterator</code>: the ability to also take Items
 from the back, as well as the front.</p>
 <p>It is important to note that both back and forth work on the same range, and
 do not cross: iteration is over when they meet in the middle.</p>
-<p>In a similar fashion to the <code>Iterator</code> protocol, once a
+<p>In a similar fashion to the <a href="sus-iter-Iterator.html"><code>Iterator</code></a> protocol,
+once a
 <code>DoubleEndedIterator</code> returns <code>None</code> from a <code>next_back()</code>, calling it again
 may or may not ever return <code>Some</code> again. <code>next()</code> and <code>next_back()</code> are
 interchangeable for this purpose.</p>
+<h1><a name="required-methods." href="#required-methods.">Required methods.</a></h1>
+<p>A <code>DoubleEndedIterator</code> has one required methods, in addition to those
+required by <a href="sus-iter-Iterator.html"><code>Iterator</code></a>.</p>
+<ul>
+<li><code>auto next_back() -&gt; Option&lt;Item&gt;</code> returns an <code>Option</code> containing the next
+<code>Item</code> from the back of the iterator as long as there are elements,
+and once they've all been exhausted, will return <code>None</code> to indicate that
+iteration is finished.</li>
+</ul>
 
         </div>
       </div>

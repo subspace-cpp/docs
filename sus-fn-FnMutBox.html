@@ -45,10 +45,49 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
-          <a href="#static-methods">Static Methods</a>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a href="#operators">Operators</a>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnpointer">FnMutBox</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.methodpointer">FnMutBox</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnmutbox">FnMutBox</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnbox">FnMutBox</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.bind">FnMutBox</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.FnMutBox">FnMutBox</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.from.from.fnpointer">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.from.from.method">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.from.from.fnmutbox">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.from.from.fnbox">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.from.from.callableobject">from</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#operators">Operators</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.operator()">operator()</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-FnMutBox.html#method.operator=">operator=</a>
         </li>
       </ul>
     </div>
@@ -140,7 +179,19 @@ null pointer will panic.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnMutBox.ctor.fnpointer" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnpointer">FnMutBox</a>(F ptr)</div>
+              <div class="function-signature"><a name="method.FnMutBox.ctor.fnpointer"></a><div class="template">template &lt;class F&gt;</div><a class="function-name" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnpointer">FnMutBox</a>(F ptr)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::FunctionPointerMatches
+                    &lt;
+                    F
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -149,7 +200,23 @@ null pointer will panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnMutBox.ctor.methodpointer" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.methodpointer">FnMutBox</a>(F ptr)</div>
+              <div class="function-signature"><a name="method.FnMutBox.ctor.methodpointer"></a><div class="template">template &lt;class F&gt;</div><a class="function-name" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.methodpointer">FnMutBox</a>(F ptr)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::CallableObjectReturnsMut
+                    &lt;
+                    F
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    <pre class="requires-constaint-line">std::is_member_function_pointer_v&lt;F&gt; ||</pre>
+                    <pre class="requires-constaint-line">             std::is_member_object_pointer_v&lt;F&gt;</pre>
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -158,7 +225,19 @@ null pointer will panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnMutBox.ctor.fnmutbox" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnmutbox">FnMutBox</a>(FnMutBox&lt;U, UArgs...&gt; && box)</div>
+              <div class="function-signature"><a name="method.FnMutBox.ctor.fnmutbox"></a><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnmutbox">FnMutBox</a>(<a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;U, UArgs...&gt;&& box)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::CallableObjectReturnsMut
+                    &lt;
+                    FnMutBox&lt;U, UArgs...&gt;
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -167,7 +246,19 @@ null pointer will panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" name="method.FnMutBox.ctor.fnbox" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnbox">FnMutBox</a>(FnBox&lt;U, UArgs...&gt; && box)</div>
+              <div class="function-signature"><a name="method.FnMutBox.ctor.fnbox"></a><div class="template">template &lt;class U, class... UArgs&gt;</div><a class="function-name" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.fnbox">FnMutBox</a>(FnBox&lt;U, UArgs...&gt;&& box)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::CallableObjectReturnsMut
+                    &lt;
+                    FnBox&lt;U, UArgs...&gt;
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -176,7 +267,19 @@ null pointer will panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><a class="function-name" name="method.FnMutBox.ctor.bind" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.bind">FnMutBox</a>(SusBind&lt;F&gt; && holder)</div>
+              <div class="function-signature"><a name="method.FnMutBox.ctor.bind"></a><div class="template">template &lt;class F&gt;</div><a class="function-name" href="sus-fn-FnMutBox.html#method.FnMutBox.ctor.bind">FnMutBox</a>(SusBind&lt;F&gt;&& holder)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::CallableObjectReturnsMut
+                    &lt;
+                    F
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -185,17 +288,31 @@ null pointer will panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a class="function-name" name="method.FnMutBox" href="sus-fn-FnMutBox.html#method.FnMutBox">FnMutBox</a>(<a class="type-name" title="FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="sus-fn-FnMutBox.html">FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a>)</div>
+              <div class="function-signature"><a name="method.FnMutBox"></a><a class="function-name" href="sus-fn-FnMutBox.html#method.FnMutBox">FnMutBox</a>(<a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;R(CallArgs...)&gt;&& )</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a class="function-name" name="method.FnMutBox" href="sus-fn-FnMutBox.html#method.FnMutBox">FnMutBox</a>(<a class="type-name" title="const FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnMutBox.html">const FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>)</div>
+              <div class="function-signature"><a name="method.FnMutBox"></a><a class="function-name" href="sus-fn-FnMutBox.html#method.FnMutBox">FnMutBox</a>(<span class="const">const</span> <a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;R(CallArgs...)&gt;& )<div class="deleted">
+                  deleted
+                </div></div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.fnpointer" href="sus-fn-FnMutBox.html#method.from.from.fnpointer">from</a>(F fn) -&gt; auto</div>
+              <div class="function-signature"><a name="method.from.from.fnpointer"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutBox.html#method.from.from.fnpointer">from</a>(F fn) -&gt; auto <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::FunctionPointerMatches
+                    &lt;
+                    F
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -205,7 +322,23 @@ lambdas without captures.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.method" href="sus-fn-FnMutBox.html#method.from.from.method">from</a>(F fn) -&gt; auto</div>
+              <div class="function-signature"><a name="method.from.from.method"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutBox.html#method.from.from.method">from</a>(F fn) -&gt; auto <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::CallableObjectReturnsMut
+                    &lt;
+                    F
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    <pre class="requires-constaint-line">std::is_member_function_pointer_v&lt;F&gt; ||</pre>
+                    <pre class="requires-constaint-line">             std::is_member_object_pointer_v&lt;F&gt;</pre>
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -215,7 +348,19 @@ pointers.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.fnmutbox" href="sus-fn-FnMutBox.html#method.from.from.fnmutbox">from</a>(FnMutBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
+              <div class="function-signature"><a name="method.from.from.fnmutbox"></a><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutBox.html#method.from.from.fnmutbox">from</a>(<a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;U, UArgs...&gt;&& box) -&gt; auto <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::CallableObjectReturnsMut
+                    &lt;
+                    FnMutBox&lt;U, UArgs...&gt;
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -224,7 +369,19 @@ pointers.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.fnbox" href="sus-fn-FnMutBox.html#method.from.from.fnbox">from</a>(FnBox&lt;U, UArgs...&gt; && box) -&gt; auto</div>
+              <div class="function-signature"><a name="method.from.from.fnbox"></a><div class="template">template &lt;class U, class... UArgs&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutBox.html#method.from.from.fnbox">from</a>(FnBox&lt;U, UArgs...&gt;&& box) -&gt; auto <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::CallableObjectReturnsMut
+                    &lt;
+                    FnBox&lt;U, UArgs...&gt;
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -233,7 +390,19 @@ pointers.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class F&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.callableobject" href="sus-fn-FnMutBox.html#method.from.from.callableobject">from</a>(SusBind&lt;F&gt; && holder) -&gt; auto</div>
+              <div class="function-signature"><a name="method.from.from.callableobject"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutBox.html#method.from.from.callableobject">from</a>(SusBind&lt;F&gt;&& holder) -&gt; auto <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::fn::callable::CallableObjectReturnsMut
+                    &lt;
+                    F
+                    R
+                    CallArgs...
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -250,7 +419,7 @@ pointers.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator()" href="sus-fn-FnMutBox.html#method.operator()">operator()</a>(CallArgs... args) & -&gt; R</div>
+              <div class="function-signature"><a name="method.operator()"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutBox.html#method.operator()">operator()</a>(CallArgs... args) & -&gt; R </div>
             </div>
           </div>
           <div class="description long">
@@ -259,10 +428,12 @@ pointers.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-fn-FnMutBox.html#method.operator=">operator=</a>(<a class="type-name" title="FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&" href="sus-fn-FnMutBox.html">FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &&</a>) -&gt; <a class="type-name" title="FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnMutBox.html">FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutBox.html#method.operator=">operator=</a>(<a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;R(CallArgs...)&gt;&& ) -&gt; <a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;R(CallArgs...)&gt;& </div>
             </div>
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-fn-FnMutBox.html#method.operator=">operator=</a>(<a class="type-name" title="const FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnMutBox.html">const FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a>) -&gt; <a class="type-name" title="FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &" href="sus-fn-FnMutBox.html">FnMutBox&lt;type-parameter-0-0 (type-parameter-0-1...)&gt; &</a></div>
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutBox.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;R(CallArgs...)&gt;& ) -&gt; <a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;R(CallArgs...)&gt;& <div class="deleted">
+                  deleted
+                </div></div>
             </div>
           </div>
           <div class="description long">

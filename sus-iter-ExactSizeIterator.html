@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::iter::ExactSizeIterator - Subspace</title>
   <meta property="og:title" content="sus::iter::ExactSizeIterator - Subspace"></meta>
-  <meta name="description" content="An iterator that knows its exact length."></meta>
-  <meta property="og:description" content="An iterator that knows its exact length."></meta>
+  <meta name="description" content="An Iterator that knows its exact length."></meta>
+  <meta property="og:description" content="An Iterator that knows its exact length."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -91,17 +91,21 @@
           </div>
         </div>
         <div class="description long">
-          <p>An iterator that knows its exact length.</p>
-<p>Many Iterators don’t know how many times they will iterate, but some do. If
+          <p>An <a href="sus-iter-Iterator.html"><code>Iterator</code></a> that knows its exact length.</p>
+<p>Many <a href="sus-iter-Iterator.html"><code>Iterator</code></a>s don’t know how many times they will
+iterate, but some do. If
 an iterator knows how many times it can iterate, providing access to that
 information can be useful. For example, if you want to iterate backwards, a
 good start is to know where the end is.</p>
-<p>When implementing an <code>ExactSizeIterator</code>, you must also implement
-<code>Iterator</code>.</p>
-<p>Then, to implement <code>ExactSizeIterator</code>, provide the <code>exact_size_hint()</code>
-method that returns the exact size of the iterator. The implementation of
-<code>Iterator::size_hint()</code> must also return the exact size of the iterator
-(usually by calling <code>exact_size_hint()</code>).</p>
+<h1><a name="required-methods." href="#required-methods.">Required methods.</a></h1>
+<p>An <code>ExactSizeIterator</code> has one required methods, in addition to those
+required by <a href="sus-iter-Iterator.html"><code>Iterator</code></a>.</p>
+<ul>
+<li><code>auto exact_size_hint() -&gt; usize</code> returns the exact size of the iterator.
+The implementation of <code>Iterator::size_hint()</code> must also return the exact
+size of the iterator (usually by calling <code>exact_size_hint()</code>).</li>
+</ul>
+<p>TODO: Rename <code>exact_size_hint</code> to <code>len</code>?</p>
 
         </div>
       </div>

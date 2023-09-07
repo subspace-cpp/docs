@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::iter::successors - Subspace</title>
-  <meta property="og:title" content="sus::iter::successors - Subspace"></meta>
-  <meta name="description" content="Creates a new iterator where each successive item is computed based on the preceding one."></meta>
-  <meta property="og:description" content="Creates a new iterator where each successive item is computed based on the preceding one."></meta>
+  <title>sus::ptr::as_ref - Subspace</title>
+  <meta property="og:title" content="sus::ptr::as_ref - Subspace"></meta>
+  <meta name="description" content="Returns an empty Option&lt;T&amp;&gt; if the T* pointer is null, or else returns a reference to the value T wrapped in an Option&lt;T&amp;&gt;."></meta>
+  <meta property="og:description" content="Returns an empty Option&lt;T&amp;&gt; if the T* pointer is null, or else returns a reference to the value T wrapped in an Option&lt;T&amp;&gt;."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">successors</a>
+        <a href="#">as_ref</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">successors</a>
+      <a href="#">as_ref</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -58,28 +58,22 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+          <a class="namespace-name" href="sus-namespace.ptr.html">ptr</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">successors</a>
+          <a class="function-name" href="#">as_ref</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">successors</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt; first, <a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;(<span class="const">const</span> Item&)&gt; func) -&gt; <a class="type-name" href="sus-iter-Successors.html" title="sus::iter::Successors">Successors</a>&lt;Item&gt; </div>
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">as_ref</a>(T* pointer) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&&gt; </div>
           </div>
         </div>
         <div class="description long">
-          <p>Creates a new iterator where each successive item is computed based on the
-preceding one.</p>
-<p>The iterator starts with the given <code>first</code> item (if any) and calls the
-given <code>FnMutBox&lt;Option&lt;Item&gt;&gt;(const Item&amp;)</code> functor to compute each item's
-successor.</p>
-<h1><a name="example" href="#example">Example</a></h1>
-<pre><code>auto powers_of_10 = sus::iter::successors&lt;u16&gt;(
-    sus::some(1_u16), [](const u16&amp; n) { return n.checked_mul(10_u16); });
-sus::check(
-    sus::move(powers_of_10).collect&lt;Vec&lt;u16&gt;&gt;() ==
-    sus::Slice&lt;u16&gt;::from({1_u16, 10_u16, 100_u16, 1000_u16, 10000_u16}));
-</code></pre>
+          <p>Returns an empty <a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a> if the <code>T*</code> pointer is
+null, or else returns a reference to the value <code>T</code> wrapped in an
+<a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a>.</p>
+<p>This is the <a href="https://doc.rust-lang.org/stable/std/primitive.pointer.html#method.as_ref"><code>pointer::as_ref</code></a>
+operation in Rust. However it is not unsafe in C++ as no lifetime is
+created as part of the operation.</p>
 
         </div>
       </div>

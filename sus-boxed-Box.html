@@ -45,13 +45,61 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
-          <a href="#static-methods">Static Methods</a>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a href="#methods">Methods</a>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.ctor.convert">Box</a>
         </li>
         <li>
-          <a href="#operators">Operators</a>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.ctor.inherit">Box</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.move">Box</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.Box">Box</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.from.from.convert">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.from.from.inherit">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.from.dynerror.from.error">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.from.dynerror.from.string">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.from_raw">from_raw</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#methods">Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.clone">clone</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.clone_from">clone_from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.into_raw">into_raw</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#operators">Operators</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator*">operator*</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator=.move">operator=</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator=">operator=</a>
         </li>
       </ul>
     </div>
@@ -96,7 +144,27 @@
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><a class="function-name" name="method.Box.ctor.convert" href="sus-boxed-Box.html#method.Box.ctor.convert">Box</a>(U u)</div>
+              <div class="function-signature"><a name="method.Box.ctor.convert"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box.ctor.convert">Box</a>(U u)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    std::convertible_to
+                    &lt;
+                    U
+                    T
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    <pre class="requires-constaint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre>
+                  </div>
+                  <div class="requires-constaint">
+                    sus::mem::Move
+                    &lt;
+                    U
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -105,7 +173,24 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><a class="function-name" name="method.Box.ctor.inherit" href="sus-boxed-Box.html#method.Box.ctor.inherit">Box</a>(U u)</div>
+              <div class="function-signature"><a name="method.Box.ctor.inherit"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box.ctor.inherit">Box</a>(U u)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::ptr::SameOrSubclassOf
+                    &lt;
+                    U *
+                    T *
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    sus::mem::Move
+                    &lt;
+                    U
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -114,7 +199,7 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a class="function-name" name="method.Box.move" href="sus-boxed-Box.html#method.Box.move">Box</a>(<a class="type-name" title="Box&lt;T&gt; &&" href="sus-boxed-Box.html">Box&lt;T&gt; &&</a> rhs)</div>
+              <div class="function-signature"><a name="method.Box.move"></a><a class="function-name" href="sus-boxed-Box.html#method.Box.move">Box</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&& rhs)</div>
             </div>
           </div>
           <div class="description long">
@@ -124,14 +209,45 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><a class="function-name" name="method.Box" href="sus-boxed-Box.html#method.Box">Box</a>(Box&lt;U&gt; && rhs)</div>
+              <div class="function-signature"><a name="method.Box"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box">Box</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;U&gt;&& rhs)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::ptr::SameOrSubclassOf
+                    &lt;
+                    U *
+                    T *
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.convert" href="sus-boxed-Box.html#method.from.from.convert">from</a>(U u) -&gt; <a class="type-name" title="Box&lt;T&gt;" href="sus-boxed-Box.html">Box&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.from.from.convert"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.from.convert">from</a>(U u) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    std::convertible_to
+                    &lt;
+                    U
+                    T
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    <pre class="requires-constaint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre>
+                  </div>
+                  <div class="requires-constaint">
+                    sus::mem::Move
+                    &lt;
+                    U
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -144,7 +260,24 @@ subclass of <code>T</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.from.inherit" href="sus-boxed-Box.html#method.from.from.inherit">from</a>(U u) -&gt; <a class="type-name" title="Box&lt;T&gt;" href="sus-boxed-Box.html">Box&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.from.from.inherit"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.from.inherit">from</a>(U u) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::ptr::SameOrSubclassOf
+                    &lt;
+                    U *
+                    T *
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    sus::mem::Move
+                    &lt;
+                    U
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -156,7 +289,30 @@ subclass of <code>T</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class E&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.dynerror.from.error" href="sus-boxed-Box.html#method.from.dynerror.from.error">from</a>(E e) -&gt; <a class="type-name" title="Box&lt;T&gt;" href="sus-boxed-Box.html">Box&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.from.dynerror.from.error"></a><div class="template">template &lt;class E&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.dynerror.from.error">from</a>(E e) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::error::Error
+                    &lt;
+                    E
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    sus::mem::Move
+                    &lt;
+                    E
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    std::same_as
+                    &lt;
+                    T
+                    ::sus::error::DynError
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -169,7 +325,18 @@ type-erases <code>E</code> into a heap-alloocated
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from.dynerror.from.string" href="sus-boxed-Box.html#method.from.dynerror.from.string">from</a>(string s) -&gt; <a class="type-name" title="Box&lt;T&gt;" href="sus-boxed-Box.html">Box&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.from.dynerror.from.string"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.dynerror.from.string">from</a>(string s) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    std::same_as
+                    &lt;
+                    T
+                    ::sus::error::DynError
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -181,7 +348,7 @@ conversion moves and type-erases the <code>std::string</code> into a heap-allooc
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_raw" href="sus-boxed-Box.html#method.from_raw">from_raw</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, T * raw) -&gt; <a class="type-name" title="Box&lt;T&gt;" href="sus-boxed-Box.html">Box&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.from_raw"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from_raw">from_raw</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> , T* raw) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt; </div>
             </div>
           </div>
           <div class="description long">
@@ -202,7 +369,17 @@ an array.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone" href="sus-boxed-Box.html#method.clone">clone</a>() const -&gt; <a class="type-name" title="Box&lt;T&gt;" href="sus-boxed-Box.html">Box&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::mem::Clone
+                    &lt;
+                    T
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -213,7 +390,17 @@ an array.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.clone_from" href="sus-boxed-Box.html#method.clone_from">clone_from</a>(<a class="type-name" title="const Box&lt;T&gt; &" href="sus-boxed-Box.html">const Box&lt;T&gt; &</a> rhs) -&gt; void</div>
+              <div class="function-signature"><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; void <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::mem::Clone
+                    &lt;
+                    T
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -225,7 +412,7 @@ allocation.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.into_raw" href="sus-boxed-Box.html#method.into_raw">into_raw</a>() && -&gt; T *</div>
+              <div class="function-signature"><a name="method.into_raw"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.into_raw">into_raw</a>() && -&gt; T* </div>
             </div>
           </div>
           <div class="description long">
@@ -268,21 +455,21 @@ delete p;
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator*" href="sus-boxed-Box.html#method.operator*">operator*</a>() const -&gt; const T &</div>
+              <div class="function-signature"><a name="method.operator*"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator*">operator*</a>() const -&gt; <span class="const">const</span> T& </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator-&gt;" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>() const -&gt; const T *</div>
+              <div class="function-signature"><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>() const -&gt; <span class="const">const</span> T* </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=.move" href="sus-boxed-Box.html#method.operator=.move">operator=</a>(<a class="type-name" title="Box&lt;T&gt; &&" href="sus-boxed-Box.html">Box&lt;T&gt; &&</a> rhs) -&gt; <a class="type-name" title="Box&lt;T&gt; &" href="sus-boxed-Box.html">Box&lt;T&gt; &</a></div>
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&& rhs) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& </div>
             </div>
           </div>
           <div class="description long">
@@ -292,7 +479,18 @@ delete p;
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.operator=" href="sus-boxed-Box.html#method.operator=">operator=</a>(Box&lt;U&gt; && rhs) -&gt; <a class="type-name" title="Box&lt;T&gt; &" href="sus-boxed-Box.html">Box&lt;T&gt; &</a></div>
+              <div class="function-signature"><a name="method.operator="></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator=">operator=</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;U&gt;&& rhs) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::ptr::SameOrSubclassOf
+                    &lt;
+                    U *
+                    T *
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">

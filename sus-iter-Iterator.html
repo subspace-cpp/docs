@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::iter::Iterator - Subspace</title>
   <meta property="og:title" content="sus::iter::Iterator - Subspace"></meta>
-  <meta name="description" content="A concept for all implementations of iterators."></meta>
-  <meta property="og:description" content="A concept for all implementations of iterators."></meta>
+  <meta name="description" content="A concept for all implementations of iterators. See IteratorBase for the methods on an Iterator."></meta>
+  <meta property="og:description" content="A concept for all implementations of iterators. See IteratorBase for the methods on an Iterator."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -93,28 +93,37 @@
           </div>
         </div>
         <div class="description long">
-          <p>A concept for all implementations of iterators.</p>
+          <p>A concept for all implementations of iterators.
+See <a href="sus-iter-IteratorBase.html"><code>IteratorBase</code></a> for the methods on an
+<code>Iterator</code>.</p>
 <p>Types that satisfy this concept can be used in for loops and provide
 all the methods of an iterator type, which are found in
-<code>sus::iter::IteratorBase</code>.</p>
-<p>Any Iterator's full definition includes a number of other methods as well,
+<a href="sus-iter-IteratorBase.html"><code>IteratorBase</code></a>.</p>
+<p>Any <code>Iterator</code>'s full definition includes a number of other methods as well,
 built on top of next, and so you get them for free.</p>
 <p>Iterators are also composable, and it's possible to chain them together to
 do more complex forms of processing.</p>
 <h1><a name="required-methods." href="#required-methods.">Required methods.</a></h1>
 <p>An iterator has two required methods.</p>
-<p><code>next()</code>, which when called, returns an <code>Option&lt;Item&gt;</code>. Calling next will
-return an <code>Option</code> containing the next <code>Item</code> as long as there are elements,
+<ul>
+<li><p><code>auto next() -&gt; </code><a href="sus-option-Option.html"><code>Option</code></a><code>&lt;Item&gt;</code></p>
+<p>Returns an <a href="sus-option-Option.html"><code>Option</code></a>
+containing the next <code>Item</code> as long as there are elements,
 and once they've all been exhausted, will return <code>None</code> to indicate that
-iteration is finished. Individual iterators may choose to resume iteration,
-and so calling next again may or may not eventually start returning an
-<code>Item</code> again at some point.</p>
-<p><code>size_hint()</code> that returns a <code>sus::iter::SizeHint</code> containing a lower bound
-and optional upper bound on the number of elements left to be yielded by the
-iterator. An upper bound of <code>None</code> indicates either an unknown upper bound
-or a bound that is larger than <code>usize</code>. Rerturning <code>lower = 0</code> and <code>upper = None</code> is correct for any iterator, but providing a more accurate bound can
-benefit performance optiomizations. Returning an incorrect bound is
-technically possible but is a violation of the Iterator protocol.</p>
+iteration is finished. Individual iterators may choose to resume
+iteration, and so calling next again may or may not eventually start
+returning an <code>Item</code> again at some point.</p>
+</li>
+<li><p><code>auto size_hint() const -&gt; </code><a href="sus-iter-SizeHint.html"><code>SizeHint</code></a></p>
+<p>Returns a <a href="sus-iter-SizeHint.html"><code>SizeHint</code></a> containing a lower bound
+and optional upper bound on the number of elements left to be yielded by
+the iterator. An upper bound of <code>None</code> indicates either an unknown upper
+bound or a bound that is larger than <code>usize</code>. Returning <code>lower = 0</code> and
+<code>upper = None</code> is correct for any iterator, but providing a more accurate
+bound can benefit performance optiomizations. Returning an incorrect bound
+is technically possible but is a violation of the <code>Iterator</code> protocol.</p>
+</li>
+</ul>
 
         </div>
       </div>

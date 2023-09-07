@@ -45,7 +45,10 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
-          <a href="#static-methods">Static Methods</a>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>
         </li>
       </ul>
     </div>
@@ -86,25 +89,85 @@
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class IntoIter, int &... , class Iter = std::decay_t&lt;decltype(std::declval&lt;IntoIter &&&gt;().into_iter())&gt;, class O = typename Iter::Item, class U = typename ::sus::option::__private::IsOptionType&lt;O&gt;::inner_type&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_iter" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(IntoIter && option_iter) -&gt; Option&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.from_iter"></a><div class="template">template &lt;class IntoIter, int &... , class Iter = std::decay_t&lt;decltype(std::declval&lt;IntoIter &&&gt;().into_iter())&gt;, class O = typename Iter::Item, class U = typename ::sus::option::__private::IsOptionType&lt;O&gt;::inner_type&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(IntoIter&& option_iter) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    <pre class="requires-constaint-line">::sus::option::__private::IsOptionType&lt;O&gt;::value</pre>
+                  </div>
+                  <div class="requires-constaint">
+                    sus::iter::IntoIterator
+                    &lt;
+                    IntoIter
+                    ::sus::option::Option&lt;U&gt;
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    <pre class="requires-constaint-line">!std::is_reference_v&lt;T&gt;</pre>
+                  </div>
+                  <div class="requires-constaint">
+                    sus::iter::FromIterator
+                    &lt;
+                    T
+                    U
+                    &gt;
+                  </div>
+                </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class ii:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_iter" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(IntoIterator&lt;T&gt; auto && ii) -&gt; Vec&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.from_iter"></a><div class="template">template &lt;class ii:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;T&gt; auto&& ii) -&gt; <a class="type-name" href="sus-collections-Vec.html" title="sus::collections::Vec">Vec</a>&lt;T&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::mem::Move
+                    &lt;
+                    T
+                    &gt;
+                  </div>
+                  <div class="requires-constaint">
+                    sus::mem::IsMoveRef
+                    &lt;
+                    decltype(ii)
+                    &gt;
+                  </div>
+                </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class iter:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_iter" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(IntoIterator&lt;T&gt; auto iter) -&gt; CollectSum&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.from_iter"></a><div class="template">template &lt;class iter:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;T&gt; auto iter) -&gt; CollectSum&lt;T&gt; </div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class iter:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_iter" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(IntoIterator&lt;const NoCopyMove &&gt; auto iter) -&gt; CollectRefs</div>
+              <div class="function-signature"><a name="method.from_iter"></a><div class="template">template &lt;class iter:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;<span class="const">const</span> NoCopyMove&&gt; auto iter) -&gt; CollectRefs </div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class into_iter:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_iter" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(IntoIterator&lt;Key&gt; auto && into_iter) -&gt; set&lt;Key, Compare, Allocator&gt;</div>
+              <div class="function-signature"><a name="method.from_iter"></a><div class="template">template &lt;class into_iter:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;Key&gt; auto&& into_iter) -&gt; set&lt;Key, Compare, Allocator&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::mem::IsMoveRef
+                    &lt;
+                    decltype(into_iter)
+                    &gt;
+                  </div>
+                </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class into_iter:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_iter" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(IntoIterator&lt;T&gt; auto && into_iter) -&gt; CollectSum&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.from_iter"></a><div class="template">template &lt;class into_iter:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;T&gt; auto&& into_iter) -&gt; CollectSum&lt;T&gt; </div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class into_iter:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_iter" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(IntoIterator&lt;Char&gt; auto && into_iter) -&gt; basic_string&lt;Char, Traits, Allocator&gt;</div>
+              <div class="function-signature"><a name="method.from_iter"></a><div class="template">template &lt;class into_iter:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-iter-FromIteratorImpl.html#method.from_iter">from_iter</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;Char&gt; auto&& into_iter) -&gt; basic_string&lt;Char, Traits, Allocator&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::mem::IsMoveRef
+                    &lt;
+                    decltype(into_iter)
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">

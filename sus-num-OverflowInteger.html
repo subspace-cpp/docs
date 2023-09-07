@@ -45,13 +45,67 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
-          <a href="#static-methods">Static Methods</a>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a href="#methods">Methods</a>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>
         </li>
         <li>
-          <a href="#operators">Operators</a>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.from">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.try_from">try_from</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#methods">Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.as_value">as_value</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.as_value_mut">as_value_mut</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.as_value_unchecked">as_value_unchecked</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.as_value_unchecked_mut">as_value_unchecked_mut</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.is_overflow">is_overflow</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.is_valid">is_valid</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.to_option">to_option</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.unwrap">unwrap</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.unwrap_unchecked">unwrap_unchecked</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#operators">Operators</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.operator%=">operator%=</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.operator*=">operator*=</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.operator+=">operator+=</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.operator-=">operator-=</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-OverflowInteger.html#method.operator/=">operator/=</a>
         </li>
       </ul>
     </div>
@@ -109,10 +163,31 @@ converted into an <code>Option</code> that will represent the overflow state as 
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a class="function-name" name="method.OverflowInteger" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>()</div>
+              <div class="function-signature"><a name="method.OverflowInteger"></a><a class="function-name" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>()<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::construct::Default
+                    &lt;
+                    I
+                    &gt;
+                  </div>
+                </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><a class="function-name" name="method.OverflowInteger" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>(U u)</div>
+              <div class="function-signature"><a name="method.OverflowInteger"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>(U u)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    std::convertible_to
+                    &lt;
+                    U
+                    I
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -121,7 +196,18 @@ converted into an <code>Option</code> that will represent the overflow state as 
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-num-OverflowInteger.html#method.from">from</a>(U u) -&gt; <a class="type-name" title="OverflowInteger&lt;I&gt;" href="sus-num-OverflowInteger.html">OverflowInteger&lt;I&gt;</a></div>
+              <div class="function-signature"><a name="method.from"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.from">from</a>(U u) -&gt; <a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::construct::From
+                    &lt;
+                    I
+                    U
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -131,10 +217,30 @@ integer type <code>I</code> satisfies <code>sus::construct::From&lt;I, U&gt;</co
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_product" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>(Iterator&lt;I&gt; auto && it) -&gt; <a class="type-name" title="OverflowInteger&lt;I&gt;" href="sus-num-OverflowInteger.html">OverflowInteger&lt;I&gt;</a></div>
+              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;I&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::mem::IsMoveRef
+                    &lt;
+                    decltype(it)
+                    &gt;
+                  </div>
+                </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from_product" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>(Iterator&lt;OverflowInteger&lt;I&gt;&gt; auto && it) -&gt; <a class="type-name" title="OverflowInteger&lt;I&gt;" href="sus-num-OverflowInteger.html">OverflowInteger&lt;I&gt;</a></div>
+              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt;&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::mem::IsMoveRef
+                    &lt;
+                    decltype(it)
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -153,7 +259,18 @@ return an OverflowInteger without ever panicking.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.try_from" href="sus-num-OverflowInteger.html#method.try_from">try_from</a>(U u) -&gt; Result&lt;OverflowInteger&lt;I&gt;, ::sus::num::TryFromIntError&gt;</div>
+              <div class="function-signature"><a name="method.try_from"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.try_from">try_from</a>(U u) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt;, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::construct::TryFrom
+                    &lt;
+                    I
+                    U
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -170,49 +287,49 @@ integer type <code>I</code> satisfies <code>sus::construct::TryFrom&lt;I, U&gt;<
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value" href="sus-num-OverflowInteger.html#method.as_value">as_value</a>() const& -&gt; I</div>
+              <div class="function-signature"><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.as_value">as_value</a>() const& -&gt; I </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_mut" href="sus-num-OverflowInteger.html#method.as_value_mut">as_value_mut</a>() & -&gt; I &</div>
+              <div class="function-signature"><a name="method.as_value_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.as_value_mut">as_value_mut</a>() & -&gt; I& </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_unchecked" href="sus-num-OverflowInteger.html#method.as_value_unchecked">as_value_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) const& -&gt; I</div>
+              <div class="function-signature"><a name="method.as_value_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.as_value_unchecked">as_value_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> ) const& -&gt; I </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_value_unchecked_mut" href="sus-num-OverflowInteger.html#method.as_value_unchecked_mut">as_value_unchecked_mut</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) & -&gt; I &</div>
+              <div class="function-signature"><a name="method.as_value_unchecked_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.as_value_unchecked_mut">as_value_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> ) & -&gt; I& </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_overflow" href="sus-num-OverflowInteger.html#method.is_overflow">is_overflow</a>() const -&gt; bool</div>
+              <div class="function-signature"><a name="method.is_overflow"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.is_overflow">is_overflow</a>() const -&gt; bool </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.is_valid" href="sus-num-OverflowInteger.html#method.is_valid">is_valid</a>() const -&gt; bool</div>
+              <div class="function-signature"><a name="method.is_valid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.is_valid">is_valid</a>() const -&gt; bool </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.to_option" href="sus-num-OverflowInteger.html#method.to_option">to_option</a>() const -&gt; Option&lt;I&gt;</div>
+              <div class="function-signature"><a name="method.to_option"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.to_option">to_option</a>() const -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;I&gt; </div>
             </div>
           </div>
           <div class="description long">
@@ -222,14 +339,14 @@ value. If overflow has occured, returns <code>None</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap" href="sus-num-OverflowInteger.html#method.unwrap">unwrap</a>() && -&gt; I</div>
+              <div class="function-signature"><a name="method.unwrap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.unwrap">unwrap</a>() && -&gt; I </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.unwrap_unchecked" href="sus-num-OverflowInteger.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) && -&gt; I</div>
+              <div class="function-signature"><a name="method.unwrap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> ) && -&gt; I </div>
             </div>
           </div>
           <div class="description long">
@@ -243,50 +360,50 @@ value. If overflow has occured, returns <code>None</code>.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator%=" href="sus-num-OverflowInteger.html#method.operator%=">operator%=</a>(I rhs) -&gt; void</div>
+              <div class="function-signature"><a name="method.operator%="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator%=">operator%=</a>(I rhs) -&gt; void </div>
             </div>
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator%=" href="sus-num-OverflowInteger.html#method.operator%=">operator%=</a>(<a class="type-name" title="OverflowInteger&lt;I&gt;" href="sus-num-OverflowInteger.html">OverflowInteger&lt;I&gt;</a> rhs) -&gt; void</div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator*=" href="sus-num-OverflowInteger.html#method.operator*=">operator*=</a>(I rhs) -&gt; void</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator*=" href="sus-num-OverflowInteger.html#method.operator*=">operator*=</a>(<a class="type-name" title="OverflowInteger&lt;I&gt;" href="sus-num-OverflowInteger.html">OverflowInteger&lt;I&gt;</a> rhs) -&gt; void</div>
+              <div class="function-signature"><a name="method.operator%="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator%=">operator%=</a>(<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt; rhs) -&gt; void </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator+=" href="sus-num-OverflowInteger.html#method.operator+=">operator+=</a>(I rhs) -&gt; void</div>
+              <div class="function-signature"><a name="method.operator*="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator*=">operator*=</a>(I rhs) -&gt; void </div>
             </div>
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator+=" href="sus-num-OverflowInteger.html#method.operator+=">operator+=</a>(<a class="type-name" title="OverflowInteger&lt;I&gt;" href="sus-num-OverflowInteger.html">OverflowInteger&lt;I&gt;</a> rhs) -&gt; void</div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator-=" href="sus-num-OverflowInteger.html#method.operator-=">operator-=</a>(I rhs) -&gt; void</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator-=" href="sus-num-OverflowInteger.html#method.operator-=">operator-=</a>(<a class="type-name" title="OverflowInteger&lt;I&gt;" href="sus-num-OverflowInteger.html">OverflowInteger&lt;I&gt;</a> rhs) -&gt; void</div>
+              <div class="function-signature"><a name="method.operator*="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator*=">operator*=</a>(<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt; rhs) -&gt; void </div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator/=" href="sus-num-OverflowInteger.html#method.operator/=">operator/=</a>(I rhs) -&gt; void</div>
+              <div class="function-signature"><a name="method.operator+="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator+=">operator+=</a>(I rhs) -&gt; void </div>
             </div>
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator/=" href="sus-num-OverflowInteger.html#method.operator/=">operator/=</a>(<a class="type-name" title="OverflowInteger&lt;I&gt;" href="sus-num-OverflowInteger.html">OverflowInteger&lt;I&gt;</a> rhs) -&gt; void</div>
+              <div class="function-signature"><a name="method.operator+="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator+=">operator+=</a>(<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt; rhs) -&gt; void </div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator-="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator-=">operator-=</a>(I rhs) -&gt; void </div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator-="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator-=">operator-=</a>(<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt; rhs) -&gt; void </div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator/="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator/=">operator/=</a>(I rhs) -&gt; void </div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator/="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.operator/=">operator/=</a>(<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt; rhs) -&gt; void </div>
             </div>
           </div>
           <div class="description long">

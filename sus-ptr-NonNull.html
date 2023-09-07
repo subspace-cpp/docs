@@ -45,13 +45,52 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
-          <a href="#static-methods">Static Methods</a>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a href="#methods">Methods</a>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.NonNull">NonNull</a>
         </li>
         <li>
-          <a href="#operators">Operators</a>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.NonNull.ctor.copy">NonNull</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.from">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.with_ptr">with_ptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.with_ptr_unchecked">with_ptr_unchecked</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#methods">Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.as_mut">as_mut</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.as_mut_ptr">as_mut_ptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.as_ptr">as_ptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.as_ref">as_ref</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.cast">cast</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.downcast">downcast</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#operators">Operators</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.operator-&gt;">operator-&gt;</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.operator=.assign.copy">operator=</a>
         </li>
       </ul>
     </div>
@@ -108,7 +147,7 @@ with an array.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a class="function-name" name="method.NonNull" href="sus-ptr-NonNull.html#method.NonNull">NonNull</a>(T & t)</div>
+              <div class="function-signature"><a name="method.NonNull"></a><a class="function-name" href="sus-ptr-NonNull.html#method.NonNull">NonNull</a>(T& t)</div>
             </div>
           </div>
           <div class="description long">
@@ -117,7 +156,7 @@ with an array.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a class="function-name" name="method.NonNull.ctor.copy" href="sus-ptr-NonNull.html#method.NonNull.ctor.copy">NonNull</a>(<a class="type-name" title="const NonNull&lt;T&gt; &" href="sus-ptr-NonNull.html">const NonNull&lt;T&gt; &</a>)</div>
+              <div class="function-signature"><a name="method.NonNull.ctor.copy"></a><a class="function-name" href="sus-ptr-NonNull.html#method.NonNull.ctor.copy">NonNull</a>(<span class="const">const</span> <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt;& )</div>
             </div>
           </div>
           <div class="description long">
@@ -126,10 +165,12 @@ with an array.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-ptr-NonNull.html#method.from">from</a>(T & t) -&gt; <a class="type-name" title="NonNull&lt;T&gt;" href="sus-ptr-NonNull.html">NonNull&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.from"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.from">from</a>(T& t) -&gt; <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt; </div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U, size_t N&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.from" href="sus-ptr-NonNull.html#method.from">from</a>(U (&)[N] t) -&gt; <a class="type-name" title="NonNull&lt;T&gt;" href="sus-ptr-NonNull.html">NonNull&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.from"></a><div class="template">template &lt;class U, size_t N&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.from">from</a>(U (&t)[N]) -&gt; <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt; <div class="deleted">
+                  deleted
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -138,10 +179,23 @@ with an array.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.with_ptr" href="sus-ptr-NonNull.html#method.with_ptr">with_ptr</a>(U t) -&gt; Option&lt;NonNull&lt;T&gt; &gt;</div>
+              <div class="function-signature"><a name="method.with_ptr"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.with_ptr">with_ptr</a>(U t) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt;&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::ptr::SameOrSubclassOf
+                    &lt;
+                    U
+                    T *
+                    &gt;
+                  </div>
+                </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U, size_t N&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.with_ptr" href="sus-ptr-NonNull.html#method.with_ptr">with_ptr</a>(U (&)[N] t) -&gt; Option&lt;NonNull&lt;T&gt; &gt;</div>
+              <div class="function-signature"><a name="method.with_ptr"></a><div class="template">template &lt;class U, size_t N&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.with_ptr">with_ptr</a>(U (&t)[N]) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt;&gt; <div class="deleted">
+                  deleted
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -154,10 +208,23 @@ convert it to a pointer to throw away the length of the array.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.with_ptr_unchecked" href="sus-ptr-NonNull.html#method.with_ptr_unchecked">with_ptr_unchecked</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>, U _Nonnull t) -&gt; <a class="type-name" title="NonNull&lt;T&gt;" href="sus-ptr-NonNull.html">NonNull&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.with_ptr_unchecked"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.with_ptr_unchecked">with_ptr_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> , U t) -&gt; <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::ptr::SameOrSubclassOf
+                    &lt;
+                    U
+                    T *
+                    &gt;
+                  </div>
+                </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U, size_t N&gt;</div><span class="static">static</span><span class="function-auto">auto</span><a class="function-name" name="method.with_ptr_unchecked" href="sus-ptr-NonNull.html#method.with_ptr_unchecked">with_ptr_unchecked</a>(U (&)[N] t) -&gt; <a class="type-name" title="NonNull&lt;T&gt;" href="sus-ptr-NonNull.html">NonNull&lt;T&gt;</a></div>
+              <div class="function-signature"><a name="method.with_ptr_unchecked"></a><div class="template">template &lt;class U, size_t N&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.with_ptr_unchecked">with_ptr_unchecked</a>(U (&t)[N]) -&gt; <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt; <div class="deleted">
+                  deleted
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -178,7 +245,14 @@ results.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut" href="sus-ptr-NonNull.html#method.as_mut">as_mut</a>() -&gt; T &</div>
+              <div class="function-signature"><a name="method.as_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.as_mut">as_mut</a>() -&gt; T& <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    <pre class="requires-constaint-line">!std::is_const_v&lt;T&gt;</pre>
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -188,7 +262,14 @@ results.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_mut_ptr" href="sus-ptr-NonNull.html#method.as_mut_ptr">as_mut_ptr</a>() -&gt; T *</div>
+              <div class="function-signature"><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.as_mut_ptr">as_mut_ptr</a>() -&gt; T* <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    <pre class="requires-constaint-line">!std::is_const_v&lt;T&gt;</pre>
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -198,7 +279,7 @@ results.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ptr" href="sus-ptr-NonNull.html#method.as_ptr">as_ptr</a>() const -&gt; const T *</div>
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.as_ptr">as_ptr</a>() const -&gt; <span class="const">const</span> T* </div>
             </div>
           </div>
           <div class="description long">
@@ -207,7 +288,7 @@ results.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.as_ref" href="sus-ptr-NonNull.html#method.as_ref">as_ref</a>() const -&gt; const T &</div>
+              <div class="function-signature"><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.as_ref">as_ref</a>() const -&gt; <span class="const">const</span> T& </div>
             </div>
           </div>
           <div class="description long">
@@ -216,7 +297,18 @@ results.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.cast" href="sus-ptr-NonNull.html#method.cast">cast</a>() const -&gt; NonNull&lt;U&gt;</div>
+              <div class="function-signature"><a name="method.cast"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.cast">cast</a>() const -&gt; <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;U&gt; <div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constaint">
+                    sus::ptr::SameOrSubclassOf
+                    &lt;
+                    T *
+                    U *
+                    &gt;
+                  </div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -228,7 +320,7 @@ downcast, like static_cast&lt;U*&gt; allows, use <code>downcast()</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span><a class="function-name" name="method.downcast" href="sus-ptr-NonNull.html#method.downcast">downcast</a>(<a class="type-name" title="struct ::sus::marker::UnsafeFnMarker" href="sus-marker-UnsafeFnMarker.html">UnsafeFnMarker</a>) const -&gt; NonNull&lt;U&gt;</div>
+              <div class="function-signature"><a name="method.downcast"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.downcast">downcast</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> ) const -&gt; <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;U&gt; </div>
             </div>
           </div>
           <div class="description long">
@@ -247,7 +339,7 @@ return a <code>NonNull&lt;U&gt;</code>.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator-&gt;" href="sus-ptr-NonNull.html#method.operator-&gt;">operator-&gt;</a>() const -&gt; const T *</div>
+              <div class="function-signature"><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.operator-&gt;">operator-&gt;</a>() const -&gt; <span class="const">const</span> T* </div>
             </div>
           </div>
           <div class="description long">
@@ -258,7 +350,7 @@ within is not const.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" name="method.operator=.assign.copy" href="sus-ptr-NonNull.html#method.operator=.assign.copy">operator=</a>(<a class="type-name" title="const NonNull&lt;T&gt; &" href="sus-ptr-NonNull.html">const NonNull&lt;T&gt; &</a>) -&gt; <a class="type-name" title="NonNull&lt;T&gt; &" href="sus-ptr-NonNull.html">NonNull&lt;T&gt; &</a></div>
+              <div class="function-signature"><a name="method.operator=.assign.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.operator=.assign.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt;& ) -&gt; <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt;& </div>
             </div>
           </div>
           <div class="description long">
