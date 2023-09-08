@@ -69,9 +69,9 @@
         </div>
         <div class="description long">
           <p>Terminate the program.</p>
-<p>The default behaviour of this function is to abort(). The behaviour of this
-function can be overridden by defining a <code>SUS_PROVIDE_PANIC_HANDLER()</code> macro
-when compiling the library.</p>
+<p>The default behaviour of this function is to <code>abort()</code>. The behaviour of
+this function can be overridden by defining a <code>SUS_PROVIDE_PANIC_HANDLER()</code>
+macro when compiling the library.</p>
 <p>The panic message will be printed to stderr before aborting. This behaviour
 can be overridden by defining a <code>SUS_PROVIDE_PRINT_PANIC_LOCATION_HANDLER()</code>
 macro when compiling the library.</p>

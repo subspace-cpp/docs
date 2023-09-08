@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::ops::Eq - Subspace</title>
   <meta property="og:title" content="sus::ops::Eq - Subspace"></meta>
-  <meta name="description" content="Concept for types that can be compared for equality with the == and != operators."></meta>
-  <meta property="og:description" content="Concept for types that can be compared for equality with the == and != operators."></meta>
+  <meta name="description" content="Concept for types that can be compared for equality with the == and != operators. There is no guarantee of a full equivalence relation, and a partial equivalence is possible, which allows for values that compare not-equal to themselves (such as NaN)."></meta>
+  <meta property="og:description" content="Concept for types that can be compared for equality with the == and != operators. There is no guarantee of a full equivalence relation, and a partial equivalence is possible, which allows for values that compare not-equal to themselves (such as NaN)."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -87,19 +87,21 @@
         </div>
         <div class="description long">
           <p>Concept for types that can be compared for equality with the <code>==</code> and <code>!=</code>
-operators.</p>
-<p>Implementations must ensure that eq and ne are consistent with each other:</p>
+operators. There is no guarantee of a full equivalence relation, and a
+partial equivalence is possible, which allows for values that compare
+not-equal to themselves (such as NaN).</p>
+<p>Implementations must ensure that <code>operator==</code> and <code>operator!=</code> are
+consistent with each other:</p>
 <ul>
-<li>a != b if and only if !(a == b).</li>
+<li><code>a != b</code> if and only if <code>!(a == b)</code>.</li>
 </ul>
-<p>The default implementation of the <code>!=</code> operator provides this consistency
+<p>The default implementation of <code>operator!=</code> provides this consistency
 and is almost always sufficient. It should not be overridden without very
 good reason.</p>
-<p>This concept allows for partial equality, for types that do not have a full
-equivalence relation. For example, in floating point numbers NaN != NaN, but
-they can still be compared with <code>==</code> and <code>!=</code>. Unlike Rust, C++ does not
-understand partial equivalence so we are unable to differentiate.</p>
-<p>TODO: How do we do PartialEq? Can we even? Should we require StrongOrd to be Eq?</p>
+<p>This maps to the <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html"><code>PartialEq</code></a> trait in Rust
+rather than the <code>Eq</code> trait. Since C++ does not understand
+equivalent vs partial equivalence, we are unable to differentiate and
+provide a stronger relationship than partial equivalence.</p>
 
         </div>
       </div>
