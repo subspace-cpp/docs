@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::collections::vec - Subspace</title>
   <meta property="og:title" content="sus::collections::vec - Subspace"></meta>
-  <meta name="description" content="Used to construct a Vec&lt;T&gt; with the parameters as its values."></meta>
-  <meta property="og:description" content="Used to construct a Vec&lt;T&gt; with the parameters as its values."></meta>
+  <meta name="description" content="Used to construct a Vec with the parameters as its values."></meta>
+  <meta property="og:description" content="Used to construct a Vec with the parameters as its values."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -68,12 +68,18 @@
           </div>
         </div>
         <div class="description long">
-          <p>Used to construct a <code>Vec&lt;T&gt;</code> with the parameters as its values.</p>
-<p>Calling <code>vec()</code> produces a hint to make a <code>Vec&lt;T&gt;</code> but does not actually
-construct <code>Vec&lt;T&gt;</code>, as the type <code>T</code> is not known here. The <code>Vec&lt;T&gt;</code> will be
-constructed once the <code>T</code> is deduced by converting the marker to the <code>Vec&lt;T&gt;</code>
-type.</p>
-<p>Passing no arguments will produce an empty <code>Vec&lt;T&gt;</code>.</p>
+          <p>Used to construct a <a href="sus-collections-Vec.html"><code>Vec</code></a> with the parameters as
+its values.</p>
+<p>Calling <code>vec()</code> produces a hint to make a <a href="sus-collections-Vec.html"><code>Vec&lt;T&gt;</code></a>
+but does not actually construct <a href="sus-collections-Vec.html"><code>Vec&lt;T&gt;</code></a>, as the
+type <code>T</code> is not known here. The <a href="sus-collections-Vec.html"><code>Vec</code></a> will be
+constructed once the <code>T</code> is deduced by converting the marker to the
+<a href="sus-collections-Vec.html"><code>Vec&lt;T&gt;</code></a> type.</p>
+<p>Passing no arguments will produce an empty <a href="sus-collections-Vec.html"><code>Vec</code></a>.</p>
+<p>A marker type like that from <code>vec</code> is used instead of explicitly
+constructing a <a href="sus-collections-Vec.html"><code>Vec</code></a> in order to avoid redundantly
+having to specify <code>T</code> in <code>Vec&lt;T&gt;</code> when using the result of <code>vec()</code> as a
+function argument or return value.</p>
 
         </div>
       </div>

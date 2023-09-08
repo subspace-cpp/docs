@@ -148,22 +148,9 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    U
-                    T
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -177,19 +164,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ptr::SameOrSubclassOf
-                    &lt;
-                    U *
-                    T *
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *T *&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -213,13 +189,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ptr::SameOrSubclassOf
-                    &lt;
-                    U *
-                    T *
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *T *&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -231,22 +201,9 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    U
-                    T
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -264,19 +221,8 @@ subclass of <code>T</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ptr::SameOrSubclassOf
-                    &lt;
-                    U *
-                    T *
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *T *&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -293,25 +239,9 @@ subclass of <code>T</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::error::Error
-                    &lt;
-                    E
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    E
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    std::same_as
-                    &lt;
-                    T
-                    ::sus::error::DynError
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::error::Error&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;T::sus::error::DynError&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -329,13 +259,7 @@ type-erases <code>E</code> into a heap-alloocated
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::same_as
-                    &lt;
-                    T
-                    ::sus::error::DynError
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;T::sus::error::DynError&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -373,12 +297,7 @@ an array.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -394,12 +313,7 @@ an array.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -483,13 +397,7 @@ delete p;
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ptr::SameOrSubclassOf
-                    &lt;
-                    U *
-                    T *
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *T *&gt;</pre></div>
                 </div></div>
             </div>
           </div>

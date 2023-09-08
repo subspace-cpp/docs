@@ -77,17 +77,8 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                sus::fn::callable::FunctionPointer
-                &lt;
-                T
-                &gt;
-              </div>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">requires (R(*p)(Args...), T t) {</pre>
-                <pre class="requires-constaint-line">        { p = t };</pre>
-                <pre class="requires-constaint-line">    }</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::FunctionPointer&lt;T&gt;</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires (R(*p)(Args...), T t) {</pre><pre class="requires-constraint-line">        { p = t };</pre><pre class="requires-constraint-line">    }</pre></div>
             </div>
           </div>
         </div>

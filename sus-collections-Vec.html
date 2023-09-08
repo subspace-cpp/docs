@@ -402,9 +402,6 @@
           <a class="sidebar-item" href="sus-collections-Vec.html#method.operator[].vec.index.usize">operator[]</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-collections-Vec.html#method.operator[]">operator[]</a>
-        </li>
-        <li>
           <a class="sidebar-item" href="sus-collections-Vec.html#method.operator[].vec.index_mut.usize">operator[]</a>
         </li>
         <li>
@@ -474,9 +471,7 @@ its contents, so the const internal type would be redundant.</li>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::convertible_to&lt;T&gt;...</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;T&gt;...</pre></div>
                 </div></div>
             </div>
           </div>
@@ -506,12 +501,7 @@ allocate.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -519,12 +509,7 @@ allocate.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -540,20 +525,9 @@ and <code>sus::construct::From&lt;SliceMut&lt;T&gt;&gt;</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::same_as
-                    &lt;
-                    T
-                    u8
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::same_as&lt;C, char&gt; || std::same_as&lt;C, signed char&gt; ||</pre>
-                    <pre class="requires-constaint-line">              std::same_as&lt;C, unsigned char&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &lt;= ::sus::mog&lt;usize&gt;(isize::MAX)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;Tu8&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;C, char&gt; || std::same_as&lt;C, signed char&gt; ||</pre><pre class="requires-constraint-line">              std::same_as&lt;C, unsigned char&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &lt;= ::sus::mog&lt;usize&gt;(isize::MAX)</pre></div>
                 </div></div>
             </div>
           </div>
@@ -656,6 +630,9 @@ with structured bindings as in <code>auto [a, b] = s.as_mut_ptr_range();</code>.
             </div>
           </div>
           <div class="description long">
+            <p>Returns a <a href="sus-collections-SliceMut.html"><code>SliceMut</code></a> that references all
+the elements of the vector as mutable references.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -695,6 +672,9 @@ with structured bindings as in <code>auto [a, b] = s.as_ptr_range();</code>.</p>
             </div>
           </div>
           <div class="description long">
+            <p>Returns a <a href="sus-collections-Slice.html"><code>Slice</code></a> that references all the
+elements of the vector as const references.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -702,12 +682,7 @@ with structured bindings as in <code>auto [a, b] = s.as_ptr_range();</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -748,12 +723,7 @@ element could be inserted while maintaining sorted order.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::StrongOrd
-                    &lt;
-                    Key
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::StrongOrd&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -876,12 +846,7 @@ vector.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -895,10 +860,7 @@ vector.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::allocator_traits&lt;</pre>
-                    <pre class="requires-constaint-line">             A&gt;::propagate_on_container_copy_assignment::value</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::allocator_traits&lt;</pre><pre class="requires-constraint-line">             A&gt;::propagate_on_container_copy_assignment::value</pre></div>
                 </div></div>
             </div>
           </div>
@@ -913,12 +875,7 @@ vector.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -935,12 +892,7 @@ vector.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::collections::Concat
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::collections::Concat&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -965,12 +917,7 @@ sus::check(v == Slice&lt;i32&gt;::from({1, 2, 3, 4}));
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -986,12 +933,7 @@ sus::check(v == Slice&lt;i32&gt;::from({1, 2, 3, 4}));
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1007,12 +949,7 @@ sus::check(v == Slice&lt;i32&gt;::from({1, 2, 3, 4}));
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::TrivialCopy
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::TrivialCopy&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1032,9 +969,7 @@ performance across types. If <code>T</code> is not <code>TrivialCopy</code>, use
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_trivially_copy_assignable_v&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_trivially_copy_assignable_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1078,16 +1013,8 @@ the end point is greater than the length of the vector.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!(sizeof...(Us) == 1u &&</pre>
-                    <pre class="requires-constaint-line">               (... && std::same_as&lt;std::decay_t&lt;T&gt;, std::decay_t&lt;Us&gt;&gt;))</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(sizeof...(Us) == 1u &&</pre><pre class="requires-constraint-line">               (... && std::same_as&lt;std::decay_t&lt;T&gt;, std::decay_t&lt;Us&gt;&gt;))</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1110,12 +1037,7 @@ constructing from it.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1129,18 +1051,8 @@ constructing from it.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Copy
-                    &lt;
-                    T
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(ii)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(ii)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1162,12 +1074,7 @@ method instead, moving the elements into the <code>Vec</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(ii)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(ii)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1182,12 +1089,7 @@ method instead, moving the elements into the <code>Vec</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1206,12 +1108,7 @@ panic, as resizing the Vec would invalidate the Slice.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1237,12 +1134,7 @@ type that satisfies <code>sus::construct::Default</code>, use <code>fill_with_de
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::construct::Default
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1401,18 +1293,14 @@ already room. Does nothing if capacity is already sufficient.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
           <div class="description long">
-            <p>Consumes the Vec into an iterator that will return each element in the
-same order they appear in the Vec.</p>
+            <p>Consumes the <code>Vec</code> into an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> that will
+return ownership of each element in the same order they appear in the
+<code>Vec</code>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1470,13 +1358,7 @@ each element.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::collections::Join
-                    &lt;
-                    T
-                    Sep
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::collections::Join&lt;TSep&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1508,12 +1390,7 @@ sus::check(v2 == sus::Vec&lt;i32&gt;(1, 2, 99, 3, 4));
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1587,12 +1464,7 @@ empty.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1692,12 +1564,7 @@ iterator but starting at the beginning of the slice.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::TrivialCopy
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::TrivialCopy&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1755,12 +1622,7 @@ minimal. Prefer reserve if future insertions are expected.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1782,12 +1644,7 @@ sus::check(sf == sb);
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1809,12 +1666,7 @@ Note that <code>mid == len()</code> does not panic and is a no-op rotation.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1907,12 +1759,7 @@ the call.</li>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1953,19 +1800,8 @@ also be constexpr?</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    KeyFn
-                    ::sus::fn::NonVoid (const T &)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    Key
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn::sus::fn::NonVoid (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1977,19 +1813,8 @@ also be constexpr?</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    KeyFn
-                    ::sus::fn::NonVoid (const T &)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    Key
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn::sus::fn::NonVoid (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2015,12 +1840,7 @@ also be constexpr?</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2057,19 +1877,8 @@ allocate while sorting.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    KeyFn
-                    ::sus::fn::NonVoid (const T &)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    Key
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn::sus::fn::NonVoid (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2270,12 +2079,7 @@ contained in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2289,12 +2093,7 @@ contained in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2312,12 +2111,7 @@ wrapped in <code>Some</code>. If <code>prefix</code> is empty, simply returns th
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2335,12 +2129,7 @@ wrapped in <code>Some</code>. If <code>prefix</code> is empty, simply returns th
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2357,12 +2146,7 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2439,12 +2223,7 @@ other overlaps with <code>*this</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2508,6 +2287,9 @@ no values.</p>
             </div>
           </div>
           <div class="description long">
+            <p>Converts to a <a href="sus-collections-Slice.html"><code>Slice&lt;T&gt;</code></a>. A <code>Vec</code> can be used
+anywhere a <a href="sus-collections-Slice.html"><code>Slice</code></a> is wanted.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -2515,6 +2297,10 @@ no values.</p>
             </div>
           </div>
           <div class="description long">
+            <p>Converts to a <a href="sus-collections-SliceMut.html"><code>SliceMut&lt;T&gt;</code></a>. A mutable
+<code>Vec</code> can be used anywhere a <a href="sus-collections-SliceMut.html"><code>SliceMut</code></a> is
+wanted.</p>
+
           </div>
         </div>
       </div>
@@ -2542,20 +2328,6 @@ no values.</p>
 <h1><a name="panics-62" href="#panics-62">Panics</a></h1>
 <p>If the index <code>i</code> is beyond the end of the Vec, the function will panic.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.operator[]">operator[]</a>(<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a> i) && -&gt; <span class="const">const</span> T& <div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><a name="method.operator[]"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.operator[]">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt; <div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">

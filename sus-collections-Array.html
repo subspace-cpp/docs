@@ -182,12 +182,7 @@ greater distance results in Undefined Behaviour.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::construct::Default
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -204,15 +199,9 @@ the array.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::convertible_to&lt;T&gt;...</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">sizeof...(Ts) == N</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &gt; 0u</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;T&gt;...</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Ts) == N</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
                 </div></div>
             </div>
           </div>
@@ -227,15 +216,8 @@ the constructor.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N == 0</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -257,19 +239,8 @@ from the given closure.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    U
-                    T
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Copy
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -294,9 +265,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &gt; 0</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
           </div>
@@ -317,9 +286,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &gt; 0</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
           </div>
@@ -340,12 +307,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -357,12 +319,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -374,9 +331,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &gt; 0</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
           </div>
@@ -390,9 +345,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &gt; 0</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
           </div>
@@ -406,9 +359,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &gt; 0</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
           </div>
@@ -425,9 +376,7 @@ Behaviour results.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &gt; 0</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
           </div>
@@ -444,12 +393,7 @@ Behaviour results.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -495,16 +439,8 @@ each element.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    MapFn
-                    ::sus::fn::NonVoid (T &&)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &gt; 0</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
           </div>
@@ -528,9 +464,7 @@ array to a new type with the given function.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N == 0u</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
                 </div></div>
             </div>
           </div>
@@ -542,9 +476,7 @@ array to a new type with the given function.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N == 0u</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
                 </div></div>
             </div>
           </div>
@@ -563,15 +495,8 @@ array to a new type with the given function.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N == 0</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -583,19 +508,8 @@ array to a new type with the given function.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;TU&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>

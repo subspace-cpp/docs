@@ -190,9 +190,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -200,18 +198,9 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Copy
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -219,18 +208,9 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -238,26 +218,10 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    U
-                    TUnlessVoid
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_reference_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::construct::SafelyConstructibleFromReference
-                    &lt;
-                    T
-                    U &&
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UTUnlessVoid&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;TU &&&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -280,24 +244,10 @@ convert to a reference without constructing a temporary, use an unsafe
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Copy
-                    &lt;
-                    E
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || IsTrivialCopyCtorOrRef&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::__private::IsTrivialCopyCtorOrRef
-                    &lt;
-                    E
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || IsTrivialCopyCtorOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialCopyCtorOrRef&lt;E&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -316,24 +266,10 @@ also be trivially copy-constructed.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || ::sus::mem::MoveOrRef&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    E
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || IsTrivialMoveCtorOrRef&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::__private::IsTrivialMoveCtorOrRef
-                    &lt;
-                    E
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::MoveOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || IsTrivialMoveCtorOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialMoveCtorOrRef&lt;E&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -354,19 +290,8 @@ not be used thereafter without reinitializing it.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::Iterator
-                    &lt;
-                    Iter
-                    Result&lt;T, E&gt;
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::Product
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;IterResult&lt;T, E&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Product&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -387,19 +312,8 @@ which also satisfies <code>sus::iter::Product&lt;T, T&gt;</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::Iterator
-                    &lt;
-                    Iter
-                    Result&lt;T, E&gt;
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::Sum
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;IterResult&lt;T, E&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Sum&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -420,12 +334,7 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Copy
-                    &lt;
-                    E
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -433,12 +342,7 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    E
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -459,23 +363,9 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnOnce
-                    &lt;
-                    AndFn
-                    ::sus::fn::NonVoid (TUnlessVoid &&)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::result::__private::IsResultWithErrType
-                    &lt;
-                    sus::fn::ReturnOnce&lt;AndFn, T &&&gt;
-                    E
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn::sus::fn::NonVoid (TUnlessVoid &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn, T &&&gt;E&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -502,9 +392,7 @@ self.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -520,9 +408,7 @@ self.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -538,19 +424,9 @@ self.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || ::sus::mem::Clone&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    E
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!((std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;) &&</pre>
-                    <pre class="requires-constaint-line">               ::sus::mem::Copy&lt;E&gt;)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::Clone&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">               ::sus::mem::Copy&lt;E&gt;)</pre></div>
                 </div></div>
             </div>
           </div>
@@ -562,19 +438,9 @@ self.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || ::sus::mem::Clone&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    E
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!((std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;) &&</pre>
-                    <pre class="requires-constaint-line">               ::sus::mem::Copy&lt;E&gt;)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::Clone&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">               ::sus::mem::Copy&lt;E&gt;)</pre></div>
                 </div></div>
             </div>
           </div>
@@ -612,9 +478,7 @@ message, and the content of the Err.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -644,9 +508,7 @@ message, and the content of the Err.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -658,9 +520,7 @@ message, and the content of the Err.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -672,9 +532,7 @@ message, and the content of the Err.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -729,12 +587,8 @@ Behavior.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || ::sus::construct::Default&lt;T&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::construct::Default&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -750,13 +604,7 @@ Otherwise the default value of the Ok value's type is returned.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnOnce
-                    &lt;
-                    F
-                    T (E &&)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;FT (E &&)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -827,24 +675,10 @@ switch (x) {
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Copy
-                    &lt;
-                    E
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || IsTrivialCopyAssignOrRef&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::__private::IsTrivialCopyAssignOrRef
-                    &lt;
-                    E
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || IsTrivialCopyAssignOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialCopyAssignOrRef&lt;E&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -863,24 +697,10 @@ also be trivially copy-assigned.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || ::sus::mem::MoveOrRef&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    E
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_void_v&lt;T&gt; || IsTrivialMoveAssignOrRef&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::__private::IsTrivialMoveAssignOrRef
-                    &lt;
-                    E
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::MoveOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || IsTrivialMoveAssignOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialMoveAssignOrRef&lt;E&gt;</pre></div>
                 </div></div>
             </div>
           </div>

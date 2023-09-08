@@ -144,13 +144,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(std::is_trivially_move_constructible_v&lt;TagsType&gt; && ... &&</pre>
-                    <pre class="requires-constaint-line">              std::is_trivially_move_constructible_v&lt;Ts&gt;)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_move_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_move_constructible_v&lt;Ts&gt;)</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -158,13 +153,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre>
-                    <pre class="requires-constaint-line">              std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
                 </div></div>
             </div>
           </div>
@@ -176,19 +166,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    Arg
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    std::constructible_from
-                    &lt;
-                    Arg
-                    U &&
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;Arg&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;ArgU &&&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -196,12 +175,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsVoid
-                    &lt;
-                    Arg
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsVoid&lt;Arg&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -220,12 +194,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    StorageTypeOfTag&lt;V&gt;
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -247,12 +216,7 @@ passed as the template parameter.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    StorageTypeOfTag&lt;V&gt;
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -274,12 +238,8 @@ passed as the template parameter.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(... && ::sus::mem::Clone&lt;Ts&gt;)</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Clone&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
                 </div></div>
             </div>
           </div>
@@ -291,12 +251,7 @@ passed as the template parameter.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    StorageTypeOfTag&lt;V&gt;
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -315,12 +270,7 @@ active member.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    StorageTypeOfTag&lt;V&gt;
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -339,12 +289,7 @@ active member.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    StorageTypeOfTag&lt;V&gt;
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -366,12 +311,7 @@ parameter, Undefined Behaviour results.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    StorageTypeOfTag&lt;V&gt;
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -393,12 +333,7 @@ parameter, Undefined Behaviour results.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    StorageTypeOfTag&lt;V&gt;
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -420,19 +355,8 @@ passed as the template parameter.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    U &&
-                    Arg
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsNotVoid
-                    &lt;
-                    StorageTypeOfTag&lt;V&gt;
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&Arg&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -440,12 +364,7 @@ passed as the template parameter.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::choice_type::__private::ValueIsVoid
-                    &lt;
-                    Arg
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsVoid&lt;Arg&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -533,13 +452,8 @@ which() method can be omitted.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(std::is_trivially_move_assignable_v&lt;TagsType&gt; && ... &&</pre>
-                    <pre class="requires-constaint-line">              std::is_trivially_move_assignable_v&lt;Ts&gt;)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_move_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_move_assignable_v&lt;Ts&gt;)</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -547,13 +461,8 @@ which() method can be omitted.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre>
-                    <pre class="requires-constaint-line">              std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
                 </div></div>
             </div>
           </div>

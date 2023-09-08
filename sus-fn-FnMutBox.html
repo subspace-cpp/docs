@@ -183,14 +183,7 @@ null pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::FunctionPointerMatches
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::FunctionPointerMatches&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -204,18 +197,8 @@ null pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsMut
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_member_function_pointer_v&lt;F&gt; ||</pre>
-                    <pre class="requires-constaint-line">             std::is_member_object_pointer_v&lt;F&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsMut&lt;FRCallArgs...&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_member_function_pointer_v&lt;F&gt; ||</pre><pre class="requires-constraint-line">             std::is_member_object_pointer_v&lt;F&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -229,14 +212,7 @@ null pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsMut
-                    &lt;
-                    FnMutBox&lt;U, UArgs...&gt;
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsMut&lt;FnMutBox&lt;U, UArgs...&gt;RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -250,14 +226,7 @@ null pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsMut
-                    &lt;
-                    FnBox&lt;U, UArgs...&gt;
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsMut&lt;FnBox&lt;U, UArgs...&gt;RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -271,14 +240,7 @@ null pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsMut
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsMut&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -304,14 +266,7 @@ null pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::FunctionPointerMatches
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::FunctionPointerMatches&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -326,18 +281,8 @@ lambdas without captures.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsMut
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_member_function_pointer_v&lt;F&gt; ||</pre>
-                    <pre class="requires-constaint-line">             std::is_member_object_pointer_v&lt;F&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsMut&lt;FRCallArgs...&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_member_function_pointer_v&lt;F&gt; ||</pre><pre class="requires-constraint-line">             std::is_member_object_pointer_v&lt;F&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -352,14 +297,7 @@ pointers.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsMut
-                    &lt;
-                    FnMutBox&lt;U, UArgs...&gt;
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsMut&lt;FnMutBox&lt;U, UArgs...&gt;RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -373,14 +311,7 @@ pointers.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsMut
-                    &lt;
-                    FnBox&lt;U, UArgs...&gt;
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsMut&lt;FnBox&lt;U, UArgs...&gt;RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -394,14 +325,7 @@ pointers.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsMut
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsMut&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>

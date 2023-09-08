@@ -75,27 +75,9 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                sus::ops::Try
-                &lt;
-                From
-                &gt;
-              </div>
-              <div class="requires-constaint">
-                sus::ops::Try
-                &lt;
-                To
-                &gt;
-              </div>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">requires(From&& f) {</pre>
-                <pre class="requires-constaint-line">      // preserve_error() constructs a Try type from another related type while</pre>
-                <pre class="requires-constaint-line">      // passing the error state along.</pre>
-                <pre class="requires-constaint-line">      {</pre>
-                <pre class="requires-constaint-line">        TryImpl&lt;To&gt;::template preserve_error(::sus::move(f))</pre>
-                <pre class="requires-constaint-line">      } -&gt; std::same_as&lt;To&gt;;</pre>
-                <pre class="requires-constaint-line">    }</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;From&gt;</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;To&gt;</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires(From&& f) {</pre><pre class="requires-constraint-line">      // preserve_error() constructs a Try type from another related type while</pre><pre class="requires-constraint-line">      // passing the error state along.</pre><pre class="requires-constraint-line">      {</pre><pre class="requires-constraint-line">        TryImpl&lt;To&gt;::template preserve_error(::sus::move(f))</pre><pre class="requires-constraint-line">      } -&gt; std::same_as&lt;To&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
             </div>
           </div>
         </div>

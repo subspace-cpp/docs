@@ -137,18 +137,8 @@ those iterable types' items.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    InnerSizedIter
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    EachIter
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;InnerSizedIter&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;EachIter&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -167,20 +157,8 @@ those iterable types' items.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::DoubleEndedIterator
-                    &lt;
-                    InnerSizedIter
-                    typename InnerSizedIter::Item
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::DoubleEndedIterator
-                    &lt;
-                    EachIter
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;InnerSizedItertypename InnerSizedIter::Item&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;EachIterItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>

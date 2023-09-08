@@ -75,12 +75,7 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">StrongOrd&lt;Lhs, Rhs&gt; || requires(const std::remove_reference_t&lt;Lhs&gt;& lhs,</pre>
-                <pre class="requires-constaint-line">                                    const std::remove_reference_t&lt;Rhs&gt;& rhs) {</pre>
-                <pre class="requires-constaint-line">      { lhs &lt;=&gt; rhs } -&gt; std::same_as&lt;std::weak_ordering&gt;;</pre>
-                <pre class="requires-constaint-line">    }</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">StrongOrd&lt;Lhs, Rhs&gt; || requires(const std::remove_reference_t&lt;Lhs&gt;& lhs,</pre><pre class="requires-constraint-line">                                    const std::remove_reference_t&lt;Rhs&gt;& rhs) {</pre><pre class="requires-constraint-line">      { lhs &lt;=&gt; rhs } -&gt; std::same_as&lt;std::weak_ordering&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
             </div>
           </div>
         </div>

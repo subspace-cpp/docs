@@ -93,26 +93,10 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::option::__private::IsOptionType&lt;O&gt;::value</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIterator
-                    &lt;
-                    IntoIter
-                    ::sus::option::Option&lt;U&gt;
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;T&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::FromIterator
-                    &lt;
-                    T
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;O&gt;::value</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIterator&lt;IntoIter::sus::option::Option&lt;U&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::FromIterator&lt;TU&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -120,18 +104,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    T
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(ii)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(ii)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -145,12 +119,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(into_iter)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(into_iter)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -161,12 +130,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(into_iter)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(into_iter)&gt;</pre></div>
                 </div></div>
             </div>
           </div>

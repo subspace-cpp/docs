@@ -137,12 +137,7 @@
             <span class="requires-keyword keyword">
               requires
             </span>
-            <div class="requires-constaint">
-              sus::num::Integer
-              &lt;
-              I
-              &gt;
-            </div>
+            <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;I&gt;</pre></div>
           </div>
           <div class="record-body">
             { ... };
@@ -167,12 +162,7 @@ converted into an <code>Option</code> that will represent the overflow state as 
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::construct::Default
-                    &lt;
-                    I
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;I&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -180,13 +170,7 @@ converted into an <code>Option</code> that will represent the overflow state as 
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    U
-                    I
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UI&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -200,13 +184,7 @@ converted into an <code>Option</code> that will represent the overflow state as 
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::construct::From
-                    &lt;
-                    I
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::From&lt;IU&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -221,12 +199,7 @@ integer type <code>I</code> satisfies <code>sus::construct::From&lt;I, U&gt;</co
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(it)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(it)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -234,12 +207,7 @@ integer type <code>I</code> satisfies <code>sus::construct::From&lt;I, U&gt;</co
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(it)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(it)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -263,13 +231,7 @@ return an OverflowInteger without ever panicking.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::construct::TryFrom
-                    &lt;
-                    I
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::TryFrom&lt;IU&gt;</pre></div>
                 </div></div>
             </div>
           </div>

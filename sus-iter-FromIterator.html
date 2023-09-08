@@ -75,14 +75,7 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">requires(</pre>
-                <pre class="requires-constaint-line">    __private::IntoIteratorArchetype&lt;ItemType&gt;&& from) {</pre>
-                <pre class="requires-constaint-line">  {</pre>
-                <pre class="requires-constaint-line">    FromIteratorImpl&lt;std::remove_const_t&lt;ToType&gt;&gt;::from_iter(::sus::move(from))</pre>
-                <pre class="requires-constaint-line">  } -&gt; std::same_as&lt;std::remove_const_t&lt;ToType&gt;&gt;;</pre>
-                <pre class="requires-constaint-line">}</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires(</pre><pre class="requires-constraint-line">    __private::IntoIteratorArchetype&lt;ItemType&gt;&& from) {</pre><pre class="requires-constraint-line">  {</pre><pre class="requires-constraint-line">    FromIteratorImpl&lt;std::remove_const_t&lt;ToType&gt;&gt;::from_iter(::sus::move(from))</pre><pre class="requires-constraint-line">  } -&gt; std::same_as&lt;std::remove_const_t&lt;ToType&gt;&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
             </div>
           </div>
         </div>

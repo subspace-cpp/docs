@@ -520,15 +520,8 @@ integer type.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Unsigned
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -576,15 +569,8 @@ from integer types on some compilers (like GCC 13).</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -609,15 +595,8 @@ unlike for other integer types.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Unsigned
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -632,15 +611,8 @@ with the same size as a pointer.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -707,12 +679,7 @@ wants to use <code>from_be_bytes()</code> or <code>from_le_bytes()</code>, as ap
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(it)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(it)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -735,12 +702,7 @@ called for iterators over uptr.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(it)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(it)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -773,15 +735,8 @@ iterators over uptr.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Unsigned
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -797,15 +752,8 @@ etc) with the same size as a pointer.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1660,13 +1608,7 @@ boundary of the type.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::same_as
-                    &lt;
-                    U
-                    uintptr_t
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;Uuintptr_t&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1807,15 +1749,8 @@ from integer types on some compilers (like GCC 13).</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Unsigned
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1829,15 +1764,8 @@ from integer types on some compilers (like GCC 13).</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>

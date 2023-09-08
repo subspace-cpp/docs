@@ -68,12 +68,8 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::is_const_v&lt;std::remove_reference_t&lt;FromType&gt;&gt;</pre>
-                </div>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::is_array_v&lt;FromType&gt;</pre>
-                </div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;std::remove_reference_t&lt;FromType&gt;&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_array_v&lt;FromType&gt;</pre></div>
               </div></div>
           </div>
           <div class="overload">
@@ -81,15 +77,9 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">std::is_rvalue_reference_v&lt;FromType &&&gt;</pre>
-                </div>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::is_const_v&lt;std::remove_reference_t&lt;FromType&gt;&gt;</pre>
-                </div>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::is_array_v&lt;FromType&gt;</pre>
-                </div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::is_rvalue_reference_v&lt;FromType &&&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;std::remove_reference_t&lt;FromType&gt;&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_array_v&lt;FromType&gt;</pre></div>
               </div></div>
           </div>
         </div>

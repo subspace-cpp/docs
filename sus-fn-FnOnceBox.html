@@ -188,14 +188,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::FunctionPointerMatches
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::FunctionPointerMatches&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -209,18 +202,8 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">std::is_member_function_pointer_v&lt;F&gt; ||</pre>
-                    <pre class="requires-constaint-line">             std::is_member_object_pointer_v&lt;F&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FRCallArgs...&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_member_function_pointer_v&lt;F&gt; ||</pre><pre class="requires-constraint-line">             std::is_member_object_pointer_v&lt;F&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -234,14 +217,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    FnOnceBox&lt;U, UArgs...&gt; &&
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FnOnceBox&lt;U, UArgs...&gt; &&RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -255,14 +231,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    FnMutBox&lt;U, UArgs...&gt;
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FnMutBox&lt;U, UArgs...&gt;RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -276,14 +245,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    FnBox&lt;U, UArgs...&gt;
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FnBox&lt;U, UArgs...&gt;RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -297,14 +259,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -326,14 +281,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::FunctionPointerMatches
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::FunctionPointerMatches&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -345,14 +293,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::FunctionPointerMatches
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::FunctionPointerMatches&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -360,14 +301,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    FnOnceBox&lt;U, UArgs...&gt; &&
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FnOnceBox&lt;U, UArgs...&gt; &&RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -375,14 +309,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    FnMutBox&lt;U, UArgs...&gt;
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FnMutBox&lt;U, UArgs...&gt;RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -390,14 +317,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    FnBox&lt;U, UArgs...&gt;
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FnBox&lt;U, UArgs...&gt;RCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -405,14 +325,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::callable::CallableObjectReturnsOnce
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::callable::CallableObjectReturnsOnce&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>

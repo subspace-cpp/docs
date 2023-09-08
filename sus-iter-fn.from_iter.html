@@ -68,25 +68,9 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constaint">
-                  sus::iter::IntoIteratorAny
-                  &lt;
-                  IntoIter
-                  &gt;
-                </div>
-                <div class="requires-constaint">
-                  sus::iter::FromIterator
-                  &lt;
-                  ToType
-                  typename IntoIteratorOutputType&lt;IntoIter&gt;::Item
-                  &gt;
-                </div>
-                <div class="requires-constaint">
-                  sus::mem::IsMoveRef
-                  &lt;
-                  decltype(into_iter)
-                  &gt;
-                </div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;IntoIter&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::FromIterator&lt;ToTypetypename IntoIteratorOutputType&lt;IntoIter&gt;::Item&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(into_iter)&gt;</pre></div>
               </div></div>
           </div>
         </div>

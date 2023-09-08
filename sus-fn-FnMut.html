@@ -75,18 +75,7 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">requires {</pre>
-                <pre class="requires-constaint-line">  // Receives and passes along the signature as a pack instead of a single</pre>
-                <pre class="requires-constaint-line">  // argument in order to consistently provide a static_assert() in `Sig` when</pre>
-                <pre class="requires-constaint-line">  // `S` is not a function signature.</pre>
-                <pre class="requires-constaint-line">  {</pre>
-                <pre class="requires-constaint-line">    __private::InvokedFnMut&lt;F, typename __private::Sig&lt;S...&gt;::Args&gt;::returns()</pre>
-                <pre class="requires-constaint-line">  } -&gt; __private::ValidReturnType&lt;typename __private::Sig&lt;S...&gt;::Return&gt;;</pre>
-                <pre class="requires-constaint-line"></pre>
-                <pre class="requires-constaint-line">  requires FnOnce&lt;F, S...&gt;;</pre>
-                <pre class="requires-constaint-line">}</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires {</pre><pre class="requires-constraint-line">  // Receives and passes along the signature as a pack instead of a single</pre><pre class="requires-constraint-line">  // argument in order to consistently provide a static_assert() in `Sig` when</pre><pre class="requires-constraint-line">  // `S` is not a function signature.</pre><pre class="requires-constraint-line">  {</pre><pre class="requires-constraint-line">    __private::InvokedFnMut&lt;F, typename __private::Sig&lt;S...&gt;::Args&gt;::returns()</pre><pre class="requires-constraint-line">  } -&gt; __private::ValidReturnType&lt;typename __private::Sig&lt;S...&gt;::Return&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  requires FnOnce&lt;F, S...&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
             </div>
           </div>
         </div>

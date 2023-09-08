@@ -75,14 +75,7 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">!__private::IsConstLvalueReference&lt;To&gt; ||</pre>
-                <pre class="requires-constaint-line">    // If the type is the same then no temporary will be created.</pre>
-                <pre class="requires-constaint-line">    std::same_as&lt;std::remove_cvref_t&lt;From&gt;, std::remove_cvref_t&lt;To&gt;&gt; ||</pre>
-                <pre class="requires-constaint-line">    // If the type is a base class then no temporary will be created.</pre>
-                <pre class="requires-constaint-line">    sus::ptr::SameOrSubclassOf&lt;std::remove_cvref_t&lt;From&gt;*,</pre>
-                <pre class="requires-constaint-line">                                   std::remove_cvref_t&lt;To&gt;*&gt;</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">!__private::IsConstLvalueReference&lt;To&gt; ||</pre><pre class="requires-constraint-line">    // If the type is the same then no temporary will be created.</pre><pre class="requires-constraint-line">    std::same_as&lt;std::remove_cvref_t&lt;From&gt;, std::remove_cvref_t&lt;To&gt;&gt; ||</pre><pre class="requires-constraint-line">    // If the type is a base class then no temporary will be created.</pre><pre class="requires-constraint-line">    sus::ptr::SameOrSubclassOf&lt;std::remove_cvref_t&lt;From&gt;*,</pre><pre class="requires-constraint-line">                                   std::remove_cvref_t&lt;To&gt;*&gt;</pre></div>
             </div>
           </div>
         </div>

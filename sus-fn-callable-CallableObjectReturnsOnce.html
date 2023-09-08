@@ -77,16 +77,8 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">!FunctionPointer&lt;T&gt;</pre>
-              </div>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">requires(T t, Args&&... args) {</pre>
-                <pre class="requires-constaint-line">      {</pre>
-                <pre class="requires-constaint-line">        std::invoke(static_cast&lt;T&&&gt;(t), ::sus::mem::forward&lt;Args&gt;(args)...)</pre>
-                <pre class="requires-constaint-line">      } -&gt; std::convertible_to&lt;R&gt;;</pre>
-                <pre class="requires-constaint-line">    }</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">!FunctionPointer&lt;T&gt;</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires(T t, Args&&... args) {</pre><pre class="requires-constraint-line">      {</pre><pre class="requires-constraint-line">        std::invoke(static_cast&lt;T&&&gt;(t), ::sus::mem::forward&lt;Args&gt;(args)...)</pre><pre class="requires-constraint-line">      } -&gt; std::convertible_to&lt;R&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
             </div>
           </div>
         </div>

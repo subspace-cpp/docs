@@ -145,14 +145,7 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::__private::FunctionPointer
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::__private::FunctionPointer&lt;FRCallArgs...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -166,20 +159,8 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::__private::CallableMut
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::fn::__private::ConvertsToFunctionPointer
-                    &lt;
-                    F
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::__private::CallableMut&lt;FRCallArgs...&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::__private::ConvertsToFunctionPointer&lt;F&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -193,17 +174,8 @@ pointer will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::__private::CallableMut
-                    &lt;
-                    F
-                    R
-                    CallArgs...
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!__private::ConvertsToFunctionPointer&lt;F&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::__private::CallableMut&lt;FRCallArgs...&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!__private::ConvertsToFunctionPointer&lt;F&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -241,13 +213,7 @@ since otherwise an extra invoker call would be introduced.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    std::constructible_from
-                    &lt;
-                    FnMutRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt;
-                    F &&
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;FnMutRef&lt;type-parameter-0-0 (type-parameter-0-1...)&gt;F &&&gt;</pre></div>
                 </div></div>
             </div>
           </div>

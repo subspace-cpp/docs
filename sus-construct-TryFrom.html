@@ -75,13 +75,7 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">requires(FromType&& from) {</pre>
-                <pre class="requires-constaint-line">  {</pre>
-                <pre class="requires-constaint-line">    ToType::try_from(::sus::forward&lt;FromType&gt;(from))</pre>
-                <pre class="requires-constaint-line">  } -&gt; ::sus::result::__private::IsResultWithOkType&lt;ToType&gt;;</pre>
-                <pre class="requires-constaint-line">}</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires(FromType&& from) {</pre><pre class="requires-constraint-line">  {</pre><pre class="requires-constraint-line">    ToType::try_from(::sus::forward&lt;FromType&gt;(from))</pre><pre class="requires-constraint-line">  } -&gt; ::sus::result::__private::IsResultWithOkType&lt;ToType&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
             </div>
           </div>
         </div>

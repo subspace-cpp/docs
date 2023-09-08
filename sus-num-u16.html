@@ -502,15 +502,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveEnum
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveEnum&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -528,15 +521,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -554,15 +540,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Unsigned
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -590,15 +569,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveEnumClass
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveEnumClass&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -616,15 +588,8 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Unsigned
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -639,15 +604,8 @@ where no bits are lost.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -662,12 +620,8 @@ int, unsigned long, etc) where no bits are lost.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">UnsignedPrimitiveEnum&lt;U&gt; || UnsignedPrimitiveEnumClass&lt;U&gt;</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedPrimitiveEnum&lt;U&gt; || UnsignedPrimitiveEnumClass&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -734,12 +688,7 @@ wants to use <code>from_be_bytes()</code> or <code>from_le_bytes()</code>, as ap
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(it)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(it)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -762,12 +711,7 @@ called for iterators over u16.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(it)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(it)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -790,12 +734,7 @@ iterators over u16.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Unsigned
-                    &lt;
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -811,12 +750,7 @@ etc).</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    U
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -832,12 +766,7 @@ etc).</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Signed
-                    &lt;
-                    S
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Signed&lt;S&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -853,12 +782,7 @@ etc).</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::SignedPrimitiveInteger
-                    &lt;
-                    S
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveInteger&lt;S&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -874,9 +798,7 @@ long, etc).</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">SignedPrimitiveEnum&lt;S&gt; || SignedPrimitiveEnumClass&lt;S&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">SignedPrimitiveEnum&lt;S&gt; || SignedPrimitiveEnumClass&lt;S&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -891,9 +813,7 @@ long, etc).</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">UnsignedPrimitiveEnum&lt;U&gt; || UnsignedPrimitiveEnumClass&lt;U&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedPrimitiveEnum&lt;U&gt; || UnsignedPrimitiveEnumClass&lt;U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1764,15 +1684,8 @@ boundary of the type.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() &gt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &gt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1871,15 +1784,8 @@ concept.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Unsigned
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1897,15 +1803,8 @@ concept.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveInteger
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1924,15 +1823,8 @@ where no bits are lost.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::UnsignedPrimitiveEnum
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveEnum&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>

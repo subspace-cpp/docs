@@ -372,13 +372,7 @@ ownership of the original iterator.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIterator
-                    &lt;
-                    Other
-                    ItemT
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIterator&lt;OtherItemT&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -397,12 +391,7 @@ other kinds of iteration.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -420,19 +409,8 @@ called or optimized away. So code should not depend on either.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -447,12 +425,7 @@ compares the elements of this <code>Iterator</code> with those of another.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -468,13 +441,7 @@ respect to the specified comparison function.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::FromIterator
-                    &lt;
-                    C
-                    ItemT
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::FromIterator&lt;CItemT&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -516,12 +483,7 @@ avoid the need for specifying a template argument.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Copy
-                    &lt;
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -552,12 +514,7 @@ catch overflow and panic. To avoid panic, you may use a fold over
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    Iter
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;Iter&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -611,19 +568,8 @@ overflow a <code>usize</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -638,12 +584,7 @@ another.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -670,16 +611,8 @@ iterator will yield only the elements for which the closure returns true.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    MapFn
-                    ::sus::fn::NonVoid (ItemT &&)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn::sus::fn::NonVoid (ItemT &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
                 </div></div>
             </div>
           </div>
@@ -707,16 +640,8 @@ soon as the predicate returns <code>true</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    FindFn
-                    ::sus::fn::NonVoid (ItemT &&)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;FindFn::sus::fn::NonVoid (ItemT &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
                 </div></div>
             </div>
           </div>
@@ -733,19 +658,8 @@ non-none result.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    ::sus::fn::NonVoid (ItemT &&)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    R
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F::sus::fn::NonVoid (ItemT &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;R&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -768,12 +682,7 @@ each element.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -791,24 +700,9 @@ of indirection.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    ::sus::fn::NonVoid (B, ItemT)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;
-                    B
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;B&gt; ||</pre>
-                    <pre class="requires-constaint-line">              std::is_reference_v&lt;std::invoke_result_t&lt;F&, B &&, ItemT &&&gt;&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F::sus::fn::NonVoid (B, ItemT)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;B&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;B&gt; ||</pre><pre class="requires-constraint-line">              std::is_reference_v&lt;std::invoke_result_t&lt;F&, B &&, ItemT &&&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -855,13 +749,7 @@ i32&amp; out = v.iter_mut().fold&lt;i32&amp;&gt;(
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    void (ItemT &&)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Fvoid (ItemT &&)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -897,19 +785,8 @@ fuse() can be a no-op in that case?</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::PartialOrd
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -925,16 +802,8 @@ greater than or equal to those of another.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnOnce
-                    &lt;
-                    GenFn
-                    ::sus::fn::NonVoid (Iter &&)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">__private::IsGenerator&lt;R&gt;::value</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;GenFn::sus::fn::NonVoid (Iter &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::IsGenerator&lt;R&gt;::value</pre></div>
                 </div></div>
             </div>
           </div>
@@ -951,19 +820,8 @@ avoid deeper compiler errors.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::PartialOrd
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1004,12 +862,7 @@ situations when errors need to be logged before being discarded.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1051,19 +904,8 @@ doing so, it keeps track of the current element. After <code>None</code> is retu
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::PartialOrd
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1079,19 +921,8 @@ less than or equal to those of another.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::PartialOrd
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1107,13 +938,7 @@ less than those of another.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    MapFn
-                    ::sus::fn::NonVoid (ItemT &&)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn::sus::fn::NonVoid (ItemT &&)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1129,16 +954,8 @@ type.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    MapFn
-                    ::sus::fn::NonVoid (ItemT &&)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn::sus::fn::NonVoid (ItemT &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1156,12 +973,7 @@ while it returns an Option with a value in it.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1199,22 +1011,9 @@ the iterator is empty, None is returned.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    KeyFn
-                    ::sus::fn::NonVoid (const std::remove_reference_t&lt;ItemT&gt; &)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    Key
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;Key&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn::sus::fn::NonVoid (const std::remove_reference_t&lt;ItemT&gt; &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1231,12 +1030,7 @@ the iterator is empty, <code>None</code> is returned.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1274,22 +1068,9 @@ the iterator is empty, None is returned.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    KeyFn
-                    ::sus::fn::NonVoid (const std::remove_reference_t&lt;ItemT&gt; &)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    Key
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;Key&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn::sus::fn::NonVoid (const std::remove_reference_t&lt;ItemT&gt; &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1306,15 +1087,8 @@ the iterator is empty, <code>None</code> is returned.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Move
-                    &lt;
-                    Item
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_const_v&lt;std::remove_reference_t&lt;Item&gt;&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;Item&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;std::remove_reference_t&lt;Item&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1330,19 +1104,8 @@ over <code>T</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1375,13 +1138,7 @@ iterator and return <code>None</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::DoubleEndedIterator
-                    &lt;
-                    Iter
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;IterItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1405,19 +1162,8 @@ iterator and return <code>None</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::PartialOrd
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1437,12 +1183,7 @@ result in <code>std::partial_ordering::unordered</code> when compared.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1458,19 +1199,8 @@ respect to the specified comparison function.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::construct::Default
-                    &lt;
-                    B
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::Extend
-                    &lt;
-                    B
-                    ItemT
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;B&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Extend&lt;BItemT&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1526,13 +1256,7 @@ than [<code>usize::MAX</code>] non-matching elements, it will panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::Product
-                    &lt;
-                    P
-                    ItemT
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Product&lt;PItemT&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1570,17 +1294,8 @@ default.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    ItemT (ItemT, ItemT)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;ItemT&gt; ||  //</pre>
-                    <pre class="requires-constaint-line">             std::is_reference_v&lt;R&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;FItemT (ItemT, ItemT)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;ItemT&gt; ||  //</pre><pre class="requires-constraint-line">             std::is_reference_v&lt;R&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1615,13 +1330,7 @@ sus::check(out.as_value() == 2 + 3 + 4);
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::DoubleEndedIterator
-                    &lt;
-                    Iter
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;IterItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1639,13 +1348,7 @@ iterator will instead iterate from back to front.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::DoubleEndedIterator
-                    &lt;
-                    Iter
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;IterItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1666,31 +1369,10 @@ soon as the closure returns <code>true</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    ::sus::fn::NonVoid (B, ItemT)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::DoubleEndedIterator
-                    &lt;
-                    Iter
-                    ItemT
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;
-                    B
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;B&gt; ||</pre>
-                    <pre class="requires-constaint-line">              std::is_reference_v&lt;std::invoke_result_t&lt;F&, B &&, ItemT &&&gt;&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F::sus::fn::NonVoid (B, ItemT)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;IterItemT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;B&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;B&gt; ||</pre><pre class="requires-constraint-line">              std::is_reference_v&lt;std::invoke_result_t&lt;F&, B &&, ItemT &&&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1723,20 +1405,8 @@ affect the final result. For a left-associative version of <code>rfold()</code>,
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::DoubleEndedIterator
-                    &lt;
-                    Iter
-                    Item
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::ExactSizeIterator
-                    &lt;
-                    Iter
-                    Item
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;IterItem&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::ExactSizeIterator&lt;IterItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1760,19 +1430,9 @@ overflow and will not panic.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    ::sus::fn::NonVoid (State &, ItemT &&)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_reference_v&lt;State&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F::sus::fn::NonVoid (State &, ItemT &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;State&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1844,19 +1504,8 @@ of 1 returns every element.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::StrongOrd
-                    &lt;
-                    ItemT
-                    OtherItem
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::StrongOrd&lt;ItemTOtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1878,12 +1527,7 @@ determined, the evaluation stops and a result is returned.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1899,13 +1543,7 @@ respect to the specified comparison function.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::Sum
-                    &lt;
-                    P
-                    ItemT
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Sum&lt;PItemT&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1958,22 +1596,9 @@ remaining elements will not be yielded.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Try
-                    &lt;
-                    ItemT
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::FromIterator
-                    &lt;
-                    C
-                    ::sus::ops::TryOutputType&lt;ItemT&gt;
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">!std::is_void_v&lt;::sus::ops::TryOutputType&lt;ItemT&gt;&gt;</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;ItemT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::FromIterator&lt;C::sus::ops::TryOutputType&lt;ItemT&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;::sus::ops::TryOutputType&lt;ItemT&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2023,26 +1648,9 @@ sus::check(x == err(ERROR));
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    ::sus::fn::NonVoid (B, ItemT)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Try
-                    &lt;
-                    R
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    typename ::sus::ops::TryImpl&lt;R&gt;::Output
-                    B
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F::sus::fn::NonVoid (B, ItemT)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;R&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;typename ::sus::ops::TryImpl&lt;R&gt;::OutputB&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2065,19 +1673,8 @@ value to not being a reference.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    ::sus::fn::NonVoid (ItemT)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::TryDefault
-                    &lt;
-                    R
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F::sus::fn::NonVoid (ItemT)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::TryDefault&lt;R&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2101,33 +1698,10 @@ consuming it, since it can stop iterating early.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::fn::FnMut
-                    &lt;
-                    F
-                    ::sus::fn::NonVoid (B, ItemT)
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::DoubleEndedIterator
-                    &lt;
-                    Iter
-                    ItemT
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::ops::Try
-                    &lt;
-                    R
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    std::convertible_to
-                    &lt;
-                    typename ::sus::ops::TryImpl&lt;R&gt;::Output
-                    B
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F::sus::fn::NonVoid (B, ItemT)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;IterItemT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;R&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;typename ::sus::ops::TryImpl&lt;R&gt;::OutputB&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2143,35 +1717,11 @@ takes elements starting from the back of the iterator.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::option::__private::IsTupleOfSizeTwo&lt;ItemT&gt;::value</pre>
-                  </div>
-                  <div class="requires-constaint">
-                    sus::construct::Default
-                    &lt;
-                    CollectionA
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::construct::Default
-                    &lt;
-                    CollectionB
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::Extend
-                    &lt;
-                    CollectionA
-                    ItemA
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    sus::iter::Extend
-                    &lt;
-                    CollectionB
-                    ItemB
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsTupleOfSizeTwo&lt;ItemT&gt;::value</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;CollectionA&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;CollectionB&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Extend&lt;CollectionAItemA&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Extend&lt;CollectionBItemB&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2188,12 +1738,7 @@ one from the left elements of the pairs, and one from the right elements.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::iter::IntoIteratorAny
-                    &lt;
-                    Other
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
                 </div></div>
             </div>
           </div>

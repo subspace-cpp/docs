@@ -75,13 +75,7 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constaint">
-                <pre class="requires-constaint-line">requires(__private::IteratorArchetype&lt;Item&gt;&& iter) {</pre>
-                <pre class="requires-constaint-line">  // Use cloned() or copied() to convert an Iterator of references to values.</pre>
-                <pre class="requires-constaint-line">  requires(!std::is_reference_v&lt;T&gt;);</pre>
-                <pre class="requires-constaint-line">  { T::from_sum(::sus::move(iter)) } -&gt; std::same_as&lt;T&gt;;</pre>
-                <pre class="requires-constaint-line">}</pre>
-              </div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires(__private::IteratorArchetype&lt;Item&gt;&& iter) {</pre><pre class="requires-constraint-line">  // Use cloned() or copied() to convert an Iterator of references to values.</pre><pre class="requires-constraint-line">  requires(!std::is_reference_v&lt;T&gt;);</pre><pre class="requires-constraint-line">  { T::from_sum(::sus::move(iter)) } -&gt; std::same_as&lt;T&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
             </div>
           </div>
         </div>

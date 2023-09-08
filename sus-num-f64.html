@@ -530,15 +530,8 @@ evaluation context from a runtime context, leading to bugs.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::PrimitiveFloat
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::PrimitiveFloat&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -552,15 +545,8 @@ evaluation context from a runtime context, leading to bugs.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Float
-                    &lt;
-                    F
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Float&lt;F&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -584,15 +570,8 @@ evaluation context from a runtime context, leading to bugs.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Float
-                    &lt;
-                    F
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Float&lt;F&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -606,15 +585,8 @@ evaluation context from a runtime context, leading to bugs.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::PrimitiveFloat
-                    &lt;
-                    F
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::PrimitiveFloat&lt;F&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -705,12 +677,7 @@ constexpr.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(it)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(it)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -729,12 +696,7 @@ called for iterators over <a href="sus-num-f64.html"><code>f64 </code></a>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::IsMoveRef
-                    &lt;
-                    decltype(it)
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(it)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1303,12 +1265,7 @@ attempts to preserve the <em>numeric</em> value, and not the bitwise value.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Integer
-                    &lt;
-                    I
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;I&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1410,15 +1367,8 @@ are always truncated towards zero.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::PrimitiveFloat
-                    &lt;
-                    U
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;U&gt;() &gt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::PrimitiveFloat&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &gt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1509,15 +1459,8 @@ float f = 3_f64;  // Does not compile.
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::Float
-                    &lt;
-                    F
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Float&lt;F&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1531,15 +1474,8 @@ float f = 3_f64;  // Does not compile.
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::num::PrimitiveFloat
-                    &lt;
-                    P
-                    &gt;
-                  </div>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::PrimitiveFloat&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>

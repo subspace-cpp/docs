@@ -68,28 +68,11 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constaint">
-                  std::convertible_to
-                  &lt;
-                  U
-                  T
-                  &gt;
-                </div>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::is_array_v&lt;T&gt;</pre>
-                </div>
-                <div class="requires-constaint">
-                  sus::mem::Move
-                  &lt;
-                  T
-                  &gt;
-                </div>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::is_const_v&lt;T&gt;</pre>
-                </div>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::same_as&lt;T, U&gt; || ::sus::mem::Copy&lt;T&gt;</pre>
-                </div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_array_v&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::same_as&lt;T, U&gt; || ::sus::mem::Copy&lt;T&gt;</pre></div>
               </div></div>
           </div>
           <div class="overload">
@@ -97,31 +80,11 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constaint">
-                  std::convertible_to
-                  &lt;
-                  U
-                  T
-                  &gt;
-                </div>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::is_array_v&lt;T&gt;</pre>
-                </div>
-                <div class="requires-constaint">
-                  sus::mem::Move
-                  &lt;
-                  T
-                  &gt;
-                </div>
-                <div class="requires-constaint">
-                  <pre class="requires-constaint-line">!std::is_const_v&lt;T&gt;</pre>
-                </div>
-                <div class="requires-constaint">
-                  sus::mem::IsMoveRef
-                  &lt;
-                  decltype(src)
-                  &gt;
-                </div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_array_v&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(src)&gt;</pre></div>
               </div></div>
           </div>
         </div>

@@ -262,9 +262,7 @@ length.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    <pre class="requires-constaint-line">N &lt;= ::sus::mog&lt;usize&gt;(isize::MAX)</pre>
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &lt;= ::sus::mog&lt;usize&gt;(isize::MAX)</pre></div>
                 </div></div>
             </div>
           </div>
@@ -379,12 +377,7 @@ with structured bindings as in <code>auto [a, b] = s.as_ptr_range();</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Ord
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -425,12 +418,7 @@ element could be inserted while maintaining sorted order.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::StrongOrd
-                    &lt;
-                    Key
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::StrongOrd&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -493,12 +481,7 @@ but starting at the end of the slice.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::collections::Concat
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::collections::Concat&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -523,12 +506,7 @@ sus::check(v == Slice&lt;i32&gt;::from({1, 2, 3, 4}));
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -544,12 +522,7 @@ sus::check(v == Slice&lt;i32&gt;::from({1, 2, 3, 4}));
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -584,12 +557,7 @@ restore tracking.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -698,13 +666,7 @@ each element.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::collections::Join
-                    &lt;
-                    T
-                    Sep
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::collections::Join&lt;TSep&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -736,12 +698,7 @@ sus::check(v2 == sus::Vec&lt;i32&gt;(1, 2, 99, 3, 4));
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -835,12 +792,7 @@ starting at the beginning of the slice.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::TrivialCopy
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::TrivialCopy&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -976,12 +928,7 @@ in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -995,12 +942,7 @@ in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1018,12 +960,7 @@ wrapped in <code>Some</code>. If <code>prefix</code> is empty, simply returns th
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::ops::Eq
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1040,12 +977,7 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constaint">
-                    sus::mem::Clone
-                    &lt;
-                    T
-                    &gt;
-                  </div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
