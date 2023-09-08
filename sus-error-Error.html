@@ -178,7 +178,7 @@ to its subclasses.</p>
 <li><p>Place all application error types into a single sum type such as
 <a href="https://en.cppreference.com/w/cpp/utility/variant"><code>std::variant</code></a> or
 <a href="sus-choice_type-Choice.html"><code>Choice</code></a>. Then implement
-<a href="#sus::error::Error"><code>Error</code></a> for your fully resolved sum type.</p>
+<a href="sus-error-Error.html"><code>Error</code></a> for your fully resolved sum type.</p>
 <p>This allows each error inside the sum type to be any type at all, and
 avoids type erasure, using type composition instead.</p>
 </li>

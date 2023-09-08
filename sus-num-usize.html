@@ -111,22 +111,22 @@
           <a class="sidebar-item" href="sus-num-usize.html#method.from_sum">from_sum</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.unsigned">try_from</a>
+          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.unsignedprimitive">try_from</a>
+          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned.primitive">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.signed">try_from</a>
+          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.signed">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.signedprimitive">try_from</a>
+          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.signed.primitive">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.signedenum">try_from</a>
+          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.signed.enum">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.unsignedenum">try_from</a>
+          <a class="sidebar-item" href="sus-num-usize.html#method.try_from.unsigned.enum">try_from</a>
         </li>
         <li>
           <a class="sidebar-header" href="#methods">Methods</a>
@@ -520,9 +520,9 @@ of the pointer.</p>
           <div class="description long">
             <p>Construction from unsigned enum types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
+<a href="sus-num-usize.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy
+conversions use the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept
+with <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -539,9 +539,9 @@ of the pointer.</p>
           <div class="description long">
             <p>Construction from unsigned primitive types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
+<a href="sus-num-usize.html#method.try_from.unsigned.primitive"><code>try_from</code></a>. For lossy
+conversions use the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept
+with <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -558,8 +558,8 @@ of the pointer.</p>
           <div class="description long">
             <p>Construction from unsigned types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-usize.html#method.try_from.unsigned"><code>try_from</code></a>. For lossy conversions
+use the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
           </div>
@@ -587,7 +587,8 @@ of the pointer.</p>
           <div class="description long">
             <p>Construction from unsigned enum class types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-usize.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy
+conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
@@ -740,7 +741,7 @@ iterators over usize.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.tryfrom.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.unsigned">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -756,7 +757,7 @@ etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.tryfrom.unsignedprimitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.unsignedprimitive">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned.primitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.primitive">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -772,7 +773,7 @@ etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.tryfrom.signed"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.signed">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -788,7 +789,7 @@ etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.tryfrom.signedprimitive"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.signedprimitive">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed.primitive"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed.primitive">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -804,7 +805,7 @@ long, etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.tryfrom.signedenum"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.signedenum">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed.enum"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed.enum">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -819,7 +820,7 @@ long, etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.tryfrom.unsignedenum"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.tryfrom.unsignedenum">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned.enum"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.enum">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1802,8 +1803,8 @@ concept.</p>
           <div class="description long">
             <p>Assignment from unsigned types (u8, u16, etc.) where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-usize.html#method.try_from.unsigned"><code>try_from</code></a>. For lossy conversions
+use the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
           </div>
@@ -1822,7 +1823,8 @@ concept.</p>
             <p>Assignment from unsigned primitive types (unsigned int, unsigned long, etc.)
 where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-usize.html#method.try_from.unsigned.primitive"><code>try_from</code></a>. For lossy
+conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 
@@ -1841,7 +1843,8 @@ where no bits are lost.</p>
           <div class="description long">
             <p>Assignment from unsigned enum types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-usize.html#method.try_from.unsigned.primitive"><code>try_from</code></a>. For lossy
+conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;usize&gt;(x)</code></a>.</p>
 

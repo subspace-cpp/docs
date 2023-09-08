@@ -132,22 +132,22 @@
           <a class="sidebar-item" href="sus-num-i64.html#method.from_sum">from_sum</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.0">try_from</a>
+          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.signed">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.1">try_from</a>
+          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.unsigned">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.signedint.tryfrom.signedint">try_from</a>
+          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.signed.primitive">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.signedint.tryfrom.signedenum">try_from</a>
+          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.signed.enum">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.signedint.tryfrom.unsignedint">try_from</a>
+          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.unsigned.primitive">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.signedint.tryfrom.unsignedenum">try_from</a>
+          <a class="sidebar-item" href="sus-num-i64.html#method.try_from.unsigned.enum">try_from</a>
         </li>
         <li>
           <a class="sidebar-header" href="#methods">Methods</a>
@@ -564,7 +564,7 @@
           <div class="description long">
             <p>Construction from unsigned types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.unsigned"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
@@ -583,8 +583,8 @@
           <div class="description long">
             <p>Construction from unsigned enum class types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-i64.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy conversions
+use the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
           </div>
@@ -602,8 +602,8 @@
           <div class="description long">
             <p>Construction from signed enum class types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-i64.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
           </div>
@@ -621,7 +621,7 @@
           <div class="description long">
             <p>Construction from signed enum types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
@@ -640,8 +640,8 @@
           <div class="description long">
             <p>Construction from signed primitive types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-i64.html#method.try_from.signed.primitive"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
           </div>
@@ -659,7 +659,7 @@
           <div class="description long">
             <p>Construction from signed types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.signed"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
@@ -678,7 +678,7 @@
           <div class="description long">
             <p>Construction from unsigned enum types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
@@ -709,8 +709,8 @@ trivial destructor.</p>
           <div class="description long">
             <p>Construction from unsigned primitive types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-i64.html#method.try_from.unsigned.primitive"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
           </div>
@@ -729,7 +729,7 @@ trivial destructor.</p>
             <p>Constructs a i64 from a signed integer type (i8, i16, i32, etc) where
 no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.signed"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
@@ -749,7 +749,7 @@ no bits are lost.</p>
             <p>Constructs a i64 from an unsigned integer type (unsigned
 int, unsigned long, etc) where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.unsigned"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
@@ -766,11 +766,12 @@ int, unsigned long, etc) where no bits are lost.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Constructs a i64 from a signed primitive integer type (int, long, etc)
+            <p>Constructs a <code>i64</code> from a signed primitive integer type (int, long, etc)
 where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-i64.html#method.try_from.signed.primitive"><code>try_from</code></a>. For lossy
+conversions use
+the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
           </div>
@@ -786,11 +787,11 @@ where no bits are lost.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Constructs a i64 from a signed enum type (or enum class) where no bits
+            <p>Constructs a <code>i64</code> from a signed enum type (or enum class) where no bits
 are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-i64.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
           </div>
@@ -809,8 +810,8 @@ are lost.</p>
             <p>Constructs a i64 from an unsigned primitive integer type (unsigned
 int, unsigned long, etc) where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-i64.html#method.try_from.unsigned.primitive"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
           </div>
@@ -829,7 +830,7 @@ int, unsigned long, etc) where no bits are lost.</p>
             <p>Constructs a i64 from an unsigned enum type (or enum class) where no
 bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
@@ -935,7 +936,7 @@ iterators over i64.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.0"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.0">try_from</a>(S s) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.signed">try_from</a>(S s) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -950,7 +951,7 @@ iterators over i64.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.1"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.1">try_from</a>(U u) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.unsigned">try_from</a>(U u) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -959,14 +960,14 @@ iterators over i64.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Try to construct a i64 from an unsigned integer type (u8, u16, u32,
-etc).</p>
-<p>Returns an error if the source value is outside of the range of i64.</p>
+            <p>Try to construct a <code>i64</code> from an unsigned integer type (<code>u8</code>, <code>u16</code>,
+<code>u32</code>, etc).</p>
+<p>Returns an error if the source value is outside of the range of <code>i64</code>.</p>
 
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.signedint.tryfrom.signedint"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.signedint.tryfrom.signedint">try_from</a>(S s) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed.primitive"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.signed.primitive">try_from</a>(S s) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -975,14 +976,14 @@ etc).</p>
             </div>
           </div>
           <div class="description long">
-            <p>Tries to construct a i64 from a signed primitive integer type (int,
+            <p>Tries to construct a <code>i64</code> from a signed primitive integer type (int,
 long, etc).</p>
 <p>Returns an error if the source value is outside of the range of i64.</p>
 
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.signedint.tryfrom.signedenum"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.signedint.tryfrom.signedenum">try_from</a>(S s) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed.enum"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.signed.enum">try_from</a>(S s) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -997,7 +998,7 @@ long, etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.signedint.tryfrom.unsignedint"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.signedint.tryfrom.unsignedint">try_from</a>(U u) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned.primitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.unsigned.primitive">try_from</a>(U u) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1013,7 +1014,7 @@ int, unsigned long, etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.signedint.tryfrom.unsignedenum"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.signedint.tryfrom.unsignedenum">try_from</a>(U u) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned.enum"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.try_from.unsigned.enum">try_from</a>(U u) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -2117,7 +2118,7 @@ concept.</p>
           <div class="description long">
             <p>Assignment from signed types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.signed"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
@@ -2136,8 +2137,8 @@ concept.</p>
           <div class="description long">
             <p>Assignment from signed primitive types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
+<a href="sus-num-i64.html#method.try_from.signed.primitive"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 
           </div>
@@ -2155,7 +2156,7 @@ concept.</p>
           <div class="description long">
             <p>Assignment from signed enum types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
-<a href="#method.try_from"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-num-i64.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
 <a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i64&gt;(x)</code></a>.</p>
 

@@ -114,13 +114,13 @@
           <a class="sidebar-item" href="sus-num-uptr.html#method.from_sum">from_sum</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.try_from.uptr.tryfrom.pointer">try_from</a>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.try_from.ptr">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.try_from.unsigned.tryfrom.unsigned">try_from</a>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.try_from.unsigned">try_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.try_from.unsigned.tryfrom.unsignedprimitive">try_from</a>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.try_from.unsigned.primitive">try_from</a>
         </li>
         <li>
           <a class="sidebar-header" href="#methods">Methods</a>
@@ -436,12 +436,12 @@
 pointers. It is typically the same size as <a href="sus-num-usize.html"><code>usize</code></a> but it can be larger when
 pointers include additional bits that the address.</p>
 <h1><a name="constructing-a-%5B%60uptr%60%5D($sus::num::uptr)" href="#constructing-a-%5B%60uptr%60%5D($sus::num::uptr)">Constructing a <a href="sus-num-uptr.html"><code>uptr</code></a></a></h1>
-<p>See <a href="#method.with_addr"><code>with_addr</code></a> for constructing
+<p>See <a href="sus-num-uptr.html#method.with_addr"><code>with_addr</code></a> for constructing
 <a href="sus-num-uptr.html"><code>uptr</code></a> with an address from another
 <a href="sus-num-uptr.html"><code>uptr</code></a>.</p>
 <p>If pointers contain additional metadata beyond an address, the
-<a href="#method.with_addr"><code>with_addr</code></a> method copies the metadata from the
-original <code>uptr</code> to the newly produced
+<a href="sus-num-uptr.html#method.with_addr"><code>with_addr</code></a> method copies the metadata from
+the original <code>uptr</code> to the newly produced
 <a href="sus-num-uptr.html"><code>uptr</code></a>. Otherwise, constructing a
 <a href="sus-num-uptr.html"><code>uptr</code></a> from an integer can produce a pointer with
 invalid (empty) metadata and dereferencing such a pointer would be invalid.</p>
@@ -478,8 +478,8 @@ use <code>uptr().with_addr(address)</code>.</p>
               <p>The largest value that can be represented by an
 <a href="sus-num-uptr.html"><code>uptr</code></a>, if the size of a pointer is larger
 than the size of an address, this value will be larger than
-<a href="#field.MAX_ADDR"><code>MAX_ADDR</code></a> and will always be the maximum value for the
-integer type.</p>
+<a href="sus-num-uptr.html#field.MAX_ADDR"><code>MAX_ADDR</code></a> and will always be the maximum
+value for the integer type.</p>
 
             </div>
           </div>
@@ -721,7 +721,7 @@ iterators over uptr.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.uptr.tryfrom.pointer"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.uptr.tryfrom.pointer">try_from</a>(U* u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; </div>
+              <div class="function-signature"><a name="method.try_from.ptr"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.ptr">try_from</a>(U* u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; </div>
             </div>
           </div>
           <div class="description long">
@@ -731,7 +731,7 @@ iterators over uptr.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.tryfrom.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.unsigned.tryfrom.unsigned">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.unsigned">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -748,7 +748,7 @@ etc) with the same size as a pointer.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.tryfrom.unsignedprimitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.unsigned.tryfrom.unsignedprimitive">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned.primitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.unsigned.primitive">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt; <div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>

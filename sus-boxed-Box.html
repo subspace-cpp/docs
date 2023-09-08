@@ -347,7 +347,7 @@ since in C++ the <code>Box</code> can not expose the methods of the inner type
 directly.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>Converting the raw pointer back into a <code>Box</code> with
-<a href="#sus::boxed::Box::from_raw"><code>Box::from_raw</code></a> for automatic cleanup:</p>
+<a href="sus-boxed-Box.html#method.from_raw"><code>Box::from_raw</code></a> for automatic cleanup:</p>
 <pre><code>auto x = Box&lt;std::string&gt;(&quot;Hello&quot;);
 auto* ptr = sus::move(x).into_raw();
 x = Box&lt;std::string&gt;::from_raw(unsafe_fn, ptr);

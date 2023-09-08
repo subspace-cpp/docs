@@ -602,8 +602,8 @@ evaluation context from a runtime context, leading to bugs.</p>
           <div class="description long">
             <p>Create a floating point value from its representation as a byte array in
 big endian.</p>
-<p>See <a href="#method.from_bits"><code>from_bits</code></a> for why this function is not
-constexpr.</p>
+<p>See <a href="sus-num-f64.html#method.from_bits"><code>from_bits</code></a> for why this function is
+not  constexpr.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -652,8 +652,8 @@ exact bits in a constexpr context.</p>
           <div class="description long">
             <p>Create a floating point value from its representation as a byte array in
 big endian.</p>
-<p>See <a href="#method.from_bits"><code>from_bits</code></a> for why this function is not
-constexpr.</p>
+<p>See <a href="sus-num-f64.html#method.from_bits"><code>from_bits</code></a> for why this function is
+not constexpr.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -665,10 +665,11 @@ constexpr.</p>
             <p>Create a floating point value from its representation as a byte array in
 native endian.</p>
 <p>As the target platform's native endianness is used, portable code likely
-wants to use <a href="#method.from_be_bytes"><code>from_be_bytes</code></a> or
-<a href="#method.from_le_bytes"><code>from_le_bytes</code></a>, as appropriate instead.</p>
-<p>See <a href="#method.from_bits"><code>from_bits</code></a> for why this function is not
-constexpr.</p>
+wants to use <a href="sus-num-f64.html#method.from_be_bytes"><code>from_be_bytes</code></a> or
+<a href="sus-num-f64.html#method.from_le_bytes"><code>from_le_bytes</code></a>, as appropriate
+instead.</p>
+<p>See <a href="sus-num-f64.html#method.from_bits"><code>from_bits</code></a> for why this function is
+not constexpr.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -880,7 +881,7 @@ arithmetical operations is not generally guaranteed.</p>
           </div>
           <div class="description long">
             <p>Calculates Euclidean division, the matching method for
-<a href="#method.rem_euclid"><code>rem_euclid</code></a>.</p>
+<a href="sus-num-f64.html#method.rem_euclid"><code>rem_euclid</code></a>.</p>
 <p>This computes the integer <code>n</code> such that <code>self = n * rhs + self.rem_euclid(rhs)</code>. In other words, the result is <code>self / rhs</code> rounded
 to the integer <code>n</code> such that <code>self &gt;= n * rhs</code>.</p>
 
@@ -1122,9 +1123,9 @@ the documentation for details on errors.</p>
           </div>
           <div class="description long">
             <p>Raises a number to an integer point power.</p>
-<p>Using this function may be faster than using <a href="#method.powf"><code>powf</code></a>. It
+<p>Using this function may be faster than using <a href="sus-num-f64.html#method.powf"><code>powf</code></a>. It
 might have a different sequence of rounding operations than
-<a href="#method.powf"><code>powf</code></a>, so the results are not guaranteed to agree.</p>
+<a href="sus-num-f64.html#method.powf"><code>powf</code></a>, so the results are not guaranteed to agree.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1171,9 +1172,9 @@ approximately.</p>
           <div class="description long">
             <p>Returns a number that represents the sign of self.</p>
 <ul>
-<li><code>1.0</code> if the number is positive, <code>+0.0</code> or <a href="#field.INFINITY"><code>INFINITY</code></a>.</li>
+<li><code>1.0</code> if the number is positive, <code>+0.0</code> or <a href="sus-num-f64.html#field.INFINITY"><code>INFINITY</code></a>.</li>
 <li><code>-1.0</code> if the number is negative, <code>-0.0</code> or
-<a href="#field.NEG_INFINITY"><code>NEG_INFINITY</code></a>.</li>
+<a href="sus-num-f64.html#field.NEG_INFINITY"><code>NEG_INFINITY</code></a>.</li>
 <li><code>NaN</code> if the number is <code>NaN</code>. The input value is returned exactly,
 preserving signaling NaNs.</li>
 </ul>
@@ -1293,8 +1294,8 @@ array in little-endian byte order.</p>
             <p>Return the memory representation of this floating point number as a byte
 array in native byte order.</p>
 <p>As the target platform's native endianness is used, portable code should
-use <a href="#method.to_be_bytes"><code>to_be_bytes</code></a> or
-<a href="#method.to_le_bytes"><code>to_le_bytes</code></a>, as appropriate, instead.</p>
+use <a href="sus-num-f64.html#method.to_be_bytes"><code>to_be_bytes</code></a> or
+<a href="sus-num-f64.html#method.to_le_bytes"><code>to_le_bytes</code></a>, as appropriate, instead.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1333,7 +1334,7 @@ positive quiet NaN.</p>
 <a href="sus-ops-PartialOrd.html"><code>PartialOrd</code></a> and <a href="sus-ops-Eq.html"><code>Eq</code></a>
 implementations of <a href="sus-num-f64.html"><code>f64</code></a>. For example, they
 consider negative and positive zero equal, while
-<a href="#method.total_cmp"><code>total_cmp</code></a> doesn't.</p>
+<a href="sus-num-f64.html#method.total_cmp"><code>total_cmp</code></a> doesn't.</p>
 <p>The interpretation of the signaling NaN bit follows the definition in the
 IEEE 754 standard, which may not match the interpretation by some of the
 older, non-conformant (e.g. MIPS) hardware implementations.</p>
