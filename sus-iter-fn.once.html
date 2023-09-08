@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::iter::once - Subspace</title>
   <meta property="og:title" content="sus::iter::once - Subspace"></meta>
-  <meta name="description" content="Constructs a Once iterator that will return o and then None. If o is None, then the iterator will be empty on construction."></meta>
-  <meta property="og:description" content="Constructs a Once iterator that will return o and then None. If o is None, then the iterator will be empty on construction."></meta>
+  <meta name="description" content="Constructs a Once iterator that will return o and then None."></meta>
+  <meta property="og:description" content="Constructs a Once iterator that will return o and then None."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -64,18 +64,24 @@
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">once</a>(Option&lt;Item&gt; o) -&gt; Once&lt;Item&gt; </div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">once</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt; o) -&gt; <a class="type-name" href="sus-iter-Once.html" title="sus::iter::Once">Once</a>&lt;Item&gt; </div>
+            <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">once</a>(Item o) -&gt; <a class="type-name" href="sus-iter-Once.html" title="sus::iter::Once">Once</a>&lt;Item&gt; </div>
           </div>
         </div>
         <div class="description long">
-          <p>Constructs a <code>Once</code> iterator that will return <code>o</code> and then None. If <code>o</code> is
-<code>None</code>, then the iterator will be empty on construction.</p>
-<h1><a name="example" href="#example">Example</a></h1>
-<pre><code>auto o = sus::iter::once&lt;u16&gt;(sus::some(3_u16));
+          <p>Constructs a <code>Once</code> iterator that will return <code>o</code> and then None.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>An iterator that returns a number once:</p>
+<pre><code>auto o = sus::iter::once&lt;u16&gt;(3_u16);
 sus::check(o.next().unwrap() == 3_u16);
+sus::check(o.next().is_none());
+</code></pre>
+<p>An iterator that returns a reference once:</p>
+<pre><code>auto u = 3_u16;
+auto o = sus::iter::once&lt;u16&amp;&gt;(u);
+u16&amp; r = o.next().unwrap();
+sus::check(r == 3u);
+sus::check(&amp;r == &amp;u);
+sus::check(o.next().is_none());
 </code></pre>
 
         </div>
