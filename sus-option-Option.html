@@ -365,7 +365,7 @@ value out of the option when the option may be used again afterward.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(optional&lt;U&gt;&& s)<div class="requires">
+              <div class="function-signature"><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(std::optional&lt;U&gt;&& s)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -374,7 +374,7 @@ value out of the option when the option may be used again afterward.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(<span class="const">const</span> optional&lt;U&gt;& s)<div class="requires">
+              <div class="function-signature"><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(<span class="const">const</span> std::optional&lt;U&gt;& s)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -467,7 +467,7 @@ holds <code>None</code>, otherwise returns <code>that</code> option.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.and_then">and_then</a>(AndFn f) && -&gt; ReturnOnce&lt;AndFn, T&&&gt;<div class="requires">
+              <div class="function-signature"><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.and_then">and_then</a>(AndFn f) && -&gt; sus::fn::ReturnOnce&lt;AndFn, T&&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -498,7 +498,7 @@ reference to the value in this option.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_ref">as_ref</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> remove_reference_t&lt;T&gt;&&gt;</div>
+              <div class="function-signature"><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_ref">as_ref</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -513,7 +513,7 @@ a short-lived object which leads to common C++ memory bugs.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_value">as_value</a>() const& -&gt; <span class="const">const</span> remove_reference_t&lt;T&gt;&</div>
+              <div class="function-signature"><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_value">as_value</a>() const& -&gt; <span class="const">const</span> std::remove_reference_t&lt;T&gt;&</div>
             </div>
           </div>
           <div class="description long">
@@ -533,7 +533,7 @@ a short-lived object which leads to common C++ memory bugs.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_value_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_value_mut">as_value_mut</a>() & -&gt; remove_reference_t&lt;T&gt;&</div>
+              <div class="function-signature"><a name="method.as_value_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_value_mut">as_value_mut</a>() & -&gt; std::remove_reference_t&lt;T&gt;&</div>
             </div>
           </div>
           <div class="description long">
@@ -553,7 +553,7 @@ a short-lived object which leads to common C++ memory bugs.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_value_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_value_unchecked">as_value_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; <span class="const">const</span> remove_reference_t&lt;T&gt;&</div>
+              <div class="function-signature"><a name="method.as_value_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_value_unchecked">as_value_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; <span class="const">const</span> std::remove_reference_t&lt;T&gt;&</div>
             </div>
           </div>
           <div class="description long">
@@ -572,7 +572,7 @@ a short-lived object which leads to common C++ memory bugs.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_value_unchecked_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_value_unchecked_mut">as_value_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) & -&gt; remove_reference_t&lt;T&gt;&</div>
+              <div class="function-signature"><a name="method.as_value_unchecked_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.as_value_unchecked_mut">as_value_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) & -&gt; std::remove_reference_t&lt;T&gt;&</div>
             </div>
           </div>
           <div class="description long">
@@ -622,7 +622,7 @@ a short-lived object which leads to common C++ memory bugs.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.cloned"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.cloned">cloned</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;remove_const_t&lt;remove_reference_t&lt;T&gt;&gt;&gt;<div class="requires">
+              <div class="function-signature"><a name="method.cloned"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.cloned">cloned</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt;&gt;&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -638,7 +638,7 @@ a short-lived object which leads to common C++ memory bugs.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.copied"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.copied">copied</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;remove_const_t&lt;remove_reference_t&lt;T&gt;&gt;&gt;<div class="requires">
+              <div class="function-signature"><a name="method.copied"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.copied">copied</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;std::remove_const_t&lt;std::remove_reference_t&lt;T&gt;&gt;&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -665,7 +665,7 @@ currently <code>None</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.filter"></a><div class="template">template &lt;class p:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.filter">filter</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;bool(<span class="const">const</span> remove_reference_t&lt;T&gt;&)&gt; auto p) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.filter"></a><div class="template">template &lt;class p:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.filter">filter</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;T&gt;&)&gt; auto p) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -770,7 +770,7 @@ which doesn’t update the value if the option already contains <code>Some</code
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() && -&gt; OptionIter&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() && -&gt; sus::option::OptionIter&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -804,21 +804,21 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; OptionIter&lt;<span class="const">const</span> remove_reference_t&lt;T&gt;&&gt;</div>
+              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;</div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() & -&gt; OptionIter&lt;T&&gt;</div>
+              <div class="function-signature"><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() & -&gt; sus::option::OptionIter&lt;T&&gt;</div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.map"></a><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.map">map</a>(MapFn m) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;ReturnOnce&lt;MapFn, T&&&gt;&gt;<div class="requires">
+              <div class="function-signature"><a name="method.map"></a><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.map">map</a>(MapFn m) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::fn::ReturnOnce&lt;MapFn, T&&&gt;&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -838,7 +838,7 @@ if the current option is in state <code>None</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.map_or"></a><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.map_or">map_or</a>(ReturnOnce&lt;MapFn, T&&&gt; default_result, MapFn m) && -&gt; ReturnOnce&lt;MapFn, T&&&gt;<div class="requires">
+              <div class="function-signature"><a name="method.map_or"></a><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.map_or">map_or</a>(sus::fn::ReturnOnce&lt;MapFn, T&&&gt; default_result, MapFn m) && -&gt; sus::fn::ReturnOnce&lt;MapFn, T&&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -857,7 +857,7 @@ lazily evaluated.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.map_or_else"></a><div class="template">template &lt;class DefaultFn, class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.map_or_else">map_or_else</a>(DefaultFn default_fn, MapFn m) && -&gt; ReturnOnce&lt;DefaultFn&gt;<div class="requires">
+              <div class="function-signature"><a name="method.map_or_else"></a><div class="template">template &lt;class DefaultFn, class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.map_or_else">map_or_else</a>(DefaultFn default_fn, MapFn m) && -&gt; sus::fn::ReturnOnce&lt;DefaultFn&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -894,7 +894,7 @@ lazily evaluated.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.ok_or_else"></a><div class="template">template &lt;class ElseFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.ok_or_else">ok_or_else</a>(ElseFn f) && -&gt; Result&lt;T, ReturnOnce&lt;ElseFn&gt;&gt;<div class="requires">
+              <div class="function-signature"><a name="method.ok_or_else"></a><div class="template">template &lt;class ElseFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.ok_or_else">ok_or_else</a>(ElseFn f) && -&gt; sus::result::Result&lt;T, sus::fn::ReturnOnce&lt;ElseFn&gt;&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1167,7 +1167,7 @@ switch (x) {
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator*"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.operator*">operator*</a>() const& -&gt; <span class="const">const</span> remove_reference_t&lt;T&gt;&</div>
+              <div class="function-signature"><a name="method.operator*"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.operator*">operator*</a>() const& -&gt; <span class="const">const</span> std::remove_reference_t&lt;T&gt;&</div>
             </div>
           </div>
           <div class="description long">
@@ -1206,7 +1206,7 @@ through <a href="sus-option-Option.html#method.operator*"><code>operator*</code>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.operator-&gt;">operator-&gt;</a>() const& -&gt; <span class="const">const</span> remove_reference_t&lt;T&gt;*</div>
+              <div class="function-signature"><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.operator-&gt;">operator-&gt;</a>() const& -&gt; <span class="const">const</span> std::remove_reference_t&lt;T&gt;*</div>
             </div>
           </div>
           <div class="description long">

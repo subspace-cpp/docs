@@ -424,7 +424,7 @@ length.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_raw_collection_mut"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.from_raw_collection_mut">from_raw_collection_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <a class="type-name" href="sus-iter-IterRefCounter.html" title="sus::iter::IterRefCounter">IterRefCounter</a> refs, T* data, usize len) -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.from_raw_collection_mut"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.from_raw_collection_mut">from_raw_collection_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <a class="type-name" href="sus-iter-IterRefCounter.html" title="sus::iter::IterRefCounter">IterRefCounter</a> refs, T* data, sus::usize len) -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -454,7 +454,7 @@ converting slices between languages as a result.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_raw_parts_mut"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.from_raw_parts_mut">from_raw_parts_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, T* data, usize len) -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.from_raw_parts_mut"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.from_raw_parts_mut">from_raw_parts_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, T* data, sus::usize len) -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -581,7 +581,7 @@ element could be inserted while maintaining sorted order.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.binary_search_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.binary_search_by">binary_search_by</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;weak_ordering(<span class="const">const</span> T&)&gt; f) const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt;</div>
+              <div class="function-signature"><a name="method.binary_search_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.binary_search_by">binary_search_by</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;std::weak_ordering(<span class="const">const</span> T&)&gt; f) const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -744,7 +744,7 @@ sus::check(v == Slice&lt;i32&gt;::from({1, 2, 3, 4}));
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.concat_into"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.concat_into">concat_into</a>(Vec&lt;T&gt;& vec) const& -&gt; void<div class="requires">
+              <div class="function-signature"><a name="method.concat_into"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.concat_into">concat_into</a>(sus::collections::Vec&lt;T&gt;& vec) const& -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1098,7 +1098,7 @@ sus::check(v2 == sus::Vec&lt;i32&gt;(1, 2, 99, 3, 4));
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.join_into"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.join_into">join_into</a>(Vec&lt;T&gt;& vec) const& -&gt; void<div class="requires">
+              <div class="function-signature"><a name="method.join_into"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.join_into">join_into</a>(sus::collections::Vec&lt;T&gt;& vec) const& -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1241,7 +1241,7 @@ iterator but starting at the beginning of the slice.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.repeat"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.repeat">repeat</a>(usize n) const& -&gt; Vec&lt;T&gt;<div class="requires">
+              <div class="function-signature"><a name="method.repeat"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.repeat">repeat</a>(sus::usize n) const& -&gt; sus::collections::Vec&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1354,7 +1354,7 @@ slice will be the first (or last) item returned by the iterator.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rsplitn"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.rsplitn">rsplitn</a>(usize n, <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;bool(<span class="const">const</span> T&)&gt; pred) const& -&gt; <a class="type-name" href="sus-collections-RSplitN.html" title="sus::collections::RSplitN">RSplitN</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.rsplitn"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.rsplitn">rsplitn</a>(sus::usize n, <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;bool(<span class="const">const</span> T&)&gt; pred) const& -&gt; <a class="type-name" href="sus-collections-RSplitN.html" title="sus::collections::RSplitN">RSplitN</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1366,7 +1366,7 @@ and works backwards. The matched element is not contained in the subslices.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rsplitn_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.rsplitn_mut">rsplitn_mut</a>(usize n, <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;bool(<span class="const">const</span> T&)&gt; pred) const& -&gt; <a class="type-name" href="sus-collections-RSplitNMut.html" title="sus::collections::RSplitNMut">RSplitNMut</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.rsplitn_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.rsplitn_mut">rsplitn_mut</a>(sus::usize n, <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;bool(<span class="const">const</span> T&)&gt; pred) const& -&gt; <a class="type-name" href="sus-collections-RSplitNMut.html" title="sus::collections::RSplitNMut">RSplitNMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1401,7 +1401,7 @@ also be constexpr?</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.sort_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.sort_by">sort_by</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;weak_ordering(<span class="const">const</span> T&, <span class="const">const</span> T&)&gt; compare) const& -&gt; void</div>
+              <div class="function-signature"><a name="method.sort_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.sort_by">sort_by</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;std::weak_ordering(<span class="const">const</span> T&, <span class="const">const</span> T&)&gt; compare) const& -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1478,7 +1478,7 @@ allocate while sorting.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.sort_unstable_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.sort_unstable_by">sort_unstable_by</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;weak_ordering(<span class="const">const</span> T&, <span class="const">const</span> T&)&gt; compare) const& -&gt; void</div>
+              <div class="function-signature"><a name="method.sort_unstable_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.sort_unstable_by">sort_unstable_by</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;std::weak_ordering(<span class="const">const</span> T&, <span class="const">const</span> T&)&gt; compare) const& -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1674,7 +1674,7 @@ matched, an empty slice will be the last item returned by the iterator.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.splitn"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.splitn">splitn</a>(usize n, <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;bool(<span class="const">const</span> T&)&gt; pred) const& -&gt; <a class="type-name" href="sus-collections-SplitN.html" title="sus::collections::SplitN">SplitN</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.splitn"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.splitn">splitn</a>(sus::usize n, <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;bool(<span class="const">const</span> T&)&gt; pred) const& -&gt; <a class="type-name" href="sus-collections-SplitN.html" title="sus::collections::SplitN">SplitN</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1686,7 +1686,7 @@ in the subslices.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.splitn_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.splitn_mut">splitn_mut</a>(usize n, <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;bool(<span class="const">const</span> T&)&gt; pred) const& -&gt; <a class="type-name" href="sus-collections-SplitNMut.html" title="sus::collections::SplitNMut">SplitNMut</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.splitn_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.splitn_mut">splitn_mut</a>(sus::usize n, <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;bool(<span class="const">const</span> T&)&gt; pred) const& -&gt; <a class="type-name" href="sus-collections-SplitNMut.html" title="sus::collections::SplitNMut">SplitNMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1782,7 +1782,7 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.swap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.swap">swap</a>(usize a, usize b) const& -&gt; void</div>
+              <div class="function-signature"><a name="method.swap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.swap">swap</a>(sus::usize a, sus::usize b) const& -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1796,7 +1796,7 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.swap_nonoverlapping"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.swap_nonoverlapping">swap_nonoverlapping</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, usize a, usize b) const& -&gt; void</div>
+              <div class="function-signature"><a name="method.swap_nonoverlapping"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.swap_nonoverlapping">swap_nonoverlapping</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize a, sus::usize b) const& -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1814,7 +1814,7 @@ element, Undefined Behaviour will occur.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.swap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.swap_unchecked">swap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, usize a, usize b) const& -&gt; void</div>
+              <div class="function-signature"><a name="method.swap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.swap_unchecked">swap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize a, sus::usize b) const& -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1842,7 +1842,7 @@ other overlaps with <code>*this</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.to_vec"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.to_vec">to_vec</a>() const& -&gt; Vec&lt;T&gt;<div class="requires">
+              <div class="function-signature"><a name="method.to_vec"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.to_vec">to_vec</a>() const& -&gt; sus::collections::Vec&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1857,7 +1857,7 @@ other overlaps with <code>*this</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.windows"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.windows">windows</a>(usize size) const& -&gt; <a class="type-name" href="sus-collections-Windows.html" title="sus::collections::Windows">Windows</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.windows"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.windows">windows</a>(sus::usize size) const& -&gt; <a class="type-name" href="sus-collections-Windows.html" title="sus::collections::Windows">Windows</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1870,7 +1870,7 @@ no values.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.windows_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.windows_mut">windows_mut</a>(usize size) const& -&gt; <a class="type-name" href="sus-collections-WindowsMut.html" title="sus::collections::WindowsMut">WindowsMut</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.windows_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.windows_mut">windows_mut</a>(sus::usize size) const& -&gt; <a class="type-name" href="sus-collections-WindowsMut.html" title="sus::collections::WindowsMut">WindowsMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1918,7 +1918,7 @@ no values.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator[].slicemut.index.usize"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.operator[].slicemut.index.usize">operator[]</a>(usize i) const& -&gt; T&</div>
+              <div class="function-signature"><a name="method.operator[].slicemut.index.usize"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.operator[].slicemut.index.usize">operator[]</a>(sus::usize i) const& -&gt; T&</div>
             </div>
           </div>
           <div class="description long">
@@ -1929,7 +1929,7 @@ no values.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator[].slice.index.range"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.operator[].slice.index.range">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;usize&gt; auto range) const& -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.operator[].slice.index.range"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-SliceMut.html#method.operator[].slice.index.range">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;sus::usize&gt; auto range) const& -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">

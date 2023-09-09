@@ -653,7 +653,7 @@ bits are lost.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_be_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.from_be_bytes">from_be_bytes</a>(<span class="const">const</span> Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
+              <div class="function-signature"><a name="method.from_be_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.from_be_bytes">from_be_bytes</a>(<span class="const">const</span> sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
             </div>
           </div>
           <div class="description long">
@@ -673,7 +673,7 @@ endian.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_le_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.from_le_bytes">from_le_bytes</a>(<span class="const">const</span> Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
+              <div class="function-signature"><a name="method.from_le_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.from_le_bytes">from_le_bytes</a>(<span class="const">const</span> sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
             </div>
           </div>
           <div class="description long">
@@ -683,7 +683,7 @@ endian.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_ne_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.from_ne_bytes">from_ne_bytes</a>(<span class="const">const</span> Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
+              <div class="function-signature"><a name="method.from_ne_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.from_ne_bytes">from_ne_bytes</a>(<span class="const">const</span> sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
             </div>
           </div>
           <div class="description long">
@@ -741,7 +741,7 @@ iterators over usize.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned">try_from</a>(U u) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -757,7 +757,7 @@ etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.primitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.primitive">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned.primitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.primitive">try_from</a>(U u) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -773,7 +773,7 @@ etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.signed"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed">try_from</a>(S s) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -789,7 +789,7 @@ etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.signed.primitive"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed.primitive">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed.primitive"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed.primitive">try_from</a>(S s) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -805,7 +805,7 @@ long, etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.signed.enum"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed.enum">try_from</a>(S s) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.try_from.signed.enum"></a><div class="template">template &lt;class S&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.signed.enum">try_from</a>(S s) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -820,7 +820,7 @@ long, etc).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.enum"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.enum">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned.enum"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.try_from.unsigned.enum">try_from</a>(U u) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -861,7 +861,7 @@ occurred.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.checked_add_signed"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.checked_add_signed">checked_add_signed</a>(isize rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt;</div>
+              <div class="function-signature"><a name="method.checked_add_signed"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.checked_add_signed">checked_add_signed</a>(sus::num::isize rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1138,7 +1138,7 @@ wrapped value is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.overflowing_add_signed"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.overflowing_add_signed">overflowing_add_signed</a>(isize rhs) const& -&gt; <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, bool&gt;</div>
+              <div class="function-signature"><a name="method.overflowing_add_signed"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.overflowing_add_signed">overflowing_add_signed</a>(sus::num::isize rhs) const& -&gt; <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, bool&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1350,7 +1350,7 @@ bounds instead of overflowing.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.saturating_add_signed"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.saturating_add_signed">saturating_add_signed</a>(isize rhs) const& -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
+              <div class="function-signature"><a name="method.saturating_add_signed"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.saturating_add_signed">saturating_add_signed</a>(sus::num::isize rhs) const& -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1411,7 +1411,7 @@ numeric bounds instead of overflowing.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.to_be_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.to_be_bytes">to_be_bytes</a>() const& -&gt; Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+              <div class="function-signature"><a name="method.to_be_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.to_be_bytes">to_be_bytes</a>() const& -&gt; sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1431,7 +1431,7 @@ big-endian (network) byte order.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.to_le_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.to_le_bytes">to_le_bytes</a>() const& -&gt; Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+              <div class="function-signature"><a name="method.to_le_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.to_le_bytes">to_le_bytes</a>() const& -&gt; sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1441,7 +1441,7 @@ little-endian byte order.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.to_ne_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.to_ne_bytes">to_ne_bytes</a>() const& -&gt; Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+              <div class="function-signature"><a name="method.to_ne_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.to_ne_bytes">to_ne_bytes</a>() const& -&gt; sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1524,7 +1524,7 @@ boundary of the type.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.wrapping_add_signed"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.wrapping_add_signed">wrapping_add_signed</a>(isize rhs) const& -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
+              <div class="function-signature"><a name="method.wrapping_add_signed"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-usize.html#method.wrapping_add_signed">wrapping_add_signed</a>(sus::num::isize rhs) const& -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1894,7 +1894,7 @@ concept.</p>
         </div>
         <div class="section-items">
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.primitive_value"></a>unsigned_type <a class="field-name" href="sus-num-usize.html#field.primitive_value">primitive_value</a></div>
+            <div class="item-name member-signature"><a name="field.primitive_value"></a>sus::num::__private::ptr_type::unsigned_type <a class="field-name" href="sus-num-usize.html#field.primitive_value">primitive_value</a></div>
             <div class="description long">
               <p>The inner primitive value. Prefer to cast to the desired primitive type,
 such as with <code>uint32_t{n}</code> for a numeric value <code>n</code>.</p>

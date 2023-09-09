@@ -533,7 +533,7 @@ other integer types.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.uptr.ctor.unsigned.nullptr"></a><div class="template">template &lt;class auto:1&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr">uptr</a>(same_as&lt;nullptr_t&gt; auto)</div>
+              <div class="function-signature"><a name="method.uptr.ctor.unsigned.nullptr"></a><div class="template">template &lt;class auto:1&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr">uptr</a>(std::same_as&lt;std::nullptr_t&gt; auto)</div>
             </div>
           </div>
           <div class="description long">
@@ -633,7 +633,7 @@ int, unsigned long, etc) with the same size as a pointer.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_be_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_be_bytes">from_be_bytes</a>(<span class="const">const</span> Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+              <div class="function-signature"><a name="method.from_be_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_be_bytes">from_be_bytes</a>(<span class="const">const</span> sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
           </div>
           <div class="description long">
@@ -653,7 +653,7 @@ endian.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_le_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_le_bytes">from_le_bytes</a>(<span class="const">const</span> Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+              <div class="function-signature"><a name="method.from_le_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_le_bytes">from_le_bytes</a>(<span class="const">const</span> sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
           </div>
           <div class="description long">
@@ -663,7 +663,7 @@ endian.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_ne_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_ne_bytes">from_ne_bytes</a>(<span class="const">const</span> Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+              <div class="function-signature"><a name="method.from_ne_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_ne_bytes">from_ne_bytes</a>(<span class="const">const</span> sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
           </div>
           <div class="description long">
@@ -721,7 +721,7 @@ iterators over uptr.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.ptr"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.ptr">try_from</a>(U* u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;</div>
+              <div class="function-signature"><a name="method.try_from.ptr"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.ptr">try_from</a>(U* u) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -731,7 +731,7 @@ iterators over uptr.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.unsigned">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.unsigned">try_from</a>(U u) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -748,7 +748,7 @@ etc) with the same size as a pointer.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.try_from.unsigned.primitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.unsigned.primitive">try_from</a>(U u) -&gt; Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.try_from.unsigned.primitive"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.try_from.unsigned.primitive">try_from</a>(U u) -&gt; sus::result::Result&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, <a class="type-name" href="sus-num-TryFromIntError.html" title="sus::num::TryFromIntError">TryFromIntError</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1321,7 +1321,7 @@ numeric bounds instead of overflowing.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.to_be_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.to_be_bytes">to_be_bytes</a>() const& -&gt; Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+              <div class="function-signature"><a name="method.to_be_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.to_be_bytes">to_be_bytes</a>() const& -&gt; sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1341,7 +1341,7 @@ big-endian (network) byte order.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.to_le_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.to_le_bytes">to_le_bytes</a>() const& -&gt; Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+              <div class="function-signature"><a name="method.to_le_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.to_le_bytes">to_le_bytes</a>() const& -&gt; sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1351,7 +1351,7 @@ little-endian byte order.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.to_ne_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.to_ne_bytes">to_ne_bytes</a>() const& -&gt; Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+              <div class="function-signature"><a name="method.to_ne_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.to_ne_bytes">to_ne_bytes</a>() const& -&gt; sus::collections::Array&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1644,7 +1644,7 @@ int64_t f = uptr();  // Does not compile.
               <div class="function-signature"><a name="method.operator%="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator%=">operator%=</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> r) & -&gt; void</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator%="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator%=">operator%=</a>(pointer_sized_type r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator%="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator%=">operator%=</a>(sus::num::__private::ptr_type::pointer_sized_type r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1656,7 +1656,7 @@ int64_t f = uptr();  // Does not compile.
               <div class="function-signature"><a name="method.operator&="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator&=">operator&=</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> r) & -&gt; void</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator&=">operator&=</a>(pointer_sized_type r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator&="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator&=">operator&=</a>(sus::num::__private::ptr_type::pointer_sized_type r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1669,7 +1669,7 @@ concept.</p>
               <div class="function-signature"><a name="method.operator*="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator*=">operator*=</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> r) & -&gt; void</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator*="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator*=">operator*=</a>(pointer_sized_type r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator*="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator*=">operator*=</a>(sus::num::__private::ptr_type::pointer_sized_type r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1681,7 +1681,7 @@ concept.</p>
               <div class="function-signature"><a name="method.operator+="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator+=">operator+=</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> r) & -&gt; void</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator+="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator+=">operator+=</a>(pointer_sized_type r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator+="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator+=">operator+=</a>(sus::num::__private::ptr_type::pointer_sized_type r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1693,7 +1693,7 @@ concept.</p>
               <div class="function-signature"><a name="method.operator-="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator-=">operator-=</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> r) & -&gt; void</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator-="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator-=">operator-=</a>(pointer_sized_type r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator-="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator-=">operator-=</a>(sus::num::__private::ptr_type::pointer_sized_type r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1705,7 +1705,7 @@ concept.</p>
               <div class="function-signature"><a name="method.operator/="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator/=">operator/=</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> r) & -&gt; void</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator/="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator/=">operator/=</a>(pointer_sized_type r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator/="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator/=">operator/=</a>(sus::num::__private::ptr_type::pointer_sized_type r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1732,7 +1732,7 @@ concept.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator=.assign.unsigned.nullptr"></a><div class="template">template &lt;class auto:1&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator=.assign.unsigned.nullptr">operator=</a>(same_as&lt;nullptr_t&gt; auto) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&</div>
+              <div class="function-signature"><a name="method.operator=.assign.unsigned.nullptr"></a><div class="template">template &lt;class auto:1&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator=.assign.unsigned.nullptr">operator=</a>(std::same_as&lt;std::nullptr_t&gt; auto) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&</div>
             </div>
           </div>
           <div class="description long">
@@ -1787,7 +1787,7 @@ from integer types on some compilers (like GCC 13).</p>
               <div class="function-signature"><a name="method.operator^="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator^=">operator^=</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> r) & -&gt; void</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator^="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator^=">operator^=</a>(pointer_sized_type r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator^="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator^=">operator^=</a>(sus::num::__private::ptr_type::pointer_sized_type r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1800,7 +1800,7 @@ concept.</p>
               <div class="function-signature"><a name="method.operator|="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator|=">operator|=</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> r) & -&gt; void</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator|="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator|=">operator|=</a>(pointer_sized_type r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator|="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator|=">operator|=</a>(sus::num::__private::ptr_type::pointer_sized_type r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1824,7 +1824,7 @@ concept.</p>
         </div>
         <div class="section-items">
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.primitive_value"></a>unsigned_type <a class="field-name" href="sus-num-uptr.html#field.primitive_value">primitive_value</a></div>
+            <div class="item-name member-signature"><a name="field.primitive_value"></a>sus::num::__private::ptr_type::unsigned_type <a class="field-name" href="sus-num-uptr.html#field.primitive_value">primitive_value</a></div>
             <div class="description long">
               <p>The inner primitive value. Prefer to cast to the desired primitive type,
 such as with <code>uint32_t{n}</code> for a numeric value <code>n</code>.</p>

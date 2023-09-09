@@ -319,7 +319,7 @@ as an implementation detail only.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.all"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.all">all</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(Item)&gt; auto f) -&gt; bool</div>
+              <div class="function-signature"><a name="method.all"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.all">all</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(sus::iter::IteratorBase::Item)&gt; auto f) -&gt; bool</div>
             </div>
           </div>
           <div class="description long">
@@ -333,7 +333,7 @@ from the predicate.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.any"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.any">any</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(Item)&gt; auto f) -&gt; bool</div>
+              <div class="function-signature"><a name="method.any"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.any">any</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(sus::iter::IteratorBase::Item)&gt; auto f) -&gt; bool</div>
             </div>
           </div>
           <div class="description long">
@@ -356,7 +356,7 @@ the predicate.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.by_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.by_ref">by_ref</a>() & -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.by_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.by_ref">by_ref</a>() & -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -368,7 +368,7 @@ ownership of the original iterator.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.chain"></a><div class="template">template &lt;class Other&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.chain">chain</a>(Other&& other) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto<div class="requires">
+              <div class="function-signature"><a name="method.chain"></a><div class="template">template &lt;class Other&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.chain">chain</a>(Other&& other) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -387,7 +387,7 @@ other kinds of iteration.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.cloned"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cloned">cloned</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;remove_cvref_t&lt;Item&gt;&gt; auto<div class="requires">
+              <div class="function-signature"><a name="method.cloned"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cloned">cloned</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;std::remove_cvref_t&lt;sus::iter::IteratorBase::Item&gt;&gt; auto<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -405,7 +405,7 @@ called or optimized away. So code should not depend on either.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cmp">cmp</a>(Other&& other) && -&gt; weak_ordering<div class="requires">
+              <div class="function-signature"><a name="method.cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cmp">cmp</a>(Other&& other) && -&gt; std::weak_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -421,7 +421,7 @@ compares the elements of this <code>Iterator</code> with those of another.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.cmp_by"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cmp_by">cmp_by</a>(Other&& other, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;weak_ordering(<span class="const">const</span> remove_reference_t&lt;Item&gt;&, <span class="const">const</span> remove_reference_t&lt;OtherItem&gt;&)&gt; auto cmp) && -&gt; weak_ordering<div class="requires">
+              <div class="function-signature"><a name="method.cmp_by"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cmp_by">cmp_by</a>(Other&& other, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&, <span class="const">const</span> std::remove_reference_t&lt;OtherItem&gt;&)&gt; auto cmp) && -&gt; std::weak_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -467,7 +467,7 @@ you will always need to pass it a type argument, such as:</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.collect_vec"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.collect_vec">collect_vec</a>() && -&gt; Vec&lt;ItemT&gt;</div>
+              <div class="function-signature"><a name="method.collect_vec"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.collect_vec">collect_vec</a>() && -&gt; sus::collections::Vec&lt;ItemT&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -479,7 +479,7 @@ avoid the need for specifying a template argument.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.copied"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.copied">copied</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;remove_cvref_t&lt;Item&gt;&gt; auto<div class="requires">
+              <div class="function-signature"><a name="method.copied"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.copied">copied</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;std::remove_cvref_t&lt;sus::iter::IteratorBase::Item&gt;&gt; auto<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -510,7 +510,7 @@ catch overflow and panic. To avoid panic, you may use a fold over
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.cycle"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cycle">cycle</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto<div class="requires">
+              <div class="function-signature"><a name="method.cycle"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cycle">cycle</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -580,7 +580,7 @@ another.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.eq_by"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class eq_fn:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.eq_by">eq_by</a>(Other&& other, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> remove_reference_t&lt;Item&gt;&, <span class="const">const</span> remove_reference_t&lt;OtherItem&gt;&)&gt; auto eq_fn) && -&gt; bool<div class="requires">
+              <div class="function-signature"><a name="method.eq_by"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class eq_fn:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.eq_by">eq_by</a>(Other&& other, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&, <span class="const">const</span> std::remove_reference_t&lt;OtherItem&gt;&)&gt; auto eq_fn) && -&gt; bool<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -595,7 +595,7 @@ another with respect to the specified equality function.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.filter"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.filter">filter</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.filter"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.filter">filter</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -620,7 +620,7 @@ iterator will yield only the elements for which the closure returns true.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.find"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.find">find</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto pred) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;</div>
+              <div class="function-signature"><a name="method.find"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.find">find</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto pred) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -765,7 +765,7 @@ loop to consume.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.fuse"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.fuse">fuse</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.fuse"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.fuse">fuse</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -833,7 +833,7 @@ greater than those of another.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.inspect"></a><div class="template">template &lt;class fn:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.inspect">inspect</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;void(<span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto fn) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.inspect"></a><div class="template">template &lt;class fn:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.inspect">inspect</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;void(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto fn) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -875,7 +875,7 @@ is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.is_sorted_by"></a><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.is_sorted_by">is_sorted_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;weak_ordering(<span class="const">const</span> remove_reference_t&lt;Item&gt;&, <span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto compare) -&gt; bool</div>
+              <div class="function-signature"><a name="method.is_sorted_by"></a><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.is_sorted_by">is_sorted_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&, <span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto compare) -&gt; bool</div>
             </div>
           </div>
           <div class="description long">
@@ -888,7 +888,7 @@ returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.last"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.last">last</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;</div>
+              <div class="function-signature"><a name="method.last"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.last">last</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -969,7 +969,7 @@ while it returns an Option with a value in it.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.max"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.max">max</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+              <div class="function-signature"><a name="method.max"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.max">max</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -995,7 +995,7 @@ incomparable. You can work around this by using <a href="sus::iter::IteratorBase
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.max_by"></a><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.max_by">max_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;weak_ordering(<span class="const">const</span> remove_reference_t&lt;Item&gt;&, <span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto compare) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;</div>
+              <div class="function-signature"><a name="method.max_by"></a><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.max_by">max_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&, <span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto compare) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1007,7 +1007,7 @@ the iterator is empty, None is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.max_by_key"></a><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;ItemT&gt; &&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.max_by_key">max_by_key</a>(KeyFn fn) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+              <div class="function-signature"><a name="method.max_by_key"></a><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;ItemT&gt; &&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.max_by_key">max_by_key</a>(KeyFn fn) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1026,7 +1026,7 @@ the iterator is empty, <code>None</code> is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.min"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.min">min</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+              <div class="function-signature"><a name="method.min"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.min">min</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1052,7 +1052,7 @@ incomparable. You can work around this by using <a href="sus::iter::IteratorBase
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.min_by"></a><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.min_by">min_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;weak_ordering(<span class="const">const</span> remove_reference_t&lt;Item&gt;&, <span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto compare) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;</div>
+              <div class="function-signature"><a name="method.min_by"></a><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.min_by">min_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&, <span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto compare) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1064,7 +1064,7 @@ the iterator is empty, None is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.min_by_key"></a><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;ItemT&gt; &&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.min_by_key">min_by_key</a>(KeyFn fn) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+              <div class="function-signature"><a name="method.min_by_key"></a><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;ItemT&gt; &&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.min_by_key">min_by_key</a>(KeyFn fn) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1083,7 +1083,7 @@ the iterator is empty, <code>None</code> is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.moved"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.moved">moved</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;remove_cvref_t&lt;Item&gt;&gt; auto<div class="requires">
+              <div class="function-signature"><a name="method.moved"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.moved">moved</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;std::remove_cvref_t&lt;sus::iter::IteratorBase::Item&gt;&gt; auto<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1116,7 +1116,7 @@ another.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.nth"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.nth">nth</a>(usize n) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;</div>
+              <div class="function-signature"><a name="method.nth"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.nth">nth</a>(sus::usize n) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1134,7 +1134,7 @@ iterator and return <code>None</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.nth_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.nth_back">nth_back</a>(usize n) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+              <div class="function-signature"><a name="method.nth_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.nth_back">nth_back</a>(sus::usize n) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1158,7 +1158,7 @@ iterator and return <code>None</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.partial_cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.partial_cmp">partial_cmp</a>(Other&& other) && -&gt; partial_ordering<div class="requires">
+              <div class="function-signature"><a name="method.partial_cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.partial_cmp">partial_cmp</a>(Other&& other) && -&gt; std::partial_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1179,7 +1179,7 @@ result in <code>std::partial_ordering::unordered</code> when compared.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.partial_cmp_by"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.partial_cmp_by">partial_cmp_by</a>(Other&& other, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;partial_ordering(<span class="const">const</span> remove_reference_t&lt;Item&gt;&, <span class="const">const</span> remove_reference_t&lt;OtherItem&gt;&)&gt; auto cmp) && -&gt; partial_ordering<div class="requires">
+              <div class="function-signature"><a name="method.partial_cmp_by"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.partial_cmp_by">partial_cmp_by</a>(Other&& other, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::partial_ordering(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&, <span class="const">const</span> std::remove_reference_t&lt;OtherItem&gt;&)&gt; auto cmp) && -&gt; std::partial_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1195,7 +1195,7 @@ respect to the specified comparison function.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.partition"></a><div class="template">template &lt;class B, class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.partition">partition</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;B, B&gt;<div class="requires">
+              <div class="function-signature"><a name="method.partition"></a><div class="template">template &lt;class B, class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.partition">partition</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;B, B&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1213,7 +1213,7 @@ returned <code>true</code>, and all of the elements for which it returned <code>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.peekable"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.peekable">peekable</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.peekable"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.peekable">peekable</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -1231,7 +1231,7 @@ method will occur.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.position"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.position">position</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(Item&&)&gt; auto pred) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;usize&gt;</div>
+              <div class="function-signature"><a name="method.position"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.position">position</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(sus::iter::IteratorBase::Item&&)&gt; auto pred) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::usize&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1275,7 +1275,7 @@ overflow without a panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.range"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.range">range</a>() && -&gt; IteratorRange&lt;Iter&gt;</div>
+              <div class="function-signature"><a name="method.range"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.range">range</a>() && -&gt; sus::iter::IteratorRange&lt;Iter&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1290,7 +1290,7 @@ default.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.reduce"></a><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &, ItemT &&, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.reduce">reduce</a>(F f) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+              <div class="function-signature"><a name="method.reduce"></a><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &, ItemT &&, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.reduce">reduce</a>(F f) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1326,7 +1326,7 @@ sus::check(out.as_value() == 2 + 3 + 4);
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rev"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.rev">rev</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto<div class="requires">
+              <div class="function-signature"><a name="method.rev"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.rev">rev</a>() && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1344,7 +1344,7 @@ iterator will instead iterate from back to front.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rfind"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.rfind">rfind</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto pred) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+              <div class="function-signature"><a name="method.rfind"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.rfind">rfind</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto pred) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::IteratorBase::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1401,7 +1401,7 @@ affect the final result. For a left-associative version of <code>rfold()</code>,
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rposition"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.rposition">rposition</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(Item&&)&gt; auto pred) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;usize&gt;<div class="requires">
+              <div class="function-signature"><a name="method.rposition"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.rposition">rposition</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(sus::iter::IteratorBase::Item&&)&gt; auto pred) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::usize&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1456,7 +1456,7 @@ next method. Thus the closure can return <code>Some(value)</code> to yield value
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.skip"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.skip">skip</a>(usize n) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.skip"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.skip">skip</a>(sus::usize n) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -1469,7 +1469,7 @@ too short, then the returned iterator is empty.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.skip_while"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.skip_while">skip_while</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.skip_while"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.skip_while">skip_while</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -1482,7 +1482,7 @@ remaining elements are all yielded.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.step_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.step_by">step_by</a>(usize step) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.step_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.step_by">step_by</a>(sus::usize step) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -1500,7 +1500,7 @@ of 1 returns every element.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.strong_cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.strong_cmp">strong_cmp</a>(Other&& other) && -&gt; strong_ordering<div class="requires">
+              <div class="function-signature"><a name="method.strong_cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.strong_cmp">strong_cmp</a>(Other&& other) && -&gt; std::strong_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1523,7 +1523,7 @@ determined, the evaluation stops and a result is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.strong_cmp_by"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.strong_cmp_by">strong_cmp_by</a>(Other&& other, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;strong_ordering(<span class="const">const</span> remove_reference_t&lt;Item&gt;&, <span class="const">const</span> remove_reference_t&lt;OtherItem&gt;&)&gt; auto cmp) && -&gt; strong_ordering<div class="requires">
+              <div class="function-signature"><a name="method.strong_cmp_by"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item, class cmp:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.strong_cmp_by">strong_cmp_by</a>(Other&& other, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::strong_ordering(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&, <span class="const">const</span> std::remove_reference_t&lt;OtherItem&gt;&)&gt; auto cmp) && -&gt; std::strong_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1563,7 +1563,7 @@ without a panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.take"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.take">take</a>(usize n) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.take"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.take">take</a>(sus::usize n) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">
@@ -1578,7 +1578,7 @@ the original iterator.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.take_while"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.take_while">take_while</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> remove_reference_t&lt;Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto</div>
+              <div class="function-signature"><a name="method.take_while"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.take_while">take_while</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;sus::iter::IteratorBase::Item&gt; auto</div>
             </div>
           </div>
           <div class="description long">

@@ -141,10 +141,10 @@
               <div class="function-signature"><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(<a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;&&)</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(usize step, InnerSizedIter&& next_iter)</div>
+              <div class="function-signature"><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(sus::usize step, InnerSizedIter&& next_iter)</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(Clone, usize step, InnerSizedIter&& next_iter, bool first_take)</div>
+              <div class="function-signature"><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(sus::iter::StepBy::Clone, sus::usize step, InnerSizedIter&& next_iter, bool first_take)</div>
             </div>
           </div>
           <div class="description long">
@@ -170,7 +170,7 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.exact_size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; usize<div class="requires">
+              <div class="function-signature"><a name="method.exact_size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; sus::usize<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -182,14 +182,14 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next">next</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;</div>
+              <div class="function-signature"><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next">next</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::StepBy::Item&gt;</div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next_back">next_back</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+              <div class="function-signature"><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next_back">next_back</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::StepBy::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -202,7 +202,7 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.next_back_index"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next_back_index">next_back_index</a>() const -&gt; usize<div class="requires">
+              <div class="function-signature"><a name="method.next_back_index"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next_back_index">next_back_index</a>() const -&gt; sus::usize<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -223,7 +223,7 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.trusted_len"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.trusted_len">trusted_len</a>() const -&gt; TrustedLenMarker<div class="requires">
+              <div class="function-signature"><a name="method.trusted_len"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.trusted_len">trusted_len</a>() const -&gt; sus::iter::__private::TrustedLenMarker<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -267,7 +267,7 @@
             </div>
           </div>
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.step_"></a>usize <a class="field-name" href="sus-iter-StepBy.html#field.step_">step_</a></div>
+            <div class="item-name member-signature"><a name="field.step_"></a>sus::usize <a class="field-name" href="sus-iter-StepBy.html#field.step_">step_</a></div>
             <div class="description long">
             </div>
           </div>
