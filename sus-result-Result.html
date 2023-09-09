@@ -186,7 +186,7 @@
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Result.ctor.ok"></a><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(<a class="type-name" href="sus-result-OkVoid.html" title="sus::result::OkVoid">OkVoid</a> )<div class="requires">
+              <div class="function-signature"><a name="method.Result.ctor.ok"></a><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(<a class="type-name" href="sus-result-OkVoid.html" title="sus::result::OkVoid">OkVoid</a>)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -240,7 +240,7 @@ convert to a reference without constructing a temporary, use an unsafe
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Result.copy"></a><a class="function-name" href="sus-result-Result.html#method.Result.copy">Result</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& )<div class="requires">
+              <div class="function-signature"><a name="method.Result.copy"></a><a class="function-name" href="sus-result-Result.html#method.Result.copy">Result</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -262,7 +262,7 @@ also be trivially copy-constructed.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Result.move"></a><a class="function-name" href="sus-result-Result.html#method.Result.move">Result</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&& )<div class="requires">
+              <div class="function-signature"><a name="method.Result.move"></a><a class="function-name" href="sus-result-Result.html#method.Result.move">Result</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -286,7 +286,7 @@ not be used thereafter without reinitializing it.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.from_product">from_product</a>(Iter&& it) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt; <div class="requires">
+              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.from_product">from_product</a>(Iter&& it) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -308,7 +308,7 @@ which also satisfies <code>sus::iter::Product&lt;T, T&gt;</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_sum"></a><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.from_sum">from_sum</a>(Iter&& it) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt; <div class="requires">
+              <div class="function-signature"><a name="method.from_sum"></a><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.from_sum">from_sum</a>(Iter&& it) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -330,7 +330,7 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.with_err"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.with_err">with_err</a>(<span class="const">const</span> E& e) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt; <div class="requires">
+              <div class="function-signature"><a name="method.with_err"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.with_err">with_err</a>(<span class="const">const</span> E& e) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -338,7 +338,7 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.with_err"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.with_err">with_err</a>(E&& e) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt; <div class="requires">
+              <div class="function-signature"><a name="method.with_err"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.with_err">with_err</a>(E&& e) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -359,7 +359,7 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn op) && -&gt; ReturnOnce&lt;AndFn, TUnlessVoid&&&gt; <div class="requires">
+              <div class="function-signature"><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn op) && -&gt; ReturnOnce&lt;AndFn, TUnlessVoid&&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -377,7 +377,7 @@ self.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_err">as_err</a>() const& -&gt; <span class="const">const</span> remove_reference_t&lt;E&gt;& </div>
+              <div class="function-signature"><a name="method.as_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_err">as_err</a>() const& -&gt; <span class="const">const</span> remove_reference_t&lt;E&gt;&</div>
             </div>
           </div>
           <div class="description long">
@@ -388,7 +388,7 @@ self.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value">as_value</a>() const& -&gt; <span class="const">const</span> remove_reference_t&lt;TUnlessVoid&gt;& <div class="requires">
+              <div class="function-signature"><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value">as_value</a>() const& -&gt; <span class="const">const</span> remove_reference_t&lt;TUnlessVoid&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -404,7 +404,7 @@ self.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_value_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value_mut">as_value_mut</a>() & -&gt; remove_reference_t&lt;TUnlessVoid&gt;& <div class="requires">
+              <div class="function-signature"><a name="method.as_value_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value_mut">as_value_mut</a>() & -&gt; remove_reference_t&lt;TUnlessVoid&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -420,7 +420,7 @@ self.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt; <div class="requires">
+              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -434,7 +434,7 @@ self.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& source) & -&gt; void <div class="requires">
+              <div class="function-signature"><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& source) & -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -448,7 +448,7 @@ self.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.err">err</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;E&gt; </div>
+              <div class="function-signature"><a name="method.err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.err">err</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;E&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -459,7 +459,7 @@ success value, if any.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.expect"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.expect">expect</a>(<span class="const">const</span> char* msg) && -&gt; T </div>
+              <div class="function-signature"><a name="method.expect"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.expect">expect</a>(<span class="const">const</span> char* msg) && -&gt; T</div>
             </div>
           </div>
           <div class="description long">
@@ -474,7 +474,7 @@ message, and the content of the Err.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.into_iter">into_iter</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;T&gt; <div class="requires">
+              <div class="function-signature"><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.into_iter">into_iter</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -486,7 +486,7 @@ message, and the content of the Err.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.is_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.is_err">is_err</a>() const& -&gt; bool </div>
+              <div class="function-signature"><a name="method.is_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.is_err">is_err</a>() const& -&gt; bool</div>
             </div>
           </div>
           <div class="description long">
@@ -495,7 +495,7 @@ message, and the content of the Err.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.is_ok"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.is_ok">is_ok</a>() const& -&gt; bool </div>
+              <div class="function-signature"><a name="method.is_ok"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.is_ok">is_ok</a>() const& -&gt; bool</div>
             </div>
           </div>
           <div class="description long">
@@ -504,7 +504,7 @@ message, and the content of the Err.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;<span class="const">const</span> remove_reference_t&lt;TUnlessVoid&gt;&&gt; <div class="requires">
+              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;<span class="const">const</span> remove_reference_t&lt;TUnlessVoid&gt;&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -516,7 +516,7 @@ message, and the content of the Err.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter_mut">iter_mut</a>() & -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;TUnlessVoid&&gt; <div class="requires">
+              <div class="function-signature"><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter_mut">iter_mut</a>() & -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;TUnlessVoid&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -528,7 +528,7 @@ message, and the content of the Err.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.ok"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.ok">ok</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt; <div class="requires">
+              <div class="function-signature"><a name="method.ok"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.ok">ok</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -544,7 +544,7 @@ error, if any.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.unwrap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap">unwrap</a>() && -&gt; T </div>
+              <div class="function-signature"><a name="method.unwrap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap">unwrap</a>() && -&gt; T</div>
             </div>
           </div>
           <div class="description long">
@@ -559,7 +559,7 @@ explicitly, or call <code>unwrap_or()</code>, <code>unwrap_or_else()</code>, or
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.unwrap_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_err">unwrap_err</a>() && -&gt; E </div>
+              <div class="function-signature"><a name="method.unwrap_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_err">unwrap_err</a>() && -&gt; E</div>
             </div>
           </div>
           <div class="description long">
@@ -570,7 +570,7 @@ explicitly, or call <code>unwrap_or()</code>, <code>unwrap_or_else()</code>, or
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.unwrap_err_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_err_unchecked">unwrap_err_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> ) && -&gt; E </div>
+              <div class="function-signature"><a name="method.unwrap_err_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_err_unchecked">unwrap_err_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; E</div>
             </div>
           </div>
           <div class="description long">
@@ -583,7 +583,7 @@ Behavior.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.unwrap_or_default"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_or_default">unwrap_or_default</a>() && -&gt; T <div class="requires">
+              <div class="function-signature"><a name="method.unwrap_or_default"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_or_default">unwrap_or_default</a>() && -&gt; T<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -600,7 +600,7 @@ Otherwise the default value of the Ok value's type is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.unwrap_or_else"></a><div class="template">template &lt;class F&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_or_else">unwrap_or_else</a>(F&& op) && -&gt; T <div class="requires">
+              <div class="function-signature"><a name="method.unwrap_or_else"></a><div class="template">template &lt;class F&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_or_else">unwrap_or_else</a>(F&& op) && -&gt; T<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -623,7 +623,7 @@ sus::check(sus::move(err).unwrap_or_else(conv) == -1);
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.unwrap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> ) && -&gt; T </div>
+              <div class="function-signature"><a name="method.unwrap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; T</div>
             </div>
           </div>
           <div class="description long">
@@ -671,7 +671,7 @@ switch (x) {
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& <div class="requires">
+              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -693,7 +693,7 @@ also be trivially copy-assigned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& <div class="requires">
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>

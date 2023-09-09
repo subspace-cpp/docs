@@ -200,7 +200,7 @@ since otherwise an extra invoker call would be introduced.</p>
               <div class="function-signature"><a name="method.FnMutRef"></a><a class="function-name" href="sus-fn-FnMutRef.html#method.FnMutRef">FnMutRef</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;&& o)</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.FnMutRef"></a><a class="function-name" href="sus-fn-FnMutRef.html#method.FnMutRef">FnMutRef</a>(<span class="const">const</span> <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;& )<div class="deleted">
+              <div class="function-signature"><a name="method.FnMutRef"></a><a class="function-name" href="sus-fn-FnMutRef.html#method.FnMutRef">FnMutRef</a>(<span class="const">const</span> <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;&)<div class="deleted">
                   deleted
                 </div></div>
             </div>
@@ -209,7 +209,7 @@ since otherwise an extra invoker call would be introduced.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.from">from</a>(F&& object) -&gt; auto <div class="requires">
+              <div class="function-signature"><a name="method.from"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.from">from</a>(F&& object) -&gt; auto<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -233,7 +233,7 @@ objects (lambdas) that are compatible with its signature.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt; </div>
+              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -249,7 +249,7 @@ objects (lambdas) that are compatible with its signature.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator().call.mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.operator().call.mut">operator()</a>(CallArgs... args) & -&gt; R </div>
+              <div class="function-signature"><a name="method.operator().call.mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.operator().call.mut">operator()</a>(CallArgs... args) & -&gt; R</div>
             </div>
           </div>
           <div class="description long">
@@ -258,7 +258,7 @@ objects (lambdas) that are compatible with its signature.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator().call.rvalue"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.operator().call.rvalue">operator()</a>(CallArgs... args) && -&gt; R </div>
+              <div class="function-signature"><a name="method.operator().call.rvalue"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.operator().call.rvalue">operator()</a>(CallArgs... args) && -&gt; R</div>
             </div>
           </div>
           <div class="description long">
@@ -267,10 +267,10 @@ objects (lambdas) that are compatible with its signature.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.operator=">operator=</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;&& o) -&gt; <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;& </div>
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.operator=">operator=</a>(<a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;&& o) -&gt; <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;&</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;& ) -&gt; <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;& <div class="deleted">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-FnMutRef.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;&) -&gt; <a class="type-name" href="sus-fn-FnMutRef.html" title="sus::fn::FnMutRef">FnMutRef</a>&lt;R(CallArgs...)&gt;&<div class="deleted">
                   deleted
                 </div></div>
             </div>

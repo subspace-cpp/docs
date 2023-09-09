@@ -212,7 +212,7 @@ the constructor.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&& )<div class="requires">
+              <div class="function-signature"><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -225,7 +225,7 @@ the constructor.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.with_initializer"></a><div class="template">template &lt;class f:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_initializer">with_initializer</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;T()&gt; auto f) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt; </div>
+              <div class="function-signature"><a name="method.with_initializer"></a><div class="template">template &lt;class f:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_initializer">with_initializer</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;T()&gt; auto f) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -235,7 +235,7 @@ from the given closure.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.with_value"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_value">with_value</a>(<span class="const">const</span> U& t) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt; <div class="requires">
+              <div class="function-signature"><a name="method.with_value"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_value">with_value</a>(<span class="const">const</span> U& t) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -261,7 +261,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; T* <div class="requires">
+              <div class="function-signature"><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; T*<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -275,14 +275,14 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_mut_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_mut_slice">as_mut_slice</a>() & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt; </div>
+              <div class="function-signature"><a name="method.as_mut_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_mut_slice">as_mut_slice</a>() & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> T* <div class="requires">
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> T*<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -296,14 +296,14 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.as_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_slice">as_slice</a>() const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt; </div>
+              <div class="function-signature"><a name="method.as_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_slice">as_slice</a>() const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt; <div class="requires">
+              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -315,7 +315,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;& source) & -&gt; void <div class="requires">
+              <div class="function-signature"><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;& source) & -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -327,7 +327,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get">get</a>(usize i) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt; <div class="requires">
+              <div class="function-signature"><a name="method.get"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get">get</a>(usize i) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -341,7 +341,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_mut">get_mut</a>(usize i) & -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&&gt; <div class="requires">
+              <div class="function-signature"><a name="method.get_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_mut">get_mut</a>(usize i) & -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -355,7 +355,7 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> , usize i) const& -&gt; <span class="const">const</span> T& <div class="requires">
+              <div class="function-signature"><a name="method.get_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, usize i) const& -&gt; <span class="const">const</span> T&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -372,7 +372,7 @@ Behaviour results.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get_unchecked_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a> , usize i) & -&gt; T& <div class="requires">
+              <div class="function-signature"><a name="method.get_unchecked_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, usize i) & -&gt; T&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -389,7 +389,7 @@ Behaviour results.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.into_iter"></a><div class="template">template &lt;int &... , class U = T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.into_iter">into_iter</a>() && -&gt; <a class="type-name" href="sus-collections-ArrayIntoIter.html" title="sus::collections::ArrayIntoIter">ArrayIntoIter</a>&lt;U, N&gt; <div class="requires">
+              <div class="function-signature"><a name="method.into_iter"></a><div class="template">template &lt;int &... , class U = T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.into_iter">into_iter</a>() && -&gt; <a class="type-name" href="sus-collections-ArrayIntoIter.html" title="sus::collections::ArrayIntoIter">ArrayIntoIter</a>&lt;U, N&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -404,7 +404,7 @@ each element in the same order they appear in the array.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-collections-SliceIter.html" title="sus::collections::SliceIter">SliceIter</a>&lt;<span class="const">const</span> T&&gt; </div>
+              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-collections-SliceIter.html" title="sus::collections::SliceIter">SliceIter</a>&lt;<span class="const">const</span> T&&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -415,7 +415,7 @@ each element.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter_mut">iter_mut</a>() & -&gt; <a class="type-name" href="sus-collections-SliceIterMut.html" title="sus::collections::SliceIterMut">SliceIterMut</a>&lt;T&&gt; </div>
+              <div class="function-signature"><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter_mut">iter_mut</a>() & -&gt; <a class="type-name" href="sus-collections-SliceIterMut.html" title="sus::collections::SliceIterMut">SliceIterMut</a>&lt;T&&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -426,7 +426,7 @@ each element.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.len"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.len">len</a>() const& -&gt; usize </div>
+              <div class="function-signature"><a name="method.len"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.len">len</a>() const& -&gt; usize</div>
             </div>
           </div>
           <div class="description long">
@@ -435,7 +435,7 @@ each element.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.map"></a><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.map">map</a>(MapFn f) && -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;ReturnOnce&lt;MapFn, T&&&gt;, N&gt; <div class="requires">
+              <div class="function-signature"><a name="method.map"></a><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.map">map</a>(MapFn f) && -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;ReturnOnce&lt;MapFn, T&&&gt;, N&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -491,7 +491,7 @@ array to a new type with the given function.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&& ) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;& <div class="requires">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -504,7 +504,7 @@ array to a new type with the given function.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator=="></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;U, N&gt;& r) const& -&gt; bool <div class="requires">
+              <div class="function-signature"><a name="method.operator=="></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;U, N&gt;& r) const& -&gt; bool<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -519,7 +519,7 @@ array to a new type with the given function.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(usize i) const& -&gt; <span class="const">const</span> T& </div>
+              <div class="function-signature"><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(usize i) const& -&gt; <span class="const">const</span> T&</div>
             </div>
           </div>
           <div class="description long">
