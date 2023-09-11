@@ -2010,13 +2010,13 @@ rhs, wrapping around at the boundary of the type.</p>
             <p>Conversion from the numeric type to a C++ primitive type.</p>
 <p>This converts to signed primitives which are at least as large as the
 <a href="sus-num-i32.html"><code>i32</code></a>.</p>
-<pre><code>auto d = int32_t{3_i32};  // Compiles.
-auto e = int32_t(3_i32);  // Compiles.
-int32_t f = 3_i32;  // Compiles.
+<pre><code>auto d = int32_t{3_i32};  <span class="comment">// Compiles.</span>
+auto e = int32_t(3_i32);  <span class="comment">// Compiles.</span>
+int32_t f = 3_i32;  <span class="comment">// Compiles.</span>
 
-auto d = uint16_t{3_i32};  // Does not compile.
-auto e = uint16_t(3_i32);  // Does not compile.
-uint16_t f = 3_i32;  // Does not compile.
+auto d = uint16_t{3_i32};  <span class="comment">// Does not compile.</span>
+auto e = uint16_t(3_i32);  <span class="comment">// Does not compile.</span>
+uint16_t f = 3_i32;  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as

@@ -74,11 +74,13 @@
         </div>
         <div class="description long">
           <p>Attempts to convert from the given value to a <code>ToType</code>.</p>
-<p>Unlike <code>into()</code>, this function can not use type deduction to determine the
-receiving type as it needs to determine the Result type and allow the caller
-the chance to handle the error condition.</p>
+<p>Unlike <a href="sus-construct-fn.into.html"><code>into()</code></a>, this function can not use type
+deduction to determine the
+receiving type as it needs to determine the <a href="sus-result-Result.html"><code>Result</code></a>
+type and allow the caller the chance to handle the error condition.</p>
 <p>The <code>TryFrom</code> concept requires a <code>try_from()</code> method that returns a
-<code>Result</code>. That <code>Result</code> will be the return type of this function.</p>
+<a href="sus-result-Result.html"><code>Result</code></a>. That <a href="sus-result-Result.html"><code>Result</code></a>
+will be the return type of this function.</p>
 <h1><a name="example" href="#example">Example</a></h1>
 <pre><code>auto valid = sus::try_into&lt;u8&gt;(123_i32).unwrap_or_default();
 sus::check(valid == 123);

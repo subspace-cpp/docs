@@ -289,6 +289,11 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>() && -&gt; <span class="const">const</span> T*<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns a const pointer to the first element in the array.</p>
@@ -297,6 +302,11 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.as_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_slice">as_slice</a>() const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_slice">as_slice</a>() && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
+                  deleted
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -334,6 +344,11 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                   <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.get"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get">get</a>(sus::usize i) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns a const reference to the element at index <code>i</code>.</p>
@@ -360,6 +375,11 @@ use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.get_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize i) && -&gt; <span class="const">const</span> T&<div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>
@@ -405,6 +425,11 @@ each element in the same order they appear in the array.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-collections-SliceIter.html" title="sus::collections::SliceIter">SliceIter</a>&lt;<span class="const">const</span> T&&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter">iter</a>() && -&gt; <a class="type-name" href="sus-collections-SliceIter.html" title="sus::collections::SliceIter">SliceIter</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
+                  deleted
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -467,6 +492,19 @@ array to a new type with the given function.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &&<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
           </div>
@@ -520,6 +558,14 @@ array to a new type with the given function.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) const& -&gt; <span class="const">const</span> T&</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) && -&gt; <span class="const">const</span> T&<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) & -&gt; T&</div>
             </div>
           </div>
           <div class="description long">

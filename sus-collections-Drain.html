@@ -117,10 +117,10 @@ pointing, but that Vec may have been created <em>after</em> the Drain object, si
 it was not created from that Vec. Then on destruction, Drain will point to a
 destroyed Vec:</p>
 <pre><code>auto v1 = Vec&lt;i32&gt;(1);
-auto d1 = v1.drain();  // Points at v1.
+auto d1 = v1.drain();  <span class="comment">// Points at v1.</span>
 auto v2 = Vec&lt;i32&gt;(1);
-auto d2 = v2.drain();  // Points at v2.
-d1 = sus::move(d2);  // Points at v2, is destroyed after v2.
+auto d2 = v2.drain();  <span class="comment">// Points at v2.</span>
+d1 = sus::move(d2);  <span class="comment">// Points at v2, is destroyed after v2.</span>
 </code></pre>
 <p>While Drain is satisfies <a href="sus-mem-Move.html"><code>Move</code></a> in order to be
 move-constructed, it will panic on move-assignment.</p>

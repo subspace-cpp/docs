@@ -1618,13 +1618,13 @@ boundary of the type.</p>
 types. Note that the C++ standard library may alias <code>uintptr_t</code> with
 <code>uint32_t</code> or <code>uint64_t</code> which would then allow that specific conversion as
 well.</p>
-<pre><code>auto d = uintptr_t{uptr()};  // Compiles.
-auto e = uintptr_t(uptr());  // Compiles.
-uintptr_t f = uptr();  // Compiles.
+<pre><code>auto d = uintptr_t{uptr()};  <span class="comment">// Compiles.</span>
+auto e = uintptr_t(uptr());  <span class="comment">// Compiles.</span>
+uintptr_t f = uptr();  <span class="comment">// Compiles.</span>
 
-auto d = int64_t{uptr()};  // Does not compile.
-auto e = int64_t(uptr());  // Does not compile.
-int64_t f = uptr();  // Does not compile.
+auto d = int64_t{uptr()};  <span class="comment">// Does not compile.</span>
+auto e = int64_t(uptr());  <span class="comment">// Does not compile.</span>
+int64_t f = uptr();  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as

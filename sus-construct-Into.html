@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::construct::Into - Subspace</title>
   <meta property="og:title" content="sus::construct::Into - Subspace"></meta>
-  <meta name="description" content="A concept that declares FromType can be converted to ToType through the From concept or through an identity transformation."></meta>
-  <meta property="og:description" content="A concept that declares FromType can be converted to ToType through the From concept or through an identity transformation."></meta>
+  <meta name="description" content="A concept that declares FromType can be converted to ToType."></meta>
+  <meta property="og:description" content="A concept that declares FromType can be converted to ToType."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -80,27 +80,32 @@
           </div>
         </div>
         <div class="description long">
-          <p>A concept that declares <code>FromType</code> can be converted to <code>ToType</code> through the
-<a href="sus-construct-From.html"><code>From</code></a> concept or through an identity
-transformation.</p>
-<p>When true, <code>ToType::from(FromType)</code> can be used to construct <code>ToType</code>,
-or <code>ToType</code> is the same as <code>FromType</code>.</p>
-<p>This is the inverse of the <a href="sus-construct-From.html"><code>From</code></a> concept, meant to
-be used on methods that want to receive any type and which will explicitly
-convert what they are given type.</p>
+          <p>A concept that declares <code>FromType</code> can be converted to <code>ToType</code>.</p>
+<p>When true, the conversion can be done in one of three ways:</p>
+<ul>
+<li><code>ToType::from(FromType)</code> can be used to construct <code>ToType</code>, which is the
+preferred way to write conversions. It avoids any accidental conversions
+as it does not have an ambiguous appearance with a copy or move.</li>
+<li><code>ToType</code> is the same as <code>FromType</code>, in which case a reference to the
+object is passed along, and no construction or conversion happens.</li>
+</ul>
+<p>This is the inverse direction from the <a href="sus-construct-From.html"><code>From</code></a>
+concept, while also a broader generalization. It is meant to
+be used on methods that want to receive any type that can explicitly be
+converted to a specific type.</p>
 <p>This concept is not implementable directly, as it's satisfied for <code>T</code> by
 implementing the <a href="sus-construct-From.html"><code>From&lt;T&gt;</code></a> concept on a different
-type. It is only possible to satisfy this concept for <code>ToType</code> that is not a
+type.
+It is only possible to satisfy this concept for a <code>ToType</code> that is not a
 reference, as it needs to be able to construct <code>ToType</code>.</p>
 <h1><a name="templates" href="#templates">Templates</a></h1>
 <p>To receive <a href="sus-construct-fn.into.html"><code>into()</code></a> correctly for a templated
 function argument:</p>
 <ul>
-<li>Avoid
-<a href="https://en.cppreference.com/w/cpp/concepts/same_as"><code>std::same_as&lt;T&gt;</code></a>, use
-<a href="https://en.cppreference.com/w/cpp/concepts/convertible_to"><code>std::convertible_to&lt;T&gt;</code></a>
-instead, as this will
-accept the marker type returned from <a href="sus-construct-fn.into.html">into</a>.</li>
+<li>Avoid <a href="https://en.cppreference.com/w/cpp/concepts/same_as"><code>std::same_as&lt;T&gt;</code></a>, use
+<a href="https://en.cppreference.com/w/cpp/concepts/convertible_to"><code>std::convertible_to&lt;T&gt;</code></a> instead, as
+this will accept the marker type returned from
+<a href="sus-construct-fn.into.html">into</a>.</li>
 <li>If the argument is a fixed dependent type, like the following:<pre><code>template &lt;class T, class In = Foo&lt;T&gt;&gt;
 void f(In i) {}
 </code></pre>
@@ -117,7 +122,7 @@ using <a href="sus-construct-fn.into.html"><code>into</code></a>.</li>
 <a href="sus-construct-From.html"><code>From</code></a> with <code>from()</code> being a templated method
 templated on a <code>size_t</code> template parameter which represents the size of the
 incoming array. For example:</p>
-<pre><code>// sus::construct::Into&lt;Slice&lt;T&gt;, T[N]&gt; trait.
+<pre><code><span class="comment">// sus::construct::Into&lt;Slice&lt;T&gt;, T[N]&gt; trait.</span>
 template &lt;size_t N&gt;
 static constexpr Slice from(T (&amp;data)[N]) noexcept {
   return Slice(data, N);

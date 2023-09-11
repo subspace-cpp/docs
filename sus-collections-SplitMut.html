@@ -75,7 +75,7 @@
           <a class="type-name" href="#">SplitMut</a>
         </div>
         <div class="type-signature">
-          <pre class="template">template &lt;class ItemT&gt;</pre>
+          <pre class="template">template &lt;class ItemT, class Pred&gt;</pre>
           <span class="class">
             class
           </span>
@@ -85,6 +85,12 @@
           <span class="final">
             final
           </span>
+          <div class="requires">
+            <span class="requires-keyword keyword">
+              requires
+            </span>
+            <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const ItemT &)&gt;</pre></div>
+          </div>
           <div class="record-body">
             { ... };
           </div>

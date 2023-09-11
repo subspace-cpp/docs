@@ -135,6 +135,8 @@ that knows the precise type. At times this is convenient but holding
 different kinds of errors in a <a href="sus-result-Result.html"><code>Result</code></a> requires a
 single type, as does passing error types through virtual methods or dylib
 ABI boundaries.</p>
+<p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
+<a href="sus-error-Error.html"><code>Error</code></a> types.</p>
 <h2><a name="opaque-erasure" href="#opaque-erasure">Opaque erasure</a></h2>
 <p>When an application just wants to return an error without exposing the
 actual type behind it, use the <a href="sus-error-DynError.html"><code>DynError</code></a> type.
@@ -147,7 +149,7 @@ satisfies <a href="sus-construct-Into.html"><code>Into</code></a><code>&lt;</cod
 means the result can be constructed by <code>sus::err(sus::into(error))</code> for any
 <code>error</code> that satisfies <a href="sus-error-Error.html"><code>Error</code></a>.</p>
 <p>This is similar to
-<code>&amp;dyn Error</code> when working with the Rust
+<code>Box&lt;dyn Error&gt;</code> when working with the Rust
 <a href="https://doc.rust-lang.org/stable/std/error/trait.Error.html"><code>Error</code></a>
 trait. However with <code>DynError</code>, the error type can be printed/displayed but
 no further information can be extracted from the error. Nonetheless this is
@@ -281,21 +283,21 @@ struct Specific : public AnError {
   }
 };
 
-template &lt;&gt;  // Implement `sus::error::Error` for AnError.
+template &lt;&gt;  <span class="comment">// Implement `sus::error::Error` for AnError.</span>
 struct sus::error::ErrorImpl&lt;AnError&gt; {
   static std::string display(const AnError&amp; e) { return e.describe(); }
 };
 
 sus::Result&lt;void, sus::Box&lt;AnError&gt;&gt; always_error() {
-  // Deduces to Result&lt;Box&lt;AnError&gt;&gt;
+  <span class="comment">// Deduces to Result&lt;Box&lt;AnError&gt;&gt;</span>
   return sus::err(sus::into(Specific()));
 };
 
 int main() {
   always_error().unwrap();
-  // Prints:
-  // PANIC! at 'specific problem has occurred',
-  // path/to/sus/result/result.h:790:11
+  <span class="comment">// Prints:</span>
+  <span class="comment">// PANIC! at 'specific problem has occurred',</span>
+  <span class="comment">// path/to/sus/result/result.h:790:11</span>
 }
 </code></pre>
 

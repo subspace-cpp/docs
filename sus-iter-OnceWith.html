@@ -45,7 +45,16 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-iter-OnceWith.html#method.OnceWith">OnceWith</a>
+        </li>
+        <li>
           <a class="sidebar-header" href="#methods">Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-iter-OnceWith.html#method.clone">clone</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-iter-OnceWith.html#method.exact_size_hint">exact_size_hint</a>
@@ -58,6 +67,12 @@
         </li>
         <li>
           <a class="sidebar-item" href="sus-iter-OnceWith.html#method.size_hint">size_hint</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#operators">Operators</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-iter-OnceWith.html#method.operator=">operator=</a>
         </li>
       </ul>
     </div>
@@ -78,7 +93,7 @@
           <a class="type-name" href="#">OnceWith</a>
         </div>
         <div class="type-signature">
-          <pre class="template">template &lt;class ItemT&gt;</pre>
+          <pre class="template">template &lt;class ItemT, class GenFn&gt;</pre>
           <span class="class">
             class
           </span>
@@ -97,11 +112,37 @@
 
         </div>
       </div>
+      <div class="section methods static">
+        <div class="section-header">
+          <a name="static-methods" href="#static-methods">Static Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.OnceWith"></a><a class="function-name" href="sus-iter-OnceWith.html#method.OnceWith">OnceWith</a>(<a class="type-name" href="sus-iter-OnceWith.html" title="sus::iter::OnceWith">OnceWith</a>&lt;ItemT, GenFn&gt;&&)</div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+        </div>
+      </div>
       <div class="section methods nonstatic">
         <div class="section-header">
           <a name="methods" href="#methods">Methods</a>
         </div>
         <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-OnceWith.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-iter-OnceWith.html" title="sus::iter::OnceWith">OnceWith</a>&lt;ItemT, GenFn&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;GenFn&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.exact_size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-OnceWith.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; sus::usize</div>
@@ -131,6 +172,20 @@
           <div class="description long">
             <p>sus::iter::Iterator trait.</p>
 
+          </div>
+        </div>
+      </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="operators" href="#operators">Operators</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-OnceWith.html#method.operator=">operator=</a>(<a class="type-name" href="sus-iter-OnceWith.html" title="sus::iter::OnceWith">OnceWith</a>&lt;ItemT, GenFn&gt;&&) -&gt; <a class="type-name" href="sus-iter-OnceWith.html" title="sus::iter::OnceWith">OnceWith</a>&lt;ItemT, GenFn&gt;&</div>
+            </div>
+          </div>
+          <div class="description long">
           </div>
         </div>
       </div>

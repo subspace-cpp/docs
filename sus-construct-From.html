@@ -95,7 +95,7 @@ reference, as it needs to be able to construct <code>ToType</code>.</p>
 satisfied. To do so, implement <code>from()</code> as a templated method,
 with a <code>size_t</code> template parameter for the size of the incoming array. For
 example:</p>
-<pre><code>// sus::construct::From&lt;Slice&lt;T&gt;, O[]&gt; trait.
+<pre><code><span class="comment">// sus::construct::From&lt;Slice&lt;T&gt;, O[]&gt; trait.</span>
 template &lt;size_t N&gt;
 static constexpr inline Slice from(T (&amp;data)[N]) {
   return Slice(data, N);

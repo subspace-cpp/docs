@@ -51,9 +51,6 @@
           <a class="sidebar-item" href="sus-error-DynError.html">DynError</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-error-DynErrorTyped.html">DynErrorTyped</a>
-        </li>
-        <li>
           <a class="sidebar-item" href="sus-error-ErrorImpl.html">ErrorImpl</a>
         </li>
         <li>
@@ -152,7 +149,7 @@ error message”) or using the message to present information to developers
 debugging the panic (“expect as precondition”).</p>
 <p>In the former case the expect message is used to describe the error that has
 occurred which is considered a bug. Consider the following example:</p>
-<pre><code>// Read environment variable, panic if it is not present
+<pre><code><span class="comment">// Read environment variable, panic if it is not present</span>
 auto path = sus::env::var(&quot;IMPORTANT_PATH&quot;).unwrap();
 </code></pre>
 <p>In the “expect as error message” style we would use expect to describe that
@@ -209,17 +206,6 @@ should be available and executable by the current user”.</p>
             </div>
             <div class="description short">
               <p>A type-erased <a href="sus-error-Error.html"><code>Error</code></a> object.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-error-DynErrorTyped.html">DynErrorTyped</a>
-              </div>
-            </div>
-            <div class="description short">
-              <p>The wrapper around an <a href="sus-error-Error.html"><code>Error</code></a> object that allows it
-to be type-erased as <a href="sus-error-DynError.html"><code>DynError</code></a>.</p>
             </div>
           </li>
           <li class="section-item">

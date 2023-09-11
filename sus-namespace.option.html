@@ -142,7 +142,7 @@ type again, by using
 <a href="sus-option-Option.html"><code>Option</code></a>. If returning an
 <a href="sus-option-Option.html"><code>Option</code></a> from a lambda, be sure to specify the
 return type on the lambda to allow successful type deduction.</p>
-<pre><code>// Returns Some(&quot;power!&quot;) if the input is over 9000, or None otherwise.
+<pre><code><span class="comment">// Returns Some(&quot;power!&quot;) if the input is over 9000, or None otherwise.</span>
 auto is_power = [](i32 i) -&gt; sus::Option&lt;std::string&gt; {
   if (i &gt; 9000) return sus::some(&quot;power!&quot;);
   return sus::none();
@@ -470,7 +470,7 @@ method calls. Early stages of the pipeline pass failure values (<code>None</code
 through unchanged, and continue processing on success values (<code>Some</code>).
 Toward the end, or substitutes an error message if it receives <code>None</code>.</p>
 <pre><code>auto to_string = [](u8 u) -&gt; sus::Option&lt;std::string&gt; {
-  switch (uint8_t{u}) {  // switch requires a primitive.
+  switch (uint8_t{u}) {  <span class="comment">// switch requires a primitive.</span>
     case 20u: return sus::some(&quot;foo&quot;);
     case 42u: return sus::some(&quot;bar&quot;);
     default: return sus::none();
@@ -480,15 +480,15 @@ auto res =
     sus::Vec&lt;u8&gt;(0_u8, 1_u8, 11_u8, 200_u8, 22_u8)
         .into_iter()
         .map([&amp;](auto x) {
-          // `checked_sub()` returns `None` on error.
+          <span class="comment">// `checked_sub()` returns `None` on error.</span>
           return x.checked_sub(1_u8)
-              // same with `checked_mul()`.
+              <span class="comment">// same with `checked_mul()`.</span>
               .and_then([](u8 x) { return x.checked_mul(2_u8); })
-              // `to_string` returns `None` on error.
+              <span class="comment">// `to_string` returns `None` on error.</span>
               .and_then([&amp;](u8 x) { return to_string(x); })
-              // Substitute an error message if we have `None` so far.
+              <span class="comment">// Substitute an error message if we have `None` so far.</span>
               .or_that(sus::some(std::string(&quot;error!&quot;)))
-              // Won't panic because we unconditionally used `Some` above.
+              <span class="comment">// Won't panic because we unconditionally used `Some` above.</span>
               .unwrap();
         })
         .collect&lt;Vec&lt;std::string&gt;&gt;();

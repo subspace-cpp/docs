@@ -146,8 +146,22 @@
         <div class="description long">
           <p>An integer type that handles overflow instead of panicing.</p>
 <p>The value inside the integer can be accessed or unwrapped like with an
-<code>Option</code>, which will panic if the integer has overflowed. Or it can be
-converted into an <code>Option</code> that will represent the overflow state as <code>None</code>.</p>
+<a href="sus-option-Option.html"><code>Option</code></a>, which will panic if the integer has
+overflowed. Or it can be converted into an <a href="sus-option-Option.html"><code>Option</code></a>
+that will represent the overflow state as <code>None</code>.</p>
+<p>This type is useful for performing a series of operations as a unit, and
+then checking for overflow after. It satisfies the
+<a href="sus-iter-Sum.html"><code>Sum</code></a> and <a href="sus-iter-Product.html"><code>Product</code></a> concepts
+so can be used with <a href="sus-iter-IteratorBase.html#method.sum"><code>sum</code></a> and
+<a href="sus-iter-IteratorBase.html#method.product"><code>product</code></a> for iterators over integers.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>Using OverflowInteger to sum an iterator of integers and look for overflow
+after without panicking.</p>
+<pre><code>auto a = sus::Array&lt;i32, 2&gt;(2, i32::MAX);
+auto maybe_answer =
+    a.iter().copied().product&lt;sus::num::OverflowInteger&lt;i32&gt;&gt;();
+sus::check(maybe_answer.is_overflow());
+</code></pre>
 
         </div>
       </div>
@@ -166,16 +180,18 @@ converted into an <code>Option</code> that will represent the overflow state as 
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.OverflowInteger"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>(U u)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UI&gt;</pre></div>
-                </div></div>
+              <div class="function-signature"><a name="method.OverflowInteger"></a><div class="template">template &lt;class u:auto&gt;</div><a class="function-name" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>(std::convertible_to&lt;I&gt; auto u)</div>
             </div>
           </div>
           <div class="description long">
-            <p>Constructs an OverflowInteger from the same subspace integer type.</p>
+            <p>Constructs an <code>OverflowInteger</code> from the same subspace integer type.</p>
+<h1><a name="implementation-note" href="#implementation-note">Implementation note</a></h1>
+<p>Because <code>OverflowInteger</code> is constructible from a smaller integer, but
+<code>I</code> is also constructible from a smaller integer, which can then be used
+to construct <code>OverflowInteger</code>, on MSVC this conversion becomes ambiguous.
+So we use <code>convertible_to</code> to make the constructor a template,
+which allows the compiler to choose one.
+<a href="https://developercommunity.visualstudio.com/t/Ambiguous-conversion-with-two-paths-of-d/10461863">https://developercommunity.visualstudio.com/t/Ambiguous-conversion-with-two-paths-of-d/10461863</a></p>
 
           </div>
           <div class="overload-set item-name">
@@ -184,13 +200,13 @@ converted into an <code>Option</code> that will represent the overflow state as 
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::From&lt;IU&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;OverflowInteger&lt;I&gt;U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies <code>sus::construct::From&lt;OverflowInteger&lt;I&gt;, U&gt;</code> if the inner
-integer type <code>I</code> satisfies <code>sus::construct::From&lt;I, U&gt;</code>.</p>
+            <p>Satisfies <code>sus::construct::From&lt;OverflowInteger&lt;I&gt;, U&gt;</code> if the
+<code>OverflowInteger</code> is constructible from <code>U</code>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -222,7 +238,7 @@ subspace integer type <code>T</code>.</p>
 <p>If an iterator yields a subspace integer type, <code>iter.product()</code> would
 panic on overflow. So instead <code>iter.product&lt;OverflowInteger&lt;T&gt;&gt;()</code> can be
 used (for integer type <code>T</code>) which will perform the product computation and
-return an OverflowInteger without ever panicking.</p>
+return an <code>OverflowInteger</code> without ever panicking.</p>
 
           </div>
           <div class="overload-set item-name">

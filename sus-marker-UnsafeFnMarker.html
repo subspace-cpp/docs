@@ -84,7 +84,7 @@
 Behaviour if its preconditions are not met.</p>
 <p>Use of an unsafe function should require a comment documenting how the
 required preconditions are met in the form:</p>
-<pre><code>// SAFETY: This is known to be true because of that which we checked there.
+<pre><code><span class="comment">// SAFETY: This is known to be true because of that which we checked there.</span>
 do_risky_thing(unsafe_fn);
 </code></pre>
 <p>Input conditions of the unsafe function should be well encapsulated so that

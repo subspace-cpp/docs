@@ -1377,13 +1377,13 @@ are always truncated towards zero.</p>
             <p>Conversion from the numeric type to a C++ primitive type.</p>
 <p>This converts to floating point primitives which are at least as large as
 the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
-<pre><code>auto d = double{3_f64};  // Compiles.
-auto e = double(3_f64);  // Compiles.
-double f = 3_f64;  // Compiles.
+<pre><code>auto d = double{3_f64};  <span class="comment">// Compiles.</span>
+auto e = double(3_f64);  <span class="comment">// Compiles.</span>
+double f = 3_f64;  <span class="comment">// Compiles.</span>
 
-auto d = float{3_f64};  // Does not compile.
-auto e = float(3_f64);  // Does not compile.
-float f = 3_f64;  // Does not compile.
+auto d = float{3_f64};  <span class="comment">// Does not compile.</span>
+auto e = float(3_f64);  <span class="comment">// Does not compile.</span>
+float f = 3_f64;  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as

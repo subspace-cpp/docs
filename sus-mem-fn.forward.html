@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::mem::forward - Subspace</title>
   <meta property="og:title" content="sus::mem::forward - Subspace"></meta>
-  <meta name="description" content="Passes a reference as an argument while preserving the reference type."></meta>
-  <meta property="og:description" content="Passes a reference as an argument while preserving the reference type."></meta>
+  <meta name="description" content="Move from non-reference values but pass through and preserve references."></meta>
+  <meta property="og:description" content="Move from non-reference values but pass through and preserve references."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="description long">
-          <p>Passes a reference as an argument while preserving the reference type.</p>
+          <p>Move from non-reference values but pass through and preserve references.</p>
 <p>Typically, passing an rvalue reference will convert it to an lvalue. Using
 <code>sus::forward&lt;T&gt;(t)</code> on an rvalue reference <code>T&amp;&amp; t</code> will preserve the rvalue
 nature of the reference. Other reference types are also forwarded unchanged.</p>
@@ -81,11 +81,13 @@ type <code>T&amp;&amp;</code>.</p>
 <h1><a name="universal-references-and-moves" href="#universal-references-and-moves">Universal references and moves</a></h1>
 <p>In the common case, when you want to receive a parameter that will be moved,
 it should be received by value. However, library implementors sometimes with
-to receive an <em>rvalue reference</em>. If you find yourself needing to <code>move()</code>
-from a universal reference instead of <code>forward()</code>, such as to construct a
+to receive an <em>rvalue reference</em>. If you find yourself needing to
+<a href="sus-mem-fn.move.html"><code>move()</code></a> from a universal reference instead of
+<a href="sus-mem-fn.forward.html"><code>forward()</code></a>, such as to construct a
 value type <code>T</code> from a universal reference <code>T&amp;&amp;</code> without introducing a copy,
-use <code>IsMoveRef</code> to constrain the universal reference to be an rvalue, and
-use <code>move()</code> instead of <code>forward()</code>.</p>
+use <a href="sus-mem-IsMoveRef.html"><code>IsMoveRef</code></a> to constrain the universal reference
+to be an rvalue, and use <a href="sus-mem-fn.move.html"><code>move()</code></a> instead of
+<a href="sus-mem-fn.forward.html"><code>forward()</code></a>.</p>
 
         </div>
       </div>

@@ -209,9 +209,7 @@ requires.</p>
               </div>
             </div>
             <div class="description short">
-              <p>A concept that declares <code>FromType</code> can be converted to <code>ToType</code> through the
-<a href="sus-construct-From.html"><code>From</code></a> concept or through an identity
-transformation.</p>
+              <p>A concept that declares <code>FromType</code> can be converted to <code>ToType</code>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -233,12 +231,10 @@ and are used to construct another type.</p>
               </div>
             </div>
             <div class="description short">
-              <p>When a pair of types <code>T</code> and <code>F</code> satisfy <code>Transmogrify&lt;T, F&gt;</code>, it means that
-<code>F</code> can be converted
-(<a href="https://calvinandhobbes.fandom.com/wiki/Transmogrifier">transmogrified</a>)
-to <code>T</code> through a conversion that will always succeed in producing <em>some</em>
-value, but may be lossy or produce a value with a different meaning. The
-conversion may truncate or extend <code>F</code> in order to do the conversion to <code>T</code>.</p>
+              <p>As Transmogrification is meant to be a cheap
+conversion, primarily for primitive types, it does not support
+<a href="sus-mem-Clone.html"><code>Clone</code></a> types, and <a href="sus-construct-Into.html"><code>Into</code></a>
+should be used in more complex cases.</p>
             </div>
           </li>
           <li class="section-item">

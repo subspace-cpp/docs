@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::boxed - Subspace</title>
   <meta property="og:title" content="sus::boxed - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <meta name="description" content="The Box&lt;T&gt; type for heap allocation and other tools for type-erasure of concepts."></meta>
+  <meta property="og:description" content="The Box&lt;T&gt; type for heap allocation and other tools for type-erasure of concepts."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -50,6 +50,21 @@
         <li>
           <a class="sidebar-item" href="sus-boxed-Box.html">Box</a>
         </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Dyn.html">Dyn</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#functions">Functions</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-fn.dyn.html">dyn</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#concepts">Concepts</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-DynConcept.html">DynConcept</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -67,6 +82,9 @@
           <a class="namespace-name" href="#">boxed</a>
         </div>
         <div class="description long">
+          <p>The <a href="sus-boxed-Box.html"><code>Box&lt;T&gt;</code></a> type for heap allocation and other
+tools for <a href="sus-boxed-DynConcept.html">type-erasure of concepts</a>.</p>
+
         </div>
       </div>
       <div class="section records classes">
@@ -81,6 +99,55 @@
               </div>
             </div>
             <div class="description short">
+              <p>A heap allocated object.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-boxed-Dyn.html">Dyn</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A type erasure of a type satisfying a concept, which can be used as a
+reference without heap allocation or templates.
+Returned from <a href="sus-boxed-fn.dyn.html"><code>dyn</code></a>.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="section functions">
+        <div class="section-header">
+          <a name="functions" href="#functions">Functions</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-boxed-fn.dyn.html">dyn</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Type erases a reference to a type <code>T&amp;</code> which satisfies a concept <code>C</code>,
+into a reference <code>DynC&amp;</code> that also satisfies <code>C</code> but without templates.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="section concepts">
+        <div class="section-header">
+          <a name="concepts" href="#concepts">Concepts</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-boxed-DynConcept.html">DynConcept</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A concept for generalized type erasure of concepts, allowing use of a
+concept-satisfying type <code>T</code> without knowing the concrete type <code>T</code>.</p>
             </div>
           </li>
         </ul>

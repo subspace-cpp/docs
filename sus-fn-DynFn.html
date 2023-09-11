@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::fn::FnOnceRef::Split - Subspace</title>
-  <meta property="og:title" content="sus::fn::FnOnceRef::Split - Subspace"></meta>
-  <meta name="description" content="A split FnOnceRef object, which can be used to construct other FnOnceRef objects, but enforces that only one of them is called."></meta>
-  <meta property="og:description" content="A split FnOnceRef object, which can be used to construct other FnOnceRef objects, but enforces that only one of them is called."></meta>
+  <title>sus::fn::DynFn - Subspace</title>
+  <meta property="og:title" content="sus::fn::DynFn - Subspace"></meta>
+  <meta name="description" content="A type-erased object which satisifies the concept Fn&lt;R(Args...)&gt;."></meta>
+  <meta property="og:description" content="A type-erased object which satisifies the concept Fn&lt;R(Args...)&gt;."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">Split</a>
+        <a href="#">DynFn</a>
       </span>
     </span>
   </nav>
@@ -35,39 +35,48 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      class
+      struct
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">Split</a>
+      <a href="#">DynFn</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
+          <a class="sidebar-header" href="#static-data-members">Static Data Members</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-DynFn.html#field.IsDynFn">IsDynFn</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-fn-DynFn.html#field.SatisfiesConcept">SatisfiesConcept</a>
+        </li>
+        <li>
           <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-fn-Split-FnOnceRef.html#method.Split">Split</a>
+          <a class="sidebar-item" href="sus-fn-DynFn.html#method.DynFn">DynFn</a>
         </li>
         <li>
           <a class="sidebar-header" href="#operators">Operators</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-fn-Split-FnOnceRef.html#method.operator()">operator()</a>
+          <a class="sidebar-item" href="sus-fn-DynFn.html#method.operator()">operator()</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-fn-Split-FnOnceRef.html#method.operator=">operator=</a>
+          <a class="sidebar-item" href="sus-fn-DynFn.html#method.operator=">operator=</a>
         </li>
       </ul>
     </div>
   </nav>
   <main>
-    <div class="type record class">
+    <div class="type record struct">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Class
+            Struct
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
@@ -75,27 +84,41 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="sus-namespace.fn.html">fn</a>
           <span class="namespace-dots">::</span>
-          <a class="type-name" href="sus-fn-FnOnceRef.html">FnOnceRef</a>
-          <span class="namespace-dots">::</span>
-          <a class="type-name" href="#">Split</a>
+          <a class="type-name" href="#">DynFn</a>
         </div>
         <div class="type-signature">
-          <span class="class">
-            class
+          <span class="struct">
+            struct
           </span>
           <span class="type-name">
-            Split
+            DynFn
           </span>
           <div class="record-body">
             { ... };
           </div>
         </div>
         <div class="description long">
-          <p>A split FnOnceRef object, which can be used to construct other FnOnceRef
-objects, but enforces that only one of them is called.</p>
-<p>The Split object must not outlive the FnOnceRef it's constructed from or
-Undefined Behaviour results.</p>
+          <p>A type-erased object which satisifies the concept <a href="sus-fn-Fn.html"><code>Fn&lt;R(Args...)&gt;</code></a>.</p>
+<p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
+concept-satisfying types.</p>
 
+        </div>
+      </div>
+      <div class="section fields static">
+        <div class="section-header">
+          <a name="static-data-members" href="#static-data-members">Static Data Members</a>
+        </div>
+        <div class="section-items">
+          <div class="section-item">
+            <div class="item-name member-signature"><a name="field.IsDynFn"></a><span class="static">static</span> <span class="const">const</span> bool <a class="field-name" href="sus-fn-DynFn.html#field.IsDynFn">IsDynFn</a></div>
+            <div class="description long">
+            </div>
+          </div>
+          <div class="section-item">
+            <div class="item-name member-signature"><a name="field.SatisfiesConcept"></a><div class="template">template &lt;class T&gt;</div><span class="static">static</span> <span class="const">const</span> bool <a class="field-name" href="sus-fn-DynFn.html#field.SatisfiesConcept">SatisfiesConcept</a></div>
+            <div class="description long">
+            </div>
+          </div>
         </div>
       </div>
       <div class="section methods static">
@@ -105,10 +128,10 @@ Undefined Behaviour results.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Split"></a><a class="function-name" href="sus-fn-Split-FnOnceRef.html#method.Split">Split</a>(<a class="type-name" href="sus-fn-FnOnceRef.html" title="sus::fn::FnOnceRef">FnOnceRef</a>&lt;R(CallArgs...)&gt;& fn)</div>
+              <div class="function-signature"><a name="method.DynFn"></a><a class="function-name" href="sus-fn-DynFn.html#method.DynFn">DynFn</a>()</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Split"></a><a class="function-name" href="sus-fn-Split-FnOnceRef.html#method.Split">Split</a>(<a class="type-name" href="sus-fn-FnOnceRef-Split.html" title="sus::fn::FnOnceRef::Split">Split</a>&&)<div class="deleted">
+              <div class="function-signature"><a name="method.DynFn"></a><a class="function-name" href="sus-fn-DynFn.html#method.DynFn">DynFn</a>(<a class="type-name" href="sus-fn-DynFn.html" title="sus::fn::DynFn">DynFn</a>&lt;R(Args...)&gt;&&)<div class="deleted">
                   deleted
                 </div></div>
             </div>
@@ -124,17 +147,16 @@ Undefined Behaviour results.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator()"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-Split-FnOnceRef.html#method.operator()">operator()</a>(CallArgs... args) && -&gt; R</div>
+              <div class="function-signature"><a name="method.operator()"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-DynFn.html#method.operator()">operator()</a>(Args&&...) const -&gt; R<div class="virtual">
+                  virtual
+                </div></div>
             </div>
           </div>
           <div class="description long">
-            <p>Runs the underlying <code>FnOnceRef</code>. The <code>FnOnceRef</code> may only be called a
-single time and will panic on the second call.</p>
-
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-Split-FnOnceRef.html#method.operator=">operator=</a>(<a class="type-name" href="sus-fn-FnOnceRef-Split.html" title="sus::fn::FnOnceRef::Split">Split</a>&&) -&gt; <a class="type-name" href="sus-fn-FnOnceRef-Split.html" title="sus::fn::FnOnceRef::Split">Split</a>&<div class="deleted">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-fn-DynFn.html#method.operator=">operator=</a>(<a class="type-name" href="sus-fn-DynFn.html" title="sus::fn::DynFn">DynFn</a>&lt;R(Args...)&gt;&&) -&gt; <a class="type-name" href="sus-fn-DynFn.html" title="sus::fn::DynFn">DynFn</a>&lt;R(Args...)&gt;&<div class="deleted">
                   deleted
                 </div></div>
             </div>

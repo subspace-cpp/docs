@@ -78,13 +78,16 @@ value in the process. If the input can not be represented in the output,
 some other value will be produced, which may lead to application bugs and
 memory unsafety if used incorrectly. This behaves like <code>static_cast&lt;To&gt;()</code>
 but without Undefined Behaviour.</p>
-<p>The <code>mog</code> operation is supported for types <code>To</code> and <code>From</code> that satisfy
-<code>Transmogrify&lt;To, From&gt;</code>.</p>
+<p>The <a href="sus-construct-fn.mog.html"><code>mog</code></a> operation is supported for types <code>To</code> and
+<code>From</code> that satisfy <a href="sus-construct-Transmogrify.html"><code>Transmogrify&lt;To, From&gt;</code></a>.</p>
 <p>To convert between types while ensuring the values are preserved, use
-<code>sus::construct::Into</code> or <code>sus::construct::TryInto</code>. Usually prefer using
-<code>sus::into(x)</code> or <code>sus::try_into(x)</code> over <code>sus::mog&lt;Y&gt;(x)</code> as most code
+<a href="sus-construct-Into.html"><code>Into</code></a> or <a href="sus-construct-TryInto.html"><code>TryInto</code></a>.
+Usually prefer using <a href="sus-construct-fn.into.html"><code>sus::into(x)</code></a> or
+<a href="sus-construct-fn.try_into.html"><code>sus::try_into(x)</code></a> over
+<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;Y&gt;(x)</code></a> as most code
 should preserve values across type transitions.</p>
-<p>See <code>Transmogrify</code> for how numeric and primitive values are converted.</p>
+<p>See <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> for how numeric and
+primitive values are converted.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>This converts <code>-1_i64</code> into a <code>u32</code>, which both changes its meaning,
 becoming a large positive number, and truncates the high 32 bits, losing the

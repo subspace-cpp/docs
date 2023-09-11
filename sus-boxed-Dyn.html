@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus::boxed::Dyn - Subspace</title>
+  <meta property="og:title" content="sus::boxed::Dyn - Subspace"></meta>
+  <meta name="description" content="A type erasure of a type satisfying a concept, which can be used as a reference without heap allocation or templates. Returned from dyn."></meta>
+  <meta property="og:description" content="A type erasure of a type satisfying a concept, which can be used as a reference without heap allocation or templates. Returned from dyn."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">Dyn</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      class
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">Dyn</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+        <li>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Dyn.html#method.Dyn.mut">Dyn</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Dyn.html#method.Dyn.const">Dyn</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Dyn.html#method.Dyn">Dyn</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#conversions">Conversions</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Dyn.html#method.operator DynC">operator DynC</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Dyn.html#method.operator DynC">operator DynC</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Dyn.html#method.operator DynC">operator DynC</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#operators">Operators</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Dyn.html#method.operator=">operator=</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="type record class">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Class
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.boxed.html">boxed</a>
+          <span class="namespace-dots">::</span>
+          <a class="type-name" href="#">Dyn</a>
+        </div>
+        <div class="type-signature">
+          <pre class="template">template &lt;class DynC, class ConcreteT&gt;</pre>
+          <span class="class">
+            class
+          </span>
+          <span class="type-name">
+            Dyn
+          </span>
+          <div class="record-body">
+            { ... };
+          </div>
+        </div>
+        <div class="description long">
+          <p>A type erasure of a type satisfying a concept, which can be used as a
+reference without heap allocation or templates.
+Returned from <a href="sus-boxed-fn.dyn.html"><code>dyn</code></a>.</p>
+<p>This type is similar to <code>Box&lt;DynC&gt;</code> for purposes of type erasure but does
+not require heap allocation,
+and it converts directly to a reference to the erased type.</p>
+<p>Use <a href="sus-boxed-fn.dyn.html"><code>dyn</code></a> to convert to a <code>DynC</code> reference instead of
+constructing this type directly.</p>
+<p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
+concept-satisfying types.</p>
+
+        </div>
+      </div>
+      <div class="section methods static">
+        <div class="section-header">
+          <a name="static-methods" href="#static-methods">Static Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.Dyn.mut"></a><a class="function-name" href="sus-boxed-Dyn.html#method.Dyn.mut">Dyn</a>(ConcreteT& concrete)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;DynC&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Dyn.mut"></a><a class="function-name" href="sus-boxed-Dyn.html#method.Dyn.mut">Dyn</a>(ConcreteT&& concrete)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;DynC&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construct a <code>Dyn&lt;DynC, T&gt;</code> from a mutable reference to <code>T</code>, which will
+vend a mutable reference <code>DynC&amp;</code>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.Dyn.const"></a><a class="function-name" href="sus-boxed-Dyn.html#method.Dyn.const">Dyn</a>(<span class="const">const</span> ConcreteT& concrete)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_const_v&lt;DynC&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construct a <code>Dyn&lt;const DynC, T&gt;</code> from a reference to <code>T</code>, which will
+vend a const reference <code>const DynC&amp;</code>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.Dyn"></a><a class="function-name" href="sus-boxed-Dyn.html#method.Dyn">Dyn</a>(<a class="type-name" href="sus-boxed-Dyn.html" title="sus::boxed::Dyn">Dyn</a>&lt;DynC, ConcreteT&gt;&&)<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p><code>Dyn</code> can not be moved.</p>
+<p><code>Dyn</code> only exists as a temporary to convert a
+concrete reference to a concept type to into a type-erased reference.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="section methods conversion">
+        <div class="section-header">
+          <a name="conversions" href="#conversions">Conversions</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator DynC"></a><a class="function-name" href="sus-boxed-Dyn.html#method.operator DynC">operator DynC</a>() const&</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Converts the reference to <code>ConcreteT</code> into a <code>DynC</code> reference.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator DynC"></a><a class="function-name" href="sus-boxed-Dyn.html#method.operator DynC">operator DynC</a>() &<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;DynC&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator DynC"></a><a class="function-name" href="sus-boxed-Dyn.html#method.operator DynC">operator DynC</a>() &&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;DynC&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator DynC"></a><a class="function-name" href="sus-boxed-Dyn.html#method.operator DynC">operator DynC</a>() &&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;DynC&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
+        </div>
+      </div>
+      <div class="section methods nonstatic">
+        <div class="section-header">
+          <a name="operators" href="#operators">Operators</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Dyn.html#method.operator=">operator=</a>(<a class="type-name" href="sus-boxed-Dyn.html" title="sus::boxed::Dyn">Dyn</a>&lt;DynC, ConcreteT&gt;&&) -&gt; <a class="type-name" href="sus-boxed-Dyn.html" title="sus::boxed::Dyn">Dyn</a>&lt;DynC, ConcreteT&gt;&<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p><code>Dyn</code> can not be moved.</p>
+<p><code>Dyn</code> only exists as a temporary to convert a
+concrete reference to a concept type to into a type-erased reference.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

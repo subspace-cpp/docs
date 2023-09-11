@@ -64,7 +64,12 @@
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">successors</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt; first, <a class="type-name" href="sus-fn-FnMutBox.html" title="sus::fn::FnMutBox">FnMutBox</a>&lt;<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;(<span class="const">const</span> Item&)&gt; func) -&gt; <a class="type-name" href="sus-iter-Successors.html" title="sus::iter::Successors">Successors</a>&lt;Item&gt;</div>
+            <div class="function-signature"><div class="template">template &lt;class Item, class GenFn&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">successors</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt; first, GenFn func) -&gt; <a class="type-name" href="sus-iter-Successors.html" title="sus::iter::Successors">Successors</a>&lt;Item, GenFn&gt;<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;GenFnOption&lt;Item&gt; (const Item &)&gt;</pre></div>
+              </div></div>
           </div>
         </div>
         <div class="description long">

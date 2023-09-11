@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus::boxed::DynConcept - Subspace</title>
+  <meta property="og:title" content="sus::boxed::DynConcept - Subspace"></meta>
+  <meta name="description" content="A concept for generalized type erasure of concepts, allowing use of a concept-satisfying type T without knowing the concrete type T."></meta>
+  <meta property="og:description" content="A concept for generalized type erasure of concepts, allowing use of a concept-satisfying type T without knowing the concrete type T."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">DynConcept</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">DynConcept</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.boxed.html">boxed</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">DynConcept</a>
+        </div>
+        <div class="type-signature">
+          <pre class="template">template &lt;class DynC, class ConcreteT&gt;</pre>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            DynConcept
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires {</pre><pre class="requires-constraint-line">  // The types are not qualified or references.</pre><pre class="requires-constraint-line">  requires std::same_as&lt;DynC, std::remove_cvref_t&lt;DynC&gt;&gt;;</pre><pre class="requires-constraint-line">  requires std::same_as&lt;ConcreteT, std::remove_cvref_t&lt;ConcreteT&gt;&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  // The SatisfiesConcept bool tests against the concept.</pre><pre class="requires-constraint-line">  { DynC::template SatisfiesConcept&lt;ConcreteT&gt; } -&gt; std::same_as&lt;const bool&&gt;;</pre><pre class="requires-constraint-line">  // The `DynTyped` type alias names the typed subclass. The `DynTyped` class</pre><pre class="requires-constraint-line">  // has two template parameters, the concrete type and the storage type (value</pre><pre class="requires-constraint-line">  // or reference).</pre><pre class="requires-constraint-line">  typename DynC::template DynTyped&lt;ConcreteT, ConcreteT&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  // The type-erased `DynC` must also satisfy the concept, so it can be used</pre><pre class="requires-constraint-line">  // in templated code still as well.</pre><pre class="requires-constraint-line">  requires DynC::template SatisfiesConcept&lt;DynC&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  // The typed class is a subclass of the type-erased `DynC` base class, and is</pre><pre class="requires-constraint-line">  // final.</pre><pre class="requires-constraint-line">  requires std::is_base_of_v&lt;</pre><pre class="requires-constraint-line">      DynC, typename DynC::template DynTyped&lt;ConcreteT, ConcreteT&gt;&gt;;</pre><pre class="requires-constraint-line">  requires std::is_final_v&lt;</pre><pre class="requires-constraint-line">      typename DynC::template DynTyped&lt;ConcreteT, ConcreteT&gt;&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  // The type-erased `DynC` can not be moved (which would slice the typed</pre><pre class="requires-constraint-line">  // subclass off).</pre><pre class="requires-constraint-line">  requires !std::is_move_constructible_v&lt;DynC&gt;;</pre><pre class="requires-constraint-line">  requires !std::is_move_assignable_v&lt;DynC&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
+            </div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>A concept for generalized type erasure of concepts, allowing use of a
+concept-satisfying type <code>T</code> without knowing the concrete type <code>T</code>.</p>
+<p>By providing a virtual type-erasure class that satisifies <code>DynConcept</code> along
+with a concept <code>C</code>, it allows the use of generic concept-satisfying objects
+without the use of templates.
+This means a function accepting a concept-satisying object as
+a parameter can:</p>
+<ul>
+<li>Be written outside of the header.</li>
+<li>Be a virtual method.</li>
+<li>Be part of a non-header-only library API.</li>
+</ul>
+<p>We can not specify a concept as a type parameter so there is a level of
+indirection involved and the concept itself is not named.</p>
+<p>To type-erase a concept <code>C</code>, there must be a virtual class <code>DynC</code> declared
+that satisfies this <code>DynConcept</code> concept for all concrete types <code>ConcreteT</code>
+which satisfy the concept <code>C</code> being type-erased.</p>
+<h1><a name="performing-the-type-erasure" href="#performing-the-type-erasure">Performing the type erasure</a></h1>
+<p>To type-erase a concept-satisfying object into the heap, use
+<a href="sus-boxed-Box.html"><code>Box</code></a>, such as <code>Box&lt;DynC&gt;</code> to hold a type-erased
+heap-allocated object that is known to satisfy the concept <code>C</code>.</p>
+<p>Then, <code>Box&lt;DynC&gt;</code> will come with a method
+<a href="sus-boxed-Box.html#method.from.dync"><code>from</code></a> that lifts any object satisfying the
+concept <code>C</code> into the heap and type-erases it to <code>DynC</code>. This implies that
+<a href="sus-boxed-Box.html"><code>Box&lt;DynC&gt;</code></a> will satisfy the
+<a href="sus-construct-From.html"><code>From</code></a> concept, and can be constructed with type
+deduction through <a href="sus-construct-fn.into.html"><code>sus::into()</code></a> or
+explicitly with <code>Box&lt;DynC&gt;::from(sus::move(satisfies_c))</code>.</p>
+<p>To type-erase a concept-satisfying object into a <code>DynC</code> reference without
+heap allocation, use <a href="sus-boxed-fn.dyn.html"><code>dyn</code></a>, such as <code>dyn&lt;DynC&gt;(x)</code> to
+construct a type-erased reference to an object <code>x</code> that is known to satisfy
+the concept <code>C</code>.</p>
+<p>The <a href="sus-boxed-fn.dyn.html"><code>dyn</code></a> function, and its returned type should only
+appear in function call arguments. The returned type
+<a href="sus-boxed-Dyn.html"><code>Dyn</code></a> can not be moved, and it only converts a
+reference to a type <code>T&amp;</code> into a reference <code>DynC&amp;</code> that also satisfies <code>C</code>
+but without templates.
+This can be used to call functions that accept a type-erased concept
+by reference, such as with a <code>const DynC&amp;</code> parameter.</p>
+<h1><a name="type-erasure-of-concepts-in-the-subspace-library" href="#type-erasure-of-concepts-in-the-subspace-library">Type erasure of concepts in the Subspace library</a></h1>
+<p>Some concepts in the Subspace library come with a virtual type-erasure class
+that satisfies <code>DynConcept</code> and can be type-erased into <code>Box&lt;DynC&gt;</code> for the
+concept <code>C</code>:</p>
+<ul>
+<li><a href="sus-error-Error.html"><code>Error</code></a></li>
+<li><a href="sus-fn-Fn.html"><code>Fn</code></a></li>
+<li><a href="sus-fn-FnMut.html"><code>FnMut</code></a></li>
+<li><a href="sus-fn-FnOnce.html"><code>FnOnce</code></a></li>
+</ul>
+<p>For some concepts in the Subspace library, <code>Box&lt;DynC&gt;</code> will also satisfy the
+concept <code>C</code> itself, without having use the inner type. See
+<a href="sus-boxed-Box.html#box-implements-some-concepts-for-its-inner-type">Box implements some concepts for its inner type</a>.</p>
+<p>Since the actual type is erased, it can not be moved or copied. While it can
+be constructed on the stack or the heap, any access to it other than its
+initial declaration must be through a pointer or reference, similar to
+<a href="https://doc.rust-lang.org/std/pin/struct.Pin.html"><code>Pin&lt;T&gt;</code></a> types in
+Rust.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<h2><a name="implementing-concept-type-erasure" href="#implementing-concept-type-erasure">Implementing concept type-erasure</a></h2>
+<p>Providing the mechanism to type erase objects that satisfy a concept named
+<code>MyConcept</code> through a <code>DynMyConcept</code> class:</p>
+<pre><code><span class="comment">// A concept which requires a single const-access method named `concept_fn`.</span>
+template &lt;class T&gt;
+concept MyConcept = requires(const T&amp; t) {
+  { t.concept_fn() } -&gt; std::same_as&lt;void&gt;;
+};
+
+template &lt;class T, class Store&gt;
+class DynMyConceptTyped;
+
+class DynMyConcept {
+  sus_dyn_concept(MyConcept, DynMyConcept, DynMyConceptTyped);
+
+ public:
+  <span class="comment">// Pure virtual concept API.</span>
+  virtual void concept_fn() const = 0;
+};
+<span class="comment">// Verifies that DynMyConcept also satisfies MyConcept, which is required.</span>
+static_assert(MyConcept&lt;DynMyConcept&gt;);
+
+template &lt;class T, class Store&gt;
+class DynMyConceptTyped final : public DynMyConcept {
+  sus_dyn_concept_typed(MyConcept, DynMyConcept, DynMyConceptTyped, v);
+
+  <span class="comment">// Virtual concept API implementation.</span>
+  void concept_fn() const override { return v.concept_fn(); };
+};
+
+<span class="comment">// A type which satiesfies `MyConcept`.</span>
+struct MyConceptType {
+  void concept_fn() const {}
+};
+
+int main() {
+  <span class="comment">// Verifies that DynMyConcept is functioning correctly, testing it against</span>
+  <span class="comment">// a type that satisfies MyConcept.</span>
+  static_assert(sus::boxed::DynConcept&lt;DynMyConcept, MyConceptType&gt;);
+
+  auto b = [](Box&lt;DynMyConcept&gt; c) { c-&gt;concept_fn(); };
+  <span class="comment">// `Box&lt;DynMyConcept&gt;` constructs from `MyConceptType`.</span>
+  b(sus::into(MyConceptType()));
+
+  auto d = [](const DynMyConcept&amp; c) { c.concept_fn(); };
+  <span class="comment">// `MyConceptType` converts to `const MyConcept&amp;` with `sus::dyn()`.</span>
+  d(sus::dyn&lt;const DynMyConcept&gt;(MyConceptType()));
+}
+</code></pre>
+<p>An identical example to above, with a <code>DynMyConcept</code> class providing type
+erasure for the <code>MyConcept</code> concept, however without the use of the helper
+macros, showing all the required machinery:</p>
+<pre><code><span class="comment">// A concept which requires a single const-access method named `concept_fn`.</span>
+template &lt;class T&gt;
+concept MyConcept = requires(const T&amp; t) {
+  { t.concept_fn() } -&gt; std::same_as&lt;void&gt;;
+};
+
+template &lt;class T, class Store&gt;
+class DynMyConceptTyped;
+
+class DynMyConcept {
+ public:
+  <span class="comment">// Pure virtual concept API.</span>
+  virtual void concept_fn() const = 0;
+  template &lt;class T&gt;
+
+  static constexpr bool SatisfiesConcept = MyConcept&lt;T&gt;;
+  template &lt;class T, class Store&gt;
+  using DynTyped = DynMyConceptTyped&lt;T, Store&gt;;
+
+  DynMyConcept() = default;
+  virtual ~DynMyConcept() = default;
+  DynMyConcept(DynC&amp;&amp;) = delete;
+  DynMyConcept&amp; operator=(DynMyConcept&amp;&amp;) = delete;
+};
+<span class="comment">// Verifies that DynMyConcept also satisfies MyConcept, which is required.</span>
+static_assert(MyConcept&lt;DynMyConcept&gt;);
+
+template &lt;class T, class Store&gt;
+class DynMyConceptTyped final : public DynMyConcept {
+ public:
+  <span class="comment">// Virtual concept API implementation.</span>
+  void concept_fn() const override { return c_.concept_fn(); };
+
+  constexpr DynMyConceptTyped(Store&amp;&amp; c) : c_(::sus::forward&lt;Store&gt;(c)) {}
+
+ private:
+  Store c_;
+};
+
+<span class="comment">// A type which satiesfies `MyConcept`.</span>
+struct MyConceptType {
+  void concept_fn() const {}
+};
+
+int main() {
+  <span class="comment">// Verifies that DynMyConcept is functioning correctly, testing it against</span>
+  <span class="comment">// a type that satisfies MyConcept.</span>
+  static_assert(sus::boxed::DynConcept&lt;DynMyConcept, MyConceptType&gt;);
+
+  auto b = [](Box&lt;DynMyConcept&gt; c) { c-&gt;concept_fn(); };
+  <span class="comment">// `Box&lt;DynMyConcept&gt;` constructs from `MyConceptType`.</span>
+  b(sus::into(MyConceptType()));
+
+  auto d = [](const DynMyConcept&amp; c) { c.concept_fn(); };
+  <span class="comment">// `MyConceptType` converts to `const MyConcept&amp;` with `sus::dyn()`.</span>
+  d(sus::dyn&lt;const DynMyConcept&gt;(MyConceptType()));
+}
+</code></pre>
+<h2><a name="holding-dyn()-in-a-stack-variable" href="#holding-dyn()-in-a-stack-variable">Holding dyn() in a stack variable</a></h2>
+<p>When a function receives a type-erased <code>DynC&amp;</code> by reference, it allows the
+caller to avoid heap allocations should they wish. In the easy case, the
+caller will simply call <code>sus::dyn()</code> directly in the function arguments to
+construct the <code>DynC&amp;</code> reference, which ensures it outlives the function
+call.</p>
+<p>In a more complicated scenario, the caller may wish to conditionally decide
+to pass an Option&lt;DynC&amp;&gt; with or without a reference, or to choose between
+different references. It is not possible to return the result of
+<code>sus::dyn()</code> without creating a dangling stack reference, which will be
+caught by clang in most cases. This means in particular that lambdas such
+as those passed to functions like <a href="sus-option-Option.html#method.map"><code>Option::map</code></a>
+can not be used to construct the <code>DynC&amp;</code> reference.</p>
+<p>In order to ensure the target of the <code>DynC&amp;</code> reference outlives the function
+it can be constructed as a stack variable before calling the function.</p>
+<pre><code>std::srand(sus::mog&lt;unsigned&gt;(std::time(nullptr)));
+
+auto x = [](sus::Option&lt;sus::fn::DynFn&lt;std::string()&gt;&amp;&gt; fn) {
+  if (fn.is_some())
+    return sus::move(fn).unwrap()();
+  else
+    return std::string(&quot;tails&quot;);
+};
+
+auto heads = [] { return std::string(&quot;heads&quot;); };
+<span class="comment">// Type-erased `Fn&lt;std::string()&gt;` that represents `heads`. Placed on the</span>
+<span class="comment">// stack to outlive its use in the `Option` and the call to `x(cb)`.</span>
+auto dyn_heads = sus::dyn&lt;sus::fn::DynFn&lt;std::string()&gt;&gt;(heads);
+<span class="comment">// Conditionally holds a type-erased reference to `heads`. This requires a</span>
+<span class="comment">// type-erasure that outlives the `cb` variable.</span>
+auto cb = [&amp;]() -&gt; sus::Option&lt;sus::fn::DynFn&lt;std::string()&gt;&amp;&gt; {
+  if (std::rand() % 2) return sus::some(dyn_heads);
+  return sus::none();
+}();
+
+std::string s = x(cb);
+
+fmt::println(&quot;{}&quot;, s);  <span class="comment">// Prints one of &quot;heads&quot; or &quot;tails.</span>
+</code></pre>
+<p>It can greatly simplify correctness of code to use owned type-erased
+concept objects through <a href="sus-boxed-Box.html"><code>Box</code></a>, such as
+<code>Box&lt;DynFn&lt;std::string()&gt;&gt;</code> in the above example. Though references can be
+useful, especially in simple or perf-critical code paths.</p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

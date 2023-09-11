@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::fn::Fn - Subspace</title>
   <meta property="og:title" content="sus::fn::Fn - Subspace"></meta>
-  <meta name="description" content="The version of a callable object that may be called multiple times without mutating internal state. A Fn is useful for a callable that is received as a const reference to indicate it and may be called one or more times and does not change between call. However when a template (or constexpr) is not required, receiving a FnRef instead of const Fn auto&amp; will typically produce less code by using type erasure to avoid template instantiation."></meta>
-  <meta property="og:description" content="The version of a callable object that may be called multiple times without mutating internal state. A Fn is useful for a callable that is received as a const reference to indicate it and may be called one or more times and does not change between call. However when a template (or constexpr) is not required, receiving a FnRef instead of const Fn auto&amp; will typically produce less code by using type erasure to avoid template instantiation."></meta>
+  <meta name="description" content="The version of a callable object that may be called multiple times without mutating internal state."></meta>
+  <meta property="og:description" content="The version of a callable object that may be called multiple times without mutating internal state."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -81,49 +81,43 @@
         </div>
         <div class="description long">
           <p>The version of a callable object that may be called multiple times without
-mutating internal state. A <code>Fn</code> is useful for a callable that is received as
-a const reference to indicate it and may be called one or more times and
-does not change between call. However when a template (or constexpr) is not
-required, receiving a <code>FnRef</code> instead of <code>const Fn auto&amp;</code> will typically
-produce less code by using type erasure to avoid template instantiation.</p>
-<p>Because a <code>FnMut</code> is able to mutate internal state, it may return different
-values each time it is called with the same inputs.</p>
-<p>A type that satisfies <code>FnMut</code> will return a type that can be converted to
-<code>R</code> when called with the arguments <code>Args...</code>. <code>FnMut</code> is satisfied by
-being callable as an lvalue (which is done by providing an operator() that
-is not <code>&amp;&amp;</code>-qualified). Mutable and const lambdas will satisfy
-<code>FnMut</code>.</p>
+mutating internal state.</p>
+<p>A <code>Fn</code> is useful for a callable that is expected to be called one or more
+times and whose results do not change between calls. This is of course
+possible to violate with <code>mutable</code> or global state, but it is discouraged
+as it violates the <code>Fn</code> protocol expectations of the caller.
+<a href="sus-fn-FnMut.html"><code>FnMut</code></a> should be used when the function will
+mutate anything and can return different values as a result.</p>
+<p>A type that satisfies <code>Fn</code> will return a type that can be converted to
+<code>R</code> when called with the arguments <code>Args...</code>. <code>Fn</code> is satisfied by
+being callable as a const lvalue (which is done by providing an operator()
+that is <code>const</code>- or <code>const&amp;</code>-qualified). Const lambdas will satisfy
+<code>Fn</code> but mutable ones will not.</p>
 <p>The second argument of <code>Fn&lt;F, S&gt;</code> is a function signature with the format
 <code>ReturnType(Args...)</code>, where <code>Args...</code> are the arguments that will be passed
 to the <code>Fn</code> and <code>ReturnType</code> is what is expected to be received back. It
 would appear as a matching concept as:</p>
-<pre><code>void function(const Fn&lt;ReturnType(Args...)&gt; auto&amp; f) { ... }
+<pre><code>void function(Fn&lt;ReturnType(Args...)&gt; auto f) { ... }
 </code></pre>
 <h1><a name="use-of-%60fn%60" href="#use-of-%60fn%60">Use of <code>Fn</code></a></h1>
 <p><code>Fn</code> should be received by value typically, but can also be received as a
 const reference.</p>
 <p>A <code>Fn</code> should be called by passing it to <code>std::fn::call()</code> along with any
-arguments. This ensures the correct overload is called on the object. A <code>Fn</code>
-may be called any number of times, unlike <code>FnOnce</code>, and should not be moved
-when called.</p>
+arguments. This ensures the correct overload is called on the object and
+that method pointers are called correctly.
+A <code>Fn</code> may be called any number of times, unlike <code>FnOnce</code>, and should not
+be moved when called.</p>
 <h1><a name="compatibility" href="#compatibility">Compatibility</a></h1>
 <p>Any callable type that satisfies <code>Fn</code> will also satisfy <code>FnMut</code> and
 <code>FnOnce</code>. A <code>Fn</code> may be called multiple times, or a single time, which is
 compatible with both <code>FnMut</code> and <code>FnOnce</code>. And while <code>FnMut</code> and <code>FnOnce</code>
 are able to mutate state when run, they are not required to and a constant
 <code>Fn</code> satisfies them.</p>
-<h1><a name="subspace-types-that-satisfy-%60fnmut%60" href="#subspace-types-that-satisfy-%60fnmut%60">Subspace types that satisfy <code>FnMut</code></a></h1>
-<p>The <code>FnRef</code> and <code>FnBox</code> types in the Subspace library satisfy <code>Fn</code> (and thus
-<code>FnMut</code> and <code>FnOnce</code> as well). They may be called any number of times and
-are callable as a const object.</p>
-<p>Like the concepts, <code>FnRef</code> is convertible to <code>FnMutRef</code> is convertible to
-<code>FnOnceRef</code>. And <code>FnBox</code> is convertible to <code>FnMutBox</code> is convertible to
-<code>FnOnceBox</code>.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>A function that receives a <code>Fn</code> matching type and calls it:</p>
-<pre><code>// Accepts any type that can be called once with (Option&lt;i32&gt;) and returns
-// i32.
-static i32 do_stuff(const sus::fn::Fn&lt;i32(sus::Option&lt;i32&gt;)&gt; auto&amp; f) {
+<pre><code><span class="comment">// Accepts any type that can be called once with (Option&lt;i32&gt;) and returns</span>
+<span class="comment">// i32.</span>
+static i32 do_stuff(sus::fn::Fn&lt;i32(sus::Option&lt;i32&gt;)&gt; auto f) {
   return sus::fn::call(f, sus::some(400)) +
          sus::fn::call(f, sus::some(100));
 }
@@ -148,7 +142,7 @@ i32 map_class(const Class&amp; c,
   return sus::fn::call(f, c);
 }
 
-// Map the class C to its value().
+<span class="comment">// Map the class C to its value().</span>
 auto c = Class(42);
 sus::check(map_class(c, &amp;Class::value) == 42);
 </code></pre>

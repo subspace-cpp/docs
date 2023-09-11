@@ -317,6 +317,14 @@ return a <code>NonNull&lt;U&gt;</code>.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.operator-&gt;">operator-&gt;</a>() const -&gt; <span class="const">const</span> T*</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.operator-&gt;">operator-&gt;</a>() -&gt; T*<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Gives access to the object pointed to by NonNull.</p>

@@ -45,12 +45,6 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
-          <a class="sidebar-header" href="#static-methods">Static Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-error-DynError.html#method.DynError">DynError</a>
-        </li>
-        <li>
           <a class="sidebar-header" href="#methods">Methods</a>
         </li>
         <li>
@@ -58,12 +52,6 @@
         </li>
         <li>
           <a class="sidebar-item" href="sus-error-DynError.html#method.source">source</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#operators">Operators</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-error-DynError.html#method.operator=">operator=</a>
         </li>
       </ul>
     </div>
@@ -96,6 +84,7 @@
         </div>
         <div class="description long">
           <p>A type-erased <a href="sus-error-Error.html"><code>Error</code></a> object.</p>
+<p><code>DynError</code> also satisfies <a href="sus-error-Error.html"><code>Error</code></a> itself.</p>
 <p>Using this allows the error type to be placed in heap-allocated smart
 pointers without templates, and thus without knowing the concrete type.
 For example a <code>void foo(Box&lt;DynError&gt;)</code> function can work with any
@@ -106,26 +95,9 @@ size, or to provide dynamically linked library ABI.</p>
 and it can not be moved similar to
 <a href="https://doc.rust-lang.org/std/pin/struct.Pin.html"><code>Pin&lt;T&gt;</code></a> types in
 Rust.</p>
+<p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
+concept-satisfying types.</p>
 
-        </div>
-      </div>
-      <div class="section methods static">
-        <div class="section-header">
-          <a name="static-methods" href="#static-methods">Static Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.DynError"></a><a class="function-name" href="sus-error-DynError.html#method.DynError">DynError</a>()</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><a name="method.DynError"></a><a class="function-name" href="sus-error-DynError.html#method.DynError">DynError</a>(<a class="type-name" href="sus-error-DynError.html" title="sus::error::DynError">DynError</a>&&)<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
         </div>
       </div>
       <div class="section methods nonstatic">
@@ -154,22 +126,6 @@ Rust.</p>
           <div class="description long">
             <p>Forwards to the <a href="sus-error-Error.html"><code>Error</code></a> implementation of <code>E</code>.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="operators" href="#operators">Operators</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-error-DynError.html#method.operator=">operator=</a>(<a class="type-name" href="sus-error-DynError.html" title="sus::error::DynError">DynError</a>&&) -&gt; <a class="type-name" href="sus-error-DynError.html" title="sus::error::DynError">DynError</a>&&<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
           </div>
         </div>
       </div>

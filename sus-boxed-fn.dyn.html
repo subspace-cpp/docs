@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus::boxed::dyn - Subspace</title>
+  <meta property="og:title" content="sus::boxed::dyn - Subspace"></meta>
+  <meta name="description" content="Type erases a reference to a type T&amp; which satisfies a concept C, into a reference DynC&amp; that also satisfies C but without templates."></meta>
+  <meta property="og:description" content="Type erases a reference to a type T&amp; which satisfies a concept C, into a reference DynC&amp; that also satisfies C but without templates."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">dyn</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">dyn</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.boxed.html">boxed</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">dyn</a>
+        </div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class DynC, class ConcreteT&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">dyn</a>(ConcreteT& t) -&gt; <a class="type-name" href="sus-boxed-Dyn.html" title="sus::boxed::Dyn">Dyn</a>&lt;DynC, ConcreteT&gt;<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;DynCstd::remove_cvref_t&lt;DynC&gt;&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;ConcreteTstd::remove_cvref_t&lt;ConcreteT&gt;&gt;</pre></div>
+              </div></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class DynC, class ConcreteT&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">dyn</a>(ConcreteT&& t) -&gt; <a class="type-name" href="sus-boxed-Dyn.html" title="sus::boxed::Dyn">Dyn</a>&lt;DynC, ConcreteT&gt;<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;DynCstd::remove_cvref_t&lt;DynC&gt;&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;ConcreteTstd::remove_cvref_t&lt;ConcreteT&gt;&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::is_rvalue_reference_v&lt;ConcreteT &&&gt;</pre></div>
+              </div></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class DynC, class ConcreteT&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">dyn</a>(<span class="const">const</span> ConcreteT& t) -&gt; <a class="type-name" href="sus-boxed-Dyn.html" title="sus::boxed::Dyn">Dyn</a>&lt;DynC, ConcreteT&gt;<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;const DynCconst std::remove_cvref_t&lt;DynC&gt;&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;ConcreteTstd::remove_cvref_t&lt;ConcreteT&gt;&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::is_const_v&lt;DynC&gt;</pre></div>
+              </div></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Type erases a reference to a type <code>T&amp;</code> which satisfies a concept <code>C</code>,
+into a reference <code>DynC&amp;</code> that also satisfies <code>C</code> but without templates.</p>
+<p>Use <code>dyn&lt;DynC&gt;(x)</code> to convert a mutable reference to <code>x</code> into <code>DynC&amp;</code> and
+<code>dyn&lt;const DynC&gt;(x)</code> to convert a const or mutable reference to <code>x</code> into
+<code>const Dyn&amp;</code>.</p>
+<p>Type erasure into <code>DynC</code> allows calling a method that receives a <code>DynC</code>
+reference, such as <code>const DynC&amp;</code>, without requiring a heap allocation into
+a <code>Box&lt;DynC&gt;</code>.</p>
+<p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
+concept-satisfying types.</p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

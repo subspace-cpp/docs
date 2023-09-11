@@ -379,6 +379,11 @@ self.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.as_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_err">as_err</a>() const& -&gt; <span class="const">const</span> std::remove_reference_t&lt;E&gt;&</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_err">as_err</a>() && -&gt; <span class="const">const</span> std::remove_reference_t&lt;E&gt;&<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns a const reference to the contained <code>Err</code> value.</p>
@@ -393,6 +398,11 @@ self.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value">as_value</a>() && -&gt; <span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&<div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>
@@ -511,6 +521,15 @@ message, and the content of the Err.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter">iter</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;<span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
           </div>
@@ -521,6 +540,15 @@ message, and the content of the Err.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter_mut">iter_mut</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;sus::result::Result::TUnlessVoid&&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>

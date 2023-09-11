@@ -138,9 +138,9 @@ type has a size that is not a multiple of the Tuple's alignment. For
 example if it's smaller than the alignment, such as <code>Tuple&lt;u8, u64&gt;</code> which
 has <code>(alignof(u64) == sizeof(u64)) - sizeof(u8)</code> or 7 bytes of tail padding.</p>
 <pre><code>struct S {
-  [[no_unique_address]] Tuple&lt;u32, u64&gt; tuple;  // 16 bytes.
-  u32 val;  // 4 bytes.
-};  // 16 bytes, since `val` is stored inside `tuple`.
+  [[no_unique_address]] Tuple&lt;u32, u64&gt; tuple;  <span class="comment">// 16 bytes.</span>
+  u32 val;  <span class="comment">// 4 bytes.</span>
+};  <span class="comment">// 16 bytes, since `val` is stored inside `tuple`.</span>
 </code></pre>
 <p>However note that this behaviour is compiler-dependent, and MSVC does not
 use the <code>[[no_unique_address]]</code> hint.</p>
@@ -222,6 +222,11 @@ convert to a reference without constructing a temporary, use an unsafe
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">I &lt;= sizeof...(Ts)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.at"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.at">at</a>() && -&gt; <span class="const">const</span> auto&<div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>
