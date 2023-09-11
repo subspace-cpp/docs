@@ -99,7 +99,8 @@ received back. It would appear as a matching concept as:</p>
 <a href="sus-mem-IsMoveRef.html"><code>IsMoveRef&lt;decltype(f)&gt;</code></a> to avoid moving out of
 an lvalue in the caller.</p>
 <p>A <code>FnOnce</code> should be called by moving it with <code>sus::move()</code> when passing it
-to <code>sus::fn::call_once()</code> along with any arguments. This ensures the
+to <a href="sus-fn-fn.call_once.html"><code>call_once</code></a> along with any arguments.
+This ensures the
 correct overload is called on the object and that method pointers are
 called correctly. It is moved-from after calling, and it should only be
 called once.</p>

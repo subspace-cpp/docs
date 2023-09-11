@@ -250,6 +250,26 @@ convert to a reference without constructing a temporary, use an unsafe
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialCopyCtorOrRef&lt;E&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Result.copy"></a><a class="function-name" href="sus-result-Result.html#method.Result.copy">Result</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& rhs)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || IsTrivialCopyCtorOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">          IsTrivialCopyCtorOrRef&lt;E&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Result.copy"></a><a class="function-name" href="sus-result-Result.html#method.Result.copy">Result</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">               ::sus::mem::Copy&lt;E&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Copy constructor for <code>Result&lt;T, E&gt;</code> which satisfies
@@ -270,6 +290,26 @@ also be trivially copy-constructed.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || IsTrivialMoveCtorOrRef&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialMoveCtorOrRef&lt;E&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Result.move"></a><a class="function-name" href="sus-result-Result.html#method.Result.move">Result</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&& rhs)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::MoveOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || IsTrivialMoveCtorOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">        IsTrivialMoveCtorOrRef&lt;E&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Result.move"></a><a class="function-name" href="sus-result-Result.html#method.Result.move">Result</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || ::sus::mem::MoveOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">               ::sus::mem::Move&lt;E&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>
@@ -366,6 +406,16 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (TUnlessVoid &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn, T &&&gt;, E&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn op) && -&gt; sus::fn::ReturnOnce&lt;AndFn&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (void)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn&gt;, E&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -709,6 +759,26 @@ a tagged union between &quot;success&quot; and &quot;error&quot;.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialCopyAssignOrRef&lt;E&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || IsTrivialCopyAssignOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">         IsTrivialCopyAssignOrRef&lt;E&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || ::sus::mem::CopyOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">               ::sus::mem::Copy&lt;E&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Copy assignment for <code>Result&lt;T, E&gt;</code> which satisfies
@@ -729,6 +799,26 @@ also be trivially copy-assigned.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || IsTrivialMoveAssignOrRef&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialMoveAssignOrRef&lt;E&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::MoveOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!((std::is_void_v&lt;T&gt; || IsTrivialMoveAssignOrRef&lt;T&gt;) &&</pre><pre class="requires-constraint-line">        IsTrivialMoveAssignOrRef&lt;E&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_void_v&lt;T&gt; || ::sus::mem::MoveOrRef&lt;T&gt;) ||</pre><pre class="requires-constraint-line">             !::sus::mem::Move&lt;E&gt;</pre></div>
+                </div><div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>

@@ -220,6 +220,25 @@ the constructor.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::Move&lt;T&gt;</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
           </div>
           <div class="description long">
           </div>
@@ -493,6 +512,14 @@ array to a new type with the given function.</p>
                 </div></div>
             </div>
             <div class="overload">
+              <div class="function-signature"><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() const&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
               <div class="function-signature"><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &&<div class="deleted">
                   deleted
                 </div></div>
@@ -505,6 +532,14 @@ array to a new type with the given function.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
           </div>
@@ -515,6 +550,14 @@ array to a new type with the given function.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator SliceMut"></a><a class="function-name" href="sus-collections-Array.html#method.operator SliceMut">operator SliceMut</a>() &<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
                 </div></div>
             </div>
           </div>
@@ -535,6 +578,24 @@ array to a new type with the given function.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">N == 0</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&& o) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::Move&lt;T&gt;</pre></div>
+                </div><div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>

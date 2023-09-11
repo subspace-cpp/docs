@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::num::operator+ - Subspace</title>
   <meta property="og:title" content="sus::num::operator+ - Subspace"></meta>
-  <meta name="description" content="sus::num::Add&lt;T*, isize&gt; trait."></meta>
-  <meta property="og:description" content="sus::num::Add&lt;T*, isize&gt; trait."></meta>
+  <meta name="description" content="Satisfies the Add concept for pointers (T*) with isize."></meta>
+  <meta property="og:description" content="Satisfies the Add concept for pointers (T*) with isize."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -64,7 +64,7 @@
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class T, class S&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">operator+</a>(T* t, S offset) -&gt; T*<div class="requires">
+            <div class="function-signature"><div class="template">template &lt;class T, class S&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator+</a>(T* t, S offset) -&gt; T*<div class="requires">
                 <span class="requires-keyword keyword">
                   requires
                 </span>
@@ -74,7 +74,8 @@
           </div>
         </div>
         <div class="description long">
-          <p>sus::num::Add&lt;T*, isize&gt; trait.</p>
+          <p>Satisfies the <a href="sus-num-Add.html"><code>Add</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-isize.html"><code>isize</code></a>.</p>
 <p>Adds a <a href="sus-num-isize.html"><code>isize</code></a> to a pointer, returning the resulting
 pointer.</p>
 

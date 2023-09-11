@@ -102,8 +102,9 @@ would appear as a matching concept as:</p>
 <h1><a name="use-of-%60fn%60" href="#use-of-%60fn%60">Use of <code>Fn</code></a></h1>
 <p><code>Fn</code> should be received by value typically, but can also be received as a
 const reference.</p>
-<p>A <code>Fn</code> should be called by passing it to <code>std::fn::call()</code> along with any
-arguments. This ensures the correct overload is called on the object and
+<p>A <code>Fn</code> should be called by passing it to <a href="sus-fn-fn.call.html"><code>call</code></a> along
+with any arguments.
+This ensures the correct overload is called on the object and
 that method pointers are called correctly.
 A <code>Fn</code> may be called any number of times, unlike <code>FnOnce</code>, and should not
 be moved when called.</p>

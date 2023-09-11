@@ -149,12 +149,50 @@
                 </div></div>
             </div>
             <div class="overload">
+              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_move_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_move_constructible_v&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
               <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
                 </div></div>
             </div>
           </div>
@@ -487,12 +525,50 @@ which() method can be omitted.</p>
                 </div></div>
             </div>
             <div class="overload">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_move_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_move_assignable_v&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
               <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
                 </div></div>
             </div>
           </div>

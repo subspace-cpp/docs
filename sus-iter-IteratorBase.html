@@ -375,6 +375,14 @@ ownership of the original iterator.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIterator&lt;Other, ItemT&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.chain"></a><div class="template">template &lt;class Other&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.chain">chain</a>(Other&& other) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;Item&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIterator&lt;Other, Item&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Takes two iterators and creates a new iterator over both in sequence.</p>
@@ -413,6 +421,15 @@ called or optimized away. So code should not depend on either.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;ItemT, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.cmp">cmp</a>(Other&& other) && -&gt; std::weak_ordering<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Item, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
@@ -442,6 +459,14 @@ respect to the specified comparison function.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::FromIterator&lt;C, ItemT&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.collect"></a><div class="template">template &lt;class C&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.collect">collect</a>() && -&gt; C<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::FromIterator&lt;C, Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -572,6 +597,15 @@ overflow a <code>usize</code>.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;ItemT, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.eq"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.eq">eq</a>(Other&& other) && -&gt; bool<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;Item, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Determines if the elements of this <code>Iterator</code> are equal to those of
@@ -615,6 +649,15 @@ iterator will yield only the elements for which the closure returns true.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.filter_map"></a><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &, ItemT &&&gt;, class InnerR = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.filter_map">filter_map</a>(MapFn f) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;InnerR&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn, ::sus::fn::NonVoid (Item &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
           </div>
@@ -644,6 +687,15 @@ soon as the predicate returns <code>true</code>.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.find_map"></a><div class="template">template &lt;class FindFn, int &... , class R = std::invoke_result_t&lt;FindFn &, ItemT &&&gt;, class InnerR = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.find_map">find_map</a>(FindFn f) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;InnerR&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;FindFn, ::sus::fn::NonVoid (Item &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Applies function to the elements of iterator and returns the first
@@ -659,6 +711,15 @@ non-none result.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (ItemT &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;R&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.flat_map"></a><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &, ItemT &&&gt;, class InnerR = typename IntoIteratorOutputType&lt;R&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.flat_map">flat_map</a>(F fn) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;InnerR&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (Item &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;R&gt;</pre></div>
                 </div></div>
             </div>
@@ -703,6 +764,16 @@ of indirection.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (B, ItemT)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;, B&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;B&gt; ||</pre><pre class="requires-constraint-line">              std::is_reference_v&lt;std::invoke_result_t&lt;F&, B &&, ItemT &&&gt;&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.fold"></a><div class="template">template &lt;class B, class F&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.fold">fold</a>(B init, F f) && -&gt; B<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (B, Item)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;std::invoke_result_t&lt;F &, B &&, Item &&&gt;, B&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;B&gt; ||</pre><pre class="requires-constraint-line">            std::is_reference_v&lt;std::invoke_result_t&lt;F&, B &&, Item &&&gt;&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -752,6 +823,14 @@ i32<span class="punct">&amp;</span> out <span class="punct">=</span> v<span clas
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, void (ItemT &&)&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.for_each"></a><div class="template">template &lt;class F&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.for_each">for_each</a>(F f) && -&gt; void<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, void (Item &&)&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Calls a closure on each element of an iterator.</p>
@@ -789,6 +868,15 @@ fuse() can be a no-op in that case?</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemT, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.ge"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.ge">ge</a>(Other&& other) && -&gt; bool<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;Item, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Determines if the elements of this Iterator are
@@ -822,6 +910,15 @@ avoid deeper compiler errors.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemT, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.gt"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.gt">gt</a>(Other&& other) && -&gt; bool<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;Item, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -908,6 +1005,15 @@ doing so, it keeps track of the current element. After <code>None</code> is retu
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemT, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.le"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.le">le</a>(Other&& other) && -&gt; bool<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;Item, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Determines if the elements of this Iterator are
@@ -923,6 +1029,15 @@ less than or equal to those of another.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemT, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.lt"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.lt">lt</a>(Other&& other) && -&gt; bool<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;Item, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -941,6 +1056,14 @@ less than those of another.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn, ::sus::fn::NonVoid (ItemT &&)&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.map"></a><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.map">map</a>(MapFn fn) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;R&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn, ::sus::fn::NonVoid (Item &&)&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Creates an iterator which uses a closure to map each element to another
@@ -955,6 +1078,15 @@ type.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn, ::sus::fn::NonVoid (ItemT &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.map_while"></a><div class="template">template &lt;class MapFn, int &... , class R = std::invoke_result_t&lt;MapFn &, ItemT &&&gt;, class InnerR = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.map_while">map_while</a>(MapFn fn) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;InnerR&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn, ::sus::fn::NonVoid (Item &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
                 </div></div>
             </div>
@@ -1016,6 +1148,16 @@ the iterator is empty, None is returned.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.max_by_key"></a><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;ItemT&gt; &&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.max_by_key">max_by_key</a>(KeyFn fn) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const std::remove_reference_t&lt;Item&gt; &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;Key&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns the element that gives the maximum value from the specified
@@ -1073,6 +1215,16 @@ the iterator is empty, None is returned.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.min_by_key"></a><div class="template">template &lt;class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;ItemT&gt; &&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.min_by_key">min_by_key</a>(KeyFn fn) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const std::remove_reference_t&lt;Item&gt; &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;Key&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns the element that gives the minimum value from the specified
@@ -1106,6 +1258,15 @@ over <code>T</code>.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;ItemT, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.ne"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.ne">ne</a>(Other&& other) && -&gt; bool<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;Item, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1166,6 +1327,15 @@ iterator and return <code>None</code>.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;ItemT, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.partial_cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.partial_cmp">partial_cmp</a>(Other&& other) && -&gt; std::partial_ordering<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;Item, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
@@ -1201,6 +1371,15 @@ respect to the specified comparison function.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;B&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Extend&lt;B, ItemT&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.partition"></a><div class="template">template &lt;class B&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.partition">partition</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;sus::iter::IteratorBase::Item&gt;&)&gt; auto pred) && -&gt; <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;B, B&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;B&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Extend&lt;B, Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1259,6 +1438,14 @@ than [<code>usize::MAX</code>] non-matching elements, it will panic.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Product&lt;P, ItemT&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.product"></a><div class="template">template &lt;class P = ItemT&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.product">product</a>() && -&gt; P<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Product&lt;P, Item&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Iterates over the entire iterator, multiplying all the elements.</p>
@@ -1296,6 +1483,15 @@ default.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ItemT (ItemT, ItemT)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;ItemT&gt; ||  //</pre><pre class="requires-constraint-line">             std::is_reference_v&lt;R&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.reduce"></a><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &, ItemT &&, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.reduce">reduce</a>(F f) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;Item&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, Item (Item, Item)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;Item&gt; ||  //</pre><pre class="requires-constraint-line">           std::is_reference_v&lt;R&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1375,6 +1571,17 @@ soon as the closure returns <code>true</code>.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;B&gt; ||</pre><pre class="requires-constraint-line">              std::is_reference_v&lt;std::invoke_result_t&lt;F&, B &&, ItemT &&&gt;&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.rfold"></a><div class="template">template &lt;class B, class F&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.rfold">rfold</a>(B init, F f) && -&gt; B<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (B, Item)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;Iter, Item&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;std::invoke_result_t&lt;F &, B &&, Item &&&gt;, B&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;B&gt; ||</pre><pre class="requires-constraint-line">            std::is_reference_v&lt;std::invoke_result_t&lt;F&, B &&, Item &&&gt;&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>An iterator method that reduces the iterator’s elements to a single, final
@@ -1431,6 +1638,16 @@ overflow and will not panic.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (State &, ItemT &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;State&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.scan"></a><div class="template">template &lt;class State, class F, int &... , class R = std::invoke_result_t&lt;F &, State &, ItemT &&&gt;, class InnerR = typename ::sus::option::__private::IsOptionType&lt;R&gt;::inner_type&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.scan">scan</a>(State initial_state, F f) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;InnerR&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (State &, Item &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsOptionType&lt;R&gt;::value</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;State&gt;</pre></div>
                 </div></div>
@@ -1508,6 +1725,15 @@ of 1 returns every element.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::StrongOrd&lt;ItemT, OtherItem&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.strong_cmp"></a><div class="template">template &lt;class Other, int &... , class OtherItem = typename IntoIteratorOutputType&lt;Other&gt;::Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.strong_cmp">strong_cmp</a>(Other&& other) && -&gt; std::strong_ordering<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IntoIteratorAny&lt;Other&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::StrongOrd&lt;Item, OtherItem&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p><a href="sus-ops-Ord.html#how-can-i-implement-ord?">Lexicographically</a>
@@ -1544,6 +1770,14 @@ respect to the specified comparison function.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Sum&lt;P, ItemT&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.sum"></a><div class="template">template &lt;class P = ItemT&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.sum">sum</a>() && -&gt; P<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Sum&lt;P, Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1601,6 +1835,16 @@ remaining elements will not be yielded.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;::sus::ops::TryOutputType&lt;ItemT&gt;&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.try_collect"></a><div class="template">template &lt;class C&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.try_collect">try_collect</a>() -&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;Item&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::FromIterator&lt;C, ::sus::ops::TryOutputType&lt;Item&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;::sus::ops::TryOutputType&lt;Item&gt;&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Fallibly transforms an iterator into a collection, short circuiting if a
@@ -1653,6 +1897,16 @@ sus::check<span class="punct">(</span>x <span class="punct">=</span><span class=
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;typename ::sus::ops::TryImpl&lt;R&gt;::Output, B&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.try_fold"></a><div class="template">template &lt;class B, class F, int &... , class R = std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.try_fold">try_fold</a>(B init, F f) -&gt; R<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (B, Item)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;R&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;typename ::sus::ops::TryImpl&lt;R&gt;::Output, B&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>This function acts like <code>fold()</code> but the closure returns a type that
@@ -1674,6 +1928,15 @@ value to not being a reference.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (ItemT)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::TryDefault&lt;R&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.try_for_each"></a><div class="template">template &lt;class F, int &... , class R = std::invoke_result_t&lt;F &, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.try_for_each">try_for_each</a>(F f) -&gt; R<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (Item)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::TryDefault&lt;R&gt;</pre></div>
                 </div></div>
             </div>
@@ -1704,6 +1967,17 @@ consuming it, since it can stop iterating early.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;typename ::sus::ops::TryImpl&lt;R&gt;::Output, B&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.try_rfold"></a><div class="template">template &lt;class B, class F, int &... , class R = std::invoke_result_t&lt;F &, B &&, ItemT &&&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.try_rfold">try_rfold</a>(B init, F f) -&gt; R<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;F, ::sus::fn::NonVoid (B, Item)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;Iter, Item&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;R&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;typename ::sus::ops::TryImpl&lt;R&gt;::Output, B&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>This is the reverse version of
@@ -1718,6 +1992,18 @@ takes elements starting from the back of the iterator.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsTupleOfSizeTwo&lt;ItemT&gt;::value</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;CollectionA&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;CollectionB&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Extend&lt;CollectionA, ItemA&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Extend&lt;CollectionB, ItemB&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unzip"></a><div class="template">template &lt;class CollectionA, class CollectionB, int &... , class ItemA = typename ::sus::option::__private::IsTupleOfSizeTwo&lt;ItemT&gt;::first_type, class ItemB = typename ::sus::option::__private::IsTupleOfSizeTwo&lt;ItemT&gt;::second_type&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorBase.html#method.unzip">unzip</a>() && -&gt; <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;CollectionA, CollectionB&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::option::__private::IsTupleOfSizeTwo&lt;Item&gt;::value</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;CollectionA&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;CollectionB&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Extend&lt;CollectionA, ItemA&gt;</pre></div>

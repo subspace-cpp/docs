@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::tuple_type::operator&lt;&lt; - Subspace</title>
-  <meta property="og:title" content="sus::tuple_type::operator&lt;&lt; - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <title>sus::num::operator&lt;&lt; - Subspace</title>
+  <meta property="og:title" content="sus::num::operator&lt;&lt; - Subspace"></meta>
+  <meta name="description" content="Satisfies the Shl concept for signed primitive integers shifted by u32."></meta>
+  <meta property="og:description" content="Satisfies the Shl concept for signed primitive integers shifted by u32."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -58,21 +58,38 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.tuple_type.html">tuple_type</a>
+          <a class="namespace-name" href="sus-namespace.num.html">num</a>
           <span class="namespace-dots">::</span>
           <a class="function-name" href="#">operator&lt;&lt;</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class... Types, class StreamType&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;&lt;</a>(StreamType& stream, <span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;Types...&gt;& value) -&gt; StreamType&<div class="requires">
+            <div class="function-signature"><div class="template">template &lt;class P, class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;&lt;</a>(P l, U r) -&gt; P<div class="requires">
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::string::__private::StreamCanReceiveString&lt;StreamType, char&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;U&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">SignedPrimitiveInteger&lt;P&gt; || SignedPrimitiveEnum&lt;P&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, u32&gt;</pre></div>
+              </div></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class P, class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;&lt;</a>(P l, U r) -&gt; P<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;U&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">SignedPrimitiveInteger&lt;P&gt; || SignedPrimitiveEnum&lt;P&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::convertible_to&lt;U, u32&gt;</pre></div>
+              </div><div class="deleted">
+                deleted
               </div></div>
           </div>
         </div>
         <div class="description long">
+          <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl</code></a> concept for signed primitive integers
+shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
+
         </div>
       </div>
     </div>

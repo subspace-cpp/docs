@@ -306,6 +306,16 @@
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(u)&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Option.ctor.some"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.some">Option</a>(U&& t)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;T, U &&&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Construct an option that is holding the given value.</p>
@@ -332,6 +342,25 @@ not constructed.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialCopyCtorOrRef&lt;T&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Option.copy"></a><a class="function-name" href="sus-option-Option.html#method.Option.copy">Option</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!IsTrivialCopyCtorOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Option.copy"></a><a class="function-name" href="sus-option-Option.html#method.Option.copy">Option</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Copy constructor for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
@@ -349,6 +378,25 @@ trivially copy-constructed.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::MoveOrRef&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialMoveCtorOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Option.move"></a><a class="function-name" href="sus-option-Option.html#method.Option.move">Option</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;&& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::MoveOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!IsTrivialMoveCtorOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Option.move"></a><a class="function-name" href="sus-option-Option.html#method.Option.move">Option</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;&& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::MoveOrRef&lt;T&gt;</pre></div>
+                </div><div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>
@@ -396,6 +444,15 @@ value out of the option when the option may be used again afterward.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;Option&lt;T&gt;, U &&&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.from.from.t"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.from.from.t">from</a>(U&& val) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;Option&lt;T&gt;, U &&&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -923,6 +980,14 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
             </div>
             <div class="overload">
               <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() && -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1522,6 +1587,25 @@ through <a href="sus-option-Option.html#method.operator*"><code>operator*</code>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialCopyAssignOrRef&lt;T&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& o) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!IsTrivialCopyAssignOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& o) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Copy assignment for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
@@ -1540,6 +1624,25 @@ trivially copy-assigned.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::MoveOrRef&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::__private::IsTrivialMoveAssignOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;&& o) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::MoveOrRef&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!IsTrivialMoveAssignOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;&& o) -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::MoveOrRef&lt;T&gt;</pre></div>
+                </div><div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>

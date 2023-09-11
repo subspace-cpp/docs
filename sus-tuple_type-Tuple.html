@@ -175,6 +175,15 @@ Tuple's externally usable tail padding.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::construct::Default&lt;T&gt; && ... &&</pre><pre class="requires-constraint-line">              ::sus::construct::Default&lt;Ts&gt;)</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Tuple.ctor.default"></a><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.default">Tuple</a>()<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_default_constructible_v&lt;T&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_default_constructible_v&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_reference_v&lt;T&gt; || ... || std::is_reference_v&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Construct a Tuple with the default value for the types it contains.</p>
@@ -327,6 +336,44 @@ moved-from state where it should no longer be used.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) == sizeof...(Ts)</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::ops::StrongOrd&lt;T, U&gt; && ... &&</pre><pre class="requires-constraint-line">              ::sus::ops::StrongOrd&lt;Ts, Us&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; std::weak_ordering<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::ops::StrongOrd&lt;T&gt; && ... && ::sus::ops::StrongOrd&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::ops::Ord&lt;T&gt; && ... && ::sus::ops::Ord&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; std::weak_ordering<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) == sizeof...(Ts)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::ops::StrongOrd&lt;T, U&gt; && ... &&</pre><pre class="requires-constraint-line">               ::sus::ops::StrongOrd&lt;Ts, Us&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::ops::Ord&lt;T, U&gt; && ... && ::sus::ops::Ord&lt;Ts, Us&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; std::partial_ordering<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::ops::Ord&lt;T&gt; && ... && ::sus::ops::Ord&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::ops::PartialOrd&lt;T&gt; && ... && ::sus::ops::PartialOrd&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; std::partial_ordering<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) == sizeof...(Ts)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::ops::Ord&lt;T, U&gt; && ... && ::sus::ops::Ord&lt;Ts, Us&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::ops::PartialOrd&lt;T, U&gt; && ... &&</pre><pre class="requires-constraint-line">              ::sus::ops::PartialOrd&lt;Ts, Us&gt;)</pre></div>
                 </div></div>
             </div>
           </div>

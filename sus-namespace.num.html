@@ -186,10 +186,10 @@
           <a class="sidebar-item" href="sus-num-fn.operator_div.unsignedint._div.html">operator/</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.signedint._leftshift.html">operator&lt;&lt;</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.signed.prim._leftshiftu32.html">operator&lt;&lt;</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.unsignedint._leftshift.html">operator&lt;&lt;</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.unsigned.prim._leftshiftu32.html">operator&lt;&lt;</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-fn.operator_spaceship.float.partialord.html">operator&lt;=&gt;</a>
@@ -216,16 +216,10 @@
           <a class="sidebar-item" href="sus-num-fn.operator_eq.int.eq.html">operator==</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.html">operator&gt;&gt;</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.signed.prim._rightshiftu32.html">operator&gt;&gt;</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.signedint._rightshift.html">operator&gt;&gt;</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.unsignedint._rightshift.html">operator&gt;&gt;</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.unsignedint._leftshift.html">operator&gt;&gt;</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu32.html">operator&gt;&gt;</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-fn.operator_xor.signedint._xor.html">operator^</a>
@@ -614,7 +608,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem</code></a> concept for floating point values.</p>
             </div>
           </li>
           <li class="section-item">
@@ -624,7 +618,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem</code></a> concept for signed integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -634,7 +628,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -644,7 +638,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-BitAnd.html"><code>BitAnd&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-BitAnd.html"><code>BitAnd</code></a> concept for signed integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -654,7 +648,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-BitAnd.html"><code>BitAnd&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-BitAnd.html"><code>BitAnd</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -673,7 +667,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul</code></a> concept for floating point values.</p>
             </div>
           </li>
           <li class="section-item">
@@ -683,7 +677,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul</code></a> concept for signed integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -693,7 +687,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Mul.html"><code>Mul</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -703,7 +697,8 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>sus::num::Add&lt;T*, isize&gt; trait.</p>
+              <p>Satisfies the <a href="sus-num-Add.html"><code>Add</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-isize.html"><code>isize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -713,7 +708,8 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>sus::num::Add&lt;T*, usize&gt; trait.</p>
+              <p>Satisfies the <a href="sus-num-Add.html"><code>Add</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-usize.html"><code>usize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -732,7 +728,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Add.html"><code>Add&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Add.html"><code>Add</code></a> concept for floating point values.</p>
             </div>
           </li>
           <li class="section-item">
@@ -742,7 +738,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Add.html"><code>Add&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Add.html"><code>Add</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -752,7 +748,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Add.html"><code>Add&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Add.html"><code>Add</code></a> concept for signed integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -762,7 +758,8 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>sus::num::AddAssign&lt;T*, isize&gt; trait.</p>
+              <p>Satisfies the <a href="sus-num-AddAssign.html"><code>AddAssign</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-isize.html"><code>isize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -772,7 +769,8 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>sus::num::AddAssign&lt;T*, usize&gt; trait.</p>
+              <p>Satisfies the <a href="sus-num-AddAssign.html"><code>AddAssign</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-usize.html"><code>usize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -782,7 +780,8 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>sus::num::Sub&lt;T*, isize&gt; trait.</p>
+              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-isize.html"><code>isize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -792,7 +791,8 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>sus::num::Sub&lt;T*, usize&gt; trait.</p>
+              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-usize.html"><code>usize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -811,7 +811,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub</code></a> concept for floating point values.</p>
             </div>
           </li>
           <li class="section-item">
@@ -821,7 +821,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub</code></a> concept for signed integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -831,7 +831,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -841,7 +841,8 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>sus::num::SubAssign&lt;T*, isize&gt; trait.</p>
+              <p>Satisfies the <a href="sus-num-SubAssign.html"><code>SubAssign</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-isize.html"><code>isize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -851,7 +852,8 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>sus::num::SubAssign&lt;T*, usize&gt; trait.</p>
+              <p>Satisfies the <a href="sus-num-SubAssign.html"><code>SubAssign</code></a> concept for pointers
+(<code>T*</code>) with <a href="sus-num-usize.html"><code>usize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -870,7 +872,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Div.html"><code>Div&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Div.html"><code>Div</code></a> concept for floating point values.</p>
             </div>
           </li>
           <li class="section-item">
@@ -880,7 +882,7 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Div.html"><code>Div&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Div.html"><code>Div</code></a> concept for signed integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -890,27 +892,29 @@ as the <code>double</code> type specified by the C++ standard).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Div.html"><code>Div&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Div.html"><code>Div</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.signedint._leftshift.html">operator&lt;&lt;</a></div>
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.signed.prim._leftshiftu32.html">operator&lt;&lt;</a></div>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl</code></a> concept for signed primitive integers
+shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.unsignedint._leftshift.html">operator&lt;&lt;</a></div>
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.unsigned.prim._leftshiftu32.html">operator&lt;&lt;</a></div>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl</code></a> concept for unsigned primitive
+integers shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -997,39 +1001,23 @@ integers.</p>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.html">operator&gt;&gt;</a></div>
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.signed.prim._rightshiftu32.html">operator&gt;&gt;</a></div>
               </div>
             </div>
             <div class="description short">
+              <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for signed primitive integers
+shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.signedint._rightshift.html">operator&gt;&gt;</a></div>
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu32.html">operator&gt;&gt;</a></div>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr&lt;&gt;</code></a> concept.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.unsignedint._rightshift.html">operator&gt;&gt;</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr&lt;&gt;</code></a> concept.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.unsignedint._leftshift.html">operator&gt;&gt;</a></div>
-              </div>
-            </div>
-            <div class="description short">
+              <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for unsigned primitive
+integers shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1039,7 +1027,7 @@ integers.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-BitXor.html"><code>BitXor&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-BitXor.html"><code>BitXor</code></a> concept for signed integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1049,7 +1037,7 @@ integers.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-BitXor.html"><code>BitXor&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-BitXor.html"><code>BitXor</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1059,7 +1047,7 @@ integers.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-BitOr.html"><code>BitOr&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-BitOr.html"><code>BitOr</code></a> concept for signed integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1069,7 +1057,7 @@ integers.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Satisfies the <a href="sus-num-BitOr.html"><code>BitOr&lt;&gt;</code></a> concept.</p>
+              <p>Satisfies the <a href="sus-num-BitOr.html"><code>BitOr</code></a> concept for unsigned integers.</p>
             </div>
           </li>
         </ul>
