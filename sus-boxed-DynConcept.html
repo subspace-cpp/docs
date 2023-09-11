@@ -82,7 +82,8 @@
         <div class="description long">
           <p>A concept for generalized type erasure of concepts, allowing use of a
 concept-satisfying type <code>T</code> without knowing the concrete type <code>T</code>.</p>
-<p>By providing a virtual type-erasure class that satisifies <code>DynConcept</code> along
+<p>By providing a virtual type-erasure class that satisifies
+<a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> along
 with a concept <code>C</code>, it allows the use of generic concept-satisfying objects
 without the use of templates.
 This means a function accepting a concept-satisying object as
@@ -95,34 +96,54 @@ a parameter can:</p>
 <p>We can not specify a concept as a type parameter so there is a level of
 indirection involved and the concept itself is not named.</p>
 <p>To type-erase a concept <code>C</code>, there must be a virtual class <code>DynC</code> declared
-that satisfies this <code>DynConcept</code> concept for all concrete types <code>ConcreteT</code>
+that satisfies this <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> concept
+for all concrete types <code>ConcreteT</code>
 which satisfy the concept <code>C</code> being type-erased.</p>
 <h1><a name="performing-the-type-erasure" href="#performing-the-type-erasure">Performing the type erasure</a></h1>
-<p>To type-erase a concept-satisfying object into the heap, use
-<a href="sus-boxed-Box.html"><code>Box</code></a>, such as <code>Box&lt;DynC&gt;</code> to hold a type-erased
-heap-allocated object that is known to satisfy the concept <code>C</code>.</p>
-<p>Then, <code>Box&lt;DynC&gt;</code> will come with a method
-<a href="sus-boxed-Box.html#method.from.dync"><code>from</code></a> that lifts any object satisfying the
-concept <code>C</code> into the heap and type-erases it to <code>DynC</code>. This implies that
-<a href="sus-boxed-Box.html"><code>Box&lt;DynC&gt;</code></a> will satisfy the
-<a href="sus-construct-From.html"><code>From</code></a> concept, and can be constructed with type
-deduction through <a href="sus-construct-fn.into.html"><code>sus::into()</code></a> or
-explicitly with <code>Box&lt;DynC&gt;::from(sus::move(satisfies_c))</code>.</p>
-<p>To type-erase a concept-satisfying object into a <code>DynC</code> reference without
-heap allocation, use <a href="sus-boxed-fn.dyn.html"><code>dyn</code></a>, such as <code>dyn&lt;DynC&gt;(x)</code> to
-construct a type-erased reference to an object <code>x</code> that is known to satisfy
-the concept <code>C</code>.</p>
-<p>The <a href="sus-boxed-fn.dyn.html"><code>dyn</code></a> function, and its returned type should only
-appear in function call arguments. The returned type
-<a href="sus-boxed-Dyn.html"><code>Dyn</code></a> can not be moved, and it only converts a
-reference to a type <code>T&amp;</code> into a reference <code>DynC&amp;</code> that also satisfies <code>C</code>
-but without templates.
-This can be used to call functions that accept a type-erased concept
-by reference, such as with a <code>const DynC&amp;</code> parameter.</p>
+<p>To type-erase a concept-satisfying object (a &quot;concept object&quot;)
+into the heap, use <a href="sus-boxed-Box.html"><code>Box</code></a>.
+For example <code>Box&lt;DynC&gt;</code> would hold a type-erased
+heap-allocated object that is known to satisfy the concept <code>C</code>. A
+<a href="sus-boxed-Box.html"><code>Box</code></a> should
+always be used when storing the function object beyond the current
+stack frame, such as in a class data member. It can also be done
+for ease of working with type-erased concepts.</p>
+<pre><code><span class="comment">// This function receives and uses a type-erased concept object.</span>
+<span class="keyword">void</span> use_fn<span class="punct">(</span>sus::Box<span class="punct">&lt;</span>sus::fn::DynFn<span class="punct">&lt;</span><span class="keyword">void</span><span class="punct">(</span>i32<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&gt;</span> b<span class="punct">)</span> <span class="punct">{</span> b<span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span>
+</code></pre>
+<p>A <a href="sus-boxed-Box.html"><code>Box</code></a> holding a type-erased concept can be
+constructed with the
+<a href="sus-boxed-Box.html#method.from.dync"><code>from</code></a> constructor method. It receives a
+concept object as an input, and moves it to the heap.
+Since this satisfies the <a href="sus-construct-From.html"><code>From</code></a> concept, the
+<code>Box&lt;DynC&gt;</code> can also be constructed with type deduction through
+<a href="sus-construct-fn.into.html"><code>sus::into()</code></a>.</p>
+<pre><code><span class="keyword">auto</span> f <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>i32 i<span class="punct">)</span> <span class="punct">{</span> fmt::println<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> i<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
+<span class="comment">// Converts the lambda, which satisfies the `Fn&lt;void(i32)&gt;` concept</span>
+<span class="comment">// into a `Box&lt;DynFn&lt;void(i32)&gt;&gt;` for the function argument.</span>
+use_fn<span class="punct">(</span>sus::into<span class="punct">(</span>f<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+</code></pre>
+<p>In performance-sensitive code, it can be necessary to avoid heap
+allocations while working with type-erased concept objects, or to work with
+a concept object without taking ownership of it. It is possible
+to receive a type-erased concept object by reference instead of through a
+<a href="sus-boxed-Box.html"><code>Box</code></a>.</p>
+<pre><code><span class="comment">// This function receives and uses a type-erased concept object.</span>
+<span class="keyword">void</span> use_fn_ref<span class="punct">(</span><span class="keyword">const</span> sus::fn::DynFn<span class="punct">&lt;</span><span class="keyword">void</span><span class="punct">(</span>i32<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&amp;</span> b<span class="punct">)</span> <span class="punct">{</span> b<span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span>
+</code></pre>
+<p>To get a type-erased reference from a concept object, pass it to
+<a href="sus-boxed-fn.dyn.html"><code>sus::dyn()</code></a>. The <a href="sus-boxed-fn.dyn.html"><code>sus::dyn()</code></a>
+function constructs a type-erasure on the stack and automatically converts
+to a reference to it.</p>
+<pre><code><span class="keyword">auto</span> f <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>i32 i<span class="punct">)</span> <span class="punct">{</span> fmt::println<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> i<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
+<span class="comment">// Erases the type of the lambda, constructing a type-erased reference to a</span>
+<span class="comment">// `DynFn` to pass as the function argument.</span>
+use_fn_ref<span class="punct">(</span>sus::dyn<span class="punct">&lt;</span>sus::fn::DynFn<span class="punct">&lt;</span><span class="keyword">void</span><span class="punct">(</span>i32<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span>f<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+</code></pre>
 <h1><a name="type-erasure-of-concepts-in-the-subspace-library" href="#type-erasure-of-concepts-in-the-subspace-library">Type erasure of concepts in the Subspace library</a></h1>
 <p>Some concepts in the Subspace library come with a virtual type-erasure class
-that satisfies <code>DynConcept</code> and can be type-erased into <code>Box&lt;DynC&gt;</code> for the
-concept <code>C</code>:</p>
+that satisfies <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> and can be
+type-erased into <code>Box&lt;DynC&gt;</code> for the concept <code>C</code>:</p>
 <ul>
 <li><a href="sus-error-Error.html"><code>Error</code></a></li>
 <li><a href="sus-fn-Fn.html"><code>Fn</code></a></li>

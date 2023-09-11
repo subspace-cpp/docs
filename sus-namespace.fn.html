@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::fn - Subspace</title>
   <meta property="og:title" content="sus::fn - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <meta name="description" content="The Fn, FnMut and FnOnce concepts for working with functors and callable types."></meta>
+  <meta property="og:description" content="The Fn, FnMut and FnOnce concepts for working with functors and callable types."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -103,6 +103,66 @@
           <a class="namespace-name" href="#">fn</a>
         </div>
         <div class="description long">
+          <p>The <a href="sus-fn-Fn.html"><code>Fn</code></a>, <a href="sus-fn-FnMut.html"><code>FnMut</code></a> and
+<a href="sus-fn-FnOnce.html"><code>FnOnce</code></a> concepts for working with functors
+and callable types.</p>
+<p>There are three main concepts that model anything callable:</p>
+<ul>
+<li>A <a href="sus-fn-Fn.html"><code>Fn</code></a> represents a callable type which is const and will
+return the same outputs given the same inputs.</li>
+<li>A <a href="sus-fn-FnMut.html"><code>FnMut</code></a> represents a callable type which is allowed
+to generate unique outputs on each call. This is the most commonly used
+of the three.</li>
+<li>A <a href="sus-fn-FnOnce.html"><code>FnOnce</code></a> represents a callable type which will only
+be called once.</li>
+</ul>
+<p>As these are concepts, not concrete types, they can not enforce any
+behaviour but rather represent a protocol of expectations. Types designed to
+satisfy these concepts should adhere to them, and safely handle misuse, such
+as panicking (via <a href="sus-assertions-fn.panic.html"><code>panic</code></a>) if called twice
+when it is not supported.</p>
+<p>To make a type satisfy <a href="sus-fn-Fn.html"><code>Fn</code></a> it should have a
+const call <code>operator()</code>, to safisfy <a href="sus-fn-FnMut.html"><code>FnMut</code></a> it
+should have a mutable call <code>operator()</code> and to satisfy
+<a href="sus-fn-FnOnce.html"><code>FnOnce</code></a>, it should have an
+rvalue-qualfied call <code>operator()</code>.</p>
+<p>A <a href="sus-fn-Fn.html"><code>Fn</code></a> type will also satisfy the other two, since a const
+function that chooses not to mutate, or that is called only once, does not
+violate the protocol.</p>
+<p>Similarly, a <a href="sus-fn-FnMut.html"><code>FnMut</code></a> type will also satisfy
+<a href="sus-fn-FnOnce.html"><code>FnOnce</code></a> as it is valid to only call it a single time.</p>
+<p>The <code>fn</code> namespace provides matchers for use in the function concepts to
+match against and constrain the return type of a function.</p>
+<ul>
+<li><a href="sus-fn-NonVoid.html"><code>NonVoid</code></a> will match function types that return
+a type other than void.</li>
+<li><a href="sus-fn-Anything.html"><code>Anything</code></a> will match function types that return
+any type.</li>
+</ul>
+<p>An example of using <a href="sus-fn-NonVoid.html"><code>NonVoid</code></a> to match the return
+type of a <a href="sus-fn-FnMut.html"><code>FnMut</code></a>:</p>
+<pre><code><span class="comment">// Accepts a function that can be called repeatedly with `i32` and which</span>
+<span class="comment">// returns something other than void. A void type would break compilation</span>
+<span class="comment">// as it can not be assigned to a variable, so it rejects functions with a</span>
+<span class="comment">// void return type.</span>
+<span class="keyword">auto</span> func <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>FnMut<span class="punct">&lt;</span>NonVoid<span class="punct">(</span>i32<span class="punct">)</span><span class="punct">&gt;</span> <span class="keyword">auto</span> f<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">auto</span> x <span class="punct">=</span> f<span class="punct">(</span>0<span class="punct">)</span><span class="punct">;</span>
+  x <span class="punct">+</span><span class="punct">=</span> 3<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
+func<span class="punct">(</span><span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>i32<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> 3<span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
+</code></pre>
+<p>The same with <a href="sus-fn-FnMut.html"><code>FnMut</code></a> being
+<a href="sus-boxed-DynConcept.html">type-erased</a> as <a href="sus-fn-DynFnMut.html"><code>DynFnMut</code></a> to avoid templates. The full type must be specified
+when not working with templates, so <a href="sus-fn-NonVoid.html"><code>NonVoid</code></a> can
+not be used.</p>
+<pre><code><span class="keyword">auto</span> func <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>DynFnMut<span class="punct">&lt;</span>i32<span class="punct">(</span>i32<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&amp;</span> f<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">auto</span> x <span class="punct">=</span> f<span class="punct">(</span>0<span class="punct">)</span><span class="punct">;</span>
+  x <span class="punct">+</span><span class="punct">=</span> 3<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
+
+func<span class="punct">(</span>sus::dyn<span class="punct">&lt;</span>DynFnMut<span class="punct">&lt;</span>i32<span class="punct">(</span>i32<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>i32<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> 3<span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+</code></pre>
+
         </div>
       </div>
       <div class="section records classes">

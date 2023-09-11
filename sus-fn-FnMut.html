@@ -105,6 +105,20 @@ any arguments. This ensures the correct overload is called on the object and
 that method pointers are called correctly.
 A <code>FnMut</code> may be called any number of times, unlike <code>FnOnce</code>,
 and should not be moved when called.</p>
+<h1><a name="type-erasure" href="#type-erasure">Type erasure</a></h1>
+<p>Using a concept like <code>FnMut</code> in a function parameter requires the function
+to be a template. Template functions can not be virtual, they must appear
+in the header, and they can have a negative impact on binary size. So it can
+be desirable to work with a <code>FnMut</code> without templates.</p>
+<p>To do so, <code>FnMut</code> supports being type-erased, on the heap or the stack,
+into a <a href="sus-fn-DynFnMut.html"><code>DynFnMut</code></a> type.
+To receive ownership of a type-erased <code>FnMut</code>, receive a
+<a href="sus-boxed-Box.html"><code>Box</code></a><code>&lt;</code><a href="sus-fn-DynFnMut.html"><code>DynFnMut&lt;R(Args...)&gt;</code></a><code>&gt;</code>
+instead.
+To receive a reference to a type-erased <code>FnMut</code>, receive a
+<a href="sus-fn-DynFnMut.html"><code>DynFnMut&lt;R(Args...)&gt;&amp;&amp;</code></a> instead.</p>
+<p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
+concept-satisfying types.</p>
 <h1><a name="compatibility" href="#compatibility">Compatibility</a></h1>
 <p>Any callable type that satisfies <code>Fn</code> or <code>FnMut</code> will also satisfy <code>FnOnce</code>.
 While a <code>FnOnce</code> should only be called once, this is compatible with the

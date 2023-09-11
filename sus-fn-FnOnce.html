@@ -109,6 +109,20 @@ Not moving the <code>FnOnce</code> when calling it may fail to compile,
 <a href="sus-assertions-fn.panic.html"><code>panic</code></a>, or cause
 Undefined Behaviour depending on the type that is being used to satisfy
 <code>FnOnce</code>.</p>
+<h1><a name="type-erasure" href="#type-erasure">Type erasure</a></h1>
+<p>Using a concept like <code>FnOnce</code> in a function parameter requires the function
+to be a template. Template functions can not be virtual, they must appear
+in the header, and they can have a negative impact on binary size. So it can
+be desirable to work with a <code>FnOnce</code> without templates.</p>
+<p>To do so, <code>FnOnce</code> supports being type-erased, on the heap or the stack,
+into a <a href="sus-fn-DynFnOnce.html"><code>DynFnOnce</code></a> type.
+To receive ownership of a type-erased <code>FnOnce</code>, receive a
+<a href="sus-boxed-Box.html"><code>Box</code></a><code>&lt;</code><a href="sus-fn-DynFnOnce.html"><code>DynFnOnce&lt;R(Args...)&gt;</code></a><code>&gt;</code>
+instead.
+To receive a reference to a type-erased <code>FnOnce</code>, receive a
+<a href="sus-fn-DynFnOnce.html"><code>DynFnOnce&lt;R(Args...)&gt;&amp;&amp;</code></a> instead.</p>
+<p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
+concept-satisfying types.</p>
 <h1><a name="compatibility" href="#compatibility">Compatibility</a></h1>
 <p>Any callable type that satisfies <code>Fn</code> or <code>FnMut</code> will also satisfy <code>FnOnce</code>.
 While a <code>FnOnce</code> should only be called once, this is compatible with the
