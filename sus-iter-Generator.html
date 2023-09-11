@@ -108,14 +108,14 @@
 type <code>T</code>, and each one will be returned from the resulting <code>Iterator</code> in the
 same order.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code>auto x = []() -&gt; Generator&lt;i32&gt; {
-  co_yield 1;
-  co_yield 3;
-};
-sus::iter::Iterator&lt;i32&gt; auto it = x();
-EXPECT_EQ(it.next(), sus::some(1));
-EXPECT_EQ(it.next(), sus::some(3));
-EXPECT_EQ(it.next(), sus::none());
+<pre><code><span class="keyword">auto</span> x <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> Generator<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">co_yield</span> 1<span class="punct">;</span>
+  <span class="keyword">co_yield</span> 3<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
+sus::iter::Iterator<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> <span class="keyword">auto</span> it <span class="punct">=</span> x<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+EXPECT_EQ<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">,</span> sus::some<span class="punct">(</span>1<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+EXPECT_EQ<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">,</span> sus::some<span class="punct">(</span>3<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+EXPECT_EQ<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">,</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

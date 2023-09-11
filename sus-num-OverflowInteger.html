@@ -157,10 +157,10 @@ so can be used with <a href="sus-iter-IteratorBase.html#method.sum"><code>sum</c
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>Using OverflowInteger to sum an iterator of integers and look for overflow
 after without panicking.</p>
-<pre><code>auto a = sus::Array&lt;i32, 2&gt;(2, i32::MAX);
-auto maybe_answer =
-    a.iter().copied().product&lt;sus::num::OverflowInteger&lt;i32&gt;&gt;();
-sus::check(maybe_answer.is_overflow());
+<pre><code><span class="keyword">auto</span> a <span class="punct">=</span> sus::Array<span class="punct">&lt;</span>i32<span class="punct">,</span> 2<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">,</span> i32::MAX<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> maybe_answer <span class="punct">=</span>
+    a<span class="punct">.</span>iter<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>copied<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>product<span class="punct">&lt;</span>sus::num::OverflowInteger<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>maybe_answer<span class="punct">.</span>is_overflow<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>
@@ -180,7 +180,7 @@ sus::check(maybe_answer.is_overflow());
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.OverflowInteger"></a><div class="template">template &lt;class u:auto&gt;</div><a class="function-name" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>(std::convertible_to&lt;I&gt; auto u)</div>
+              <div class="function-signature"><a name="method.OverflowInteger"></a><a class="function-name" href="sus-num-OverflowInteger.html#method.OverflowInteger">OverflowInteger</a>(std::convertible_to&lt;I&gt; auto u)</div>
             </div>
           </div>
           <div class="description long">
@@ -200,7 +200,7 @@ which allows the compiler to choose one.
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;OverflowInteger&lt;I&gt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;OverflowInteger&lt;I&gt;, U&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -211,7 +211,7 @@ which allows the compiler to choose one.
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;I&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt;<div class="requires">
+              <div class="function-signature"><a name="method.from_product"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;I&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -219,7 +219,7 @@ which allows the compiler to choose one.
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt;&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt;<div class="requires">
+              <div class="function-signature"><a name="method.from_product"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-OverflowInteger.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt;&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-OverflowInteger.html" title="sus::num::OverflowInteger">OverflowInteger</a>&lt;I&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -247,7 +247,7 @@ return an <code>OverflowInteger</code> without ever panicking.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::TryFrom&lt;IU&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::TryFrom&lt;I, U&gt;</pre></div>
                 </div></div>
             </div>
           </div>

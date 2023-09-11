@@ -68,7 +68,7 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;GenFnItem (void)&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;GenFn, Item (void)&gt;</pre></div>
               </div></div>
           </div>
         </div>
@@ -83,10 +83,10 @@ finite.</p>
 OK to keep the source element in memory, you should instead use the
 <a href="sus-iter-fn.repeat.html"><code>repeat()</code></a> function.</p>
 <h1><a name="exampler" href="#exampler">Exampler</a></h1>
-<pre><code>auto r = sus::iter::repeat_with&lt;u16&gt;([] { return 3_u16; });
-sus::check(r.next().unwrap() == 3_u16);
-sus::check(r.next().unwrap() == 3_u16);
-sus::check(r.next().unwrap() == 3_u16);
+<pre><code><span class="keyword">auto</span> r <span class="punct">=</span> sus::iter::repeat_with<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">[</span><span class="punct">]</span> <span class="punct">{</span> <span class="keyword">return</span> 3_u16<span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>r<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>r<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>r<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

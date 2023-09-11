@@ -68,7 +68,7 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_array_v&lt;T&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
@@ -80,7 +80,7 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_array_v&lt;T&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
@@ -91,9 +91,9 @@
         <div class="description long">
           <p>Replace the <code>dest</code> with <code>src</code>, and return the old value in <code>dest</code>.</p>
 <p>This is equivalent to:</p>
-<pre><code>T old = sus::move(dest);
-dest = sus::forward&lt;T&gt;(src);
-return old;
+<pre><code>T old <span class="punct">=</span> sus::move<span class="punct">(</span>dest<span class="punct">)</span><span class="punct">;</span>
+dest <span class="punct">=</span> sus::forward<span class="punct">&lt;</span>T<span class="punct">&gt;</span><span class="punct">(</span>src<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">return</span> old<span class="punct">;</span>
 </code></pre>
 <p>This operation is known as <code>std::exchange()</code> in the stdlib.</p>
 

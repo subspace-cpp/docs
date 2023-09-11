@@ -68,7 +68,7 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;F::sus::fn::NonVoid (void)&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;F, ::sus::fn::NonVoid (void)&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">__private::IsGenerator&lt;R&gt;::value</pre></div>
               </div></div>
           </div>
@@ -79,14 +79,14 @@
 <p>This is just a syntactic aid, as <code>Generator&lt;Item&gt;</code> is an iterator, so
 calling the generator function is what produces the iterator.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code>sus::iter::Iterator&lt;i32&gt; auto it =
-    sus::iter::from_generator([]() -&gt; Generator&lt;i32&gt; {
-      co_yield 1;
-      co_yield 5;
-    });
-sus::check(it.next() == sus::some(1));
-sus::check(it.next() == sus::some(5));
-sus::check(it.next() == sus::none());
+<pre><code>sus::iter::Iterator<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> <span class="keyword">auto</span> it <span class="punct">=</span>
+    sus::iter::from_generator<span class="punct">(</span><span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> Generator<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> <span class="punct">{</span>
+      <span class="keyword">co_yield</span> 1<span class="punct">;</span>
+      <span class="keyword">co_yield</span> 5<span class="punct">;</span>
+    <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>1<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>5<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

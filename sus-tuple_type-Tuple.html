@@ -137,10 +137,10 @@ work generically over tuple-like objects including <code>sus::Tuple</code> and
 type has a size that is not a multiple of the Tuple's alignment. For
 example if it's smaller than the alignment, such as <code>Tuple&lt;u8, u64&gt;</code> which
 has <code>(alignof(u64) == sizeof(u64)) - sizeof(u8)</code> or 7 bytes of tail padding.</p>
-<pre><code>struct S {
-  [[no_unique_address]] Tuple&lt;u32, u64&gt; tuple;  <span class="comment">// 16 bytes.</span>
-  u32 val;  <span class="comment">// 4 bytes.</span>
-};  <span class="comment">// 16 bytes, since `val` is stored inside `tuple`.</span>
+<pre><code><span class="keyword">struct</span> S <span class="punct">{</span>
+  <span class="punct">[</span><span class="punct">[</span>no_unique_address<span class="punct">]</span><span class="punct">]</span> Tuple<span class="punct">&lt;</span>u32<span class="punct">,</span> u64<span class="punct">&gt;</span> tuple<span class="punct">;</span>  <span class="comment">// 16 bytes.</span>
+  u32 val<span class="punct">;</span>  <span class="comment">// 4 bytes.</span>
+<span class="punct">}</span><span class="punct">;</span>  <span class="comment">// 16 bytes, since `val` is stored inside `tuple`.</span>
 </code></pre>
 <p>However note that this behaviour is compiler-dependent, and MSVC does not
 use the <code>[[no_unique_address]]</code> hint.</p>
@@ -188,7 +188,7 @@ constructed through that trait.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;Ts&gt;...</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) == sizeof...(Ts)</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">(sus::construct::SafelyConstructibleFromReference&lt;T, U &&&gt; &&</pre><pre class="requires-constraint-line">              ... &&</pre><pre class="requires-constraint-line">              sus::construct::SafelyConstructibleFromReference&lt;Ts, Us &&&gt;)</pre></div>
@@ -265,7 +265,7 @@ convert to a reference without constructing a temporary, use an unsafe
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.extend"></a><div class="template">template &lt;class U, class... Us, class ii:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.extend">extend</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;&gt; auto&& ii) -&gt; void<div class="requires">
+              <div class="function-signature"><a name="method.extend"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.extend">extend</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;&gt; auto&& ii) -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -283,7 +283,7 @@ in as an argument yields tuples of items that will be appended to the
 collections.</p>
 <p>The item types in the argument can not be deduced, so they must be
 explicitly specified by the caller, such as:</p>
-<pre><code class="language-cpp">collections.extend&lt;i32, std::string&gt;(iter_over_tuples_i32_string());
+<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp">collections<span class="punct">.</span>extend<span class="punct">&lt;</span>i32<span class="punct">,</span> std::string<span class="punct">&gt;</span><span class="punct">(</span>iter_over_tuples_i32_string<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>Allows to <code>extend</code> a tuple of collections that also implement <code>Extend</code>.</p>
 <p>See also: <code>IteratorBase::unzip</code>.</p>

@@ -142,111 +142,111 @@ Rust.</p>
 <p>Providing the mechanism to type erase objects that satisfy a concept named
 <code>MyConcept</code> through a <code>DynMyConcept</code> class:</p>
 <pre><code><span class="comment">// A concept which requires a single const-access method named `concept_fn`.</span>
-template &lt;class T&gt;
-concept MyConcept = requires(const T&amp; t) {
-  { t.concept_fn() } -&gt; std::same_as&lt;void&gt;;
-};
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">&gt;</span>
+<span class="keyword">concept</span> MyConcept <span class="punct">=</span> <span class="keyword">requires</span><span class="punct">(</span><span class="keyword">const</span> T<span class="punct">&amp;</span> t<span class="punct">)</span> <span class="punct">{</span>
+  <span class="punct">{</span> t<span class="punct">.</span>concept_fn<span class="punct">(</span><span class="punct">)</span> <span class="punct">}</span> <span class="punct">-</span><span class="punct">&gt;</span> std::same_as<span class="punct">&lt;</span><span class="keyword">void</span><span class="punct">&gt;</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-template &lt;class T, class Store&gt;
-class DynMyConceptTyped;
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">,</span> <span class="keyword">class</span> Store<span class="punct">&gt;</span>
+<span class="keyword">class</span> DynMyConceptTyped<span class="punct">;</span>
 
-class DynMyConcept {
-  sus_dyn_concept(MyConcept, DynMyConcept, DynMyConceptTyped);
+<span class="keyword">class</span> DynMyConcept <span class="punct">{</span>
+  sus_dyn_concept<span class="punct">(</span>MyConcept<span class="punct">,</span> DynMyConcept<span class="punct">,</span> DynMyConceptTyped<span class="punct">)</span><span class="punct">;</span>
 
- public:
+ <span class="keyword">public</span>:
   <span class="comment">// Pure virtual concept API.</span>
-  virtual void concept_fn() const = 0;
-};
+  <span class="keyword">virtual</span> <span class="keyword">void</span> concept_fn<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> <span class="punct">=</span> 0<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 <span class="comment">// Verifies that DynMyConcept also satisfies MyConcept, which is required.</span>
-static_assert(MyConcept&lt;DynMyConcept&gt;);
+<span class="keyword">static_assert</span><span class="punct">(</span>MyConcept<span class="punct">&lt;</span>DynMyConcept<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
 
-template &lt;class T, class Store&gt;
-class DynMyConceptTyped final : public DynMyConcept {
-  sus_dyn_concept_typed(MyConcept, DynMyConcept, DynMyConceptTyped, v);
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">,</span> <span class="keyword">class</span> Store<span class="punct">&gt;</span>
+<span class="keyword">class</span> DynMyConceptTyped final : <span class="keyword">public</span> DynMyConcept <span class="punct">{</span>
+  sus_dyn_concept_typed<span class="punct">(</span>MyConcept<span class="punct">,</span> DynMyConcept<span class="punct">,</span> DynMyConceptTyped<span class="punct">,</span> v<span class="punct">)</span><span class="punct">;</span>
 
   <span class="comment">// Virtual concept API implementation.</span>
-  void concept_fn() const override { return v.concept_fn(); };
-};
+  <span class="keyword">void</span> concept_fn<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> override <span class="punct">{</span> <span class="keyword">return</span> v<span class="punct">.</span>concept_fn<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
 <span class="comment">// A type which satiesfies `MyConcept`.</span>
-struct MyConceptType {
-  void concept_fn() const {}
-};
+<span class="keyword">struct</span> MyConceptType <span class="punct">{</span>
+  <span class="keyword">void</span> concept_fn<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> <span class="punct">{</span><span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-int main() {
+<span class="keyword">int</span> main<span class="punct">(</span><span class="punct">)</span> <span class="punct">{</span>
   <span class="comment">// Verifies that DynMyConcept is functioning correctly, testing it against</span>
   <span class="comment">// a type that satisfies MyConcept.</span>
-  static_assert(sus::boxed::DynConcept&lt;DynMyConcept, MyConceptType&gt;);
+  <span class="keyword">static_assert</span><span class="punct">(</span>sus::boxed::DynConcept<span class="punct">&lt;</span>DynMyConcept<span class="punct">,</span> MyConceptType<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
 
-  auto b = [](Box&lt;DynMyConcept&gt; c) { c-&gt;concept_fn(); };
+  <span class="keyword">auto</span> b <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>Box<span class="punct">&lt;</span>DynMyConcept<span class="punct">&gt;</span> c<span class="punct">)</span> <span class="punct">{</span> c<span class="punct">-</span><span class="punct">&gt;</span>concept_fn<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
   <span class="comment">// `Box&lt;DynMyConcept&gt;` constructs from `MyConceptType`.</span>
-  b(sus::into(MyConceptType()));
+  b<span class="punct">(</span>sus::into<span class="punct">(</span>MyConceptType<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 
-  auto d = [](const DynMyConcept&amp; c) { c.concept_fn(); };
+  <span class="keyword">auto</span> d <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="keyword">const</span> DynMyConcept<span class="punct">&amp;</span> c<span class="punct">)</span> <span class="punct">{</span> c<span class="punct">.</span>concept_fn<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
   <span class="comment">// `MyConceptType` converts to `const MyConcept&amp;` with `sus::dyn()`.</span>
-  d(sus::dyn&lt;const DynMyConcept&gt;(MyConceptType()));
-}
+  d<span class="punct">(</span>sus::dyn<span class="punct">&lt;</span><span class="keyword">const</span> DynMyConcept<span class="punct">&gt;</span><span class="punct">(</span>MyConceptType<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 <p>An identical example to above, with a <code>DynMyConcept</code> class providing type
 erasure for the <code>MyConcept</code> concept, however without the use of the helper
 macros, showing all the required machinery:</p>
 <pre><code><span class="comment">// A concept which requires a single const-access method named `concept_fn`.</span>
-template &lt;class T&gt;
-concept MyConcept = requires(const T&amp; t) {
-  { t.concept_fn() } -&gt; std::same_as&lt;void&gt;;
-};
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">&gt;</span>
+<span class="keyword">concept</span> MyConcept <span class="punct">=</span> <span class="keyword">requires</span><span class="punct">(</span><span class="keyword">const</span> T<span class="punct">&amp;</span> t<span class="punct">)</span> <span class="punct">{</span>
+  <span class="punct">{</span> t<span class="punct">.</span>concept_fn<span class="punct">(</span><span class="punct">)</span> <span class="punct">}</span> <span class="punct">-</span><span class="punct">&gt;</span> std::same_as<span class="punct">&lt;</span><span class="keyword">void</span><span class="punct">&gt;</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-template &lt;class T, class Store&gt;
-class DynMyConceptTyped;
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">,</span> <span class="keyword">class</span> Store<span class="punct">&gt;</span>
+<span class="keyword">class</span> DynMyConceptTyped<span class="punct">;</span>
 
-class DynMyConcept {
- public:
+<span class="keyword">class</span> DynMyConcept <span class="punct">{</span>
+ <span class="keyword">public</span>:
   <span class="comment">// Pure virtual concept API.</span>
-  virtual void concept_fn() const = 0;
-  template &lt;class T&gt;
+  <span class="keyword">virtual</span> <span class="keyword">void</span> concept_fn<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> <span class="punct">=</span> 0<span class="punct">;</span>
+  <span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">&gt;</span>
 
-  static constexpr bool SatisfiesConcept = MyConcept&lt;T&gt;;
-  template &lt;class T, class Store&gt;
-  using DynTyped = DynMyConceptTyped&lt;T, Store&gt;;
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> SatisfiesConcept <span class="punct">=</span> MyConcept<span class="punct">&lt;</span>T<span class="punct">&gt;</span><span class="punct">;</span>
+  <span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">,</span> <span class="keyword">class</span> Store<span class="punct">&gt;</span>
+  <span class="keyword">using</span> DynTyped <span class="punct">=</span> DynMyConceptTyped<span class="punct">&lt;</span>T<span class="punct">,</span> Store<span class="punct">&gt;</span><span class="punct">;</span>
 
-  DynMyConcept() = default;
-  virtual ~DynMyConcept() = default;
-  DynMyConcept(DynC&amp;&amp;) = delete;
-  DynMyConcept&amp; operator=(DynMyConcept&amp;&amp;) = delete;
-};
+  DynMyConcept<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+  <span class="keyword">virtual</span> ~DynMyConcept<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+  DynMyConcept<span class="punct">(</span>DynC<span class="punct">&amp;</span><span class="punct">&amp;</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">delete</span><span class="punct">;</span>
+  DynMyConcept<span class="punct">&amp;</span> <span class="keyword">operator</span><span class="punct">=</span><span class="punct">(</span>DynMyConcept<span class="punct">&amp;</span><span class="punct">&amp;</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">delete</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 <span class="comment">// Verifies that DynMyConcept also satisfies MyConcept, which is required.</span>
-static_assert(MyConcept&lt;DynMyConcept&gt;);
+<span class="keyword">static_assert</span><span class="punct">(</span>MyConcept<span class="punct">&lt;</span>DynMyConcept<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
 
-template &lt;class T, class Store&gt;
-class DynMyConceptTyped final : public DynMyConcept {
- public:
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">,</span> <span class="keyword">class</span> Store<span class="punct">&gt;</span>
+<span class="keyword">class</span> DynMyConceptTyped final : <span class="keyword">public</span> DynMyConcept <span class="punct">{</span>
+ <span class="keyword">public</span>:
   <span class="comment">// Virtual concept API implementation.</span>
-  void concept_fn() const override { return c_.concept_fn(); };
+  <span class="keyword">void</span> concept_fn<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> override <span class="punct">{</span> <span class="keyword">return</span> c_<span class="punct">.</span>concept_fn<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
 
-  constexpr DynMyConceptTyped(Store&amp;&amp; c) : c_(::sus::forward&lt;Store&gt;(c)) {}
+  <span class="keyword">constexpr</span> DynMyConceptTyped<span class="punct">(</span>Store<span class="punct">&amp;</span><span class="punct">&amp;</span> c<span class="punct">)</span> : c_<span class="punct">(</span>::sus::forward<span class="punct">&lt;</span>Store<span class="punct">&gt;</span><span class="punct">(</span>c<span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span><span class="punct">}</span>
 
- private:
-  Store c_;
-};
+ <span class="keyword">private</span>:
+  Store c_<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
 <span class="comment">// A type which satiesfies `MyConcept`.</span>
-struct MyConceptType {
-  void concept_fn() const {}
-};
+<span class="keyword">struct</span> MyConceptType <span class="punct">{</span>
+  <span class="keyword">void</span> concept_fn<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> <span class="punct">{</span><span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-int main() {
+<span class="keyword">int</span> main<span class="punct">(</span><span class="punct">)</span> <span class="punct">{</span>
   <span class="comment">// Verifies that DynMyConcept is functioning correctly, testing it against</span>
   <span class="comment">// a type that satisfies MyConcept.</span>
-  static_assert(sus::boxed::DynConcept&lt;DynMyConcept, MyConceptType&gt;);
+  <span class="keyword">static_assert</span><span class="punct">(</span>sus::boxed::DynConcept<span class="punct">&lt;</span>DynMyConcept<span class="punct">,</span> MyConceptType<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
 
-  auto b = [](Box&lt;DynMyConcept&gt; c) { c-&gt;concept_fn(); };
+  <span class="keyword">auto</span> b <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>Box<span class="punct">&lt;</span>DynMyConcept<span class="punct">&gt;</span> c<span class="punct">)</span> <span class="punct">{</span> c<span class="punct">-</span><span class="punct">&gt;</span>concept_fn<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
   <span class="comment">// `Box&lt;DynMyConcept&gt;` constructs from `MyConceptType`.</span>
-  b(sus::into(MyConceptType()));
+  b<span class="punct">(</span>sus::into<span class="punct">(</span>MyConceptType<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 
-  auto d = [](const DynMyConcept&amp; c) { c.concept_fn(); };
+  <span class="keyword">auto</span> d <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="keyword">const</span> DynMyConcept<span class="punct">&amp;</span> c<span class="punct">)</span> <span class="punct">{</span> c<span class="punct">.</span>concept_fn<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
   <span class="comment">// `MyConceptType` converts to `const MyConcept&amp;` with `sus::dyn()`.</span>
-  d(sus::dyn&lt;const DynMyConcept&gt;(MyConceptType()));
-}
+  d<span class="punct">(</span>sus::dyn<span class="punct">&lt;</span><span class="keyword">const</span> DynMyConcept<span class="punct">&gt;</span><span class="punct">(</span>MyConceptType<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 <h2><a name="holding-dyn()-in-a-stack-variable" href="#holding-dyn()-in-a-stack-variable">Holding dyn() in a stack variable</a></h2>
 <p>When a function receives a type-erased <code>DynC&amp;</code> by reference, it allows the
@@ -263,29 +263,29 @@ as those passed to functions like <a href="sus-option-Option.html#method.map"><c
 can not be used to construct the <code>DynC&amp;</code> reference.</p>
 <p>In order to ensure the target of the <code>DynC&amp;</code> reference outlives the function
 it can be constructed as a stack variable before calling the function.</p>
-<pre><code>std::srand(sus::mog&lt;unsigned&gt;(std::time(nullptr)));
+<pre><code>std::srand<span class="punct">(</span>sus::mog<span class="punct">&lt;</span><span class="keyword">unsigned</span><span class="punct">&gt;</span><span class="punct">(</span>std::time<span class="punct">(</span><span class="keyword">nullptr</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 
-auto x = [](sus::Option&lt;sus::fn::DynFn&lt;std::string()&gt;&amp;&gt; fn) {
-  if (fn.is_some())
-    return sus::move(fn).unwrap()();
-  else
-    return std::string(&quot;tails&quot;);
-};
+<span class="keyword">auto</span> x <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>sus::Option<span class="punct">&lt;</span>sus::fn::DynFn<span class="punct">&lt;</span>std::string<span class="punct">(</span><span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&amp;</span><span class="punct">&gt;</span> fn<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">if</span> <span class="punct">(</span>fn<span class="punct">.</span>is_some<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span>
+    <span class="keyword">return</span> sus::move<span class="punct">(</span>fn<span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+  <span class="keyword">else</span>
+    <span class="keyword">return</span> std::string<span class="punct">(</span><span class="string">&quot;tails&quot;</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-auto heads = [] { return std::string(&quot;heads&quot;); };
+<span class="keyword">auto</span> heads <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span> <span class="punct">{</span> <span class="keyword">return</span> std::string<span class="punct">(</span><span class="string">&quot;heads&quot;</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
 <span class="comment">// Type-erased `Fn&lt;std::string()&gt;` that represents `heads`. Placed on the</span>
 <span class="comment">// stack to outlive its use in the `Option` and the call to `x(cb)`.</span>
-auto dyn_heads = sus::dyn&lt;sus::fn::DynFn&lt;std::string()&gt;&gt;(heads);
+<span class="keyword">auto</span> dyn_heads <span class="punct">=</span> sus::dyn<span class="punct">&lt;</span>sus::fn::DynFn<span class="punct">&lt;</span>std::string<span class="punct">(</span><span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span>heads<span class="punct">)</span><span class="punct">;</span>
 <span class="comment">// Conditionally holds a type-erased reference to `heads`. This requires a</span>
 <span class="comment">// type-erasure that outlives the `cb` variable.</span>
-auto cb = [&amp;]() -&gt; sus::Option&lt;sus::fn::DynFn&lt;std::string()&gt;&amp;&gt; {
-  if (std::rand() % 2) return sus::some(dyn_heads);
-  return sus::none();
-}();
+<span class="keyword">auto</span> cb <span class="punct">=</span> <span class="punct">[</span><span class="punct">&amp;</span><span class="punct">]</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> sus::Option<span class="punct">&lt;</span>sus::fn::DynFn<span class="punct">&lt;</span>std::string<span class="punct">(</span><span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&amp;</span><span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">if</span> <span class="punct">(</span>std::rand<span class="punct">(</span><span class="punct">)</span> <span class="punct">%</span> 2<span class="punct">)</span> <span class="keyword">return</span> sus::some<span class="punct">(</span>dyn_heads<span class="punct">)</span><span class="punct">;</span>
+  <span class="keyword">return</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
 
-std::string s = x(cb);
+std::string s <span class="punct">=</span> x<span class="punct">(</span>cb<span class="punct">)</span><span class="punct">;</span>
 
-fmt::println(&quot;{}&quot;, s);  <span class="comment">// Prints one of &quot;heads&quot; or &quot;tails.</span>
+fmt::println<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> s<span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Prints one of &quot;heads&quot; or &quot;tails.</span>
 </code></pre>
 <p>It can greatly simplify correctness of code to use owned type-erased
 concept objects through <a href="sus-boxed-Box.html"><code>Box</code></a>, such as

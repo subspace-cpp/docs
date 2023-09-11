@@ -533,7 +533,7 @@ other integer types.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.uptr.ctor.unsigned.nullptr"></a><div class="template">template &lt;class auto:1&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr">uptr</a>(std::same_as&lt;std::nullptr_t&gt; auto)</div>
+              <div class="function-signature"><a name="method.uptr.ctor.unsigned.nullptr"></a><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr">uptr</a>(std::same_as&lt;std::nullptr_t&gt; auto)</div>
             </div>
           </div>
           <div class="description long">
@@ -675,7 +675,7 @@ wants to use <code>from_be_bytes()</code> or <code>from_le_bytes()</code>, as ap
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+              <div class="function-signature"><a name="method.from_product"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -698,7 +698,7 @@ called for iterators over uptr.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_sum"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_sum">from_sum</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+              <div class="function-signature"><a name="method.from_sum"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.from_sum">from_sum</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1608,7 +1608,7 @@ boundary of the type.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;Uuintptr_t&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;U, uintptr_t&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1618,13 +1618,13 @@ boundary of the type.</p>
 types. Note that the C++ standard library may alias <code>uintptr_t</code> with
 <code>uint32_t</code> or <code>uint64_t</code> which would then allow that specific conversion as
 well.</p>
-<pre><code>auto d = uintptr_t{uptr()};  <span class="comment">// Compiles.</span>
-auto e = uintptr_t(uptr());  <span class="comment">// Compiles.</span>
-uintptr_t f = uptr();  <span class="comment">// Compiles.</span>
+<pre><code><span class="keyword">auto</span> d <span class="punct">=</span> uintptr_t<span class="punct">{</span>uptr<span class="punct">(</span><span class="punct">)</span><span class="punct">}</span><span class="punct">;</span>  <span class="comment">// Compiles.</span>
+<span class="keyword">auto</span> e <span class="punct">=</span> uintptr_t<span class="punct">(</span>uptr<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiles.</span>
+uintptr_t f <span class="punct">=</span> uptr<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiles.</span>
 
-auto d = int64_t{uptr()};  <span class="comment">// Does not compile.</span>
-auto e = int64_t(uptr());  <span class="comment">// Does not compile.</span>
-int64_t f = uptr();  <span class="comment">// Does not compile.</span>
+<span class="keyword">auto</span> d <span class="punct">=</span> int64_t<span class="punct">{</span>uptr<span class="punct">(</span><span class="punct">)</span><span class="punct">}</span><span class="punct">;</span>  <span class="comment">// Does not compile.</span>
+<span class="keyword">auto</span> e <span class="punct">=</span> int64_t<span class="punct">(</span>uptr<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Does not compile.</span>
+int64_t f <span class="punct">=</span> uptr<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as
@@ -1732,7 +1732,7 @@ concept.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator=.assign.unsigned.nullptr"></a><div class="template">template &lt;class auto:1&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator=.assign.unsigned.nullptr">operator=</a>(std::same_as&lt;std::nullptr_t&gt; auto) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&</div>
+              <div class="function-signature"><a name="method.operator=.assign.unsigned.nullptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator=.assign.unsigned.nullptr">operator=</a>(std::same_as&lt;std::nullptr_t&gt; auto) -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&</div>
             </div>
           </div>
           <div class="description long">

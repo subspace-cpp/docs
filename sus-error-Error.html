@@ -85,8 +85,8 @@ expectations for error values, i.e., values of type <code>E</code> in
 <a href="sus-result-Result.html"><code>Result&lt;T, E&gt;</code></a>.</p>
 <p>Errors must describe themselves through a <code>display</code> method. Error messages
 are typically concise lowercase sentences without trailing punctuation:</p>
-<pre><code>auto err = u32::try_from(-1).unwrap_err();
-sus::check(fmt::to_string(err) == &quot;out of bounds&quot;);
+<pre><code><span class="keyword">auto</span> err <span class="punct">=</span> u32::try_from<span class="punct">(</span><span class="punct">-</span>1<span class="punct">)</span><span class="punct">.</span>unwrap_err<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>fmt::to_string<span class="punct">(</span>err<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;out of bounds&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <h1><a name="implementing-error" href="#implementing-error">Implementing Error</a></h1>
 <p>To make an <a href="sus-error-Error.html"><code>Error</code></a> type, specialize <code>ErrorImpl&lt;T&gt;</code>
@@ -95,8 +95,8 @@ for the error type <code>T</code> and implement the required method:</p>
 <li><code>static auto display(const T&amp;) -&gt; std::string</code>: An error message
 describing the error. fmtlib support is provided for all error types
 through a blanket implementation that uses <code>display</code>. Error messages are
-typically concise lowercase sentences without trailing punctuation:<pre><code>auto err = u32::try_from(-1).unwrap_err();
-sus::check(fmt::to_string(err) == &quot;out of bounds&quot;);
+typically concise lowercase sentences without trailing punctuation:<pre><code><span class="keyword">auto</span> err <span class="punct">=</span> u32::try_from<span class="punct">(</span><span class="punct">-</span>1<span class="punct">)</span><span class="punct">.</span>unwrap_err<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>fmt::to_string<span class="punct">(</span>err<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;out of bounds&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 </li>
 </ul>
@@ -187,118 +187,118 @@ avoids type erasure, using type composition instead.</p>
 </ul>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>An <a href="https://en.cppreference.com/w/cpp/language/enum">enum</a> error type:</p>
-<pre><code>enum class ErrorReason {
+<pre><code><span class="keyword">enum</span> <span class="keyword">class</span> ErrorReason <span class="punct">{</span>
   SomeReason
-};
+<span class="punct">}</span><span class="punct">;</span>
 
-template &lt;&gt;
-struct sus::error::ErrorImpl&lt;ErrorReason&gt;  {
-  constexpr static std::string display(const ErrorReason&amp; self) noexcept {
-    switch (self) {
-      case ErrorReason::SomeReason: return &quot;we saw SomeReason happen&quot;;
-    }
-    sus::unreachable();
-  }
-};
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="punct">&gt;</span>
+<span class="keyword">struct</span> sus::error::ErrorImpl<span class="punct">&lt;</span>ErrorReason<span class="punct">&gt;</span>  <span class="punct">{</span>
+  <span class="keyword">constexpr</span> <span class="keyword">static</span> std::string display<span class="punct">(</span><span class="keyword">const</span> ErrorReason<span class="punct">&amp;</span> self<span class="punct">)</span> <span class="keyword">noexcept</span> <span class="punct">{</span>
+    <span class="keyword">switch</span> <span class="punct">(</span>self<span class="punct">)</span> <span class="punct">{</span>
+      <span class="keyword">case</span> ErrorReason::SomeReason: <span class="keyword">return</span> <span class="string">&quot;we saw SomeReason happen&quot;</span><span class="punct">;</span>
+    <span class="punct">}</span>
+    sus::unreachable<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+  <span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-static_assert(sus::error::error_display(ErrorReason::SomeReason) ==
-              &quot;we saw SomeReason happen&quot;);
+<span class="keyword">static_assert</span><span class="punct">(</span>sus::error::error_display<span class="punct">(</span>ErrorReason::SomeReason<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span>
+              <span class="string">&quot;we saw SomeReason happen&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>An struct error type, which is backed by a string:</p>
-<pre><code>struct ErrorString final {
-  std::string reason;
-};
+<pre><code><span class="keyword">struct</span> ErrorString final <span class="punct">{</span>
+  std::string reason<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-template &lt;&gt;
-struct sus::error::ErrorImpl&lt;ErrorString&gt;  {
-  constexpr static std::string display(const ErrorString&amp; self) noexcept {
-    return sus::clone(self.reason);
-  }
-};
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="punct">&gt;</span>
+<span class="keyword">struct</span> sus::error::ErrorImpl<span class="punct">&lt;</span>ErrorString<span class="punct">&gt;</span>  <span class="punct">{</span>
+  <span class="keyword">constexpr</span> <span class="keyword">static</span> std::string display<span class="punct">(</span><span class="keyword">const</span> ErrorString<span class="punct">&amp;</span> self<span class="punct">)</span> <span class="keyword">noexcept</span> <span class="punct">{</span>
+    <span class="keyword">return</span> sus::clone<span class="punct">(</span>self<span class="punct">.</span>reason<span class="punct">)</span><span class="punct">;</span>
+  <span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-static_assert(sus::error::error_display(ErrorString(&quot;oops&quot;)) == &quot;oops&quot;);
+<span class="keyword">static_assert</span><span class="punct">(</span>sus::error::error_display<span class="punct">(</span>ErrorString<span class="punct">(</span><span class="string">&quot;oops&quot;</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;oops&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>An example function that returns a
 <a href="sus-result-Result.html"><code>Result&lt;void, Box&lt;DynError&gt;&gt;</code></a>, allowing
 it to return any error type:</p>
-<pre><code>auto f = [](i32 i) -&gt; sus::result::Result&lt;void, sus::Box&lt;sus::error::DynError&gt;&gt; {
-  if (i &gt; 10) return sus::err(sus::into(ErrorReason::SomeReason));
-  if (i &lt; -10) return sus::err(sus::into(ErrorString(&quot;too low&quot;)));
-  return sus::ok();
-};
+<pre><code><span class="keyword">auto</span> f <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>i32 i<span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> sus::result::Result<span class="punct">&lt;</span><span class="keyword">void</span><span class="punct">,</span> sus::Box<span class="punct">&lt;</span>sus::error::DynError<span class="punct">&gt;</span><span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">if</span> <span class="punct">(</span>i <span class="punct">&gt;</span> 10<span class="punct">)</span> <span class="keyword">return</span> sus::err<span class="punct">(</span>sus::into<span class="punct">(</span>ErrorReason::SomeReason<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+  <span class="keyword">if</span> <span class="punct">(</span>i <span class="punct">&lt;</span> <span class="punct">-</span>10<span class="punct">)</span> <span class="keyword">return</span> sus::err<span class="punct">(</span>sus::into<span class="punct">(</span>ErrorString<span class="punct">(</span><span class="string">&quot;too low&quot;</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+  <span class="keyword">return</span> sus::ok<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-sus::check(fmt::format(&quot;{}&quot;, f(20)) == &quot;Err(we saw SomeReason happen)&quot;);
-sus::check(fmt::format(&quot;{}&quot;, f(-20)) == &quot;Err(too low)&quot;);
-sus::check(fmt::format(&quot;{}&quot;, f(0)) == &quot;Ok(&lt;void&gt;)&quot;);
+sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span>20<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Err(we saw SomeReason happen)&quot;</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span><span class="punct">-</span>20<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Err(too low)&quot;</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span>0<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Ok(&lt;void&gt;)&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>An example error that reports a <code>source</code>:</p>
-<pre><code>struct SuperErrorSideKick {};
+<pre><code><span class="keyword">struct</span> SuperErrorSideKick <span class="punct">{</span><span class="punct">}</span><span class="punct">;</span>
 
-struct SuperError {
-  sus::Box&lt;sus::error::DynError&gt; source;
-};
+<span class="keyword">struct</span> SuperError <span class="punct">{</span>
+  sus::Box<span class="punct">&lt;</span>sus::error::DynError<span class="punct">&gt;</span> source<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-template &lt;&gt;
-struct sus::error::ErrorImpl&lt;SuperError&gt; {
-  constexpr static std::string display(const SuperError&amp;) noexcept {
-    return &quot;SuperError is here!&quot;;
-  }
-  constexpr static sus::Option&lt;const DynError&amp;&gt; source(
-      const SuperError&amp; self) noexcept {
-    return sus::some(*self.source);
-  }
-};
-static_assert(sus::error::Error&lt;SuperError&gt;);
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="punct">&gt;</span>
+<span class="keyword">struct</span> sus::error::ErrorImpl<span class="punct">&lt;</span>SuperError<span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">constexpr</span> <span class="keyword">static</span> std::string display<span class="punct">(</span><span class="keyword">const</span> SuperError<span class="punct">&amp;</span><span class="punct">)</span> <span class="keyword">noexcept</span> <span class="punct">{</span>
+    <span class="keyword">return</span> <span class="string">&quot;SuperError is here!&quot;</span><span class="punct">;</span>
+  <span class="punct">}</span>
+  <span class="keyword">constexpr</span> <span class="keyword">static</span> sus::Option<span class="punct">&lt;</span><span class="keyword">const</span> DynError<span class="punct">&amp;</span><span class="punct">&gt;</span> source<span class="punct">(</span>
+      <span class="keyword">const</span> SuperError<span class="punct">&amp;</span> self<span class="punct">)</span> <span class="keyword">noexcept</span> <span class="punct">{</span>
+    <span class="keyword">return</span> sus::some<span class="punct">(</span><span class="punct">*</span>self<span class="punct">.</span>source<span class="punct">)</span><span class="punct">;</span>
+  <span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">static_assert</span><span class="punct">(</span>sus::error::Error<span class="punct">&lt;</span>SuperError<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
 
-template &lt;&gt;
-struct sus::error::ErrorImpl&lt;SuperErrorSideKick&gt; {
-  constexpr static std::string display(const SuperErrorSideKick&amp;) noexcept
-  {
-    return &quot;SuperErrorSideKick is here!&quot;;
-  }
-};
-static_assert(sus::error::Error&lt;SuperErrorSideKick&gt;);
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="punct">&gt;</span>
+<span class="keyword">struct</span> sus::error::ErrorImpl<span class="punct">&lt;</span>SuperErrorSideKick<span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">constexpr</span> <span class="keyword">static</span> std::string display<span class="punct">(</span><span class="keyword">const</span> SuperErrorSideKick<span class="punct">&amp;</span><span class="punct">)</span> <span class="keyword">noexcept</span>
+  <span class="punct">{</span>
+    <span class="keyword">return</span> <span class="string">&quot;SuperErrorSideKick is here!&quot;</span><span class="punct">;</span>
+  <span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">static_assert</span><span class="punct">(</span>sus::error::Error<span class="punct">&lt;</span>SuperErrorSideKick<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
 
-auto get_super_error = []() -&gt; sus::result::Result&lt;void, SuperError&gt; {
-  return sus::err(SuperError{.source = sus::into(SuperErrorSideKick())});
-};
+<span class="keyword">auto</span> get_super_error <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> sus::result::Result<span class="punct">&lt;</span><span class="keyword">void</span><span class="punct">,</span> SuperError<span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">return</span> sus::err<span class="punct">(</span>SuperError<span class="punct">{</span><span class="punct">.</span>source <span class="punct">=</span> sus::into<span class="punct">(</span>SuperErrorSideKick<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-if (auto r = get_super_error(); r.is_err()) {
-  auto&amp; e = r.as_err();
-  sus::check(fmt::format(&quot;Error: {}&quot;, e) == &quot;Error: SuperError is here!&quot;);
-  sus::check(
-      fmt::format(&quot;Caused by: {}&quot;, sus::error::error_source(e).unwrap())
-      == &quot;Caused by: SuperErrorSideKick is here!&quot;);
-}
+<span class="keyword">if</span> <span class="punct">(</span><span class="keyword">auto</span> r <span class="punct">=</span> get_super_error<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> r<span class="punct">.</span>is_err<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">auto</span><span class="punct">&amp;</span> e <span class="punct">=</span> r<span class="punct">.</span>as_err<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+  sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;Error: {}&quot;</span><span class="punct">,</span> e<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Error: SuperError is here!&quot;</span><span class="punct">)</span><span class="punct">;</span>
+  sus::check<span class="punct">(</span>
+      fmt::format<span class="punct">(</span><span class="string">&quot;Caused by: {}&quot;</span><span class="punct">,</span> sus::error::error_source<span class="punct">(</span>e<span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span>
+      <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Caused by: SuperErrorSideKick is here!&quot;</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 <p>An example of a custom error type hierarchy, which can allow for
 recovering the full error type by downcasting:</p>
-<pre><code>struct AnError {
-  virtual ~AnError() = default;
-  virtual std::string describe() const = 0;
-};
-struct Specific : public AnError {
-  std::string describe() const override {
-    return &quot;specific problem has occurred&quot;;
-  }
-};
+<pre><code><span class="keyword">struct</span> AnError <span class="punct">{</span>
+  <span class="keyword">virtual</span> ~AnError<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+  <span class="keyword">virtual</span> std::string describe<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> <span class="punct">=</span> 0<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">struct</span> Specific : <span class="keyword">public</span> AnError <span class="punct">{</span>
+  std::string describe<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> override <span class="punct">{</span>
+    <span class="keyword">return</span> <span class="string">&quot;specific problem has occurred&quot;</span><span class="punct">;</span>
+  <span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-template &lt;&gt;  <span class="comment">// Implement `sus::error::Error` for AnError.</span>
-struct sus::error::ErrorImpl&lt;AnError&gt; {
-  static std::string display(const AnError&amp; e) { return e.describe(); }
-};
+<span class="keyword">template</span> <span class="punct">&lt;</span><span class="punct">&gt;</span>  <span class="comment">// Implement `sus::error::Error` for AnError.</span>
+<span class="keyword">struct</span> sus::error::ErrorImpl<span class="punct">&lt;</span>AnError<span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">static</span> std::string display<span class="punct">(</span><span class="keyword">const</span> AnError<span class="punct">&amp;</span> e<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> e<span class="punct">.</span>describe<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-sus::Result&lt;void, sus::Box&lt;AnError&gt;&gt; always_error() {
+sus::Result<span class="punct">&lt;</span><span class="keyword">void</span><span class="punct">,</span> sus::Box<span class="punct">&lt;</span>AnError<span class="punct">&gt;</span><span class="punct">&gt;</span> always_error<span class="punct">(</span><span class="punct">)</span> <span class="punct">{</span>
   <span class="comment">// Deduces to Result&lt;Box&lt;AnError&gt;&gt;</span>
-  return sus::err(sus::into(Specific()));
-};
+  <span class="keyword">return</span> sus::err<span class="punct">(</span>sus::into<span class="punct">(</span>Specific<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-int main() {
-  always_error().unwrap();
+<span class="keyword">int</span> main<span class="punct">(</span><span class="punct">)</span> <span class="punct">{</span>
+  always_error<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
   <span class="comment">// Prints:</span>
   <span class="comment">// PANIC! at 'specific problem has occurred',</span>
   <span class="comment">// path/to/sus/result/result.h:790:11</span>
-}
+<span class="punct">}</span>
 </code></pre>
 
         </div>

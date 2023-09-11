@@ -64,7 +64,7 @@
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class iia:auto, class iib:auto&gt;</div><span class="function-auto">auto</span><a class="function-name" href="#">zip</a>(<a class="type-name" href="sus-iter-IntoIteratorAny.html" title="sus::iter::IntoIteratorAny">IntoIteratorAny</a> auto&& iia, <a class="type-name" href="sus-iter-IntoIteratorAny.html" title="sus::iter::IntoIteratorAny">IntoIteratorAny</a> auto&& iib) -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;sus::iter::IntoIteratorOutputType&lt;decltype(iia)&gt;::Item, sus::iter::IntoIteratorOutputType&lt;decltype(iib)&gt;::Item&gt;&gt; auto<div class="requires">
+            <div class="function-signature"><span class="function-auto">auto</span><a class="function-name" href="#">zip</a>(<a class="type-name" href="sus-iter-IntoIteratorAny.html" title="sus::iter::IntoIteratorAny">IntoIteratorAny</a> auto&& iia, <a class="type-name" href="sus-iter-IntoIteratorAny.html" title="sus::iter::IntoIteratorAny">IntoIteratorAny</a> auto&& iib) -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;sus::iter::IntoIteratorOutputType&lt;decltype(iia)&gt;::Item, sus::iter::IntoIteratorOutputType&lt;decltype(iib)&gt;::Item&gt;&gt; auto<div class="requires">
                 <span class="requires-keyword keyword">
                   requires
                 </span>
@@ -78,12 +78,12 @@
 <p>See the documentation of [<code>Iterator::zip]</code>(sus::iter::IteratorBase::zip) for
 more.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code>auto a = sus::Array&lt;i32, 2&gt;(2, 3);
-auto b = sus::Array&lt;f32, 5&gt;(3.f, 4.f, 5.f, 6.f, 7.f);
-auto it = sus::iter::zip(::sus::move(a), ::sus::move(b));
-sus::check(it.next() == sus::some(sus::tuple(2, 3.f)));
-sus::check(it.next() == sus::some(sus::tuple(3, 4.f)));
-sus::check(it.next() == sus::none());
+<pre><code><span class="keyword">auto</span> a <span class="punct">=</span> sus::Array<span class="punct">&lt;</span>i32<span class="punct">,</span> 2<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">,</span> 3<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> b <span class="punct">=</span> sus::Array<span class="punct">&lt;</span>f32<span class="punct">,</span> 5<span class="punct">&gt;</span><span class="punct">(</span>3<span class="punct">.</span>f<span class="punct">,</span> 4<span class="punct">.</span>f<span class="punct">,</span> 5<span class="punct">.</span>f<span class="punct">,</span> 6<span class="punct">.</span>f<span class="punct">,</span> 7<span class="punct">.</span>f<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> it <span class="punct">=</span> sus::iter::zip<span class="punct">(</span>::sus::move<span class="punct">(</span>a<span class="punct">)</span><span class="punct">,</span> ::sus::move<span class="punct">(</span>b<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>sus::tuple<span class="punct">(</span>2<span class="punct">,</span> 3<span class="punct">.</span>f<span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>sus::tuple<span class="punct">(</span>3<span class="punct">,</span> 4<span class="punct">.</span>f<span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

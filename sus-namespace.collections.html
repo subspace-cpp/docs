@@ -357,17 +357,17 @@ be yielded in sorted order. For unordered collections like HashMap, the
 items will be yielded in whatever order the internal representation made
 most convenient. This is great for reading through all the contents of the
 collection.</p>
-<pre><code>const auto vec = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
-for (const auto&amp; x: vec.iter()) {
-   fmt::println(&quot;vec contained {}&quot;, x);
-}
+<pre><code><span class="keyword">const</span> <span class="keyword">auto</span> vec <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">for</span> <span class="punct">(</span><span class="keyword">const</span> <span class="keyword">auto</span><span class="punct">&amp;</span> x: vec<span class="punct">.</span>iter<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
+   fmt::println<span class="punct">(</span><span class="string">&quot;vec contained {}&quot;</span><span class="punct">,</span> x<span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 <p><code>iter_mut()</code> provides an iterator of mutable references in the same order as
 iter. This is great for mutating all the contents of the collection.</p>
-<pre><code>auto vec = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
-for (auto&amp; x: vec.iter_mut()) {
-   x += 1;
-}
+<pre><code><span class="keyword">auto</span> vec <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">for</span> <span class="punct">(</span><span class="keyword">auto</span><span class="punct">&amp;</span> x: vec<span class="punct">.</span>iter_mut<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
+   x <span class="punct">+</span><span class="punct">=</span> 1<span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 <p><code>into_iter()</code> transforms the actual collection into an iterator over its
 contents by-value. This is great when the collection itself is no longer
@@ -378,14 +378,14 @@ that satisfies <code>IntoIterator</code>. Calling <code>collect()</code> on an i
 also a great way to convert one collection into another. Both of these
 methods should internally use the capacity management tools discussed in the
 previous section to do this as efficiently as possible.</p>
-<pre><code>auto vec1 = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
-auto vec2 = sus::Vec&lt;i32&gt;(10, 20, 30, 40);
-vec1.extend(sus::move(vec2));
+<pre><code><span class="keyword">auto</span> vec1 <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> vec2 <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>10<span class="punct">,</span> 20<span class="punct">,</span> 30<span class="punct">,</span> 40<span class="punct">)</span><span class="punct">;</span>
+vec1<span class="punct">.</span>extend<span class="punct">(</span>sus::move<span class="punct">(</span>vec2<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
-<pre><code>#include &quot;sus/collections/vec_deque.h&quot;
+<pre><code>#include <span class="string">&quot;sus/collections/vec_deque.h&quot;</span>
 
-auto vec = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
-auto deque = sus::move(vec).into_iter().collect&lt;sus::VecDeque&lt;i32&gt;&gt;();
+<span class="keyword">auto</span> vec <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> deque <span class="punct">=</span> sus::move<span class="punct">(</span>vec<span class="punct">)</span><span class="punct">.</span>into_iter<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>collect<span class="punct">&lt;</span>sus::VecDeque<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>Iterators also provide a series of adapter methods for performing common
 threads to sequences. Among the adapters are functional favorites like map,
@@ -393,10 +393,10 @@ fold, skip and take. Of particular interest to collections is the rev
 adapter, which reverses any iterator that supports this operation. Most
 collections provide reversible iterators as the way to iterate over them in
 reverse order.</p>
-<pre><code>auto vec = sus::Vec&lt;i32&gt;(1, 2, 3, 4);
-for (const auto&amp; x: vec.iter().rev()) {
-   fmt::println(&quot;vec contained {}&quot;, x);
-}
+<pre><code><span class="keyword">auto</span> vec <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">for</span> <span class="punct">(</span><span class="keyword">const</span> <span class="keyword">auto</span><span class="punct">&amp;</span> x: vec<span class="punct">.</span>iter<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>rev<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
+   fmt::println<span class="punct">(</span><span class="string">&quot;vec contained {}&quot;</span><span class="punct">,</span> x<span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 <p>Several other collection methods also return iterators to yield a sequence
 of results but avoid allocating an entire collection to store the result in.

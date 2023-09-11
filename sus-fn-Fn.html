@@ -97,7 +97,7 @@ that is <code>const</code>- or <code>const&amp;</code>-qualified). Const lambdas
 <code>ReturnType(Args...)</code>, where <code>Args...</code> are the arguments that will be passed
 to the <code>Fn</code> and <code>ReturnType</code> is what is expected to be received back. It
 would appear as a matching concept as:</p>
-<pre><code>void function(Fn&lt;ReturnType(Args...)&gt; auto f) { ... }
+<pre><code><span class="keyword">void</span> function<span class="punct">(</span>Fn<span class="punct">&lt;</span>ReturnType<span class="punct">(</span>Args<span class="punct">.</span><span class="punct">.</span><span class="punct">.</span><span class="punct">)</span><span class="punct">&gt;</span> <span class="keyword">auto</span> f<span class="punct">)</span> <span class="punct">{</span> <span class="punct">.</span><span class="punct">.</span><span class="punct">.</span> <span class="punct">}</span>
 </code></pre>
 <h1><a name="use-of-%60fn%60" href="#use-of-%60fn%60">Use of <code>Fn</code></a></h1>
 <p><code>Fn</code> should be received by value typically, but can also be received as a
@@ -117,47 +117,47 @@ are able to mutate state when run, they are not required to and a constant
 <p>A function that receives a <code>Fn</code> matching type and calls it:</p>
 <pre><code><span class="comment">// Accepts any type that can be called once with (Option&lt;i32&gt;) and returns</span>
 <span class="comment">// i32.</span>
-static i32 do_stuff(sus::fn::Fn&lt;i32(sus::Option&lt;i32&gt;)&gt; auto f) {
-  return sus::fn::call(f, sus::some(400)) +
-         sus::fn::call(f, sus::some(100));
-}
+<span class="keyword">static</span> i32 do_stuff<span class="punct">(</span>sus::fn::Fn<span class="punct">&lt;</span>i32<span class="punct">(</span>sus::Option<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">&gt;</span> <span class="keyword">auto</span> f<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">return</span> sus::fn::call<span class="punct">(</span>f<span class="punct">,</span> sus::some<span class="punct">(</span>400<span class="punct">)</span><span class="punct">)</span> <span class="punct">+</span>
+         sus::fn::call<span class="punct">(</span>f<span class="punct">,</span> sus::some<span class="punct">(</span>100<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 
-i32 x = do_stuff([i = 1_i32](sus::Option&lt;i32&gt; o) -&gt; i32 {
-  return sus::move(o).unwrap_or_default() + i;
-});
-sus::check(x == 401 + 101);
+i32 x <span class="punct">=</span> do_stuff<span class="punct">(</span><span class="punct">[</span>i <span class="punct">=</span> 1_i32<span class="punct">]</span><span class="punct">(</span>sus::Option<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> o<span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> i32 <span class="punct">{</span>
+  <span class="keyword">return</span> sus::move<span class="punct">(</span>o<span class="punct">)</span><span class="punct">.</span>unwrap_or_default<span class="punct">(</span><span class="punct">)</span> <span class="punct">+</span> i<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>x <span class="punct">=</span><span class="punct">=</span> 401 <span class="punct">+</span> 101<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>A <code>Fn</code> whose first parameter is a class can be matched with a method from
 that same class if the remaining parameters match the method's signature:</p>
-<pre><code>struct Class {
-  Class(i32 value) : value_(value) {}
-  i32 value() const { return value_; }
+<pre><code><span class="keyword">struct</span> Class <span class="punct">{</span>
+  Class<span class="punct">(</span>i32 value<span class="punct">)</span> : value_<span class="punct">(</span>value<span class="punct">)</span> <span class="punct">{</span><span class="punct">}</span>
+  i32 value<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> <span class="punct">{</span> <span class="keyword">return</span> value_<span class="punct">;</span> <span class="punct">}</span>
 
- private:
-  i32 value_;
-};
+ <span class="keyword">private</span>:
+  i32 value_<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-i32 map_class(const Class&amp; c,
-              sus::fn::Fn&lt;i32(const Class&amp;)&gt; auto const&amp; f) {
-  return sus::fn::call(f, c);
-}
+i32 map_class<span class="punct">(</span><span class="keyword">const</span> Class<span class="punct">&amp;</span> c<span class="punct">,</span>
+              sus::fn::Fn<span class="punct">&lt;</span>i32<span class="punct">(</span><span class="keyword">const</span> Class<span class="punct">&amp;</span><span class="punct">)</span><span class="punct">&gt;</span> <span class="keyword">auto</span> <span class="keyword">const</span><span class="punct">&amp;</span> f<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">return</span> sus::fn::call<span class="punct">(</span>f<span class="punct">,</span> c<span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 
 <span class="comment">// Map the class C to its value().</span>
-auto c = Class(42);
-sus::check(map_class(c, &amp;Class::value) == 42);
+<span class="keyword">auto</span> c <span class="punct">=</span> Class<span class="punct">(</span>42<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>map_class<span class="punct">(</span>c<span class="punct">,</span> <span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 42<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>Using a method pointer as the parameter for <code>Option::map()</code> will call that
 method on the object inside the Option:</p>
-<pre><code>struct Class {
-  Class(i32 value) : value_(value) {}
-  i32 value() const { return value_; }
+<pre><code><span class="keyword">struct</span> Class <span class="punct">{</span>
+  Class<span class="punct">(</span>i32 value<span class="punct">)</span> : value_<span class="punct">(</span>value<span class="punct">)</span> <span class="punct">{</span><span class="punct">}</span>
+  i32 value<span class="punct">(</span><span class="punct">)</span> <span class="keyword">const</span> <span class="punct">{</span> <span class="keyword">return</span> value_<span class="punct">;</span> <span class="punct">}</span>
 
- private:
-  i32 value_;
-};
+ <span class="keyword">private</span>:
+  i32 value_<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 
-auto o = sus::Option&lt;Class&gt;(Class(42));
-sus::check(o.map(&amp;Class::value) == sus::some(42));
+<span class="keyword">auto</span> o <span class="punct">=</span> sus::Option<span class="punct">&lt;</span>Class<span class="punct">&gt;</span><span class="punct">(</span>Class<span class="punct">(</span>42<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>o<span class="punct">.</span>map<span class="punct">(</span><span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>42<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

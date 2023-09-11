@@ -143,10 +143,10 @@ type again, by using
 <a href="sus-option-Option.html"><code>Option</code></a> from a lambda, be sure to specify the
 return type on the lambda to allow successful type deduction.</p>
 <pre><code><span class="comment">// Returns Some(&quot;power!&quot;) if the input is over 9000, or None otherwise.</span>
-auto is_power = [](i32 i) -&gt; sus::Option&lt;std::string&gt; {
-  if (i &gt; 9000) return sus::some(&quot;power!&quot;);
-  return sus::none();
-};
+<span class="keyword">auto</span> is_power <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>i32 i<span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> sus::Option<span class="punct">&lt;</span>std::string<span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">if</span> <span class="punct">(</span>i <span class="punct">&gt;</span> 9000<span class="punct">)</span> <span class="keyword">return</span> sus::some<span class="punct">(</span><span class="string">&quot;power!&quot;</span><span class="punct">)</span><span class="punct">;</span>
+  <span class="keyword">return</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
 </code></pre>
 <p>Use <a href="sus-option-Option.html#method.is_some"><code>is_some</code></a> and
 <a href="sus-option-Option.html#method.is_none"><code>is_none</code></a> to see if the
@@ -163,12 +163,12 @@ inner value. Like
 <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</code></a> are also
 available if preferred. However if doing this many times, consider doing
 <a href="sus-option-Option.html#method.unwrap"><code>unwrap</code></a> a single time up front.</p>
-<pre><code>sus::check(is_power(9001).unwrap() == &quot;power!&quot;);
+<pre><code>sus::check<span class="punct">(</span>is_power<span class="punct">(</span>9001<span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;power!&quot;</span><span class="punct">)</span><span class="punct">;</span>
 
-if (Option&lt;std::string&gt; lvalue = is_power(9001); lvalue.is_some())
-  sus::check(lvalue.as_value() == &quot;power!&quot;);
+<span class="keyword">if</span> <span class="punct">(</span>Option<span class="punct">&lt;</span>std::string<span class="punct">&gt;</span> lvalue <span class="punct">=</span> is_power<span class="punct">(</span>9001<span class="punct">)</span><span class="punct">;</span> lvalue<span class="punct">.</span>is_some<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span>
+  sus::check<span class="punct">(</span>lvalue<span class="punct">.</span>as_value<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;power!&quot;</span><span class="punct">)</span><span class="punct">;</span>
 
-sus::check(is_power(9000).unwrap_or(&quot;unlucky&quot;) == &quot;unlucky&quot;);
+sus::check<span class="punct">(</span>is_power<span class="punct">(</span>9000<span class="punct">)</span><span class="punct">.</span>unwrap_or<span class="punct">(</span><span class="string">&quot;unlucky&quot;</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;unlucky&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p><a href="sus-option-Option.html"><code>Option&lt;const T&gt;</code></a> for non-reference-type <code>T</code>
 is disallowed, as the <a href="sus-option-Option.html"><code>Option</code></a>
@@ -469,30 +469,30 @@ different inner type <code>U</code> than <a href="sus-option-Option.html"><code>
 method calls. Early stages of the pipeline pass failure values (<code>None</code>)
 through unchanged, and continue processing on success values (<code>Some</code>).
 Toward the end, or substitutes an error message if it receives <code>None</code>.</p>
-<pre><code>auto to_string = [](u8 u) -&gt; sus::Option&lt;std::string&gt; {
-  switch (uint8_t{u}) {  <span class="comment">// switch requires a primitive.</span>
-    case 20u: return sus::some(&quot;foo&quot;);
-    case 42u: return sus::some(&quot;bar&quot;);
-    default: return sus::none();
-  }
-};
-auto res =
-    sus::Vec&lt;u8&gt;(0_u8, 1_u8, 11_u8, 200_u8, 22_u8)
-        .into_iter()
-        .map([&amp;](auto x) {
+<pre><code><span class="keyword">auto</span> to_string <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>u8 u<span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> sus::Option<span class="punct">&lt;</span>std::string<span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">switch</span> <span class="punct">(</span>uint8_t<span class="punct">{</span>u<span class="punct">}</span><span class="punct">)</span> <span class="punct">{</span>  <span class="comment">// switch requires a primitive.</span>
+    <span class="keyword">case</span> 20u: <span class="keyword">return</span> sus::some<span class="punct">(</span><span class="string">&quot;foo&quot;</span><span class="punct">)</span><span class="punct">;</span>
+    <span class="keyword">case</span> 42u: <span class="keyword">return</span> sus::some<span class="punct">(</span><span class="string">&quot;bar&quot;</span><span class="punct">)</span><span class="punct">;</span>
+    <span class="keyword">default</span>: <span class="keyword">return</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+  <span class="punct">}</span>
+<span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">auto</span> res <span class="punct">=</span>
+    sus::Vec<span class="punct">&lt;</span>u8<span class="punct">&gt;</span><span class="punct">(</span>0_u8<span class="punct">,</span> 1_u8<span class="punct">,</span> 11_u8<span class="punct">,</span> 200_u8<span class="punct">,</span> 22_u8<span class="punct">)</span>
+        <span class="punct">.</span>into_iter<span class="punct">(</span><span class="punct">)</span>
+        <span class="punct">.</span>map<span class="punct">(</span><span class="punct">[</span><span class="punct">&amp;</span><span class="punct">]</span><span class="punct">(</span><span class="keyword">auto</span> x<span class="punct">)</span> <span class="punct">{</span>
           <span class="comment">// `checked_sub()` returns `None` on error.</span>
-          return x.checked_sub(1_u8)
+          <span class="keyword">return</span> x<span class="punct">.</span>checked_sub<span class="punct">(</span>1_u8<span class="punct">)</span>
               <span class="comment">// same with `checked_mul()`.</span>
-              .and_then([](u8 x) { return x.checked_mul(2_u8); })
+              <span class="punct">.</span>and_then<span class="punct">(</span><span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>u8 x<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> x<span class="punct">.</span>checked_mul<span class="punct">(</span>2_u8<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span>
               <span class="comment">// `to_string` returns `None` on error.</span>
-              .and_then([&amp;](u8 x) { return to_string(x); })
+              <span class="punct">.</span>and_then<span class="punct">(</span><span class="punct">[</span><span class="punct">&amp;</span><span class="punct">]</span><span class="punct">(</span>u8 x<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> to_string<span class="punct">(</span>x<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span>
               <span class="comment">// Substitute an error message if we have `None` so far.</span>
-              .or_that(sus::some(std::string(&quot;error!&quot;)))
+              <span class="punct">.</span>or_that<span class="punct">(</span>sus::some<span class="punct">(</span>std::string<span class="punct">(</span><span class="string">&quot;error!&quot;</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span>
               <span class="comment">// Won't panic because we unconditionally used `Some` above.</span>
-              .unwrap();
-        })
-        .collect&lt;Vec&lt;std::string&gt;&gt;();
-sus::check(res == sus::vec(&quot;error!&quot;, &quot;error!&quot;, &quot;foo&quot;, &quot;error!&quot;, &quot;bar&quot;));
+              <span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+        <span class="punct">}</span><span class="punct">)</span>
+        <span class="punct">.</span>collect<span class="punct">&lt;</span>Vec<span class="punct">&lt;</span>std::string<span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>res <span class="punct">=</span><span class="punct">=</span> sus::vec<span class="punct">(</span><span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;foo&quot;</span><span class="punct">,</span> <span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;bar&quot;</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <h1><a name="restrictions-on-returning-references" href="#restrictions-on-returning-references">Restrictions on returning references</a></h1>
 <p>Methods that return references are only callable on an rvalue

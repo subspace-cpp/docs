@@ -95,12 +95,12 @@ then the output <code>Iterator</code> will be a <code>DoubleEndedIterator</code>
 output <code>Iterator</code> will be an <code>ExactSizeIterator</code>.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>Iterates over references of a vector, copying and summing:</p>
-<pre><code>const auto v = std::vector&lt;i32&gt;({1, 2, 3});
-sus::check(sus::iter::from_range(v).copied().sum() == 1 + 2 + 3);
+<pre><code><span class="keyword">const</span> <span class="keyword">auto</span> v <span class="punct">=</span> std::vector<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">{</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>sus::iter::from_range<span class="punct">(</span>v<span class="punct">)</span><span class="punct">.</span>copied<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>sum<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 1 <span class="punct">+</span> 2 <span class="punct">+</span> 3<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>Consumes a vector and iterates over its values, not as references.</p>
-<pre><code>auto v = std::vector&lt;i32&gt;({1, 2, 3});
-sus::check(sus::iter::from_range(sus::move(v)).moved().sum() == 1 + 2 + 3);
+<pre><code><span class="keyword">auto</span> v <span class="punct">=</span> std::vector<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">{</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>sus::iter::from_range<span class="punct">(</span>sus::move<span class="punct">(</span>v<span class="punct">)</span><span class="punct">)</span><span class="punct">.</span>moved<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>sum<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 1 <span class="punct">+</span> 2 <span class="punct">+</span> 3<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

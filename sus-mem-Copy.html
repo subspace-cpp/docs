@@ -94,13 +94,13 @@ so that copies are always explicit.</p>
 Copy by being able to construct by copy. This is required for types with
 const fields.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code>struct S {
-  S() = default;
-  S(const S&amp;) = default;
-  S&amp; operator=(const S&amp;) = default;
-};
-static_assert(sus::mem::Copy&lt;S&gt;);
-static_assert(sus::mem::Clone&lt;S&gt;);
+<pre><code><span class="keyword">struct</span> S <span class="punct">{</span>
+  S<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+  S<span class="punct">(</span><span class="keyword">const</span> S<span class="punct">&amp;</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+  S<span class="punct">&amp;</span> <span class="keyword">operator</span><span class="punct">=</span><span class="punct">(</span><span class="keyword">const</span> S<span class="punct">&amp;</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">static_assert</span><span class="punct">(</span>sus::mem::Copy<span class="punct">&lt;</span>S<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">static_assert</span><span class="punct">(</span>sus::mem::Clone<span class="punct">&lt;</span>S<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

@@ -96,10 +96,10 @@ satisfied. To do so, implement <code>from()</code> as a templated method,
 with a <code>size_t</code> template parameter for the size of the incoming array. For
 example:</p>
 <pre><code><span class="comment">// sus::construct::From&lt;Slice&lt;T&gt;, O[]&gt; trait.</span>
-template &lt;size_t N&gt;
-static constexpr inline Slice from(T (&amp;data)[N]) {
-  return Slice(data, N);
-}
+<span class="keyword">template</span> <span class="punct">&lt;</span>size_t N<span class="punct">&gt;</span>
+<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">inline</span> Slice from<span class="punct">(</span>T <span class="punct">(</span><span class="punct">&amp;</span>data<span class="punct">)</span><span class="punct">[</span>N<span class="punct">]</span><span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">return</span> Slice<span class="punct">(</span>data<span class="punct">,</span> N<span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 
         </div>

@@ -225,7 +225,7 @@ the constructor.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.with_initializer"></a><div class="template">template &lt;class f:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_initializer">with_initializer</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;T()&gt; auto f) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;</div>
+              <div class="function-signature"><a name="method.with_initializer"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_initializer">with_initializer</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;T()&gt; auto f) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -239,7 +239,7 @@ from the given closure.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -464,7 +464,7 @@ each element.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
                 </div></div>
             </div>
@@ -546,7 +546,7 @@ array to a new type with the given function.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;TU&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T, U&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>

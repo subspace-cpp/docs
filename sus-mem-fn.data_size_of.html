@@ -87,7 +87,7 @@ provide additional support to determine the maximum data size of all
 union members.</p>
 <p>From @ssbr:</p>
 <p>If type <code>T</code> has padding at its end, such as:</p>
-<pre><code>class T { i64 a; i32 b; };
+<pre><code><span class="keyword">class</span> T <span class="punct">{</span> i64 a<span class="punct">;</span> i32 b<span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
 </code></pre>
 <p>Then there are two ways for another type to place a field inside the padding
 adjacent to <code>b</code> and inside area allocated for
@@ -98,7 +98,7 @@ the base class.</li>
 </ol>
 <p>So a subclass of <code>T</code> may have its first field inside the padding adjacent to
 <code>b</code>:</p>
-<pre><code>class S : T { i32 c; };
+<pre><code><span class="keyword">class</span> S : T <span class="punct">{</span> i32 c<span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
 </code></pre>
 <p>In this example, <code>size_of&lt;S&gt;() == size_of&lt;T&gt;()</code> because <code>c</code> sits inside the
 trailing padding of <code>T</code>.</p>
@@ -107,7 +107,7 @@ trailing padding of <code>T</code>.</p>
 below it into the padding of the <code>[[no_unique_address]]</code> field.</li>
 </ol>
 <p>So a class that contains <code>T</code> as a field can insert another field into <code>T</code>:</p>
-<pre><code>class S { [[no_unique_address]] T t; i32 c; };
+<pre><code><span class="keyword">class</span> S <span class="punct">{</span> <span class="punct">[</span><span class="punct">[</span>no_unique_address<span class="punct">]</span><span class="punct">]</span> T t<span class="punct">;</span> i32 c<span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
 </code></pre>
 <p>In this example, <code>size_of&lt;S&gt;() == sizeof&lt;T&gt;()</code> because <code>c</code> sits inside the
 trailing padding of <code>T</code>.</p>
@@ -121,7 +121,7 @@ safely) is something like:</p>
 (<code>struct S { [[no_unique_address]] T x; bytes }</code> for all <code>bytes</code> until
 <code>size_of&lt;T&gt;() != size_of&lt;S&gt;()</code>).</li>
 </ul>
-<pre><code>return size_of&lt;T&gt;() - max(A, B)
+<pre><code><span class="keyword">return</span> size_of<span class="punct">&lt;</span>T<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">-</span> max<span class="punct">(</span>A<span class="punct">,</span> B<span class="punct">)</span>
 </code></pre>
 <p>From @danakj:</p>
 <p>You might think that A == B however it is not required, as implementations

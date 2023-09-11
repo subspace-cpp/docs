@@ -150,24 +150,24 @@ debugging the panic (“expect as precondition”).</p>
 <p>In the former case the expect message is used to describe the error that has
 occurred which is considered a bug. Consider the following example:</p>
 <pre><code><span class="comment">// Read environment variable, panic if it is not present</span>
-auto path = sus::env::var(&quot;IMPORTANT_PATH&quot;).unwrap();
+<span class="keyword">auto</span> path <span class="punct">=</span> sus::env::var<span class="punct">(</span><span class="string">&quot;IMPORTANT_PATH&quot;</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>In the “expect as error message” style we would use expect to describe that
 the environment variable was not set when it should have been:</p>
-<pre><code>auto path = sus::env::var(&quot;IMPORTANT_PATH&quot;)
-    .expect(&quot;env variable `IMPORTANT_PATH` is not set&quot;);
-In the “expect as precondition” style, we would instead describe the reason
-we expect the Result should be Ok. With this style we would prefer to write:
+<pre><code><span class="keyword">auto</span> path <span class="punct">=</span> sus::env::var<span class="punct">(</span><span class="string">&quot;IMPORTANT_PATH&quot;</span><span class="punct">)</span>
+    <span class="punct">.</span>expect<span class="punct">(</span><span class="string">&quot;env variable `IMPORTANT_PATH` is not set&quot;</span><span class="punct">)</span><span class="punct">;</span>
+In the “expect as precondition” style<span class="punct">,</span> we would instead describe the reason
+we expect the Result should be Ok<span class="punct">.</span> With <span class="keyword">this</span> style we would prefer to write:
 </code></pre>
-<pre><code>auto path = sus::env::var(&quot;IMPORTANT_PATH&quot;)
-    .expect(&quot;env variable `IMPORTANT_PATH` should be set by &quot;
-            &quot;`wrapper_script.sh`&quot;);
+<pre><code><span class="keyword">auto</span> path <span class="punct">=</span> sus::env::var<span class="punct">(</span><span class="string">&quot;IMPORTANT_PATH&quot;</span><span class="punct">)</span>
+    <span class="punct">.</span>expect<span class="punct">(</span><span class="string">&quot;env variable `IMPORTANT_PATH` should be set by &quot;</span>
+            <span class="string">&quot;`wrapper_script.sh`&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>The “expect as error message” style does not work as well with the default
 output of the std panic hooks, and often ends up repeating information that
 is already communicated by the source error being unwrapped:</p>
-<pre><code>PANIC! at 'env variable `IMPORTANT_PATH` is not set: NotFound',
-sus/result/result.h:792:11
+<pre><code>PANIC<span class="punct">!</span> at <span class="char">'env variable `IMPORTANT_PATH` is not set: NotFound'</span><span class="punct">,</span>
+sus/result/result<span class="punct">.</span>h:792:11
 </code></pre>
 <p>In this example we end up mentioning that an
 env variable is not set, followed by our source message that says the env is
@@ -179,8 +179,8 @@ situations where panics are being used to represent bugs exclusively. Also,
 by framing our expect in terms of what “SHOULD” have happened to prevent the
 source error, we end up introducing new information that is independent from
 our source error.</p>
-<pre><code>PANIC! at 'env variable `IMPORTANT_PATH` should be set by
-`wrapper_script.sh`: NotPresent', sus/result/result.h:792:11
+<pre><code>PANIC<span class="punct">!</span> at <span class="char">'env variable `IMPORTANT_PATH` should be set by
+`wrapper_script.sh`: NotPresent'</span><span class="punct">,</span> sus/result/result<span class="punct">.</span>h:792:11
 </code></pre>
 <p>In this example we are communicating not only the name of the environment
 variable that should have been set, but also an explanation for why it

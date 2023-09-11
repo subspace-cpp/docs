@@ -218,10 +218,10 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UTUnlessVoid&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, TUnlessVoid&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;TU &&&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;T, U &&&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -290,7 +290,7 @@ not be used thereafter without reinitializing it.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;IterResult&lt;T, E&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;Iter, Result&lt;T, E&gt;&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Product&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -312,7 +312,7 @@ which also satisfies <code>sus::iter::Product&lt;T, T&gt;</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;IterResult&lt;T, E&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;Iter, Result&lt;T, E&gt;&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Sum&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -363,9 +363,9 @@ which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn::sus::fn::NonVoid (TUnlessVoid &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (TUnlessVoid &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn, T &&&gt;E&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn, T &&&gt;, E&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -632,7 +632,7 @@ Otherwise the default value of the Ok value's type is returned.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;FT (E &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;F, T (E &&)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -640,12 +640,12 @@ Otherwise the default value of the Ok value's type is returned.</p>
             <p>Returns the contained <code>Ok</code> value or computes it from a closure.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>Basic usage:</p>
-<pre><code>enum ECode { ItsHappening = -1 };
-auto conv = [](ECode e) { return static_cast&lt;i32&gt;(e); };
-auto ok = sus::Result&lt;i32, ECode&gt;(2);
-sus::check(sus::move(ok).unwrap_or_else(conv) == 2);
-auto err = sus::Result&lt;i32, ECode&gt;::with_err(ItsHappening);
-sus::check(sus::move(err).unwrap_or_else(conv) == -1);
+<pre><code><span class="keyword">enum</span> ECode <span class="punct">{</span> ItsHappening <span class="punct">=</span> <span class="punct">-</span>1 <span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">auto</span> conv <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>ECode e<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> <span class="keyword">static_cast</span><span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>e<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">auto</span> ok <span class="punct">=</span> sus::Result<span class="punct">&lt;</span>i32<span class="punct">,</span> ECode<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>sus::move<span class="punct">(</span>ok<span class="punct">)</span><span class="punct">.</span>unwrap_or_else<span class="punct">(</span>conv<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 2<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> err <span class="punct">=</span> sus::Result<span class="punct">&lt;</span>i32<span class="punct">,</span> ECode<span class="punct">&gt;</span>::with_err<span class="punct">(</span>ItsHappening<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>sus::move<span class="punct">(</span>err<span class="punct">)</span><span class="punct">.</span>unwrap_or_else<span class="punct">(</span>conv<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="punct">-</span>1<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
           </div>
@@ -680,13 +680,13 @@ Behavior.</p>
 a tagged union between &quot;success&quot; and &quot;error&quot;.</p>
 <h1><a name="example" href="#example">Example</a></h1>
 <p>A reimplementation of <code>Result::unwrap_or()</code>.</p>
-<pre><code class="language-cpp">auto x = Result&lt;int, char&gt;(2);
-switch (x) {
- case Ok:
-  return sus::move(x).unwrap();
- case Err:
-  return -1;
-}
+<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp"><span class="keyword">auto</span> x <span class="punct">=</span> Result<span class="punct">&lt;</span><span class="keyword">int</span><span class="punct">,</span> <span class="keyword">char</span><span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">switch</span> <span class="punct">(</span>x<span class="punct">)</span> <span class="punct">{</span>
+ <span class="keyword">case</span> Ok:
+  <span class="keyword">return</span> sus::move<span class="punct">(</span>x<span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+ <span class="keyword">case</span> Err:
+  <span class="keyword">return</span> <span class="punct">-</span>1<span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 
           </div>

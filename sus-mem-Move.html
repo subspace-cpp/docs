@@ -92,12 +92,12 @@ explicitly deleting the move constructor and assignment operator. This is
 not recommended, unless deleting the copy operations too, as it tends to
 break things that want to move-or-fallback-to-copy.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code>struct S {
-  S() = default;
-  S(S&amp;&amp;) = default;
-  S&amp; operator=(S&amp;&amp;) = default;
-};
-static_assert(sus::mem::Move&lt;S&gt;);
+<pre><code><span class="keyword">struct</span> S <span class="punct">{</span>
+  S<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+  S<span class="punct">(</span>S<span class="punct">&amp;</span><span class="punct">&amp;</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+  S<span class="punct">&amp;</span> <span class="keyword">operator</span><span class="punct">=</span><span class="punct">(</span>S<span class="punct">&amp;</span><span class="punct">&amp;</span><span class="punct">)</span> <span class="punct">=</span> <span class="keyword">default</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">static_assert</span><span class="punct">(</span>sus::mem::Move<span class="punct">&lt;</span>S<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

@@ -82,10 +82,10 @@ finite.</p>
 if you do not want to keep the repeated element in memory, you can instead
 use the <code>repeat_with()</code> function.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code>auto r = sus::iter::repeat&lt;u16&gt;(3u);
-sus::check(r.next().unwrap() == 3_u16);
-sus::check(r.next().unwrap() == 3_u16);
-sus::check(r.next().unwrap() == 3_u16);
+<pre><code><span class="keyword">auto</span> r <span class="punct">=</span> sus::iter::repeat<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">(</span>3u<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>r<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>r<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>r<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

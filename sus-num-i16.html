@@ -890,7 +890,7 @@ instead.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i16.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a><div class="requires">
+              <div class="function-signature"><a name="method.from_product"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i16.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a><div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -913,7 +913,7 @@ called for iterators over i16.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_sum"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i16.html#method.from_sum">from_sum</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a><div class="requires">
+              <div class="function-signature"><a name="method.from_sum"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-i16.html#method.from_sum">from_sum</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a><div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -2010,13 +2010,13 @@ rhs, wrapping around at the boundary of the type.</p>
             <p>Conversion from the numeric type to a C++ primitive type.</p>
 <p>This converts to signed primitives which are at least as large as the
 <a href="sus-num-i16.html"><code>i16</code></a>.</p>
-<pre><code>auto d = int32_t{3_i32};  <span class="comment">// Compiles.</span>
-auto e = int32_t(3_i32);  <span class="comment">// Compiles.</span>
-int32_t f = 3_i32;  <span class="comment">// Compiles.</span>
+<pre><code><span class="keyword">auto</span> d <span class="punct">=</span> int32_t<span class="punct">{</span>3_i32<span class="punct">}</span><span class="punct">;</span>  <span class="comment">// Compiles.</span>
+<span class="keyword">auto</span> e <span class="punct">=</span> int32_t<span class="punct">(</span>3_i32<span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiles.</span>
+int32_t f <span class="punct">=</span> 3_i32<span class="punct">;</span>  <span class="comment">// Compiles.</span>
 
-auto d = uint16_t{3_i32};  <span class="comment">// Does not compile.</span>
-auto e = uint16_t(3_i32);  <span class="comment">// Does not compile.</span>
-uint16_t f = 3_i32;  <span class="comment">// Does not compile.</span>
+<span class="keyword">auto</span> d <span class="punct">=</span> uint16_t<span class="punct">{</span>3_i32<span class="punct">}</span><span class="punct">;</span>  <span class="comment">// Does not compile.</span>
+<span class="keyword">auto</span> e <span class="punct">=</span> uint16_t<span class="punct">(</span>3_i32<span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Does not compile.</span>
+uint16_t f <span class="punct">=</span> 3_i32<span class="punct">;</span>  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as

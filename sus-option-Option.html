@@ -300,7 +300,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;UT&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::IsMoveRef&lt;decltype(u)&gt;</pre></div>
@@ -369,7 +369,7 @@ value out of the option when the option may be used again afterward.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -378,7 +378,7 @@ value out of the option when the option may be used again afterward.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;const U &T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;const U &, T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -394,7 +394,7 @@ value out of the option when the option may be used again afterward.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;Option&lt;T&gt;U &&&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;Option&lt;T&gt;, U &&&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -410,7 +410,7 @@ value out of the option when the option may be used again afterward.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;IterOption&lt;T&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;Iter, Option&lt;T&gt;&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Product&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -432,7 +432,7 @@ which also satisfies <a href="sus-iter-Product.html"><code>sus::iter::Product&lt
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;IterOption&lt;T&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;Iter, Option&lt;T&gt;&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Sum&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -479,7 +479,7 @@ holds <code>None</code>, otherwise returns <code>that</code> option.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">__private::IsOptionType&lt;sus::fn::ReturnOnce&lt;AndFn, T &&&gt;&gt;::value</pre></div>
                 </div></div>
             </div>
@@ -488,7 +488,7 @@ holds <code>None</code>, otherwise returns <code>that</code> option.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">__private::IsOptionType&lt;sus::fn::ReturnOnce&lt;AndFn, T &&&gt;&gt;::value</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
                 </div></div>
@@ -755,10 +755,10 @@ currently <code>None</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.filter"></a><div class="template">template &lt;class p:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.filter">filter</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;T&gt;&)&gt; auto p) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.filter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.filter">filter</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;T&gt;&)&gt; auto p) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.filter"></a><div class="template">template &lt;class p:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.filter">filter</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;T&gt;&)&gt; auto p) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;<div class="requires">
+              <div class="function-signature"><a name="method.filter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.filter">filter</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;bool(<span class="const">const</span> std::remove_reference_t&lt;T&gt;&)&gt; auto p) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -844,7 +844,7 @@ default value.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get_or_insert_with"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.get_or_insert_with">get_or_insert_with</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;T()&gt; auto f) & -&gt; T&</div>
+              <div class="function-signature"><a name="method.get_or_insert_with"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.get_or_insert_with">get_or_insert_with</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;T()&gt; auto f) & -&gt; T&</div>
             </div>
           </div>
           <div class="description long">
@@ -961,7 +961,7 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -969,7 +969,7 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -990,7 +990,7 @@ if the current option is in state <code>None</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -998,7 +998,7 @@ if the current option is in state <code>None</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -1018,8 +1018,8 @@ lazily evaluated.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;DefaultFn::sus::fn::NonVoid (void)&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn::sus::fn::ReturnOnce&lt;DefaultFn&gt; (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;DefaultFn, ::sus::fn::NonVoid (void)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn, ::sus::fn::ReturnOnce&lt;DefaultFn&gt; (T &&)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -1027,8 +1027,8 @@ lazily evaluated.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;DefaultFn::sus::fn::NonVoid (void)&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn::sus::fn::ReturnOnce&lt;DefaultFn&gt; (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;DefaultFn, ::sus::fn::NonVoid (void)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;MapFn, ::sus::fn::ReturnOnce&lt;DefaultFn&gt; (T &&)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
                 </div></div>
             </div>
@@ -1075,7 +1075,7 @@ lazily evaluated.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;ElseFn::sus::fn::NonVoid (void)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;ElseFn, ::sus::fn::NonVoid (void)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;sus::fn::ReturnOnce&lt;ElseFn&gt;&gt;</pre></div>
                 </div></div>
@@ -1085,7 +1085,7 @@ lazily evaluated.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;ElseFn::sus::fn::NonVoid (void)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;ElseFn, ::sus::fn::NonVoid (void)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;sus::fn::ReturnOnce&lt;ElseFn&gt;&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
@@ -1100,10 +1100,10 @@ lazily evaluated.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.or_else"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.or_else">or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;()&gt; auto f) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.or_else"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.or_else">or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;()&gt; auto f) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.or_else"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.or_else">or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;()&gt; auto f) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;<div class="requires">
+              <div class="function-signature"><a name="method.or_else"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.or_else">or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;()&gt; auto f) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1235,7 +1235,7 @@ default value.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.unwrap_or_else"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_or_else">unwrap_or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;T()&gt; auto f) && -&gt; T</div>
+              <div class="function-signature"><a name="method.unwrap_or_else"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_or_else">unwrap_or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;T()&gt; auto f) && -&gt; T</div>
             </div>
           </div>
           <div class="description long">
@@ -1347,13 +1347,13 @@ otherwise returns an Option that holds <code>None</code>.</p>
 <p>This supports the use of an option in a switch, allowing it to act as
 a tagged union between &quot;some value&quot; and &quot;no value&quot;.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code class="language-cpp">auto x = Option&lt;int&gt;(2);
-switch (x) {
- case Some:
-  return sus::move(x).unwrap_unchecked(unsafe_fn);
- case None:
-  return -1;
-}
+<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp"><span class="keyword">auto</span> x <span class="punct">=</span> Option<span class="punct">&lt;</span><span class="keyword">int</span><span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">switch</span> <span class="punct">(</span>x<span class="punct">)</span> <span class="punct">{</span>
+ <span class="keyword">case</span> Some:
+  <span class="keyword">return</span> sus::move<span class="punct">(</span>x<span class="punct">)</span><span class="punct">.</span>unwrap_unchecked<span class="punct">(</span>unsafe_fn<span class="punct">)</span><span class="punct">;</span>
+ <span class="keyword">case</span> None:
+  <span class="keyword">return</span> <span class="punct">-</span>1<span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 
           </div>
@@ -1363,7 +1363,7 @@ switch (x) {
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;const std::remove_reference_t&lt;T&gt; &U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;const std::remove_reference_t&lt;T&gt; &, U&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -1371,7 +1371,7 @@ switch (x) {
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;TU&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;T, U&gt;</pre></div>
                 </div></div>
             </div>
           </div>

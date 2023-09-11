@@ -637,8 +637,8 @@ portability concern.</p>
 <p>Note that this function is distinct from <code>Transmogrify</code> casting, which
 attempts to preserve the <em>numeric</em> value, and not the bitwise value.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
-<pre><code>auto v = f32::from_bits(0x41480000);
-sus::check!(v, 12.5);
+<pre><code><span class="keyword">auto</span> v <span class="punct">=</span> f32::from_bits<span class="punct">(</span>0x41480000<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">!</span><span class="punct">(</span>v<span class="punct">,</span> 12<span class="punct">.</span>5<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>This function is not constexpr, as converting a NaN does not preserve the
 exact bits in a constexpr context.</p>
@@ -674,7 +674,7 @@ not constexpr.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_product"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+              <div class="function-signature"><a name="method.from_product"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -693,7 +693,7 @@ called for iterators over <a href="sus-num-f64.html"><code>f64 </code></a>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from_sum"></a><div class="template">template &lt;class it:auto&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_sum">from_sum</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+              <div class="function-signature"><a name="method.from_sum"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_sum">from_sum</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1377,13 +1377,13 @@ are always truncated towards zero.</p>
             <p>Conversion from the numeric type to a C++ primitive type.</p>
 <p>This converts to floating point primitives which are at least as large as
 the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
-<pre><code>auto d = double{3_f64};  <span class="comment">// Compiles.</span>
-auto e = double(3_f64);  <span class="comment">// Compiles.</span>
-double f = 3_f64;  <span class="comment">// Compiles.</span>
+<pre><code><span class="keyword">auto</span> d <span class="punct">=</span> <span class="keyword">double</span><span class="punct">{</span>3_f64<span class="punct">}</span><span class="punct">;</span>  <span class="comment">// Compiles.</span>
+<span class="keyword">auto</span> e <span class="punct">=</span> <span class="keyword">double</span><span class="punct">(</span>3_f64<span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiles.</span>
+<span class="keyword">double</span> f <span class="punct">=</span> 3_f64<span class="punct">;</span>  <span class="comment">// Compiles.</span>
 
-auto d = float{3_f64};  <span class="comment">// Does not compile.</span>
-auto e = float(3_f64);  <span class="comment">// Does not compile.</span>
-float f = 3_f64;  <span class="comment">// Does not compile.</span>
+<span class="keyword">auto</span> d <span class="punct">=</span> <span class="keyword">float</span><span class="punct">{</span>3_f64<span class="punct">}</span><span class="punct">;</span>  <span class="comment">// Does not compile.</span>
+<span class="keyword">auto</span> e <span class="punct">=</span> <span class="keyword">float</span><span class="punct">(</span>3_f64<span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Does not compile.</span>
+<span class="keyword">float</span> f <span class="punct">=</span> 3_f64<span class="punct">;</span>  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
 <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as

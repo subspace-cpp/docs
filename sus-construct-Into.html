@@ -106,13 +106,13 @@ function argument:</p>
 <a href="https://en.cppreference.com/w/cpp/concepts/convertible_to"><code>std::convertible_to&lt;T&gt;</code></a> instead, as
 this will accept the marker type returned from
 <a href="sus-construct-fn.into.html">into</a>.</li>
-<li>If the argument is a fixed dependent type, like the following:<pre><code>template &lt;class T, class In = Foo&lt;T&gt;&gt;
-void f(In i) {}
+<li>If the argument is a fixed dependent type, like the following:<pre><code><span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">,</span> <span class="keyword">class</span> In <span class="punct">=</span> Foo<span class="punct">&lt;</span>T<span class="punct">&gt;</span><span class="punct">&gt;</span>
+<span class="keyword">void</span> f<span class="punct">(</span>In i<span class="punct">)</span> <span class="punct">{</span><span class="punct">}</span>
 </code></pre>
 Insert an extra template parameter that uses
 <a href="https://en.cppreference.com/w/cpp/concepts/convertible_to"><code>std::convertible_to</code></a>
-and the template type, such as:<pre><code>template &lt;class T, class Exact = Foo&lt;T&gt;, std::convertible_to&lt;Exact&gt; In&gt;
-void f(In i) {}
+and the template type, such as:<pre><code><span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">,</span> <span class="keyword">class</span> Exact <span class="punct">=</span> Foo<span class="punct">&lt;</span>T<span class="punct">&gt;</span><span class="punct">,</span> std::convertible_to<span class="punct">&lt;</span>Exact<span class="punct">&gt;</span> In<span class="punct">&gt;</span>
+<span class="keyword">void</span> f<span class="punct">(</span>In i<span class="punct">)</span> <span class="punct">{</span><span class="punct">}</span>
 </code></pre>
 As this will allow receiving types converted to <code>Exact</code> by the caller
 using <a href="sus-construct-fn.into.html"><code>into</code></a>.</li>
@@ -123,10 +123,10 @@ using <a href="sus-construct-fn.into.html"><code>into</code></a>.</li>
 templated on a <code>size_t</code> template parameter which represents the size of the
 incoming array. For example:</p>
 <pre><code><span class="comment">// sus::construct::Into&lt;Slice&lt;T&gt;, T[N]&gt; trait.</span>
-template &lt;size_t N&gt;
-static constexpr Slice from(T (&amp;data)[N]) noexcept {
-  return Slice(data, N);
-}
+<span class="keyword">template</span> <span class="punct">&lt;</span>size_t N<span class="punct">&gt;</span>
+<span class="keyword">static</span> <span class="keyword">constexpr</span> Slice from<span class="punct">(</span>T <span class="punct">(</span><span class="punct">&amp;</span>data<span class="punct">)</span><span class="punct">[</span>N<span class="punct">]</span><span class="punct">)</span> <span class="keyword">noexcept</span> <span class="punct">{</span>
+  <span class="keyword">return</span> Slice<span class="punct">(</span>data<span class="punct">,</span> N<span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
 </code></pre>
 <p>Then <code>sus::into(an_array)</code> can be used to construct
 <a href="sus-collections-Slice.html"><code>Slice&lt;T&gt;</code></a>.</p>

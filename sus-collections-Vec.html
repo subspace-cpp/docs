@@ -525,7 +525,7 @@ and <code>sus::construct::From&lt;SliceMut&lt;T&gt;&gt;</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;Tu8&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;T, u8&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;C, char&gt; || std::same_as&lt;C, signed char&gt; ||</pre><pre class="requires-constraint-line">              std::same_as&lt;C, unsigned char&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">N &lt;= ::sus::mog&lt;usize&gt;(isize::MAX)</pre></div>
                 </div></div>
@@ -714,7 +714,7 @@ element could be inserted while maintaining sorted order.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.binary_search_by"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.binary_search_by">binary_search_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> T&)&gt; auto f) const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt;</div>
+              <div class="function-signature"><a name="method.binary_search_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.binary_search_by">binary_search_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> T&)&gt; auto f) const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -734,7 +734,7 @@ element could be inserted while maintaining sorted order.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.binary_search_by_key"></a><div class="template">template &lt;class Key, class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.binary_search_by_key">binary_search_by_key</a>(<span class="const">const</span> Key& key, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;Key(<span class="const">const</span> T&)&gt; auto f) const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt;<div class="requires">
+              <div class="function-signature"><a name="method.binary_search_by_key"></a><div class="template">template &lt;class Key&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.binary_search_by_key">binary_search_by_key</a>(<span class="const">const</span> Key& key, <a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;Key(<span class="const">const</span> T&)&gt; auto f) const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>, <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -929,10 +929,10 @@ satisfy the <code>sus::collections::Concat&lt;T&gt;</code> concept.</p>
 <p><code>Slice</code> itself satisfies <code>Concat</code>, with its output being <code>Vec</code>, so that a
 <code>Slice</code> of <code>Slice&lt;T&gt;</code>s can be <code>concat()</code> together into a single <code>Vec&lt;T&gt;</code>.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code>i32 a1[] = {1, 2}, a2[] = {3, 4};
-Slice&lt;i32&gt; as[] = {Slice&lt;i32&gt;::from(a1), Slice&lt;i32&gt;::from(a2)};
-Vec&lt;i32&gt; v = Slice&lt;Slice&lt;i32&gt;&gt;::from(as).concat();
-sus::check(v == Slice&lt;i32&gt;::from({1, 2, 3, 4}));
+<pre><code>i32 a1<span class="punct">[</span><span class="punct">]</span> <span class="punct">=</span> <span class="punct">{</span>1<span class="punct">,</span> 2<span class="punct">}</span><span class="punct">,</span> a2<span class="punct">[</span><span class="punct">]</span> <span class="punct">=</span> <span class="punct">{</span>3<span class="punct">,</span> 4<span class="punct">}</span><span class="punct">;</span>
+Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> as<span class="punct">[</span><span class="punct">]</span> <span class="punct">=</span> <span class="punct">{</span>Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span>::from<span class="punct">(</span>a1<span class="punct">)</span><span class="punct">,</span> Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span>::from<span class="punct">(</span>a2<span class="punct">)</span><span class="punct">}</span><span class="punct">;</span>
+Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> v <span class="punct">=</span> Slice<span class="punct">&lt;</span>Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span>::from<span class="punct">(</span>as<span class="punct">)</span><span class="punct">.</span>concat<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>v <span class="punct">=</span><span class="punct">=</span> Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span>::from<span class="punct">(</span><span class="punct">{</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">}</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
           </div>
@@ -1015,7 +1015,7 @@ overflow when multiplied by the size of <code>T</code>.</li>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.drain"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.drain">drain</a>(<a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;sus::usize&gt; auto range) -&gt; <a class="type-name" href="sus-collections-Drain.html" title="sus::collections::Drain">Drain</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.drain"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.drain">drain</a>(<a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;sus::usize&gt; auto range) -&gt; <a class="type-name" href="sus-collections-Drain.html" title="sus::collections::Drain">Drain</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1072,7 +1072,7 @@ constructing from it.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.extend.vec.extend.const"></a><div class="template">template &lt;class ii:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.extend.vec.extend.const">extend</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;<span class="const">const</span> T&&gt; auto&& ii) -&gt; void<div class="requires">
+              <div class="function-signature"><a name="method.extend.vec.extend.const"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.extend.vec.extend.const">extend</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;<span class="const">const</span> T&&gt; auto&& ii) -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1095,7 +1095,7 @@ method instead, moving the elements into the <code>Vec</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.extend.vec.extend.val"></a><div class="template">template &lt;class ii:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.extend.vec.extend.val">extend</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;T&gt; auto&& ii) -&gt; void<div class="requires">
+              <div class="function-signature"><a name="method.extend.vec.extend.val"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.extend.vec.extend.val">extend</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;T&gt; auto&& ii) -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1143,7 +1143,7 @@ panic, as resizing the Vec would invalidate the Slice.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.fill_with"></a><div class="template">template &lt;class f:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.fill_with">fill_with</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;T()&gt; auto f) -&gt; void</div>
+              <div class="function-signature"><a name="method.fill_with"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.fill_with">fill_with</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;T()&gt; auto f) -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1218,10 +1218,10 @@ is empty.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get_range"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range">get_range</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;&gt;</div>
+              <div class="function-signature"><a name="method.get_range"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range">get_range</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.get_range"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range">get_range</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;&gt;<div class="deleted">
+              <div class="function-signature"><a name="method.get_range"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range">get_range</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;&gt;<div class="deleted">
                   deleted
                 </div></div>
             </div>
@@ -1239,7 +1239,7 @@ of bounds.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get_range_mut"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range_mut">get_range_mut</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) & -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;&gt;</div>
+              <div class="function-signature"><a name="method.get_range_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range_mut">get_range_mut</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) & -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1255,7 +1255,7 @@ of bounds.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get_range_mut_unchecked"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range_mut_unchecked">get_range_mut_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.get_range_mut_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range_mut_unchecked">get_range_mut_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1272,10 +1272,10 @@ of bounds of the Slice, which can result in Undefined Behaviour.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.get_range_unchecked"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range_unchecked">get_range_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.get_range_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range_unchecked">get_range_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.get_range_unchecked"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range_unchecked">get_range_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
+              <div class="function-signature"><a name="method.get_range_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.get_range_unchecked">get_range_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
                   deleted
                 </div></div>
             </div>
@@ -1413,7 +1413,7 @@ each element.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::collections::Join&lt;TSep&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::collections::Join&lt;T, Sep&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1426,16 +1426,16 @@ satisfy the <code>sus::collections::Join&lt;T&gt;</code> concept.</p>
 <p><code>Slice</code> itself satisfies <code>Join</code>, with its output being <code>Vec</code>, so that a
 <code>Slice</code> of <code>Slice&lt;T&gt;</code>s can be <code>join()</code> together into a single <code>Vec&lt;T&gt;</code>.</p>
 <h1><a name="example-1" href="#example-1">Example</a></h1>
-<pre><code>i32 a1[] = {1, 2}, a2[] = {3, 4}, asep[] = {10, 11, 12};
-Slice&lt;i32&gt; as[] = {Slice&lt;i32&gt;::from(a1), Slice&lt;i32&gt;::from(a2)};
+<pre><code>i32 a1<span class="punct">[</span><span class="punct">]</span> <span class="punct">=</span> <span class="punct">{</span>1<span class="punct">,</span> 2<span class="punct">}</span><span class="punct">,</span> a2<span class="punct">[</span><span class="punct">]</span> <span class="punct">=</span> <span class="punct">{</span>3<span class="punct">,</span> 4<span class="punct">}</span><span class="punct">,</span> asep<span class="punct">[</span><span class="punct">]</span> <span class="punct">=</span> <span class="punct">{</span>10<span class="punct">,</span> 11<span class="punct">,</span> 12<span class="punct">}</span><span class="punct">;</span>
+Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> as<span class="punct">[</span><span class="punct">]</span> <span class="punct">=</span> <span class="punct">{</span>Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span>::from<span class="punct">(</span>a1<span class="punct">)</span><span class="punct">,</span> Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span>::from<span class="punct">(</span>a2<span class="punct">)</span><span class="punct">}</span><span class="punct">;</span>
 
 <span class="comment">// Join slices with a slice between.</span>
-Vec&lt;i32&gt; v = Slice&lt;Slice&lt;i32&gt;&gt;::from(as).join(Slice&lt;i32&gt;::from(asep));
-sus::check(v == sus::Vec&lt;i32&gt;(1, 2, 10, 11, 12, 3, 4));
+Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> v <span class="punct">=</span> Slice<span class="punct">&lt;</span>Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span>::from<span class="punct">(</span>as<span class="punct">)</span><span class="punct">.</span>join<span class="punct">(</span>Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span>::from<span class="punct">(</span>asep<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>v <span class="punct">=</span><span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 10<span class="punct">,</span> 11<span class="punct">,</span> 12<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 
 <span class="comment">// Join slices with a single item between.</span>
-Vec&lt;i32&gt; v2 = Slice&lt;Slice&lt;i32&gt;&gt;::from(as).join(99);
-sus::check(v2 == sus::Vec&lt;i32&gt;(1, 2, 99, 3, 4));
+Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> v2 <span class="punct">=</span> Slice<span class="punct">&lt;</span>Slice<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span>::from<span class="punct">(</span>as<span class="punct">)</span><span class="punct">.</span>join<span class="punct">(</span>99<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>v2 <span class="punct">=</span><span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 99<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
           </div>
@@ -1490,7 +1490,7 @@ is empty.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.partition_point"></a><div class="template">template &lt;class pred:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.partition_point">partition_point</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> T&)&gt; auto pred) const& -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
+              <div class="function-signature"><a name="method.partition_point"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.partition_point">partition_point</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;bool(<span class="const">const</span> T&)&gt; auto pred) const& -&gt; <a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1644,8 +1644,8 @@ iterator but starting at the beginning of the slice.</p>
 <p>This function will panic if the capacity would become larger than
 <code>isize::MAX</code>.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
-<pre><code>auto v = sus::Vec&lt;i32&gt;(1, 2);
-check(v[&quot;..&quot;_r].repeat(3) == sus::vec(1, 2, 1, 2, 1, 2).construct&lt;i32&gt;());
+<pre><code><span class="keyword">auto</span> v <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">)</span><span class="punct">;</span>
+check<span class="punct">(</span>v<span class="punct">[</span><span class="string">&quot;..&quot;</span>_r<span class="punct">]</span><span class="punct">.</span>repeat<span class="punct">(</span>3<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::vec<span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 1<span class="punct">,</span> 2<span class="punct">,</span> 1<span class="punct">,</span> 2<span class="punct">)</span><span class="punct">.</span>construct<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
           </div>
@@ -1699,12 +1699,12 @@ minimal. Prefer reserve if future insertions are expected.</p>
           <div class="description long">
             <p>Reverses the order of elements in the slice, in place.</p>
 <h1><a name="examples-1" href="#examples-1">Examples</a></h1>
-<pre><code>auto forward = sus::Vec&lt;i32&gt;(1, 2, 3);
-auto sf = forward[&quot;..&quot;_r];
-auto backward = sus::Vec&lt;i32&gt;(3, 2, 1);
-auto sb = backward[&quot;..&quot;_r];
-sf.reverse();
-sus::check(sf == sb);
+<pre><code><span class="keyword">auto</span> forward <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> sf <span class="punct">=</span> forward<span class="punct">[</span><span class="string">&quot;..&quot;</span>_r<span class="punct">]</span><span class="punct">;</span>
+<span class="keyword">auto</span> backward <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>3<span class="punct">,</span> 2<span class="punct">,</span> 1<span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> sb <span class="punct">=</span> backward<span class="punct">[</span><span class="string">&quot;..&quot;</span>_r<span class="punct">]</span><span class="punct">;</span>
+sf<span class="punct">.</span>reverse<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>sf <span class="punct">=</span><span class="punct">=</span> sb<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
           </div>
@@ -1758,7 +1758,7 @@ Note that <code>k == len()</code> does not panic and is a no-op rotation.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -1766,7 +1766,7 @@ Note that <code>k == len()</code> does not panic and is a no-op rotation.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div><div class="deleted">
                   deleted
                 </div></div>
@@ -1786,7 +1786,7 @@ will be the first (or last) item returned by the iterator.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1804,7 +1804,7 @@ slice will be the first (or last) item returned by the iterator.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -1812,7 +1812,7 @@ slice will be the first (or last) item returned by the iterator.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div><div class="deleted">
                   deleted
                 </div></div>
@@ -1831,7 +1831,7 @@ and works backwards. The matched element is not contained in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1888,7 +1888,7 @@ also be constexpr?</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.sort_by"></a><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.sort_by">sort_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> T&, <span class="const">const</span> T&)&gt; auto compare) -&gt; void</div>
+              <div class="function-signature"><a name="method.sort_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.sort_by">sort_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> T&, <span class="const">const</span> T&)&gt; auto compare) -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1910,7 +1910,7 @@ also be constexpr?</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn::sus::fn::NonVoid (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const T &)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
@@ -1923,7 +1923,7 @@ also be constexpr?</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn::sus::fn::NonVoid (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const T &)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
@@ -1965,7 +1965,7 @@ allocate while sorting.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.sort_unstable_by"></a><div class="template">template &lt;class compare:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.sort_unstable_by">sort_unstable_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> T&, <span class="const">const</span> T&)&gt; auto compare) -&gt; void</div>
+              <div class="function-signature"><a name="method.sort_unstable_by"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.sort_unstable_by">sort_unstable_by</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;std::weak_ordering(<span class="const">const</span> T&, <span class="const">const</span> T&)&gt; auto compare) -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1987,7 +1987,7 @@ allocate while sorting.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn::sus::fn::NonVoid (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const T &)&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
@@ -2008,7 +2008,7 @@ allocate while sorting.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -2016,7 +2016,7 @@ allocate while sorting.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div><div class="deleted">
                   deleted
                 </div></div>
@@ -2134,7 +2134,7 @@ if it is empty.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -2142,7 +2142,7 @@ if it is empty.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div><div class="deleted">
                   deleted
                 </div></div>
@@ -2163,7 +2163,7 @@ returned by the iterator.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2207,7 +2207,7 @@ it is empty.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2225,7 +2225,7 @@ matched, an empty slice will be the last item returned by the iterator.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -2233,7 +2233,7 @@ matched, an empty slice will be the last item returned by the iterator.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div><div class="deleted">
                   deleted
                 </div></div>
@@ -2252,7 +2252,7 @@ in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred_Bool (const T &)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;Pred, _Bool (const T &)&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -2545,10 +2545,10 @@ wanted.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator[].vec.index.range"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.operator[].vec.index.range">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.operator[].vec.index.range"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.operator[].vec.index.range">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator[].vec.index.range"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.operator[].vec.index.range">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
+              <div class="function-signature"><a name="method.operator[].vec.index.range"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.operator[].vec.index.range">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
                   deleted
                 </div></div>
             </div>
@@ -2567,7 +2567,7 @@ the function will panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator[].vec.index_mut.range"></a><div class="template">template &lt;class range:auto&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.operator[].vec.index_mut.range">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
+              <div class="function-signature"><a name="method.operator[].vec.index_mut.range"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.operator[].vec.index_mut.range">operator[]</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-RangeBounds.html" title="sus::ops::RangeBounds">RangeBounds</a>&lt;<a class="type-name" href="sus-num-usize.html" title="sus::num::usize">usize</a>&gt; auto range) & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
