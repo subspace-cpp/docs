@@ -108,14 +108,27 @@
 type <code>T</code>, and each one will be returned from the resulting <code>Iterator</code> in the
 same order.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code><span class="keyword">auto</span> x <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> Generator<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> <span class="punct">{</span>
-  <span class="keyword">co_yield</span> 1<span class="punct">;</span>
-  <span class="keyword">co_yield</span> 3<span class="punct">;</span>
+<pre><code><span class="keyword">auto</span> generate_fibonacci <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> Generator<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> <span class="punct">{</span>
+  <span class="keyword">co_yield</span> 0<span class="punct">;</span>
+  i32 n1 <span class="punct">=</span> 0<span class="punct">,</span> n2 <span class="punct">=</span> 1<span class="punct">;</span>
+  <span class="keyword">while</span> <span class="punct">(</span><span class="keyword">true</span><span class="punct">)</span> <span class="punct">{</span>
+    i32 next <span class="punct">=</span> n1 <span class="punct">+</span> n2<span class="punct">;</span>
+    n1 <span class="punct">=</span> n2<span class="punct">;</span>
+    n2 <span class="punct">=</span> next<span class="punct">;</span>
+    <span class="keyword">co_yield</span> n1<span class="punct">;</span>
+  <span class="punct">}</span>
 <span class="punct">}</span><span class="punct">;</span>
-sus::iter::Iterator<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> <span class="keyword">auto</span> it <span class="punct">=</span> x<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-EXPECT_EQ<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">,</span> sus::some<span class="punct">(</span>1<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-EXPECT_EQ<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">,</span> sus::some<span class="punct">(</span>3<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-EXPECT_EQ<span class="punct">(</span>it<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">,</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+
+<span class="comment">// Directly using the generator iterator, in a for loop.</span>
+sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> v<span class="punct">;</span>
+<span class="keyword">for</span> <span class="punct">(</span>i32 i : generate_fibonacci<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>take<span class="punct">(</span>7u<span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
+  v<span class="punct">.</span>push<span class="punct">(</span>i<span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
+sus::check<span class="punct">(</span>v <span class="punct">=</span><span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>0<span class="punct">,</span> 1<span class="punct">,</span> 1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 5<span class="punct">,</span> 8<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+
+<span class="comment">// Using `from_generator`, with collect.</span>
+sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> v2 <span class="punct">=</span> generate_fibonacci<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>take<span class="punct">(</span>7u<span class="punct">)</span><span class="punct">.</span>collect_vec<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>v2 <span class="punct">=</span><span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>0<span class="punct">,</span> 1<span class="punct">,</span> 1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 5<span class="punct">,</span> 8<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>
