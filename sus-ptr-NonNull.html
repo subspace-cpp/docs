@@ -51,9 +51,6 @@
           <a class="sidebar-item" href="sus-ptr-NonNull.html#method.NonNull">NonNull</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.NonNull.ctor.copy">NonNull</a>
-        </li>
-        <li>
           <a class="sidebar-item" href="sus-ptr-NonNull.html#method.from">from</a>
         </li>
         <li>
@@ -88,9 +85,6 @@
         </li>
         <li>
           <a class="sidebar-item" href="sus-ptr-NonNull.html#method.operator-&gt;">operator-&gt;</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-ptr-NonNull.html#method.operator=.assign.copy">operator=</a>
         </li>
       </ul>
     </div>
@@ -130,10 +124,13 @@
         </div>
         <div class="description long">
           <p>A pointer wrapper which holds a never-null pointer.</p>
-<p>A NonNull can not be implicitly created from an array, as that would throw
+<p>A <code>NonNull</code> can not be implicitly created from an array, as that would throw
 away the length information. Explicitly cast to a pointer to use NonNull
 with an array.</p>
-<p>The NonNull type is trivially copyable and moveable.</p>
+<p>The <code>NonNull</code> type is trivially copyable and moveable.</p>
+<p><code>NonNull</code> satisifes the <a href="sus-mem-NeverValueField.html"><code>NeverValueField</code></a>, so
+<a href="sus-option-Option.html"><code>Option&lt;NonNull&lt;T&gt;&gt;</code></a> has the same size as <code>NonNull</code>,
+similar to <a href="sus-option-Option.html"><code>Option&lt;T&amp;&gt;</code></a>.</p>
 <p>TODO: Make a NonNullArray type? <a href="https://godbolt.org/z/3vW3xsz5h">https://godbolt.org/z/3vW3xsz5h</a></p>
 
         </div>
@@ -150,15 +147,6 @@ with an array.</p>
           </div>
           <div class="description long">
             <p>Constructs a <code>NonNull&lt;T&gt;</code> from a reference to <code>T</code>.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.NonNull.ctor.copy"></a><a class="function-name" href="sus-ptr-NonNull.html#method.NonNull.ctor.copy">NonNull</a>(<span class="const">const</span> <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt;&)</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p><code>NonNull&lt;T&gt;</code> is <code>Copy</code>, so this is the copy constructor.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -330,15 +318,6 @@ return a <code>NonNull&lt;U&gt;</code>.</p>
             <p>Gives access to the object pointed to by NonNull.</p>
 <p>Mutable access is only given is NonNull is not const and the pointer
 within is not const.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.operator=.assign.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ptr-NonNull.html#method.operator=.assign.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt;&) -&gt; <a class="type-name" href="sus-ptr-NonNull.html" title="sus::ptr::NonNull">NonNull</a>&lt;T&gt;&</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p><code>NonNull&lt;T&gt;</code> is <code>Copy</code>, so this is the copy assignment operator.</p>
 
           </div>
         </div>
