@@ -192,7 +192,7 @@ size as the original type <code>T</code>:</p>
 </ul>
 <p>This is called the &quot;NeverValueField optimization&quot;, but is also called the
 <a href="https://doc.rust-lang.org/stable/std/option/index.html#representation">&quot;null pointer optimization&quot; or NPO in Rust</a>.</p>
-<h1><a name="references" href="#references">References</a></h1>
+<h1><a name="reference-parameters" href="#reference-parameters">Reference parameters</a></h1>
 <p>As mentioned above <a href="sus-option-Option.html"><code>Option</code></a> type can hold a
 reference, which allows code to use <code>Option&lt;const T&amp;&gt;</code> or <code>Option&lt;T&amp;&gt;</code>
 as a function parameter in place of <code>const Option&lt;T&gt;&amp;</code> or <code>Option&lt;T&amp;&gt;</code>.
@@ -203,7 +203,8 @@ by value and thus the compiler can reason locally about the
 it needs to assume any function call can change the <code>const Option&lt;T&gt;&amp;</code> to
 become empty/non-empty. This is a common optimization pitfall with
 <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
-<p>As an example, this code is optimized poorly, keeping a runtime check on
+<p>As an example, this code is <a href="https://chromium-review.googlesource.com/c/chromium/src/+/4860473">optimized poorly</a>,
+keeping a runtime check on
 the <a href="sus-option-Option.html"><code>Option</code></a>. Global analysis could perhaps show it
 not required, but it is beyond the view of the compiler.</p>
 <pre><code><span class="keyword">void</span> Foo<span class="punct">(</span><span class="keyword">const</span> Option<span class="punct">&lt;</span>T<span class="punct">&gt;</span><span class="punct">&amp;</span> t<span class="punct">)</span> <span class="punct">{</span>
