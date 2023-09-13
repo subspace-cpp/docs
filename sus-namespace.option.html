@@ -192,6 +192,17 @@ size as the original type <code>T</code>:</p>
 </ul>
 <p>This is called the &quot;NeverValueField optimization&quot;, but is also called the
 <a href="https://doc.rust-lang.org/stable/std/option/index.html#representation">&quot;null pointer optimization&quot; or NPO in Rust</a>.</p>
+<h1><a name="references" href="#references">References</a></h1>
+<p>As mentioned above <a href="sus-option-Option.html"><code>Option</code></a> type can hold a
+reference, which allows code to use <code>Option&lt;const T&amp;&gt;</code> or <code>Option&lt;T&amp;&gt;</code>
+as a function parameter in place of <code>const Option&lt;T&gt;&amp;</code> or <code>Option&lt;T&amp;&gt;</code>.
+This can have a positive impact on compiler optimizations (and codegen
+size) as the function is receiving the <a href="sus-option-Option.html"><code>Option</code></a>
+by value and thus the compiler can reason locally about the
+<a href="sus-option-Option.html"><code>Option</code></a>'s state. Otherwise
+it needs to assume any function call can change the <code>const Option&lt;T&gt;&amp;</code> to
+become empty/non-empty. This is a common optimization pitfall with
+<a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
 <h1><a name="querying-the-variant" href="#querying-the-variant">Querying the variant</a></h1>
 <p>The <a href="sus-option-Option.html#method.is_some"><code>is_some</code></a> and
 <a href="sus-option-Option.html#method.is_none"><code>is_none</code></a> methods return
