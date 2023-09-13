@@ -187,6 +187,8 @@ size as the original type <code>T</code>:</p>
 <ul>
 <li><code>const T&amp;</code> or <code>T&amp;</code> (have the same size as <code>const T*</code> or <code>T*</code>)</li>
 <li><a href="sus-ptr-NonNull.html"><code>ptr::NonNull&lt;U&gt;</code></a></li>
+<li><a href="sus-boxed-Box.html"><code>Box&lt;T&gt;</code></a></li>
+<li><a href="sus-choice_type-Choice.html"><code>Choice</code></a></li>
 </ul>
 <p>This is called the &quot;NeverValueField optimization&quot;, but is also called the
 <a href="https://doc.rust-lang.org/stable/std/option/index.html#representation">&quot;null pointer optimization&quot; or NPO in Rust</a>.</p>
