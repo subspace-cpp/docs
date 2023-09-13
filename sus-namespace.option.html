@@ -203,6 +203,25 @@ by value and thus the compiler can reason locally about the
 it needs to assume any function call can change the <code>const Option&lt;T&gt;&amp;</code> to
 become empty/non-empty. This is a common optimization pitfall with
 <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
+<p>As an example, this code is optimized poorly, keeping a runtime check on
+the <a href="sus-option-Option.html"><code>Option</code></a>. Global analysis could perhaps show it
+not required, but it is beyond the view of the compiler.</p>
+<pre><code><span class="keyword">void</span> Foo<span class="punct">(</span><span class="keyword">const</span> Option<span class="punct">&lt;</span>T<span class="punct">&gt;</span><span class="punct">&amp;</span> t<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">if</span> <span class="punct">(</span>t<span class="punct">.</span>is_some<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
+     A<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiler assumes `t` may be changed.</span>
+     B<span class="punct">(</span>t<span class="punct">-</span><span class="punct">&gt;</span>thingy<span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiler has to keep the check if `t` is Some.</span>
+  <span class="punct">}</span>
+<span class="punct">}</span>
+</code></pre>
+<p>Whereas here the compiler can elide runtime checks, and the parameter's size
+is still the same as a pointer.</p>
+<pre><code><span class="keyword">void</span> Foo<span class="punct">(</span>Option<span class="punct">&lt;</span><span class="keyword">const</span> T<span class="punct">&amp;</span><span class="punct">&gt;</span> t<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">if</span> <span class="punct">(</span>t<span class="punct">.</span>is_some<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
+     A<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiler knows `t` is not changed.</span>
+     B<span class="punct">(</span>t<span class="punct">-</span><span class="punct">&gt;</span>thingy<span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiler drops the redundant check if `t` is Some.</span>
+  <span class="punct">}</span>
+<span class="punct">}</span>
+</code></pre>
 <h1><a name="querying-the-variant" href="#querying-the-variant">Querying the variant</a></h1>
 <p>The <a href="sus-option-Option.html#method.is_some"><code>is_some</code></a> and
 <a href="sus-option-Option.html#method.is_none"><code>is_none</code></a> methods return
