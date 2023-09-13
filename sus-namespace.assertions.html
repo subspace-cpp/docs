@@ -158,6 +158,8 @@
               </div>
             </div>
             <div class="description short">
+              <p>Indicates to the developer that the location should not be reached, and
+terminates the program with a <a href="sus-assertions-fn.panic.html"><code>panic</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -167,6 +169,9 @@
               </div>
             </div>
             <div class="description short">
+              <p>Indicates to the compiler that the location will never be reached, allowing
+it to optimize code generation accordingly. If this function is actually
+reached, Undefined Behaviour will occur.</p>
             </div>
           </li>
         </ul>

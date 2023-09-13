@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::assertions::unreachable_unchecked - Subspace</title>
   <meta property="og:title" content="sus::assertions::unreachable_unchecked - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <meta name="description" content="Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."></meta>
+  <meta property="og:description" content="Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -68,6 +68,13 @@
           </div>
         </div>
         <div class="description long">
+          <p>Indicates to the compiler that the location will never be reached, allowing
+it to optimize code generation accordingly. If this function is actually
+reached, Undefined Behaviour will occur.</p>
+<p>This is similar to <a href="https://en.cppreference.com/w/cpp/utility/unreachable"><code>std::unreachable</code></a>.</p>
+<h1><a name="safety" href="#safety">Safety</a></h1>
+<p>This function must never actually be reached, or Undefined Behaviour occurs.</p>
+
         </div>
       </div>
     </div>
