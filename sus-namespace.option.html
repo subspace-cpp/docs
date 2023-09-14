@@ -215,7 +215,9 @@ not required, but it is beyond the view of the compiler.</p>
 <span class="punct">}</span>
 </code></pre>
 <p>Whereas here the compiler can elide runtime checks, and the parameter's size
-is still the same as a pointer.</p>
+is still the same as a pointer.
+Use the <a href="sus-option-Option.html#method.as_ref"><code>as_ref</code></a> method to convert to
+<code>Option&lt;const T&amp;&gt;</code> in the caller.</p>
 <pre><code><span class="keyword">void</span> Foo<span class="punct">(</span>Option<span class="punct">&lt;</span><span class="keyword">const</span> T<span class="punct">&amp;</span><span class="punct">&gt;</span> t<span class="punct">)</span> <span class="punct">{</span>
   <span class="keyword">if</span> <span class="punct">(</span>t<span class="punct">.</span>is_some<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
      A<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Compiler knows `t` is not changed.</span>
