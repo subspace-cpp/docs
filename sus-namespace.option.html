@@ -195,7 +195,7 @@ size as the original type <code>T</code>:</p>
 <h1><a name="reference-parameters" href="#reference-parameters">Reference parameters</a></h1>
 <p>As mentioned above <a href="sus-option-Option.html"><code>Option</code></a> type can hold a
 reference, which allows code to use <code>Option&lt;const T&amp;&gt;</code> or <code>Option&lt;T&amp;&gt;</code>
-as a function parameter in place of <code>const Option&lt;T&gt;&amp;</code> or <code>Option&lt;T&amp;&gt;</code>.
+as a function parameter in place of <code>const Option&lt;T&gt;&amp;</code> or <code>Option&lt;T&gt;&amp;</code>.
 This can have a positive impact on compiler optimizations (and codegen
 size) as the function is receiving the <a href="sus-option-Option.html"><code>Option</code></a>
 by value and thus the compiler can reason locally about the
