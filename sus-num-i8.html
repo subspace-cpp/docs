@@ -884,7 +884,8 @@ little endian.</p>
             <p>Create an integer value from its memory representation as a byte array
 in native endianness.</p>
 <p>As the target platform's native endianness is used, portable code likely
-wants to use <code>from_be_bytes()</code> or <code>from_le_bytes()</code>, as appropriate
+wants to use <a href="sus-num-i8.html#method.from_be_bytes"><code>from_be_bytes</code></a> or
+<a href="sus-num-i8.html#method.from_le_bytes"><code>from_le_bytes</code></a>, as appropriate
 instead.</p>
 
           </div>
@@ -1047,11 +1048,11 @@ and attempting to calculate it will panic.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.abs_diff"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i8.html#method.abs_diff">abs_diff</a>(<a class="type-name" href="sus-num-i8.html" title="sus::num::i8">i8</a> r) const& -&gt; <a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a></div>
+              <div class="function-signature"><a name="method.abs_diff"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i8.html#method.abs_diff">abs_diff</a>(<a class="type-name" href="sus-num-i8.html" title="sus::num::i8">i8</a> other) const& -&gt; <a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a></div>
             </div>
           </div>
           <div class="description long">
-            <p>Computes the absolute difference between self and other.</p>
+            <p>Computes the absolute difference between <code>self</code> and <code>other</code>.</p>
 <p>This function always returns the correct answer without overflow or
 panics by returning an unsigned integer.</p>
 
@@ -1062,8 +1063,8 @@ panics by returning an unsigned integer.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked absolute value. Computes <code>abs()</code>, returning None if the current
-value is MIN.</p>
+            <p>Checked absolute value. Computes <a href="sus-num-i8.html#method.abs"><code>abs</code></a>, returning <code>None</code> if the current
+value is <a href="sus-num-i8.html#field.MIN"><code>MIN</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1072,7 +1073,7 @@ value is MIN.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked integer addition. Computes self + rhs, returning None if
+            <p>Checked integer addition. Computes <code>self + rhs</code>, returning <code>None</code> if
 overflow occurred.</p>
 
           </div>
@@ -1082,8 +1083,8 @@ overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked integer addition with an unsigned rhs. Computes self + rhs,
-returning None if overflow occurred.</p>
+            <p>Checked integer addition with an unsigned <code>rhs</code>. Computes <code>self + rhs</code>,
+returning <code>None</code> if overflow occurred.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1092,8 +1093,8 @@ returning None if overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked integer division. Computes self / rhs, returning None if rhs ==
-0 or the division results in overflow.</p>
+            <p>Checked integer division. Computes <code>self / rhs</code>, returning <code>None</code> if
+<code>rhs == 0</code> or the division results in overflow.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1102,8 +1103,8 @@ returning None if overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked Euclidean division. Computes self.div_euclid(rhs), returning
-None if rhs == 0 or the division results in overflow.</p>
+            <p>Checked Euclidean division. Computes <a href="sus-num-i8.html#method.div_euclid"><code>div_euclid</code></a>, returning
+<code>None</code> if <code>rhs == 0</code> or the division results in overflow.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1117,8 +1118,10 @@ rounded down.</p>
 <p>Returns None if the number is negative or zero, or if the base is not at
 least 2.</p>
 <p>This method might not be optimized owing to implementation details;
-<code>checked_log2</code> can produce results more efficiently for base 2, and
-<code>checked_log10</code> can produce results more efficiently for base 10.</p>
+<a href="sus-num-i8.html#method.checked_log2"><code>checked_log2</code></a> can produce results
+more efficiently for base 2, and
+<a href="sus-num-i8.html#method.checked_log10"><code>checked_log10</code></a> can produce results
+more efficiently for base 10.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1128,7 +1131,7 @@ least 2.</p>
           </div>
           <div class="description long">
             <p>Returns the base 10 logarithm of the number, rounded down.</p>
-<p>Returns None if the number is negative or zero.</p>
+<p>Returns <code>None</code> if the number is negative or zero.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1138,7 +1141,7 @@ least 2.</p>
           </div>
           <div class="description long">
             <p>Returns the base 2 logarithm of the number, rounded down.</p>
-<p>Returns None if the number is negative or zero.</p>
+<p>Returns <code>None</code> if the number is negative or zero.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1147,7 +1150,7 @@ least 2.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked integer multiplication. Computes self * rhs, returning None if
+            <p>Checked integer multiplication. Computes <code>self * rhs</code>, returning None if
 overflow occurred.</p>
 
           </div>
@@ -1157,7 +1160,7 @@ overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked negation. Computes -self, returning None if self == MIN.</p>
+            <p>Checked negation. Computes <code>-self</code>, returning <code>None</code> if <code>self == </code><a href="sus-num-i8.html#field.MIN"><code>MIN</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1166,8 +1169,8 @@ overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked exponentiation. Computes <code>i8::pow(exp)</code>, returning None if
-overflow occurred.</p>
+            <p>Checked exponentiation. Computes <a href="sus-num-i8.html#method.pow"><code>pow</code></a>,
+returning <code>None</code> if overflow occurred.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1176,8 +1179,8 @@ overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked integer remainder. Computes self % rhs, returning None if rhs ==
-0 or the division results in overflow.</p>
+            <p>Checked integer remainder. Computes <code>self % rhs</code>, returning <code>None</code> if
+<code>rhs == 0</code> or the division results in overflow.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1186,8 +1189,8 @@ overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked Euclidean remainder. Computes self.rem_euclid(rhs), returning
-None if rhs == 0 or the division results in overflow.</p>
+            <p>Checked Euclidean remainder. Computes <a href="sus-num-i8.html#method.rem_euclid"><code>rem_euclid</code></a>, returning
+<code>None</code> if <code>rhs == 0</code> or the division results in overflow.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1196,8 +1199,8 @@ None if rhs == 0 or the division results in overflow.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked shift left. Computes <code>*this &lt;&lt; rhs</code>, returning None if rhs is
-larger than or equal to the number of bits in self.</p>
+            <p>Checked shift left. Computes <code>self &lt;&lt; rhs</code>, returning <code>None</code> if <code>rhs</code> is
+larger than or equal to the number of bits in <code>self</code>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1206,8 +1209,8 @@ larger than or equal to the number of bits in self.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked shift right. Computes <code>*this &gt;&gt; rhs</code>, returning None if rhs is
-larger than or equal to the number of bits in self.</p>
+            <p>Checked shift right. Computes <code>self &gt;&gt; rhs</code>, returning <code>None</code> if <code>rhs</code> is
+larger than or equal to the number of bits in <code>self</code>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1216,7 +1219,7 @@ larger than or equal to the number of bits in self.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked integer subtraction. Computes self - rhs, returning None if
+            <p>Checked integer subtraction. Computes <code>self - rhs</code>, returning <code>None</code> if
 overflow occurred.</p>
 
           </div>
@@ -1226,8 +1229,8 @@ overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked integer subtraction with an unsigned rhs. Computes self - rhs,
-returning None if overflow occurred.</p>
+            <p>Checked integer subtraction with an unsigned <code>rhs</code>. Computes <code>self - rhs</code>,
+returning <code>None</code> if overflow occurred.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1256,15 +1259,14 @@ value.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates the quotient of Euclidean division of self by rhs.</p>
-<p>This computes the integer q such that self = q * rhs + r, with r =
-self.rem_euclid(rhs) and 0 &lt;= r &lt; abs(rhs).</p>
-<p>In other words, the result is self / rhs rounded to the integer q such
-that self &gt;= q * rhs. If self &gt; 0, this is equal to round towards zero
-(the default in Rust); if self &lt; 0, this is equal to round towards +/-
-infinity.</p>
+            <p>Calculates the quotient of Euclidean division of <code>self</code> by <code>rhs</code>.</p>
+<p>This computes the integer <code>q</code> such that <code>self = q * rhs + r</code>, with
+<code>r = self.rem_euclid(rhs)</code> and <code>0 &lt;= r &lt; abs(rhs)</code>.</p>
+<p>In other words, the result is <code>self / rhs</code> rounded to the integer <code>q</code> such
+that <code>self &gt;= q * rhs</code>. If <code>self &gt; 0</code>, this is equal to round towards zero;
+if <code>self &lt; 0</code>, this is equal to round towards +/- infinity.</p>
 <h1><a name="panics-2" href="#panics-2">Panics</a></h1>
-<p>This function will panic if rhs is 0 or the division results in overflow.</p>
+<p>This function will panic if <code>rhs</code> is 0 or the division results in overflow.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1313,13 +1315,15 @@ current value.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns the logarithm of the number with respect to an arbitrary base,
+            <p>Returns the logarithm of the number with respect to an arbitrary <code>base</code>,
 rounded down.</p>
-<p>This method might not be optimized owing to implementation details; log2
-can produce results more efficiently for base 2, and log10 can produce
+<p>This method might not be optimized owing to implementation details;
+<a href="sus-num-i8.html#method.log2"><code>log2</code></a>
+can produce results more efficiently for base 2, and
+<a href="sus-num-i8.html#method.log10"><code>log10</code></a> can produce
 results more efficiently for base 10.</p>
 <h1><a name="panics-3" href="#panics-3">Panics</a></h1>
-<p>When the number is negative, zero, or if the base is not at least 2.</p>
+<p>When the number is negative, zero, or if the <code>base</code> is not at least 2.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1350,10 +1354,10 @@ results more efficiently for base 10.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Computes the absolute value of self.</p>
-<p>Returns a tuple of the absolute version of self along with a boolean
-indicating whether an overflow happened. If self is the minimum value
-(e.g., i8::MIN for values of type i8), then the minimum value
+            <p>Computes the absolute value of <code>self</code>.</p>
+<p>Returns a tuple of the absolute version of <code>self</code> along with a boolean
+indicating whether an overflow happened. If <code>self</code> is the minimum value
+(i.e. <a href="sus-num-i8.html#field.MIN"><code>i8::MIN</code></a>, then the minimum value
 will be returned again and true will be returned for an overflow happening.</p>
 
           </div>
@@ -1363,7 +1367,7 @@ will be returned again and true will be returned for an overflow happening.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates self + rhs</p>
+            <p>Calculates <code>self + rhs</code>.</p>
 <p>Returns a tuple of the addition along with a boolean indicating whether
 an arithmetic overflow would occur. If an overflow would have occurred
 then the wrapped value is returned.</p>
@@ -1375,7 +1379,7 @@ then the wrapped value is returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates self + rhs with an unsigned rhs</p>
+            <p>Calculates <code>self + rhs</code> with an unsigned <code>rhs</code>.</p>
 <p>Returns a tuple of the addition along with a boolean indicating whether
 an arithmetic overflow would occur. If an overflow would have occurred
 then the wrapped value is returned.</p>
@@ -1387,12 +1391,12 @@ then the wrapped value is returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates the divisor when self is divided by rhs.</p>
+            <p>Calculates the divisor when <code>self</code> is divided by <code>rhs</code>.</p>
 <p>Returns a tuple of the divisor along with a boolean indicating whether an
-arithmetic overflow would occur. If an overflow would occur then self is
+arithmetic overflow would occur. If an overflow would occur then <code>self</code> is
 returned.</p>
 <h1><a name="panics-6" href="#panics-6">Panics</a></h1>
-<p>This function will panic if rhs is 0.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1401,12 +1405,12 @@ returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates the quotient of Euclidean division self.div_euclid(rhs).</p>
+            <p>Calculates the quotient of Euclidean division <a href="sus-num-i8.html#method.div_euclid"><code>div_euclid</code></a>.</p>
 <p>Returns a tuple of the divisor along with a boolean indicating whether an
 arithmetic overflow would occur. If an overflow would occur then self is
 returned.</p>
 <h1><a name="panics-7" href="#panics-7">Panics</a></h1>
-<p>This function will panic if rhs is 0.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1415,7 +1419,7 @@ returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates the multiplication of self and rhs.</p>
+            <p>Calculates the multiplication of <code>self</code> and <code>rhs</code>.</p>
 <p>Returns a tuple of the multiplication along with a boolean indicating
 whether an arithmetic overflow would occur. If an overflow would have
 occurred then the wrapped value is returned.</p>
@@ -1427,10 +1431,10 @@ occurred then the wrapped value is returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Negates self, overflowing if this is equal to the minimum value.</p>
+            <p>Negates <code>self</code>, overflowing if this is equal to the minimum value.</p>
 <p>Returns a tuple of the negated version of self along with a boolean
-indicating whether an overflow happened. If self is the minimum value
-(e.g., i8::MIN for values of type i8), then the minimum value
+indicating whether an overflow happened. If <code>self</code> is the minimum value
+(i.e. <a href="sus-num-i8.html#field.MIN"><code>i8::MIN</code></a>, then the minimum value
 will be returned again and true will be returned for an overflow happening.</p>
 
           </div>
@@ -1451,12 +1455,12 @@ whether an overflow happened.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates the remainder when self is divided by rhs.</p>
+            <p>Calculates the remainder when <code>self</code> is divided by <code>rhs</code>.</p>
 <p>Returns a tuple of the remainder after dividing along with a boolean
 indicating whether an arithmetic overflow would occur. If an overflow
 would occur then 0 is returned.</p>
 <h1><a name="panics-8" href="#panics-8">Panics</a></h1>
-<p>This function will panic if rhs is 0.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1465,12 +1469,12 @@ would occur then 0 is returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Overflowing Euclidean remainder. Calculates self.rem_euclid(rhs).</p>
+            <p>Overflowing Euclidean remainder. Calculates <a href="sus-num-i8.html#method.rem_euclid"><code>rem_euclid</code></a>.</p>
 <p>Returns a tuple of the remainder after dividing along with a boolean
 indicating whether an arithmetic overflow would occur. If an overflow
 would occur then 0 is returned.</p>
 <h1><a name="panics-9" href="#panics-9">Panics</a></h1>
-<p>This function will panic if rhs is 0.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1479,11 +1483,11 @@ would occur then 0 is returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Shifts self left by rhs bits.</p>
-<p>Returns a tuple of the shifted version of self along with a boolean
+            <p>Shifts <code>self</code> left by <code>rhs</code> bits.</p>
+<p>Returns a tuple of the shifted version of <code>self</code> along with a boolean
 indicating whether the shift value was larger than or equal to the number
-of bits. If the shift value is too large, then value is masked (N-1)
-where N is the number of bits, and this value is then used to perform the
+of bits. If the shift value is too large, then <code>value</code> is masked by <code>(N-1)</code>
+where <code>N</code> is the number of bits, and this value is then used to perform the
 shift.</p>
 
           </div>
@@ -1493,11 +1497,11 @@ shift.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Shifts self right by rhs bits.</p>
+            <p>Shifts <code>self</code> right by <code>rhs</code> bits.</p>
 <p>Returns a tuple of the shifted version of self along with a boolean
 indicating whether the shift value was larger than or equal to the number
-of bits. If the shift value is too large, then value is masked (N-1)
-where N is the number of bits, and this value is then used to perform the
+of bits. If the shift value is too large, then value is masked by <code>(N-1)</code>
+where <code>N</code> is the number of bits, and this value is then used to perform the
 shift.</p>
 
           </div>
@@ -1507,7 +1511,7 @@ shift.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates self - rhs</p>
+            <p>Calculates <code>self - rhs</code>.</p>
 <p>Returns a tuple of the subtraction along with a boolean indicating
 whether an arithmetic overflow would occur. If an overflow would have
 occurred then the wrapped value is returned.</p>
@@ -1519,7 +1523,7 @@ occurred then the wrapped value is returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates self - rhs with an unsigned rhs.</p>
+            <p>Calculates <code>self - rhs</code> with an unsigned <code>rhs</code>.</p>
 <p>Returns a tuple of the subtraction along with a boolean indicating
 whether an arithmetic overflow would occur. If an overflow would have
 occurred then the wrapped value is returned.</p>
@@ -1540,12 +1544,12 @@ occurred then the wrapped value is returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates the least nonnegative remainder of self (mod rhs).</p>
-<p>This is done as if by the Euclidean division algorithm – given r =
-self.rem_euclid(rhs), self = rhs * self.div_euclid(rhs) + r, and 0 &lt;= r &lt;
-abs(rhs).</p>
+            <p>Calculates the least nonnegative remainder of <code>self</code> (mod <code>rhs</code>).</p>
+<p>This is done as if by the Euclidean division algorithm – given
+<code>r = self.rem_euclid(rhs)</code>, <code>self = rhs * self.div_euclid(rhs) + r</code>, and
+<code>0 &lt;= r &lt; abs(rhs)</code>.</p>
 <h1><a name="panics-01" href="#panics-01">Panics</a></h1>
-<p>This function will panic if rhs is 0 or the division results in overflow.</p>
+<p>This function will panic if <code>rhs</code> is 0 or the division results in overflow.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1587,8 +1591,7 @@ truncated bits to the beginning of the resulting integer.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Saturating absolute value. Computes <code>abs()</code>, returning MAX if the
-current value is MIN instead of overflowing.</p>
+            <p>Saturating absolute value. Computes <a href="sus-num-i8.html#method.abs"><code>abs</code></a>, returning <a href="sus-num-i8.html#field.MAX"><code>MAX</code></a> if the current value is <a href="sus-num-i8.html#field.MIN"><code>MIN</code></a> instead of overflowing.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1597,7 +1600,7 @@ current value is MIN instead of overflowing.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Saturating integer addition. Computes self + rhs, saturating at the
+            <p>Saturating integer addition. Computes <code>self + rhs</code>, saturating at the
 numeric bounds instead of overflowing.</p>
 
           </div>
@@ -1607,7 +1610,7 @@ numeric bounds instead of overflowing.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Saturating integer addition with an unsigned rhs. Computes self + rhs,
+            <p>Saturating integer addition with an unsigned <code>rhs</code>. Computes <code>self + rhs</code>,
 saturating at the numeric bounds instead of overflowing.</p>
 
           </div>
@@ -1617,10 +1620,10 @@ saturating at the numeric bounds instead of overflowing.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Saturating integer division. Computes self / rhs, saturating at the
+            <p>Saturating integer division. Computes <code>self / rhs</code>, saturating at the
 numeric bounds instead of overflowing.</p>
 <h1><a name="panics-11" href="#panics-11">Panics</a></h1>
-<p>This function will panic if rhs is 0.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1629,7 +1632,7 @@ numeric bounds instead of overflowing.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Saturating integer multiplication. Computes self * rhs, saturating at
+            <p>Saturating integer multiplication. Computes <code>self * rhs</code>, saturating at
 the numeric bounds instead of overflowing.</p>
 
           </div>
@@ -1639,8 +1642,8 @@ the numeric bounds instead of overflowing.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Saturating integer negation. Computes -self, returning MAX if self ==
-MIN instead of overflowing.</p>
+            <p>Saturating integer negation. Computes <code>-self</code>, returning <a href="sus-num-i8.html#field.MAX"><code>MAX</code></a> if <code>self == </code><a href="sus-num-i8.html#field.MIN"><code>MIN</code></a>
+instead of overflowing.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1649,7 +1652,7 @@ MIN instead of overflowing.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Saturating integer subtraction. Computes self - rhs, saturating at the
+            <p>Saturating integer subtraction. Computes <code>self - rhs</code>, saturating at the
 numeric bounds instead of overflowing.</p>
 
           </div>
@@ -1659,8 +1662,8 @@ numeric bounds instead of overflowing.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Saturating integer subtraction with an unsigned rhs. Computes self -
-rhs, saturating at the numeric bounds instead of overflowing.</p>
+            <p>Saturating integer subtraction with an unsigned <code>rhs</code>. Computes
+<code>self - rhs</code>, saturating at the numeric bounds instead of overflowing.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1735,7 +1738,8 @@ little-endian byte order.</p>
             <p>Return the memory representation of this integer as a byte array in
 native byte order.</p>
 <p>As the target platform's native endianness is used, portable code should
-use <code>to_be_bytes()</code> or <code>to_le_bytes()</code>, as appropriate, instead.</p>
+use <a href="sus-num-i8.html#method.to_be_bytes"><code>to_be_bytes</code></a> or
+<a href="sus-num-i8.html#method.to_le_bytes"><code>to_le_bytes</code></a>, as appropriate, instead.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1764,13 +1768,11 @@ current value.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Unchecked integer addition. Computes self + rhs, assuming overflow
+            <p>Unchecked integer addition. Computes <code>self + rhs</code>, assuming overflow
 cannot occur.</p>
 <h1><a name="safety" href="#safety">Safety</a></h1>
-<p>This results in undefined behavior when self + rhs &gt; i8::MAX or self</p>
-<ul>
-<li>rhs &lt; i8::MIN, i.e. when checked_add() would return None.</li>
-</ul>
+<p>This results in undefined behavior when <code>self + rhs &gt; </code><a href="sus-num-i8.html#field.MAX"><code>i8::MAX</code></a> or
+<code>self + rhs &lt; </code><a href="sus-num-i8.html#field.MIN"><code>i8::MIN</code></a>, i.e. when <a href="sus-num-i8.html#method.checked_add"><code>checked_add</code></a> would return <code>None</code>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1779,14 +1781,10 @@ cannot occur.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Unchecked integer multiplication. Computes self * rhs, assuming overflow
+            <p>Unchecked integer multiplication. Computes <code>self * rhs</code>, assuming overflow
 cannot occur.</p>
 <h1><a name="safety-1" href="#safety-1">Safety</a></h1>
-<p>This results in undefined behavior when <code>self * rhs &gt; i8::MAX</code> or
-`self</p>
-<ul>
-<li>rhs &lt; i8::MIN<code>, i.e. when </code>checked_mul()` would return None.</li>
-</ul>
+<p>This results in undefined behavior when <code>self * rhs &gt; </code><a href="sus-num-i8.html#field.MAX"><code>i8::MAX</code></a> or <code>self * rhs &lt; </code><a href="sus-num-i8.html#field.MIN"><code>i8::MIN</code></a>, i.e. when <a href="sus-num-i8.html#method.checked_mul"><code>checked_mul</code></a> would return <code>None</code>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1795,8 +1793,11 @@ cannot occur.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Unchecked integer subtraction. Computes self - rhs, assuming overflow
+            <p>Unchecked integer subtraction. Computes <code>self - rhs</code>, assuming overflow
 cannot occur.</p>
+<h1><a name="safety-2" href="#safety-2">Safety</a></h1>
+<p>This results in undefined behavior when <code>self - rhs &gt; </code><a href="sus-num-i8.html#field.MAX"><code>i8::MAX</code></a> or
+<code>self - rhs &lt; </code><a href="sus-num-i8.html#field.MIN"><code>i8::MIN</code></a>, i.e. when <a href="sus-num-i8.html#method.checked_sub"><code>checked_sub</code></a> would return <code>None</code>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1805,7 +1806,7 @@ cannot occur.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Computes the absolute value of self without any wrapping or panicking.</p>
+            <p>Computes the absolute value of <code>self</code> without any wrapping or panicking.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1814,8 +1815,7 @@ cannot occur.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) absolute value. Computes <code>this-&gt;abs()</code>, wrapping
-around at the boundary of the type.</p>
+            <p>Wrapping (modular) absolute value. Computes <a href="sus-num-i8.html#method.abs"><code>abs</code></a>, wrapping around at the boundary of the type.</p>
 <p>The only case where such wrapping can occur is when one takes the
 absolute value of the negative minimal value for the type; this is a
 positive value that is too large to represent in the type. In such a
@@ -1828,7 +1828,7 @@ case, this function returns MIN itself.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) addition. Computes self + rhs, wrapping around at the
+            <p>Wrapping (modular) addition. Computes <code>self + rhs</code>, wrapping around at the
 boundary of the type.</p>
 
           </div>
@@ -1838,7 +1838,7 @@ boundary of the type.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) addition with an unsigned rhs. Computes self + rhs,
+            <p>Wrapping (modular) addition with an unsigned <code>rhs</code>. Computes <code>self + rhs</code>,
 wrapping around at the boundary of the type.</p>
 
           </div>
@@ -1848,14 +1848,14 @@ wrapping around at the boundary of the type.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) division. Computes self / rhs, wrapping around at the
+            <p>Wrapping (modular) division. Computes <code>self / rhs</code>, wrapping around at the
 boundary of the type.</p>
-<p>The only case where such wrapping can occur is when one divides MIN / -1
-on a signed type (where MIN is the negative minimal value for the type);
-this is equivalent to -MIN, a positive value that is too large to
-represent in the type. In such a case, this function returns MIN itself.</p>
+<p>The only case where such wrapping can occur is when one divides <code>MIN / -1</code>
+on a signed type (where <code>MIN</code> is the negative minimal value for the type);
+this is equivalent to <code>-MIN</code>, a positive value that is too large to
+represent in the type. In such a case, this function returns <a href="sus-num-i8.html#field.MIN"><code>MIN</code></a> itself.</p>
 <h1><a name="panics-21" href="#panics-21">Panics</a></h1>
-<p>This function will panic if rhs is 0.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1864,14 +1864,14 @@ represent in the type. In such a case, this function returns MIN itself.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping Euclidean division. Computes self.div_euclid(rhs), wrapping
-around at the boundary of the type.</p>
-<p>Wrapping will only occur in MIN / -1 on a signed type (where MIN is the
-negative minimal value for the type). This is equivalent to -MIN, a
+            <p>Wrapping Euclidean division. Computes <a href="sus-num-i8.html#method.div_euclid"><code>div_euclid</code></a>, wrapping around at the boundary of the
+type.</p>
+<p>Wrapping will only occur in <code>MIN / -1</code> on a signed type (where <code>MIN</code> is the
+negative minimal value for the type). This is equivalent to <code>-MIN</code>, a
 positive value that is too large to represent in the type. In this case,
-this method returns MIN itself.</p>
+this method returns <a href="sus-num-i8.html#field.MIN"><code>MIN</code></a> itself.</p>
 <h1><a name="panics-31" href="#panics-31">Panics</a></h1>
-<p>This function will panic if rhs is 0.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1880,7 +1880,7 @@ this method returns MIN itself.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) multiplication. Computes self * rhs, wrapping around
+            <p>Wrapping (modular) multiplication. Computes <code>self * rhs</code>, wrapping around
 at the boundary of the type.</p>
 
           </div>
@@ -1890,12 +1890,12 @@ at the boundary of the type.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) negation. Computes -self, wrapping around at the
+            <p>Wrapping (modular) negation. Computes <code>-self</code>, wrapping around at the
 boundary of the type.</p>
-<p>The only case where such wrapping can occur is when one negates MIN on
-a signed type (where MIN is the negative minimal value for the type);
+<p>The only case where such wrapping can occur is when one negates <code>MIN</code> on
+a signed type (where <code>MIN</code> is the negative minimal value for the type);
 this is a positive value that is too large to represent in the type. In
-such a case, this function returns MIN itself.</p>
+such a case, this function returns <a href="sus-num-i8.html#field.MIN"><code>MIN</code></a> itself.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1904,8 +1904,9 @@ such a case, this function returns MIN itself.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) exponentiation. Computes self.pow(exp), wrapping
-around at the boundary of the type.</p>
+            <p>Wrapping (modular) exponentiation. Computes
+<a href="sus-num-i8.html#method.pow"><code>pow</code></a>, wrapping around at the boundary of the
+type.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1914,10 +1915,10 @@ around at the boundary of the type.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) remainder. Computes self % rhs, wrapping around at
+            <p>Wrapping (modular) remainder. Computes <code>self % rhs</code>, wrapping around at
 the boundary of the type.</p>
 <p>Such wrap-around never actually occurs mathematically; implementation
-artifacts make x % y invalid for MIN / -1 on a signed type (where MIN
+artifacts make <code>x % y</code> invalid for <code>MIN / -1</code> on a signed type (where <code>MIN</code>
 is the negative minimal value). In such a case, this function returns 0.</p>
 
           </div>
@@ -1927,13 +1928,13 @@ is the negative minimal value). In such a case, this function returns 0.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping Euclidean remainder. Computes self.rem_euclid(rhs), wrapping
+            <p>Wrapping Euclidean remainder. Computes <a href="sus-num-i8.html#method.rem_euclid"><code>rem_euclid</code></a>, wrapping
 around at the boundary of the type.</p>
-<p>Wrapping will only occur in MIN % -1 on a signed type (where MIN is the
+<p>Wrapping will only occur in <code>MIN % -1</code> on a signed type (where <code>MIN</code> is the
 negative minimal value for the type). In this case, this method returns
 0.</p>
 <h1><a name="panics-41" href="#panics-41">Panics</a></h1>
-<p>This function will panic if rhs is 0.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1942,14 +1943,7 @@ negative minimal value for the type). In this case, this method returns
             </div>
           </div>
           <div class="description long">
-            <p>Panic-free bitwise shift-left; yields <code>*this &lt;&lt; mask(rhs)</code>, where mask
-removes any high-order bits of <code>rhs</code> that would cause the shift to exceed
-the bitwidth of the type.</p>
-<p>Note that this is not the same as a rotate-left; the RHS of a wrapping
-shift-left is restricted to the range of the type, rather than the bits
-shifted out of the LHS being returned to the other end. The primitive
-integer types all implement a rotate_left function, which may be what you
-want instead.</p>
+            <p>what you want instead.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1958,14 +1952,15 @@ want instead.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Panic-free bitwise shift-right; yields <code>*this &gt;&gt; mask(rhs)</code>, where mask
+            <p>Panic-free bitwise shift-right; yields <code>self &gt;&gt; mask(rhs)</code>, where mask
 removes any high-order bits of <code>rhs</code> that would cause the shift to exceed
 the bitwidth of the type.</p>
 <p>Note that this is not the same as a rotate-right; the RHS of a wrapping
 shift-right is restricted to the range of the type, rather than the bits
-shifted out of the LHS being returned to the other end. The primitive
-integer types all implement a rotate_right function, which may be what
-you want instead.</p>
+shifted out of the LHS being returned to the other end. The Subspace
+integer types all implement a
+<a href="sus-num-i8.html#method.rotate_right"><code>rotate_right</code></a> function, which may be
+what you want instead.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1974,7 +1969,7 @@ you want instead.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) subtraction. Computes self - rhs, wrapping around at
+            <p>Wrapping (modular) subtraction. Computes <code>self - rhs</code>, wrapping around at
 the boundary of the type.</p>
 
           </div>
@@ -1984,8 +1979,8 @@ the boundary of the type.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping (modular) subtraction with an unsigned rhs. Computes self -
-rhs, wrapping around at the boundary of the type.</p>
+            <p>Wrapping (modular) subtraction with an unsigned <code>rhs</code>. Computes
+<code>self - rhs</code>, wrapping around at the boundary of the type.</p>
 
           </div>
         </div>
