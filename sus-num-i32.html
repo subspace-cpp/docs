@@ -1103,7 +1103,7 @@ returning <code>None</code> if overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked Euclidean division. Computes <a href="sus-num-i32.html#method.div_euclid"><code>div_euclid</code></a>, returning
+            <p>Checked Euclidean division. Computes <code>self.</code><a href="sus-num-i32.html#method.div_euclid"><code>div_euclid</code></a><code>(rhs)</code>, returning
 <code>None</code> if <code>rhs == 0</code> or the division results in overflow.</p>
 
           </div>
@@ -1189,7 +1189,7 @@ returning <code>None</code> if overflow occurred.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Checked Euclidean remainder. Computes <a href="sus-num-i32.html#method.rem_euclid"><code>rem_euclid</code></a>, returning
+            <p>Checked Euclidean remainder. Computes <code>self.</code><a href="sus-num-i32.html#method.rem_euclid"><code>rem_euclid</code></a><code>(rhs)</code>, returning
 <code>None</code> if <code>rhs == 0</code> or the division results in overflow.</p>
 
           </div>
@@ -1405,7 +1405,7 @@ returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Calculates the quotient of Euclidean division <a href="sus-num-i32.html#method.div_euclid"><code>div_euclid</code></a>.</p>
+            <p>Calculates the quotient of Euclidean division <code>self.</code><a href="sus-num-i32.html#method.div_euclid"><code>div_euclid</code></a><code>(rhs)</code>.</p>
 <p>Returns a tuple of the divisor along with a boolean indicating whether an
 arithmetic overflow would occur. If an overflow would occur then self is
 returned.</p>
@@ -1469,7 +1469,7 @@ would occur then 0 is returned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Overflowing Euclidean remainder. Calculates <a href="sus-num-i32.html#method.rem_euclid"><code>rem_euclid</code></a>.</p>
+            <p>Overflowing Euclidean remainder. Calculates <code>self.</code><a href="sus-num-i32.html#method.rem_euclid"><code>rem_euclid</code></a><code>(rhs)</code>.</p>
 <p>Returns a tuple of the remainder after dividing along with a boolean
 indicating whether an arithmetic overflow would occur. If an overflow
 would occur then 0 is returned.</p>
@@ -1864,7 +1864,7 @@ represent in the type. In such a case, this function returns <a href="sus-num-i3
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping Euclidean division. Computes <a href="sus-num-i32.html#method.div_euclid"><code>div_euclid</code></a>, wrapping around at the boundary of the
+            <p>Wrapping Euclidean division. Computes <code>self.</code><a href="sus-num-i32.html#method.div_euclid"><code>div_euclid</code></a><code>(rhs)</code>, wrapping around at the boundary of the
 type.</p>
 <p>Wrapping will only occur in <code>MIN / -1</code> on a signed type (where <code>MIN</code> is the
 negative minimal value for the type). This is equivalent to <code>-MIN</code>, a
@@ -1928,7 +1928,7 @@ is the negative minimal value). In such a case, this function returns 0.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Wrapping Euclidean remainder. Computes <a href="sus-num-i32.html#method.rem_euclid"><code>rem_euclid</code></a>, wrapping
+            <p>Wrapping Euclidean remainder. Computes <code>self.</code><a href="sus-num-i32.html#method.rem_euclid"><code>rem_euclid</code></a><code>(rhs)</code>, wrapping
 around at the boundary of the type.</p>
 <p>Wrapping will only occur in <code>MIN % -1</code> on a signed type (where <code>MIN</code> is the
 negative minimal value for the type). In this case, this method returns
