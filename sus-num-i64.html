@@ -159,6 +159,12 @@
           <a class="sidebar-item" href="sus-num-i64.html#method.abs_diff">abs_diff</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-i64.html#method.as_mut_ptr">as_mut_ptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-i64.html#method.as_ptr">as_ptr</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-i64.html#method.checked_abs">checked_abs</a>
         </li>
         <li>
@@ -1055,6 +1061,33 @@ and attempting to calculate it will panic.</p>
             <p>Computes the absolute difference between <code>self</code> and <code>other</code>.</p>
 <p>This function always returns the correct answer without overflow or
 panics by returning an unsigned integer.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; int64_t*</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable pointer to the underlying C++ primitive value type.</p>
+<p>This allows Subspace numerics be used with APIs that expect a pointer to a
+C++ primitive type.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> int64_t*</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i64.html#method.as_ptr">as_ptr</a>() && -&gt; <span class="const">const</span> int64_t*<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a const pointer to the underlying C++ primitive value type.</p>
+<p>This allows Subspace numerics be used with APIs that expect a pointer to a
+C++ primitive type.</p>
 
           </div>
           <div class="overload-set item-name">

@@ -132,6 +132,12 @@
           <a class="sidebar-item" href="sus-num-uptr.html#method.addr">addr</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.as_mut_ptr">as_mut_ptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.as_ptr">as_ptr</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-uptr.html#method.checked_add">checked_add</a>
         </li>
         <li>
@@ -788,6 +794,33 @@ with the same size as a pointer.</p>
 <p>In most systems the address is the entire pointer, but in cases where the
 pointer is larger, this returns the low bits of the pointer up to the size
 of an address.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; sus::num::__private::ptr_type::unsigned_type*</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable pointer to the underlying C++ primitive value type.</p>
+<p>This allows Subspace numerics be used with APIs that expect a pointer to a
+C++ primitive type.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> sus::num::__private::ptr_type::unsigned_type*</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.as_ptr">as_ptr</a>() && -&gt; <span class="const">const</span> sus::num::__private::ptr_type::unsigned_type*<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a const pointer to the underlying C++ primitive value type.</p>
+<p>This allows Subspace numerics be used with APIs that expect a pointer to a
+C++ primitive type.</p>
 
           </div>
           <div class="overload-set item-name">

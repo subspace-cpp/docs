@@ -144,6 +144,12 @@
           <a class="sidebar-item" href="sus-num-f32.html#method.acosh">acosh</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.as_mut_ptr">as_mut_ptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.as_ptr">as_ptr</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-f32.html#method.asin">asin</a>
         </li>
         <li>
@@ -744,6 +750,33 @@ range [0, pi] or NaN if the number is outside the range [-1, 1].</p>
           <div class="description long">
             <p>Inverse hyperbolic cosine function, or NaN if the number is less than
 -1.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f32.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; float*</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable pointer to the underlying C++ primitive value type.</p>
+<p>This allows Subspace numerics be used with APIs that expect a pointer to a
+C++ primitive type.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f32.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> float*</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f32.html#method.as_ptr">as_ptr</a>() && -&gt; <span class="const">const</span> float*<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a const pointer to the underlying C++ primitive value type.</p>
+<p>This allows Subspace numerics be used with APIs that expect a pointer to a
+C++ primitive type.</p>
 
           </div>
           <div class="overload-set item-name">
