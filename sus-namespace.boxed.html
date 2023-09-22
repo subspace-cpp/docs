@@ -60,6 +60,15 @@
           <a class="sidebar-item" href="sus-boxed-fn.dyn.html">dyn</a>
         </li>
         <li>
+          <a class="sidebar-header" href="#operators">Operators</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-fn.operator_spaceship.box.ord.html">operator&lt;=&gt;</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-fn.operator_eq.box.eq.html">operator==</a>
+        </li>
+        <li>
           <a class="sidebar-header" href="#concepts">Concepts</a>
         </li>
         <li>
@@ -130,6 +139,35 @@ Returned from <a href="sus-boxed-fn.dyn.html"><code>dyn</code></a>.</p>
             <div class="description short">
               <p>Type erases a reference to a type <code>T&amp;</code> which satisfies a concept <code>C</code>,
 into a reference <code>DynC&amp;</code> that also satisfies <code>C</code> but without templates.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="section functions">
+        <div class="section-header">
+          <a name="operators" href="#operators">Operators</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-boxed-fn.operator_spaceship.box.ord.html">operator&lt;=&gt;</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Compares the inner value of two <code>Box</code> objects for ordering. This compares
+the values pointed to from the <code>Box</code>, not the pointers themselves.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-boxed-fn.operator_eq.box.eq.html">operator==</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Compares the inner value of two <code>Box</code> objects for equality. This does not
+perform pointer equality on the boxes themselves.</p>
             </div>
           </li>
         </ul>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus::iter::IteratorAny - Subspace</title>
+  <meta property="og:title" content="sus::iter::IteratorAny - Subspace"></meta>
+  <meta name="description" content="A concept for testing if a type T is an Iterator without testing its Item type."></meta>
+  <meta property="og:description" content="A concept for testing if a type T is an Iterator without testing its Item type."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">IteratorAny</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      concept
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">IteratorAny</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="concept">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Concept
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
+          <span class="namespace-dots">::</span>
+          <a class="concept-name" href="#">IteratorAny</a>
+        </div>
+        <div class="type-signature">
+          <pre class="template">template &lt;class T&gt;</pre>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            IteratorAny
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires {</pre><pre class="requires-constraint-line">  typename std::remove_cvref_t&lt;T&gt;::Item;</pre><pre class="requires-constraint-line">  requires Iterator&lt;T, typename std::remove_cvref_t&lt;T&gt;::Item&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
+            </div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>A concept for testing if a type <code>T</code> is an <a href="sus-iter-Iterator.html"><code>Iterator</code></a>
+without testing its <code>Item</code> type.</p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

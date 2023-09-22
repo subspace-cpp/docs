@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus::boxed::operator&lt;=&gt; - Subspace</title>
+  <meta property="og:title" content="sus::boxed::operator&lt;=&gt; - Subspace"></meta>
+  <meta name="description" content="Compares the inner value of two Box objects for ordering. This compares the values pointed to from the Box, not the pointers themselves."></meta>
+  <meta property="og:description" content="Compares the inner value of two Box objects for ordering. This compares the values pointed to from the Box, not the pointers themselves."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">operator&lt;=&gt;</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">operator&lt;=&gt;</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.boxed.html">boxed</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">operator&lt;=&gt;</a>
+        </div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& lhs, <span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; std::strong_ordering<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::ExclusiveStrongOrd&lt;T&gt;</pre></div>
+              </div></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& lhs, <span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; std::weak_ordering<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::ExclusiveOrd&lt;T&gt;</pre></div>
+              </div></div>
+          </div>
+          <div class="overload">
+            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& lhs, <span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; std::partial_ordering<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::ExclusivePartialOrd&lt;T&gt;</pre></div>
+              </div></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Compares the inner value of two <code>Box</code> objects for ordering. This compares
+the values pointed to from the <code>Box</code>, not the pointers themselves.</p>
+<p>Satisfies the strongest of <a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a>,
+<a href="sus-ops-Ord.html"><code>Ord</code></a>, or <a href="sus-ops-PartialOrd.html"><code>PartialOrd</code></a>, for
+<code>Box&lt;T&gt;</code> for the strongest ordering that <code>T</code> satisifes.</p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

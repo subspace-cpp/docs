@@ -78,7 +78,16 @@
           <a class="sidebar-item" href="sus-boxed-Box.html#method.with_args">with_args</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.with_default">with_default</a>
+        </li>
+        <li>
           <a class="sidebar-header" href="#methods">Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.as_mut">as_mut</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.as_ref">as_ref</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-boxed-Box.html#method.clone">clone</a>
@@ -87,10 +96,25 @@
           <a class="sidebar-item" href="sus-boxed-Box.html#method.clone_from">clone_from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.consume">consume</a>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.exact_size_hint">exact_size_hint</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.into_inner">into_inner</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-boxed-Box.html#method.into_raw">into_raw</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.leak">leak</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.next">next</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.next_back">next_back</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-boxed-Box.html#method.size_hint">size_hint</a>
         </li>
         <li>
           <a class="sidebar-header" href="#operators">Operators</a>
@@ -204,6 +228,9 @@ the <code>Box</code> to be used in templated code requiring that concept:</p>
 <li><a href="sus-fn-Fn.html"><code>Fn</code></a></li>
 <li><a href="sus-fn-FnMut.html"><code>FnMut</code></a></li>
 <li><a href="sus-fn-FnOnce.html"><code>FnOnce</code></a></li>
+<li><a href="sus-iter-Iterator.html"><code>Iterator</code></a></li>
+<li><a href="sus-iter-DoubleEndedIterator.html"><code>DoubleEndedIterator</code></a></li>
+<li><a href="sus-iter-ExactSizeIterator.html"><code>ExactSizeIterator</code></a></li>
 </ul>
 
         </div>
@@ -378,6 +405,23 @@ the <a href="sus-boxed-Box.html#method.from.dync"><code>from</code></a> construc
 can be used to type erase the concept object and move it to the heap.</p>
 
           </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.with_default"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.with_default">with_default</a>() -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Constructs <code>Box&lt;T&gt;</code> with the default value for the type <code>T</code>.</p>
+<p><code>Box</code> can not satisfy <a href="sus-construct-Default.html"><code>Default</code></a> because it
+prevents C++ from using <code>Box</code> to build recursive types where <code>T</code> holds
+an <code>Option&lt;Box&lt;T&gt;&gt;</code> as a member.</p>
+
+          </div>
         </div>
       </div>
       <div class="section methods nonstatic">
@@ -385,6 +429,29 @@ can be used to type erase the concept object and move it to the heap.</p>
           <a name="methods" href="#methods">Methods</a>
         </div>
         <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_mut">as_mut</a>() & -&gt; T&</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Converts <code>Box</code> into a mutable reference of the inner type.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_ref">as_ref</a>() const& -&gt; <span class="const">const</span> T&</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_ref">as_ref</a>() && -&gt; <span class="const">const</span> T&<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Converts <code>Box</code> into a const reference of the inner type.</p>
+
+          </div>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
@@ -420,20 +487,35 @@ allocation.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.consume"></a><div class="template">template &lt;class F&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.consume">consume</a>(F f) && -&gt; sus::fn::ReturnOnce&lt;F, T&&&gt;<div class="requires">
+              <div class="function-signature"><a name="method.exact_size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; sus::usize<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;F, sus::fn::Anything (T &&)&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::ExactSizeIterator&lt;T, typename T::Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
           <div class="description long">
-            <p>Consumes the <code>Box</code>, calling <code>f</code> with the wrapped value before destroying
-it.</p>
+            <p>Implements <a href="sus-iter-ExactSizeIterator.html"><code>ExactSizeIterator</code></a> if
+<code>T</code> is an <a href="sus-iter-ExactSizeIterator.html"><code>ExactSizeIterator</code></a>,
+forwarding through to the inner <code>T</code> object.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.into_inner"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.into_inner">into_inner</a>() && -&gt; T<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Consumes the <code>Box</code>, returning the wrapped value.</p>
 <p>This allows the caller to make use of the wrapped object as an rvalue
-without moving out of the wrapped object in a way that leaves the Box with
-a moved-from object within.</p>
+without leaving a moved-from <code>T</code> inside the <code>Box</code>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -470,6 +552,72 @@ memory:</p>
 <span class="keyword">auto</span><span class="punct">*</span> p <span class="punct">=</span> sus::move<span class="punct">(</span>x<span class="punct">)</span><span class="punct">.</span>into_raw<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
 <span class="keyword">delete</span> p<span class="punct">;</span>
 </code></pre>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.leak"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.leak">leak</a>() && -&gt; T&</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Consumes and leaks the <code>Box</code>, returning a mutable reference, <code>T&amp;</code>. Note
+that the type T must outlive the returned reference.</p>
+<p>This function is mainly useful for data that lives for the remainder of
+the program's life. Dropping the returned reference will cause a memory
+leak. If this is not acceptable, the reference should first be wrapped
+with the <a href="sus-boxed-Box.html#method.from_raw"><code>Box::from_raw</code></a> method producing a
+<code>Box</code>. This <code>Box</code> can then be dropped which will properly destroy <code>T</code> and
+release the allocated memory.</p>
+<p>This method is not functionally different than <a href="sus-boxed-Box.html#method.into_raw"><code>into_raw</code></a> but expresses a different intent, and returns
+a reference type indicating it can not ever return null.</p>
+<p>Note: unlike with the Rust <a href="https://doc.rust-lang.org/stable/std/boxed/struct.Box.html#method.leak"><code>Box::leak</code></a>
+this is not a static method, since <code>Box</code> can not expose the inner type's
+methods directly in C++.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.next">next</a>() -&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Implements <a href="sus-iter-Iterator.html"><code>Iterator</code></a> if <code>T</code> is an <a href="sus-iter-Iterator.html"><code>Iterator</code></a>, forwarding through to the inner <code>T</code> object.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.next_back">next_back</a>() -&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;T, typename T::Item&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Implements <a href="sus-iter-DoubleEndedIterator.html"><code>DoubleEndedIterator</code></a> if
+<code>T</code> is a <a href="sus-iter-DoubleEndedIterator.html"><code>DoubleEndedIterator</code></a>,
+forwarding through to the inner <code>T</code> object.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" href="sus-iter-SizeHint.html" title="sus::iter::SizeHint">SizeHint</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Implements <a href="sus-iter-Iterator.html"><code>Iterator</code></a> if <code>T</code> is an <a href="sus-iter-Iterator.html"><code>Iterator</code></a>, forwarding through to the inner <code>T</code> object.</p>
 
           </div>
         </div>
