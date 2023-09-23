@@ -347,9 +347,9 @@ parameters.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns a const reference to the value(s) inside the Choice.</p>
+            <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
-member in the choice.</p>
+member in the <code>Choice</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
 deleted and can't be called.
 If the active member has a single value, a reference to it is returned
@@ -371,9 +371,9 @@ passed as the template parameter.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns a mutable reference to the value(s) inside the Choice.</p>
+            <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
-member in the choice.</p>
+member in the <code>Choice</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
 deleted and can't be called.
 If the active member has a single value, a reference to it is returned
@@ -567,9 +567,9 @@ parameters.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns which is the active member of the Choice.</p>
-<p>Typically to access the data in the Choice, a <code>switch</code> statement would be
-used, so as to call the getter or setter methods with the right value
+            <p>Returns which is the active member of the <code>Choice</code>.</p>
+<p>Typically to access the data in the <code>Choice</code>, a <code>switch</code> statement would
+be used, so as to call the getter or setter methods with the right value
 specified as a template parameter. When used in a <code>switch</code> statement, the
 <code>which</code> method can be omitted.</p>
 <h1><a name="example" href="#example">Example</a></h1>
