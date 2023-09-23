@@ -48,7 +48,10 @@
           <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.Choice">Choice</a>
+          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-choice_type-Choice.html#method.with">with</a>
@@ -96,7 +99,10 @@
           <a class="sidebar-header" href="#operators">Operators</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator=">operator=</a>
+          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>
         </li>
       </ul>
     </div>
@@ -137,7 +143,7 @@ or more types attached to it as data values.</p>
 <p><code>Choice</code> can be thought of as a combination of an <a href="https://en.cppreference.com/w/cpp/language/enum"><code>enum</code></a> and a
 <a href="https://en.cppreference.com/w/cpp/utility/variant"><code>std::variant</code></a>, and
 typically the <code>Tags</code> are specified to be values in an <code>enum</code>.</p>
-<p>A <code>Choice</code> always has an active tag, as one must be specified at
+<p>A <code>Choice</code> always has an active member, as the tag must be specified at
 construction, and the asociated values for the tag are always set as they
 must be set when the tag is specified. This means a <code>Choice</code> is always in a
 fully specified state, or it is moved-from. Once it is moved from it may not
@@ -155,6 +161,12 @@ to all the values attached to the tag. It is only callable on mutable
 <li><a href="sus-choice_type-Choice.html#method.into_inner"><code>into_inner&lt;Tag&gt;()</code></a> moves all
 values attached to the tag out of the <code>Choice</code> and marks the <code>Choice</code> as
 moved-from. It is only callable on an rvalue <code>Choice.</code></li>
+<li><a href="sus-choice_type-Choice.html#method.get"><code>get&lt;Tag&gt;()</code></a> returns a const reference
+to the values attached to the tag if its currently active, and returns
+<code>None</code> if the tag is not active.</li>
+<li><a href="sus-choice_type-Choice.html#method.get"><code>get_mut&lt;Tag&gt;()</code></a> returns a mutable
+reference to the values attached to the tag if its currently active, and
+returns <code>None</code> if the tag is not active.</li>
 </ul>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>This <code>Choice</code> holds either a <a href="sus-num-u64.html"><code>u64</code></a> with
@@ -211,7 +223,7 @@ type-safe and memory-safe way.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
+              <div class="function-signature"><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -220,17 +232,7 @@ type-safe and memory-safe way.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
+              <div class="function-signature"><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -239,7 +241,25 @@ type-safe and memory-safe way.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
+              <div class="function-signature"><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Move constructor.</p>
+<p><code>Choice</code> satisfies <a href="sus-mem-Move.html"><code>Move</code></a> when the types it holds all
+satisfy <a href="sus-mem-Move.html"><code>Move</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -248,7 +268,16 @@ type-safe and memory-safe way.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
+              <div class="function-signature"><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -257,17 +286,12 @@ type-safe and memory-safe way.</p>
                   deleted
                 </div></div>
             </div>
-            <div class="overload">
-              <div class="function-signature"><a name="method.Choice"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
           </div>
           <div class="description long">
+            <p>Copy constructor.</p>
+<p><code>Choice</code> satisfies <a href="sus-mem-Copy.html"><code>Copy</code></a> when the types it holds all
+satisfy <a href="sus-mem-Copy.html"><code>Copy</code></a>.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -289,6 +313,11 @@ type-safe and memory-safe way.</p>
             </div>
           </div>
           <div class="description long">
+            <p>Constructs a <code>Choice</code> with the <code>V</code> tag indicating its active member, and
+with the parameters used to set the associated values.</p>
+<p>If the associated type of the tag is <code>void</code> then <code>with()</code> takes no
+parameters.</p>
+
           </div>
         </div>
       </div>
@@ -321,7 +350,9 @@ type-safe and memory-safe way.</p>
             <p>Returns a const reference to the value(s) inside the Choice.</p>
 <p>The function has a template parameter specifying the tag of the active
 member in the choice.</p>
-<p>If the active member has a single value, a reference to it is returned
+<p>If the active member's associated type is <code>void</code> then this method is
+deleted and can't be called.
+If the active member has a single value, a reference to it is returned
 directly, otherwise a Tuple of references is returned to all values in the
 active member.</p>
 <h1><a name="panics" href="#panics">Panics</a></h1>
@@ -343,7 +374,9 @@ passed as the template parameter.</p>
             <p>Returns a mutable reference to the value(s) inside the Choice.</p>
 <p>The function has a template parameter specifying the tag of the active
 member in the choice.</p>
-<p>If the active member has a single value, a reference to it is returned
+<p>If the active member's associated type is <code>void</code> then this method is
+deleted and can't be called.
+If the active member has a single value, a reference to it is returned
 directly, otherwise a Tuple of references is returned to all values in the
 active member.</p>
 <h1><a name="panics-1" href="#panics-1">Panics</a></h1>
@@ -363,6 +396,10 @@ passed as the template parameter.</p>
             </div>
           </div>
           <div class="description long">
+            <p><a href="sus-mem-Clone.html"><code>Clone</code></a> support.
+<code>Choice</code> satisfies <a href="sus-mem-Clone.html"><code>Clone</code></a> when the types it holds all
+satisfy <a href="sus-mem-Clone.html"><code>Clone</code></a>.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -385,12 +422,14 @@ passed as the template parameter.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns a const reference to the value(s) inside the Choice.</p>
-<p>If the template parameter does not match the active member in the Choice,
-the function returns <code>None</code>.</p>
-<p>If the active member has a single value, a reference to it is returned
-directly, otherwise a Tuple of references is returned to all values in the
-active member.</p>
+            <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
+<p>If the template parameter does not match the active member in the
+<code>Choice</code>, the function returns <code>None</code>.</p>
+<p>If the active member's associated type is <code>void</code> then this method is
+deleted and can't be called.
+If the active member has a single value, a reference to it is returned
+directly, otherwise a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of references is
+returned to all values in the active member.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -404,12 +443,14 @@ active member.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns a mutable reference to the value(s) inside the Choice.</p>
-<p>If the template parameter does not match the active member in the Choice,
-the function returns <code>None</code>.</p>
-<p>If the active member has a single value, a reference to it is returned
-directly, otherwise a Tuple of references is returned to all values in the
-active member.</p>
+            <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
+<p>If the template parameter does not match the active member in the
+<code>Choice</code>, the function returns <code>None</code>.</p>
+<p>If the active member's associated type is <code>void</code> then this method is
+deleted and can't be called.
+If the active member has a single value, a reference to it is returned
+directly, otherwise a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of references is
+returned to all values in the active member.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -433,12 +474,14 @@ active member.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns a const reference to the value(s) inside the Choice.</p>
+            <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
-member in the choice.</p>
-<p>If the active member has a single value, a reference to it is returned
-directly, otherwise a Tuple of references is returned to all values in the
-active member.</p>
+member in the <code>Choice</code>.</p>
+<p>If the active member's associated type is <code>void</code> then this method is
+deleted and can't be called.
+If the active member has a single value, a reference to it is returned
+directly, otherwise a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of references is
+returned to all values in the active member.</p>
 <h1><a name="safety" href="#safety">Safety</a></h1>
 <p>If the active member does not match the tag value passed as the template
 parameter, Undefined Behaviour results.</p>
@@ -455,12 +498,14 @@ parameter, Undefined Behaviour results.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns a mutable reference to the value(s) inside the Choice.</p>
+            <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
-member in the choice.</p>
-<p>If the active member has a single value, a reference to it is returned
-directly, otherwise a Tuple of references is returned to all values in the
-active member.</p>
+member in the <code>Choice</code>.</p>
+<p>If the active member's associated type is <code>void</code> then this method is
+deleted and can't be called.
+If the active member has a single value, a reference to it is returned
+directly, otherwise a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of references is
+returned to all values in the active member.</p>
 <h1><a name="safety-1" href="#safety-1">Safety</a></h1>
 <p>If the active member does not match the tag value passed as the template
 parameter, Undefined Behaviour results.</p>
@@ -477,12 +522,14 @@ parameter, Undefined Behaviour results.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Unwraps the Choice to move out the current value(s) inside the Choice.</p>
+            <p>Unwraps the <code>Choice</code> to move out the current value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
-member in the choice.</p>
-<p>If the active member has a single value, an rvalue reference to it is
-returned directly, otherwise a Tuple of rvalue references is returned to
-all values in the active member.</p>
+member in the <code>Choice</code>.</p>
+<p>If the active member's associated type is <code>void</code> then this method is
+deleted and can't be called.
+If the active member has a single value, an rvalue reference to it is
+returned directly, otherwise a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of
+rvalue references is returned to all values in the active member.</p>
 <h1><a name="panics-2" href="#panics-2">Panics</a></h1>
 <p>The function will panic if the active member does not match the tag value
 passed as the template parameter.</p>
@@ -508,6 +555,11 @@ passed as the template parameter.</p>
             </div>
           </div>
           <div class="description long">
+            <p>Changes the <code>Choice</code> to make the tag <code>V</code> active, and sets the associated
+values of <code>V</code> from the paramters.</p>
+<p>If the associated type of the tag is <code>void</code> then <code>set()</code> takes no
+parameters.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -516,15 +568,15 @@ passed as the template parameter.</p>
           </div>
           <div class="description long">
             <p>Returns which is the active member of the Choice.</p>
-<p>Typically to access the data in the Choice, a switch statement would be
+<p>Typically to access the data in the Choice, a <code>switch</code> statement would be
 used, so as to call the getter or setter methods with the right value
-specified as a template parameter. When used in a switch statement, the
-which() method can be omitted.</p>
+specified as a template parameter. When used in a <code>switch</code> statement, the
+<code>which</code> method can be omitted.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code><span class="keyword">switch</span> <span class="punct">(</span>my_union<span class="punct">)</span> <span class="punct">{</span>
-  <span class="keyword">case</span> Value1: <span class="keyword">return</span> my_union<span class="punct">.</span>as<span class="punct">&lt;</span>Value1<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>stuff<span class="punct">;</span>
-  <span class="keyword">case</span> Value2: <span class="keyword">return</span> my_union<span class="punct">.</span>as<span class="punct">&lt;</span>Value2<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>andmore<span class="punct">;</span>
-  <span class="keyword">case</span> Value3: <span class="keyword">return</span> my_union<span class="punct">.</span>as<span class="punct">&lt;</span>Value3<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>stufftoo<span class="punct">;</span>
+<pre><code><span class="keyword">switch</span> <span class="punct">(</span>my_choice<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">case</span> Value1: <span class="keyword">return</span> my_choice<span class="punct">.</span>as<span class="punct">&lt;</span>Value1<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>stuff<span class="punct">;</span>
+  <span class="keyword">case</span> Value2: <span class="keyword">return</span> my_choice<span class="punct">.</span>as<span class="punct">&lt;</span>Value2<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>andmore<span class="punct">;</span>
+  <span class="keyword">case</span> Value3: <span class="keyword">return</span> my_choice<span class="punct">.</span>as<span class="punct">&lt;</span>Value3<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>stufftoo<span class="punct">;</span>
 <span class="punct">}</span>
 </code></pre>
 <h1><a name="inspiration" href="#inspiration">Inspiration</a></h1>
@@ -576,6 +628,7 @@ which() method can be omitted.</p>
           </div>
           <div class="description long">
             <p>Support for using Choice in a <code>switch()</code> statment.</p>
+<p>See the type's top level documentation for an example.</p>
 
           </div>
         </div>
@@ -587,7 +640,7 @@ which() method can be omitted.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -596,17 +649,7 @@ which() method can be omitted.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -615,7 +658,25 @@ which() method can be omitted.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+              <div class="function-signature"><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                </div><div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Move assignment.</p>
+<p><code>Choice</code> satisfies <a href="sus-mem-Move.html"><code>Move</code></a> when the types it holds all
+satisfy <a href="sus-mem-Move.html"><code>Move</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -624,7 +685,16 @@ which() method can be omitted.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -633,17 +703,12 @@ which() method can be omitted.</p>
                   deleted
                 </div></div>
             </div>
-            <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
           </div>
           <div class="description long">
+            <p>Copy assignment.</p>
+<p><code>Choice</code> satisfies <a href="sus-mem-Copy.html"><code>Copy</code></a> when the types it holds all
+satisfy <a href="sus-mem-Copy.html"><code>Copy</code></a>.</p>
+
           </div>
         </div>
       </div>
