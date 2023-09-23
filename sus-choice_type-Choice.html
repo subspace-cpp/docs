@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::choice_type::Choice - Subspace</title>
   <meta property="og:title" content="sus::choice_type::Choice - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <meta name="description" content="A tagged union, or sum type."></meta>
+  <meta property="og:description" content="A tagged union, or sum type."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -131,6 +131,77 @@
           </div>
         </div>
         <div class="description long">
+          <p>A tagged union, or sum type.</p>
+<p>A <code>Choice</code> is always set to one of its <code>Tags</code> values, and each tag has zero
+or more types attached to it as data values.</p>
+<p><code>Choice</code> can be thought of as a combination of an <a href="https://en.cppreference.com/w/cpp/language/enum"><code>enum</code></a> and a
+<a href="https://en.cppreference.com/w/cpp/utility/variant"><code>std::variant</code></a>, and
+typically the <code>Tags</code> are specified to be values in an <code>enum</code>.</p>
+<p>A <code>Choice</code> always has an active tag, as one must be specified at
+construction, and the asociated values for the tag are always set as they
+must be set when the tag is specified. This means a <code>Choice</code> is always in a
+fully specified state, or it is moved-from. Once it is moved from it may not
+be used except to be re-initialized.</p>
+<p>Use the <code>sus_choice_types()</code> macro to specify the types in a <code>Choice</code> type.</p>
+<p>To access the values in <code>Choice</code>, the current tag must be specified as a
+template parameter, and it will be checked for correctness. When it does not
+match, the <code>Choice</code> method will panic.</p>
+<ul>
+<li><a href="sus-choice_type-Choice.html#method.as"><code>as&lt;Tag&gt;()</code></a> gives const access to all the
+values attached to the tag.</li>
+<li><a href="sus-choice_type-Choice.html#method.as_mut"><code>as_mut&lt;Tag&gt;()</code></a> gives mutable access
+to all the values attached to the tag. It is only callable on mutable
+<code>Choice</code>.</li>
+<li><a href="sus-choice_type-Choice.html#method.into_inner"><code>into_inner&lt;Tag&gt;()</code></a> moves all
+values attached to the tag out of the <code>Choice</code> and marks the <code>Choice</code> as
+moved-from. It is only callable on an rvalue <code>Choice.</code></li>
+</ul>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>This <code>Choice</code> holds either a <a href="sus-num-u64.html"><code>u64</code></a> with
+the <code>First</code> tag or a <a href="sus-num-u32.html"><code>u32</code></a> with the <code>Second</code> tag.</p>
+<pre><code><span class="keyword">enum</span> <span class="keyword">class</span> Order <span class="punct">{</span> First<span class="punct">,</span> Second <span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">using</span> EitherOr <span class="punct">=</span> Choice<span class="punct">&lt;</span>sus_choice_types<span class="punct">(</span>
+    <span class="punct">(</span>Order::First<span class="punct">,</span> u64<span class="punct">)</span><span class="punct">,</span>
+    <span class="punct">(</span>Order::Second<span class="punct">,</span> u32<span class="punct">)</span>
+<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">;</span>
+</code></pre>
+<p>A <code>Choice</code> tag may be associated with no values by making its type <code>void</code> or
+may be associated with more than one type in which case all access will be
+done with a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a>.</p>
+<pre><code><span class="keyword">enum</span> <span class="keyword">class</span> Order <span class="punct">{</span> First<span class="punct">,</span> Second <span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">using</span> EitherOr <span class="punct">=</span> Choice<span class="punct">&lt;</span>sus_choice_types<span class="punct">(</span>
+    <span class="punct">(</span>Order::First<span class="punct">,</span> <span class="keyword">void</span><span class="punct">)</span><span class="punct">,</span>
+    <span class="punct">(</span>Order::Second<span class="punct">,</span> std::string<span class="punct">,</span> i32<span class="punct">)</span>
+<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">;</span>
+<span class="keyword">auto</span> e1 <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>Order::First<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> e2 <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>Order::Second<span class="punct">&gt;</span><span class="punct">(</span>sus::tuple<span class="punct">(</span><span class="string">&quot;text&quot;</span><span class="punct">,</span> 123<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+</code></pre>
+<p>The <code>Choice</code> type can be used in a <code>switch</code>, with each case being one of its
+possible tag values. Within each tag case block, the values can be pulled
+out of the <code>Choice</code> with <a href="sus-choice_type-Choice.html#method.as"><code>as</code></a> in a
+type-safe and memory-safe way.</p>
+<pre><code><span class="keyword">enum</span> <span class="keyword">class</span> Order <span class="punct">{</span> First<span class="punct">,</span> Second <span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">using</span> EitherOr <span class="punct">=</span> Choice<span class="punct">&lt;</span>sus_choice_types<span class="punct">(</span>
+    <span class="punct">(</span>Order::First<span class="punct">,</span> u64<span class="punct">)</span><span class="punct">,</span>
+    <span class="punct">(</span>Order::Second<span class="punct">,</span> std::string<span class="punct">,</span> i32<span class="punct">)</span>
+<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">;</span>
+<span class="keyword">auto</span> e <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>Order::Second<span class="punct">&gt;</span><span class="punct">(</span>sus::tuple<span class="punct">(</span><span class="string">&quot;hello worl&quot;</span><span class="punct">,</span> 0xd<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">switch</span> <span class="punct">(</span>e<span class="punct">)</span> <span class="punct">{</span>
+  <span class="keyword">case</span> Order::First: <span class="punct">{</span>
+    <span class="keyword">const</span> <span class="keyword">auto</span><span class="punct">&amp;</span> i <span class="punct">=</span> e<span class="punct">.</span>as<span class="punct">&lt;</span>Order::First<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+    <span class="comment">// We don't get here.</span>
+    fmt::println<span class="punct">(</span><span class="string">&quot;First has u64 {}&quot;</span><span class="punct">,</span> i<span class="punct">)</span><span class="punct">;</span>
+    <span class="keyword">break</span><span class="punct">;</span>
+  <span class="punct">}</span>
+  <span class="keyword">case</span> Order::Second: <span class="punct">{</span>
+    <span class="keyword">const</span> <span class="keyword">auto</span><span class="punct">&amp;</span> <span class="punct">[</span>s<span class="punct">,</span> i<span class="punct">]</span> <span class="punct">=</span> e<span class="punct">.</span>as<span class="punct">&lt;</span>Order::Second<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+    <span class="comment">// Prints &quot;Second has hello world&quot;.</span>
+    fmt::println<span class="punct">(</span><span class="string">&quot;Second has {}{:x}&quot;</span><span class="punct">,</span> s<span class="punct">,</span> i<span class="punct">)</span><span class="punct">;</span>
+    <span class="keyword">break</span><span class="punct">;</span>
+  <span class="punct">}</span>
+<span class="punct">}</span>
+</code></pre>
+
         </div>
       </div>
       <div class="section methods static">

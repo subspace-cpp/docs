@@ -803,6 +803,14 @@ a short-lived object which leads to common C++ memory bugs.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.expect"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.expect">expect</a>(<span class="const">const</span> char* message) && -&gt; T</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.expect"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.expect">expect</a>(<span class="const">const</span> char* message) const& -&gt; T<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns the contained value inside the option.</p>
@@ -1259,6 +1267,14 @@ be mapped to <code>Ok(Some(_))</code> and <code>Err(_)</code>.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.unwrap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap">unwrap</a>() && -&gt; T</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unwrap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap">unwrap</a>() const& -&gt; T<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns the contained value inside the option.</p>
@@ -1269,6 +1285,14 @@ currently <code>None</code>.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.unwrap_or"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_or">unwrap_or</a>(T default_result) && -&gt; T</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unwrap_or"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_or">unwrap_or</a>(T default_result) const& -&gt; T<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1289,6 +1313,16 @@ used instead, as it will only construct the default value if required.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
                 </div></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unwrap_or_default"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_or_default">unwrap_or_default</a>() const& -&gt; T<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns the contained value inside the option, if there is one.
@@ -1302,6 +1336,14 @@ default value.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.unwrap_or_else"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_or_else">unwrap_or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;T()&gt; auto f) && -&gt; T</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unwrap_or_else"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_or_else">unwrap_or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;T()&gt; auto f) const& -&gt; T<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Returns the contained value inside the Option, if there is one.
@@ -1311,6 +1353,14 @@ Otherwise, returns the result of the given function.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.unwrap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; T</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unwrap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; T<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRef&lt;T&gt;</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">

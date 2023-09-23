@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::choice_type::choice - Subspace</title>
   <meta property="og:title" content="sus::choice_type::choice - Subspace"></meta>
-  <meta name="description" content="Used to construct a Choice with the tag and parameters as its values."></meta>
-  <meta property="og:description" content="Used to construct a Choice with the tag and parameters as its values."></meta>
+  <meta name="description" content="Used to construct a Choice with Tag as its initial state and the parameter(s) as its associated value(s)."></meta>
+  <meta property="og:description" content="Used to construct a Choice with Tag as its initial state and the parameter(s) as its associated value(s)."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -68,9 +68,11 @@
           </div>
         </div>
         <div class="description long">
-          <p>Used to construct a Choice with the tag and parameters as its values.</p>
-<p>Calling make_union() produces a hint to make a Choice but does not actually
-construct the Choice, as the full type of the Choice include all its member
+          <p>Used to construct a <a href="sus-choice_type-Choice.html"><code>Choice</code></a> with <code>Tag</code> as its
+initial state and the parameter(s) as its associated value(s).</p>
+<p>Calling <code>choice()</code> produces a hint to make a <a href="sus-choice_type-Choice.html"><code>Choice</code></a> with a given inital value(s) <code>vs</code>, but does not
+actually construct the <a href="sus-choice_type-Choice.html"><code>Choice</code></a>, as the full
+type of the <a href="sus-choice_type-Choice.html"><code>Choice</code></a> including all its member
 types is not known here.</p>
 
         </div>
