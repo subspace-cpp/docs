@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::num::PrimitiveEnumClass - Subspace</title>
-  <meta property="og:title" content="sus::num::PrimitiveEnumClass - Subspace"></meta>
-  <meta name="description" content="Enum class (scoped enumeration) types that are backed by a signed or unsigned value."></meta>
-  <meta property="og:description" content="Enum class (scoped enumeration) types that are backed by a signed or unsigned value."></meta>
+  <title>sus::num::IntegerNumeric - Subspace</title>
+  <meta property="og:title" content="sus::num::IntegerNumeric - Subspace"></meta>
+  <meta name="description" content="All Subspace numeric integer types. This includes all safe integer types except uptr which represents pointers. See UnsignedNumeric and UnsignedPointer."></meta>
+  <meta property="og:description" content="All Subspace numeric integer types. This includes all safe integer types except uptr which represents pointers. See UnsignedNumeric and UnsignedPointer."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">PrimitiveEnumClass</a>
+        <a href="#">IntegerNumeric</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       concept
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">PrimitiveEnumClass</a>
+      <a href="#">IntegerNumeric</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -60,7 +60,7 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="sus-namespace.num.html">num</a>
           <span class="namespace-dots">::</span>
-          <a class="concept-name" href="#">PrimitiveEnumClass</a>
+          <a class="concept-name" href="#">IntegerNumeric</a>
         </div>
         <div class="type-signature">
           <pre class="template">template &lt;class T&gt;</pre>
@@ -68,21 +68,22 @@
             concept
           </span>
           <span class="type-name">
-            PrimitiveEnumClass
+            IntegerNumeric
           </span>
           <div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedPrimitiveEnumClass&lt;T&gt; || SignedPrimitiveEnumClass&lt;T&gt;</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;T&gt; || Signed&lt;T&gt;</pre></div>
             </div>
           </div>
         </div>
         <div class="description long">
-          <p>Enum class
-(<a href="https://en.cppreference.com/w/cpp/language/enum">scoped enumeration</a>)
-types that are backed by a signed or unsigned value.</p>
+          <p>All Subspace numeric integer types. This includes all safe integer types
+except <a href="sus-num-uptr.html"><code>uptr</code></a> which represents pointers. See
+<a href="sus-num-UnsignedNumeric.html"><code>UnsignedNumeric</code></a> and
+<a href="sus-num-UnsignedPointer.html"><code>UnsignedPointer</code></a>.</p>
 
         </div>
       </div>

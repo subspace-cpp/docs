@@ -276,6 +276,12 @@
           <a class="sidebar-item" href="sus-num-Integer.html">Integer</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-IntegerNumeric.html">IntegerNumeric</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-IntegerPointer.html">IntegerPointer</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-Mul.html">Mul</a>
         </li>
         <li>
@@ -334,6 +340,12 @@
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-Unsigned.html">Unsigned</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-UnsignedNumeric.html">UnsignedNumeric</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-UnsignedPointer.html">UnsignedPointer</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-UnsignedPrimitiveEnum.html">UnsignedPrimitiveEnum</a>
@@ -1182,7 +1194,37 @@ integers shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Signed or unsigned Subspace integer types (i8, u16, i32, u64, etc).</p>
+              <p>Signed or unsigned Subspace integer types: <a href="sus-num-u8.html"><code>u8</code></a>,
+<a href="sus-num-u16.html"><code>u16</code></a>, <a href="sus-num-u32.html"><code>u32</code></a>, <a href="sus-num-u64.html"><code>u64</code></a>,
+<a href="sus-num-usize.html"><code>usize</code></a>, <a href="sus-num-uptr.html"><code>uptr</code></a>,
+<a href="sus-num-i8.html"><code>i8</code></a>, <a href="sus-num-i16.html"><code>i16</code></a>, <a href="sus-num-i32.html"><code>i32</code></a>,
+<a href="sus-num-i64.html"><code>i64</code></a>, and <a href="sus-num-isize.html"><code>isize</code></a>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-num-IntegerNumeric.html">IntegerNumeric</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>All Subspace numeric integer types. This includes all safe integer types
+except <a href="sus-num-uptr.html"><code>uptr</code></a> which represents pointers. See
+<a href="sus-num-UnsignedNumeric.html"><code>UnsignedNumeric</code></a> and
+<a href="sus-num-UnsignedPointer.html"><code>UnsignedPointer</code></a>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-num-IntegerPointer.html">IntegerPointer</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>All Subspace pointer integer types. This includes safe integer types that
+represent pointer values, which is just <a href="sus-num-uptr.html"><code>uptr</code></a>. See
+<a href="sus-num-UnsignedNumeric.html"><code>UnsignedNumeric</code></a> and
+<a href="sus-num-UnsignedPointer.html"><code>UnsignedPointer</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1229,8 +1271,9 @@ integers shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Enum class (scoped enum) types that are backed by a signed or unsigned
-value.</p>
+              <p>Enum class
+(<a href="https://en.cppreference.com/w/cpp/language/enum">scoped enumeration</a>)
+types that are backed by a signed or unsigned value.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1249,8 +1292,8 @@ value.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Signed or unsigned primitive integer types (char, int, unsigned int,
-unsigned long, etc).</p>
+              <p>Signed or unsigned primitive integer types (<code>char</code>, <code>int</code>, <code>unsigned int</code>,
+<code>unsigned long</code>, etc).</p>
             </div>
           </li>
           <li class="section-item">
@@ -1314,7 +1357,9 @@ unsigned long, etc).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Signed Subspace integer types (i8, i16, i32, etc).</p>
+              <p>Signed Subspace integer types: <a href="sus-num-i8.html"><code>i8</code></a>,
+<a href="sus-num-i16.html"><code>i16</code></a>, <a href="sus-num-i32.html"><code>i32</code></a>, <a href="sus-num-i64.html"><code>i64</code></a>,
+and <a href="sus-num-isize.html"><code>isize</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1334,7 +1379,9 @@ unsigned long, etc).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Enum class (scoped enum) types that are backed by a signed value.</p>
+              <p>Enum class
+(<a href="https://en.cppreference.com/w/cpp/language/enum">scoped enumeration</a>)
+types that are backed by a signed value.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1344,7 +1391,7 @@ unsigned long, etc).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Signed primitive integer types (char, int, long, etc).</p>
+              <p>Signed primitive integer types (<code>signed char</code>, <code>int</code>, <code>long</code>, etc).</p>
             </div>
           </li>
           <li class="section-item">
@@ -1372,7 +1419,29 @@ unsigned long, etc).</p>
               </div>
             </div>
             <div class="description short">
-              <p>Unsigned Subspace integer types (u8, u16, u32, etc).</p>
+              <p>Unsigned Subspace integer types: <a href="sus-num-u8.html"><code>u8</code></a>,
+<a href="sus-num-u16.html"><code>u16</code></a>, <a href="sus-num-u32.html"><code>u32</code></a>, <a href="sus-num-u64.html"><code>u64</code></a>,
+<a href="sus-num-usize.html"><code>usize</code></a>, and <a href="sus-num-uptr.html"><code>uptr</code></a>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-num-UnsignedNumeric.html">UnsignedNumeric</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Unsigned Subspace numeric integer types. All of <a href="sus-num-Unsigned.html"><code>Unsigned</code></a> but excluding <a href="sus-num-uptr.html"><code>uptr</code></a>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature">
+                <a class="type-name" href="sus-num-UnsignedPointer.html">UnsignedPointer</a>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Unsigned Subspace pointer integer types. This is the rest of <a href="sus-num-Unsigned.html"><code>Unsigned</code></a> that is not included in <a href="sus-num-UnsignedNumeric.html"><code>UnsignedNumeric</code></a>, which is just <a href="sus-num-uptr.html"><code>uptr</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1393,7 +1462,9 @@ types.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Enum class (scoped enum) types that are backed by an unsigned value.</p>
+              <p>Enum class
+(<a href="https://en.cppreference.com/w/cpp/language/enum">scoped enumeration</a>)
+types that are backed by an unsigned value.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1403,7 +1474,7 @@ types.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Unsigned primitive integer types (unsigned char, unsigned int, etc).</p>
+              <p>Unsigned primitive integer types (<code>unsigned char</code>, <code>unsigned int</code>, etc).</p>
             </div>
           </li>
         </ul>

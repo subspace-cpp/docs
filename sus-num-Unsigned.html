@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::num::Unsigned - Subspace</title>
   <meta property="og:title" content="sus::num::Unsigned - Subspace"></meta>
-  <meta name="description" content="Unsigned Subspace integer types (u8, u16, u32, etc)."></meta>
-  <meta property="og:description" content="Unsigned Subspace integer types (u8, u16, u32, etc)."></meta>
+  <meta name="description" content="Unsigned Subspace integer types: u8, u16, u32, u64, usize, and uptr."></meta>
+  <meta property="og:description" content="Unsigned Subspace integer types: u8, u16, u32, u64, usize, and uptr."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -75,12 +75,14 @@
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;u8, T&gt; || std::same_as&lt;u16, T&gt; || std::same_as&lt;u32, T&gt; ||</pre><pre class="requires-constraint-line">    std::same_as&lt;u64, T&gt; || std::same_as&lt;usize, T&gt; || std::same_as&lt;uptr, T&gt;</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;T&gt; || UnsignedPointer&lt;T&gt;</pre></div>
             </div>
           </div>
         </div>
         <div class="description long">
-          <p>Unsigned Subspace integer types (u8, u16, u32, etc).</p>
+          <p>Unsigned Subspace integer types: <a href="sus-num-u8.html"><code>u8</code></a>,
+<a href="sus-num-u16.html"><code>u16</code></a>, <a href="sus-num-u32.html"><code>u32</code></a>, <a href="sus-num-u64.html"><code>u64</code></a>,
+<a href="sus-num-usize.html"><code>usize</code></a>, and <a href="sus-num-uptr.html"><code>uptr</code></a>.</p>
 
         </div>
       </div>
