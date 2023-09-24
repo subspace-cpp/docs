@@ -87,10 +87,11 @@ instead, use <a href="sus-iter-IteratorBase.html#method.cloned"><code>Iterator::
 range it produces, the references returned by iterator will be to the
 input container now held within the iterator. To iterator over values
 instead, and move those values from the iterator's references, use
-<a href="sus-iter-IteratorBase.html#method.moved"><code>Iterator::moved</code></a>. If the input range did
+<a href="sus-iter-IteratorOverRange.html#method.moved"><code>moved</code></a>. If the input range did
 not own the values it iterates over, using
-<a href="sus-iter-IteratorBase.html#method.moved"><code>Iterator::moved</code></a> will still move from
-the objects being iterated over by the range.</p>
+<a href="sus-iter-IteratorOverRange.html#method.moved"><code>moved</code></a> will still move from
+the objects being iterated over by the range and cause use-after-move with
+potential Undefined Behaviour later.</p>
 <p>If the input range's iterators satisfy <code>std::ranges::bidiectional_iterator</code>,
 then the output <code>Iterator</code> will be a <code>DoubleEndedIterator</code>.</p>
 <p>If the end type (aka <code>std::ranges::sentinel_t</code>) of the input range satisfies
@@ -103,7 +104,8 @@ sus::check<span class="punct">(</span>sus::iter::from_range<span class="punct">(
 </code></pre>
 <p>Consumes a vector and iterates over its values, not as references.</p>
 <pre><code><span class="keyword">auto</span> v <span class="punct">=</span> std::vector<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">{</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>sus::iter::from_range<span class="punct">(</span>sus::move<span class="punct">(</span>v<span class="punct">)</span><span class="punct">)</span><span class="punct">.</span>moved<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>sum<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 1 <span class="punct">+</span> 2 <span class="punct">+</span> 3<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>sus::iter::from_range<span class="punct">(</span>v<span class="punct">)</span><span class="punct">.</span>moved<span class="punct">(</span>unsafe_fn<span class="punct">)</span><span class="punct">.</span>sum<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 1 <span class="punct">+</span> 2 <span class="punct">+</span> 3<span class="punct">)</span><span class="punct">;</span>
+v<span class="punct">.</span>clear<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

@@ -564,7 +564,7 @@ with structured bindings as in <code>auto [a, b] = s.as_ptr_range();</code>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -605,7 +605,7 @@ element could be inserted while maintaining sorted order.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::StrongOrd&lt;Key&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::StrongOrd&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -764,7 +764,7 @@ sus::check<span class="punct">(</span>v <span class="punct">=</span><span class=
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -844,7 +844,7 @@ restore tracking.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1402,7 +1402,7 @@ and works backwards. The matched element is not contained in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1444,7 +1444,7 @@ also be constexpr?</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const T &)&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1457,7 +1457,7 @@ also be constexpr?</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const T &)&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1483,7 +1483,7 @@ also be constexpr?</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1521,7 +1521,7 @@ allocate while sorting.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const T &)&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;Key&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1752,7 +1752,7 @@ contained in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1766,7 +1766,7 @@ contained in the subslices.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1784,7 +1784,7 @@ wrapped in <code>Some</code>. If <code>prefix</code> is empty, simply returns th
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1802,7 +1802,7 @@ wrapped in <code>Some</code>. If <code>prefix</code> is empty, simply returns th
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -1819,7 +1819,7 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Eq&lt;T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
                 </div></div>
             </div>
           </div>

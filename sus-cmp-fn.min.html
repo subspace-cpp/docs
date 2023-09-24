@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::ops::ExclusiveStrongOrd - Subspace</title>
-  <meta property="og:title" content="sus::ops::ExclusiveStrongOrd - Subspace"></meta>
-  <meta name="description" content="Concept for types that have a unique total ordering (aka std::strong_ordering)."></meta>
-  <meta property="og:description" content="Concept for types that have a unique total ordering (aka std::strong_ordering)."></meta>
+  <title>sus::cmp::min - Subspace</title>
+  <meta property="og:title" content="sus::cmp::min - Subspace"></meta>
+  <meta name="description" content="Compares and returns the minimum of two values."></meta>
+  <meta property="og:description" content="Compares and returns the minimum of two values."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">ExclusiveStrongOrd</a>
+        <a href="#">min</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      concept
+      function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">ExclusiveStrongOrd</a>
+      <a href="#">min</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,43 +48,38 @@
     </div>
   </nav>
   <main>
-    <div class="concept">
+    <div class="function">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Concept
+            Function
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <a class="namespace-name" href="sus-namespace.cmp.html">cmp</a>
           <span class="namespace-dots">::</span>
-          <a class="concept-name" href="#">ExclusiveStrongOrd</a>
+          <a class="function-name" href="#">min</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class Lhs, class Rhs = Lhs&gt;</pre>
-          <span class="concept">
-            concept
-          </span>
-          <span class="type-name">
-            ExclusiveStrongOrd
-          </span>
-          <div>
-            <div class="requires">
-              <span class="requires-keyword keyword">
-                requires
-              </span>
-              <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::StrongOrd&lt;Lhs, Rhs&gt;</pre></div>
-            </div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">min</a>(T a, T b) -&gt; T<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;T&gt;</pre></div>
+              </div></div>
           </div>
         </div>
         <div class="description long">
-          <p>Concept for types that have a unique total ordering (aka
-<a href="https://en.cppreference.com/w/cpp/utility/compare/strong_ordering"><code>std::strong_ordering</code></a>).</p>
-<p>This is an alias for StrongOrd, but exists as a set with
-<a href="sus-ops-ExclusiveOrd.html"><code>ExclusiveOrd</code></a> and
-<a href="sus-ops-ExclusivePartialOrd.html"><code>ExclusivePartialOrd</code></a>.</p>
+          <p>Compares and returns the minimum of two values.</p>
+<p>Returns the first argument if the comparison determines them to be equal.</p>
+<p>By default this receives and returns objects by value. To receive and return
+references, specify the type parameter, such as:
+<code>sus::cmp::min&lt;i32&amp;&gt;(a, b)</code>.</p>
+<p>Note that if either input is a temporary object this can return a reference
+to an object past its lifetime.</p>
 
         </div>
       </div>

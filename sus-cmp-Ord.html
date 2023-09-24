@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::ops::Ord - Subspace</title>
-  <meta property="og:title" content="sus::ops::Ord - Subspace"></meta>
+  <title>sus::cmp::Ord - Subspace</title>
+  <meta property="og:title" content="sus::cmp::Ord - Subspace"></meta>
   <meta name="description" content="Concept for types that form a total ordering (aka std::weak_ordering)."></meta>
   <meta property="og:description" content="Concept for types that form a total ordering (aka std::weak_ordering)."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
@@ -58,7 +58,7 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <a class="namespace-name" href="sus-namespace.cmp.html">cmp</a>
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">Ord</a>
         </div>
@@ -82,20 +82,20 @@
         <div class="description long">
           <p>Concept for types that form a total ordering (aka
 <a href="https://en.cppreference.com/w/cpp/utility/compare/weak_ordering"><code>std::weak_ordering</code></a>).</p>
-<p>Types that satisfy <a href="sus-ops-Ord.html"><code>Ord</code></a> can be sorted or compared and
+<p>Types that satisfy <a href="sus-cmp-Ord.html"><code>Ord</code></a> can be sorted or compared and
 always return a consistent result as all possible values are comparable.
 Objects that compare as equivalent for ordering may still be different
 internally and compare as different through <code>operator==</code>. If unique identity
-is required, use <a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a>. Otherwise, typically
-use <a href="sus-ops-Ord.html"><code>Ord</code></a> for constraining types that will be ordered.</p>
+is required, use <a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a>. Otherwise, typically
+use <a href="sus-cmp-Ord.html"><code>Ord</code></a> for constraining types that will be ordered.</p>
 <h1><a name="how-can-i-implement-ord?" href="#how-can-i-implement-ord?">How can I implement Ord?</a></h1>
-<p><a href="sus-ops-Ord.html"><code>Ord</code></a> requires that the type has <code>operator&lt;=&gt;</code> which
+<p><a href="sus-cmp-Ord.html"><code>Ord</code></a> requires that the type has <code>operator&lt;=&gt;</code> which
 returns
 <a href="https://en.cppreference.com/w/cpp/utility/compare/weak_ordering"><code>std::weak_ordering</code></a>
 (or
 <a href="https://en.cppreference.com/w/cpp/utility/compare/strong_ordering"><code>std::strong_ordering</code></a>).
-It will implicitly also be <a href="sus-ops-Ord.html"><code>Ord</code></a> and
-<a href="sus-ops-PartialOrd.html"><code>PartialOrd</code></a> as a result.</p>
+It will implicitly also be <a href="sus-cmp-Ord.html"><code>Ord</code></a> and
+<a href="sus-cmp-PartialOrd.html"><code>PartialOrd</code></a> as a result.</p>
 <h1><a name="lexicographical-comparison" href="#lexicographical-comparison">Lexicographical comparison</a></h1>
 <p>Lexicographical comparison is an operation with the following properties:</p>
 <ul>
@@ -110,21 +110,21 @@ the sequences are lexicographically equal.</li>
 <li>Two empty sequences are lexicographically equal.</li>
 </ul>
 <h1><a name="ord-and-eq-interations" href="#ord-and-eq-interations">Ord and Eq interations</a></h1>
-<p>While <a href="sus-ops-Ord.html"><code>Ord</code></a> can report equality, it does not imply that
-the type satisfies <a href="sus-ops-Eq.html"><code>Eq</code></a>, and a separate <code>operator==</code> is
+<p>While <a href="sus-cmp-Ord.html"><code>Ord</code></a> can report equality, it does not imply that
+the type satisfies <a href="sus-cmp-Eq.html"><code>Eq</code></a>, and a separate <code>operator==</code> is
 required for that concept. Unlike
-<a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a>, it is not required that objects which
+<a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a>, it is not required that objects which
 are ordered as equivalent also compare as equal with <code>operator==</code>.</p>
-<p>Generic code that requires a type to be <a href="sus-ops-Ord.html"><code>Ord</code></a> should
+<p>Generic code that requires a type to be <a href="sus-cmp-Ord.html"><code>Ord</code></a> should
 take care to use <code>operator&lt;=&gt;</code> and not <code>operator==</code> unless also requiring
-<a href="sus-ops-Eq.html"><code>Eq</code></a>, in which case consider requiring
-<a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a> in place of both
-<a href="sus-ops-Ord.html"><code>Ord</code></a> and <a href="sus-ops-Eq.html"><code>Eq</code></a>.</p>
+<a href="sus-cmp-Eq.html"><code>Eq</code></a>, in which case consider requiring
+<a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a> in place of both
+<a href="sus-cmp-Ord.html"><code>Ord</code></a> and <a href="sus-cmp-Eq.html"><code>Eq</code></a>.</p>
 <h1><a name="determining-ord-strictly" href="#determining-ord-strictly">Determining Ord strictly</a></h1>
-<p><a href="sus-ops-Ord.html"><code>Ord</code></a> will be also satisfied if the types satisfy
-<a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a>. To determine if a
-<a href="sus-ops-Ord.html"><code>Ord</code></a> is the strongest type of ordering between the
-types, use <a href="sus-ops-ExclusiveOrd.html"><code>ExclusiveOrd</code></a>.</p>
+<p><a href="sus-cmp-Ord.html"><code>Ord</code></a> will be also satisfied if the types satisfy
+<a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a>. To determine if a
+<a href="sus-cmp-Ord.html"><code>Ord</code></a> is the strongest type of ordering between the
+types, use <a href="sus-cmp-ExclusiveOrd.html"><code>ExclusiveOrd</code></a>.</p>
 
         </div>
       </div>

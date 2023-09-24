@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::ops::StrongOrd - Subspace</title>
-  <meta property="og:title" content="sus::ops::StrongOrd - Subspace"></meta>
+  <title>sus::cmp::StrongOrd - Subspace</title>
+  <meta property="og:title" content="sus::cmp::StrongOrd - Subspace"></meta>
   <meta name="description" content="Concept for types that form a unique total order (aka std::strong_ordering). Objects that sort the same for ordering must also compare as equal."></meta>
   <meta property="og:description" content="Concept for types that form a unique total order (aka std::strong_ordering). Objects that sort the same for ordering must also compare as equal."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
@@ -58,7 +58,7 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <a class="namespace-name" href="sus-namespace.cmp.html">cmp</a>
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">StrongOrd</a>
         </div>
@@ -84,16 +84,16 @@
 <a href="https://en.cppreference.com/w/cpp/utility/compare/strong_ordering"><code>std::strong_ordering</code></a>).
 Objects that sort the same for ordering must also compare as equal.</p>
 <h1><a name="strongord-and-eq-interations" href="#strongord-and-eq-interations">StrongOrd and Eq interations</a></h1>
-<p>While <a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a> can report equality, it does not
-imply that the type satisfies <a href="sus-ops-Eq.html"><code>Eq</code></a>, and a separate
+<p>While <a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a> can report equality, it does not
+imply that the type satisfies <a href="sus-cmp-Eq.html"><code>Eq</code></a>, and a separate
 <code>operator==</code> is required for that concept. For correctness, types that
 satisfy
-<a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a> and <a href="sus-ops-Eq.html"><code>Eq</code></a> must have
+<a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a> and <a href="sus-cmp-Eq.html"><code>Eq</code></a> must have
 object which compare as equivalent for ording also compare as equal with
 <code>operator==</code>.</p>
 <p>Generic code that requires a type to be
-<a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a> should take care to use <code>operator&lt;=&gt;</code>
-and not <code>operator==</code> unless also requiring <a href="sus-ops-Eq.html"><code>Eq</code></a>.</p>
+<a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a> should take care to use <code>operator&lt;=&gt;</code>
+and not <code>operator==</code> unless also requiring <a href="sus-cmp-Eq.html"><code>Eq</code></a>.</p>
 
         </div>
       </div>

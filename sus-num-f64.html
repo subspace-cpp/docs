@@ -1364,7 +1364,7 @@ positive infinity
 positive signaling NaN
 positive quiet NaN.</p>
 <p>The ordering established by this function does not always agree with the
-<a href="sus-ops-PartialOrd.html"><code>PartialOrd</code></a> and <a href="sus-ops-Eq.html"><code>Eq</code></a>
+<a href="sus-cmp-PartialOrd.html"><code>PartialOrd</code></a> and <a href="sus-cmp-Eq.html"><code>Eq</code></a>
 implementations of <a href="sus-num-f64.html"><code>f64</code></a>. For example, they
 consider negative and positive zero equal, while
 <a href="sus-num-f64.html#method.total_cmp"><code>total_cmp</code></a> doesn't.</p>
@@ -1374,7 +1374,7 @@ older, non-conformant (e.g. MIPS) hardware implementations.</p>
 <h1><a name="why-does-this-method-satisfy-%60ord%60-and-not-%60strongord%60?" href="#why-does-this-method-satisfy-%60ord%60-and-not-%60strongord%60?">Why does this method satisfy <code>Ord</code> and not <code>StrongOrd</code>?</a></h1>
 <p>This method returns
 <a href="https://en.cppreference.com/w/cpp/utility/compare/weak_ordering"><code>std::weak_ordering</code></a>
-which can be used in situations that require <a href="sus-ops-Ord.html"><code>Ord</code></a>
+which can be used in situations that require <a href="sus-cmp-Ord.html"><code>Ord</code></a>
 because different NaNs will be ordered equivalently.</p>
 
           </div>

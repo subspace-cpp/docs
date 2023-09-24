@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::boxed::operator&lt;=&gt; - Subspace</title>
-  <meta property="og:title" content="sus::boxed::operator&lt;=&gt; - Subspace"></meta>
-  <meta name="description" content="Compares the inner value of two Box objects for ordering. This compares the values pointed to from the Box, not the pointers themselves."></meta>
-  <meta property="og:description" content="Compares the inner value of two Box objects for ordering. This compares the values pointed to from the Box, not the pointers themselves."></meta>
+  <title>sus::cmp::reverse - Subspace</title>
+  <meta property="og:title" content="sus::cmp::reverse - Subspace"></meta>
+  <meta name="description" content="A helper function for reverse ordering."></meta>
+  <meta property="og:description" content="A helper function for reverse ordering."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">operator&lt;=&gt;</a>
+        <a href="#">reverse</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">operator&lt;=&gt;</a>
+      <a href="#">reverse</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -58,13 +58,13 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.boxed.html">boxed</a>
+          <a class="namespace-name" href="sus-namespace.cmp.html">cmp</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">operator&lt;=&gt;</a>
+          <a class="function-name" href="#">reverse</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& lhs, <span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; std::strong_ordering<div class="requires">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">reverse</a>(<span class="const">const</span> T& lhs, <span class="const">const</span> T& rhs) -&gt; std::strong_ordering<div class="requires">
                 <span class="requires-keyword keyword">
                   requires
                 </span>
@@ -72,7 +72,7 @@
               </div></div>
           </div>
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& lhs, <span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; std::weak_ordering<div class="requires">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">reverse</a>(<span class="const">const</span> T& lhs, <span class="const">const</span> T& rhs) -&gt; std::weak_ordering<div class="requires">
                 <span class="requires-keyword keyword">
                   requires
                 </span>
@@ -80,7 +80,7 @@
               </div></div>
           </div>
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& lhs, <span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; std::partial_ordering<div class="requires">
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">reverse</a>(<span class="const">const</span> T& lhs, <span class="const">const</span> T& rhs) -&gt; std::partial_ordering<div class="requires">
                 <span class="requires-keyword keyword">
                   requires
                 </span>
@@ -89,11 +89,13 @@
           </div>
         </div>
         <div class="description long">
-          <p>Compares the inner value of two <code>Box</code> objects for ordering. This compares
-the values pointed to from the <code>Box</code>, not the pointers themselves.</p>
-<p>Satisfies the strongest of <a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a>,
-<a href="sus-cmp-Ord.html"><code>Ord</code></a>, or <a href="sus-cmp-PartialOrd.html"><code>PartialOrd</code></a>, for
-<code>Box&lt;T&gt;</code> for the strongest ordering that <code>T</code> satisifes.</p>
+          <p>A helper function for reverse ordering.</p>
+<p>This function is a helper to be used with functions like <code>Vec::sort_by</code>.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<pre><code><span class="keyword">auto</span> v <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">,</span> 5<span class="punct">,</span> 6<span class="punct">)</span><span class="punct">;</span>
+v<span class="punct">.</span>sort_by<span class="punct">(</span>sus::cmp::reverse<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>v <span class="punct">=</span><span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>6<span class="punct">,</span> 5<span class="punct">,</span> 4<span class="punct">,</span> 3<span class="punct">,</span> 2<span class="punct">,</span> 1<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+</code></pre>
 
         </div>
       </div>

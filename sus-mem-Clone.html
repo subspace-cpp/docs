@@ -81,21 +81,30 @@
         </div>
         <div class="description long">
           <p>A <code>Clone</code> type can make a new copy of itself.</p>
+<p>When a type is small enough to be passed in registers
+(typically at most the size of two pointers) and copying is the same as
+moving, prefer to make the type <a href="sus-mem-Copy.html"><code>Copy</code></a>, which also
+implies <code>Clone</code>.</p>
 <p>A type <code>T</code> is <code>Clone</code> if one of the following holds:</p>
 <ul>
-<li>Is <code>Copy</code>. Meaning it has a copy constructor and assignment.</li>
-<li>Has a <code>clone() const -&gt; T</code> method, and is <code>Move</code>.</li>
+<li>Is <a href="sus-mem-Copy.html"><code>Copy</code></a>. Meaning it has a copy constructor and
+assignment.</li>
+<li>Has a <code>clone() const -&gt; T</code> method, and is <a href="sus-mem-Move.html"><code>Move</code></a>.</li>
 </ul>
-<p>This concept tests the object type of <code>T</code>, not a reference type <code>T&amp;</code> or
-<code>const T&amp;</code>.</p>
+<p>This concept tests the object type of <code>T</code>, looking through reference types
+<code>T&amp;</code> or <code>const T&amp;</code>.
+To test the reference types themselves (which can always be copied as a
+pointer) in generic code that can handle reference types and won't copy
+the objects behind them, use <a href="sus-mem-CloneOrRef.html"><code>CloneOrRef</code></a>.</p>
 <p>A <code>Clone</code> type may also provide a <code>clone_from(const T&amp; source)</code> method
 to have <code>sus::mem::clone_into()</code> perform copy-assignment from <code>source</code>, in
 order to reuse its resources and avoid allocations. In this case the type is
-also <code>CloneInto</code>.</p>
-<p>It is not valid to be <code>Copy</code> and also have a <code>clone()</code> method, as it becomes
-ambiguous. One outcome of this is a collection type should only implement a
-clone() method if the type within is (Clone &amp;&amp; !Copy), and should implement
-copy constructors if the type within is Copy.</p>
+also <a href="sus-mem-CloneFrom.html"><code>CloneFrom</code></a>.</p>
+<p>It is not valid to be <a href="sus-mem-Copy.html"><code>Copy</code></a> and also have a <code>clone()</code>
+method, as it becomes ambiguous.
+One outcome of this is a collection type should only implement a
+<code>clone()</code> method if the type <code>T</code> within is <code>(Clone&lt;T&gt; &amp;&amp; !Copy&lt;T&gt;)</code>, and
+should only implement copy constructors if the type <code>T</code> within is <code>Copy&lt;T&gt;</code>.</p>
 
         </div>
       </div>

@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::ops::min - Subspace</title>
-  <meta property="og:title" content="sus::ops::min - Subspace"></meta>
-  <meta name="description" content="Compares and returns the minimum of two values."></meta>
-  <meta property="og:description" content="Compares and returns the minimum of two values."></meta>
+  <title>sus::cmp::max_by - Subspace</title>
+  <meta property="og:title" content="sus::cmp::max_by - Subspace"></meta>
+  <meta name="description" content="Compares and returns the maximum of two values with respect to the specified comparison function."></meta>
+  <meta property="og:description" content="Compares and returns the maximum of two values with respect to the specified comparison function."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">min</a>
+        <a href="#">max_by</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">min</a>
+      <a href="#">max_by</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -58,28 +58,23 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <a class="namespace-name" href="sus-namespace.cmp.html">cmp</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">min</a>
+          <a class="function-name" href="#">max_by</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">min</a>(T a, T b) -&gt; T<div class="requires">
-                <span class="requires-keyword keyword">
-                  requires
-                </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;T&gt;</pre></div>
-              </div></div>
+            <div class="function-signature"><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">max_by</a>(T a, T b, <a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;std::weak_ordering(<span class="const">const</span> std::remove_reference_t&lt;T&gt;&, <span class="const">const</span> std::remove_reference_t&lt;T&gt;&)&gt; auto compare) -&gt; T</div>
           </div>
         </div>
         <div class="description long">
-          <p>Compares and returns the minimum of two values.</p>
-<p>Returns the first argument if the comparison determines them to be equal.</p>
+          <p>Compares and returns the maximum of two values with respect to the specified
+comparison function.</p>
+<p>Returns the second argument if the comparison determines them to be equal.</p>
 <p>By default this receives and returns objects by value. To receive and return
 references, specify the type parameter, such as:
-<code>sus::ops::min&lt;i32&amp;&gt;(a, b)</code>.</p>
-<p>Note that if either input is a temporary object this can return a reference
-to an object past its lifetime.</p>
+<code>sus::cmp::max_by&lt;i32&amp;&gt;(a, b, c)</code>. Note that if either input is a
+temporary object this can return a reference to an object past its lifetime.</p>
 
         </div>
       </div>

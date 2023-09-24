@@ -68,8 +68,8 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::__private::VoidOrOrd&lt;T&gt;</pre></div>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::StrongOrd&lt;E&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::__private::VoidOrOrd&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::StrongOrd&lt;E&gt;</pre></div>
               </div></div>
           </div>
           <div class="overload">
@@ -77,9 +77,9 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">!VoidOrOrd&lt;T&gt; || !::sus::ops::StrongOrd&lt;E&gt;</pre></div>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::__private::VoidOrWeakOrd&lt;T&gt;</pre></div>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;E&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!VoidOrOrd&lt;T&gt; || !::sus::cmp::StrongOrd&lt;E&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::__private::VoidOrWeakOrd&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;E&gt;</pre></div>
               </div></div>
           </div>
           <div class="overload">
@@ -87,18 +87,18 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">!VoidOrWeakOrd&lt;T&gt; || !::sus::ops::Ord&lt;E&gt;</pre></div>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::__private::VoidOrPartialOrd&lt;T&gt;</pre></div>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;E&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!VoidOrWeakOrd&lt;T&gt; || !::sus::cmp::Ord&lt;E&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::__private::VoidOrPartialOrd&lt;T&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::PartialOrd&lt;E&gt;</pre></div>
               </div></div>
           </div>
         </div>
         <div class="description long">
           <p>Compares two <a href="sus-result-Result.html"><code>Result</code></a>s for their ordering if the
 types inside can be compared.</p>
-<p>Satisfies the <a href="sus-ops-StrongOrd.html"><code>StrongOrd</code></a>,
-<a href="sus-ops-Ord.html"><code>Ord</code></a>, or
-<a href="sus-ops-PartialOrd.html"><code>PartialOrd</code></a> concept, depending on whether the
+<p>Satisfies the <a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a>,
+<a href="sus-cmp-Ord.html"><code>Ord</code></a>, or
+<a href="sus-cmp-PartialOrd.html"><code>PartialOrd</code></a> concept, depending on whether the
 internal types do. The <code>Result</code> will satisfy the strongest possible
 ordering.</p>
 <h1><a name="implementation-note" href="#implementation-note">Implementation Note</a></h1>

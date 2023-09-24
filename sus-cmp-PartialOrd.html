@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::ops::ExclusivePartialOrd - Subspace</title>
-  <meta property="og:title" content="sus::ops::ExclusivePartialOrd - Subspace"></meta>
-  <meta name="description" content="Determines if the types Lhs and Rhs have a partial ordering (aka std::partial_ordering), and that this is the strongest ordering that exists between the types."></meta>
-  <meta property="og:description" content="Determines if the types Lhs and Rhs have a partial ordering (aka std::partial_ordering), and that this is the strongest ordering that exists between the types."></meta>
+  <title>sus::cmp::PartialOrd - Subspace</title>
+  <meta property="og:title" content="sus::cmp::PartialOrd - Subspace"></meta>
+  <meta name="description" content="Concept for types that form a partial ordering (aka std::partial_ordering)."></meta>
+  <meta property="og:description" content="Concept for types that form a partial ordering (aka std::partial_ordering)."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">ExclusivePartialOrd</a>
+        <a href="#">PartialOrd</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       concept
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">ExclusivePartialOrd</a>
+      <a href="#">PartialOrd</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -58,9 +58,9 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <a class="namespace-name" href="sus-namespace.cmp.html">cmp</a>
           <span class="namespace-dots">::</span>
-          <a class="concept-name" href="#">ExclusivePartialOrd</a>
+          <a class="concept-name" href="#">PartialOrd</a>
         </div>
         <div class="type-signature">
           <pre class="template">template &lt;class Lhs, class Rhs = Lhs&gt;</pre>
@@ -68,22 +68,25 @@
             concept
           </span>
           <span class="type-name">
-            ExclusivePartialOrd
+            PartialOrd
           </span>
           <div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constraint"><pre class="requires-constraint-line">!Ord&lt;Lhs, Rhs&gt;</pre></div>
-              <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::PartialOrd&lt;Lhs, Rhs&gt;</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">Ord&lt;Lhs, Rhs&gt; || StrongOrd&lt;Lhs, Rhs&gt; ||</pre><pre class="requires-constraint-line">    requires(const std::remove_reference_t&lt;Lhs&gt;& lhs, const Rhs& rhs) {</pre><pre class="requires-constraint-line">      { lhs &lt;=&gt; rhs } -&gt; std::same_as&lt;std::partial_ordering&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
             </div>
           </div>
         </div>
         <div class="description long">
-          <p>Determines if the types <code>Lhs</code> and <code>Rhs</code> have a partial ordering (aka
-<a href="https://en.cppreference.com/w/cpp/utility/compare/partial_ordering"><code>std::partial_ordering</code></a>),
-and that this is the strongest ordering that exists between the types.</p>
+          <p>Concept for types that form a partial ordering (aka
+<a href="https://en.cppreference.com/w/cpp/utility/compare/partial_ordering"><code>std::partial_ordering</code></a>).</p>
+<h1><a name="determining-partialord-strictly" href="#determining-partialord-strictly">Determining PartialOrd strictly</a></h1>
+<p><a href="sus-cmp-PartialOrd.html"><code>PartialOrd</code></a> will be satisfied if the types
+satisfy <a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a> or <a href="sus-cmp-Ord.html"><code>Ord</code></a>.
+To determine if a partial ordering is the strongest type of ordering between
+the types, use <a href="sus-cmp-ExclusivePartialOrd.html"><code>ExclusivePartialOrd</code></a>.</p>
 
         </div>
       </div>

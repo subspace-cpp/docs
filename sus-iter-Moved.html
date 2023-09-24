@@ -112,7 +112,7 @@
         </div>
         <div class="description long">
           <p>An iterator that moves from the elements of an underlying iterator.</p>
-<p>This type is returned from <code>Iterator::moved()</code>.</p>
+<p>This type is returned from <a href="sus-iter-IteratorOverRange.html#method.moved"><code>IteratorOverRange::moved()</code></a>.</p>
 
         </div>
       </div>
@@ -153,7 +153,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::ExactSizeIterator&lt;InnerSizedIter, Item&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::ExactSizeIterator&lt;InnerSizedIter, typename InnerSizedIter::Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -172,7 +172,7 @@
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;InnerSizedIter, Item&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;InnerSizedIter, typename InnerSizedIter::Item&gt;</pre></div>
                 </div></div>
             </div>
           </div>

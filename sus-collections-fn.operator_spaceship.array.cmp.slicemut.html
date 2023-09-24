@@ -68,7 +68,7 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::ExclusiveStrongOrd&lt;T, U&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::ExclusiveStrongOrd&lt;T, U&gt;</pre></div>
               </div></div>
           </div>
           <div class="overload">
@@ -76,7 +76,7 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::ExclusiveOrd&lt;T, U&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::ExclusiveOrd&lt;T, U&gt;</pre></div>
               </div></div>
           </div>
           <div class="overload">
@@ -84,17 +84,17 @@
                 <span class="requires-keyword keyword">
                   requires
                 </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::ExclusivePartialOrd&lt;T, U&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::ExclusivePartialOrd&lt;T, U&gt;</pre></div>
               </div></div>
           </div>
         </div>
         <div class="description long">
           <p>Compares an Array and a SliceMut.</p>
-<p>Satisfies sus::ops::StrongOrd&lt;Array&lt;T, N&gt;, SliceMut<T>&gt; if
-sus::ops::StrongOrd<T>.</p>
-<p>Satisfies sus::ops::Ord&lt;Array&lt;T, N&gt;, SliceMut<T>&gt; if sus::ops::Ord<T>.</p>
-<p>Satisfies sus::ops::PartialOrd&lt;Array&lt;T, N&gt;, SliceMut<T>&gt; if
-sus::ops::PartialOrd<T>.</p>
+<p>Satisfies sus::cmp::StrongOrd&lt;Array&lt;T, N&gt;, SliceMut<T>&gt; if
+sus::cmp::StrongOrd<T>.</p>
+<p>Satisfies sus::cmp::Ord&lt;Array&lt;T, N&gt;, SliceMut<T>&gt; if sus::cmp::Ord<T>.</p>
+<p>Satisfies sus::cmp::PartialOrd&lt;Array&lt;T, N&gt;, SliceMut<T>&gt; if
+sus::cmp::PartialOrd<T>.</p>
 
         </div>
       </div>

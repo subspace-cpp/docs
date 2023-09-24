@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::ops::max_by_key - Subspace</title>
-  <meta property="og:title" content="sus::ops::max_by_key - Subspace"></meta>
-  <meta name="description" content="Returns the element that gives the maximum value from the specified function."></meta>
-  <meta property="og:description" content="Returns the element that gives the maximum value from the specified function."></meta>
+  <title>sus::cmp::ExclusiveOrd - Subspace</title>
+  <meta property="og:title" content="sus::cmp::ExclusiveOrd - Subspace"></meta>
+  <meta name="description" content="Determines if the types Lhs and Rhs have total ordering (aka std::weak_ordering), and that this is the strongest ordering that exists between the types."></meta>
+  <meta property="og:description" content="Determines if the types Lhs and Rhs have total ordering (aka std::weak_ordering), and that this is the strongest ordering that exists between the types."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">max_by_key</a>
+        <a href="#">ExclusiveOrd</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      concept
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">max_by_key</a>
+      <a href="#">ExclusiveOrd</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,39 +48,42 @@
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="concept">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Concept
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.ops.html">ops</a>
+          <a class="namespace-name" href="sus-namespace.cmp.html">cmp</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">max_by_key</a>
+          <a class="concept-name" href="#">ExclusiveOrd</a>
         </div>
-        <div class="overload-set">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class T, class KeyFn, int &... , class Key = std::invoke_result_t&lt;KeyFn &, const std::remove_reference_t&lt;T&gt; &&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">max_by_key</a>(T a, T b, KeyFn f) -&gt; T<div class="requires">
-                <span class="requires-keyword keyword">
-                  requires
-                </span>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;KeyFn, ::sus::fn::NonVoid (const std::remove_reference_t&lt;T&gt; &)&gt;</pre></div>
-                <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Ord&lt;Key&gt;</pre></div>
-              </div></div>
+        <div class="type-signature">
+          <pre class="template">template &lt;class Lhs, class Rhs = Lhs&gt;</pre>
+          <span class="concept">
+            concept
+          </span>
+          <span class="type-name">
+            ExclusiveOrd
+          </span>
+          <div>
+            <div class="requires">
+              <span class="requires-keyword keyword">
+                requires
+              </span>
+              <div class="requires-constraint"><pre class="requires-constraint-line">!StrongOrd&lt;Lhs, Rhs&gt;</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;Lhs, Rhs&gt;</pre></div>
+            </div>
           </div>
         </div>
         <div class="description long">
-          <p>Returns the element that gives the maximum value from the specified
-function.</p>
-<p>Returns the second argument if the comparison determines them to be equal.</p>
-<p>By default this receives and returns objects by value. To receive and return
-references, specify the type parameter, such as:
-<code>sus::ops::max_by_key&lt;i32&amp;&gt;(a, b, k)</code>. Note that if either input is a
-temporary object this can return a reference to an object past its lifetime.</p>
+          <p>Determines if the types <code>Lhs</code> and <code>Rhs</code> have total ordering (aka
+<a href="https://en.cppreference.com/w/cpp/utility/compare/weak_ordering"><code>std::weak_ordering</code></a>),
+and that this is the strongest ordering that exists between the types.</p>
 
         </div>
       </div>

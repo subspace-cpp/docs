@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::iter::IteratorOverRange - Subspace</title>
   <meta property="og:title" content="sus::iter::IteratorOverRange - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <meta name="description" content="The iterator created from a std::range via from_range."></meta>
+  <meta property="og:description" content="The iterator created from a std::range via from_range."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -60,6 +60,9 @@
           <a class="sidebar-item" href="sus-iter-IteratorOverRange.html#method.exact_size_hint">exact_size_hint</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-iter-IteratorOverRange.html#method.moved">moved</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-iter-IteratorOverRange.html#method.next">next</a>
         </li>
         <li>
@@ -108,6 +111,9 @@
           </div>
         </div>
         <div class="description long">
+          <p>The iterator created from a <a href="https://en.cppreference.com/w/cpp/ranges/range"><code>std::range</code></a> via
+<a href="sus-iter-fn.from_range.html"><code>from_range</code></a>.</p>
+
         </div>
       </div>
       <div class="section methods static">
@@ -150,6 +156,35 @@
           </div>
           <div class="description long">
             <p>sus::iter::ExactSizeIterator trait.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.moved"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-IteratorOverRange.html#method.moved">moved</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; <a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;std::remove_cvref_t&lt;sus::iter::IteratorOverRange::Item&gt;&gt; auto<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;Item&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;std::remove_reference_t&lt;Item&gt;&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Creates an iterator which moves all of its elements. If the range does not
+own its elements, or the elements are used afterward, this can cause use-
+after-move and Undefined Behaviour.</p>
+<p>If the range owns the elements being iterated over (such as with a
+<a href="https://en.cppreference.com/w/cpp/container/vector"><code>std::vector</code></a>) then
+the elements can be moved out of the range. This converts the iterator
+from being over <code>T&amp;</code> to being over values of type <code>T</code>.</p>
+<p>Subspace collections can be consumed (moved-from) to make an iterator,
+which helps prevent use-after-move of the elements within, and avoids the
+need for an adaptor like <code>moved</code>.</p>
+<h1><a name="safety" href="#safety">Safety</a></h1>
+<p>The elements in the view being iterated over will be moved from, and must
+not be used afterward in a way that the types do not support. The range
+should own the elements being iterated over, and then cleared or destroyed
+after iteration.</p>
 
           </div>
           <div class="overload-set item-name">
