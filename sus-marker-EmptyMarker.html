@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::choice_type::choice - Subspace</title>
-  <meta property="og:title" content="sus::choice_type::choice - Subspace"></meta>
-  <meta name="description" content="Used to construct a Choice with Tag as its initial state and the parameter(s) as its associated value(s)."></meta>
-  <meta property="og:description" content="Used to construct a Choice with Tag as its initial state and the parameter(s) as its associated value(s)."></meta>
+  <title>sus::marker::EmptyMarker - Subspace</title>
+  <meta property="og:title" content="sus::marker::EmptyMarker - Subspace"></meta>
+  <meta name="description" content="A marker that designates emptinesss, for constructing an empty collection."></meta>
+  <meta property="og:description" content="A marker that designates emptinesss, for constructing an empty collection."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">choice</a>
+        <a href="#">EmptyMarker</a>
       </span>
     </span>
   </nav>
@@ -35,46 +35,68 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      struct
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">choice</a>
+      <a href="#">EmptyMarker</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
     <div class="sidebar-links sidebar-text">
       <ul>
+        <li>
+          <a class="sidebar-header" href="#static-methods">Static Methods</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-marker-EmptyMarker.html#method.EmptyMarker">EmptyMarker</a>
+        </li>
       </ul>
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="type record struct">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Struct
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.choice_type.html">choice_type</a>
+          <a class="namespace-name" href="sus-namespace.marker.html">marker</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">choice</a>
+          <a class="type-name" href="#">EmptyMarker</a>
         </div>
-        <div class="overload-set">
-          <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;auto Tag, class... Ts&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">choice</a>(Ts&&... vs) -&gt; auto</div>
+        <div class="type-signature">
+          <span class="struct">
+            struct
+          </span>
+          <span class="type-name">
+            EmptyMarker
+          </span>
+          <div class="record-body">
+            { ... };
           </div>
         </div>
         <div class="description long">
-          <p>Used to construct a <a href="sus-choice_type-Choice.html"><code>Choice</code></a> with <code>Tag</code> as its
-initial state and the parameter(s) as its associated value(s).</p>
-<p>Calling <code>choice()</code> produces a hint to make a <a href="sus-choice_type-Choice.html"><code>Choice</code></a> with a given inital value(s) <code>vs</code>, but does not
-actually construct the <a href="sus-choice_type-Choice.html"><code>Choice</code></a>, as the full
-type of the <a href="sus-choice_type-Choice.html"><code>Choice</code></a> including all its member
-types is not known here.</p>
+          <p>A marker that designates emptinesss, for constructing an empty collection.</p>
+<p>To use this type as an argument, use the global <code>empty</code>.</p>
 
+        </div>
+      </div>
+      <div class="section methods static">
+        <div class="section-header">
+          <a name="static-methods" href="#static-methods">Static Methods</a>
+        </div>
+        <div class="section-items">
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.EmptyMarker"></a><a class="function-name" href="sus-marker-EmptyMarker.html#method.EmptyMarker">EmptyMarker</a>()</div>
+            </div>
+          </div>
+          <div class="description long">
+          </div>
         </div>
       </div>
     </div>

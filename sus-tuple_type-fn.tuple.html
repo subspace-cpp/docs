@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::tuple_type::tuple - Subspace</title>
   <meta property="og:title" content="sus::tuple_type::tuple - Subspace"></meta>
-  <meta name="description" content="Used to construct a Tuple&lt;Ts...&gt; with the parameters as its values."></meta>
-  <meta property="og:description" content="Used to construct a Tuple&lt;Ts...&gt; with the parameters as its values."></meta>
+  <meta name="description" content="Used to construct a Tuple with the parameters as its values."></meta>
+  <meta property="og:description" content="Used to construct a Tuple with the parameters as its values."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -73,9 +73,16 @@
           </div>
         </div>
         <div class="description long">
-          <p>Used to construct a Tuple&lt;Ts...&gt; with the parameters as its values.</p>
-<p>Calling tuple() produces a hint to make a Tuple&lt;Ts...&gt; but does not actually
-construct Tuple&lt;Ts...&gt;, as the types in <code>Ts...</code> are not known here.</p>
+          <p>Used to construct a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> with the
+parameters as its values.</p>
+<p>Calling <code>tuple()</code> produces a hint to make a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> but does not actually
+construct <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a>, as the types in the
+<a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> are not known yet here and are not
+assumed to be the same as the parameters.</p>
+<p>The marker type holds a refernce to each parameter, allowing it to construct
+a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> which holds references correctly. The
+marker must be consumed immediately into a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> variable, which is normally done by using the
+<code>tuple</code> function as a function argument or in a return statement.</p>
 
         </div>
       </div>

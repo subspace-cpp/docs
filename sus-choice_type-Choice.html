@@ -186,7 +186,7 @@ done with a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a>.</p>
     <span class="punct">(</span>Order::Second<span class="punct">,</span> std::string<span class="punct">,</span> i32<span class="punct">)</span>
 <span class="punct">)</span><span class="punct">&gt;</span><span class="punct">;</span>
 <span class="keyword">auto</span> e1 <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>Order::First<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-<span class="keyword">auto</span> e2 <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>Order::Second<span class="punct">&gt;</span><span class="punct">(</span>sus::tuple<span class="punct">(</span><span class="string">&quot;text&quot;</span><span class="punct">,</span> 123<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> e2 <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>Order::Second<span class="punct">&gt;</span><span class="punct">(</span><span class="string">&quot;text&quot;</span><span class="punct">,</span> 123<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>The <code>Choice</code> type can be used in a <code>switch</code>, with each case being one of its
 possible tag values. Within each tag case block, the values can be pulled
@@ -197,7 +197,7 @@ type-safe and memory-safe way.</p>
     <span class="punct">(</span>Order::First<span class="punct">,</span> u64<span class="punct">)</span><span class="punct">,</span>
     <span class="punct">(</span>Order::Second<span class="punct">,</span> std::string<span class="punct">,</span> i32<span class="punct">)</span>
 <span class="punct">)</span><span class="punct">&gt;</span><span class="punct">;</span>
-<span class="keyword">auto</span> e <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>Order::Second<span class="punct">&gt;</span><span class="punct">(</span>sus::tuple<span class="punct">(</span><span class="string">&quot;hello worl&quot;</span><span class="punct">,</span> 0xd<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<span class="keyword">auto</span> e <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>Order::Second<span class="punct">&gt;</span><span class="punct">(</span><span class="string">&quot;hello worl&quot;</span><span class="punct">,</span> 0xd<span class="punct">)</span><span class="punct">;</span>
 <span class="keyword">switch</span> <span class="punct">(</span>e<span class="punct">)</span> <span class="punct">{</span>
   <span class="keyword">case</span> Order::First: <span class="punct">{</span>
     <span class="keyword">const</span> <span class="keyword">auto</span><span class="punct">&amp;</span> i <span class="punct">=</span> e<span class="punct">.</span>as<span class="punct">&lt;</span>Order::First<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
@@ -295,20 +295,32 @@ satisfy <a href="sus-mem-Copy.html"><code>Copy</code></a>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.with"></a><div class="template">template &lt;TagsType V, class U, int &... , class Arg = StorageTypeOfTag&lt;V&gt;&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>(U&& values) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
+              <div class="function-signature"><a name="method.with"></a><div class="template">template &lt;TagsType V&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>() -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;Arg&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;Arg, U &&&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 0u</pre></div>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.with"></a><div class="template">template &lt;TagsType V, int &... , class Arg = StorageTypeOfTag&lt;V&gt;&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>() -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
+              <div class="function-signature"><a name="method.with"></a><div class="template">template &lt;TagsType V, class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>(U&& value) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsVoid&lt;Arg&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 1u</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, U &&&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.with"></a><div class="template">template &lt;TagsType V, class... Us&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>(Us&&... values) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 1u</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) ==</pre><pre class="requires-constraint-line">                 __private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::StorageIsSafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
                 </div></div>
             </div>
           </div>
@@ -332,7 +344,7 @@ parameters.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -366,7 +378,7 @@ passed as the template parameter.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
                 </div></div>
             </div>
           </div>
@@ -407,7 +419,7 @@ satisfy <a href="sus-mem-Clone.html"><code>Clone</code></a>.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -438,7 +450,7 @@ returned to all values in the active member.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
                 </div></div>
             </div>
           </div>
@@ -459,7 +471,7 @@ returned to all values in the active member.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -493,7 +505,7 @@ parameter, Undefined Behaviour results.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
                 </div></div>
             </div>
           </div>
@@ -517,7 +529,7 @@ parameter, Undefined Behaviour results.</p>
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
                 </div></div>
             </div>
           </div>
@@ -537,20 +549,32 @@ passed as the template parameter.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.set"></a><div class="template">template &lt;TagsType V, class U, int &... , class Arg = StorageTypeOfTag&lt;V&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>(U&& values) & -&gt; void<div class="requires">
+              <div class="function-signature"><a name="method.set"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>() & -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, Arg&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsNotVoid&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 0u</pre></div>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.set"></a><div class="template">template &lt;TagsType V, int &... , class Arg = StorageTypeOfTag&lt;V&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>() & -&gt; void<div class="requires">
+              <div class="function-signature"><a name="method.set"></a><div class="template">template &lt;TagsType V, class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>(U&& value) & -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::ValueIsVoid&lt;Arg&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 1u</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, U &&&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.set"></a><div class="template">template &lt;TagsType V, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>(Us&&... values) & -&gt; void<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 1u</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) ==</pre><pre class="requires-constraint-line">                 __private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::StorageIsSafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
                 </div></div>
             </div>
           </div>

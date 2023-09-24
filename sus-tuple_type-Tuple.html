@@ -54,6 +54,9 @@
           <a class="sidebar-item" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.values">Tuple</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-tuple_type-Tuple.html#method.Tuple">Tuple</a>
+        </li>
+        <li>
           <a class="sidebar-header" href="#methods">Methods</a>
         </li>
         <li>
@@ -215,6 +218,33 @@ to prevent conversions that would construct a temporary.</p>
 <p>To force accepting a const reference anyway in cases where a type can
 convert to a reference without constructing a temporary, use an unsafe
 <code>static_cast&lt;const T&amp;&gt;()</code> at the callsite (and document it =)).</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.Tuple"></a><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple">Tuple</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& tuple)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::convertible_to&lt;const U&, T&gt; && ... &&</pre><pre class="requires-constraint-line">         std::convertible_to&lt;const Us&, Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Ts) == sizeof...(Us)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::construct::SafelyConstructibleFromReference&lt;T, const U&&gt; &&</pre><pre class="requires-constraint-line">         ... &&</pre><pre class="requires-constraint-line">         ::sus::construct::SafelyConstructibleFromReference&lt;Ts, const Us&&gt;)</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Tuple"></a><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple">Tuple</a>(<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;&& tuple)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::convertible_to&lt;U &&, T&gt; && ... &&</pre><pre class="requires-constraint-line">              std::convertible_to&lt;Us &&, Ts&gt;)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Ts) == sizeof...(Us)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::construct::SafelyConstructibleFromReference&lt;T, U &&&gt; &&</pre><pre class="requires-constraint-line">              ... &&</pre><pre class="requires-constraint-line">              ::sus::construct::SafelyConstructibleFromReference&lt;Ts, Us &&&gt;)</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Converts from <code>Tuple&lt;X', Y', Z'&gt;</code> to <code>Tuple&lt;X, Y, Z&gt;</code> when <code>X'</code>, <code>Y'</code>,
+and <code>Z'</code> can be converted to <code>X</code>, <code>Y</code>, and <code>Z</code>.</p>
 
           </div>
         </div>
