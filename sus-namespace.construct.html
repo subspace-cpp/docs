@@ -220,8 +220,8 @@ requires.</p>
             </div>
             <div class="description short">
               <p>Returns whether a type <code>From</code> is safely constructible from a reference of
-type <code>To</code>. This is useful for marker types which hold a reference internally
-and are used to construct another type.</p>
+type <code>To</code>. If <code>To</code> is a const reference, then the types must match, as a
+conversion would create a reference to a temporary.</p>
             </div>
           </li>
           <li class="section-item">

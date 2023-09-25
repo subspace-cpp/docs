@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::construct::SafelyConstructibleFromReference - Subspace</title>
   <meta property="og:title" content="sus::construct::SafelyConstructibleFromReference - Subspace"></meta>
-  <meta name="description" content="Returns whether a type From is safely constructible from a reference of type To. This is useful for marker types which hold a reference internally and are used to construct another type."></meta>
-  <meta property="og:description" content="Returns whether a type From is safely constructible from a reference of type To. This is useful for marker types which hold a reference internally and are used to construct another type."></meta>
+  <meta name="description" content="Returns whether a type From is safely constructible from a reference of type To. If To is a const reference, then the types must match, as a conversion would create a reference to a temporary."></meta>
+  <meta property="og:description" content="Returns whether a type From is safely constructible from a reference of type To. If To is a const reference, then the types must match, as a conversion would create a reference to a temporary."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -81,13 +81,19 @@
         </div>
         <div class="description long">
           <p>Returns whether a type <code>From</code> is safely constructible from a reference of
-type <code>To</code>. This is useful for marker types which hold a reference internally
-and are used to construct another type.</p>
-<p>If <code>To</code> is a const reference, then they types must match, as a conversion
-would create a reference to a temporary.</p>
-<p>This concept only produces a useful result when <code>From</code> is a reference type
-which may not outlive the storage of <code>To</code>, such as with a reference to a
-temporary.</p>
+type <code>To</code>. If <code>To</code> is a const reference, then the types must match, as a
+conversion would create a reference to a temporary.</p>
+<p>A struct will typically not actually store a reference but may provide an
+API of references nonetheless, and then store a pointer. When used with a
+universal reference <code>From</code> type, this can catch the case where the incoming
+reference will introduce a dangling reference when converted to the <code>To</code>
+reference.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>template &lt;std::convertible_to&lt;i32&amp;&gt; U&gt;
+requires(SafelyConstructibleFromReference&lt;i32%, U&amp;&amp;&gt;
+void Struct::stores_i32_ref(U&amp;&amp; u) {
+ptr_ = static_cast&lt;i32&amp;&gt;(&amp;u);
+}</p>
 
         </div>
       </div>
