@@ -270,6 +270,9 @@
           <a class="sidebar-item" href="sus-num-f64.html#method.round">round</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-f64.html#method.round_ties">round_ties</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-f64.html#method.signum">signum</a>
         </li>
         <li>
@@ -1193,8 +1196,35 @@ approximately.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns the nearest integer to itself, rounding half-way cases away from
-<code>0.0</code>.</p>
+            <p>Returns the nearest integer to self. If a value is half-way between two
+integers, round away from <code>0.0</code>.</p>
+<p>This rounding behaviour matches the behaviour of the <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std::round</code></a> standard library
+function, but is much slower and less conformant than <a href="sus-num-f64.html#method.round_ties"><code>round_ties</code></a> which often makes the latter a better
+choice.</p>
+<p>As in Rust's <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html#method.round"><code>round</code></a>,
+this method preserves the sign bit when the result is <code>-0.0</code>, but this is
+unlike <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std::round</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.round_ties"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_ties">round_ties</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the nearest integer to self. If a value is half-way between two
+integers, respects the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a>. The default mode
+will round ties to the nearest even number.</p>
+<p>This rounding operation is faster and more standard conformant than
+<a href="sus-num-f64.html#method.round"><code>round</code></a>, making it generally preferable.
+However it breaks with the legacy behaviour of <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std::round</code></a>.</p>
+<p>Rust has the unstable <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html#method.round_ties_even"><code>round_ties_even</code></a>
+method that always uses the <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round"><code>FE_TONEAREST</code></a> rounding mode. In
+C++ the rounding mode can be controlled by the user with
+<a href="https://en.cppreference.com/w/cpp/numeric/fenv/feround"><code>std::fesetround</code></a>.</p>
+<p>As in Rust's <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html#method.round"><code>round</code></a>
+and with <a href="https://en.cppreference.com/w/cpp/numeric/math/nearbyint"><code>std::nearbyint</code></a>, this method
+preserves the sign bit when the result is <code>-0.0</code>.</p>
 
           </div>
           <div class="overload-set item-name">
