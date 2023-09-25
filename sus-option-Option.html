@@ -54,7 +54,7 @@
           <a class="sidebar-item" href="sus-option-Option.html#method.Option.ctor.some">Option</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-option-Option.html#method.Option">Option</a>
+          <a class="sidebar-item" href="sus-option-Option.html#method.Option.ctor.convert">Option</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-option-Option.html#method.Option.copy">Option</a>
@@ -337,7 +337,7 @@ not constructed.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Option"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option">Option</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;U&gt;& other)<div class="requires">
+              <div class="function-signature"><a name="method.Option.ctor.convert"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.convert">Option</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;U&gt;& other)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -345,7 +345,7 @@ not constructed.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Option"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option">Option</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;U&gt;&& other)<div class="requires">
+              <div class="function-signature"><a name="method.Option.ctor.convert"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.convert">Option</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;U&gt;&& other)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1686,12 +1686,11 @@ through <a href="sus-option-Option.html#method.operator*"><code>operator*</code>
             </div>
           </div>
           <div class="description long">
-            <p>Copy assignment for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
-satisfy <a href="sus-mem-Copy.html"><code>Copy&lt;Option&lt;T&gt;&gt;</code></a> if
-<a href="sus-mem-Copy.html"><code>Copy&lt;T&gt;</code></a> is satisfied.</p>
+            <p>Copy assignment for <a href="sus-option-Option.html"><code>Option</code></a> which will
+satisfy <a href="sus-mem-Copy.html"><code>Copy</code></a> for <code>Option&lt;T&gt;</code> if
+<code>T</code> satisifes <a href="sus-mem-Copy.html"><code>Copy</code></a>.</p>
 <p>If <code>T</code> can be trivially copy-assigned, then
-<a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> can also be
-trivially copy-assigned.</p>
+<code>Option&lt;T&gt;</code> can also be trivially copy-assigned.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1715,15 +1714,16 @@ trivially copy-assigned.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Move assignment for <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> which will
-satisfy <a href="sus-mem-Move.html"><code>Move&lt;Option&lt;T&gt;&gt;</code></a> if
-<a href="sus-mem-Move.html"><code>Move&lt;T&gt;</code></a> is satisfied.</p>
+            <p>Move assignment for <a href="sus-option-Option.html"><code>Option</code></a> which will
+satisfy <a href="sus-mem-Move.html"><code>Move</code></a> for <code>&lt;Option&lt;T&gt;</code> if <code>T</code>
+satisifies <a href="sus-mem-Move.html"><code>Move</code></a>.</p>
 <p>If <code>T</code> can be trivially move-assigned, then
-<a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a> can also be trivially move-assigned.
-When trivially-moved, the option is copied on move, and the moved-from
-option is unchanged but should still not be used thereafter without
-reinitializing it. Use <code>take()</code> instead to move the value out of the
-option when the option may be used again afterward.</p>
+<code>Option&lt;T&gt;</code> can also be trivially move-assigned.
+When trivially-moved, the <code>Option</code> is copied on move, and the moved-from
+<code>Option</code> is unchanged but should still not be used thereafter without
+reinitializing it. Use <a href="sus-option-Option.html#method.take"><code>take</code></a> to
+move the value out of the <code>Option</code> when the <code>Option</code> may be used again
+afterward, such as with class fields.</p>
 
           </div>
         </div>
