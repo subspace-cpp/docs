@@ -273,6 +273,21 @@
           <a class="sidebar-item" href="sus-num-f32.html#method.round_ties">round_ties</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.round_to_i16">round_to_i16</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.round_to_i32">round_to_i32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.round_to_i64">round_to_i64</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.round_to_i8">round_to_i8</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.round_to_isize">round_to_isize</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-f32.html#method.signum">signum</a>
         </li>
         <li>
@@ -1197,7 +1212,7 @@ approximately.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Returns the nearest integer to self. If a value is half-way between two
+            <p>Returns the nearest integer to <code>self</code>. If a value is half-way between two
 integers, round away from <code>0.0</code>.</p>
 <p>This rounding behaviour matches the behaviour of the <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std::round</code></a> standard library
 function, but is much slower and less conformant than <a href="sus-num-f32.html#method.round_ties"><code>round_ties</code></a> which often makes the latter a better
@@ -1213,7 +1228,7 @@ unlike <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std:
             </div>
           </div>
           <div class="description long">
-            <p>Returns the nearest integer to self. If a value is half-way between two
+            <p>Returns the nearest integer to <code>self</code>. If a value is half-way between two
 integers, respects the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a>. The default mode
 will round ties to the nearest even number.</p>
 <p>This rounding operation is faster and more standard conformant than
@@ -1226,6 +1241,81 @@ C++ the rounding mode can be controlled by the user with
 <p>As in Rust's <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html#method.round"><code>round</code></a>
 and with <a href="https://en.cppreference.com/w/cpp/numeric/math/nearbyint"><code>std::nearbyint</code></a>, this method
 preserves the sign bit when the result is <code>-0.0</code>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.round_to_i16"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f32.html#method.round_to_i16">round_to_i16</a>() const& -&gt; <a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the nearest <a href="sus-num-i16.html"><code>i16</code></a> representable by <code>self</code>.</p>
+<p>This is equivalent to <code>sus::mog&lt;i16&gt;(self.round_ties())</code> but it may require
+fewer instructions on some platforms.</p>
+<p>Like <a href="sus-num-f32.html#method.round_ties"><code>round_ties</code></a>, but unlike
+<a href="sus-num-f32.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
+to break ties. The default mode will round ties to the nearest even number.</p>
+<p>A <code>NaN</code> input will return 0.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.round_to_i32"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f32.html#method.round_to_i32">round_to_i32</a>() const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the nearest <a href="sus-num-i32.html"><code>i32</code></a> representable by <code>self</code>.</p>
+<p>This is equivalent to <code>sus::mog&lt;i32&gt;(self.round_ties())</code> but it may require
+fewer instructions on some platforms.</p>
+<p>Like <a href="sus-num-f32.html#method.round_ties"><code>round_ties</code></a>, but unlike
+<a href="sus-num-f32.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
+to break ties. The default mode will round ties to the nearest even number.</p>
+<p>A <code>NaN</code> input will return 0.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.round_to_i64"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f32.html#method.round_to_i64">round_to_i64</a>() const& -&gt; <a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the nearest <a href="sus-num-i64.html"><code>i64</code></a> representable by <code>self</code>.</p>
+<p>This is equivalent to <code>sus::mog&lt;i64&gt;(self.round_ties())</code> but it may require
+fewer instructions on some platforms.</p>
+<p>Like <a href="sus-num-f32.html#method.round_ties"><code>round_ties</code></a>, but unlike
+<a href="sus-num-f32.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
+to break ties. The default mode will round ties to the nearest even number.</p>
+<p>A <code>NaN</code> input will return 0.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.round_to_i8"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f32.html#method.round_to_i8">round_to_i8</a>() const& -&gt; <a class="type-name" href="sus-num-i8.html" title="sus::num::i8">i8</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the nearest <a href="sus-num-i8.html"><code>i8</code></a> representable by <code>self</code>.</p>
+<p>This is equivalent to <code>sus::mog&lt;i8&gt;(self.round_ties())</code> but it may require
+fewer instructions on some platforms.</p>
+<p>Like <a href="sus-num-f32.html#method.round_ties"><code>round_ties</code></a>, but unlike
+<a href="sus-num-f32.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
+to break ties. The default mode will round ties to the nearest even number.</p>
+<p>A <code>NaN</code> input will return 0.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.round_to_isize"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f32.html#method.round_to_isize">round_to_isize</a>() const& -&gt; <a class="type-name" href="sus-num-isize.html" title="sus::num::isize">isize</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns the nearest <a href="sus-num-isize.html"><code>isize</code></a> representable by <code>self</code>.</p>
+<p>This is equivalent to <code>sus::mog&lt;isize&gt;(self.round_ties())</code> but it may
+require fewer instructions on some platforms.</p>
+<p>Like <a href="sus-num-f32.html#method.round_ties"><code>round_ties</code></a>, but unlike
+<a href="sus-num-f32.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
+to break ties. The default mode will round ties to the nearest even number.</p>
+<p>A <code>NaN</code> input will return 0.</p>
 
           </div>
           <div class="overload-set item-name">
