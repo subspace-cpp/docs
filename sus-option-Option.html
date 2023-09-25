@@ -54,6 +54,9 @@
           <a class="sidebar-item" href="sus-option-Option.html#method.Option.ctor.some">Option</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-option-Option.html#method.Option">Option</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-option-Option.html#method.Option.copy">Option</a>
         </li>
         <li>
@@ -330,6 +333,28 @@ to prevent conversions that would construct a temporary.</p>
 convert to a reference without constructing a temporary, use an unsafe
 <code>static_cast&lt;const T&amp;&gt;()</code> at the callsite and document why a temporary is
 not constructed.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.Option"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option">Option</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;U&gt;& other)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Option"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option">Option</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;U&gt;&& other)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, T&gt;</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Converts from <code>Option&lt;X&gt;</code> to <code>Option&lt;Y&gt;</code> if <code>X</code> is convertible to <code>Y</code>.</p>
 
           </div>
           <div class="overload-set item-name">
