@@ -194,6 +194,7 @@ APIs compatible with old C++ standards.</li>
 fail to compile. And in some cases, will perform runtime checks and
 terminate in the case of a software bug, which is represented in the
 method documentation.</li>
+<li>No uninitialized memory through default initialization.</li>
 <li>Providing explicit unsafe backdoors. Occasionally runtime checks can't be
 elided by the compiler and they are in hot code that has visible
 performance impact. Explicit unsafe backdoors allow individual callsites
@@ -205,10 +206,10 @@ composable APIs of <a href="sus-option-Option.html"><code>Option</code></a> in o
 and easily write error handling instead of Undefined Behaviour or
 crashes.</li>
 <li>No accidental copies. Subspace collections (that are not view types) do
-not satisfy the <a href="sus-mem-Copy.html"><code>Copy</code></a> concept, and instead must be explicitly
-cloned via <code>sus::clone(x)</code> to make a copy. This allows them to be passed
-by value without introducing a copy at a caller that was expecting it to
-be received by reference.</li>
+not satisfy the <a href="sus-mem-Copy.html"><code>Copy</code></a> concept, and instead must be
+explicitly cloned via <code>sus::clone(x)</code> to make a copy.
+This allows them to be passed by value without introducing a copy at a
+caller that was expecting it to be received by reference.</li>
 <li>Catch iterator invalidation. By default Subspace containers are built with
 runtime protection against iterator invalidation. Iterators produced by
 collections are tracked and if the collection is mutated while an iterator
