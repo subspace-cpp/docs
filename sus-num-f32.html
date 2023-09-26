@@ -1217,6 +1217,8 @@ integers, round away from <code>0.0</code>.</p>
 <p>This rounding behaviour matches the behaviour of the <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std::round</code></a> standard library
 function, but is much slower and less conformant than <a href="sus-num-f32.html#method.round_ties"><code>round_ties</code></a> which often makes the latter a better
 choice.</p>
+<p>If <code>self</code> is a <code>NaN</code>, infinity, or zero, the same will be returned, though
+a different <code>NaN</code> may be returned.</p>
 <p>As in Rust's <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html#method.round"><code>round</code></a>,
 this method preserves the sign bit when the result is <code>-0.0</code>, but this is
 unlike <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std::round</code></a>.</p>
@@ -1234,6 +1236,8 @@ will round ties to the nearest even number.</p>
 <p>This rounding operation is faster and more standard conformant than
 <a href="sus-num-f32.html#method.round"><code>round</code></a>, making it generally preferable.
 However it breaks with the legacy behaviour of <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std::round</code></a>.</p>
+<p>If <code>self</code> is a <code>NaN</code>, infinity, or zero, the same will be returned, though
+a different <code>NaN</code> may be returned.</p>
 <p>Rust has the unstable <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html#method.round_ties_even"><code>round_ties_even</code></a>
 method that always uses the <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round"><code>FE_TONEAREST</code></a> rounding mode. In
 C++ the rounding mode can be controlled by the user with
