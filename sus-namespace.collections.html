@@ -195,6 +195,9 @@ fail to compile. And in some cases, will perform runtime checks and
 terminate in the case of a software bug, which is represented in the
 method documentation.</li>
 <li>No uninitialized memory through default initialization.</li>
+<li>Indexing operations with negative signed values no longer compile.
+Containers that index on <code>size_t</code> (as in the standard library), instead of
+<code>usize</code>, will silently accept memory safety bugs with negative indices.</li>
 <li>Providing explicit unsafe backdoors. Occasionally runtime checks can't be
 elided by the compiler and they are in hot code that has visible
 performance impact. Explicit unsafe backdoors allow individual callsites
