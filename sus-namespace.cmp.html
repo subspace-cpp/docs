@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::cmp - Subspace</title>
   <meta property="og:title" content="sus::cmp - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <meta name="description" content="Utilities for comparing and ordering values."></meta>
+  <meta property="og:description" content="Utilities for comparing and ordering values."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -127,6 +127,34 @@
           <a class="namespace-name" href="#">cmp</a>
         </div>
         <div class="description long">
+          <p>Utilities for comparing and ordering values.</p>
+<p>This namespace contains various tools for comparing and ordering values. In
+summary:</p>
+<ul>
+<li><a href="sus-cmp-Eq.html"><code>Eq</code></a> is a concept that allows you to require partial
+equality between values. It requires the <code>==</code> and <code>!=</code> operators to be
+available, which is typically implemented just by <code>==</code>. Note that C++ does
+not model total vs partial equality so there's no differentiation for a
+<code>PartialEq</code> concept.</li>
+<li><a href="sus-cmp-Ord.html"><code>Ord</code></a>, <a href="sus-cmp-StrongOrd.html"><code>StrongOrd</code></a> and
+<a href="sus-cmp-PartialOrd.html"><code>PartialOrd</code></a> are concept that allows you to
+require total, unique, and partial orderings between values, respectively.
+Implementing them requires the <code>&lt;=&gt;</code> operator to be defined, and makes the
+the <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code> operators accessible.
+<a href="sus-cmp-Ordering.html"><code>Ordering</code></a> is a concept that matches any of the
+standard library ordering types which are returned from the <code>&lt;=&gt;</code>
+operator: <a href="https://en.cppreference.com/w/cpp/utility/compare/weak_ordering"><code>std::weak_ordering</code></a>,
+<a href="https://en.cppreference.com/w/cpp/utility/compare/strong_ordering"><code>std::strong_ordering</code></a>, or
+<a href="https://en.cppreference.com/w/cpp/utility/compare/partial_ordering"><code>std::partial_ordering</code></a>.</li>
+<li><a href="sus-cmp-Reverse.html"><code>Reverse</code></a> is a struct that allows you to easily
+reverse an ordering.</li>
+<li><a href="sus-cmp-fn.max.html"><code>max</code></a> and <a href="sus-cmp-fn.min.html"><code>min</code></a> are functions that
+build off of <a href="sus-cmp-Ord.html"><code>Ord</code></a> and allow you to find the maximum or
+minimum of two values. There are other similar functions that make
+use of <a href="sus-cmp-Ord.html"><code>Ord</code></a> as well.</li>
+</ul>
+<p>For more details, see the respective documentation of each item in the list.</p>
+
         </div>
       </div>
       <div class="section records classes">
