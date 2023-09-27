@@ -186,10 +186,16 @@
           <a class="sidebar-item" href="sus-num-fn.operator_div.unsignedint._div.html">operator/</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.signed.prim._leftshiftu32.html">operator&lt;&lt;</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.signed.prim._leftshiftu64.html">operator&lt;&lt;</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.unsigned.prim._leftshiftu32.html">operator&lt;&lt;</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.signedint._leftshift.html">operator&lt;&lt;</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.unsigned.prim._leftshiftu64.html">operator&lt;&lt;</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.unsignedint._leftshift.html">operator&lt;&lt;</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-fn.operator_spaceship.float.partialord.html">operator&lt;=&gt;</a>
@@ -216,10 +222,16 @@
           <a class="sidebar-item" href="sus-num-fn.operator_eq.uint.eq.html">operator==</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.signed.prim._rightshiftu32.html">operator&gt;&gt;</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.signed.prim._rightshiftu64.html">operator&gt;&gt;</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu32.html">operator&gt;&gt;</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.signedint._rightshift.html">operator&gt;&gt;</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu64.html">operator&gt;&gt;</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-fn.operator_rightshift.unsignedint._rightshift.html">operator&gt;&gt;</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-fn.operator_xor.signedint._xor.html">operator^</a>
@@ -910,23 +922,43 @@ as the <code>double</code> type specified by the C++ standard).</p>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.signed.prim._leftshiftu32.html">operator&lt;&lt;</a></div>
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.signed.prim._leftshiftu64.html">operator&lt;&lt;</a></div>
               </div>
             </div>
             <div class="description short">
               <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl</code></a> concept for signed primitive integers
-shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
+shifted by <a href="sus-num-u64.html"><code>u64</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.unsigned.prim._leftshiftu32.html">operator&lt;&lt;</a></div>
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.signedint._leftshift.html">operator&lt;&lt;</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl</code></a> concept for signed integers.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.unsigned.prim._leftshiftu64.html">operator&lt;&lt;</a></div>
               </div>
             </div>
             <div class="description short">
               <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl</code></a> concept for unsigned primitive
-integers shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
+integers shifted by <a href="sus-num-u64.html"><code>u64</code></a>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.unsignedint._leftshift.html">operator&lt;&lt;</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-num-Shl.html"><code>Shl</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">
@@ -1013,23 +1045,43 @@ integers.</p>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.signed.prim._rightshiftu32.html">operator&gt;&gt;</a></div>
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.signed.prim._rightshiftu64.html">operator&gt;&gt;</a></div>
               </div>
             </div>
             <div class="description short">
               <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for signed primitive integers
-shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
+shifted by <a href="sus-num-u64.html"><code>u64</code></a>.</p>
             </div>
           </li>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu32.html">operator&gt;&gt;</a></div>
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.signedint._rightshift.html">operator&gt;&gt;</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for signed integers.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu64.html">operator&gt;&gt;</a></div>
               </div>
             </div>
             <div class="description short">
               <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for unsigned primitive
-integers shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
+integers shifted by <a href="sus-num-u64.html"><code>u64</code></a>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_rightshift.unsignedint._rightshift.html">operator&gt;&gt;</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">

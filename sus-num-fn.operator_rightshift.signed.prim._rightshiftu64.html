@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::num::operator&gt;&gt; - Subspace</title>
   <meta property="og:title" content="sus::num::operator&gt;&gt; - Subspace"></meta>
-  <meta name="description" content="Satisfies the Shr concept for signed primitive integers shifted by u32."></meta>
-  <meta property="og:description" content="Satisfies the Shr concept for signed primitive integers shifted by u32."></meta>
+  <meta name="description" content="Satisfies the Shr concept for signed primitive integers shifted by u64."></meta>
+  <meta property="og:description" content="Satisfies the Shr concept for signed primitive integers shifted by u64."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -70,7 +70,7 @@
                 </span>
                 <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;U&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">SignedPrimitiveInteger&lt;P&gt; || SignedPrimitiveEnum&lt;P&gt;</pre></div>
-                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, u32&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, u64&gt;</pre></div>
               </div></div>
           </div>
           <div class="overload">
@@ -80,7 +80,7 @@
                 </span>
                 <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;U&gt;</pre></div>
                 <div class="requires-constraint"><pre class="requires-constraint-line">SignedPrimitiveInteger&lt;P&gt; || SignedPrimitiveEnum&lt;P&gt;</pre></div>
-                <div class="requires-constraint"><pre class="requires-constraint-line">!std::convertible_to&lt;U, u32&gt;</pre></div>
+                <div class="requires-constraint"><pre class="requires-constraint-line">!std::convertible_to&lt;U, u64&gt;</pre></div>
               </div><div class="deleted">
                 deleted
               </div></div>
@@ -88,7 +88,7 @@
         </div>
         <div class="description long">
           <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for signed primitive integers
-shifted by <a href="sus-num-u32.html"><code>u32</code></a>.</p>
+shifted by <a href="sus-num-u64.html"><code>u64</code></a>.</p>
 
         </div>
       </div>
