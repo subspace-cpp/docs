@@ -62,15 +62,11 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">SameOrSubclassOf</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class T, class U&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class T, class U&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             SameOrSubclassOf
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
@@ -79,8 +75,7 @@
               <div class="requires-constraint"><pre class="requires-constraint-line">std::is_pointer_v&lt;U&gt;</pre></div>
               <div class="requires-constraint"><pre class="requires-constraint-line">std::is_convertible_v&lt;T, U&gt;</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p><code>SameOrSubclassOf&lt;T*, U*&gt;</code> is true if <code>T</code> is the same type as <code>U</code> or
 inherits from <code>U</code>.</p>

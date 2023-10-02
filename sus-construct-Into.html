@@ -62,23 +62,18 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">Into</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class FromType, class ToType&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class FromType, class ToType&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             Into
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
               </span>
               <div class="requires-constraint"><pre class="requires-constraint-line">::sus::construct::From&lt;ToType, FromType&gt; || std::same_as&lt;ToType, FromType&gt;</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>A concept that declares <code>FromType</code> can be converted to <code>ToType</code>.</p>
 <p>When true, the conversion can be done in one of three ways:</p>

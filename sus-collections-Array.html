@@ -149,25 +149,19 @@
           <span class="namespace-dots">::</span>
           <a class="type-name" href="#">Array</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class T, size_t N&gt;</pre>
-          <span class="class">
+        <div class="type-signature"><pre class="template">template &lt;class T, size_t N&gt;</pre><span class="class">
             class
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             Array
-          </span>
-          <span class="final">
+          </span><span class="final">
             final
-          </span>
-          <div class="record-body">
+          </span><div class="record-body">
             { ... };
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
-          <p>A collection of objects of type T, with a fixed size N.</p>
-<p>An Array can not be larger than <code>isize::MAX</code>, as subtracting a pointer at a
-greater distance results in Undefined Behaviour.</p>
+          <p>A collection of objects of type <code>T</code>, with a fixed size <code>N</code>.</p>
+<p>An Array can not be larger than <a href="sus-num-isize.html#field.MAX"><code>isize::MAX</code></a>, as
+subtracting a pointer at a greater distance results in Undefined Behaviour.</p>
 
         </div>
       </div>
@@ -189,8 +183,9 @@ greater distance results in Undefined Behaviour.</p>
           <div class="description long">
             <p>Default constructor of <code>Array</code> which default-constructs each object <code>T</code> in
 the array.</p>
-<p>This satisifies <code>sus::construct::Default&lt;Array&lt;T, N&gt;&gt;</code>, but requires hat
-<code>sus::construct::Default&lt;T&gt;</code> is true.</p>
+<p>This satisifies <a href="sus-construct-Default.html"><code>Default</code></a> for the
+<code>Array&lt;T, N&gt;</code> if <a href="sus-construct-Default.html"><code>Default</code></a> is satisifed for
+<code>T</code>.</p>
 
           </div>
           <div class="overload-set item-name">

@@ -62,15 +62,11 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">TryErrorConvertibleTo</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class From, class To&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class From, class To&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             TryErrorConvertibleTo
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
@@ -79,8 +75,7 @@
               <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;To&gt;</pre></div>
               <div class="requires-constraint"><pre class="requires-constraint-line">requires(From&& f) {</pre><pre class="requires-constraint-line">      // preserve_error() constructs a Try type from another related type while</pre><pre class="requires-constraint-line">      // passing the error state along.</pre><pre class="requires-constraint-line">      {</pre><pre class="requires-constraint-line">        TryImpl&lt;To&gt;::template preserve_error(::sus::move(f))</pre><pre class="requires-constraint-line">      } -&gt; std::same_as&lt;To&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>Can be used to further constrain the relationship between two <code>Try</code> types
 such that an error in one can be used to construct the other type.</p>

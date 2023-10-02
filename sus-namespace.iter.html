@@ -165,7 +165,13 @@
           <a class="sidebar-header" href="#functions">Functions</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-iter-fn.begin.html">begin</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-iter-fn.empty.html">empty</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-iter-fn.end.html">end</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-iter-fn.from_generator.html">from_generator</a>
@@ -239,6 +245,24 @@
         <li>
           <a class="sidebar-item" href="sus-iter-TrustedLen.html">TrustedLen</a>
         </li>
+        <li>
+          <a class="sidebar-header" href="#aliases-types">Type Aliases</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="TODO">IntoIteratorOutputType</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-option-Option.html">Option</a>
+        </li>
+        <li>
+          <a class="sidebar-header" href="#aliases-concepts">Concept Aliases</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-construct-Into.html">Into</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-mem-relocate_by_memcpy.html">relocate_by_memcpy</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -265,9 +289,7 @@
         <ul class="section-items item-table">
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-ByRef.html">ByRef</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-ByRef.html">ByRef</a></div>
             </div>
             <div class="description short">
               <p>An iterator that holds a reference to another iterator and proxies calls
@@ -277,9 +299,7 @@ state. The ByRef class must outlive the iterator it refers to.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Chain.html">Chain</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Chain.html">Chain</a></div>
             </div>
             <div class="description short">
               <p>An iterator that yields the current count and the element during iteration.</p>
@@ -287,9 +307,7 @@ state. The ByRef class must outlive the iterator it refers to.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Cloned.html">Cloned</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Cloned.html">Cloned</a></div>
             </div>
             <div class="description short">
               <p>An iterator that clones the elements of an underlying iterator.</p>
@@ -297,9 +315,7 @@ state. The ByRef class must outlive the iterator it refers to.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Copied.html">Copied</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Copied.html">Copied</a></div>
             </div>
             <div class="description short">
               <p>An iterator that copies the elements of an underlying iterator.</p>
@@ -307,9 +323,7 @@ state. The ByRef class must outlive the iterator it refers to.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Cycle.html">Cycle</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Cycle.html">Cycle</a></div>
             </div>
             <div class="description short">
               <p>An iterator that repeats endlessly.</p>
@@ -317,9 +331,7 @@ state. The ByRef class must outlive the iterator it refers to.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Empty.html">Empty</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Empty.html">Empty</a></div>
             </div>
             <div class="description short">
               <p>An Iterator that never returns an <code>Item</code>.</p>
@@ -327,9 +339,7 @@ state. The ByRef class must outlive the iterator it refers to.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Enumerate.html">Enumerate</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Enumerate.html">Enumerate</a></div>
             </div>
             <div class="description short">
               <p>An iterator that yields the current count and the element during iteration.</p>
@@ -337,9 +347,7 @@ state. The ByRef class must outlive the iterator it refers to.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Filter.html">Filter</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Filter.html">Filter</a></div>
             </div>
             <div class="description short">
               <p>An iterator that filters based on a predicate function.</p>
@@ -347,9 +355,7 @@ state. The ByRef class must outlive the iterator it refers to.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-FilterMap.html">FilterMap</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-FilterMap.html">FilterMap</a></div>
             </div>
             <div class="description short">
               <p>An iterator that uses a function to both filter and map elements from
@@ -358,9 +364,7 @@ another <code>Iterator</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-FlatMap.html">FlatMap</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-FlatMap.html">FlatMap</a></div>
             </div>
             <div class="description short">
               <p>An iterator that maps an iterator of types into an iterator of iterable
@@ -370,9 +374,7 @@ interator of those those iterable types' items.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Flatten.html">Flatten</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Flatten.html">Flatten</a></div>
             </div>
             <div class="description short">
               <p>An iterator that flattens an iterator of iterable types into an iterator of
@@ -381,18 +383,14 @@ those iterable types' items.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-FromIteratorImpl.html">FromIteratorImpl</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-FromIteratorImpl.html">FromIteratorImpl</a></div>
             </div>
             <div class="description short">
             </div>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Fuse.html">Fuse</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Fuse.html">Fuse</a></div>
             </div>
             <div class="description short">
               <p>An iterator that returns the inner iterator's values until it sees <code>None</code>,
@@ -401,9 +399,7 @@ and then only returns <code>None</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Generator.html">Generator</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Generator.html">Generator</a></div>
             </div>
             <div class="description short">
               <p>A generator type that is a <code>sus::iter::Iterator</code> over type <code>T</code>.</p>
@@ -411,9 +407,7 @@ and then only returns <code>None</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Inspect.html">Inspect</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Inspect.html">Inspect</a></div>
             </div>
             <div class="description short">
               <p>An iterator that calls a function with a reference to each element before
@@ -422,9 +416,7 @@ yielding it.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-IterRef.html">IterRef</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-IterRef.html">IterRef</a></div>
             </div>
             <div class="description short">
               <p>An iterator's refcount on the owning collection, preventig mutation while
@@ -433,9 +425,7 @@ the iterator is alive.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-IterRefCounter.html">IterRefCounter</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-IterRefCounter.html">IterRefCounter</a></div>
             </div>
             <div class="description short">
               <p>Reference counting outstanding iterators (and view types since they need to
@@ -448,9 +438,7 @@ outstanding references.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-IteratorBase.html">IteratorBase</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-IteratorBase.html">IteratorBase</a></div>
             </div>
             <div class="description short">
               <p>The base class for all <a href="sus-iter-Iterator.html"><code>Iterator</code></a> types.</p>
@@ -458,9 +446,7 @@ outstanding references.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-IteratorOverRange.html">IteratorOverRange</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-IteratorOverRange.html">IteratorOverRange</a></div>
             </div>
             <div class="description short">
               <p>The iterator created from a <a href="https://en.cppreference.com/w/cpp/ranges/range"><code>std::range</code></a> via
@@ -469,9 +455,7 @@ outstanding references.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-IteratorRange.html">IteratorRange</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-IteratorRange.html">IteratorRange</a></div>
             </div>
             <div class="description short">
               <p>Support for use of a sus::Iterator as a <code>std::ranges::input_range</code> in the
@@ -480,9 +464,7 @@ std::ranges library.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Map.html">Map</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Map.html">Map</a></div>
             </div>
             <div class="description short">
               <p>An iterator that maps each item to a new type based on a map function.</p>
@@ -490,9 +472,7 @@ std::ranges library.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-MapWhile.html">MapWhile</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-MapWhile.html">MapWhile</a></div>
             </div>
             <div class="description short">
               <p>An iterator that maps each item to a new type based on a map function.</p>
@@ -500,9 +480,7 @@ std::ranges library.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Moved.html">Moved</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Moved.html">Moved</a></div>
             </div>
             <div class="description short">
               <p>An iterator that moves from the elements of an underlying iterator.</p>
@@ -510,9 +488,7 @@ std::ranges library.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Once.html">Once</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Once.html">Once</a></div>
             </div>
             <div class="description short">
               <p>An Iterator that walks over at most a single Item.</p>
@@ -520,9 +496,7 @@ std::ranges library.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-OnceWith.html">OnceWith</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-OnceWith.html">OnceWith</a></div>
             </div>
             <div class="description short">
               <p>An Iterator that walks over at most a single Item.</p>
@@ -530,9 +504,7 @@ std::ranges library.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Peekable.html">Peekable</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Peekable.html">Peekable</a></div>
             </div>
             <div class="description short">
               <p>An iterator with a <code>peek()</code> that returns an optional reference to the next
@@ -541,9 +513,7 @@ element.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Repeat.html">Repeat</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Repeat.html">Repeat</a></div>
             </div>
             <div class="description short">
               <p>An Iterator that walks over at most a single Item.</p>
@@ -551,9 +521,7 @@ element.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-RepeatWith.html">RepeatWith</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-RepeatWith.html">RepeatWith</a></div>
             </div>
             <div class="description short">
               <p>An Iterator that walks over at most a single Item.</p>
@@ -561,9 +529,7 @@ element.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Reverse.html">Reverse</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Reverse.html">Reverse</a></div>
             </div>
             <div class="description short">
               <p>An iterator that iterates over another iterator but in reverse.</p>
@@ -571,9 +537,7 @@ element.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Scan.html">Scan</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Scan.html">Scan</a></div>
             </div>
             <div class="description short">
               <p>An iterator to maintain state while iterating another iterator.</p>
@@ -581,18 +545,14 @@ element.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-SizeHint.html">SizeHint</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-SizeHint.html">SizeHint</a></div>
             </div>
             <div class="description short">
             </div>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Skip.html">Skip</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Skip.html">Skip</a></div>
             </div>
             <div class="description short">
               <p>An iterator that skips over <code>n</code> elements of another iterator.</p>
@@ -600,9 +560,7 @@ element.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-SkipWhile.html">SkipWhile</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-SkipWhile.html">SkipWhile</a></div>
             </div>
             <div class="description short">
               <p>An iterator that rejects elements while <code>pred</code> returns <code>true</code>.</p>
@@ -610,9 +568,7 @@ element.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-StepBy.html">StepBy</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-StepBy.html">StepBy</a></div>
             </div>
             <div class="description short">
               <p>An iterator that skips over <code>n</code> elements of another iterator.</p>
@@ -620,9 +576,7 @@ element.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Successors.html">Successors</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Successors.html">Successors</a></div>
             </div>
             <div class="description short">
               <p>An Iterator that generates each item from a function that takes the previous
@@ -631,9 +585,7 @@ item.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Take.html">Take</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Take.html">Take</a></div>
             </div>
             <div class="description short">
               <p>An iterator that only iterates over the first n iterations of another
@@ -642,9 +594,7 @@ iterator.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-TakeWhile.html">TakeWhile</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-TakeWhile.html">TakeWhile</a></div>
             </div>
             <div class="description short">
               <p>An iterator that only accepts elements while <code>pred</code> returns <code>true</code>.</p>
@@ -652,9 +602,7 @@ iterator.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Zip.html">Zip</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Zip.html">Zip</a></div>
             </div>
             <div class="description short">
               <p>An iterator that iterates a group of other iterators simultaneously.</p>
@@ -670,12 +618,30 @@ iterator.</p>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-iter-fn.begin.html">begin</a></div>
+              </div>
+            </div>
+            <div class="description short">
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
                 <div class="function-signature"><a class="function-name" href="sus-iter-fn.empty.html">empty</a></div>
               </div>
             </div>
             <div class="description short">
               <p>Constructs an <code>Empty</code> iterator, which is an empty iterator that returns
 nothing.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-iter-fn.end.html">end</a></div>
+              </div>
+            </div>
+            <div class="description short">
             </div>
           </li>
           <li class="section-item">
@@ -810,9 +776,7 @@ elements of type <code>ItemType</code>.</p>
         <ul class="section-items item-table">
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-DoubleEndedIterator.html">DoubleEndedIterator</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-DoubleEndedIterator.html">DoubleEndedIterator</a></div>
             </div>
             <div class="description short">
               <p>An <a href="sus-iter-Iterator.html"><code>Iterator</code></a> able to yield elements from both ends.</p>
@@ -820,9 +784,7 @@ elements of type <code>ItemType</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-ExactSizeIterator.html">ExactSizeIterator</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-ExactSizeIterator.html">ExactSizeIterator</a></div>
             </div>
             <div class="description short">
               <p>An <a href="sus-iter-Iterator.html"><code>Iterator</code></a> that knows its exact length.</p>
@@ -830,9 +792,7 @@ elements of type <code>ItemType</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Extend.html">Extend</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Extend.html">Extend</a></div>
             </div>
             <div class="description short">
               <p>Extend a collection with the contents of an iterator.</p>
@@ -840,9 +800,7 @@ elements of type <code>ItemType</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-FromIterator.html">FromIterator</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-FromIterator.html">FromIterator</a></div>
             </div>
             <div class="description short">
               <p>A concept that indicates <code>ToType</code> can be constructed from an <code>Iterator</code>, via
@@ -851,9 +809,7 @@ elements of type <code>ItemType</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-IntoIterator.html">IntoIterator</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-IntoIterator.html">IntoIterator</a></div>
             </div>
             <div class="description short">
               <p>Conversion into an <code>Iterator</code>.</p>
@@ -861,9 +817,7 @@ elements of type <code>ItemType</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-IntoIteratorAny.html">IntoIteratorAny</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-IntoIteratorAny.html">IntoIteratorAny</a></div>
             </div>
             <div class="description short">
               <p>Conversion into an <code>Iterator</code> over any type of values.</p>
@@ -871,9 +825,7 @@ elements of type <code>ItemType</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Iterator.html">Iterator</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Iterator.html">Iterator</a></div>
             </div>
             <div class="description short">
               <p>A concept for all implementations of iterators.
@@ -883,9 +835,7 @@ See <a href="sus-iter-IteratorBase.html"><code>IteratorBase</code></a> for the m
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-IteratorAny.html">IteratorAny</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-IteratorAny.html">IteratorAny</a></div>
             </div>
             <div class="description short">
               <p>A concept for testing if a type <code>T</code> is an <a href="sus-iter-Iterator.html"><code>Iterator</code></a>
@@ -894,9 +844,7 @@ without testing its <code>Item</code> type.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Product.html">Product</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Product.html">Product</a></div>
             </div>
             <div class="description short">
               <p>Trait to represent types that can be created by multiplying elements of an
@@ -905,9 +853,7 @@ iterator.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-Sum.html">Sum</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-Sum.html">Sum</a></div>
             </div>
             <div class="description short">
               <p>Trait to represent types that can be created by adding elements of an
@@ -916,12 +862,58 @@ iterator.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-iter-TrustedLen.html">TrustedLen</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-iter-TrustedLen.html">TrustedLen</a></div>
             </div>
             <div class="description short">
               <p>An iterator that reports an accurate length.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="section aliases types">
+        <div class="section-header">
+          <a name="aliases-types" href="#aliases-types">Type Aliases</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.IntoIteratorOutputType"></a><a class="type-name" href="TODO">IntoIteratorOutputType</a></div>
+            </div>
+            <div class="description short">
+              <p>Returns the type of iterator that will be produced from <code>T</code> where <code>T</code>
+satisifies <code>IntoIteratorAny&lt;T&gt;</code>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.Option"></a><a class="type-name" href="sus-option-Option.html">Option</a></div>
+            </div>
+            <div class="description short">
+              <p>The <a href="sus-option-Option.html"><code>Option</code></a> type.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="section aliases concepts">
+        <div class="section-header">
+          <a name="aliases-concepts" href="#aliases-concepts">Concept Aliases</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.Into"></a><a class="type-name" href="sus-construct-Into.html">Into</a></div>
+            </div>
+            <div class="description short">
+              <p>A concept that declares <code>FromType</code> can be converted to <code>ToType</code>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.relocate_by_memcpy"></a><a class="type-name" href="sus-mem-relocate_by_memcpy.html">relocate_by_memcpy</a></div>
+            </div>
+            <div class="description short">
+              <p>Tests if a variable of type <code>T</code> can be relocated with
+<a href="sus-ptr-fn.copy.html"><code>copy</code></a>.</p>
             </div>
           </li>
         </ul>

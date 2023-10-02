@@ -251,21 +251,15 @@
           <span class="namespace-dots">::</span>
           <a class="type-name" href="#">Option</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class T&gt;</pre>
-          <span class="class">
+        <div class="type-signature"><pre class="template">template &lt;class T&gt;</pre><span class="class">
             class
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             Option
-          </span>
-          <span class="final">
+          </span><span class="final">
             final
-          </span>
-          <div class="record-body">
+          </span><div class="record-body">
             { ... };
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>The <a href="sus-option-Option.html"><code>Option</code></a> type.</p>
 <p>See the <a href="sus-namespace.option.html">namespace level documentation</a> for more.</p>
@@ -342,6 +336,7 @@ not constructed.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;U&gt; == std::is_reference_v&lt;T&gt;</pre></div>
                 </div></div>
             </div>
             <div class="overload">
@@ -350,6 +345,18 @@ not constructed.</p>
                     requires
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, T&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;U&gt; == std::is_reference_v&lt;T&gt;</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.Option.ctor.convert"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.convert">Option</a>(<a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;U&gt;&& other)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
+                </div><div class="deleted">
+                  deleted
                 </div></div>
             </div>
           </div>

@@ -62,23 +62,18 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">DynConcept</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class DynC, class ConcreteT&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class DynC, class ConcreteT&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             DynConcept
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
               </span>
               <div class="requires-constraint"><pre class="requires-constraint-line">requires {</pre><pre class="requires-constraint-line">  // The types are not qualified or references.</pre><pre class="requires-constraint-line">  requires std::same_as&lt;DynC, std::remove_cvref_t&lt;DynC&gt;&gt;;</pre><pre class="requires-constraint-line">  requires std::same_as&lt;ConcreteT, std::remove_cvref_t&lt;ConcreteT&gt;&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  // The SatisfiesConcept bool tests against the concept.</pre><pre class="requires-constraint-line">  { DynC::template SatisfiesConcept&lt;ConcreteT&gt; } -&gt; std::same_as&lt;const bool&&gt;;</pre><pre class="requires-constraint-line">  // The `DynTyped` type alias names the typed subclass. The `DynTyped` class</pre><pre class="requires-constraint-line">  // has two template parameters, the concrete type and the storage type (value</pre><pre class="requires-constraint-line">  // or reference).</pre><pre class="requires-constraint-line">  typename DynC::template DynTyped&lt;ConcreteT, ConcreteT&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  // The type-erased `DynC` must also satisfy the concept, so it can be used</pre><pre class="requires-constraint-line">  // in templated code still as well.</pre><pre class="requires-constraint-line">  requires DynC::template SatisfiesConcept&lt;DynC&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  // The typed class is a subclass of the type-erased `DynC` base class, and is</pre><pre class="requires-constraint-line">  // final.</pre><pre class="requires-constraint-line">  requires std::is_base_of_v&lt;</pre><pre class="requires-constraint-line">      DynC, typename DynC::template DynTyped&lt;ConcreteT, ConcreteT&gt;&gt;;</pre><pre class="requires-constraint-line">  requires std::is_final_v&lt;</pre><pre class="requires-constraint-line">      typename DynC::template DynTyped&lt;ConcreteT, ConcreteT&gt;&gt;;</pre><pre class="requires-constraint-line"></pre><pre class="requires-constraint-line">  // The type-erased `DynC` can not be moved (which would slice the typed</pre><pre class="requires-constraint-line">  // subclass off).</pre><pre class="requires-constraint-line">  requires !std::is_move_constructible_v&lt;DynC&gt;;</pre><pre class="requires-constraint-line">  requires !std::is_move_assignable_v&lt;DynC&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>A concept for generalized type erasure of concepts, allowing use of a
 concept-satisfying type <code>T</code> without knowing the concrete type <code>T</code>.</p>

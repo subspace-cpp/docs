@@ -104,6 +104,15 @@
         <li>
           <a class="sidebar-item" href="sus-ops-TryErrorConvertibleTo.html">TryErrorConvertibleTo</a>
         </li>
+        <li>
+          <a class="sidebar-header" href="#aliases-types">Type Aliases</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="TODO">TryOutputType</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="TODO">TryRemapOutputType</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -130,9 +139,7 @@
         <ul class="section-items item-table">
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-Range.html">Range</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-Range.html">Range</a></div>
             </div>
             <div class="description short">
               <p>A (half-open) range bounded inclusively below and exclusively above
@@ -141,9 +148,7 @@
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-RangeFrom.html">RangeFrom</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-RangeFrom.html">RangeFrom</a></div>
             </div>
             <div class="description short">
               <p>A range only bounded inclusively below (<code>start..</code>).</p>
@@ -151,9 +156,7 @@
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-RangeFull.html">RangeFull</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-RangeFull.html">RangeFull</a></div>
             </div>
             <div class="description short">
               <p>An unbounded range (<code>..</code>).</p>
@@ -161,9 +164,7 @@
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-RangeTo.html">RangeTo</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-RangeTo.html">RangeTo</a></div>
             </div>
             <div class="description short">
               <p>A range only bounded exclusively above (<code>..end</code>).</p>
@@ -171,9 +172,7 @@
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-TryImpl.html">TryImpl</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-TryImpl.html">TryImpl</a></div>
             </div>
             <div class="description short">
             </div>
@@ -280,9 +279,7 @@ well.</p>
         <ul class="section-items item-table">
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-RangeBounds.html">RangeBounds</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-RangeBounds.html">RangeBounds</a></div>
             </div>
             <div class="description short">
               <p>RangeBounds</p>
@@ -290,9 +287,7 @@ well.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-Try.html">Try</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-Try.html">Try</a></div>
             </div>
             <div class="description short">
               <p>A concept for types that can indicate success and failure.</p>
@@ -300,9 +295,7 @@ well.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-TryDefault.html">TryDefault</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-TryDefault.html">TryDefault</a></div>
             </div>
             <div class="description short">
               <p>Identifies Try types which can be constructed with a default success value.</p>
@@ -310,13 +303,34 @@ well.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-ops-TryErrorConvertibleTo.html">TryErrorConvertibleTo</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-ops-TryErrorConvertibleTo.html">TryErrorConvertibleTo</a></div>
             </div>
             <div class="description short">
               <p>Can be used to further constrain the relationship between two <code>Try</code> types
 such that an error in one can be used to construct the other type.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="section aliases types">
+        <div class="section-header">
+          <a name="aliases-types" href="#aliases-types">Type Aliases</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.TryOutputType"></a><a class="type-name" href="TODO">TryOutputType</a></div>
+            </div>
+            <div class="description short">
+              <p>A helper to get the <code>Output</code> type for a type <code>T</code> that satisfies <code>Try</code>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.TryRemapOutputType"></a><a class="type-name" href="TODO">TryRemapOutputType</a></div>
+            </div>
+            <div class="description short">
+              <p>A helper to get the <code>RemapOutput</code> type for a type <code>T</code> that satisfies <code>Try</code>.</p>
             </div>
           </li>
         </ul>

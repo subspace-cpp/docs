@@ -86,6 +86,18 @@
         <li>
           <a class="sidebar-item" href="sus-fn-FnOnce.html">FnOnce</a>
         </li>
+        <li>
+          <a class="sidebar-header" href="#aliases-types">Type Aliases</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="TODO">Return</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="TODO">ReturnMut</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="TODO">ReturnOnce</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -172,9 +184,7 @@ func<span class="punct">(</span>sus::dyn<span class="punct">&lt;</span>DynFnMut<
         <ul class="section-items item-table">
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-fn-Anything.html">Anything</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-fn-Anything.html">Anything</a></div>
             </div>
             <div class="description short">
               <p>When used as the return type of the function signature in
@@ -185,9 +195,7 @@ type from a functor including <code>void</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-fn-DynFn.html">DynFn</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-fn-DynFn.html">DynFn</a></div>
             </div>
             <div class="description short">
               <p>A type-erased object which satisifies the concept <a href="sus-fn-Fn.html"><code>Fn&lt;R(Args...)&gt;</code></a>.</p>
@@ -195,9 +203,7 @@ type from a functor including <code>void</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-fn-DynFnMut.html">DynFnMut</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-fn-DynFnMut.html">DynFnMut</a></div>
             </div>
             <div class="description short">
               <p>A type-erased object which satisifies the concept <a href="sus-fn-FnMut.html"><code>FnMut&lt;R(Args...)&gt;</code></a>.</p>
@@ -205,9 +211,7 @@ type from a functor including <code>void</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-fn-DynFnOnce.html">DynFnOnce</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-fn-DynFnOnce.html">DynFnOnce</a></div>
             </div>
             <div class="description short">
               <p>A type-erased object which satisifies the concept <a href="sus-fn-FnOnce.html"><code>FnOnce&lt;R(Args...)&gt;</code></a>.</p>
@@ -215,9 +219,7 @@ type from a functor including <code>void</code>.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-fn-NonVoid.html">NonVoid</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-fn-NonVoid.html">NonVoid</a></div>
             </div>
             <div class="description short">
               <p>When used as the return type of the function signature in
@@ -275,9 +277,7 @@ and returning the result.</p>
         <ul class="section-items item-table">
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-fn-Fn.html">Fn</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-fn-Fn.html">Fn</a></div>
             </div>
             <div class="description short">
               <p>The version of a callable object that may be called multiple times without
@@ -286,9 +286,7 @@ mutating internal state.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-fn-FnMut.html">FnMut</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-fn-FnMut.html">FnMut</a></div>
             </div>
             <div class="description short">
               <p>The version of a callable object that is allowed to mutate internal state
@@ -297,12 +295,44 @@ and may be called multiple times.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature">
-                <a class="type-name" href="sus-fn-FnOnce.html">FnOnce</a>
-              </div>
+              <div class="type-signature"><a class="type-name" href="sus-fn-FnOnce.html">FnOnce</a></div>
             </div>
             <div class="description short">
               <p>The version of a callable object that may be called only once.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="section aliases types">
+        <div class="section-header">
+          <a name="aliases-types" href="#aliases-types">Type Aliases</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.Return"></a><a class="type-name" href="TODO">Return</a></div>
+            </div>
+            <div class="description short">
+              <p>Resolves to the return type of a <a href="sus-fn-Fn.html"><code>Fn</code></a> object when
+passed <code>Args...</code>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.ReturnMut"></a><a class="type-name" href="TODO">ReturnMut</a></div>
+            </div>
+            <div class="description short">
+              <p>Resolves to the return type of a <a href="sus-fn-FnMut.html"><code>FnMut</code></a> object when
+passed <code>Args...</code>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="item-name">
+              <div class="type-signature"><a name="alias.ReturnOnce"></a><a class="type-name" href="TODO">ReturnOnce</a></div>
+            </div>
+            <div class="description short">
+              <p>Resolves to the return type of a <a href="sus-fn-FnOnce.html"><code>FnOnce</code></a> object when
+passed <code>Args...</code>.</p>
             </div>
           </li>
         </ul>

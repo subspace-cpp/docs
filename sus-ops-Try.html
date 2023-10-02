@@ -62,15 +62,11 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">Try</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class T&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class T&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             Try
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
@@ -79,8 +75,7 @@
               <div class="requires-constraint"><pre class="requires-constraint-line">requires(const T& t, T&& tt) {</pre><pre class="requires-constraint-line">      // is_success() reports if the Try type is in a success state.</pre><pre class="requires-constraint-line">      { TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::is_success(t) } -&gt; std::same_as&lt;bool&gt;;</pre><pre class="requires-constraint-line">      // into_output() unwraps from the Try type to its success type. It may</pre><pre class="requires-constraint-line">      // assume that the input is in a success state (`is_success()` would</pre><pre class="requires-constraint-line">      // return true), as the `try_into_output()` method verifies this.</pre><pre class="requires-constraint-line">      {</pre><pre class="requires-constraint-line">        TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::into_output(::sus::move(tt))</pre><pre class="requires-constraint-line">      } -&gt; std::same_as&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
               <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt; ||  //</pre><pre class="requires-constraint-line">     requires(typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&& output) {</pre><pre class="requires-constraint-line">       // from_output() converts a success type to the Try type.</pre><pre class="requires-constraint-line">       {</pre><pre class="requires-constraint-line">         TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::from_output(</pre><pre class="requires-constraint-line">             ::sus::forward&lt;typename TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::Output&gt;(</pre><pre class="requires-constraint-line">                 output))</pre><pre class="requires-constraint-line">       } -&gt; std::same_as&lt;T&gt;;</pre><pre class="requires-constraint-line">     }</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>A concept for types that can indicate success and failure.</p>
 <p>The Try concept is implemented by specializing <code>TryImpl</code> for a type <code>T</code>

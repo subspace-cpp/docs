@@ -62,15 +62,11 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">DoubleEndedIterator</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class T, class Item = typename std::remove_cvref_t&lt;T&gt;::Item&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class T, class Item = typename std::remove_cvref_t&lt;T&gt;::Item&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             DoubleEndedIterator
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
@@ -78,8 +74,7 @@
               <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;T, Item&gt;</pre></div>
               <div class="requires-constraint"><pre class="requires-constraint-line">requires(std::remove_cvref_t&lt;T&gt;& t) {</pre><pre class="requires-constraint-line">      { t.next_back() } noexcept -&gt; std::same_as&lt;::sus::option::Option&lt;Item&gt;&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>An <a href="sus-iter-Iterator.html"><code>Iterator</code></a> able to yield elements from both ends.</p>
 <p>Something that implements <code>DoubleEndedIterator</code> has one extra capability

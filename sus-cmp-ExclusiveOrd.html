@@ -62,15 +62,11 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">ExclusiveOrd</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class Lhs, class Rhs = Lhs&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class Lhs, class Rhs = Lhs&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             ExclusiveOrd
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
@@ -78,8 +74,7 @@
               <div class="requires-constraint"><pre class="requires-constraint-line">!StrongOrd&lt;Lhs, Rhs&gt;</pre></div>
               <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Ord&lt;Lhs, Rhs&gt;</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>Determines if the types <code>Lhs</code> and <code>Rhs</code> have total ordering (aka
 <a href="https://en.cppreference.com/w/cpp/utility/compare/weak_ordering"><code>std::weak_ordering</code></a>),

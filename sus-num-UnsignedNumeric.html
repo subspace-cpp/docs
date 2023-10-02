@@ -62,23 +62,18 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">UnsignedNumeric</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class T&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class T&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             UnsignedNumeric
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
               </span>
               <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;u8, T&gt; || std::same_as&lt;u16, T&gt; || std::same_as&lt;u32, T&gt; ||</pre><pre class="requires-constraint-line">    std::same_as&lt;u64, T&gt; || std::same_as&lt;usize, T&gt;</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>Unsigned Subspace numeric integer types. All of <a href="sus-num-Unsigned.html"><code>Unsigned</code></a> but excluding <a href="sus-num-uptr.html"><code>uptr</code></a>.</p>
 <p>The <a href="sus-num-uptr.html"><code>uptr</code></a> type is an integer but has a different API

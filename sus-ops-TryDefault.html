@@ -62,15 +62,11 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">TryDefault</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class T&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class T&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             TryDefault
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
@@ -78,8 +74,7 @@
               <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;T&gt;</pre></div>
               <div class="requires-constraint"><pre class="requires-constraint-line">requires {</pre><pre class="requires-constraint-line">  // from_default() construct the Try type with the default value for its</pre><pre class="requires-constraint-line">  // success type.</pre><pre class="requires-constraint-line">  { TryImpl&lt;std::remove_const_t&lt;T&gt;&gt;::from_default() } -&gt; std::same_as&lt;T&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>Identifies Try types which can be constructed with a default success value.</p>
 <p>This takes the place of the void type in Rust types, such as <code>Option&lt;()&gt;</code>

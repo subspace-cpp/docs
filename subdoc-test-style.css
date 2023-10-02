@@ -162,7 +162,7 @@ nav.sidebar .sidebar-links li > .sidebar-header {
     margin-top: 0.5rem;
     font-size: 1.1em;
 }
-nav.sidebar .sidebar-links li > .sidebar-item {
+nav.sidebar .sidebar-links li > a.sidebar-item {
     color: rgb(250, 199, 121);
     font-size: 1.0em;
 }
@@ -231,11 +231,11 @@ pre > code span.punct {
     margin-bottom: 1em;
     font-weight: bold;
 }
-:is(.fields, .functions, .methods, .records, .concepts, .namespaces) .section-header {
+:is(.fields, .functions, .methods, .records, .concepts, .namespaces, .aliases, .variables) .section-header {
     padding-bottom: 0.2em;
     border-bottom: 1px solid;
 }
-:is(.fields, .functions, .methods, .records, .concepts, .namespaces) .section-header > a {
+:is(.fields, .functions, .methods, .records, .concepts, .namespaces, .aliases, .variables) .section-header > a {
     text-decoration: none;
     color: inherit;
 }

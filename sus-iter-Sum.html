@@ -62,23 +62,18 @@
           <span class="namespace-dots">::</span>
           <a class="concept-name" href="#">Sum</a>
         </div>
-        <div class="type-signature">
-          <pre class="template">template &lt;class T, class Item = T&gt;</pre>
-          <span class="concept">
+        <div class="type-signature"><pre class="template">template &lt;class T, class Item = T&gt;</pre><span class="concept">
             concept
-          </span>
-          <span class="type-name">
+          </span><span class="type-name">
             Sum
-          </span>
-          <div>
+          </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
               </span>
               <div class="requires-constraint"><pre class="requires-constraint-line">requires(__private::IteratorArchetype&lt;Item&gt;&& iter) {</pre><pre class="requires-constraint-line">  // Use cloned() or copied() to convert an Iterator of references to values.</pre><pre class="requires-constraint-line">  requires(!std::is_reference_v&lt;T&gt;);</pre><pre class="requires-constraint-line">  { T::from_sum(::sus::move(iter)) } -&gt; std::same_as&lt;T&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
             </div>
-          </div>
-        </div>
+          </div></div>
         <div class="description long">
           <p>Trait to represent types that can be created by adding elements of an
 iterator.</p>
