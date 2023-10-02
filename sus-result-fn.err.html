@@ -68,9 +68,11 @@
           </div>
         </div>
         <div class="description long">
-          <p>Used to construct a Result&lt;T, E&gt; with an Err(e) value.</p>
-<p>Calling err() produces a hint to make a Result&lt;T, E&gt; but does not actually
-construct Result&lt;T, E&gt;. This is to deduce the actual types <code>T</code> and <code>E</code>
+          <p>Used to construct a <a href="sus-result-Result.html"><code>Result&lt;T, E&gt;</code></a> with an <code>Err(e)</code>
+value.</p>
+<p>Calling <code>err()</code> produces a hint to make a Result&lt;T, E&gt; but does not actually
+construct <a href="sus-result-Result.html"><code>Result&lt;T, E&gt;</code></a>.
+This is to deduce the actual types <code>T</code> and <code>E</code>
 when it is constructed, avoid specifying them both here, and support
 conversions.</p>
 

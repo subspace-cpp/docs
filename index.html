@@ -102,24 +102,6 @@
           <a class="sidebar-item" href="sus-collections-Array.html">Array</a>
         </li>
         <li>
-          <a class="sidebar-item" href="#alias.IntoRef">IntoRef</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-IterRefCounter.html">IterRefCounter</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-IteratorBase.html">IteratorBase</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="#alias.NoCopyMove">NoCopyMove</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-ptr-NonNull.html">NonNull</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-OkVoid.html">OkVoid</a>
-        </li>
-        <li>
           <a class="sidebar-item" href="sus-option-Option.html">Option</a>
         </li>
         <li>
@@ -127,12 +109,6 @@
         </li>
         <li>
           <a class="sidebar-item" href="sus-collections-Slice.html">Slice</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SliceMut.html">SliceMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-tuple_type-Tuple.html">Tuple</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-collections-Vec.html">Vec</a>
@@ -177,49 +153,10 @@
           <a class="sidebar-item" href="sus-num-usize.html">usize</a>
         </li>
         <li>
-          <a class="sidebar-header" href="#aliases-functions">Function Aliases</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.clone.html">clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.clone_into.html">clone_into</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="#alias.ensure_use">ensure_use</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.replace.html">replace</a>
-        </li>
-        <li>
           <a class="sidebar-header" href="#aliases-variables">Variable Aliases</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-namespace.marker.html#variable.unsafe_fn">unsafe_fn</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#aliases-concepts">Concept Aliases</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-Clone.html">Clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-Copy.html">Copy</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-construct-Default.html">Default</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-construct-From.html">From</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-construct-Into.html">Into</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-construct-TryFrom.html">TryFrom</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-relocate_by_memcpy.html">relocate_by_memcpy</a>
         </li>
       </ul>
     </div>
@@ -572,57 +509,6 @@ type-deduction constructor functions.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature"><a name="alias.IntoRef"></a><span class="type-name">IntoRef</span></div>
-            </div>
-            <div class="description short">
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.IterRefCounter"></a><a class="type-name" href="sus-iter-IterRefCounter.html">IterRefCounter</a></div>
-            </div>
-            <div class="description short">
-              <p>Reference counting outstanding iterators (and view types since they need to
-be able to produce iterators) in order to catch iterator invalidation and
-prevent them from being used afterward. Mutating the collection should check
-that the <code>count</code> is empty. This is much like a <code>RefCell</code> in Rust, using
-runtime verfication that modification does not occur while there are
-outstanding references.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.IteratorBase"></a><a class="type-name" href="sus-iter-IteratorBase.html">IteratorBase</a></div>
-            </div>
-            <div class="description short">
-              <p>The base class for all <a href="sus-iter-Iterator.html"><code>Iterator</code></a> types.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.NoCopyMove"></a><span class="type-name">NoCopyMove</span></div>
-            </div>
-            <div class="description short">
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.NonNull"></a><a class="type-name" href="sus-ptr-NonNull.html">NonNull</a></div>
-            </div>
-            <div class="description short">
-              <p>A pointer wrapper which holds a never-null pointer.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.OkVoid"></a><a class="type-name" href="sus-result-OkVoid.html">OkVoid</a></div>
-            </div>
-            <div class="description short">
-              <p>A marker type for constructing Result with an Ok(void) value.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
               <div class="type-signature"><a name="alias.Option"></a><a class="type-name" href="sus-option-Option.html">Option</a></div>
             </div>
             <div class="description short">
@@ -643,23 +529,6 @@ outstanding references.</p>
             <div class="description short">
               <p>A dynamically-sized const view into a contiguous sequence of objects of type
 <code>const T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.SliceMut"></a><a class="type-name" href="sus-collections-SliceMut.html">SliceMut</a></div>
-            </div>
-            <div class="description short">
-              <p>A dynamically-sized mutable view into a contiguous sequence of objects of
-type <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.Tuple"></a><a class="type-name" href="sus-tuple_type-Tuple.html">Tuple</a></div>
-            </div>
-            <div class="description short">
-              <p>A Tuple is a finite sequence of one or more heterogeneous values.</p>
             </div>
           </li>
           <li class="section-item">
@@ -778,45 +647,6 @@ as the <code>double</code> type specified by the C++ standard).</p>
           </li>
         </ul>
       </div>
-      <div class="section aliases functions">
-        <div class="section-header">
-          <a name="aliases-functions" href="#aliases-functions">Function Aliases</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.clone"></a><a class="type-name" href="sus-mem-fn.clone.html">clone</a></div>
-            </div>
-            <div class="description short">
-              <p>Clones the input either by copying or cloning. Returns a new object of type
-<code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.clone_into"></a><a class="type-name" href="sus-mem-fn.clone_into.html">clone_into</a></div>
-            </div>
-            <div class="description short">
-              <p>Performs copy-assignment from <code>source</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.ensure_use"></a><span class="type-name">ensure_use</span></div>
-            </div>
-            <div class="description short">
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.replace"></a><a class="type-name" href="sus-mem-fn.replace.html">replace</a></div>
-            </div>
-            <div class="description short">
-              <p>Replace the <code>dest</code> with <code>src</code>, and return the old value in <code>dest</code>.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
       <div class="section aliases variables">
         <div class="section-header">
           <a name="aliases-variables" href="#aliases-variables">Variable Aliases</a>
@@ -829,73 +659,6 @@ as the <code>double</code> type specified by the C++ standard).</p>
             <div class="description short">
               <p>The global <a href="sus-marker-UnsafeFnMarker.html"><code>UnsafeFnMarker</code></a> which can be
 passed to unsafe functions. See the <a href="sus-marker-UnsafeFnMarker.html"><code>UnsafeFnMarker</code></a> type for an explanation.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section aliases concepts">
-        <div class="section-header">
-          <a name="aliases-concepts" href="#aliases-concepts">Concept Aliases</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.Clone"></a><a class="type-name" href="sus-mem-Clone.html">Clone</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>Clone</code> type can make a new copy of itself.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.Copy"></a><a class="type-name" href="sus-mem-Copy.html">Copy</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>Copy</code> type can be copied to construct a new object and can be assigned to
-by copy.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.Default"></a><a class="type-name" href="sus-construct-Default.html">Default</a></div>
-            </div>
-            <div class="description short">
-              <p>Default types are able to be constructed with a default value.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.From"></a><a class="type-name" href="sus-construct-From.html">From</a></div>
-            </div>
-            <div class="description short">
-              <p>A concept that indicates <code>ToType</code> can be constructed from a <code>FromType</code>, via
-<code>ToType::from(FromType)</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.Into"></a><a class="type-name" href="sus-construct-Into.html">Into</a></div>
-            </div>
-            <div class="description short">
-              <p>A concept that declares <code>FromType</code> can be converted to <code>ToType</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.TryFrom"></a><a class="type-name" href="sus-construct-TryFrom.html">TryFrom</a></div>
-            </div>
-            <div class="description short">
-              <p>A concept that indicates <code>ToType</code> can be (sometimes) constructed from a
-<code>FromType</code>, via <code>ToType::try_from(FromType)</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.relocate_by_memcpy"></a><a class="type-name" href="sus-mem-relocate_by_memcpy.html">relocate_by_memcpy</a></div>
-            </div>
-            <div class="description short">
-              <p>Tests if a variable of type <code>T</code> can be relocated with
-<a href="sus-ptr-fn.copy.html"><code>copy</code></a>.</p>
             </div>
           </li>
         </ul>
