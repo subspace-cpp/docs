@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::iter - Subspace</title>
   <meta property="og:title" content="sus::iter - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <meta name="description" content="Composable external iteration."></meta>
+  <meta property="og:description" content="Composable external iteration."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -280,6 +280,22 @@
           <a class="namespace-name" href="#">iter</a>
         </div>
         <div class="description long">
+          <p>Composable external iteration.</p>
+<p>If you've found yourself with a collection of some kind, and needed to
+perform an operation on the elements of said collection, you'll quickly run
+into 'iterators'. Iterators are heavily used in idiomatic Rust code, so
+it's worth becoming familiar with them.</p>
+<p>The use of iterators with collections is described in <a href="sus-namespace.collections.html#iterators">the collections
+documentation</a>.</p>
+<p>TODO: Write lots more here.</p>
+<p>All iterators implement the <a href="sus-iter-Iterator.html"><code>Iterator</code></a> concept. Part
+of implementing that requires inheriting from <a href="sus-iter-IteratorBase.html"><code>IteratorBase</code></a> which provides a large number of methods for
+filtering or transforming the items produced by the iterator. All of these
+methods are &quot;lazy&quot; in that they construct a new iterator but do not touch
+the source which generates items until iteration begins.</p>
+<p>Iterators can <a href="sus-namespace.collections.html#ranges">interact with standard ranges</a> as
+well.</p>
+
         </div>
       </div>
       <div class="section records classes">

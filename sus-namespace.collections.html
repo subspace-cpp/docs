@@ -390,7 +390,7 @@ partial use, preventing the computation of the unused items.</p>
 <h1><a name="ranges" href="#ranges">Ranges</a></h1>
 <p>The collections in the Subspace C++ library can be used with standard ranges
 by calling the <a href="sus-iter-IteratorBase.html#method.range"><code>range()</code></a> adaptor on any
-Subspace iterator. It will return an object that satisfies
+<a href="sus-iter-Iterator.html"><code>Iterator</code></a>. It will return an object that satisfies
 <a href="https://en.cppreference.com/w/cpp/ranges/input_range"><code>std::ranges::input_range</code></a>
 and
 <a href="https://en.cppreference.com/w/cpp/ranges/viewable_range"><code>std::ranges::viewable_range</code></a>,
@@ -399,8 +399,8 @@ such as with <code>vec.iter().range()</code>.</p>
 will also satisfy
 <a href="https://en.cppreference.com/w/cpp/ranges/input_range"><code>std::ranges::output_range</code></a>,
 such as with <code>vec.iter_mut().range()</code>.</p>
-<p>Conversely, standard ranges, such as the types in the standard containers
-library, can be used to construct a Subspace iterator through
+<p>Conversely, an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> can be constructed for
+a standard range such as <a href="https://en.cppreference.com/w/cpp/container/vector"><code>std::vector</code></a> through
 <a href="sus-iter-fn.from_range.html"><code>sus::iter::from_range</code></a>.</p>
 <h1><a name="familiarity-with-rust-apis" href="#familiarity-with-rust-apis">Familiarity with Rust APIs</a></h1>
 <p>These collections were inspired by porting Rust
