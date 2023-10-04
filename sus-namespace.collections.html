@@ -395,8 +395,8 @@ by calling the <a href="sus-iter-IteratorBase.html#method.range"><code>range()</
 and
 <a href="https://en.cppreference.com/w/cpp/ranges/viewable_range"><code>std::ranges::viewable_range</code></a>,
 such as with <code>vec.iter().range()</code>.</p>
-<p>Iterators over value types or mutable references when converted by <code>range()</code>
-will also satisfy
+<p>Iterators over value types or mutable references when converted by
+<a href="sus-iter-IteratorBase.html#method.range"><code>range()</code></a> will also satisfy
 <a href="https://en.cppreference.com/w/cpp/ranges/input_range"><code>std::ranges::output_range</code></a>,
 such as with <code>vec.iter_mut().range()</code>.</p>
 <p>Conversely, an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> can be constructed for
@@ -408,7 +408,7 @@ a standard range such as <a href="https://en.cppreference.com/w/cpp/container/ve
 and traits/concepts into C++. Additional changes are minimized to aid with
 familiarity and working across languages, but some are necessary for use in
 C++ or interop with the standard library. Subspace also provides additional
-containers specific to C++ when needed, such as <code>Array</code> (and TODO: FlatMap).</p>
+containers specific to C++ when needed, such as <a href="sus-collections-Array.html"><code>Array</code></a> (and TODO: FlatMap).</p>
 
         </div>
       </div>
