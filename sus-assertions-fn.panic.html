@@ -69,12 +69,15 @@
         </div>
         <div class="description long">
           <p>Terminate the program.</p>
-<p>The default behaviour of this function is to <code>abort()</code>. The behaviour of
-this function can be overridden by defining a <code>SUS_PROVIDE_PANIC_HANDLER()</code>
-macro when compiling the library.</p>
+<p>The default behaviour of this function is to <code>__builtin_trap()</code> when
+possible and <code>abort() otherwise</code>. The behaviour of this function can be
+overridden by defining a <code>SUS_PROVIDE_PANIC_HANDLER()</code> macro when compiling
+the library.</p>
 <p>The panic message will be printed to stderr before aborting. This behaviour
 can be overridden by defining a <code>SUS_PROVIDE_PRINT_PANIC_LOCATION_HANDLER()</code>
-macro when compiling the library.</p>
+macro when compiling. The same handler must be used as when building the
+library itself. So if used as a shared library, it can not be modified by
+the calling code.</p>
 <h1><a name="safety" href="#safety">Safety</a></h1>
 <p>If <code>SUS_PROVIDE_PANIC_HANDLER()</code> is defined, the macro <em>must</em> not return or
 Undefined Behaviour will result.</p>
