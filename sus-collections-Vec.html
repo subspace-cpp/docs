@@ -363,6 +363,12 @@
           <a class="sidebar-item" href="sus-collections-Vec.html#method.strip_suffix_mut">strip_suffix_mut</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-collections-Vec.html#method.subrange">subrange</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-collections-Vec.html#method.subrange_mut">subrange_mut</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-collections-Vec.html#method.swap">swap</a>
         </li>
         <li>
@@ -2367,6 +2373,62 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
           </div>
           <div class="overload-set item-name">
             <div class="overload">
+              <div class="function-signature"><a name="method.subrange"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.subrange">subrange</a>(sus::usize start) const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.subrange"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.subrange">subrange</a>(sus::usize start, sus::usize end) const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.subrange"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.subrange">subrange</a>(sus::usize start) && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.subrange"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.subrange">subrange</a>(sus::usize start, sus::usize end) && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
+                  deleted
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice which contains elements in the range which is specified
+by a <code>start</code> and an <code>end</code>.
+This is an alias for the subscript operator with a <a href="sus-ops-RangeBounds.html"><code>RangeBounds</code></a> argument, but without the need to construct a
+<a href="sus-ops-RangeBounds.html"><code>RangeBounds</code></a>.</p>
+<p>The returned slice contains all indices in <code>start &lt;= x &lt; end</code>.  It is
+empty if <code>start &gt;= end</code>.</p>
+<p>NOTE: This is different from std::span::subspan which uses a start and a
+length. Instead, this matches the construction of a
+<a href="sus-ops-Range.html"><code>Range</code></a> in C++ and a <a href="https://doc.rust-lang.org/stable/std/ops/struct.Range.html"><code>Range</code></a> in Rust.</p>
+<h1><a name="panics-22" href="#panics-22">Panics</a></h1>
+<p>If the Range would otherwise contain an element that is out of bounds,
+the function will panic.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.subrange_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.subrange_mut">subrange_mut</a>(sus::usize start) & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.subrange_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.subrange_mut">subrange_mut</a>(sus::usize start, sus::usize end) & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a mutable subslice which contains elements in the range which is
+specified by a <code>start</code> and an <code>end</code>.
+This is an alias for the subscript operator with a <a href="sus-ops-RangeBounds.html"><code>RangeBounds</code></a> argument, but without the need to construct a
+<a href="sus-ops-RangeBounds.html"><code>RangeBounds</code></a>.</p>
+<p>The returned slice contains all indices in <code>start &lt;= x &lt; end</code>.  It is
+empty if <code>start &gt;= end</code>.</p>
+<p>NOTE: This is different from std::span::subspan which uses a start and a
+length. Instead, this matches the construction of a
+<a href="sus-ops-Range.html"><code>Range</code></a> in C++ and a <a href="https://doc.rust-lang.org/stable/std/ops/struct.Range.html"><code>Range</code></a> in Rust.</p>
+<h1><a name="panics-32" href="#panics-32">Panics</a></h1>
+<p>If the Range would otherwise contain an element that is out of bounds,
+the function will panic.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
               <div class="function-signature"><a name="method.swap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Vec.html#method.swap">swap</a>(sus::usize a, sus::usize b) -&gt; void</div>
             </div>
           </div>
@@ -2375,7 +2437,7 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
 <h1><a name="arguments" href="#arguments">Arguments</a></h1>
 <p><code>a</code> - The index of the first element
 <code>b</code> - The index of the second element</p>
-<h1><a name="panics-22" href="#panics-22">Panics</a></h1>
+<h1><a name="panics-42" href="#panics-42">Panics</a></h1>
 <p>Panics if a or b are out of bounds.</p>
 
           </div>
@@ -2420,7 +2482,7 @@ element, Undefined Behaviour will occur.</p>
           <div class="description long">
             <p>Swaps all elements in <code>*this</code> with those in <code>other</code>.</p>
 <p>The length of <code>other</code> must be the same as <code>*this</code>.</p>
-<h1><a name="panics-32" href="#panics-32">Panics</a></h1>
+<h1><a name="panics-52" href="#panics-52">Panics</a></h1>
 <p>This function will panic if the two slices have different lengths, or if
 other overlaps with <code>*this</code>.</p>
 
@@ -2465,7 +2527,7 @@ vector.</p>
             <p>Returns an iterator over all contiguous windows of length <code>size</code>. The
 windows overlap. If the slice is shorter than <code>size</code>, the iterator returns
 no values.</p>
-<h1><a name="panics-42" href="#panics-42">Panics</a></h1>
+<h1><a name="panics-62" href="#panics-62">Panics</a></h1>
 <p>Panics if <code>size</code> is 0.</p>
 
           </div>
@@ -2478,7 +2540,7 @@ no values.</p>
             <p>Returns an iterator over all contiguous windows of length <code>size</code>. The
 windows overlap. If the slice is shorter than <code>size</code>, the iterator returns
 no values.</p>
-<h1><a name="panics-52" href="#panics-52">Panics</a></h1>
+<h1><a name="panics-72" href="#panics-72">Panics</a></h1>
 <p>Panics if <code>size</code> is 0.</p>
 
           </div>
@@ -2546,7 +2608,7 @@ wanted.</p>
           </div>
           <div class="description long">
             <p>Returns a reference to the element at position <code>i</code> in the Vec.</p>
-<h1><a name="panics-62" href="#panics-62">Panics</a></h1>
+<h1><a name="panics-82" href="#panics-82">Panics</a></h1>
 <p>If the index <code>i</code> is beyond the end of the Vec, the function will panic.</p>
 
           </div>
@@ -2557,7 +2619,7 @@ wanted.</p>
           </div>
           <div class="description long">
             <p>Returns a mutable reference to the element at position <code>i</code> in the Vec.</p>
-<h1><a name="panics-72" href="#panics-72">Panics</a></h1>
+<h1><a name="panics-92" href="#panics-92">Panics</a></h1>
 <p>If the index <code>i</code> is beyond the end of the Vec, the function will panic.</p>
 
           </div>
@@ -2578,7 +2640,7 @@ start and a length.</p>
 subslice, and the length is the number of elements in the output slice.
 As such, <code>r.get_range(Range(0u, r.len()))</code> returns a slice over the
 full set of elements in <code>r</code>.</p>
-<h1><a name="panics-82" href="#panics-82">Panics</a></h1>
+<h1><a name="panics-03" href="#panics-03">Panics</a></h1>
 <p>If the Range would otherwise contain an element that is out of bounds,
 the function will panic.</p>
 
@@ -2595,7 +2657,7 @@ specifies a start and a length.</p>
 subslice, and the length is the number of elements in the output slice.
 As such, <code>r.get_range(Range(0u, r.len()))</code> returns a slice over the
 full set of elements in <code>r</code>.</p>
-<h1><a name="panics-92" href="#panics-92">Panics</a></h1>
+<h1><a name="panics-13" href="#panics-13">Panics</a></h1>
 <p>If the Range would otherwise contain an element that is out of bounds,
 the function will panic.</p>
 

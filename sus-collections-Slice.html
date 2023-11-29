@@ -186,6 +186,9 @@
           <a class="sidebar-item" href="sus-collections-Slice.html#method.strip_suffix">strip_suffix</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-collections-Slice.html#method.subrange">subrange</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-collections-Slice.html#method.to_vec">to_vec</a>
         </li>
         <li>
@@ -1006,6 +1009,29 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
           </div>
           <div class="overload-set item-name">
             <div class="overload">
+              <div class="function-signature"><a name="method.subrange"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Slice.html#method.subrange">subrange</a>(sus::usize start) const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.subrange"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Slice.html#method.subrange">subrange</a>(sus::usize start, sus::usize end) const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Returns a subslice which contains elements in the range which is specified
+by a <code>start</code> and an <code>end</code>.
+This is an alias for the subscript operator with a <a href="sus-ops-RangeBounds.html"><code>RangeBounds</code></a> argument, but without the need to construct a
+<a href="sus-ops-RangeBounds.html"><code>RangeBounds</code></a>.</p>
+<p>The returned slice contains all indices in <code>start &lt;= x &lt; end</code>.  It is
+empty if <code>start &gt;= end</code>.</p>
+<p>NOTE: This is different from std::span::subspan which uses a start and a
+length. Instead, this matches the construction of a
+<a href="sus-ops-Range.html"><code>Range</code></a> in C++ and a <a href="https://doc.rust-lang.org/stable/std/ops/struct.Range.html"><code>Range</code></a> in Rust.</p>
+<h1><a name="panics-6" href="#panics-6">Panics</a></h1>
+<p>If the Range would otherwise contain an element that is out of bounds,
+the function will panic.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
               <div class="function-signature"><a name="method.to_vec"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Slice.html#method.to_vec">to_vec</a>() const& -&gt; sus::collections::Vec&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
@@ -1028,7 +1054,7 @@ wrapped in <code>Some</code>. If <code>suffix</code> is empty, simply returns th
             <p>Returns an iterator over all contiguous windows of length <code>size</code>. The
 windows overlap. If the slice is shorter than <code>size</code>, the iterator returns
 no values.</p>
-<h1><a name="panics-6" href="#panics-6">Panics</a></h1>
+<h1><a name="panics-7" href="#panics-7">Panics</a></h1>
 <p>Panics if <code>size</code> is 0.</p>
 
           </div>
@@ -1046,7 +1072,7 @@ no values.</p>
           </div>
           <div class="description long">
             <p>Returns a reference to the element at position <code>i</code> in the Slice.</p>
-<h1><a name="panics-7" href="#panics-7">Panics</a></h1>
+<h1><a name="panics-8" href="#panics-8">Panics</a></h1>
 <p>If the index <code>i</code> is beyond the end of the slice, the function will panic.</p>
 
           </div>
@@ -1057,12 +1083,12 @@ no values.</p>
           </div>
           <div class="description long">
             <p>Returns a subslice which contains elements in <code>range</code>, which specifies a
-start and a length.</p>
+start and an end.</p>
 <p>The start is the index of the first element to be returned in the
-subslice, and the length is the number of elements in the output slice.
+subslice, and the end one past the last element in the output slice.
 As such, <code>r.get_range(Range(0u, r.len()))</code> returns a slice over the
 full set of elements in <code>r</code>.</p>
-<h1><a name="panics-8" href="#panics-8">Panics</a></h1>
+<h1><a name="panics-9" href="#panics-9">Panics</a></h1>
 <p>If the Range would otherwise contain an element that is out of bounds,
 the function will panic.</p>
 
