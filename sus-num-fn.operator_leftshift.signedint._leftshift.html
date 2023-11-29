@@ -137,6 +137,9 @@ However enum class is excluded as they require an explicit conversion to an
 integer.</p>
 <p>Thus the bound is <code>std::convertible_to</code> (implicit conversion) instead of
 <code>sus::construct::From</code> (explicit conversion).</p>
+<h1><a name="panics" href="#panics">Panics</a></h1>
+<p>This operator will panic if the shift amount is not less than the number of
+bits in the integer and <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
 
         </div>
       </div>

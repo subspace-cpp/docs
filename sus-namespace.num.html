@@ -186,6 +186,9 @@
           <a class="sidebar-item" href="sus-num-fn.operator_div.unsignedint._div.html">operator/</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-fn.operator_leftshift.html">operator&lt;&lt;</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-fn.operator_leftshift.signed.prim._leftshiftu64.html">operator&lt;&lt;</a>
         </li>
         <li>
@@ -405,9 +408,9 @@ primitive types, and operations with numeric types.</p>
 types, but are safer than primitive C++ types and eliminate many classes of
 bugs that often lead to security vulnerabilities:</p>
 <ul>
-<li>Integer overflow is not allowed by default, and will
-<a href="sus-assertions-fn.panic.html"><code>panic</code></a> to terminate the
-program. Intentional overflow can be achieved through methods like
+<li>Integer overflow is not allowed by default (see <a href="#overflow-behaviour">Overflow behaviour</a>, and will <a href="sus-assertions-fn.panic.html"><code>panic</code></a>
+to terminate the program.
+Intentional overflow can be achieved through methods like
 <a href="sus-num-i32.html#method.wrapping_add"><code>wrapping_add</code></a> or
 <a href="sus-num-i32.html#method.saturating_mul"><code>saturating_mul</code></a>. The
 <a href="sus-num-OverflowInteger.html"><code>OverflowInteger</code></a> type can be used for a
@@ -431,6 +434,16 @@ floating point types which can result in Undefined Behaviour.</li>
 operations, such as <a href="sus-num-i32.html#method.abs"><code>abs</code></a>,
 <a href="sus-num-i32.html#method.pow"><code>pow</code></a>, <a href="sus-num-i32.html#method.log10"><code>log10</code></a>, or
 <a href="sus-num-i32.html#method.leading_ones"><code>leading_ones</code></a>.</p>
+<h1><a name="overflow-behaviour" href="#overflow-behaviour">Overflow behaviour</a></h1>
+<p>The default build configuration will panic on integer overflow in arithmetic
+operations (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, etc). These checks can be disabled by
+defining <code>SUS_CHECK_INTEGER_OVERFLOW</code> to false during compilation. Both
+signed and unsigned integers will then overflow by performing wrapping
+operations. There is no Undefined Behaviour with signed or unsigned integers
+unless going through the unchecked operations explicitly, such as
+<a href="sus-num-i32.html#method.unchecked_add"><code>unchecked_add</code></a>.</p>
+<p>Division by zero, or overflow in integer division will panic regardless of
+whether overflow checks are enabled.</p>
 <h1><a name="conversions" href="#conversions">Conversions</a></h1>
 <p>To explicitly invoke a lossless conversion, use
 <a href="sus-construct-From.html"><code>From</code></a>. Use <a href="sus-construct-Into.html"><code>Into</code></a> to
@@ -885,6 +898,15 @@ conversion through <a href="sus-construct-fn.mog.html"><code>mog</code></a>.</p>
             </div>
             <div class="description short">
               <p>Satisfies the <a href="sus-num-Div.html"><code>Div</code></a> concept for unsigned integers.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_leftshift.html">operator&lt;&lt;</a></div>
+              </div>
+            </div>
+            <div class="description short">
             </div>
           </li>
           <li class="section-item">

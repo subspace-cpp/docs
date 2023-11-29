@@ -66,31 +66,7 @@
           <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedenumclass">i32</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.signedenumclass">i32</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.signedenum">i32</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.signedint.primitive">i32</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedint.primitive">i32</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.signedint.typed">i32</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedenum">i32</a>
-        </li>
-        <li>
           <a class="sidebar-item" href="sus-num-i32.html#method.i32">i32</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedint.typed">i32</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-i32.html#method.from.from.signed">from</a>
@@ -553,7 +529,73 @@
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.i32.signedint.ctor.unsignedenumclass"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedenumclass">i32</a>(P v)<div class="requires">
+              <div class="function-signature"><a name="method.i32"></a><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>()</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.i32"></a><div class="template">template &lt;class S&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(S v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Signed&lt;S&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;S&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveEnum&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveEnumClass&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.i32"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(U v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveEnum&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -563,157 +605,6 @@
             </div>
           </div>
           <div class="description long">
-            <p>Construction from unsigned enum class types where no bits are lost.</p>
-<p>For conversions from types with a larger range use
-<a href="sus-num-i32.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy conversions
-use the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i32&gt;(x)</code></a>.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.i32.signedint.ctor.signedenumclass"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.signedenumclass">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveEnumClass&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from signed enum class types where no bits are lost.</p>
-<p>For conversions from types with a larger range use
-<a href="sus-num-i32.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use
-the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i32&gt;(x)</code></a>.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.i32.signedint.ctor.signedenum"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.signedenum">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveEnum&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from signed enum types where no bits are lost.</p>
-<p>For conversions from types with a larger range use
-<a href="sus-num-i32.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i32&gt;(x)</code></a>.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.i32.signedint.ctor.signedint.primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.signedint.primitive">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveInteger&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from signed primitive types where no bits are lost.</p>
-<p>For conversions from types with a larger range use
-<a href="sus-num-i32.html#method.try_from.signed.primitive"><code>try_from</code></a>. For lossy conversions use
-the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i32&gt;(x)</code></a>.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.i32.signedint.ctor.unsignedint.primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedint.primitive">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from unsigned primitive types where no bits are lost.</p>
-<p>For conversions from types with a larger range use
-<a href="sus-num-i32.html#method.try_from.unsigned.primitive"><code>try_from</code></a>. For lossy conversions use
-the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i32&gt;(x)</code></a>.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.i32.signedint.ctor.signedint.typed"></a><div class="template">template &lt;class S&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.signedint.typed">i32</a>(S v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Signed&lt;S&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;S&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from signed types where no bits are lost.</p>
-<p>For conversions from types with a larger range use
-<a href="sus-num-i32.html#method.try_from.signed"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i32&gt;(x)</code></a>.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.i32.signedint.ctor.unsignedenum"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedenum">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveEnum&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from unsigned enum types where no bits are lost.</p>
-<p>For conversions from types with a larger range use
-<a href="sus-num-i32.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i32&gt;(x)</code></a>.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.i32"></a><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>()</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Default constructor, which sets the integer to 0.</p>
-<p>Satisfies the <a href="sus-construct-Default.html"><code>Default</code></a> concept.</p>
-<p>The trivial copy and move constructors are implicitly declared, as is the
-trivial destructor.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.i32.signedint.ctor.unsignedint.typed"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedint.typed">i32</a>(U v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from unsigned types where no bits are lost.</p>
-<p>For conversions from types with a larger range use
-<a href="sus-num-i32.html#method.try_from.unsigned"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i32&gt;(x)</code></a>.</p>
-
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -1044,7 +935,7 @@ int, unsigned long, etc).</p>
           <div class="description long">
             <p>Computes the absolute value of itself.</p>
 <p>The absolute value of i32::MIN cannot be represented as an i32,
-and attempting to calculate it will panic.</p>
+and attempting to calculate it will panic when <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1223,7 +1114,7 @@ returning <code>None</code> if overflow occurred.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.checked_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.checked_shl">checked_shl</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a>&gt;</div>
+              <div class="function-signature"><a name="method.checked_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.checked_shl">checked_shl</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a>&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1233,7 +1124,7 @@ larger than or equal to the number of bits in <code>self</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.checked_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.checked_shr">checked_shr</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a>&gt;</div>
+              <div class="function-signature"><a name="method.checked_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.checked_shr">checked_shr</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a>&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1507,7 +1398,7 @@ would occur then 0 is returned.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.overflowing_shl"></a><div class="template">template &lt;int &... , class Tuple = ::sus::tuple_type::Tuple&lt;i32, _Bool&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.overflowing_shl">overflowing_shl</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; Tuple</div>
+              <div class="function-signature"><a name="method.overflowing_shl"></a><div class="template">template &lt;int &... , class Tuple = ::sus::tuple_type::Tuple&lt;i32, _Bool&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.overflowing_shl">overflowing_shl</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; Tuple</div>
             </div>
           </div>
           <div class="description long">
@@ -1521,7 +1412,7 @@ shift.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.overflowing_shr"></a><div class="template">template &lt;int &... , class Tuple = ::sus::tuple_type::Tuple&lt;i32, _Bool&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.overflowing_shr">overflowing_shr</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; Tuple</div>
+              <div class="function-signature"><a name="method.overflowing_shr"></a><div class="template">template &lt;int &... , class Tuple = ::sus::tuple_type::Tuple&lt;i32, _Bool&gt;&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.overflowing_shr">overflowing_shr</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; Tuple</div>
             </div>
           </div>
           <div class="description long">
@@ -1593,7 +1484,7 @@ second most-significant bit, etc.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rotate_left"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.rotate_left">rotate_left</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> n) const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
+              <div class="function-signature"><a name="method.rotate_left"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.rotate_left">rotate_left</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> n) const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1604,7 +1495,7 @@ truncated bits to the end of the resulting integer.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rotate_right"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.rotate_right">rotate_right</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> n) const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
+              <div class="function-signature"><a name="method.rotate_right"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.rotate_right">rotate_right</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> n) const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1967,7 +1858,7 @@ negative minimal value for the type). In this case, this method returns
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.wrapping_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.wrapping_shl">wrapping_shl</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
+              <div class="function-signature"><a name="method.wrapping_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.wrapping_shl">wrapping_shl</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1976,7 +1867,7 @@ negative minimal value for the type). In this case, this method returns
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.wrapping_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.wrapping_shr">wrapping_shr</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
+              <div class="function-signature"><a name="method.wrapping_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.wrapping_shr">wrapping_shr</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
             </div>
           </div>
           <div class="description long">
@@ -2071,6 +1962,9 @@ uint16_t f <span class="punct">=</span> 3_i32<span class="punct">;</span>  <span
           <div class="description long">
             <p>Satisfies the <a href="sus-num-BitAndAssign.html"><code>BitAndAssign&lt;i32&gt;</code></a>
 concept.</p>
+<h1><a name="panics-51" href="#panics-51">Panics</a></h1>
+<p>This operator will panic when dividing by zero or when division will
+overflow.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -2080,6 +1974,8 @@ concept.</p>
           </div>
           <div class="description long">
             <p>Satisfies the <a href="sus-num-MulAssign.html"><code>MulAssign&lt;i32&gt;</code></a> concept.</p>
+<h1><a name="panics-61" href="#panics-61">Panics</a></h1>
+<p>This operator will panic on overflow when <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -2089,6 +1985,8 @@ concept.</p>
           </div>
           <div class="description long">
             <p>Satisfies the <a href="sus-num-AddAssign.html"><code>AddAssign&lt;i32&gt;</code></a> concept.</p>
+<h1><a name="panics-71" href="#panics-71">Panics</a></h1>
+<p>This operator will panic on overflow when <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -2107,6 +2005,8 @@ concept.</p>
           </div>
           <div class="description long">
             <p>Satisfies the <a href="sus-num-SubAssign.html"><code>SubAssign&lt;i32&gt;</code></a> concept.</p>
+<h1><a name="panics-81" href="#panics-81">Panics</a></h1>
+<p>This operator will panic on overflow when <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -2116,15 +2016,21 @@ concept.</p>
           </div>
           <div class="description long">
             <p>Satisfies the <a href="sus-num-DivAssign.html"><code>DivAssign&lt;i32&gt;</code></a> concept.</p>
+<h1><a name="panics-91" href="#panics-91">Panics</a></h1>
+<p>This operator will panic when dividing by zero or when division will
+overflow.</p>
 
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&lt;&lt;="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.operator&lt;&lt;=">operator&lt;&lt;=</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator&lt;&lt;="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.operator&lt;&lt;=">operator&lt;&lt;=</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
             <p>Satisfies the <a href="sus-num-ShlAssign.html"><code>ShlAssign&lt;i32&gt;</code></a> concept.</p>
+<h1><a name="panics-02" href="#panics-02">Panics</a></h1>
+<p>This operator will panic if the shift amount is not less than
+<a href="sus-num-i32.html#field.BITS"><code>i32::BITS</code></a> and <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -2186,12 +2092,15 @@ the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> conc
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&gt;&gt;="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.operator&gt;&gt;=">operator&gt;&gt;=</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator&gt;&gt;="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-i32.html#method.operator&gt;&gt;=">operator&gt;&gt;=</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
             <p>Satisfies the <a href="sus-num-ShrAssign.html"><code>ShrAssign&lt;i32&gt;</code></a> concept.</p>
 <p>Performs sign extension, copying the sign bit to the right if its set.</p>
+<h1><a name="panics-12" href="#panics-12">Panics</a></h1>
+<p>This operator will panic if the shift amount is not less than
+<a href="sus-num-i32.html#field.BITS"><code>i32::BITS</code></a> and <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
 
           </div>
           <div class="overload-set item-name">

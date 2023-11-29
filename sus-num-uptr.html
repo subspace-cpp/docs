@@ -69,19 +69,7 @@
           <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized">uptr</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr">uptr</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.unsigned.pointer">uptr</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.default">uptr</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized.primitive">uptr</a>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr">uptr</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-uptr.html#method.from.uptr.from.pointer">from</a>
@@ -517,7 +505,16 @@ value for the integer type.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.uptr.ctor.unsigned.ptrsized"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized">uptr</a>(U v)<div class="requires">
+              <div class="function-signature"><a name="method.uptr"></a><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>()</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.uptr"></a><div class="template">template &lt;class T&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>(T* v)</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.uptr"></a><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>(std::same_as&lt;std::nullptr_t&gt; auto)</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.uptr"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>(U v)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -525,48 +522,8 @@ value for the integer type.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
-          </div>
-          <div class="description long">
-            <p>Construction from unsigned types of the same size as a pointer.</p>
-<p>The construction of a <code>uptr</code> from an integer must be explicit, unlike for
-other integer types.</p>
-
-          </div>
-          <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.uptr.ctor.unsigned.nullptr"></a><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr">uptr</a>(std::same_as&lt;std::nullptr_t&gt; auto)</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from a null pointer.</p>
-<p>This produces the same value as the default constructor.</p>
-<h1><a name="implementation-notes" href="#implementation-notes">Implementation notes</a></h1>
-<p>The function receives std::same_as&lt;nullptr_t&gt; to avoid implicit conversions
-from integer types on some compilers (like GCC 13).</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.uptr.ctor.unsigned.pointer"></a><div class="template">template &lt;class T&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.pointer">uptr</a>(T* v)</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construction from a pointer.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.uptr.ctor.default"></a><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.default">uptr</a>()</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Default constructor, which sets the integer to 0.</p>
-<p>Satisfies the <a href="sus-construct-Default.html"><code>Default</code></a> concept.</p>
-
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><a name="method.uptr.ctor.unsigned.ptrsized.primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized.primitive">uptr</a>(P v)<div class="requires">
+              <div class="function-signature"><a name="method.uptr"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>(P v)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -576,10 +533,6 @@ from integer types on some compilers (like GCC 13).</p>
             </div>
           </div>
           <div class="description long">
-            <p>Construction from unsigned primitive types the same size as a pointer.</p>
-<p>The construction of a <code>uptr</code> from a primitive integer must be explicit,
-unlike for other integer types.</p>
-
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -822,6 +775,15 @@ C++ primitive type.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.checked_add"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_add">checked_add</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.checked_add"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_add">checked_add</a>(U rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Checked integer addition. Computes <code>self + rhs</code>, returning <code>None</code> if
@@ -831,6 +793,15 @@ overflow occurred.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.checked_div"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_div">checked_div</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.checked_div"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_div">checked_div</a>(U rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -842,6 +813,15 @@ overflow occurred.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.checked_div_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_div_euclid">checked_div_euclid</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.checked_div_euclid"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_div_euclid">checked_div_euclid</a>(U rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Checked Euclidean division. Computes <code>self.</code><a href="sus-num-uptr.html#method.div_euclid"><code>div_euclid</code></a><code>(rhs)</code>, returning <code>None</code> if <code>rhs == 0</code>.</p>
@@ -850,6 +830,15 @@ overflow occurred.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.checked_log"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_log">checked_log</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> base) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a>&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.checked_log"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_log">checked_log</a>(U rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a>&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -886,6 +875,15 @@ more efficiently for base 10.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.checked_mul"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_mul">checked_mul</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.checked_mul"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_mul">checked_mul</a>(U rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -928,6 +926,15 @@ returning <code>None</code> if overflow occurred.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.checked_rem"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_rem">checked_rem</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.checked_rem"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_rem">checked_rem</a>(U rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Checked integer remainder. Computes <code>self % rhs</code>, returning <code>None</code> if
@@ -938,6 +945,15 @@ returning <code>None</code> if overflow occurred.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.checked_rem_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_rem_euclid">checked_rem_euclid</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.checked_rem_euclid"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_rem_euclid">checked_rem_euclid</a>(U rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Checked Euclidean modulo. Computes <code>self.</code><a href="sus-num-uptr.html#method.rem_euclid"><code>rem_euclid</code></a><code>(rhs)</code>, returning <code>None</code> if
@@ -946,7 +962,7 @@ returning <code>None</code> if overflow occurred.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.checked_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_shl">checked_shl</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
+              <div class="function-signature"><a name="method.checked_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_shl">checked_shl</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -956,7 +972,7 @@ larger than or equal to the number of bits in <code>self</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.checked_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_shr">checked_shr</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
+              <div class="function-signature"><a name="method.checked_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_shr">checked_shr</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -967,6 +983,15 @@ larger than or equal to the number of bits in <code>self</code>.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.checked_sub"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_sub">checked_sub</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.checked_sub"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.checked_sub">checked_sub</a>(U rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -997,6 +1022,15 @@ value.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.div_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.div_euclid">div_euclid</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.div_euclid"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.div_euclid">div_euclid</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1039,6 +1073,15 @@ current value.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.log"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.log">log</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> base) const& -&gt; <a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.log"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.log">log</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1091,6 +1134,15 @@ panic.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.overflowing_add"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_add">overflowing_add</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.overflowing_add"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_add">overflowing_add</a>(U rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Calculates <code>self + rhs</code>.</p>
@@ -1102,6 +1154,15 @@ wrapped value is returned.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.overflowing_div"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_div">overflowing_div</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.overflowing_div"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_div">overflowing_div</a>(U rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1116,6 +1177,15 @@ never occurs, so the second value is always false.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.overflowing_div_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_div_euclid">overflowing_div_euclid</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.overflowing_div_euclid"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_div_euclid">overflowing_div_euclid</a>(U rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1132,6 +1202,15 @@ equal to <code>self.overflowing_div(rhs)</code>.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.overflowing_mul"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_mul">overflowing_mul</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.overflowing_mul"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_mul">overflowing_mul</a>(U rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1168,6 +1247,15 @@ an overflow happened.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.overflowing_rem"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_rem">overflowing_rem</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.overflowing_rem"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_rem">overflowing_rem</a>(U rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Calculates the remainder when <code>self</code> is divided by <code>rhs</code>.</p>
@@ -1183,6 +1271,15 @@ false.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.overflowing_rem_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_rem_euclid">overflowing_rem_euclid</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.overflowing_rem_euclid"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_rem_euclid">overflowing_rem_euclid</a>(U rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Calculates the remainder <code>self.</code><a href="sus-num-uptr.html#method.rem_euclid"><code>rem_euclid</code></a><code>(rhs)</code> as if by Euclidean division.</p>
@@ -1197,7 +1294,7 @@ operation is exactly equal to <code>self.overflowing_rem(rhs)</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.overflowing_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_shl">overflowing_shl</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
+              <div class="function-signature"><a name="method.overflowing_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_shl">overflowing_shl</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1210,7 +1307,7 @@ bits. If the shift value is too large, then value is masked by <code>(N-1)</code
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.overflowing_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_shr">overflowing_shr</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
+              <div class="function-signature"><a name="method.overflowing_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_shr">overflowing_shr</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -1225,6 +1322,15 @@ shift.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.overflowing_sub"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_sub">overflowing_sub</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;</div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.overflowing_sub"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.overflowing_sub">overflowing_sub</a>(U rhs) const& -&gt; sus::tuple_type::Tuple&lt;<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a>, bool&gt;<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1246,6 +1352,15 @@ the wrapped value is returned.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.rem_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.rem_euclid">rem_euclid</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.rem_euclid"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.rem_euclid">rem_euclid</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1269,7 +1384,7 @@ most-significant bit, etc.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rotate_left"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.rotate_left">rotate_left</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> n) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+              <div class="function-signature"><a name="method.rotate_left"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.rotate_left">rotate_left</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> n) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1280,7 +1395,7 @@ truncated bits to the end of the resulting integer.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.rotate_right"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.rotate_right">rotate_right</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> n) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+              <div class="function-signature"><a name="method.rotate_right"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.rotate_right">rotate_right</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> n) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1293,6 +1408,15 @@ truncated bits to the beginning of the resulting integer.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.saturating_add"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.saturating_add">saturating_add</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.saturating_add"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.saturating_add">saturating_add</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Saturating integer addition. Computes <code>self + rhs</code>, saturating at the
@@ -1302,6 +1426,15 @@ numeric bounds instead of overflowing.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.saturating_div"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.saturating_div">saturating_div</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.saturating_div"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.saturating_div">saturating_div</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1317,6 +1450,15 @@ division.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.saturating_mul"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.saturating_mul">saturating_mul</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.saturating_mul"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.saturating_mul">saturating_mul</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Saturating integer multiplication. Computes <code>self * rhs</code>, saturating at the
@@ -1326,6 +1468,15 @@ numeric bounds instead of overflowing.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.saturating_sub"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.saturating_sub">saturating_sub</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.saturating_sub"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.saturating_sub">saturating_sub</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1418,6 +1569,15 @@ current value.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.unchecked_add"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.unchecked_add">unchecked_add</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unchecked_add"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.unchecked_add">unchecked_add</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Unchecked integer addition. Computes <code>self + rhs</code>, assuming overflow cannot
@@ -1434,6 +1594,15 @@ would return <code>None</code>.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.unchecked_mul"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.unchecked_mul">unchecked_mul</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unchecked_mul"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.unchecked_mul">unchecked_mul</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Unchecked integer multiplication. Computes <code>self * rhs</code>, assuming overflow
@@ -1449,6 +1618,15 @@ would return <code>None</code>.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.unchecked_sub"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.unchecked_sub">unchecked_sub</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.unchecked_sub"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.unchecked_sub">unchecked_sub</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1479,6 +1657,15 @@ information in a way that is otherwise impossible with a cast.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.wrapping_add"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_add">wrapping_add</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.wrapping_add"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_add">wrapping_add</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Wrapping (modular) addition. Computes <code>self + rhs</code>, wrapping around at the
@@ -1488,6 +1675,15 @@ boundary of the type.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.wrapping_div"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_div">wrapping_div</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.wrapping_div"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_div">wrapping_div</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1502,6 +1698,15 @@ the wrapping operations.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.wrapping_div_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_div_euclid">wrapping_div_euclid</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.wrapping_div_euclid"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_div_euclid">wrapping_div_euclid</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1518,6 +1723,15 @@ exactly equal to <code>self.wrapping_div(rhs)</code>.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.wrapping_mul"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_mul">wrapping_mul</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.wrapping_mul"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_mul">wrapping_mul</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1565,6 +1779,15 @@ return value is wrapped to 0.</p>
             <div class="overload">
               <div class="function-signature"><a name="method.wrapping_rem"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_rem">wrapping_rem</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.wrapping_rem"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_rem">wrapping_rem</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
           </div>
           <div class="description long">
             <p>Wrapping (modular) remainder. Computes <code>self % rhs</code>. Wrapped remainder
@@ -1578,6 +1801,15 @@ all operations are accounted for in the wrapping operations.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.wrapping_rem_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_rem_euclid">wrapping_rem_euclid</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.wrapping_rem_euclid"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_rem_euclid">wrapping_rem_euclid</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1593,7 +1825,7 @@ exactly equal to <code>self.wrapping_rem(rhs)</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.wrapping_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_shl">wrapping_shl</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+              <div class="function-signature"><a name="method.wrapping_shl"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_shl">wrapping_shl</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1609,7 +1841,7 @@ want instead.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.wrapping_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_shr">wrapping_shr</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+              <div class="function-signature"><a name="method.wrapping_shr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_shr">wrapping_shr</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
             </div>
           </div>
           <div class="description long">
@@ -1626,6 +1858,15 @@ want instead.</p>
           <div class="overload-set item-name">
             <div class="overload">
               <div class="function-signature"><a name="method.wrapping_sub"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_sub">wrapping_sub</a>(<a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a> rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a></div>
+            </div>
+            <div class="overload">
+              <div class="function-signature"><a name="method.wrapping_sub"></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.wrapping_sub">wrapping_sub</a>(U rhs) const& -&gt; <a class="type-name" href="sus-num-uptr.html" title="sus::num::uptr">uptr</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedNumeric&lt;U&gt; || UnsignedPrimitiveInteger&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
             </div>
           </div>
           <div class="description long">
@@ -1752,7 +1993,7 @@ concept.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&lt;&lt;="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator&lt;&lt;=">operator&lt;&lt;=</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator&lt;&lt;="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator&lt;&lt;=">operator&lt;&lt;=</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">
@@ -1776,7 +2017,7 @@ concept.</p>
           <div class="description long">
             <p>Assignment from a null pointer.</p>
 <p>This sets the <code>uptr</code> to the same value as the default constructor.</p>
-<h1><a name="implementation-notes-1" href="#implementation-notes-1">Implementation notes</a></h1>
+<h1><a name="implementation-notes" href="#implementation-notes">Implementation notes</a></h1>
 <p>The function receives std::same_as&lt;nullptr_t&gt; to avoid implicit conversions
 from integer types on some compilers (like GCC 13).</p>
 
@@ -1813,7 +2054,7 @@ from integer types on some compilers (like GCC 13).</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&gt;&gt;="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator&gt;&gt;=">operator&gt;&gt;=</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> r) & -&gt; void</div>
+              <div class="function-signature"><a name="method.operator&gt;&gt;="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-uptr.html#method.operator&gt;&gt;=">operator&gt;&gt;=</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> r) & -&gt; void</div>
             </div>
           </div>
           <div class="description long">

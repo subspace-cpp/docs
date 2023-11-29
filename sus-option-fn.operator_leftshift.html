@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::num::operator/ - Subspace</title>
-  <meta property="og:title" content="sus::num::operator/ - Subspace"></meta>
-  <meta name="description" content="Satisfies the Div concept for signed integers."></meta>
-  <meta property="og:description" content="Satisfies the Div concept for signed integers."></meta>
+  <title>sus::option::operator&lt;&lt; - Subspace</title>
+  <meta property="og:title" content="sus::option::operator&lt;&lt; - Subspace"></meta>
+  <meta name="description" content=""></meta>
+  <meta property="og:description" content=""></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">operator/</a>
+        <a href="#">operator&lt;&lt;</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">operator/</a>
+      <a href="#">operator&lt;&lt;</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -58,25 +58,21 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="namespace.sus.html">sus</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.num.html">num</a>
+          <a class="namespace-name" href="sus-namespace.option.html">option</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">operator/</a>
+          <a class="function-name" href="#">operator&lt;&lt;</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">operator/</a>(<a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a> l, <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a> r) -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
+            <div class="function-signature"><div class="template">template &lt;class T, class Sus_StreamType&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;&lt;</a>(Sus_StreamType& stream, <span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& value) -&gt; Sus_StreamType&<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::string::__private::StreamCanReceiveString&lt;Sus_StreamType, char&gt;</pre></div>
+              </div></div>
           </div>
         </div>
         <div class="description long">
-          <p>Satisfies the <a href="sus-num-Div.html"><code>Div</code></a> concept for signed integers.</p>
-<p>This operation supports shifting with primitive signed or unsigned integers
-that convert to the safe numeric, as well as enums.
-However enum class is excluded as they require an explicit conversion to an
-integer.</p>
-<h1><a name="panics" href="#panics">Panics</a></h1>
-<p>This operator will panic when dividing by zero or when division will
-overflow.</p>
-
         </div>
       </div>
     </div>
