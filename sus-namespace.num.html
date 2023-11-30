@@ -447,14 +447,14 @@ whether overflow checks are enabled.</p>
 <h1><a name="conversions" href="#conversions">Conversions</a></h1>
 <p>To explicitly invoke a lossless conversion, use
 <a href="sus-construct-From.html"><code>From</code></a>. Use <a href="sus-construct-Into.html"><code>Into</code></a> to
-constain inputs in generic code, and <a href="sus-construct-fn.into.html"><code>sus::into()</code></a>
+constrain inputs in generic code, and <a href="sus-construct-fn.into.html"><code>sus::into()</code></a>
 to type-deduce for conversions. Some lossless conversions are also allowed
 to happen implicitly, though explicit conversion is better.</p>
 <p>To convert and handle the case where data is lost, use
 <a href="sus-construct-TryFrom.html"><code>TryFrom</code></a>, or
 <a href="sus-construct-TryInto.html"><code>TryInto</code></a> in generic code. Using
-<code>T::try_from(U).unwrap()</code> is a quick way to convert and find out if there
-are values out of range, or to terminate on malicious inputs. Or
+<code>T::try_from(U).unwrap()</code> is a quick way to convert and find out if the
+value was out of range, or to terminate on malicious inputs. Or
 <code>T::try_from(U).unwrap_or_default()</code> to convert to the input value or else
 to zero.</p>
 <p>To convert with truncation/loss of data, like <code>static_cast</code>, use
