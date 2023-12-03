@@ -279,7 +279,7 @@ as those passed to functions like <a href="sus-option-Option.html#method.map"><c
 can not be used to construct the <code>DynC&amp;</code> reference.</p>
 <p>In order to ensure the target of the <code>DynC&amp;</code> reference outlives the function
 it can be constructed as a stack variable before calling the function.</p>
-<pre><code>std::srand<span class="punct">(</span>sus::mog<span class="punct">&lt;</span><span class="keyword">unsigned</span><span class="punct">&gt;</span><span class="punct">(</span>std::time<span class="punct">(</span><span class="keyword">nullptr</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<pre><code>std::srand<span class="punct">(</span>sus::cast<span class="punct">&lt;</span><span class="keyword">unsigned</span><span class="punct">&gt;</span><span class="punct">(</span>std::time<span class="punct">(</span><span class="keyword">nullptr</span><span class="punct">)</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 
 <span class="keyword">auto</span> x <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>sus::Option<span class="punct">&lt;</span>sus::fn::DynFn<span class="punct">&lt;</span>std::string<span class="punct">(</span><span class="punct">)</span><span class="punct">&gt;</span><span class="punct">&amp;</span><span class="punct">&gt;</span> fn<span class="punct">)</span> <span class="punct">{</span>
   <span class="keyword">if</span> <span class="punct">(</span>fn<span class="punct">.</span>is_some<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span>

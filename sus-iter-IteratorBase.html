@@ -478,7 +478,7 @@ Option&lt;Collection<T>&gt;.</p>
 <p>Because collect() is so general, and C++ lacks strong type inference,
 collect() doesn't know the type of collection that you want to produce, so
 you will always need to pass it a type argument, such as:</p>
-<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp">sus::move<span class="punct">(</span>iter<span class="punct">)</span><span class="punct">.</span>collect<span class="punct">&lt;</span>MyCollection<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span>
+<pre><code class="language-cpp">sus::move<span class="punct">(</span>iter<span class="punct">)</span><span class="punct">.</span>collect<span class="punct">&lt;</span>MyCollection<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span>
 </code></pre>
 
           </div>
@@ -798,7 +798,7 @@ default, due to the way C++ templates resolve types. In order to fold over
 reference types, pass the type of the initial value explicitly as in the
 following example, which will return the last reference in the
 <code>Iterator&lt;i32&amp;&gt;</code>.</p>
-<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp"><span class="keyword">auto</span> v <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">)</span><span class="punct">;</span>
+<pre><code class="language-cpp"><span class="keyword">auto</span> v <span class="punct">=</span> sus::Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">)</span><span class="punct">;</span>
 i32 init<span class="punct">;</span>
 i32<span class="punct">&amp;</span> out <span class="punct">=</span> v<span class="punct">.</span>iter_mut<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>fold<span class="punct">&lt;</span>i32<span class="punct">&amp;</span><span class="punct">&gt;</span><span class="punct">(</span>
     init<span class="punct">,</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>i32<span class="punct">&amp;</span><span class="punct">,</span> i32<span class="punct">&amp;</span> v<span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> i32<span class="punct">&amp;</span> <span class="punct">{</span> <span class="keyword">return</span> v<span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
@@ -1107,7 +1107,7 @@ while it returns an Option with a value in it.</p>
 the iterator is empty, None is returned.</p>
 <p>Note that <code>f32</code>/<code>f64</code> doesn’t implement <code>StrongOrd</code> due to NaN being
 incomparable. You can work around this by using <a href="sus::iter::IteratorBase::reduce"><code>Iterator::reduce</code></a>:</p>
-<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp">sus::check<span class="punct">(</span>
+<pre><code class="language-cpp">sus::check<span class="punct">(</span>
     sus::Array<span class="punct">&lt;</span>f32<span class="punct">,</span> 3<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">.</span>4<span class="punct">,</span> f32::NAN<span class="punct">,</span> 1<span class="punct">.</span>3<span class="punct">)</span>
         <span class="punct">.</span>into_iter<span class="punct">(</span><span class="punct">)</span>
         <span class="punct">.</span>reduce<span class="punct">(</span><span class="punct">&amp;</span>f32::max<span class="punct">)</span>
@@ -1174,7 +1174,7 @@ the iterator is empty, <code>None</code> is returned.</p>
 the iterator is empty, None is returned.</p>
 <p>Note that <code>f32</code>/<code>f64</code> doesn’t implement <code>StrongOrd</code> due to NaN being
 incomparable. You can work around this by using <a href="sus::iter::IteratorBase::reduce"><code>Iterator::reduce</code></a>:</p>
-<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp">sus::check<span class="punct">(</span>
+<pre><code class="language-cpp">sus::check<span class="punct">(</span>
     sus::Array<span class="punct">&lt;</span>f32<span class="punct">,</span> 3<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">.</span>4<span class="punct">,</span> f32::NAN<span class="punct">,</span> 1<span class="punct">.</span>3<span class="punct">)</span>
         <span class="punct">.</span>into_iter<span class="punct">(</span><span class="punct">)</span>
         <span class="punct">.</span>reduce<span class="punct">(</span><span class="punct">&amp;</span>f32::min<span class="punct">)</span>
@@ -1488,7 +1488,7 @@ and then <code>reduce()</code> that, such as <code>it.copied().reduce(...)</code
 ensure the <code>reduce()</code> function is able to work with values instead of
 references.</p>
 <p>This example uses <code>copied()</code> to copy each <code>i32</code> and sum them.</p>
-<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp"><span class="keyword">auto</span> a <span class="punct">=</span> sus::Array<span class="punct">&lt;</span>i32<span class="punct">,</span> 3<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">;</span>
+<pre><code class="language-cpp"><span class="keyword">auto</span> a <span class="punct">=</span> sus::Array<span class="punct">&lt;</span>i32<span class="punct">,</span> 3<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">)</span><span class="punct">;</span>
 <span class="keyword">auto</span> out <span class="punct">=</span> a<span class="punct">.</span>iter<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>copied<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>reduce<span class="punct">(</span>
     <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>i32 acc<span class="punct">,</span> i32 v<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> acc <span class="punct">+</span> v<span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
 sus::check<span class="punct">(</span>out<span class="punct">.</span>as_value<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 2 <span class="punct">+</span> 3 <span class="punct">+</span> 4<span class="punct">)</span><span class="punct">;</span>

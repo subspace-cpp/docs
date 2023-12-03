@@ -219,10 +219,10 @@
           <a class="sidebar-item" href="sus-num-fn.operator_eq.html">operator==</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_eq.uint.eq.html">operator==</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_eq.int.eq.html">operator==</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-fn.operator_eq.int.eq.html">operator==</a>
+          <a class="sidebar-item" href="sus-num-fn.operator_eq.uint.eq.html">operator==</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-fn.operator_rightshift.signed.prim._rightshiftu64.html">operator&gt;&gt;</a>
@@ -421,7 +421,7 @@ types <em>only</em> when no data can be lost, otherwise conversions do not
 compile. To convert fallibly and observe data loss, use the
 <a href="sus-construct-TryFrom.html"><code>TryFrom</code></a> concept methods, such as
 <code>u32::try_from(3_i32)</code>. To do casting conversions with truncation, use
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a>.</li>
+<a href="sus-construct-Cast.html"><code>Cast</code></a>.</li>
 <li>No integer promotion. Math on 8-bit and 16-bit integers will not change
 their type, unlike primitive types which convert to (signed) int on any
 math operation.</li>
@@ -458,10 +458,10 @@ value was out of range, or to terminate on malicious inputs. Or
 <code>T::try_from(U).unwrap_or_default()</code> to convert to the input value or else
 to zero.</p>
 <p>To convert with truncation/loss of data, like <code>static_cast</code>, use
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;T&gt;()</code></a>. It can convert between
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;T&gt;()</code></a>. It can convert between
 integers, floats, and enums, for both safe numerics and primitives. See
-<a href="sus-construct-Transmogrify.html#casting-numeric-types">Casting numeric types</a> for the rules of
-conversion through <a href="sus-construct-fn.mog.html"><code>mog</code></a>.</p>
+<a href="sus-construct-Cast.html#casting-numeric-types">Casting numeric types</a> for the rules of
+conversion through <a href="sus-construct-fn.cast.html"><code>cast</code></a>.</p>
 
         </div>
       </div>
@@ -1015,21 +1015,21 @@ integers.</p>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_eq.uint.eq.html">operator==</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Satisfies the <a href="sus-cmp-Eq.html"><code>Eq</code></a> concept for unsigned integers.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
                 <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_eq.int.eq.html">operator==</a></div>
               </div>
             </div>
             <div class="description short">
               <p>Satisfies the <a href="sus-cmp-Eq.html"><code>Eq</code></a> concept for signed integers.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="function-signature"><a class="function-name" href="sus-num-fn.operator_eq.uint.eq.html">operator==</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Satisfies the <a href="sus-cmp-Eq.html"><code>Eq</code></a> concept for unsigned integers.</p>
             </div>
           </li>
           <li class="section-item">

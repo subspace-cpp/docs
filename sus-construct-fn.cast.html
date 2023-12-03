@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus::construct::cast - Subspace</title>
+  <meta property="og:title" content="sus::construct::cast - Subspace"></meta>
+  <meta name="description" content="An infallible conversion (cast) that may lose the original value in the process. If the input can not be represented in the output, some other value will be produced, which may lead to application bugs and memory unsafety if used incorrectly. This behaves like static_cast&lt;To&gt;() but without Undefined Behaviour."></meta>
+  <meta property="og:description" content="An infallible conversion (cast) that may lose the original value in the process. If the input can not be represented in the output, some other value will be produced, which may lead to application bugs and memory unsafety if used incorrectly. This behaves like static_cast&lt;To&gt;() but without Undefined Behaviour."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">cast</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      function
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">cast</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="function">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Function
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="namespace.sus.html">sus</a>
+          <span class="namespace-dots">::</span>
+          <a class="namespace-name" href="sus-namespace.construct.html">construct</a>
+          <span class="namespace-dots">::</span>
+          <a class="function-name" href="#">cast</a>
+        </div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="function-signature"><div class="template">template &lt;class To, class From&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">cast</a>(<span class="const">const</span> From& from) -&gt; To<div class="requires">
+                <span class="requires-keyword keyword">
+                  requires
+                </span>
+                <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Cast&lt;To, From&gt;</pre></div>
+              </div></div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>An infallible conversion (cast) that may lose the original
+value in the process. If the input can not be represented in the output,
+some other value will be produced, which may lead to application bugs and
+memory unsafety if used incorrectly. This behaves like <code>static_cast&lt;To&gt;()</code>
+but without Undefined Behaviour.</p>
+<p>The <a href="sus-construct-fn.cast.html"><code>cast</code></a> operation is supported for types
+<code>To</code> and <code>From</code> that satisfy <a href="sus-construct-Cast.html"><code>Cast&lt;To, From&gt;</code></a>.</p>
+<p>Usually prefer to convert between types with the value-preserving methods
+of <a href="sus-construct-From.html"><code>From</code></a> and
+<a href="sus-construct-Into.html"><code>Into</code></a> and <a href="sus-construct-TryInto.html"><code>TryInto</code></a>
+when possible. <a href="sus-construct-Cast.html"><code>Cast</code></a> is required for converting
+from floating point to integer values, and from larger integer types to
+floating point, as these are lossy conversions.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Usage</th>
+<th>Infallible</th>
+<th>Preserves values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="sus-construct-From.html"><code>From</code></a> / <a href="sus-construct-Into.html"><code>Into</code></a></td>
+<td><code>T::from(x)</code> / <a href="sus-construct-fn.into.html"><code>sus::into(x)</code></a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="sus-construct-TryInto.html"><code>TryInto</code></a></td>
+<td><a href="sus-construct-fn.try_into.html"><code>sus::try_into&lt;T&gt;(x)</code></a></td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="sus-construct-Cast.html"><code>Cast</code></a></td>
+<td><code>sus::cast&lt;T&gt;(x)</code></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="sus-construct-Cast.html"><code>Cast</code></a> for how numeric and
+primitive values are converted.</p>
+<p>It is best practive to place a <code>// SAFETY:</code> comment on use of <a href="sus-construct-fn.cast.html"><code>sus::cast</code></a> in order to explain why the code intends to change
+the value during the cast.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>This converts <code>-1_i64</code> into a <code>u32</code>, which both changes its meaning,
+becoming a large positive number, and truncates the high 32 bits, losing the
+original bits.</p>
+<pre><code class="language-cpp"><span class="comment">// SAFETY: We're intending to convert negative numbers into large positive</span>
+<span class="comment">// values for this example.</span>
+sus::check<span class="punct">(</span>u32::MAX <span class="punct">=</span><span class="punct">=</span> sus::cast<span class="punct">&lt;</span>u32<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">-</span>1_i64<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

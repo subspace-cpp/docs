@@ -541,7 +541,7 @@ and <code>sus::construct::From&lt;SliceMut&lt;T&gt;&gt;</code>.</p>
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;T, u8&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;C, char&gt; || std::same_as&lt;C, signed char&gt; ||</pre><pre class="requires-constraint-line">              std::same_as&lt;C, unsigned char&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &lt;= ::sus::mog&lt;usize&gt;(isize::MAX)</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">N &lt;= ::sus::cast&lt;usize&gt;(isize::MAX)</pre></div>
                 </div></div>
             </div>
           </div>

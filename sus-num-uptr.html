@@ -1906,9 +1906,9 @@ uintptr_t f <span class="punct">=</span> uptr<span class="punct">(</span><span c
 int64_t f <span class="punct">=</span> uptr<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as
-<code>sus::mog&lt;uint32_t&gt;(uptr())</code> or <code>sus::mog&lt;int32_t&gt;(uptr())</code>, or even
-<code>sus::mog&lt;u32&gt;(uptr())</code>.</p>
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept, such as
+<code>sus::cast&lt;uint32_t&gt;(uptr())</code> or <code>sus::cast&lt;int32_t&gt;(uptr())</code>, or even
+<code>sus::cast&lt;u32&gt;(uptr())</code>.</p>
 
           </div>
         </div>

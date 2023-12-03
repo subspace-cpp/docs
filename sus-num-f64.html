@@ -105,7 +105,13 @@
           <a class="sidebar-item" href="sus-num-f64.html#method.from.from.float">from</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-f64.html#method.from.from.primitivefloat">from</a>
+          <a class="sidebar-item" href="sus-num-f64.html#method.from.from.primitive_float">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f64.html#method.from.from.int">from</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f64.html#method.from.from.primitive_int">from</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-f64.html#method.from_be_bytes">from_be_bytes</a>
@@ -565,7 +571,7 @@ evaluation context from a runtime context, leading to bugs.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from.from.float"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.float">from</a>(F f) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+              <div class="function-signature"><a name="method.from.from.float"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.float">from</a>(F v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -580,17 +586,51 @@ evaluation context from a runtime context, leading to bugs.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.from.from.primitivefloat"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.primitivefloat">from</a>(F f) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+              <div class="function-signature"><a name="method.from.from.primitive_float"></a><div class="template">template &lt;class P&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.primitive_float">from</a>(P v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::PrimitiveFloat&lt;F&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::PrimitiveFloat&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
           </div>
           <div class="description long">
             <p>Construction from primitive floating point types where no bits are lost.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.from.from.int"></a><div class="template">template &lt;class I&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.int">from</a>(I v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;I&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;I&gt;() * 8 &lt;=</pre><pre class="requires-constraint-line">           __private::num_mantissa_digits&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from integer types where no bits are lost.</p>
+<p>For <a href="sus-num-f32.html"><code>f32</code></a> this includes integer types up to 16 bits.
+For <a href="sus-num-f64.html"><code>f64</code></a> this includes integer types up to 32 bits.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.from.from.primitive_int"></a><div class="template">template &lt;class P&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.primitive_int">from</a>(P v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::PrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() * 8 &lt;=</pre><pre class="requires-constraint-line">           __private::num_mantissa_digits&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from integer types where no bits are lost.</p>
+<p>For <a href="sus-num-f32.html"><code>f32</code></a> this includes integer types up to 16 bits.
+For <a href="sus-num-f64.html"><code>f64</code></a> this includes integer types up to 32 bits.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -633,7 +673,7 @@ that produced them, then there is no portability concern.</p>
 <p>If the input isn’t NaN, then there is no portability concern.</p>
 <p>If you don’t care about signalingness (very likely), then there is no
 portability concern.</p>
-<p>Note that this function is distinct from <code>Transmogrify</code> casting, which
+<p>Note that this function is distinct from <code>Cast</code> casting, which
 attempts to preserve the <em>numeric</em> value, and not the bitwise value.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <pre><code><span class="keyword">auto</span> v <span class="punct">=</span> f32::from_bits<span class="punct">(</span>0x41480000<span class="punct">)</span><span class="punct">;</span>
@@ -1228,7 +1268,7 @@ preserves the sign bit when the result is <code>-0.0</code>.</p>
           </div>
           <div class="description long">
             <p>Returns the nearest <a href="sus-num-i16.html"><code>i16</code></a> representable by <code>self</code>.</p>
-<p>This is equivalent to <code>sus::mog&lt;i16&gt;(self.round_ties())</code> but it may require
+<p>This is equivalent to <code>sus::cast&lt;i16&gt;(self.round_ties())</code> but it may require
 fewer instructions on some platforms.</p>
 <p>Like <a href="sus-num-f64.html#method.round_ties"><code>round_ties</code></a>, but unlike
 <a href="sus-num-f64.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
@@ -1243,7 +1283,7 @@ to break ties. The default mode will round ties to the nearest even number.</p>
           </div>
           <div class="description long">
             <p>Returns the nearest <a href="sus-num-i32.html"><code>i32</code></a> representable by <code>self</code>.</p>
-<p>This is equivalent to <code>sus::mog&lt;i32&gt;(self.round_ties())</code> but it may require
+<p>This is equivalent to <code>sus::cast&lt;i32&gt;(self.round_ties())</code> but it may require
 fewer instructions on some platforms.</p>
 <p>Like <a href="sus-num-f64.html#method.round_ties"><code>round_ties</code></a>, but unlike
 <a href="sus-num-f64.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
@@ -1258,7 +1298,7 @@ to break ties. The default mode will round ties to the nearest even number.</p>
           </div>
           <div class="description long">
             <p>Returns the nearest <a href="sus-num-i64.html"><code>i64</code></a> representable by <code>self</code>.</p>
-<p>This is equivalent to <code>sus::mog&lt;i64&gt;(self.round_ties())</code> but it may require
+<p>This is equivalent to <code>sus::cast&lt;i64&gt;(self.round_ties())</code> but it may require
 fewer instructions on some platforms.</p>
 <p>Like <a href="sus-num-f64.html#method.round_ties"><code>round_ties</code></a>, but unlike
 <a href="sus-num-f64.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
@@ -1273,7 +1313,7 @@ to break ties. The default mode will round ties to the nearest even number.</p>
           </div>
           <div class="description long">
             <p>Returns the nearest <a href="sus-num-i8.html"><code>i8</code></a> representable by <code>self</code>.</p>
-<p>This is equivalent to <code>sus::mog&lt;i8&gt;(self.round_ties())</code> but it may require
+<p>This is equivalent to <code>sus::cast&lt;i8&gt;(self.round_ties())</code> but it may require
 fewer instructions on some platforms.</p>
 <p>Like <a href="sus-num-f64.html#method.round_ties"><code>round_ties</code></a>, but unlike
 <a href="sus-num-f64.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
@@ -1288,7 +1328,7 @@ to break ties. The default mode will round ties to the nearest even number.</p>
           </div>
           <div class="description long">
             <p>Returns the nearest <a href="sus-num-isize.html"><code>isize</code></a> representable by <code>self</code>.</p>
-<p>This is equivalent to <code>sus::mog&lt;isize&gt;(self.round_ties())</code> but it may
+<p>This is equivalent to <code>sus::cast&lt;isize&gt;(self.round_ties())</code> but it may
 require fewer instructions on some platforms.</p>
 <p>Like <a href="sus-num-f64.html#method.round_ties"><code>round_ties</code></a>, but unlike
 <a href="sus-num-f64.html#method.round"><code>round</code></a>, the current <a href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_round">rounding mode</a> will be respected
@@ -1379,7 +1419,7 @@ array in big-endian (network) byte order.</p>
 <code>std::bit_cast&lt;u64, f64&gt;</code>.</p>
 <p>See <code>from_bits()</code> for some discussion of the portability of this operation
 (there are almost no issues).</p>
-<p>Note that this function is distinct from <code>Transmogrify</code> casting, which
+<p>Note that this function is distinct from <code>Cast</code> casting, which
 attempts to preserve the <em>numeric</em> value, and not the bitwise value.</p>
 
           </div>
@@ -1394,17 +1434,25 @@ attempts to preserve the <em>numeric</em> value, and not the bitwise value.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.to_int_unchecked"></a><div class="template">template &lt;class I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_int_unchecked">to_int_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; I<div class="requires">
+              <div class="function-signature"><a name="method.to_int_unchecked"></a><div class="template">template &lt;class Int&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_int_unchecked">to_int_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; Int<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;I&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;Int&gt;</pre></div>
                 </div></div>
             </div>
           </div>
           <div class="description long">
-            <p>Rounds toward zero and converts to any primitive integer type, assuming
-that the value is finite and fits in that type.</p>
+            <p>Rounds toward zero and converts to any <a href="sus-namespace.num.html">safe integer type</a>
+assuming that the value is finite and fits in that type.</p>
+<h1><a name="safety" href="#safety">Safety</a></h1>
+<p>To avoid Undefined Behaviour, the value must:</p>
+<ul>
+<li>Not be <code>NaN</code>.</li>
+<li>Not be infinite.</li>
+<li>Be representable in the return type <code>Int</code>, after truncating off its
+fractional part.</li>
+</ul>
 
           </div>
           <div class="overload-set item-name">
@@ -1518,8 +1566,8 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
 <span class="keyword">float</span> f <span class="punct">=</span> 3_f64<span class="punct">;</span>  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as
-<code>sus::mog&lt;float&gt;(3_f64)</code> or <code>sus::mog&lt;f32&gt;(3_f64)</code>.</p>
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept, such as
+<code>sus::cast&lt;float&gt;(3_f64)</code> or <code>sus::cast&lt;f32&gt;(3_f64)</code>.</p>
 
           </div>
         </div>

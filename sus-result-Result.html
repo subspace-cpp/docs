@@ -695,7 +695,7 @@ Behavior.</p>
 a tagged union between &quot;success&quot; and &quot;error&quot;.</p>
 <h1><a name="example" href="#example">Example</a></h1>
 <p>A reimplementation of <code>Result::unwrap_or()</code>.</p>
-<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp"><span class="keyword">auto</span> x <span class="punct">=</span> Result<span class="punct">&lt;</span><span class="keyword">int</span><span class="punct">,</span> <span class="keyword">char</span><span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span>
+<pre><code class="language-cpp"><span class="keyword">auto</span> x <span class="punct">=</span> Result<span class="punct">&lt;</span><span class="keyword">int</span><span class="punct">,</span> <span class="keyword">char</span><span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span>
 <span class="keyword">switch</span> <span class="punct">(</span>x<span class="punct">)</span> <span class="punct">{</span>
  <span class="keyword">case</span> Ok:
   <span class="keyword">return</span> sus::move<span class="punct">(</span>x<span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>

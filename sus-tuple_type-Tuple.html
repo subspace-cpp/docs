@@ -316,7 +316,7 @@ in as an argument yields tuples of items that will be appended to the
 collections.</p>
 <p>The item types in the argument can not be deduced, so they must be
 explicitly specified by the caller, such as:</p>
-<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp">collections<span class="punct">.</span>extend<span class="punct">&lt;</span>i32<span class="punct">,</span> std::string<span class="punct">&gt;</span><span class="punct">(</span>iter_over_tuples_i32_string<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<pre><code class="language-cpp">collections<span class="punct">.</span>extend<span class="punct">&lt;</span>i32<span class="punct">,</span> std::string<span class="punct">&gt;</span><span class="punct">(</span>iter_over_tuples_i32_string<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>Allows to <code>extend</code> a tuple of collections that also implement <code>Extend</code>.</p>
 <p>See also: <code>IteratorBase::unzip</code>.</p>

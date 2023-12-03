@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::construct::Transmogrify - Subspace</title>
-  <meta property="og:title" content="sus::construct::Transmogrify - Subspace"></meta>
-  <meta name="description" content="As Transmogrification is meant to be a cheap conversion, primarily for primitive types, it does not support Clone types, and Into should be used in more complex cases."></meta>
-  <meta property="og:description" content="As Transmogrification is meant to be a cheap conversion, primarily for primitive types, it does not support Clone types, and Into should be used in more complex cases."></meta>
+  <title>sus::construct::Cast - Subspace</title>
+  <meta property="og:title" content="sus::construct::Cast - Subspace"></meta>
+  <meta name="description" content="When a pair of types T and F satisfy Cast&lt;T, F&gt;, it means that F can be cast to T through a conversion that will always succeed in producing some value, but may be lossy or produce a value with a different meaning. The conversion may truncate or extend F in order to do the conversion to T."></meta>
+  <meta property="og:description" content="When a pair of types T and F satisfy Cast&lt;T, F&gt;, it means that F can be cast to T through a conversion that will always succeed in producing some value, but may be lossy or produce a value with a different meaning. The conversion may truncate or extend F in order to do the conversion to T."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">Transmogrify</a>
+        <a href="#">Cast</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       concept
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">Transmogrify</a>
+      <a href="#">Cast</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -60,27 +60,38 @@
           <span class="namespace-dots">::</span>
           <a class="namespace-name" href="sus-namespace.construct.html">construct</a>
           <span class="namespace-dots">::</span>
-          <a class="concept-name" href="#">Transmogrify</a>
+          <a class="concept-name" href="#">Cast</a>
         </div>
         <div class="type-signature"><pre class="template">template &lt;class To, class From&gt;</pre><span class="concept">
             concept
           </span><span class="type-name">
-            Transmogrify
+            Cast
           </span><div>
             <div class="requires">
               <span class="requires-keyword keyword">
                 requires
               </span>
-              <div class="requires-constraint"><pre class="requires-constraint-line">requires(const From& from) {</pre><pre class="requires-constraint-line">  {</pre><pre class="requires-constraint-line">    ::sus::construct::TransmogrifyImpl&lt;</pre><pre class="requires-constraint-line">        std::remove_const_t&lt;To&gt;, std::remove_const_t&lt;From&gt;&gt;::mog_from(from)</pre><pre class="requires-constraint-line">  } noexcept -&gt; std::same_as&lt;std::remove_const_t&lt;To&gt;&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
+              <div class="requires-constraint"><pre class="requires-constraint-line">requires(const From& from) {</pre><pre class="requires-constraint-line">  {</pre><pre class="requires-constraint-line">    ::sus::construct::CastImpl&lt;</pre><pre class="requires-constraint-line">        std::remove_const_t&lt;To&gt;, std::remove_const_t&lt;From&gt;&gt;::cast_from(from)</pre><pre class="requires-constraint-line">  } noexcept -&gt; std::same_as&lt;std::remove_const_t&lt;To&gt;&gt;;</pre><pre class="requires-constraint-line">}</pre></div>
             </div>
           </div></div>
         <div class="description long">
-          <p>As Transmogrification is meant to be a cheap
-conversion, primarily for primitive types, it does not support
+          <p>When a pair of types <code>T</code> and <code>F</code> satisfy <code>Cast&lt;T, F&gt;</code>, it means that
+<code>F</code> can be cast to <code>T</code> through a conversion that will always succeed in
+producing <em>some</em> value, but may be lossy or produce a value with a
+different meaning. The conversion may truncate or extend <code>F</code> in order to do
+the conversion to <code>T</code>.</p>
+<p>This operation is commonly known as type casting or type coercion. The
+conversion to <code>T</code> can be done by calling
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;T&gt;(from)</code></a>.</p>
+<p>The conversion is defined for the identity conversion where both the input
+and output are the same type, if the type is <a href="sus-mem-Copy.html"><code>Copy</code></a>, in
+which case the input is copied and returned.
+As casting is meant to be a cheap conversion, primarily for moving between
+primitive types, it does not support
 <a href="sus-mem-Clone.html"><code>Clone</code></a> types, and <a href="sus-construct-Into.html"><code>Into</code></a>
 should be used in more complex cases.</p>
 <h1><a name="casting-numeric-types" href="#casting-numeric-types">Casting numeric types</a></h1>
-<p>For numeric and primitive types, <code>Transmogrify</code> is defined to provide a
+<p>For numeric and primitive types, <code>Cast</code> is defined to provide a
 mechanism like <code>static_cast&lt;T&gt;</code> but it is much safer than <code>static_cast&lt;T&gt;</code>
 as it has defined behaviour for all inputs:</p>
 <ul>
@@ -118,18 +129,13 @@ as casting to and from <a href="sus-num-u8.html"><code>u8</code></a>.</li>
 </ul>
 <p>These conversions are all defined in <code>sus/num/types.h</code>.</p>
 <h1><a name="extending-to-other-types" href="#extending-to-other-types">Extending to other types</a></h1>
-<p>Types can participate in defining their transmogrification strategy by
-providing a specialization of <code>sus::convert::TransmogrifyImpl&lt;To, From&gt;</code>.
+<p>Types can participate in defining their <a href="sus-construct-Cast.html"><code>Cast</code></a>
+strategy by providing a specialization of
+<code>sus::convert::CastImpl&lt;To, From&gt;</code>.
 The conversions should always produce a value of type <code>T</code>, should not panic,
 and should not cause Undefined Behaviour.</p>
-<p>The <code>Transmogrify</code> specialization needs a static method <code>mog_from()</code> that
-receives <code>const From&amp;</code> and returns <code>To</code>.</p>
-<h1><a name="lore" href="#lore">Lore</a></h1>
-<p>The transmogrifier is one of three of the most complicated inventions. The
-other two are the <a href="https://calvinandhobbes.fandom.com/wiki/Cerebral_Enhance-O-Tron">Cerebral
-Enhance-O-Tron</a>,
-and the <a href="https://calvinandhobbes.fandom.com/wiki/Transmogrifier_Gun">Transmogrifier
-Gun</a>.</p>
+<p>The <code>CastImpl</code> specialization needs a (typically constexpr) static method
+<code>cast_from</code> that receives <code>const From&amp;</code> and returns <code>To</code>.</p>
 
         </div>
       </div>

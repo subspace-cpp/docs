@@ -1507,7 +1507,7 @@ otherwise returns an Option that holds <code>None</code>.</p>
 <p>This supports the use of an option in a switch, allowing it to act as
 a tagged union between &quot;some value&quot; and &quot;no value&quot;.</p>
 <h1><a name="example" href="#example">Example</a></h1>
-<pre><code <span class="keyword">class</span><span class="punct">=</span>"language<span class="punct">-</span>cpp"><span class="keyword">auto</span> x <span class="punct">=</span> Option<span class="punct">&lt;</span><span class="keyword">int</span><span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span>
+<pre><code class="language-cpp"><span class="keyword">auto</span> x <span class="punct">=</span> Option<span class="punct">&lt;</span><span class="keyword">int</span><span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">)</span><span class="punct">;</span>
 <span class="keyword">switch</span> <span class="punct">(</span>x<span class="punct">)</span> <span class="punct">{</span>
  <span class="keyword">case</span> Some:
   <span class="keyword">return</span> sus::move<span class="punct">(</span>x<span class="punct">)</span><span class="punct">.</span>unwrap_unchecked<span class="punct">(</span>unsafe_fn<span class="punct">)</span><span class="punct">;</span>

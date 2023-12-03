@@ -622,8 +622,8 @@
 no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.signed"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -642,8 +642,8 @@ no bits are lost.</p>
 int, unsigned long, etc) where no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.unsigned"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -663,8 +663,8 @@ where no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.signed.primitive"><code>try_from</code></a>. For lossy
 conversions use
-the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+the <a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -683,8 +683,8 @@ the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> conc
 are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use
-the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+the <a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -703,8 +703,8 @@ the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> conc
 int, unsigned long, etc) where no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.unsigned.primitive"><code>try_from</code></a>. For lossy conversions use
-the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+the <a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -723,8 +723,8 @@ the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> conc
 bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1933,9 +1933,9 @@ int32_t f <span class="punct">=</span> 3_i32<span class="punct">;</span>  <span 
 uint16_t f <span class="punct">=</span> 3_i32<span class="punct">;</span>  <span class="comment">// Does not compile.</span>
 </code></pre>
 <p>Potentially-lossy type conversions can be forced through the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept, such as
-<code>sus::mog&lt;uint32_t&gt;(3_i32)</code> or <code>sus::mog&lt;int16_t&gt;(3_i32)</code>, or even
-<code>sus::mog&lt;u32&gt;(3_i32)</code>.</p>
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept, such as
+<code>sus::cast&lt;uint32_t&gt;(3_i32)</code> or <code>sus::cast&lt;int16_t&gt;(3_i32)</code>, or even
+<code>sus::cast&lt;u32&gt;(3_i32)</code>.</p>
 
           </div>
         </div>
@@ -2048,8 +2048,8 @@ overflow.</p>
             <p>Assignment from signed types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.signed"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -2067,8 +2067,8 @@ overflow.</p>
             <p>Assignment from signed primitive types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.signed.primitive"><code>try_from</code></a>. For lossy conversions use
-the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+the <a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -2086,8 +2086,8 @@ the <a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> conc
             <p>Assignment from signed enum types where no bits are lost.</p>
 <p>For conversions from types with a larger range use
 <a href="sus-num-i16.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use the
-<a href="sus-construct-Transmogrify.html"><code>Transmogrify</code></a> concept with
-<a href="sus-construct-fn.mog.html"><code>sus::mog&lt;i16&gt;(x)</code></a>.</p>
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i16&gt;(x)</code></a>.</p>
 
           </div>
           <div class="overload-set item-name">
