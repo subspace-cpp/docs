@@ -138,8 +138,11 @@ integer.</p>
 <p>Thus the bound is <code>std::convertible_to</code> (implicit conversion) instead of
 <code>sus::construct::From</code> (explicit conversion).</p>
 <h1><a name="panics" href="#panics">Panics</a></h1>
-<p>This operator will panic if the shift amount is not less than the number of
-bits in the integer and <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
+<p>This function will panic when <code>r</code> is not less than the number of bits in <code>l</code>
+if overflow checks are enabled (they are by default) and will perform a
+wrapping shift if overflow checks are disabled (not the default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
         </div>
       </div>

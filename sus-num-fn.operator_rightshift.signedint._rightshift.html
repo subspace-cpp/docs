@@ -133,8 +133,11 @@
           <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for signed integers.</p>
 <p>Performs sign extension, copying the sign bit to the right if its set.</p>
 <h1><a name="panics" href="#panics">Panics</a></h1>
-<p>This operator will panic if the shift amount is not less than the number of
-bits in the integer and <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> are enabled.</p>
+<p>This function will panic when <code>r</code> is not less than the number of bits in <code>l</code>
+if overflow checks are enabled (they are by default) and will perform a
+wrapping shift if overflow checks are disabled (not the default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
         </div>
       </div>

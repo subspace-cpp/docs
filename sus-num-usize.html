@@ -666,7 +666,11 @@ called for iterators over usize.</p>
 <p>To handle overflow without panicing, instead of <code>iter.product()</code>, use
 <code>iter.product&lt;OverflowInteger&lt;usize&gt;&gt;()</code>.</p>
 <h1><a name="panics" href="#panics">Panics</a></h1>
-<p>This method will panic if the product of all values overflows.</p>
+<p>This method will panic if the product of all values overflows and overflow
+checks are enabled (they are by default) and it will wrap if overflow checks
+are disabled (not the default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -689,7 +693,11 @@ iterators over usize.</p>
 <p>To handle overflow without panicing, instead of <code>iter.sum()</code>, use
 <code>iter.sum&lt;OverflowInteger&lt;usize&gt;&gt;()</code>.</p>
 <h1><a name="panics-1" href="#panics-1">Panics</a></h1>
-<p>This method will panic if the sum of all values overflows.</p>
+<p>This method will panic if the sum of all values overflows if overflow checks
+are enabled (they are by default) and will wrap if overflow checks are
+disabled (not the default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1042,7 +1050,7 @@ value.</p>
             <p>Calculates the quotient of itself and <code>rhs</code>, rounding the result towards
 positive infinity.</p>
 <h1><a name="panics-2" href="#panics-2">Panics</a></h1>
-<p>This function will panic if <code>rhs</code> is zero.</p>
+<p>This function will panic if <code>rhs</code> is 0.</p>
 <h1><a name="examples-1" href="#examples-1">Examples</a></h1>
 <p>Basic usage:</p>
 <pre><code>sus::check<span class="punct">(</span><span class="punct">(</span>7_u8<span class="punct">)</span><span class="punct">.</span>div_ceil<span class="punct">(</span>4u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 2u<span class="punct">)</span><span class="punct">;</span>
@@ -1104,8 +1112,8 @@ rounded down.</p>
 for base 2, and <a href="sus-num-usize.html#method.log10"><code>log10</code></a> can produce results
 more efficiently for base 10.</p>
 <h1><a name="panics-4" href="#panics-4">Panics</a></h1>
-<p>When the number is zero, or if the base is not at least 2, the function will
-panic.</p>
+<p>This function will panic if the current value is zero, or if <code>base</code> is less
+than 2.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1159,7 +1167,11 @@ sus::check<span class="punct">(</span><span class="punct">(</span>23_u32<span cl
             <p>Returns the smallest power of two greater than or equal to self.</p>
 <h1><a name="panics-8" href="#panics-8">Panics</a></h1>
 <p>The function panics when the return value overflows (i.e.,
-<code>self &gt; (1 &lt;&lt; (N-1))</code> for type <code>uN</code>).</p>
+<code>self &gt; (1u &lt;&lt; (usize::BITS - 1u))</code>) if overflow checks
+are enabled (they are by default) and will wrap if overflow checks are
+disabled (not the default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1328,6 +1340,12 @@ the wrapped value is returned.</p>
           </div>
           <div class="description long">
             <p>Raises self to the power of <code>exp</code>, using exponentiation by squaring.</p>
+<h1><a name="panics-31" href="#panics-31">Panics</a></h1>
+<p>This function will panic on overflow if overflow checks are enabled (they
+are by default) and will wrap if overflow checks are disabled (not the
+default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1339,7 +1357,7 @@ the wrapped value is returned.</p>
             <p>Calculates the least remainder of <code>self</code> (mod <code>rhs</code>).</p>
 <p>Since, for the positive integers, all common definitions of division are
 equal, this is exactly equal to <code>self % rhs</code>.</p>
-<h1><a name="panics-31" href="#panics-31">Panics</a></h1>
+<h1><a name="panics-41" href="#panics-41">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1406,7 +1424,7 @@ saturating at the numeric bounds instead of overflowing.</p>
 numeric bounds instead of overflowing. Note that for unsigned integers
 overflow never occurs, so the value will always be strictly the result of
 division.</p>
-<h1><a name="panics-41" href="#panics-41">Panics</a></h1>
+<h1><a name="panics-51" href="#panics-51">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1589,7 +1607,7 @@ wrapping around at the boundary of the type.</p>
 unsigned types is just normal division. There's no way wrapping could ever
 happen. This function exists, so that all operations are accounted for in
 the wrapping operations.</p>
-<h1><a name="panics-51" href="#panics-51">Panics</a></h1>
+<h1><a name="panics-61" href="#panics-61">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1605,7 +1623,7 @@ on unsigned types is just normal division.</p>
 operations are accounted for in the wrapping operations. Since, for the
 positive integers, all common definitions of division are equal, this is
 exactly equal to <code>self.wrapping_div(rhs)</code>.</p>
-<h1><a name="panics-61" href="#panics-61">Panics</a></h1>
+<h1><a name="panics-71" href="#panics-71">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1665,7 +1683,7 @@ return value is wrapped to 0.</p>
 calculation on unsigned types is just the regular remainder calculation.</p>
 <p>There's no way wrapping could ever happen. This function exists, so that
 all operations are accounted for in the wrapping operations.</p>
-<h1><a name="panics-71" href="#panics-71">Panics</a></h1>
+<h1><a name="panics-81" href="#panics-81">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1681,7 +1699,7 @@ calculation on unsigned types is just the regular remainder calculation.</p>
 operations are accounted for in the wrapping operations. Since, for the
 positive integers, all common definitions of division are equal, this is
 exactly equal to <code>self.wrapping_rem(rhs)</code>.</p>
-<h1><a name="panics-81" href="#panics-81">Panics</a></h1>
+<h1><a name="panics-91" href="#panics-91">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1776,7 +1794,10 @@ uint16_t f <span class="punct">=</span> 3_u32<span class="punct">;</span>  <span
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-RemAssign.html"><code>RemAssign&lt;usize&gt;</code></a> concept.</p>
+            <p>Assigns the remainder of dividing itself by <code>r</code>.</p>
+<p>Satisfies the <a href="sus-num-RemAssign.html"><code>RemAssign&lt;usize&gt;</code></a> concept.</p>
+<h1><a name="panics-02" href="#panics-02">Panics</a></h1>
+<p>This operation will panic if <code>r</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1785,7 +1806,8 @@ uint16_t f <span class="punct">=</span> 3_u32<span class="punct">;</span>  <span
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-BitAndAssign.html"><code>BitAndAssign&lt;usize&gt;</code></a>
+            <p>Assigns the bitwise AND of itself and <code>r</code>.</p>
+<p>Satisfies the <a href="sus-num-BitAndAssign.html"><code>BitAndAssign&lt;usize&gt;</code></a>
 concept.</p>
 
           </div>
@@ -1795,7 +1817,14 @@ concept.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-MulAssign.html"><code>MulAssign&lt;usize&gt;</code></a> concept.</p>
+            <p>Multiplies itself by <code>r</code>.</p>
+<p>Satisfies the <a href="sus-num-MulAssign.html"><code>MulAssign&lt;usize&gt;</code></a> concept.</p>
+<h1><a name="panics-12" href="#panics-12">Panics</a></h1>
+<p>This operation will panic on overflow if overflow checks are enabled (they
+are by default) and will wrap if overflow checks are disabled (not the
+default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1804,7 +1833,14 @@ concept.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-AddAssign.html"><code>AddAssign&lt;usize&gt;</code></a> concept.</p>
+            <p>Adds <code>r</code> to itself.</p>
+<p>Satisfies the <a href="sus-num-AddAssign.html"><code>AddAssign&lt;usize&gt;</code></a> concept.</p>
+<h1><a name="panics-22" href="#panics-22">Panics</a></h1>
+<p>This operation will panic on overflow if overflow checks are enabled (they
+are by default) and will wrap if overflow checks are disabled (not the
+default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1813,7 +1849,14 @@ concept.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-SubAssign.html"><code>SubAssign&lt;usize&gt;</code></a> concept.</p>
+            <p>Subtracts <code>r</code> from itself.</p>
+<p>Satisfies the <a href="sus-num-SubAssign.html"><code>SubAssign&lt;usize&gt;</code></a> concept.</p>
+<h1><a name="panics-32" href="#panics-32">Panics</a></h1>
+<p>This operation will panic on overflow if overflow checks are enabled (they
+are by default) and will wrap if overflow checks are disabled (not the
+default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1822,7 +1865,10 @@ concept.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-DivAssign.html"><code>DivAssign&lt;usize&gt;</code></a> concept.</p>
+            <p>Divides itself by <code>r</code>.</p>
+<p>Satisfies the <a href="sus-num-DivAssign.html"><code>DivAssign&lt;usize&gt;</code></a> concept.</p>
+<h1><a name="panics-42" href="#panics-42">Panics</a></h1>
+<p>This operation will panic if <code>r</code> is 0.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1831,7 +1877,14 @@ concept.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-ShlAssign.html"><code>ShlAssign&lt;usize&gt;</code></a> concept.</p>
+            <p>Shifts itself left by <code>r</code> bits.</p>
+<h1><a name="panics-52" href="#panics-52">Panics</a></h1>
+<p>This function will panic when <code>r</code> is not less than the number of bits in
+<code>usize</code> if overflow checks are enabled (they are by default) and will
+perform a wrapping shift if overflow checks are disabled (not the default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
+<p>Satisfies the <a href="sus-num-ShlAssign.html"><code>ShlAssign&lt;usize&gt;</code></a> concept.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1900,7 +1953,14 @@ conversions use the
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-ShrAssign.html"><code>ShrAssign&lt;usize&gt;</code></a> concept.</p>
+            <p>Shifts itself right by <code>r</code> bits.</p>
+<p>Satisfies the <a href="sus-num-ShrAssign.html"><code>ShrAssign&lt;usize&gt;</code></a> concept.</p>
+<h1><a name="panics-62" href="#panics-62">Panics</a></h1>
+<p>This function will panic when <code>r</code> is not less than the number of bits in
+<code>usize</code> if overflow checks are enabled (they are by default) and will
+perform a wrapping shift if overflow checks are disabled (not the default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1909,7 +1969,8 @@ conversions use the
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-BitXorAssign.html"><code>BitXorAssign&lt;usize&gt;</code></a>
+            <p>Assigns the bitwise XOR of itself and <code>r</code>.</p>
+<p>Satisfies the <a href="sus-num-BitXorAssign.html"><code>BitXorAssign&lt;usize&gt;</code></a>
 concept.</p>
 
           </div>
@@ -1919,7 +1980,8 @@ concept.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-BitOrAssign.html"><code>BitOrAssign&lt;usize&gt;</code></a> concept.</p>
+            <p>Assigns the bitwise OR of itself and <code>r</code>.</p>
+<p>Satisfies the <a href="sus-num-BitOrAssign.html"><code>BitOrAssign&lt;usize&gt;</code></a> concept.</p>
 
           </div>
           <div class="overload-set item-name">
@@ -1928,7 +1990,8 @@ concept.</p>
             </div>
           </div>
           <div class="description long">
-            <p>Satisfies the <a href="sus-num-BitNot.html"><code>BitNot&lt;usize&gt;</code></a> concept.</p>
+            <p>Computes the bitwise complement (bitwise inverse) of the current value.</p>
+<p>Satisfies the <a href="sus-num-BitNot.html"><code>BitNot&lt;usize&gt;</code></a> concept.</p>
 
           </div>
         </div>

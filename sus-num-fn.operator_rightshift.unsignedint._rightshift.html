@@ -144,6 +144,12 @@
         </div>
         <div class="description long">
           <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for unsigned integers.</p>
+<h1><a name="panics" href="#panics">Panics</a></h1>
+<p>This function will panic when <code>r</code> is not less than the number of bits in <code>l</code>
+if overflow checks are enabled (they are by default) and will perform a
+wrapping shift if overflow checks are disabled (not the default).</p>
+<p>See <a href="sus-namespace.num.html#overflow-behaviour">overflow checks</a> for controlling this
+behaviour.</p>
 
         </div>
       </div>

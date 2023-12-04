@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::num::operator% - Subspace</title>
   <meta property="og:title" content="sus::num::operator% - Subspace"></meta>
-  <meta name="description" content="Satisfies the Rem concept for unsigned integers."></meta>
-  <meta property="og:description" content="Satisfies the Rem concept for unsigned integers."></meta>
+  <meta name="description" content="Computes the remainder of l divided by r, also known as the modulo operation."></meta>
+  <meta property="og:description" content="Computes the remainder of l divided by r, also known as the modulo operation."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -68,11 +68,15 @@
           </div>
         </div>
         <div class="description long">
-          <p>Satisfies the <a href="sus-num-Rem.html"><code>Rem</code></a> concept for unsigned integers.</p>
+          <p>Computes the remainder of <code>l</code> divided by <code>r</code>, also known as the modulo
+operation.</p>
+<p>Satisfies the <a href="sus-num-Rem.html"><code>Rem</code></a> concept for unsigned integers.</p>
 <p>This operation supports working with primitive unsigned integers that
 convert to the safe numeric, as well as enums.
 However enum class is excluded as they require an explicit conversion to an
 integer.</p>
+<h1><a name="panics" href="#panics">Panics</a></h1>
+<p>This operation will panic if <code>r</code> is 0.</p>
 
         </div>
       </div>
