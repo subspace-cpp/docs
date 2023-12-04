@@ -159,6 +159,9 @@
           <a class="sidebar-item" href="sus-num-u32.html#method.checked_neg">checked_neg</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-u32.html#method.checked_next_multiple_of">checked_next_multiple_of</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-u32.html#method.checked_next_power_of_two">checked_next_power_of_two</a>
         </li>
         <li>
@@ -186,6 +189,9 @@
           <a class="sidebar-item" href="sus-num-u32.html#method.count_zeros">count_zeros</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-u32.html#method.div_ceil">div_ceil</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-u32.html#method.div_euclid">div_euclid</a>
         </li>
         <li>
@@ -205,6 +211,9 @@
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-u32.html#method.log2">log2</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-u32.html#method.next_multiple_of">next_multiple_of</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-u32.html#method.next_power_of_two">next_power_of_two</a>
@@ -962,6 +971,24 @@ overflow occurred.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
+              <div class="function-signature"><a name="method.checked_next_multiple_of"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-u32.html#method.checked_next_multiple_of">checked_next_multiple_of</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a>&gt;</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Calculates the smallest value greater than or equal to itself that is a
+multiple of <code>rhs</code>. Returns <code>None</code> if <code>rhs</code> is zero or the operation would
+result in overflow.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>Basic usage:</p>
+<pre><code>sus::check<span class="punct">(</span><span class="punct">(</span>16_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>16u<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span><span class="punct">(</span>23_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>24u<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span><span class="punct">(</span>1_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>0u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span>u32::MAX<span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>2u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+</code></pre>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
               <div class="function-signature"><a name="method.checked_next_power_of_two"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-u32.html#method.checked_next_power_of_two">checked_next_power_of_two</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a>&gt;</div>
             </div>
           </div>
@@ -1053,6 +1080,22 @@ value.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
+              <div class="function-signature"><a name="method.div_ceil"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-u32.html#method.div_ceil">div_ceil</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Calculates the quotient of itself and <code>rhs</code>, rounding the result towards
+positive infinity.</p>
+<h1><a name="panics-2" href="#panics-2">Panics</a></h1>
+<p>This function will panic if <code>rhs</code> is zero.</p>
+<h1><a name="examples-1" href="#examples-1">Examples</a></h1>
+<p>Basic usage:</p>
+<pre><code>sus::check<span class="punct">(</span><span class="punct">(</span>7_u8<span class="punct">)</span><span class="punct">.</span>div_ceil<span class="punct">(</span>4u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 2u<span class="punct">)</span><span class="punct">;</span>
+</code></pre>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
               <div class="function-signature"><a name="method.div_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-u32.html#method.div_euclid">div_euclid</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a></div>
             </div>
           </div>
@@ -1060,7 +1103,7 @@ value.</p>
             <p>Performs Euclidean division.</p>
 <p>Since, for the positive integers, all common definitions of division are
 equal, this is exactly equal to <code>self / rhs</code>.</p>
-<h1><a name="panics-2" href="#panics-2">Panics</a></h1>
+<h1><a name="panics-3" href="#panics-3">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1105,7 +1148,7 @@ rounded down.</p>
 <a href="sus-num-u32.html#method.log2"><code>log2</code></a> can produce results more efficiently
 for base 2, and <a href="sus-num-u32.html#method.log10"><code>log10</code></a> can produce results
 more efficiently for base 10.</p>
-<h1><a name="panics-3" href="#panics-3">Panics</a></h1>
+<h1><a name="panics-4" href="#panics-4">Panics</a></h1>
 <p>When the number is zero, or if the base is not at least 2, the function will
 panic.</p>
 
@@ -1117,7 +1160,7 @@ panic.</p>
           </div>
           <div class="description long">
             <p>Returns the base 10 logarithm of the number, rounded down.</p>
-<h1><a name="panics-4" href="#panics-4">Panics</a></h1>
+<h1><a name="panics-5" href="#panics-5">Panics</a></h1>
 <p>When the number is zero the function will panic.</p>
 
           </div>
@@ -1128,8 +1171,28 @@ panic.</p>
           </div>
           <div class="description long">
             <p>Returns the base 2 logarithm of the number, rounded down.</p>
-<h1><a name="panics-5" href="#panics-5">Panics</a></h1>
+<h1><a name="panics-6" href="#panics-6">Panics</a></h1>
 <p>When the number is zero the function will panic.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><a name="method.next_multiple_of"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-u32.html#method.next_multiple_of">next_multiple_of</a>(<a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a> rhs) const& -&gt; <a class="type-name" href="sus-num-u32.html" title="sus::num::u32">u32</a></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Calculates the smallest value greater than or equal to itself that is a
+multiple of <code>rhs</code>.</p>
+<h1><a name="panics-7" href="#panics-7">Panics</a></h1>
+<p>This function will panic if <code>rhs</code> is zero.</p>
+<h2><a name="overflow-behavior" href="#overflow-behavior">Overflow behavior</a></h2>
+<p>On overflow, this function will panic if overflow checks are enabled (they
+are by default) and wrap if overflow checks are disabled (not the default).</p>
+<h1><a name="examples-2" href="#examples-2">Examples</a></h1>
+<p>Basic usage:</p>
+<pre><code>sus::check<span class="punct">(</span><span class="punct">(</span>16_u32<span class="punct">)</span><span class="punct">.</span>next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 16u<span class="punct">)</span><span class="punct">;</span>
+sus::check<span class="punct">(</span><span class="punct">(</span>23_u32<span class="punct">)</span><span class="punct">.</span>next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 24u<span class="punct">)</span><span class="punct">;</span>
+</code></pre>
 
           </div>
           <div class="overload-set item-name">
@@ -1139,7 +1202,7 @@ panic.</p>
           </div>
           <div class="description long">
             <p>Returns the smallest power of two greater than or equal to self.</p>
-<h1><a name="panics-6" href="#panics-6">Panics</a></h1>
+<h1><a name="panics-8" href="#panics-8">Panics</a></h1>
 <p>The function panics when the return value overflows (i.e.,
 <code>self &gt; (1 &lt;&lt; (N-1))</code> for type <code>uN</code>).</p>
 
@@ -1178,7 +1241,7 @@ wrapped value is returned.</p>
 <p>Returns a tuple of the divisor along with a boolean indicating whether an
 arithmetic overflow would occur. Note that for unsigned integers overflow
 never occurs, so the second value is always false.</p>
-<h1><a name="panics-7" href="#panics-7">Panics</a></h1>
+<h1><a name="panics-9" href="#panics-9">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1194,7 +1257,7 @@ arithmetic overflow would occur. Note that for unsigned integers overflow
 never occurs, so the second value is always false. Since, for the positive
 integers, all common definitions of division are equal, this is exactly
 equal to <code>self.overflowing_div(rhs)</code>.</p>
-<h1><a name="panics-8" href="#panics-8">Panics</a></h1>
+<h1><a name="panics-01" href="#panics-01">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1244,7 +1307,7 @@ an overflow happened.</p>
 indicating whether an arithmetic overflow would occur. Note that for
 unsigned integers overflow never occurs, so the second value is always
 false.</p>
-<h1><a name="panics-9" href="#panics-9">Panics</a></h1>
+<h1><a name="panics-11" href="#panics-11">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1260,7 +1323,7 @@ whether an arithmetic overflow would occur. Note that for unsigned integers
 overflow never occurs, so the second value is always false. Since, for the
 positive integers, all common definitions of division are equal, this
 operation is exactly equal to <code>self.overflowing_rem(rhs)</code>.</p>
-<h1><a name="panics-01" href="#panics-01">Panics</a></h1>
+<h1><a name="panics-21" href="#panics-21">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1321,7 +1384,7 @@ the wrapped value is returned.</p>
             <p>Calculates the least remainder of <code>self</code> (mod <code>rhs</code>).</p>
 <p>Since, for the positive integers, all common definitions of division are
 equal, this is exactly equal to <code>self % rhs</code>.</p>
-<h1><a name="panics-11" href="#panics-11">Panics</a></h1>
+<h1><a name="panics-31" href="#panics-31">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1388,7 +1451,7 @@ saturating at the numeric bounds instead of overflowing.</p>
 numeric bounds instead of overflowing. Note that for unsigned integers
 overflow never occurs, so the value will always be strictly the result of
 division.</p>
-<h1><a name="panics-21" href="#panics-21">Panics</a></h1>
+<h1><a name="panics-41" href="#panics-41">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1571,7 +1634,7 @@ wrapping around at the boundary of the type.</p>
 unsigned types is just normal division. There's no way wrapping could ever
 happen. This function exists, so that all operations are accounted for in
 the wrapping operations.</p>
-<h1><a name="panics-31" href="#panics-31">Panics</a></h1>
+<h1><a name="panics-51" href="#panics-51">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1587,7 +1650,7 @@ on unsigned types is just normal division.</p>
 operations are accounted for in the wrapping operations. Since, for the
 positive integers, all common definitions of division are equal, this is
 exactly equal to <code>self.wrapping_div(rhs)</code>.</p>
-<h1><a name="panics-41" href="#panics-41">Panics</a></h1>
+<h1><a name="panics-61" href="#panics-61">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1647,7 +1710,7 @@ return value is wrapped to 0.</p>
 calculation on unsigned types is just the regular remainder calculation.</p>
 <p>There's no way wrapping could ever happen. This function exists, so that
 all operations are accounted for in the wrapping operations.</p>
-<h1><a name="panics-51" href="#panics-51">Panics</a></h1>
+<h1><a name="panics-71" href="#panics-71">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
@@ -1663,7 +1726,7 @@ calculation on unsigned types is just the regular remainder calculation.</p>
 operations are accounted for in the wrapping operations. Since, for the
 positive integers, all common definitions of division are equal, this is
 exactly equal to <code>self.wrapping_rem(rhs)</code>.</p>
-<h1><a name="panics-61" href="#panics-61">Panics</a></h1>
+<h1><a name="panics-81" href="#panics-81">Panics</a></h1>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 
           </div>
