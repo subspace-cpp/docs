@@ -175,12 +175,12 @@ inner value. Like
 <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</code></a> are also
 available if preferred. However if doing this many times, consider doing
 <a href="sus-option-Option.html#method.unwrap"><code>unwrap</code></a> a single time up front.</p>
-<pre><code>sus::check<span class="punct">(</span>is_power<span class="punct">(</span>9001<span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;power!&quot;</span><span class="punct">)</span><span class="punct">;</span>
+<pre><code>sus_check<span class="punct">(</span>is_power<span class="punct">(</span>9001<span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;power!&quot;</span><span class="punct">)</span><span class="punct">;</span>
 
 <span class="keyword">if</span> <span class="punct">(</span>Option<span class="punct">&lt;</span>std::string<span class="punct">&gt;</span> lvalue <span class="punct">=</span> is_power<span class="punct">(</span>9001<span class="punct">)</span><span class="punct">;</span> lvalue<span class="punct">.</span>is_some<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span>
-  sus::check<span class="punct">(</span>lvalue<span class="punct">.</span>as_value<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;power!&quot;</span><span class="punct">)</span><span class="punct">;</span>
+  sus_check<span class="punct">(</span>lvalue<span class="punct">.</span>as_value<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;power!&quot;</span><span class="punct">)</span><span class="punct">;</span>
 
-sus::check<span class="punct">(</span>is_power<span class="punct">(</span>9000<span class="punct">)</span><span class="punct">.</span>unwrap_or<span class="punct">(</span><span class="string">&quot;unlucky&quot;</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;unlucky&quot;</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>is_power<span class="punct">(</span>9000<span class="punct">)</span><span class="punct">.</span>unwrap_or<span class="punct">(</span><span class="string">&quot;unlucky&quot;</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;unlucky&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p><a href="sus-option-Option.html"><code>Option&lt;const T&gt;</code></a> for non-reference-type <code>T</code>
 is disallowed, as the <a href="sus-option-Option.html"><code>Option</code></a>
@@ -539,7 +539,7 @@ Toward the end, or substitutes an error message if it receives <code>None</code>
               <span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
         <span class="punct">}</span><span class="punct">)</span>
         <span class="punct">.</span>collect<span class="punct">&lt;</span>Vec<span class="punct">&lt;</span>std::string<span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>res <span class="punct">=</span><span class="punct">=</span> sus::vec<span class="punct">(</span><span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;foo&quot;</span><span class="punct">,</span> <span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;bar&quot;</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>res <span class="punct">=</span><span class="punct">=</span> sus::vec<span class="punct">(</span><span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;foo&quot;</span><span class="punct">,</span> <span class="string">&quot;error!&quot;</span><span class="punct">,</span> <span class="string">&quot;bar&quot;</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <h1><a name="restrictions-on-returning-references" href="#restrictions-on-returning-references">Restrictions on returning references</a></h1>
 <p>Methods that return references are only callable on an rvalue

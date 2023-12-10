@@ -99,12 +99,11 @@ This ensures the
 correct overload is called on the object and that method pointers are
 called correctly. It is moved-from after calling, and it should only be
 called once.</p>
-<p>Calling a <code>FnOnce</code> multiple times may <a href="sus-assertions-fn.panic.html"><code>panic</code></a>
+<p>Calling a <code>FnOnce</code> multiple times may <a href="macro.sus_panic.html"><code>panic</code></a>
 or cause Undefined Behaviour.
 Not moving the <code>FnOnce</code> when calling it may fail to compile,
-<a href="sus-assertions-fn.panic.html"><code>panic</code></a>, or cause
-Undefined Behaviour depending on the type that is being used to satisfy
-<code>FnOnce</code>.</p>
+<a href="macro.sus_panic.html"><code>panic</code></a>, or cause Undefined Behaviour depending on the type
+that is being used to satisfy <code>FnOnce</code>.</p>
 <h1><a name="type-erasure" href="#type-erasure">Type erasure</a></h1>
 <p>Using a concept like <code>FnOnce</code> in a function parameter requires the function
 to be a template. Template functions can not be virtual, they must appear
@@ -136,7 +135,7 @@ i32 do_stuff_once<span class="punct">(</span>sus::fn::FnOnce<span class="punct">
 i32 x <span class="punct">=</span> do_stuff_once<span class="punct">(</span><span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>sus::Option<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> o<span class="punct">)</span> <span class="punct">-</span><span class="punct">&gt;</span> i32 <span class="punct">{</span>
   <span class="keyword">return</span> sus::move<span class="punct">(</span>o<span class="punct">)</span><span class="punct">.</span>unwrap_or_default<span class="punct">(</span><span class="punct">)</span> <span class="punct">+</span> 4<span class="punct">;</span>
 <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
- sus::check<span class="punct">(</span>x <span class="punct">=</span><span class="punct">=</span> 400 <span class="punct">+</span> 4<span class="punct">)</span><span class="punct">;</span>
+ sus_check<span class="punct">(</span>x <span class="punct">=</span><span class="punct">=</span> 400 <span class="punct">+</span> 4<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>A <code>FnOnce</code> whose first parameter is a class can be matched with a method
 from that same class if the remaining parameters match the method's
@@ -156,7 +155,7 @@ i32 map_class_once<span class="punct">(</span><span class="keyword">const</span>
 
 <span class="comment">// Map the class C to its value().</span>
 <span class="keyword">auto</span> c <span class="punct">=</span> Class<span class="punct">(</span>42<span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>map_class_once<span class="punct">(</span>c<span class="punct">,</span> <span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 42<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>map_class_once<span class="punct">(</span>c<span class="punct">,</span> <span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 42<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>Using a method pointer as the parameter for <code>Option::map()</code> will call that
 method on the object inside the Option:</p>
@@ -169,7 +168,7 @@ method on the object inside the Option:</p>
 <span class="punct">}</span><span class="punct">;</span>
 
 <span class="keyword">auto</span> o <span class="punct">=</span> sus::Option<span class="punct">&lt;</span>Class<span class="punct">&gt;</span><span class="punct">(</span>Class<span class="punct">(</span>42<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>o<span class="punct">.</span>map<span class="punct">(</span><span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>42<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>o<span class="punct">.</span>map<span class="punct">(</span><span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>42<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

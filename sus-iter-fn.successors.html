@@ -84,7 +84,7 @@ successor.</p>
 <h1><a name="example" href="#example">Example</a></h1>
 <pre><code><span class="keyword">auto</span> powers_of_10 <span class="punct">=</span> sus::iter::successors<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">(</span>
     sus::some<span class="punct">(</span>1_u16<span class="punct">)</span><span class="punct">,</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="keyword">const</span> u16<span class="punct">&amp;</span> n<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> n<span class="punct">.</span>checked_mul<span class="punct">(</span>10_u16<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>
+sus_check<span class="punct">(</span>
     sus::move<span class="punct">(</span>powers_of_10<span class="punct">)</span><span class="punct">.</span>collect<span class="punct">&lt;</span>Vec<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span>
     sus::Slice<span class="punct">&lt;</span>u16<span class="punct">&gt;</span>::from<span class="punct">(</span><span class="punct">{</span>1_u16<span class="punct">,</span> 10_u16<span class="punct">,</span> 100_u16<span class="punct">,</span> 1000_u16<span class="punct">,</span> 10000_u16<span class="punct">}</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>

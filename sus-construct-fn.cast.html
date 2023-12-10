@@ -126,7 +126,7 @@ becoming a large positive number, and truncates the high 32 bits, losing the
 original bits.</p>
 <pre><code class="language-cpp"><span class="comment">// SAFETY: We're intending to convert negative numbers into large positive</span>
 <span class="comment">// values for this example.</span>
-sus::check<span class="punct">(</span>u32::MAX <span class="punct">=</span><span class="punct">=</span> sus::cast<span class="punct">&lt;</span>u32<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">-</span>1_i64<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>u32::MAX <span class="punct">=</span><span class="punct">=</span> sus::cast<span class="punct">&lt;</span>u32<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">-</span>1_i64<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

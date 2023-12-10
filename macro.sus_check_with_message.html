@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::iter::empty - Subspace</title>
-  <meta property="og:title" content="sus::iter::empty - Subspace"></meta>
-  <meta name="description" content="Constructs an Empty iterator, which is an empty iterator that returns nothing."></meta>
-  <meta property="og:description" content="Constructs an Empty iterator, which is an empty iterator that returns nothing."></meta>
+  <title>sus_check_with_message - Subspace</title>
+  <meta property="og:title" content="sus_check_with_message - Subspace"></meta>
+  <meta name="description" content="Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."></meta>
+  <meta property="og:description" content="Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">empty</a>
+        <a href="#">sus_check_with_message</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      macro
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">empty</a>
+      <a href="#">sus_check_with_message</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,32 +48,31 @@
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="macro">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Macro
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-          <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">empty</a>
+          <a class="macro-name" href="#">sus_check_with_message</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">empty</a>() -&gt; <a class="type-name" href="sus-iter-Empty.html" title="sus::iter::Empty">Empty</a>&lt;Item&gt;</div>
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_check_with_message</a>(cond, msg)</div>
           </div>
         </div>
         <div class="description long">
-          <p>Constructs an <code>Empty</code> iterator, which is an empty iterator that returns
-nothing.</p>
-<h1><a name="example" href="#example">Example</a></h1>
-<pre><code><span class="keyword">auto</span> empty <span class="punct">=</span> sus::iter::empty<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus_check<span class="punct">(</span>empty<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>is_none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-</code></pre>
+          <p>Verifies that the input <code>cond</code>, evaluated to a <code>bool</code>, is true. Otherwise,
+it will <a href="macro.sus_panic.html"><code>panic</code></a>, printing a customized message, and
+terminating the program.</p>
+<p>Use <a href="macro.sus_check.html"><code>sus_check</code></a> when there's nothing useful to add
+in the message.</p>
+<p>The displayed output can be controlled by overriding the behaviour of
+<a href="macro.sus_panic.html"><code>sus_panic</code></a> as described there. If the
+<code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER</code> macro does not consume the <code>msg</code>,
+this macro will avoid instantiating it at all.</p>
 
         </div>
       </div>

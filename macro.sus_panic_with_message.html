@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::assertions::panic_with_message - Subspace</title>
-  <meta property="og:title" content="sus::assertions::panic_with_message - Subspace"></meta>
+  <title>sus_panic_with_message - Subspace</title>
+  <meta property="og:title" content="sus_panic_with_message - Subspace"></meta>
   <meta name="description" content="Terminate the program, after printing a message."></meta>
   <meta property="og:description" content="Terminate the program, after printing a message."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">panic_with_message</a>
+        <a href="#">sus_panic_with_message</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      macro
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">panic_with_message</a>
+      <a href="#">sus_panic_with_message</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,29 +48,19 @@
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="macro">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Macro
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
-          <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">panic_with_message</a>
+          <a class="macro-name" href="#">sus_panic_with_message</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">panic_with_message</a>(<span class="const">const</span> char* msg, <span class="const">const</span> std::source_location location) -&gt; void</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">panic_with_message</a>(std::string_view msg, <span class="const">const</span> std::source_location location) -&gt; void</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">panic_with_message</a>(<span class="const">const</span> std::string& msg, <span class="const">const</span> std::source_location location) -&gt; void</div>
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_panic_with_message</a>(msg)</div>
           </div>
         </div>
         <div class="description long">
@@ -80,7 +70,15 @@ function can be overridden by defining a <code>SUS_PROVIDE_PANIC_HANDLER()</code
 when compiling the library.</p>
 <p>The panic message will be printed to stderr before aborting. This behaviour
 can be overridden by defining a <code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER()</code>
-macro when compiling the library.</p>
+macro when compiling the library. The
+<code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER()</code> macro receives two arguments:</p>
+<ul>
+<li>A message, which is a <code>const char*</code>, a <code>std::string_view</code> or a
+<code>std::string</code>. Overloads should be used to handle each case.</li>
+<li>A <a href="sus-assertions-PanicLocation.html"><code>PanicLocation</code></a>.
+If the <code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER</code> macro does not consume the
+<code>msg</code>, this macro will avoid instantiating it at all.</li>
+</ul>
 
         </div>
       </div>

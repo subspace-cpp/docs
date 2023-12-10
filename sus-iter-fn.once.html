@@ -72,16 +72,16 @@
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>An iterator that returns a number once:</p>
 <pre><code><span class="keyword">auto</span> o <span class="punct">=</span> sus::iter::once<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">(</span>3_u16<span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>o<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>o<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>is_none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>o<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>o<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>is_none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>An iterator that returns a reference once:</p>
 <pre><code><span class="keyword">auto</span> u <span class="punct">=</span> 3_u16<span class="punct">;</span>
 <span class="keyword">auto</span> o <span class="punct">=</span> sus::iter::once<span class="punct">&lt;</span>u16<span class="punct">&amp;</span><span class="punct">&gt;</span><span class="punct">(</span>u<span class="punct">)</span><span class="punct">;</span>
 u16<span class="punct">&amp;</span> r <span class="punct">=</span> o<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>r <span class="punct">=</span><span class="punct">=</span> 3u<span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span><span class="punct">&amp;</span>r <span class="punct">=</span><span class="punct">=</span> <span class="punct">&amp;</span>u<span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>o<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>is_none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>r <span class="punct">=</span><span class="punct">=</span> 3u<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span><span class="punct">&amp;</span>r <span class="punct">=</span><span class="punct">=</span> <span class="punct">&amp;</span>u<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>o<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>is_none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

@@ -76,7 +76,7 @@
         <div class="description long">
           <p>Swaps the object array at <code>x</code> with the object array at <code>y</code>, where both
 arrays have a length of <code>count</code>.</p>
-<p>If <code>T</code> is trivially relocatable (<code>sus::mem::relocate_by_memcpy&lt;T&gt;</code> is true),
+<p>If <code>T</code> is trivially relocatable (<code>sus::mem::TriviallyRelocatable&lt;T&gt;</code> is true),
 then the swap may be done by memcpy() or equivalent to be more efficient.</p>
 <h1><a name="safety" href="#safety">Safety</a></h1>
 <p>To avoid Undefined Behaviour, the following must be met:</p>

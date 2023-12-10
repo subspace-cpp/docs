@@ -83,9 +83,9 @@ type and allow the caller the chance to handle the error condition.</p>
 will be the return type of this function.</p>
 <h1><a name="example" href="#example">Example</a></h1>
 <pre><code><span class="keyword">auto</span> valid <span class="punct">=</span> sus::try_into<span class="punct">&lt;</span>u8<span class="punct">&gt;</span><span class="punct">(</span>123_i32<span class="punct">)</span><span class="punct">.</span>unwrap_or_default<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>valid <span class="punct">=</span><span class="punct">=</span> 123<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>valid <span class="punct">=</span><span class="punct">=</span> 123<span class="punct">)</span><span class="punct">;</span>
 <span class="keyword">auto</span> invalid <span class="punct">=</span> sus::try_into<span class="punct">&lt;</span>u8<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">-</span>1_i32<span class="punct">)</span><span class="punct">.</span>unwrap_or_default<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>invalid <span class="punct">=</span><span class="punct">=</span> 0<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>invalid <span class="punct">=</span><span class="punct">=</span> 0<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

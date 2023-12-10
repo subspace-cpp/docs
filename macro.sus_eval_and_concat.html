@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::iter::empty - Subspace</title>
-  <meta property="og:title" content="sus::iter::empty - Subspace"></meta>
-  <meta name="description" content="Constructs an Empty iterator, which is an empty iterator that returns nothing."></meta>
-  <meta property="og:description" content="Constructs an Empty iterator, which is an empty iterator that returns nothing."></meta>
+  <title>sus_eval_and_concat - Subspace</title>
+  <meta property="og:title" content="sus_eval_and_concat - Subspace"></meta>
+  <meta name="description" content="Evaluates and concatenates two macro expressions."></meta>
+  <meta property="og:description" content="Evaluates and concatenates two macro expressions."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">empty</a>
+        <a href="#">sus_eval_and_concat</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      macro
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">empty</a>
+      <a href="#">sus_eval_and_concat</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,32 +48,24 @@
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="macro">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Macro
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-          <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">empty</a>
+          <a class="macro-name" href="#">sus_eval_and_concat</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="template">template &lt;class Item&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">empty</a>() -&gt; <a class="type-name" href="sus-iter-Empty.html" title="sus::iter::Empty">Empty</a>&lt;Item&gt;</div>
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_eval_and_concat</a>(x, y)</div>
           </div>
         </div>
         <div class="description long">
-          <p>Constructs an <code>Empty</code> iterator, which is an empty iterator that returns
-nothing.</p>
-<h1><a name="example" href="#example">Example</a></h1>
-<pre><code><span class="keyword">auto</span> empty <span class="punct">=</span> sus::iter::empty<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus_check<span class="punct">(</span>empty<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>is_none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-</code></pre>
+          <p>Evaluates and concatenates two macro expressions.</p>
+<p><code>x##y</code> will concatenate without evaluating.</p>
 
         </div>
       </div>

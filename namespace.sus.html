@@ -177,12 +177,6 @@
           <a class="sidebar-item" href="sus-construct-fn.cast.html">cast</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-assertions-fn.check.html">check</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.check_with_message.html">check_with_message</a>
-        </li>
-        <li>
           <a class="sidebar-item" href="sus-mem-fn.clone.html">clone</a>
         </li>
         <li>
@@ -216,12 +210,6 @@
           <a class="sidebar-item" href="sus-result-fn.ok.html">ok</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-assertions-fn.panic.html">panic</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.panic_with_message.html">panic_with_message</a>
-        </li>
-        <li>
           <a class="sidebar-item" href="sus-mem-fn.size_of.html">size_of</a>
         </li>
         <li>
@@ -232,12 +220,6 @@
         </li>
         <li>
           <a class="sidebar-item" href="sus-tuple_type-fn.tuple.html">tuple</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.unreachable.html">unreachable</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.unreachable_unchecked.html">unreachable_unchecked</a>
         </li>
         <li>
           <a class="sidebar-header" href="#aliases-variables">Variable Aliases</a>
@@ -276,8 +258,9 @@ some common things are promoted up to the <code>sus</code> namespace as aliases.
               <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
             </div>
             <div class="description short">
-              <p>Checking for (e.g. <a href="sus-assertions-fn.check.html"><code>check</code></a>) and handling
-(e.g. <a href="sus-assertions-fn.unreachable.html"><code>unreachable</code></a>) unexpected runtime
+              <p>Checking for (e.g. <a href="macro.sus_check.html"><code>sus_check</code></a>) and handling
+(e.g. <a href="macro.sus_panic.html"><code>sus_panic</code></a>,
+<a href="macro.sus_unreachable.html"><code>sus_unreachable</code></a>) unexpected runtime
 conditions.</p>
             </div>
           </li>
@@ -312,6 +295,13 @@ tools for <a href="sus-boxed-DynConcept.html">type-erasure of concepts</a>.</p>
             </div>
             <div class="description short">
               <p>Collection types.</p>
+            </div>
+          </li>
+          <li class="nested section-item">
+            <div class="item-name">
+              <a class="namespace-name" href="sus-collections-namespace.compat.html">compat</a>
+            </div>
+            <div class="description short">
             </div>
           </li>
           <li class="section-item">
@@ -626,20 +616,6 @@ but without Undefined Behaviour.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature"><a name="alias.check"></a><a class="type-name" href="sus-assertions-fn.check.html">check</a></div>
-            </div>
-            <div class="description short">
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.check_with_message"></a><a class="type-name" href="sus-assertions-fn.check_with_message.html">check_with_message</a></div>
-            </div>
-            <div class="description short">
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
               <div class="type-signature"><a name="alias.clone"></a><a class="type-name" href="sus-mem-fn.clone.html">clone</a></div>
             </div>
             <div class="description short">
@@ -734,22 +710,6 @@ value.</p>
           </li>
           <li class="section-item">
             <div class="item-name">
-              <div class="type-signature"><a name="alias.panic"></a><a class="type-name" href="sus-assertions-fn.panic.html">panic</a></div>
-            </div>
-            <div class="description short">
-              <p>Terminate the program.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.panic_with_message"></a><a class="type-name" href="sus-assertions-fn.panic_with_message.html">panic_with_message</a></div>
-            </div>
-            <div class="description short">
-              <p>Terminate the program, after printing a message.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
               <div class="type-signature"><a name="alias.size_of"></a><a class="type-name" href="sus-mem-fn.size_of.html">size_of</a></div>
             </div>
             <div class="description short">
@@ -779,25 +739,6 @@ value.</p>
             <div class="description short">
               <p>Used to construct a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> with the
 parameters as its values.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.unreachable"></a><a class="type-name" href="sus-assertions-fn.unreachable.html">unreachable</a></div>
-            </div>
-            <div class="description short">
-              <p>Indicates to the developer that the location should not be reached, and
-terminates the program with a <a href="sus-assertions-fn.panic.html"><code>panic</code></a>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.unreachable_unchecked"></a><a class="type-name" href="sus-assertions-fn.unreachable_unchecked.html">unreachable_unchecked</a></div>
-            </div>
-            <div class="description short">
-              <p>Indicates to the compiler that the location will never be reached, allowing
-it to optimize code generation accordingly. If this function is actually
-reached, Undefined Behaviour will occur.</p>
             </div>
           </li>
         </ul>

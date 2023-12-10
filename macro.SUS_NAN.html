@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::assertions::unreachable_unchecked - Subspace</title>
-  <meta property="og:title" content="sus::assertions::unreachable_unchecked - Subspace"></meta>
-  <meta name="description" content="Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."></meta>
-  <meta property="og:description" content="Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."></meta>
+  <title>SUS_NAN - Subspace</title>
+  <meta property="og:title" content="SUS_NAN - Subspace"></meta>
+  <meta name="description" content="A macro that replaces the NAN macro from the &lt;cmath&gt; header. Consider using f32::NAN instead."></meta>
+  <meta property="og:description" content="A macro that replaces the NAN macro from the &lt;cmath&gt; header. Consider using f32::NAN instead."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">unreachable_unchecked</a>
+        <a href="#">SUS_NAN</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      macro
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">unreachable_unchecked</a>
+      <a href="#">SUS_NAN</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,32 +48,24 @@
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="macro">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Macro
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
-          <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">unreachable_unchecked</a>
+          <a class="macro-name" href="#">SUS_NAN</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">unreachable_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) -&gt; void</div>
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">SUS_NAN</a></div>
           </div>
         </div>
         <div class="description long">
-          <p>Indicates to the compiler that the location will never be reached, allowing
-it to optimize code generation accordingly. If this function is actually
-reached, Undefined Behaviour will occur.</p>
-<p>This is similar to <a href="https://en.cppreference.com/w/cpp/utility/unreachable"><code>std::unreachable</code></a>.</p>
-<h1><a name="safety" href="#safety">Safety</a></h1>
-<p>This function must never actually be reached, or Undefined Behaviour occurs.</p>
+          <p>A macro that replaces the <code>NAN</code> macro from the <code>&lt;cmath&gt;</code> header. Consider
+using f32::NAN instead.</p>
 
         </div>
       </div>

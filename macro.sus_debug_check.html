@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::assertions::check_with_message - Subspace</title>
-  <meta property="og:title" content="sus::assertions::check_with_message - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
+  <title>sus_debug_check - Subspace</title>
+  <meta property="og:title" content="sus_debug_check - Subspace"></meta>
+  <meta name="description" content="Check a condition in debug builds, causing a sus_panic() if the condition fails. Nothing is checked in release builds."></meta>
+  <meta property="og:description" content="Check a condition in debug builds, causing a sus_panic() if the condition fails. Nothing is checked in release builds."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">check_with_message</a>
+        <a href="#">sus_debug_check</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      macro
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">check_with_message</a>
+      <a href="#">sus_debug_check</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,32 +48,28 @@
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="macro">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Macro
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
-          <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">check_with_message</a>
+          <a class="macro-name" href="#">sus_debug_check</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">check_with_message</a>(bool cond, <span class="const">const</span> char* msg, <span class="const">const</span> std::source_location location) -&gt; void</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">check_with_message</a>(bool cond, std::string_view msg, <span class="const">const</span> std::source_location location) -&gt; void</div>
-          </div>
-          <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">check_with_message</a>(bool cond, <span class="const">const</span> std::string& msg, <span class="const">const</span> std::source_location location) -&gt; void</div>
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_debug_check</a>(...)</div>
           </div>
         </div>
         <div class="description long">
+          <p>Check a condition in debug builds, causing a <code>sus_panic()</code> if the condition
+fails. Nothing is checked in release builds.</p>
+<p>The condition must not have side effects, and should not call any functions
+or methods (including operator methods), as it will often not have any
+effect in that case (especially in MSVC <a href="https://godbolt.org/z/7T7E3P598">https://godbolt.org/z/7T7E3P598</a>)</p>
+
         </div>
       </div>
     </div>

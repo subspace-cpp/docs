@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::assertions::unreachable - Subspace</title>
-  <meta property="og:title" content="sus::assertions::unreachable - Subspace"></meta>
+  <title>sus_unreachable - Subspace</title>
+  <meta property="og:title" content="sus_unreachable - Subspace"></meta>
   <meta name="description" content="Indicates to the developer that the location should not be reached, and terminates the program with a panic."></meta>
   <meta property="og:description" content="Indicates to the developer that the location should not be reached, and terminates the program with a panic."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">unreachable</a>
+        <a href="#">sus_unreachable</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      macro
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">unreachable</a>
+      <a href="#">sus_unreachable</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,37 +48,33 @@
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="macro">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Macro
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
-          <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">unreachable</a>
+          <a class="macro-name" href="#">sus_unreachable</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">unreachable</a>(<span class="const">const</span> std::source_location location) -&gt; void</div>
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_unreachable</a>()</div>
           </div>
         </div>
         <div class="description long">
           <p>Indicates to the developer that the location should not be reached, and
-terminates the program with a <a href="sus-assertions-fn.panic.html"><code>panic</code></a>.</p>
+terminates the program with a <a href="macro.sus_panic.html"><code>panic</code></a>.</p>
 <p>This is similar to <a href="https://doc.rust-lang.org/stable/std/macro.unreachable.html"><code>std::unreachable!</code></a> in Rust,
 and in the default build configuration will print an error message
 indicating the location where the panic occurred.</p>
 <p>Note that this is <em>not</em> the same as <a href="https://en.cppreference.com/w/cpp/utility/unreachable"><code>std::unreachable</code></a> in C++ which is
 Undefined Behaviour if reached. It is closer to <a href="https://en.cppreference.com/w/cpp/utility/program/abort"><code>std::abort</code></a> except built on
-top of <a href="sus-assertions-fn.panic.html"><code>panic</code></a>.
+top of <a href="macro.sus_panic.html"><code>sus_panic</code></a>.
 The Subspace library matches the safer behaviour of Rust to avoid confusion
 and security bugs when working across languages. Use
-<a href="sus-assertions-fn.unreachable_unchecked.html"><code>unreachable_unchecked</code></a> to
+<a href="macro.sus_unreachable_unchecked.html"><code>sus_unreachable_unchecked</code></a> to
 indicate to the compiler the code is not reachable.</p>
 
         </div>

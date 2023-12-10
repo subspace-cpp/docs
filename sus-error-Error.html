@@ -81,7 +81,7 @@ expectations for error values, i.e., values of type <code>E</code> in
 <p>Errors must describe themselves through a <code>display</code> method. Error messages
 are typically concise lowercase sentences without trailing punctuation:</p>
 <pre><code><span class="keyword">auto</span> err <span class="punct">=</span> u32::try_from<span class="punct">(</span><span class="punct">-</span>1<span class="punct">)</span><span class="punct">.</span>unwrap_err<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>fmt::to_string<span class="punct">(</span>err<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;out of bounds&quot;</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>fmt::to_string<span class="punct">(</span>err<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;out of bounds&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <h1><a name="implementing-error" href="#implementing-error">Implementing Error</a></h1>
 <p>To make an <a href="sus-error-Error.html"><code>Error</code></a> type, specialize <code>ErrorImpl&lt;T&gt;</code>
@@ -91,7 +91,7 @@ for the error type <code>T</code> and implement the required method:</p>
 describing the error. fmtlib support is provided for all error types
 through a blanket implementation that uses <code>display</code>. Error messages are
 typically concise lowercase sentences without trailing punctuation:<pre><code><span class="keyword">auto</span> err <span class="punct">=</span> u32::try_from<span class="punct">(</span><span class="punct">-</span>1<span class="punct">)</span><span class="punct">.</span>unwrap_err<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>fmt::to_string<span class="punct">(</span>err<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;out of bounds&quot;</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>fmt::to_string<span class="punct">(</span>err<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;out of bounds&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 </li>
 </ul>
@@ -192,7 +192,7 @@ avoids type erasure, using type composition instead.</p>
     <span class="keyword">switch</span> <span class="punct">(</span>self<span class="punct">)</span> <span class="punct">{</span>
       <span class="keyword">case</span> ErrorReason::SomeReason: <span class="keyword">return</span> <span class="string">&quot;we saw SomeReason happen&quot;</span><span class="punct">;</span>
     <span class="punct">}</span>
-    sus::unreachable<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+    sus_unreachable<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
   <span class="punct">}</span>
 <span class="punct">}</span><span class="punct">;</span>
 
@@ -222,9 +222,9 @@ it to return any error type:</p>
   <span class="keyword">return</span> sus::ok<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
 <span class="punct">}</span><span class="punct">;</span>
 
-sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span>20<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Err(we saw SomeReason happen)&quot;</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span><span class="punct">-</span>20<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Err(too low)&quot;</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span>0<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Ok(&lt;void&gt;)&quot;</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span>20<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Err(we saw SomeReason happen)&quot;</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span><span class="punct">-</span>20<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Err(too low)&quot;</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;{}&quot;</span><span class="punct">,</span> f<span class="punct">(</span>0<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Ok(&lt;void&gt;)&quot;</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>An example error that reports a <code>source</code>:</p>
 <pre><code><span class="keyword">struct</span> SuperErrorSideKick <span class="punct">{</span><span class="punct">}</span><span class="punct">;</span>
@@ -260,8 +260,8 @@ sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><sp
 
 <span class="keyword">if</span> <span class="punct">(</span><span class="keyword">auto</span> r <span class="punct">=</span> get_super_error<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span> r<span class="punct">.</span>is_err<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span> <span class="punct">{</span>
   <span class="keyword">auto</span><span class="punct">&amp;</span> e <span class="punct">=</span> r<span class="punct">.</span>as_err<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-  sus::check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;Error: {}&quot;</span><span class="punct">,</span> e<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Error: SuperError is here!&quot;</span><span class="punct">)</span><span class="punct">;</span>
-  sus::check<span class="punct">(</span>
+  sus_check<span class="punct">(</span>fmt::format<span class="punct">(</span><span class="string">&quot;Error: {}&quot;</span><span class="punct">,</span> e<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Error: SuperError is here!&quot;</span><span class="punct">)</span><span class="punct">;</span>
+  sus_check<span class="punct">(</span>
       fmt::format<span class="punct">(</span><span class="string">&quot;Caused by: {}&quot;</span><span class="punct">,</span> sus::error::error_source<span class="punct">(</span>e<span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span>
       <span class="punct">=</span><span class="punct">=</span> <span class="string">&quot;Caused by: SuperErrorSideKick is here!&quot;</span><span class="punct">)</span><span class="punct">;</span>
 <span class="punct">}</span>

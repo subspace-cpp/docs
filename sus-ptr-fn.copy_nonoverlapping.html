@@ -100,10 +100,10 @@ in an array, or was heap allocated, then this will always be satisfied.</li>
 <a href="sus-ptr-fn.copy_nonoverlapping.html"><code>copy_nonoverlapping</code></a> creates a bitwise
 copy of <code>T</code>,
 regardless of whether <code>T</code> is <a href="sus-mem-TrivialCopy.html"><code>TrivialCopy</code></a>
-or <a href="sus-mem-relocate_by_memcpy.html"><code>relocate_by_memcpy</code></a>. If <code>T</code>
+or <a href="sus-mem-TriviallyRelocatable.html"><code>TriviallyRelocatable</code></a>. If <code>T</code>
 is not <a href="sus-mem-TrivialCopy.html"><code>TrivialCopy</code></a>, using the value in
 <code>*dst</code> can violate memory safety.
-If <code>T</code> is not <a href="sus-mem-relocate_by_memcpy.html"><code>relocate_by_memcpy</code></a>,
+If <code>T</code> is not <a href="sus-mem-TriviallyRelocatable.html"><code>TriviallyRelocatable</code></a>,
 using both the values in <code>*src</code> and in <code>*dst</code> can violate memory safety.</p>
 <p>Note that even if the effectively copied size (<code>count * size_of&lt;T&gt;()</code>) is 0,
 the pointers must be non-null and properly aligned.</p>

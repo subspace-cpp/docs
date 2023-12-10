@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::assertions::panic - Subspace</title>
-  <meta property="og:title" content="sus::assertions::panic - Subspace"></meta>
-  <meta name="description" content="Terminate the program."></meta>
-  <meta property="og:description" content="Terminate the program."></meta>
+  <title>sus_check - Subspace</title>
+  <meta property="og:title" content="sus_check - Subspace"></meta>
+  <meta name="description" content="Verifies that the input, evaluated to a bool, is true. Otherwise, it will panic, printing a message and terminating the program."></meta>
+  <meta property="og:description" content="Verifies that the input, evaluated to a bool, is true. Otherwise, it will panic, printing a message and terminating the program."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">panic</a>
+        <a href="#">sus_check</a>
       </span>
     </span>
   </nav>
@@ -35,10 +35,10 @@
         <img class="sidebar-logo" src="logo.png"></img>
       </div></a>
     <div class="sidebar-pretitle sidebar-text">
-      function
+      macro
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">panic</a>
+      <a href="#">sus_check</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -48,39 +48,28 @@
     </div>
   </nav>
   <main>
-    <div class="function">
+    <div class="macro">
       <div class="section overview">
         <div class="section-header">
           <span>
-            Function
+            Macro
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
-          <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">panic</a>
+          <a class="macro-name" href="#">sus_check</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><span class="function-auto">auto</span> <a class="function-name" href="#">panic</a>(<span class="const">const</span> std::source_location location) -&gt; void</div>
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_check</a>(...)</div>
           </div>
         </div>
         <div class="description long">
-          <p>Terminate the program.</p>
-<p>The default behaviour of this function is to <code>__builtin_trap()</code> when
-possible and <code>abort() otherwise</code>. The behaviour of this function can be
-overridden by defining a <code>SUS_PROVIDE_PANIC_HANDLER()</code> macro when compiling
-the library.</p>
-<p>The panic message will be printed to stderr before aborting. This behaviour
-can be overridden by defining a <code>SUS_PROVIDE_PRINT_PANIC_LOCATION_HANDLER()</code>
-macro when compiling. The same handler must be used as when building the
-library itself. So if used as a shared library, it can not be modified by
-the calling code.</p>
-<h1><a name="safety" href="#safety">Safety</a></h1>
-<p>If <code>SUS_PROVIDE_PANIC_HANDLER()</code> is defined, the macro <em>must</em> not return or
-Undefined Behaviour will result.</p>
+          <p>Verifies that the input, evaluated to a <code>bool</code>, is true. Otherwise, it will
+<a href="macro.sus_panic.html"><code>panic</code></a>, printing a message and terminating the program.</p>
+<p>See <a href="macro.sus_check_with_message.html"><code>sus_check_with_message</code></a> to add a
+message to the display of the panic.</p>
+<p>The displayed output can be controlled by overriding the behaviour of
+<a href="macro.sus_panic.html"><code>sus_panic</code></a> as described there.</p>
 
         </div>
       </div>

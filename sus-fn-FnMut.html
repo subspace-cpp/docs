@@ -134,7 +134,7 @@ i32 x <span class="punct">=</span> do_stuff_mut<span class="punct">(</span><span
   i <span class="punct">+</span><span class="punct">=</span> 1<span class="punct">;</span>
   <span class="keyword">return</span> sus::move<span class="punct">(</span>o<span class="punct">)</span><span class="punct">.</span>unwrap_or_default<span class="punct">(</span><span class="punct">)</span> <span class="punct">+</span> i<span class="punct">;</span>
 <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>x <span class="punct">=</span><span class="punct">=</span> 401 <span class="punct">+</span> 102<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>x <span class="punct">=</span><span class="punct">=</span> 401 <span class="punct">+</span> 102<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>A <code>FnMut</code> whose first parameter is a class can be matched with a method from
 that same class if the remaining parameters match the method's signature:</p>
@@ -153,7 +153,7 @@ i32 map_class_mut<span class="punct">(</span><span class="keyword">const</span> 
 
 <span class="comment">// Map the class C to its value().</span>
 <span class="keyword">auto</span> c <span class="punct">=</span> Class<span class="punct">(</span>42<span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>map_class_mut<span class="punct">(</span>c<span class="punct">,</span> <span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 42<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>map_class_mut<span class="punct">(</span>c<span class="punct">,</span> <span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 42<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 <p>Using a method pointer as the parameter for <code>Option::map()</code> will call that
 method on the object inside the Option:</p>
@@ -166,7 +166,7 @@ method on the object inside the Option:</p>
 <span class="punct">}</span><span class="punct">;</span>
 
 <span class="keyword">auto</span> o <span class="punct">=</span> sus::Option<span class="punct">&lt;</span>Class<span class="punct">&gt;</span><span class="punct">(</span>Class<span class="punct">(</span>42<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>o<span class="punct">.</span>map<span class="punct">(</span><span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>42<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>o<span class="punct">.</span>map<span class="punct">(</span><span class="punct">&amp;</span>Class::value<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>42<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

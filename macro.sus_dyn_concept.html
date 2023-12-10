@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus_dyn_concept - Subspace</title>
+  <meta property="og:title" content="sus_dyn_concept - Subspace"></meta>
+  <meta name="description" content="Macro to help implement DynC for a concept C. The macro is placed in the body of the DynC class."></meta>
+  <meta property="og:description" content="Macro to help implement DynC for a concept C. The macro is placed in the body of the DynC class."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">sus_dyn_concept</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      macro
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">sus_dyn_concept</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="macro">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Macro
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="macro-name" href="#">sus_dyn_concept</a>
+        </div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_dyn_concept</a>(Concept, DynConcept, DynConceptTyped)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Macro to help implement <code>DynC</code> for a concept <code>C</code>. The macro is placed in the
+body of the <code>DynC</code> class.</p>
+<p>Here <code>DynC</code> is used as a placeholder name to refer to the virtual class
+that type-erases for the concept <code>C</code>. The type erasure class is typically
+named to match the concept, with a &quot;Dyn&quot; prefix. The type-aware subclass
+of the type erasure class is typically named to match the concept with a
+&quot;Dyn&quot; prefix and a &quot;Typed&quot; suffix.</p>
+<p>The <code>Concept</code> parameter is the concept <code>C</code> for which types are being
+type-erased.</p>
+<p>The <code>DynConcept</code> parameter is the name of the type-erasure
+class <code>DynC</code> which the macro is written within, and which has a pure virtual
+interface matching the concept's requirements.</p>
+<p>The <code>DynConceptTyped</code>
+parameter is the type-aware subclass of <code>DynC</code> which contains the
+<code>sus_dyn_concept_typed</code> macro in its body, and the
+implementation of the virtual interface that forwards calls through to the
+concrete type.</p>
+<p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
+concept-satisfying types, and <a href="sus-boxed-DynConcept.html#examples">DynConcept examples</a> for examples of using the macro.</p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

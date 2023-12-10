@@ -154,7 +154,7 @@ after without panicking.</p>
 <pre><code><span class="keyword">auto</span> a <span class="punct">=</span> sus::Array<span class="punct">&lt;</span>i32<span class="punct">,</span> 2<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">,</span> i32::MAX<span class="punct">)</span><span class="punct">;</span>
 <span class="keyword">auto</span> maybe_answer <span class="punct">=</span>
     a<span class="punct">.</span>iter<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>copied<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>product<span class="punct">&lt;</span>sus::num::OverflowInteger<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span><span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>maybe_answer<span class="punct">.</span>is_overflow<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>maybe_answer<span class="punct">.</span>is_overflow<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

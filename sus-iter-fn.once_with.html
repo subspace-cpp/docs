@@ -85,7 +85,7 @@ which works on iterators, but you only need to process one value.</p>
 <p>Unlike <code>once()</code>, this function will lazily generate the value on request.</p>
 <h1><a name="example" href="#example">Example</a></h1>
 <pre><code><span class="keyword">auto</span> ow <span class="punct">=</span> sus::iter::once_with<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">[</span><span class="punct">]</span><span class="punct">(</span><span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> 3_u16<span class="punct">;</span> <span class="punct">}</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>ow<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>ow<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
         </div>

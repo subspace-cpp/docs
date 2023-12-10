@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus_choice_types - Subspace</title>
+  <meta property="og:title" content="sus_choice_types - Subspace"></meta>
+  <meta name="description" content="Construct a set of associated value and types pairings. The type of the values need have no relationship to the specified types."></meta>
+  <meta property="og:description" content="Construct a set of associated value and types pairings. The type of the values need have no relationship to the specified types."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">sus_choice_types</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      macro
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">sus_choice_types</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="macro">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Macro
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="macro-name" href="#">sus_choice_types</a>
+        </div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_choice_types</a>(...)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Construct a set of associated value and types pairings. The type of the
+values need have no relationship to the specified types.</p>
+<p>The input takes the format: <code>(Value1, Type1A, Type1B), (Value2, Type2), ...</code>
+The output is the sequence <code>TypeList&lt;Tuple&lt;Type1A, Type1B&gt;, Tuple&lt;Type2&gt;, ...&gt;, Value1, Value2, ...</code>.///
+Use <code>sus::macros::value_types::TypeAt&lt;I, Types&lt;...&gt;&gt;</code> to extract each tuple
+type from the returned set of types.</p>
+<p>The number of values that follow will always be the same as the number of
+types in the set. This is the primary value of the <code>sus_choice_types()</code>
+construct.</p>
+<h1><a name="example" href="#example">Example</a></h1>
+<pre><code><span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> Types<span class="punct">,</span> <span class="keyword">auto</span> FirstValue<span class="punct">,</span> <span class="keyword">auto</span><span class="punct">.</span><span class="punct">.</span><span class="punct">.</span> Values<span class="punct">&gt;</span>
+<span class="keyword">class</span> Example <span class="punct">{</span>
+  <span class="keyword">using</span> first_type <span class="punct">=</span> v<span class="punct">&lt;</span>0<span class="punct">,</span> Types<span class="punct">&gt;</span><span class="punct">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> first_value <span class="punct">=</span> FirstValue<span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
+
+<span class="keyword">using</span> E <span class="punct">=</span> Example<span class="punct">&lt;</span>sus_choice_types<span class="punct">(</span><span class="punct">(</span><span class="char">'h'</span><span class="punct">,</span> i32<span class="punct">)</span><span class="punct">,</span> <span class="punct">(</span><span class="char">'w'</span><span class="punct">,</span> f32<span class="punct">)</span><span class="punct">)</span><span class="punct">&gt;</span><span class="punct">;</span>
+<span class="comment">// `E::first_value` will be `'h'` of type `char`.</span>
+<span class="comment">// `E::first_type` will be `Tuple&lt;i32&gt;`.</span>
+</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

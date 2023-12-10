@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="generator" content="subdoc"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta property="og:type" content="website"></meta>
+  <meta property="og:site_name" content="Subspace"></meta>
+  <title>sus_class_trivially_relocatable_if - Subspace</title>
+  <meta property="og:title" content="sus_class_trivially_relocatable_if - Subspace"></meta>
+  <meta name="description" content="Mark a class as trivially relocatable based on a compile-time condition."></meta>
+  <meta property="og:description" content="Mark a class as trivially relocatable based on a compile-time condition."></meta>
+  <link rel="stylesheet" href="subdoc-test-style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/png" href="logo32.png">
+  <link rel="alternate icon" type="image/png" href="logo16.png">
+  <meta property="og:image" content="logo.png"></meta>
+</head>
+
+<body>
+  <nav class="topbar">
+    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+      ☰
+    </button>
+    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+        <img class="topbar-logo" src="logo.png"></img>
+      </div></a>
+    <span class="topbar-text-area">
+      <span class="topbar-title">
+        <a href="#">sus_class_trivially_relocatable_if</a>
+      </span>
+    </span>
+  </nav>
+  <nav class="sidebar">
+    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+        <img class="sidebar-logo" src="logo.png"></img>
+      </div></a>
+    <div class="sidebar-pretitle sidebar-text">
+      macro
+    </div>
+    <div class="sidebar-title sidebar-text">
+      <a href="#">sus_class_trivially_relocatable_if</a>
+    </div>
+    <div class="sidebar-subtitle sidebar-text">
+    </div>
+    <div class="sidebar-links sidebar-text">
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="macro">
+      <div class="section overview">
+        <div class="section-header">
+          <span>
+            Macro
+          </span>
+          <a class="project-name" href="index.html">Subspace</a>
+          <span class="namespace-dots">::</span>
+          <a class="macro-name" href="#">sus_class_trivially_relocatable_if</a>
+        </div>
+        <div class="overload-set">
+          <div class="overload">
+            <div class="macro-signature"><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_class_trivially_relocatable_if</a>(unsafe_fn, is_trivially_reloc)</div>
+          </div>
+        </div>
+        <div class="description long">
+          <p>Mark a class as trivially relocatable based on a compile-time condition.</p>
+<p>This macro is most useful in templates where the condition is based on the
+template parameters.</p>
+<p>Avoid marking the class with the <code>[[clang::trivial_abi]]</code> attribute, as when
+the class is not trivially relocatable (the value is false), it can cause
+memory safety bugs and Undefined Behaviour.</p>
+<p>Use the <a href="sus-mem-TriviallyRelocatable.html"><code>TriviallyRelocatable</code></a> concept to
+determine if a type is trivially relocatable, and to test with static_assert
+that types are matching what you are expecting. This allows containers to
+optimize their implementations when relocating the type in memory.</p>
+<table>
+<thead>
+<tr>
+<th>Macro</th>
+<th>Style</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="macro.sus_class_trivially_relocatable.html"><code>sus_class_trivially_relocatable</code></a></td>
+<td><strong>asserts</strong> all param types are trivially relocatable</td>
+</tr>
+<tr>
+<td><a href="macro.sus_class_trivially_relocatable_if_types.html"><code>sus_class_trivially_relocatable_if_types</code></a></td>
+<td>is <strong>conditionally</strong> trivially relocatable if all param types are</td>
+</tr>
+<tr>
+<td><a href="macro.sus_class_trivially_relocatable_if.html"><code>sus_class_trivially_relocatable_if</code></a></td>
+<td>is <strong>conditionally</strong> trivially relocatable if the condition is true</td>
+</tr>
+<tr>
+<td><a href="macro.sus_class_trivially_relocatable_unchecked.html"><code>sus_class_trivially_relocatable_unchecked</code></a></td>
+<td>is trivially relocatable without any condition or assertion</td>
+</tr>
+</tbody>
+</table>
+<h1><a name="example" href="#example">Example</a></h1>
+<pre><code><span class="keyword">template</span> <span class="punct">&lt;</span><span class="keyword">class</span> T<span class="punct">&gt;</span>
+<span class="keyword">struct</span> S <span class="punct">{</span>
+  Thing<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> thing<span class="punct">;</span>
+  i32 more<span class="punct">;</span>
+
+  sus_class_trivially_relocatable_if<span class="punct">(</span>
+      unsafe_fn<span class="punct">,</span>
+      SomeCondition<span class="punct">&lt;</span>Thing<span class="punct">&lt;</span>T<span class="punct">&gt;</span><span class="punct">&gt;</span>
+      <span class="punct">&amp;</span><span class="punct">&amp;</span> sus::mem::TriviallyRelocatable<span class="punct">&lt;</span><span class="keyword">decltype</span><span class="punct">(</span>thing<span class="punct">)</span><span class="punct">&gt;</span>
+      <span class="punct">&amp;</span><span class="punct">&amp;</span> sus::mem::TriviallyRelocatable<span class="punct">&lt;</span><span class="keyword">decltype</span><span class="punct">(</span>more<span class="punct">)</span><span class="punct">&gt;</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span><span class="punct">;</span>
+</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

@@ -158,6 +158,69 @@
         <li>
           <a class="sidebar-item" href="sus-namespace.marker.html#variable.unsafe_fn">unsafe_fn</a>
         </li>
+        <li>
+          <a class="sidebar-header" href="#macros">Macros</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.SUS_INFINITY.html">SUS_INFINITY</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.SUS_NAN.html">SUS_NAN</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_check.html">sus_check</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_check_with_message.html">sus_check_with_message</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_choice_types.html">sus_choice_types</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_class_never_value_field.html">sus_class_never_value_field</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_class_trivially_relocatable.html">sus_class_trivially_relocatable</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_class_trivially_relocatable_if.html">sus_class_trivially_relocatable_if</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_class_trivially_relocatable_if_types.html">sus_class_trivially_relocatable_if_types</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_class_trivially_relocatable_unchecked.html">sus_class_trivially_relocatable_unchecked</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_debug_check.html">sus_debug_check</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_dyn_concept.html">sus_dyn_concept</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_dyn_concept_typed.html">sus_dyn_concept_typed</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_eval_and_concat.html">sus_eval_and_concat</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_eval_macro.html">sus_eval_macro</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_panic.html">sus_panic</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_panic_with_message.html">sus_panic_with_message</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_remove_parens.html">sus_remove_parens</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_unreachable.html">sus_unreachable</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="macro.sus_unreachable_unchecked.html">sus_unreachable_unchecked</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -199,8 +262,9 @@ you wrote.</p>
               <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
             </div>
             <div class="description short">
-              <p>Checking for (e.g. <a href="sus-assertions-fn.check.html"><code>check</code></a>) and handling
-(e.g. <a href="sus-assertions-fn.unreachable.html"><code>unreachable</code></a>) unexpected runtime
+              <p>Checking for (e.g. <a href="macro.sus_check.html"><code>sus_check</code></a>) and handling
+(e.g. <a href="macro.sus_panic.html"><code>sus_panic</code></a>,
+<a href="macro.sus_unreachable.html"><code>sus_unreachable</code></a>) unexpected runtime
 conditions.</p>
             </div>
           </li>
@@ -646,6 +710,231 @@ type-deduction constructor functions.</p>
             <div class="description short">
               <p>The global <a href="sus-marker-UnsafeFnMarker.html"><code>UnsafeFnMarker</code></a> which can be
 passed to unsafe functions. See the <a href="sus-marker-UnsafeFnMarker.html"><code>UnsafeFnMarker</code></a> type for an explanation.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="section macros">
+        <div class="section-header">
+          <a name="macros" href="#macros">Macros</a>
+        </div>
+        <ul class="section-items item-table">
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.SUS_INFINITY.html">SUS_INFINITY</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A macro that replaces the <code>INFINITY</code> macro from the <code>&lt;cmath&gt;</code> header.
+Consider using f32::INFINITY instead.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.SUS_NAN.html">SUS_NAN</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A macro that replaces the <code>NAN</code> macro from the <code>&lt;cmath&gt;</code> header. Consider
+using f32::NAN instead.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_check.html">sus_check</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Verifies that the input, evaluated to a <code>bool</code>, is true. Otherwise, it will
+<a href="macro.sus_panic.html"><code>panic</code></a>, printing a message and terminating the program.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_check_with_message.html">sus_check_with_message</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Verifies that the input <code>cond</code>, evaluated to a <code>bool</code>, is true. Otherwise,
+it will <a href="macro.sus_panic.html"><code>panic</code></a>, printing a customized message, and
+terminating the program.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_choice_types.html">sus_choice_types</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Construct a set of associated value and types pairings. The type of the
+values need have no relationship to the specified types.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_class_never_value_field.html">sus_class_never_value_field</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Mark a class field as never being a specific value, often a zero, after a
+constructor has run and before the destructor has completed. This allows
+querying if a class is constructed in a memory location, since the class is
+constructed iff the value of the field is not the never-value.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_class_trivially_relocatable.html">sus_class_trivially_relocatable</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Mark a class as unconditionally trivially relocatable while also asserting
+that all of the types passed as arguments are also marked as such.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_class_trivially_relocatable_if.html">sus_class_trivially_relocatable_if</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Mark a class as trivially relocatable based on a compile-time condition.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_class_trivially_relocatable_if_types.html">sus_class_trivially_relocatable_if_types</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Mark a class as trivially relocatable if the types passed as arguments are
+all trivially relocatable.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_class_trivially_relocatable_unchecked.html">sus_class_trivially_relocatable_unchecked</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Mark a class as unconditionally trivially relocatable, without any
+additional assertion to help verify correctness.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_debug_check.html">sus_debug_check</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Check a condition in debug builds, causing a <code>sus_panic()</code> if the condition
+fails. Nothing is checked in release builds.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_dyn_concept.html">sus_dyn_concept</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Macro to help implement <code>DynC</code> for a concept <code>C</code>. The macro is placed in the
+body of the <code>DynC</code> class.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_dyn_concept_typed.html">sus_dyn_concept_typed</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Macro to help implement <code>DynCTyped</code> for a concept <code>C</code>. The macro is placed
+in the body of the <code>DynCTyped</code> class.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_eval_and_concat.html">sus_eval_and_concat</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Evaluates and concatenates two macro expressions.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_eval_macro.html">sus_eval_macro</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>A macro that runs a macro against any arguments.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_panic.html">sus_panic</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Terminate the program.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_panic_with_message.html">sus_panic_with_message</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Terminate the program, after printing a message.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_remove_parens.html">sus_remove_parens</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Remove parentheses around one or more arguments, if they are present.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_unreachable.html">sus_unreachable</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Indicates to the developer that the location should not be reached, and
+terminates the program with a <a href="macro.sus_panic.html"><code>panic</code></a>.</p>
+            </div>
+          </li>
+          <li class="section-item">
+            <div class="overload-set item-name">
+              <div class="overload">
+                <div class="macro-signature"> <a class="macro-name" href="macro.sus_unreachable_unchecked.html">sus_unreachable_unchecked</a></div>
+              </div>
+            </div>
+            <div class="description short">
+              <p>Indicates to the compiler that the location will never be reached, allowing
+it to optimize code generation accordingly. If this function is actually
+reached, Undefined Behaviour will occur.</p>
             </div>
           </li>
         </ul>

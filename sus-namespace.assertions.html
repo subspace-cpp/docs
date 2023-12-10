@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus::assertions - Subspace</title>
   <meta property="og:title" content="sus::assertions - Subspace"></meta>
-  <meta name="description" content="Checking for (e.g. check) and handling (e.g. unreachable) unexpected runtime conditions."></meta>
-  <meta property="og:description" content="Checking for (e.g. check) and handling (e.g. unreachable) unexpected runtime conditions."></meta>
+  <meta name="description" content="Checking for (e.g. sus_check) and handling (e.g. sus_panic, sus_unreachable) unexpected runtime conditions."></meta>
+  <meta property="og:description" content="Checking for (e.g. sus_check) and handling (e.g. sus_panic, sus_unreachable) unexpected runtime conditions."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -45,25 +45,10 @@
     <div class="sidebar-links sidebar-text">
       <ul>
         <li>
-          <a class="sidebar-header" href="#functions">Functions</a>
+          <a class="sidebar-header" href="#classes">Classes</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-assertions-fn.check.html">check</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.check_with_message.html">check_with_message</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.panic.html">panic</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.panic_with_message.html">panic_with_message</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.unreachable.html">unreachable</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-assertions-fn.unreachable_unchecked.html">unreachable_unchecked</a>
+          <a class="sidebar-item" href="sus-assertions-PanicLocation.html">PanicLocation</a>
         </li>
       </ul>
     </div>
@@ -82,76 +67,24 @@
           <a class="namespace-name" href="#">assertions</a>
         </div>
         <div class="description long">
-          <p>Checking for (e.g. <a href="sus-assertions-fn.check.html"><code>check</code></a>) and handling
-(e.g. <a href="sus-assertions-fn.unreachable.html"><code>unreachable</code></a>) unexpected runtime
+          <p>Checking for (e.g. <a href="macro.sus_check.html"><code>sus_check</code></a>) and handling
+(e.g. <a href="macro.sus_panic.html"><code>sus_panic</code></a>,
+<a href="macro.sus_unreachable.html"><code>sus_unreachable</code></a>) unexpected runtime
 conditions.</p>
 
         </div>
       </div>
-      <div class="section functions">
+      <div class="section records classes">
         <div class="section-header">
-          <a name="functions" href="#functions">Functions</a>
+          <a name="classes" href="#classes">Classes</a>
         </div>
         <ul class="section-items item-table">
           <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-assertions-fn.check.html">check</a></div>
-              </div>
+            <div class="item-name">
+              <div class="type-signature"><a class="type-name" href="sus-assertions-PanicLocation.html">PanicLocation</a></div>
             </div>
             <div class="description short">
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-assertions-fn.check_with_message.html">check_with_message</a></div>
-              </div>
-            </div>
-            <div class="description short">
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-assertions-fn.panic.html">panic</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Terminate the program.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-assertions-fn.panic_with_message.html">panic_with_message</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Terminate the program, after printing a message.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-assertions-fn.unreachable.html">unreachable</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Indicates to the developer that the location should not be reached, and
-terminates the program with a <a href="sus-assertions-fn.panic.html"><code>panic</code></a>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-assertions-fn.unreachable_unchecked.html">unreachable_unchecked</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Indicates to the compiler that the location will never be reached, allowing
-it to optimize code generation accordingly. If this function is actually
-reached, Undefined Behaviour will occur.</p>
+              <p>Records the location where a panic occured.</p>
             </div>
           </li>
         </ul>

@@ -933,10 +933,10 @@ multiple of <code>rhs</code>. Returns <code>None</code> if <code>rhs</code> is z
 result in overflow.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>Basic usage:</p>
-<pre><code>sus::check<span class="punct">(</span><span class="punct">(</span>16_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>16u<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span><span class="punct">(</span>23_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>24u<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span><span class="punct">(</span>1_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>0u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span>u32::MAX<span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>2u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+<pre><code>sus_check<span class="punct">(</span><span class="punct">(</span>16_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>16u<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span><span class="punct">(</span>23_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::some<span class="punct">(</span>24u<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span><span class="punct">(</span>1_u32<span class="punct">)</span><span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>0u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>u32::MAX<span class="punct">.</span>checked_next_multiple_of<span class="punct">(</span>2u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> sus::none<span class="punct">(</span><span class="punct">)</span><span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
           </div>
@@ -1043,7 +1043,7 @@ positive infinity.</p>
 <p>This function will panic if <code>rhs</code> is 0.</p>
 <h1><a name="examples-1" href="#examples-1">Examples</a></h1>
 <p>Basic usage:</p>
-<pre><code>sus::check<span class="punct">(</span><span class="punct">(</span>7_u8<span class="punct">)</span><span class="punct">.</span>div_ceil<span class="punct">(</span>4u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 2u<span class="punct">)</span><span class="punct">;</span>
+<pre><code>sus_check<span class="punct">(</span><span class="punct">(</span>7_u8<span class="punct">)</span><span class="punct">.</span>div_ceil<span class="punct">(</span>4u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 2u<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
           </div>
@@ -1143,8 +1143,8 @@ multiple of <code>rhs</code>.</p>
 are by default) and wrap if overflow checks are disabled (not the default).</p>
 <h1><a name="examples-2" href="#examples-2">Examples</a></h1>
 <p>Basic usage:</p>
-<pre><code>sus::check<span class="punct">(</span><span class="punct">(</span>16_u32<span class="punct">)</span><span class="punct">.</span>next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 16u<span class="punct">)</span><span class="punct">;</span>
-sus::check<span class="punct">(</span><span class="punct">(</span>23_u32<span class="punct">)</span><span class="punct">.</span>next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 24u<span class="punct">)</span><span class="punct">;</span>
+<pre><code>sus_check<span class="punct">(</span><span class="punct">(</span>16_u32<span class="punct">)</span><span class="punct">.</span>next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 16u<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span><span class="punct">(</span>23_u32<span class="punct">)</span><span class="punct">.</span>next_multiple_of<span class="punct">(</span>8u<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 24u<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
           </div>
