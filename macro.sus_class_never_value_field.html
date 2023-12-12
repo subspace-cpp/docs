@@ -60,7 +60,7 @@
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="macro-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/mem/never_value.h#L149">source</a></div><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_class_never_value_field</a>(unsafe_fn, T, field_name, never_value, destroy_value)</div>
+            <div class="macro-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/mem/never_value.h#L151">source</a></div><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_class_never_value_field</a>(unsafe_fn, T, field_name, never_value, destroy_value)</div>
           </div>
         </div>
         <div class="description long">
@@ -68,11 +68,11 @@
 constructor has run and before the destructor has completed. This allows
 querying if a class is constructed in a memory location, since the class is
 constructed iff the value of the field is not the never-value.</p>
-<p>The <code>never_value</code> will be placed in the named field after construction, and
-the <code>destroy_value</code> will be placed in the named field just prior to
-destruction. The latter is meant to help the destructor be a no-op when the
-type is in a never-value state, if the never-value would be read in the
-destructor.</p>
+<p>The named field can be compared to the <code>never_value</code> to determine if the
+object is constructed. The field must be set to the <code>destroy_value</code> just
+prior to destruction. The latter is meant to help the destructor be a no-op
+when the type is in a never-value state, if the never-value would be read in
+the destructor.</p>
 <p>The macro includes <code>private:</code> which changes the class definition visibility
 to private.</p>
 

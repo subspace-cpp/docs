@@ -425,7 +425,7 @@ value out of the option when the option may be used again afterward.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1886">source</a></div><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(std::optional&lt;U&gt;&& s)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1897">source</a></div><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(std::optional&lt;U&gt;&& s)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -434,7 +434,7 @@ value out of the option when the option may be used again afterward.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1886">source</a></div><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(<span class="const">const</span> std::optional&lt;U&gt;& s)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1897">source</a></div><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(<span class="const">const</span> std::optional&lt;U&gt;& s)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -976,10 +976,10 @@ which doesn’t update the value if the option already contains <code>Some</code
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2266">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() && -&gt; sus::option::OptionIter&lt;T&gt;</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2277">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() && -&gt; sus::option::OptionIter&lt;T&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2266">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() const& -&gt; sus::option::OptionIter&lt;T&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2277">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() const& -&gt; sus::option::OptionIter&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -988,6 +988,11 @@ which doesn’t update the value if the option already contains <code>Some</code
             </div>
           </div>
           <div class="description long">
+            <p>Produces an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> over the single item in the
+<code>Option</code>, or an empty iterator. If the Option holds a value, the iterator
+will return ownership of the value. If the <code>Option</code> holds a reference, it
+will return that reference.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -1018,10 +1023,10 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2229">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2240">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2229">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() && -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2240">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() && -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1029,7 +1034,7 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2229">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2240">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1038,13 +1043,17 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
             </div>
           </div>
           <div class="description long">
+            <p>Produces an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> over the single item in the
+<code>Option</code>, or an empty iterator. The iterator will return a const
+reference.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2249">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() & -&gt; sus::option::OptionIter&lt;T&&gt;</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2260">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() & -&gt; sus::option::OptionIter&lt;T&&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2249">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() && -&gt; sus::option::OptionIter&lt;T&&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2260">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() && -&gt; sus::option::OptionIter&lt;T&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1052,7 +1061,7 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2249">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() const& -&gt; sus::option::OptionIter&lt;T&&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2260">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() const& -&gt; sus::option::OptionIter&lt;T&&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1061,6 +1070,11 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
             </div>
           </div>
           <div class="description long">
+            <p>Produces an <a href="sus-iter-Iterator.html"><code>Iterator</code></a> over the single item in the
+<code>Option</code>, or an empty iterator. If the <code>Option</code> holds a value, the
+iterator will return a mutable reference to it. If the <code>Option</code> holds a
+reference, it will return that reference.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -1519,7 +1533,7 @@ a tagged union between &quot;some value&quot; and &quot;no value&quot;.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1907">source</a></div><a name="method.operator optional.convert.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1918">source</a></div><a name="method.operator optional.convert.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1527,7 +1541,7 @@ a tagged union between &quot;some value&quot; and &quot;no value&quot;.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1907">source</a></div><a name="method.operator optional.convert.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() &&<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1918">source</a></div><a name="method.operator optional.convert.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() &&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1542,7 +1556,7 @@ a tagged union between &quot;some value&quot; and &quot;no value&quot;.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1928">source</a></div><a name="method.operator optional.convert.optional"></a><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1939">source</a></div><a name="method.operator optional.convert.optional"></a><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -1554,7 +1568,7 @@ a tagged union between &quot;some value&quot; and &quot;no value&quot;.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1942">source</a></div><a name="method.operator optional.convert.optional"></a><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1953">source</a></div><a name="method.operator optional.convert.optional"></a><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
