@@ -66,7 +66,31 @@
           <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
+          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedenumclass">i32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.signedenumclass">i32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.signedenum">i32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.signedint.primitive">i32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedint.primitive">i32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.signedint.typed">i32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedenum">i32</a>
+        </li>
+        <li>
           <a class="sidebar-item" href="sus-num-i32.html#method.i32">i32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedint.typed">i32</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-i32.html#method.from.from.signed">from</a>
@@ -529,73 +553,7 @@
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>()</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><div class="template">template &lt;class S&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(S v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Signed&lt;S&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;S&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveInteger&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveEnum&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveEnumClass&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(U v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveEnum&lt;P&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>(P v)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L153">source</a></div><a name="method.i32.signedint.ctor.unsignedenumclass"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedenumclass">i32</a>(P v)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -605,6 +563,157 @@
             </div>
           </div>
           <div class="description long">
+            <p>Construction from unsigned enum class types where no bits are lost.</p>
+<p>For conversions from types with a larger range use
+<a href="sus-num-i32.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy conversions
+use the <a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i32&gt;(x)</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L104">source</a></div><a name="method.i32.signedint.ctor.signedenumclass"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.signedenumclass">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveEnumClass&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from signed enum class types where no bits are lost.</p>
+<p>For conversions from types with a larger range use
+<a href="sus-num-i32.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i32&gt;(x)</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L92">source</a></div><a name="method.i32.signedint.ctor.signedenum"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.signedenum">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveEnum&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from signed enum types where no bits are lost.</p>
+<p>For conversions from types with a larger range use
+<a href="sus-num-i32.html#method.try_from.signed.enum"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i32&gt;(x)</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L80">source</a></div><a name="method.i32.signedint.ctor.signedint.primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.signedint.primitive">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::SignedPrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from signed primitive types where no bits are lost.</p>
+<p>For conversions from types with a larger range use
+<a href="sus-num-i32.html#method.try_from.signed.primitive"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i32&gt;(x)</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L129">source</a></div><a name="method.i32.signedint.ctor.unsignedint.primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedint.primitive">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveInteger&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from unsigned primitive types where no bits are lost.</p>
+<p>For conversions from types with a larger range use
+<a href="sus-num-i32.html#method.try_from.unsigned.primitive"><code>try_from</code></a>. For lossy conversions use
+the <a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i32&gt;(x)</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L68">source</a></div><a name="method.i32.signedint.ctor.signedint.typed"></a><div class="template">template &lt;class S&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.signedint.typed">i32</a>(S v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Signed&lt;S&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;S&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from signed types where no bits are lost.</p>
+<p>For conversions from types with a larger range use
+<a href="sus-num-i32.html#method.try_from.signed"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i32&gt;(x)</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L141">source</a></div><a name="method.i32.signedint.ctor.unsignedenum"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedenum">i32</a>(P v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::UnsignedPrimitiveEnum&lt;P&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;P&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from unsigned enum types where no bits are lost.</p>
+<p>For conversions from types with a larger range use
+<a href="sus-num-i32.html#method.try_from.unsigned.enum"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i32&gt;(x)</code></a>.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L56">source</a></div><a name="method.i32"></a><a class="function-name" href="sus-num-i32.html#method.i32">i32</a>()</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Default constructor, which sets the integer to 0.</p>
+<p>Satisfies the <a href="sus-construct-Default.html"><code>Default</code></a> concept.</p>
+<p>The trivial copy and move constructors are implicitly declared, as is the
+trivial destructor.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/signed_integer_methods.inc#L117">source</a></div><a name="method.i32.signedint.ctor.unsignedint.typed"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-i32.html#method.i32.signedint.ctor.unsignedint.typed">i32</a>(U v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Unsigned&lt;U&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() &lt; ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from unsigned types where no bits are lost.</p>
+<p>For conversions from types with a larger range use
+<a href="sus-num-i32.html#method.try_from.unsigned"><code>try_from</code></a>. For lossy conversions use the
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept with
+<a href="sus-construct-fn.cast.html"><code>sus::cast&lt;i32&gt;(x)</code></a>.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">

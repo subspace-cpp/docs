@@ -99,7 +99,13 @@
           <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-f32.html#method.f32">f32</a>
+          <a class="sidebar-item" href="sus-num-f32.html#method.f32.ctor.from_primitive">f32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.f32.ctor.from_float">f32</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-f32.html#method.f32.ctor.default">f32</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-f32.html#method.from.from.float">from</a>
@@ -547,19 +553,7 @@ evaluation context from a runtime context, leading to bugs.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L129">source</a></div><a name="method.f32"></a><a class="function-name" href="sus-num-f32.html#method.f32">f32</a>()</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L129">source</a></div><a name="method.f32"></a><div class="template">template &lt;class F&gt;</div><a class="function-name" href="sus-num-f32.html#method.f32">f32</a>(F v)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Float&lt;F&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L129">source</a></div><a name="method.f32"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-f32.html#method.f32">f32</a>(P v)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L143">source</a></div><a name="method.f32.ctor.from_primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-f32.html#method.f32.ctor.from_primitive">f32</a>(P v)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -569,6 +563,33 @@ evaluation context from a runtime context, leading to bugs.</p>
             </div>
           </div>
           <div class="description long">
+            <p>Construction from primitive types where no bits are lost.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L136">source</a></div><a name="method.f32.ctor.from_float"></a><div class="template">template &lt;class F&gt;</div><a class="function-name" href="sus-num-f32.html#method.f32.ctor.from_float">f32</a>(F v)<div class="requires">
+                  <span class="requires-keyword keyword">
+                    requires
+                  </span>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Float&lt;F&gt;</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;F&gt;() &lt;= ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
+                </div></div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from floating point types where no bits are lost.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L129">source</a></div><a name="method.f32.ctor.default"></a><a class="function-name" href="sus-num-f32.html#method.f32.ctor.default">f32</a>()</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Default constructor, which sets the value to 0.</p>
+<p>Satisfies the <a href="sus-construct-Default.html"><code>Default</code></a> concept.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">

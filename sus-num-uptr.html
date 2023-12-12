@@ -69,7 +69,19 @@
           <a class="sidebar-header" href="#static-methods">Static Methods</a>
         </li>
         <li>
-          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr">uptr</a>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized">uptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr">uptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.unsigned.pointer">uptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.default">uptr</a>
+        </li>
+        <li>
+          <a class="sidebar-item" href="sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized.primitive">uptr</a>
         </li>
         <li>
           <a class="sidebar-item" href="sus-num-uptr.html#method.from.uptr.from.pointer">from</a>
@@ -514,16 +526,7 @@ value for the integer type.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L73">source</a></div><a name="method.uptr"></a><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>()</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L73">source</a></div><a name="method.uptr"></a><div class="template">template &lt;class T&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>(T* v)</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L73">source</a></div><a name="method.uptr"></a><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>(std::same_as&lt;std::nullptr_t&gt; auto)</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L73">source</a></div><a name="method.uptr"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>(U v)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L105">source</a></div><a name="method.uptr.ctor.unsigned.ptrsized"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized">uptr</a>(U v)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -531,8 +534,48 @@ value for the integer type.</p>
                   <div class="requires-constraint"><pre class="requires-constraint-line">::sus::mem::size_of&lt;U&gt;() == ::sus::mem::size_of&lt;_primitive&gt;()</pre></div>
                 </div></div>
             </div>
+          </div>
+          <div class="description long">
+            <p>Construction from unsigned types of the same size as a pointer.</p>
+<p>The construction of a <code>uptr</code> from an integer must be explicit, unlike for
+other integer types.</p>
+
+          </div>
+          <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L73">source</a></div><a name="method.uptr"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr">uptr</a>(P v)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L94">source</a></div><a name="method.uptr.ctor.unsigned.nullptr"></a><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr">uptr</a>(std::same_as&lt;std::nullptr_t&gt; auto)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from a null pointer.</p>
+<p>This produces the same value as the default constructor.</p>
+<h1><a name="implementation-notes" href="#implementation-notes">Implementation notes</a></h1>
+<p>The function receives std::same_as&lt;nullptr_t&gt; to avoid implicit conversions
+from integer types on some compilers (like GCC 13).</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L81">source</a></div><a name="method.uptr.ctor.unsigned.pointer"></a><div class="template">template &lt;class T&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.pointer">uptr</a>(T* v)</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Construction from a pointer.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L73">source</a></div><a name="method.uptr.ctor.default"></a><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.default">uptr</a>()</div>
+            </div>
+          </div>
+          <div class="description long">
+            <p>Default constructor, which sets the integer to 0.</p>
+<p>Satisfies the <a href="sus-construct-Default.html"><code>Default</code></a> concept.</p>
+
+          </div>
+          <div class="overload-set item-name">
+            <div class="overload">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/unsigned_integer_methods.inc#L116">source</a></div><a name="method.uptr.ctor.unsigned.ptrsized.primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized.primitive">uptr</a>(P v)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -542,6 +585,10 @@ value for the integer type.</p>
             </div>
           </div>
           <div class="description long">
+            <p>Construction from unsigned primitive types the same size as a pointer.</p>
+<p>The construction of a <code>uptr</code> from a primitive integer must be explicit,
+unlike for other integer types.</p>
+
           </div>
           <div class="overload-set item-name">
             <div class="overload">
@@ -2160,7 +2207,7 @@ behaviour.</p>
           <div class="description long">
             <p>Assignment from a null pointer.</p>
 <p>This sets the <code>uptr</code> to the same value as the default constructor.</p>
-<h1><a name="implementation-notes" href="#implementation-notes">Implementation notes</a></h1>
+<h1><a name="implementation-notes-1" href="#implementation-notes-1">Implementation notes</a></h1>
 <p>The function receives std::same_as&lt;nullptr_t&gt; to avoid implicit conversions
 from integer types on some compilers (like GCC 13).</p>
 
