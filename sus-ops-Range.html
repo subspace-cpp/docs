@@ -110,7 +110,7 @@
           <span class="namespace-dots">::</span>
           <a class="type-name" href="#">Range</a>
         </div>
-        <div class="type-signature"><pre class="template">template &lt;class T&gt;</pre><span class="class">
+        <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#153">source</a></div><pre class="template">template &lt;class T&gt;</pre><span class="class">
             class
           </span><span class="type-name">
             Range
@@ -139,7 +139,7 @@ empty if <code>start &gt;= end</code>.</p>
         </div>
         <div class="section-items">
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.SusUnsafeTrivialRelocate"></a><span class="static">static</span> <span class="const">const</span> bool <a class="field-name" href="sus-ops-Range.html#field.SusUnsafeTrivialRelocate">SusUnsafeTrivialRelocate</a></div>
+            <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/mem/relocate.h#221">source</a></div><a name="field.SusUnsafeTrivialRelocate"></a><span class="static">static</span> <span class="const">const</span> bool <a class="field-name" href="sus-ops-Range.html#field.SusUnsafeTrivialRelocate">SusUnsafeTrivialRelocate</a></div>
             <div class="description long">
             </div>
           </div>
@@ -152,7 +152,7 @@ empty if <code>start &gt;= end</code>.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Range"></a><a class="function-name" href="sus-ops-Range.html#method.Range">Range</a>()<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#166">source</a></div><a name="method.Range"></a><a class="function-name" href="sus-ops-Range.html#method.Range">Range</a>()<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -160,7 +160,7 @@ empty if <code>start &gt;= end</code>.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Range"></a><a class="function-name" href="sus-ops-Range.html#method.Range">Range</a>(T start, T finish)</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#166">source</a></div><a name="method.Range"></a><a class="function-name" href="sus-ops-Range.html#method.Range">Range</a>(T start, T finish)</div>
             </div>
           </div>
           <div class="description long">
@@ -174,7 +174,7 @@ empty if <code>start &gt;= end</code>.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.contains"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.contains">contains</a>(<span class="const">const</span> T& item) const -&gt; bool</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#175">source</a></div><a name="method.contains"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.contains">contains</a>(<span class="const">const</span> T& item) const -&gt; bool</div>
             </div>
           </div>
           <div class="description long">
@@ -183,7 +183,7 @@ empty if <code>start &gt;= end</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.end_at"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.end_at">end_at</a>(T t) const& -&gt; <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#210">source</a></div><a name="method.end_at"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.end_at">end_at</a>(T t) const& -&gt; <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -191,7 +191,7 @@ empty if <code>start &gt;= end</code>.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.end_at"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.end_at">end_at</a>(T t) && -&gt; <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#210">source</a></div><a name="method.end_at"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.end_at">end_at</a>(T t) && -&gt; <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -201,10 +201,10 @@ empty if <code>start &gt;= end</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.end_bound"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.end_bound">end_bound</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#188">source</a></div><a name="method.end_bound"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.end_bound">end_bound</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.end_bound"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.end_bound">end_bound</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#188">source</a></div><a name="method.end_bound"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.end_bound">end_bound</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
                   deleted
                 </div></div>
             </div>
@@ -216,7 +216,7 @@ empty if <code>start &gt;= end</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.is_empty"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.is_empty">is_empty</a>() const -&gt; bool</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#196">source</a></div><a name="method.is_empty"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.is_empty">is_empty</a>() const -&gt; bool</div>
             </div>
           </div>
           <div class="description long">
@@ -226,7 +226,7 @@ empty if <code>start &gt;= end</code>.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.start_at"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.start_at">start_at</a>(T t) const& -&gt; <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#200">source</a></div><a name="method.start_at"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.start_at">start_at</a>(T t) const& -&gt; <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -234,7 +234,7 @@ empty if <code>start &gt;= end</code>.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.start_at"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.start_at">start_at</a>(T t) && -&gt; <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#200">source</a></div><a name="method.start_at"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.start_at">start_at</a>(T t) && -&gt; <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;</div>
             </div>
           </div>
           <div class="description long">
@@ -244,10 +244,10 @@ did.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.start_bound"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.start_bound">start_bound</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#181">source</a></div><a name="method.start_bound"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.start_bound">start_bound</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.start_bound"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.start_bound">start_bound</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#181">source</a></div><a name="method.start_bound"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.start_bound">start_bound</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
                   deleted
                 </div></div>
             </div>
@@ -266,7 +266,7 @@ did.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator=="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;& rhs) const -&gt; bool<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#221">source</a></div><a name="method.operator=="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-ops-Range.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-ops-Range.html" title="sus::ops::Range">Range</a>&lt;T&gt;& rhs) const -&gt; bool<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -287,14 +287,14 @@ concept if <code>T</code> satisfies <a href="sus-cmp-Eq.html"><code>Eq</code></a
         </div>
         <div class="section-items">
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.finish"></a>T <a class="field-name" href="sus-ops-Range.html#field.finish">finish</a></div>
+            <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#164">source</a></div><a name="field.finish"></a>T <a class="field-name" href="sus-ops-Range.html#field.finish">finish</a></div>
             <div class="description long">
               <p>The end of the range, exclusive of the given value.</p>
 
             </div>
           </div>
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.start"></a>T <a class="field-name" href="sus-ops-Range.html#field.start">start</a></div>
+            <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range.h#159">source</a></div><a name="field.start"></a>T <a class="field-name" href="sus-ops-Range.html#field.start">start</a></div>
             <div class="description long">
               <p>The beginning of the range, inclusive of the given value.</p>
 

@@ -116,7 +116,7 @@
           <span class="namespace-dots">::</span>
           <a class="type-name" href="#">StepBy</a>
         </div>
-        <div class="type-signature"><pre class="template">template &lt;class InnerSizedIter&gt;</pre><span class="class">
+        <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#31">source</a></div><pre class="template">template &lt;class InnerSizedIter&gt;</pre><span class="class">
             class
           </span><span class="type-name">
             StepBy
@@ -137,7 +137,7 @@
         </div>
         <div class="section-items">
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.SusUnsafeTrivialRelocate"></a><span class="static">static</span> <span class="const">const</span> bool <a class="field-name" href="sus-iter-StepBy.html#field.SusUnsafeTrivialRelocate">SusUnsafeTrivialRelocate</a></div>
+            <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/mem/relocate.h#221">source</a></div><a name="field.SusUnsafeTrivialRelocate"></a><span class="static">static</span> <span class="const">const</span> bool <a class="field-name" href="sus-iter-StepBy.html#field.SusUnsafeTrivialRelocate">SusUnsafeTrivialRelocate</a></div>
             <div class="description long">
             </div>
           </div>
@@ -150,13 +150,13 @@
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(<a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;&&)</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#38">source</a></div><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(<a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;&&)</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(sus::usize step, InnerSizedIter&& next_iter)</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#38">source</a></div><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(sus::usize step, InnerSizedIter&& next_iter)</div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(sus::iter::StepBy::Clone, sus::usize step, InnerSizedIter&& next_iter, bool first_take)</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#38">source</a></div><a name="method.StepBy"></a><a class="function-name" href="sus-iter-StepBy.html#method.StepBy">StepBy</a>(sus::iter::StepBy::Clone, sus::usize step, InnerSizedIter&& next_iter, bool first_take)</div>
             </div>
           </div>
           <div class="description long">
@@ -170,7 +170,7 @@
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#42">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -182,7 +182,7 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.exact_size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; sus::usize<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#99">source</a></div><a name="method.exact_size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; sus::usize<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -194,14 +194,14 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next">next</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::StepBy::Item&gt;</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#49">source</a></div><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next">next</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::StepBy::Item&gt;</div>
             </div>
           </div>
           <div class="description long">
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next_back">next_back</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::StepBy::Item&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#83">source</a></div><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next_back">next_back</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::StepBy::Item&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -214,7 +214,7 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.next_back_index"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next_back_index">next_back_index</a>() const -&gt; sus::usize<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#119">source</a></div><a name="method.next_back_index"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.next_back_index">next_back_index</a>() const -&gt; sus::usize<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -226,7 +226,7 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" href="sus-iter-SizeHint.html" title="sus::iter::SizeHint">SizeHint</a></div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#63">source</a></div><a name="method.size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" href="sus-iter-SizeHint.html" title="sus::iter::SizeHint">SizeHint</a></div>
             </div>
           </div>
           <div class="description long">
@@ -235,7 +235,7 @@
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.trusted_len"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.trusted_len">trusted_len</a>() const -&gt; sus::iter::__private::TrustedLenMarker<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#106">source</a></div><a name="method.trusted_len"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.trusted_len">trusted_len</a>() const -&gt; sus::iter::__private::TrustedLenMarker<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -256,7 +256,7 @@
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.operator=">operator=</a>(<a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;&&) -&gt; <a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;&</div>
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#39">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-StepBy.html#method.operator=">operator=</a>(<a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;&&) -&gt; <a class="type-name" href="sus-iter-StepBy.html" title="sus::iter::StepBy">StepBy</a>&lt;InnerIter&gt;&</div>
             </div>
           </div>
           <div class="description long">
@@ -269,17 +269,17 @@
         </div>
         <div class="section-items">
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.first_take_"></a>bool <a class="field-name" href="sus-iter-StepBy.html#field.first_take_">first_take_</a></div>
+            <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#146">source</a></div><a name="field.first_take_"></a>bool <a class="field-name" href="sus-iter-StepBy.html#field.first_take_">first_take_</a></div>
             <div class="description long">
             </div>
           </div>
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.next_iter_"></a>InnerSizedIter <a class="field-name" href="sus-iter-StepBy.html#field.next_iter_">next_iter_</a></div>
+            <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#145">source</a></div><a name="field.next_iter_"></a>InnerSizedIter <a class="field-name" href="sus-iter-StepBy.html#field.next_iter_">next_iter_</a></div>
             <div class="description long">
             </div>
           </div>
           <div class="section-item">
-            <div class="item-name member-signature"><a name="field.step_"></a>sus::usize <a class="field-name" href="sus-iter-StepBy.html#field.step_">step_</a></div>
+            <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/step_by.h#144">source</a></div><a name="field.step_"></a>sus::usize <a class="field-name" href="sus-iter-StepBy.html#field.step_">step_</a></div>
             <div class="description long">
             </div>
           </div>

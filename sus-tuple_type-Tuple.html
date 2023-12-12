@@ -101,7 +101,7 @@
           <span class="namespace-dots">::</span>
           <a class="type-name" href="#">Tuple</a>
         </div>
-        <div class="type-signature"><pre class="template">template &lt;class T, class... Ts&gt;</pre><span class="class">
+        <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#104">source</a></div><pre class="template">template &lt;class T, class... Ts&gt;</pre><span class="class">
             class
           </span><span class="type-name">
             Tuple
@@ -164,7 +164,7 @@ Tuple's externally usable tail padding.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Tuple.ctor.default"></a><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.default">Tuple</a>()<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#112">source</a></div><a name="method.Tuple.ctor.default"></a><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.default">Tuple</a>()<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -173,7 +173,7 @@ Tuple's externally usable tail padding.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Tuple.ctor.default"></a><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.default">Tuple</a>()<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#112">source</a></div><a name="method.Tuple.ctor.default"></a><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.default">Tuple</a>()<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -190,7 +190,7 @@ constructed through that trait.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Tuple.ctor.values"></a><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.values">Tuple</a>(U&& first, Us&&... more)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#148">source</a></div><a name="method.Tuple.ctor.values"></a><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.values">Tuple</a>(U&& first, Us&&... more)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -216,7 +216,7 @@ convert to a reference without constructing a temporary, use an unsafe
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.Tuple.ctor.convert"></a><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.convert">Tuple</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& tuple)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#186">source</a></div><a name="method.Tuple.ctor.convert"></a><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.convert">Tuple</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& tuple)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -226,7 +226,7 @@ convert to a reference without constructing a temporary, use an unsafe
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.Tuple.ctor.convert"></a><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.convert">Tuple</a>(<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;&& tuple)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#186">source</a></div><a name="method.Tuple.ctor.convert"></a><div class="template">template &lt;class U, class... Us&gt;</div><a class="function-name" href="sus-tuple_type-Tuple.html#method.Tuple.ctor.convert">Tuple</a>(<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;&& tuple)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -250,7 +250,7 @@ and <code>Z'</code> can be converted to <code>X</code>, <code>Y</code>, and <cod
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.at"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.at">at</a>() const& -&gt; <span class="const">const</span> auto&<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#226">source</a></div><a name="method.at"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.at">at</a>() const& -&gt; <span class="const">const</span> auto&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -258,7 +258,7 @@ and <code>Z'</code> can be converted to <code>X</code>, <code>Y</code>, and <cod
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.at"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.at">at</a>() && -&gt; <span class="const">const</span> auto&<div class="deleted">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#226">source</a></div><a name="method.at"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.at">at</a>() && -&gt; <span class="const">const</span> auto&<div class="deleted">
                   deleted
                 </div></div>
             </div>
@@ -269,7 +269,7 @@ and <code>Z'</code> can be converted to <code>X</code>, <code>Y</code>, and <cod
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.at_mut"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.at_mut">at_mut</a>() & -&gt; auto&<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#236">source</a></div><a name="method.at_mut"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.at_mut">at_mut</a>() & -&gt; auto&<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -283,7 +283,7 @@ and <code>Z'</code> can be converted to <code>X</code>, <code>Y</code>, and <cod
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#164">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -298,7 +298,7 @@ and <code>Z'</code> can be converted to <code>X</code>, <code>Y</code>, and <cod
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.extend"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.extend">extend</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;&gt; auto&& ii) -&gt; void<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#358">source</a></div><a name="method.extend"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.extend">extend</a>(<a class="type-name" href="sus-iter-IntoIterator.html" title="sus::iter::IntoIterator">IntoIterator</a>&lt;<a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;&gt; auto&& ii) -&gt; void<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -324,7 +324,7 @@ explicitly specified by the caller, such as:</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.into_inner"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.into_inner">into_inner</a>() && -&gt; decltype(auto)<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#244">source</a></div><a name="method.into_inner"></a><div class="template">template &lt;size_t I&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.into_inner">into_inner</a>() && -&gt; decltype(auto)<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -346,7 +346,7 @@ moved-from state where it should no longer be used.</p>
         <div class="section-items">
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; std::strong_ordering<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#279">source</a></div><a name="method.operator&lt;=&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; std::strong_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -354,7 +354,7 @@ moved-from state where it should no longer be used.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; std::strong_ordering<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#279">source</a></div><a name="method.operator&lt;=&gt;"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; std::strong_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -363,7 +363,7 @@ moved-from state where it should no longer be used.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; std::weak_ordering<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#279">source</a></div><a name="method.operator&lt;=&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; std::weak_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -372,7 +372,7 @@ moved-from state where it should no longer be used.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; std::weak_ordering<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#279">source</a></div><a name="method.operator&lt;=&gt;"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; std::weak_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -382,7 +382,7 @@ moved-from state where it should no longer be used.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; std::partial_ordering<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#279">source</a></div><a name="method.operator&lt;=&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; std::partial_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -391,7 +391,7 @@ moved-from state where it should no longer be used.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator&lt;=&gt;"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; std::partial_ordering<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#279">source</a></div><a name="method.operator&lt;=&gt;"></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator&lt;=&gt;">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; std::partial_ordering<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -412,7 +412,7 @@ Tuple for comparison.</p>
           </div>
           <div class="overload-set item-name">
             <div class="overload">
-              <div class="function-signature"><a name="method.operator=="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; bool<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#255">source</a></div><a name="method.operator=="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) const& -&gt; bool<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
@@ -420,7 +420,7 @@ Tuple for comparison.</p>
                 </div></div>
             </div>
             <div class="overload">
-              <div class="function-signature"><a name="method.operator=="></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; bool<div class="requires">
+              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#255">source</a></div><a name="method.operator=="></a><div class="template">template &lt;class U, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-tuple_type-Tuple.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;U, Us...&gt;& r) const& -&gt; bool<div class="requires">
                   <span class="requires-keyword keyword">
                     requires
                   </span>
