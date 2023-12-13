@@ -71,19 +71,16 @@
                 <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;Item&gt;</pre></div>
               </div></div>
           </div>
-          <div class="overload">
-            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/repeat.h#L50">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">repeat</a>(sus::iter::Repeat::Item item) -&gt; <a class="type-name" href="sus-iter-Repeat.html" title="sus::iter::Repeat">Repeat</a>&lt;sus::iter::Repeat::Item&gt;</div>
-          </div>
         </div>
         <div class="description long">
           <p>Creates a new iterator that endlessly repeats a single element.</p>
-<p>The <code>repeat()</code> function repeats a single value over and over again.</p>
-<p>Infinite iterators like <code>repeat()</code> are often used with adapters like
+<p>The <code>repeat</code> function repeats a single value over and over again.
+Infinite iterators like <code>repeat</code> are often used with adapters like
 <a href="sus-iter-IteratorBase.html#method.take"><code>Iterator::take()</code></a>, in order to make them
 finite.</p>
-<p>If the element type of the iterator you need does not implement <code>Clone</code>, or
-if you do not want to keep the repeated element in memory, you can instead
-use the <code>repeat_with()</code> function.</p>
+<p>If the element type of the iterator you need does not implement <a href="sus-mem-Clone.html"><code>Clone</code></a>, or if you do not want to keep the repeated element in
+memory, you can instead use the <a href="sus-iter-fn.repeat_with.html"><code>repeat_with</code></a>
+function.</p>
 <h1><a name="example" href="#example">Example</a></h1>
 <pre><code><span class="keyword">auto</span> r <span class="punct">=</span> sus::iter::repeat<span class="punct">&lt;</span>u16<span class="punct">&gt;</span><span class="punct">(</span>3u<span class="punct">)</span><span class="punct">;</span>
 sus_check<span class="punct">(</span>r<span class="punct">.</span>next<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3_u16<span class="punct">)</span><span class="punct">;</span>
