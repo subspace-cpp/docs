@@ -7,8 +7,8 @@
   <meta property="og:site_name" content="Subspace"></meta>
   <title>sus_choice_types - Subspace</title>
   <meta property="og:title" content="sus_choice_types - Subspace"></meta>
-  <meta name="description" content="Construct a set of associated value and types pairings. The type of the values need have no relationship to the specified types."></meta>
-  <meta property="og:description" content="Construct a set of associated value and types pairings. The type of the values need have no relationship to the specified types."></meta>
+  <meta name="description" content="A macro used to declare the value-type pairings in a Choice. See the Choice type for examples of its use."></meta>
+  <meta property="og:description" content="A macro used to declare the value-type pairings in a Choice. See the Choice type for examples of its use."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -60,12 +60,14 @@
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="macro-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice_types.h#L52">source</a></div><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_choice_types</a>(...)</div>
+            <div class="macro-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice_types.h#L57">source</a></div><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_choice_types</a>(...)</div>
           </div>
         </div>
         <div class="description long">
-          <p>Construct a set of associated value and types pairings. The type of the
+          <p>A macro used to declare the value-type pairings in a <a href="sus-choice_type-Choice.html"><code>Choice</code></a>. See the <a href="sus-choice_type-Choice.html"><code>Choice</code></a> type for examples of its use.</p>
+<p>Constructs a set of associated value and types pairings. The type of the
 values need have no relationship to the specified types.</p>
+<h1><a name="details" href="#details">Details</a></h1>
 <p>The input takes the format: <code>(Value1, Type1A, Type1B), (Value2, Type2), ...</code>
 The output is the sequence <code>TypeList&lt;Tuple&lt;Type1A, Type1B&gt;, Tuple&lt;Type2&gt;, ...&gt;, Value1, Value2, ...</code>.
 Use <code>sus::macros::value_types::TypeAt&lt;I, Types&lt;...&gt;&gt;</code> to extract each tuple

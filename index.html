@@ -201,19 +201,10 @@
           <a class="sidebar-item" href="macro.sus_dyn_concept_typed.html">sus_dyn_concept_typed</a>
         </li>
         <li>
-          <a class="sidebar-item" href="macro.sus_eval_macro.html">sus_eval_macro</a>
-        </li>
-        <li>
           <a class="sidebar-item" href="macro.sus_panic.html">sus_panic</a>
         </li>
         <li>
           <a class="sidebar-item" href="macro.sus_panic_with_message.html">sus_panic_with_message</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="macro.sus_remove_parens.html">sus_remove_parens</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="macro.sus_remove_parens_and_eval.html">sus_remove_parens_and_eval</a>
         </li>
         <li>
           <a class="sidebar-item" href="macro.sus_unreachable.html">sus_unreachable</a>
@@ -241,6 +232,25 @@ tricky heisenbugs and start relying on the compiler to produce the program
 you wrote.</p>
 <p>Find Subspace on Github here:
 <a href="https://github.com/chromium/subspace">https://github.com/chromium/subspace</a></p>
+<h1><a name="prelude" href="#prelude">Prelude</a></h1>
+<p>The <code>sus/prelude.h</code> header imports the most commonly used types into the
+global namespace. All types in the <a href="sus-namespace.prelude.html"><code>prelude</code></a> namespace are
+included:</p>
+<ul>
+<li><a href="sus-option-Option.html"><code>Option</code></a></li>
+<li><a href="sus-collections-Vec.html"><code>Vec</code></a></li>
+<li><a href="sus-num-i32.html"><code>i32</code></a> and other integers</li>
+<li><a href="sus-num-f32.html"><code>f32</code></a> and other floating point types</li>
+<li><a href="sus-namespace.marker.html#variable.unsafe_fn"><code>unsafe_fn</code></a> marker</li>
+</ul>
+<h2><a name="example" href="#example">Example</a></h2>
+<pre><code>#include <span class="string">&quot;sus/prelude.h&quot;</span>
+
+<span class="keyword">int</span> main<span class="punct">(</span><span class="punct">)</span> <span class="punct">{</span>
+    <span class="keyword">auto</span> v <span class="punct">=</span> Vec<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>1<span class="punct">,</span> 2<span class="punct">,</span> 3<span class="punct">,</span> 4<span class="punct">,</span> 5<span class="punct">)</span><span class="punct">;</span>
+    <span class="keyword">return</span> sus::move<span class="punct">(</span>v<span class="punct">)</span><span class="punct">.</span>into_iter<span class="punct">(</span><span class="punct">)</span><span class="punct">.</span>sum<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+<span class="punct">}</span>
+</code></pre>
 
         </div>
       </div>
@@ -380,6 +390,15 @@ and callable types.</p>
               <p>The <a href="sus-option-Option.html"><code>Option</code></a> type, and the
 <a href="sus-option-fn.some.html"><code>some</code></a> and <a href="sus-option-fn.none.html"><code>none</code></a>
 type-deduction constructor functions.</p>
+            </div>
+          </li>
+          <li class="nested section-item">
+            <div class="item-name">
+              <a class="namespace-name" href="sus-namespace.prelude.html">prelude</a>
+            </div>
+            <div class="description short">
+              <p>Commonly used things that can be pulled into the global top level namespace.
+This is done by default when including the <code>sus/prelude.h</code> header.</p>
             </div>
           </li>
           <li class="nested section-item">
@@ -781,8 +800,7 @@ terminating the program.</p>
               </div>
             </div>
             <div class="description short">
-              <p>Construct a set of associated value and types pairings. The type of the
-values need have no relationship to the specified types.</p>
+              <p>A macro used to declare the value-type pairings in a <a href="sus-choice_type-Choice.html"><code>Choice</code></a>. See the <a href="sus-choice_type-Choice.html"><code>Choice</code></a> type for examples of its use.</p>
             </div>
           </li>
           <li class="section-item">
@@ -877,16 +895,6 @@ in the body of the <code>DynCTyped</code> class.</p>
           <li class="section-item">
             <div class="overload-set item-name">
               <div class="overload">
-                <div class="macro-signature"> <a class="macro-name" href="macro.sus_eval_macro.html">sus_eval_macro</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>A macro that runs a macro against any arguments.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
                 <div class="macro-signature"> <a class="macro-name" href="macro.sus_panic.html">sus_panic</a></div>
               </div>
             </div>
@@ -902,25 +910,6 @@ in the body of the <code>DynCTyped</code> class.</p>
             </div>
             <div class="description short">
               <p>Terminate the program, after printing a message.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="macro-signature"> <a class="macro-name" href="macro.sus_remove_parens.html">sus_remove_parens</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Remove parentheses around one or more arguments, if they are present.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="macro-signature"> <a class="macro-name" href="macro.sus_remove_parens_and_eval.html">sus_remove_parens_and_eval</a></div>
-              </div>
-            </div>
-            <div class="description short">
             </div>
           </li>
           <li class="section-item">
