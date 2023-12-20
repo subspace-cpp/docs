@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>operator""_f64 - Subspace</title>
-  <meta property="og:title" content="operator""_f64 - Subspace"></meta>
-  <meta name="description" content="For writing f64 literals."></meta>
-  <meta property="og:description" content="For writing f64 literals."></meta>
+  <title>_i64 literal - Subspace</title>
+  <meta property="og:title" content="_i64 literal - Subspace"></meta>
+  <meta name="description" content="For writing i64 literals."></meta>
+  <meta property="og:description" content="For writing i64 literals."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">operator""_f64</a>
+        <a href="#">_i64 literal</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">operator""_f64</a>
+      <a href="#">_i64 literal</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -56,15 +56,26 @@
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">operator""_f64</a>
+          <a class="function-name" href="#">_i64 literal</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/float.h#L87">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator""_f64</a>(long double val) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/signed_integer.h#L479">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator""_i64</a>(unsigned long long val) -&gt; <a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a></div>
           </div>
         </div>
         <div class="description long">
-          <p>For writing <a href="sus-num-f64.html"><code>f64</code></a> literals.</p>
+          <p>For writing <a href="sus-num-i64.html"><code>i64</code></a> literals.</p>
+<p>Un-qualified integer literals are 32 bits large (the size of <code>int</code>), unless
+a literal suffix modifies them, such as with <code>_i64</code> which creates a 64-bit
+value. On Windows, this is the same as the <code>l</code> suffix (which makes a
+<code>long</code>) but is platform agnostic, and forces a safe numeric type instead of
+a primitive value when this is needed (such as for templates or member
+function access).</p>
+<p>Values out of range for <a href="sus-num-i64.html"><code>i64</code></a> will fail to compile.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<pre><code><span class="keyword">auto</span> i <span class="punct">=</span> 123_i64 <span class="punct">-</span> <span class="punct">(</span>5_i64<span class="punct">)</span><span class="punct">.</span>abs<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>i <span class="punct">=</span><span class="punct">=</span> 118_i64<span class="punct">)</span><span class="punct">;</span>
+</code></pre>
 
         </div>
       </div>

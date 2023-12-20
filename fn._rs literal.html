@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>operator""_rs - Subspace</title>
-  <meta property="og:title" content="operator""_rs - Subspace"></meta>
+  <title>_rs literal - Subspace</title>
+  <meta property="og:title" content="_rs literal - Subspace"></meta>
   <meta name="description" content="Constructs an isize range from a literal."></meta>
   <meta property="og:description" content="Constructs an isize range from a literal."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">operator""_rs</a>
+        <a href="#">_rs literal</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">operator""_rs</a>
+      <a href="#">_rs literal</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -56,18 +56,18 @@
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">operator""_rs</a>
+          <a class="function-name" href="#">_rs literal</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range_literals.h#L223">source</a></div><div class="template">template &lt;::sus::ops::__private::RangeLiteralDeducer&lt;true&gt; D&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator""_rs</a>() -&gt; auto</div>
+            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range_literals.h#L237">source</a></div><div class="template">template &lt;::sus::ops::__private::RangeLiteralDeducer&lt;true&gt; D&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator""_rs</a>() -&gt; auto</div>
           </div>
         </div>
         <div class="description long">
           <p>Constructs an <a href="sus-num-isize.html"><code>isize</code></a> range from a literal.</p>
 <p>The constructed range satisfies the <a href="sus-ops-RangeBounds.html"><code>RangeBounds&lt;isize&gt;</code></a>
 concept. Numbers may be positive or negative.</p>
-<p>The syntax is:</p>
+<p>The syntax is a string (in double quotes) containing:</p>
 <ul>
 <li><code>start..end</code> for a range including start and excluding end. This returns a
 <code>sus::ops::Range&lt;isize&gt;</code>.</li>
@@ -82,6 +82,11 @@ returns a <code>sus::ops::RangeTo&lt;isize&gt;</code>.</li>
 <li><code>..</code> for a range that has no bounds at all. Typically for a slicing range
 to indicate the entire slice. This returns a <code>sus::ops::RangeFull&lt;isize&gt;</code>.</li>
 </ul>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<pre><code>sus_check<span class="punct">(</span><span class="string">&quot;1..4&quot;</span>_rs<span class="punct">)</span><span class="punct">.</span>start <span class="punct">=</span><span class="punct">=</span> 1<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span><span class="punct">(</span><span class="string">&quot;1..4&quot;</span>_rs<span class="punct">)</span><span class="punct">.</span>finish <span class="punct">=</span><span class="punct">=</span> 4<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span><span class="punct">(</span><span class="string">&quot;1..=4&quot;</span>_rs<span class="punct">)</span><span class="punct">.</span>finish <span class="punct">=</span><span class="punct">=</span> 5<span class="punct">)</span><span class="punct">;</span>
+</code></pre>
 
         </div>
       </div>

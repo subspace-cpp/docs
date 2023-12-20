@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>operator""_isize - Subspace</title>
-  <meta property="og:title" content="operator""_isize - Subspace"></meta>
-  <meta name="description" content="For writing isize literals."></meta>
-  <meta property="og:description" content="For writing isize literals."></meta>
+  <title>_f32 literal - Subspace</title>
+  <meta property="og:title" content="_f32 literal - Subspace"></meta>
+  <meta name="description" content="For writing f32 literals."></meta>
+  <meta property="og:description" content="For writing f32 literals."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/png" href="logo32.png">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">operator""_isize</a>
+        <a href="#">_f32 literal</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">operator""_isize</a>
+      <a href="#">_f32 literal</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -56,15 +56,26 @@
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">operator""_isize</a>
+          <a class="function-name" href="#">_f32 literal</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/signed_integer.h#L428">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator""_isize</a>(unsigned long long val) -&gt; <a class="type-name" href="sus-num-isize.html" title="sus::num::isize">isize</a></div>
+            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/float.h#L100">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator""_f32</a>(long double val) -&gt; <a class="type-name" href="sus-num-f32.html" title="sus::num::f32">f32</a></div>
           </div>
         </div>
         <div class="description long">
-          <p>For writing <a href="sus-num-isize.html"><code>isize</code></a> literals.</p>
+          <p>For writing <a href="sus-num-f32.html"><code>f32</code></a> literals.</p>
+<p>Floating point literals qualified with <code>f</code> are also 32 bits large, but the
+<code>_f32</code> suffix forces a safe numeric type instead of a primitive value when
+this is needed (such as for templates or member function access).</p>
+<p>Integer values that are not representable by <a href="sus-num-f32.html"><code>f32</code></a> will
+converted by the same rules as for <a href="sus-construct-Cast.html"><code>Cast</code></a>.
+Floating point values out of range for <a href="sus-num-f32.html"><code>f32</code></a> will fail to
+compile.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<pre><code><span class="keyword">auto</span> i <span class="punct">=</span> 123_f32 <span class="punct">-</span> <span class="punct">(</span>5_f32<span class="punct">)</span><span class="punct">.</span>abs<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span>i <span class="punct">=</span><span class="punct">=</span> 118_f32<span class="punct">)</span><span class="punct">;</span>
+</code></pre>
 
         </div>
       </div>

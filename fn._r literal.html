@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta property="og:type" content="website"></meta>
   <meta property="og:site_name" content="Subspace"></meta>
-  <title>operator""_r - Subspace</title>
-  <meta property="og:title" content="operator""_r - Subspace"></meta>
+  <title>_r literal - Subspace</title>
+  <meta property="og:title" content="_r literal - Subspace"></meta>
   <meta name="description" content="Constructs a usize range from a literal."></meta>
   <meta property="og:description" content="Constructs a usize range from a literal."></meta>
   <link rel="stylesheet" href="subdoc-test-style.css">
@@ -26,7 +26,7 @@
       </div></a>
     <span class="topbar-text-area">
       <span class="topbar-title">
-        <a href="#">operator""_r</a>
+        <a href="#">_r literal</a>
       </span>
     </span>
   </nav>
@@ -38,7 +38,7 @@
       function
     </div>
     <div class="sidebar-title sidebar-text">
-      <a href="#">operator""_r</a>
+      <a href="#">_r literal</a>
     </div>
     <div class="sidebar-subtitle sidebar-text">
     </div>
@@ -56,18 +56,18 @@
           </span>
           <a class="project-name" href="index.html">Subspace</a>
           <span class="namespace-dots">::</span>
-          <a class="function-name" href="#">operator""_r</a>
+          <a class="function-name" href="#">_r literal</a>
         </div>
         <div class="overload-set">
           <div class="overload">
-            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range_literals.h#L192">source</a></div><div class="template">template &lt;::sus::ops::__private::RangeLiteralDeducer&lt;false&gt; D&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator""_r</a>() -&gt; auto</div>
+            <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/range_literals.h#L199">source</a></div><div class="template">template &lt;::sus::ops::__private::RangeLiteralDeducer&lt;false&gt; D&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator""_r</a>() -&gt; auto</div>
           </div>
         </div>
         <div class="description long">
           <p>Constructs a <a href="sus-num-usize.html"><code>usize</code></a> range from a literal.</p>
 <p>The constructed range satisfies the <a href="sus-ops-RangeBounds.html"><code>RangeBounds&lt;usize&gt;</code></a>
 concept. Because <code>usize</code> is unsigned, numbers may not be negative.</p>
-<p>The syntax is:</p>
+<p>The syntax is a string (in double quotes) containing:</p>
 <ul>
 <li><code>start..end</code> for a range including start and excluding end. This returns a
 <code>sus::ops::Range&lt;usize&gt;</code>.</li>
@@ -82,6 +82,11 @@ returns a <code>sus::ops::RangeTo&lt;usize&gt;</code>.</li>
 <li><code>..</code> for a range that has no bounds at all. Typically for a slicing range
 to indicate the entire slice. This returns a <code>sus::ops::RangeFull&lt;usize&gt;</code>.</li>
 </ul>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<pre><code>sus_check<span class="punct">(</span><span class="string">&quot;1..4&quot;</span>_r<span class="punct">)</span><span class="punct">.</span>start <span class="punct">=</span><span class="punct">=</span> 1u<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span><span class="punct">(</span><span class="string">&quot;1..4&quot;</span>_r<span class="punct">)</span><span class="punct">.</span>finish <span class="punct">=</span><span class="punct">=</span> 4u<span class="punct">)</span><span class="punct">;</span>
+sus_check<span class="punct">(</span><span class="punct">(</span><span class="string">&quot;1..=4&quot;</span>_r<span class="punct">)</span><span class="punct">.</span>finish <span class="punct">=</span><span class="punct">=</span> 5u<span class="punct">)</span><span class="punct">;</span>
+</code></pre>
 
         </div>
       </div>
