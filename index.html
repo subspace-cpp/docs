@@ -232,7 +232,7 @@ tricky heisenbugs and start relying on the compiler to produce the program
 you wrote.</p>
 <p>Find Subspace on Github here:
 <a href="https://github.com/chromium/subspace">https://github.com/chromium/subspace</a></p>
-<h1><a name="prelude" href="#prelude">Prelude</a></h1>
+<h2><a name="prelude" href="#prelude">Prelude</a></h2>
 <p>The <code>sus/prelude.h</code> header imports the most commonly used types into the
 global namespace. All types in the <a href="sus-namespace.prelude.html"><code>prelude</code></a> namespace are
 included:</p>
@@ -243,7 +243,7 @@ included:</p>
 <li><a href="sus-num-f32.html"><code>f32</code></a> and other floating point types</li>
 <li><a href="sus-namespace.marker.html#variable.unsafe_fn"><code>unsafe_fn</code></a> marker</li>
 </ul>
-<h2><a name="example" href="#example">Example</a></h2>
+<h3><a name="example" href="#example">Example</a></h3>
 <pre><code>#include <span class="string">&quot;sus/prelude.h&quot;</span>
 
 <span class="keyword">int</span> main<span class="punct">(</span><span class="punct">)</span> <span class="punct">{</span>
@@ -357,6 +357,8 @@ and callable types.</p>
               <a class="namespace-name" href="sus-namespace.marker.html">marker</a>
             </div>
             <div class="description short">
+              <p>Marker types, such as for accessing unsafe APIs, for overload resolution,
+or type elision.</p>
             </div>
           </li>
           <li class="nested section-item">
