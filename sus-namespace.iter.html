@@ -53,8 +53,15 @@
               e.preventDefault();
             }
           };
+          var searchPlaceholder;
           document.querySelector(".search-input").onfocus = (e) => {
+            searchPlaceholder = e.target.placeholder;
+            e.target.placeholder = "Type your search here.";
             navigateToSearch(e.target.value);
+          };
+          document.querySelector(".search-input").onblur = (e) => {
+            e.target.placeholder = searchPlaceholder;
+            searchPlaceholder = null;
           };
         });
 
@@ -452,7 +459,7 @@
     <main>
       <nav class="search-nav">
         <form class="search-form">
-          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search..." onblur="this.placeholder = 'Click or press \'S\' to search...'" onfocus="this.placeholder = 'Type your search here.'">
+          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search...">
           </input>
         </form>
       </nav>

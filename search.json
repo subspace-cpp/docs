@@ -3072,18 +3072,18 @@
   {
     "index": 381,
     "type": "macro",
-    "url": "macro.sus_panic_with_message.html",
-    "name": "sus_panic_with_message",
-    "full_name": "sus_panic_with_message",
-    "split_name": "sus panic with message"
-  },
-  {
-    "index": 382,
-    "type": "macro",
     "url": "macro.sus_check_with_message.html",
     "name": "sus_check_with_message",
     "full_name": "sus_check_with_message",
     "split_name": "sus check with message"
+  },
+  {
+    "index": 382,
+    "type": "macro",
+    "url": "macro.sus_panic_with_message.html",
+    "name": "sus_panic_with_message",
+    "full_name": "sus_panic_with_message",
+    "split_name": "sus panic with message"
   },
   {
     "index": 383,
@@ -3144,13 +3144,21 @@
   {
     "index": 390,
     "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable"
+  },
+  {
+    "index": 391,
+    "type": "macro",
     "url": "macro.SUS_INFINITY.html",
     "name": "SUS_INFINITY",
     "full_name": "SUS_INFINITY",
     "split_name": "SUS INFINITY"
   },
   {
-    "index": 391,
+    "index": 392,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -3158,19 +3166,11 @@
     "split_name": "sus class trivially relocatable unchecked"
   },
   {
-    "index": 392,
+    "index": 393,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
     "full_name": "sus_class_trivially_relocatable_if_types",
     "split_name": "sus class trivially relocatable if types"
-  },
-  {
-    "index": 393,
-    "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable.html",
-    "name": "sus_class_trivially_relocatable",
-    "full_name": "sus_class_trivially_relocatable",
-    "split_name": "sus class trivially relocatable"
   }
 ]
