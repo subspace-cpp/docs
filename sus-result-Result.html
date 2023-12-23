@@ -1,226 +1,423 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="subdoc"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta property="og:type" content="website"></meta>
+    <meta property="og:site_name" content="Subspace"></meta>
+    <title>sus::result::Result - Subspace</title>
+    <meta property="og:title" content="sus::result::Result - Subspace"></meta>
+    <meta name="description" content=""></meta>
+    <meta property="og:description" content=""></meta>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script>
+      
+        // Delayed loading of whatever was in the search box.
+        var searchDelayLoad;
 
-<head>
-  <meta name="generator" content="subdoc"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-  <meta property="og:type" content="website"></meta>
-  <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::result::Result - Subspace</title>
-  <meta property="og:title" content="sus::result::Result - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
-  <link rel="stylesheet" href="subdoc-test-style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="alternate icon" type="image/png" href="logo32.png">
-  <link rel="alternate icon" type="image/png" href="logo16.png">
-  <meta property="og:image" content="logo.png"></meta>
-</head>
+        // The search box's dynamic behaviour.
+        document.addEventListener("keyup", e => {
+          if (e.key === 's') {
+            document.querySelector('.search-input').focus();
+          }
+          if (e.key === 'Escape') {
+            document.querySelector('.search-input').blur();
+            navigateToSearch(null);
+            e.preventDefault();
+          }
+        });
+        function navigateToSearch(query) {
+          window.clearTimeout(searchDelayLoad);
+          searchDelayLoad = null;
 
-<body>
-  <nav class="topbar">
-    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
-      ☰
-    </button>
-    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
-        <img class="topbar-logo" src="logo.png"></img>
-      </div></a>
-    <span class="topbar-text-area">
-      <span class="topbar-title">
-        <a href="#">Result</a>
+          let without_search =
+              window.location.href.replace(window.location.search, '');
+          if (query) {
+            window.history.replaceState(null, "",
+              without_search + "?" + `search=${query}`);
+          } else {
+            window.history.replaceState(null, "", without_search);
+          }
+          maybeShowSearchResults();
+        }
+        addEventListener("load", event => {
+          document.querySelector(".search-input").oninput = (e) => {
+            window.clearTimeout(searchDelayLoad);
+            searchDelayLoad = window.setTimeout(() => {
+              navigateToSearch(e.target.value);
+            }, 1000);
+          };
+          document.querySelector(".search-input").onkeypress = (e) => {
+            if (e.key == "Enter") {
+              navigateToSearch(e.target.value);
+              e.preventDefault();
+            }
+          };
+          document.querySelector(".search-input").onfocus = (e) => {
+            navigateToSearch(e.target.value);
+          };
+        });
+
+        // Show or hide any DOM element.
+        function showHide(selector, show) {
+          if (show)
+            document.querySelector(selector).classList.remove("hidden");
+          else
+            document.querySelector(selector).classList.add("hidden");
+        }
+
+        function searchQuery() {
+          const params = new Proxy(
+            new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          return params.search;
+        }
+
+        // Showing search results.
+        async function populateSearchResults(loaded) {
+          const search_db = loaded.search_db;
+          const idx = loaded.idx;
+
+          const results = idx.search(searchQuery());
+          let content = '';
+          for (r of results) {
+            const item = search_db[r.ref];
+            
+            const type = item.type;
+            const url = item.url;
+            const name = item.name;
+            const full_name = item.full_name;
+            const summmary = item.summary ? item.summary : "";
+            
+            content += `\
+              <a class="search-results-link" href="${url}">
+                <span class="search-results-type">${type}</span>\
+                <span class="search-results-name">${full_name}</span>\
+                <span class="search-results-summary">${summmary}</span>\
+              </a>\
+              `
+          }
+
+          let content_elem = document.querySelector(".search-results-content");
+          content_elem.innerHTML = content;
+
+          let header_elem = document.querySelector(".search-results-header");
+          header_elem.innerText = "Search results";
+        }
+
+        var cache_idx;
+
+        // Searching via https://lunrjs.com.
+        //
+        // Load the JSON search database, which will be turned into a search
+        // index. Returns an object with two fields:
+        // - search_db: the contents of the search.json file.
+        // - idx: the lunr search index.
+        //   Documented at https://lunrjs.com/docs/lunr.Index.html.
+        async function loadSearchIndex() {
+          async function load_search_db() {
+            let x = await import('./search.json', {
+              assert: {type: 'json'}
+            });
+            return x.default;
+          }
+
+          async function load_idx(search_db) {
+            let idx = lunr(function () {
+              this.ref('index');
+              this.field('name', {
+                'boost': 2
+              });
+              this.field('full_name', {
+                'boost': 2
+              });
+              this.field('split_name', {
+                'boost': 0.5
+              });
+              this.field('summary', {
+                'boost': 1
+              });
+              this.field('full_description', {
+                'boost': 0.75
+              });
+
+              // No stemming?
+              // this.pipeline = new lunr.Pipeline();
+
+              search_db.forEach(item => {
+                this.add(item, {
+                  'boost': item.weight
+                })
+              }, this);
+            });
+            let out = {};
+            out.search_db = search_db;
+            out.idx = idx;
+            return out;
+          };
+
+          if (!cache_idx) {
+            cache_idx = await load_search_db().then(load_idx);
+          }
+          return cache_idx;
+        }
+
+        // If there's a search query, hide the other content and asynchronously
+        // show the search results. Otherwise, hide search content and show the
+        // rest immediately.
+        function maybeShowSearchResults() {
+          const query = searchQuery();
+          if (query) {
+            showHide(".main-content", false);
+
+            let input = document.querySelector(".search-input");
+            input.value = query;
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "Loading search results...";
+
+            loadSearchIndex().then(populateSearchResults)
+          } else {
+            showHide(".main-content", true);
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "";
+
+            let content_elem = document.querySelector(".search-results-content");
+            content_elem.innerText = "";
+          }
+        }
+
+        
+    </script>
+    <link rel="stylesheet" href="subdoc-test-style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="alternate icon" type="image/png" href="logo32.png">
+    <link rel="alternate icon" type="image/png" href="logo16.png">
+    <meta property="og:image" content="logo.png"></meta>
+  </head>
+
+  <body>
+    <nav class="topbar">
+      <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+        ☰
+      </button>
+      <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+          <img class="topbar-logo" src="logo.png"></img>
+        </div></a>
+      <span class="topbar-text-area">
+        <span class="topbar-title">
+          <a href="#">Result</a>
+        </span>
       </span>
-    </span>
-  </nav>
-  <nav class="sidebar">
-    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
-        <img class="sidebar-logo" src="logo.png"></img>
-      </div></a>
-    <div class="sidebar-pretitle sidebar-text">
-      class
-    </div>
-    <div class="sidebar-title sidebar-text">
-      <a href="#">Result</a>
-    </div>
-    <div class="sidebar-subtitle sidebar-text">
-    </div>
-    <div class="sidebar-links sidebar-text">
-      <ul>
-        <li>
-          <a class="sidebar-header" href="#static-methods">Static Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.Result.copy">Result</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.Result.move">Result</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.from_product">from_product</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.from_sum">from_sum</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.with_err">with_err</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#methods">Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.and_then">and_then</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.as_err">as_err</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.as_value">as_value</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.as_value_mut">as_value_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.clone">clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.clone_from">clone_from</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.err">err</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.expect">expect</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.into_iter">into_iter</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.is_err">is_err</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.is_ok">is_ok</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.iter">iter</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.iter_mut">iter_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.ok">ok</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.unwrap">unwrap</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_err">unwrap_err</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_err_unchecked">unwrap_err_unchecked</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_or_default">unwrap_or_default</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_or_else">unwrap_or_else</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_unchecked">unwrap_unchecked</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#conversions">Conversions</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.operator State">operator State</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#operators">Operators</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.operator=.copy">operator=</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-result-Result.html#method.operator=.move">operator=</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="type record class">
-      <div class="section overview">
-        <div class="section-header">
-          <span>
-            Class
-          </span>
-          <a class="project-name" href="index.html">Subspace</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.result.html">result</a>
-          <span class="namespace-dots">::</span>
-          <a class="type-name" href="#">Result</a>
-        </div>
-        <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L81">source</a></div><pre class="template">template &lt;class T, class E&gt;</pre><span class="class">
-            class
-          </span><span class="type-name">
-            Result
-          </span><span class="final">
-            final
-          </span><div class="record-body">
-            { ... };
-          </div></div>
-        <div class="description long">
-        </div>
+    </nav>
+    <nav class="sidebar">
+      <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+          <img class="sidebar-logo" src="logo.png"></img>
+        </div></a>
+      <div class="sidebar-pretitle sidebar-text">
+        class
       </div>
-      <div class="section methods static">
-        <div class="section-header">
-          <a name="static-methods" href="#static-methods">Static Methods</a>
+      <div class="sidebar-title sidebar-text">
+        <a href="#">Result</a>
+      </div>
+      <div class="sidebar-subtitle sidebar-text">
+      </div>
+      <div class="sidebar-links sidebar-text">
+        <ul>
+          <li>
+            <a class="sidebar-header" href="#static-methods">Static Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.Result.copy">Result</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.Result.move">Result</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.from_product">from_product</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.from_sum">from_sum</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.with_err">with_err</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#methods">Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.and_then">and_then</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.as_err">as_err</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.as_value">as_value</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.as_value_mut">as_value_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.clone">clone</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.clone_from">clone_from</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.err">err</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.expect">expect</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.into_iter">into_iter</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.is_err">is_err</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.is_ok">is_ok</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.iter">iter</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.iter_mut">iter_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.ok">ok</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.unwrap">unwrap</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_err">unwrap_err</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_err_unchecked">unwrap_err_unchecked</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_or_default">unwrap_or_default</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_or_else">unwrap_or_else</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.unwrap_unchecked">unwrap_unchecked</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#conversions">Conversions</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.operator State">operator State</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#operators">Operators</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.operator=.copy">operator=</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-result-Result.html#method.operator=.move">operator=</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <nav class="search-nav">
+        <form class="search-form">
+          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search..." onblur="this.placeholder = 'Click or press \'S\' to search...'" onfocus="this.placeholder = 'Type your search here.'">
+          </input>
+        </form>
+      </nav>
+      <section class="search-results">
+        <h1 class="search-results-header">
+        </h1>
+        <div class="search-results-content">
         </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L114">source</a></div><a name="method.Result.ctor.ok"></a><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(<a class="type-name" href="sus-result-OkVoid.html" title="sus::result::OkVoid">OkVoid</a>)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L114">source</a></div><a name="method.Result.ctor.ok"></a><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(<span class="const">const</span> sus::result::Result::TUnlessVoid& t)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L114">source</a></div><a name="method.Result.ctor.ok"></a><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(sus::result::Result::TUnlessVoid&& t)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L114">source</a></div><a name="method.Result.ctor.ok"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(U&& t)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, TUnlessVoid&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;T, U &&&gt;</pre></div>
-                </div></div>
+      </section>
+      <section class="main-content">
+        <script>maybeShowSearchResults()</script>
+        <div class="type record class">
+          <div class="section overview">
+            <h1 class="section-header">
+              <span>
+                Class
+              </span>
+              <a class="project-name" data-pagefind-weight="1" href="index.html">Subspace</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="namespace.sus.html">sus</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="sus-namespace.result.html">result</a>
+              <span class="namespace-dots">::</span>
+              <a class="type-name" data-pagefind-weight="20" href="#">Result</a>
+            </h1>
+            <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L81">source</a></div><pre class="template">template &lt;class T, class E&gt;</pre><span class="class">
+                class
+              </span><span class="type-name">
+                Result
+              </span><span class="final">
+                final
+              </span><div class="record-body">
+                { ... };
+              </div></div>
+            <div class="description long">
             </div>
           </div>
-          <div class="description long">
-            <p>Construct an Result that is holding the given success value.</p>
+          <div class="section methods static">
+            <h1 class="section-header">
+              <a name="static-methods" href="#static-methods">Static Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L114">source</a></div><a name="method.Result.ctor.ok"></a><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(<a class="type-name" href="sus-result-OkVoid.html" title="sus::result::OkVoid">OkVoid</a>)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L114">source</a></div><a name="method.Result.ctor.ok"></a><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(<span class="const">const</span> sus::result::Result::TUnlessVoid& t)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L114">source</a></div><a name="method.Result.ctor.ok"></a><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(sus::result::Result::TUnlessVoid&& t)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L114">source</a></div><a name="method.Result.ctor.ok"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-result-Result.html#method.Result.ctor.ok">Result</a>(U&& t)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, TUnlessVoid&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;T, U &&&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Construct an Result that is holding the given success value.</p>
 <h1><a name="const-references" href="#const-references">Const References</a></h1>
 <p>For <code>Result&lt;const T&amp;, E&gt;</code> it is possible to bind to a temporary which
 would create a memory safety bug. The <code>[[clang::lifetimebound]]</code> attribute
@@ -231,60 +428,60 @@ to prevent conversions that would construct a temporary.</p>
 convert to a reference without constructing a temporary, use an unsafe
 <code>static_cast&lt;const T&amp;&gt;()</code> at the callsite (and document it =)).</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L166">source</a></div><a name="method.Result.copy"></a><a class="function-name" href="sus-result-Result.html#method.Result.copy">Result</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRefOrVoid&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L166">source</a></div><a name="method.Result.copy"></a><a class="function-name" href="sus-result-Result.html#method.Result.copy">Result</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::CopyOrRefOrVoid&lt;T&gt; || !::sus::mem::Copy&lt;E&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Copy constructor for <code>Result&lt;T, E&gt;</code> which satisfies
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L166">source</a></div><a name="method.Result.copy"></a><a class="function-name" href="sus-result-Result.html#method.Result.copy">Result</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRefOrVoid&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L166">source</a></div><a name="method.Result.copy"></a><a class="function-name" href="sus-result-Result.html#method.Result.copy">Result</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::CopyOrRefOrVoid&lt;T&gt; || !::sus::mem::Copy&lt;E&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Copy constructor for <code>Result&lt;T, E&gt;</code> which satisfies
 <a href="sus-mem-Copy.html"><code>sus::mem::Copy&lt;Result&lt;T, E&gt;&gt;</code></a> if
 <a href="sus-mem-Copy.html"><code>Copy&lt;T&gt;</code></a> and
 <a href="sus-mem-Copy.html"><code>Copy&lt;E&gt;</code></a> are satisfied.</p>
 <p>If <code>T</code> and <code>E</code> can be trivially copy-constructed, then <code>Result&lt;T, E&gt;</code> can
 also be trivially copy-constructed.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L203">source</a></div><a name="method.Result.move"></a><a class="function-name" href="sus-result-Result.html#method.Result.move">Result</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::MoveOrRefOrVoid&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L203">source</a></div><a name="method.Result.move"></a><a class="function-name" href="sus-result-Result.html#method.Result.move">Result</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::MoveOrRefOrVoid&lt;T&gt; || !::sus::mem::Move&lt;E&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Move constructor for <code>Result&lt;T, E&gt;</code> which satisfies
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L203">source</a></div><a name="method.Result.move"></a><a class="function-name" href="sus-result-Result.html#method.Result.move">Result</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::MoveOrRefOrVoid&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L203">source</a></div><a name="method.Result.move"></a><a class="function-name" href="sus-result-Result.html#method.Result.move">Result</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::MoveOrRefOrVoid&lt;T&gt; || !::sus::mem::Move&lt;E&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Move constructor for <code>Result&lt;T, E&gt;</code> which satisfies
 <a href="sus-mem-Move.html"><code>Move</code></a>, if <code>T</code> and <code>E</code> both satisfy
 <a href="sus-mem-Move.html"><code>Move</code></a>.</p>
 <p>If <code>T</code> and <code>E</code> can be trivially move-constructed, then <code>Result&lt;T, E&gt;</code> can
@@ -292,20 +489,20 @@ also be trivially move-constructed. When trivially-moved, the <code>Result</code
 copied on move, and the moved-from <code>Result</code> is unchanged but should still
 not be used thereafter without reinitializing it.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L287">source</a></div><a name="method.from_product"></a><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.from_product">from_product</a>(Iter&& it) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;Iter, Result&lt;T, E&gt;&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Product&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Computes the product of an iterator over <code>Result&lt;T, E&gt;</code> as long as there
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L287">source</a></div><a name="method.from_product"></a><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.from_product">from_product</a>(Iter&& it) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;Iter, Result&lt;T, E&gt;&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Product&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Computes the product of an iterator over <code>Result&lt;T, E&gt;</code> as long as there
 is no <code>Err</code> found. If an <code>Err</code> is found, the function returns the first
 <code>Err</code>.</p>
 <p>Prefer to call <code>product()</code> on the iterator rather than calling
@@ -314,20 +511,20 @@ is no <code>Err</code> found. If an <code>Err</code> is found, the function retu
 <p>The product is computed using the implementation of the inner type <code>T</code>
 which also satisfies <code>sus::iter::Product&lt;T, T&gt;</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L339">source</a></div><a name="method.from_sum"></a><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.from_sum">from_sum</a>(Iter&& it) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;Iter, Result&lt;T, E&gt;&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Sum&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Computes the sum of an iterator over <code>Result&lt;T, E&gt;</code> as long as there
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L339">source</a></div><a name="method.from_sum"></a><div class="template">template &lt;class Iter&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.from_sum">from_sum</a>(Iter&& it) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Iterator&lt;Iter, Result&lt;T, E&gt;&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::Sum&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Computes the sum of an iterator over <code>Result&lt;T, E&gt;</code> as long as there
 is no <code>Err</code> found. If an <code>Err</code> is found, the function returns the first
 <code>Err</code>.</p>
 <p>Prefer to call <code>sum()</code> on the iterator rather than calling <code>from_sum()</code>
@@ -336,162 +533,162 @@ directly.</p>
 <p>The sum is computed using the implementation of the inner type <code>T</code>
 which also satisfies <code>sus::iter::Sum&lt;T, T&gt;</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L138">source</a></div><a name="method.with_err"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.with_err">with_err</a>(<span class="const">const</span> E& e) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L138">source</a></div><a name="method.with_err"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.with_err">with_err</a>(E&& e) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Construct an Result that is holding the given error value.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L138">source</a></div><a name="method.with_err"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.with_err">with_err</a>(<span class="const">const</span> E& e) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L138">source</a></div><a name="method.with_err"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.with_err">with_err</a>(E&& e) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Construct an Result that is holding the given error value.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="methods" href="#methods">Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L424">source</a></div><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn op) && -&gt; sus::fn::ReturnOnce&lt;AndFn, sus::result::Result::TUnlessVoid&&&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (TUnlessVoid &&)&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn, T &&&gt;, E&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L424">source</a></div><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn op) && -&gt; sus::fn::ReturnOnce&lt;AndFn&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (void)&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn&gt;, E&gt;</pre></div>
-                </div></div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>Calls <code>op</code> if the result is <code>Ok</code>, otherwise returns the <code>Err</code> value of
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="methods" href="#methods">Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L424">source</a></div><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn op) && -&gt; sus::fn::ReturnOnce&lt;AndFn, sus::result::Result::TUnlessVoid&&&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (TUnlessVoid &&)&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn, T &&&gt;, E&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L424">source</a></div><a name="method.and_then"></a><div class="template">template &lt;class AndFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.and_then">and_then</a>(AndFn op) && -&gt; sus::fn::ReturnOnce&lt;AndFn&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;AndFn, ::sus::fn::NonVoid (void)&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::result::__private::IsResultWithErrType&lt;sus::fn::ReturnOnce&lt;AndFn&gt;, E&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Calls <code>op</code> if the result is <code>Ok</code>, otherwise returns the <code>Err</code> value of
 self.</p>
 <p>This function can be used for control flow based on <code>Result</code> values.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L529">source</a></div><a name="method.as_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_err">as_err</a>() const& -&gt; <span class="const">const</span> E&</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L529">source</a></div><a name="method.as_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_err">as_err</a>() && -&gt; <span class="const">const</span> E&<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a const reference to the contained <code>Err</code> value.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L529">source</a></div><a name="method.as_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_err">as_err</a>() const& -&gt; <span class="const">const</span> E&</div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L529">source</a></div><a name="method.as_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_err">as_err</a>() && -&gt; <span class="const">const</span> E&<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a const reference to the contained <code>Err</code> value.</p>
 <h1><a name="panics" href="#panics">Panics</a></h1>
 <p>Panics if the value is an <code>Ok</code> or the Result is moved from.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L489">source</a></div><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value">as_value</a>() const& -&gt; <span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L489">source</a></div><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value">as_value</a>() && -&gt; <span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a const reference to the contained <code>Ok</code> value.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L489">source</a></div><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value">as_value</a>() const& -&gt; <span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L489">source</a></div><a name="method.as_value"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value">as_value</a>() && -&gt; <span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a const reference to the contained <code>Ok</code> value.</p>
 <h1><a name="panics-1" href="#panics-1">Panics</a></h1>
 <p>Panics if the value is an <code>Err</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L510">source</a></div><a name="method.as_value_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value_mut">as_value_mut</a>() & -&gt; std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a mutable reference to the contained <code>Ok</code> value.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L510">source</a></div><a name="method.as_value_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.as_value_mut">as_value_mut</a>() & -&gt; std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a mutable reference to the contained <code>Ok</code> value.</p>
 <h1><a name="panics-2" href="#panics-2">Panics</a></h1>
 <p>Panics if the value is an <code>Err</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L231">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::Clone&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;E&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::mem::CopyOrRefOrVoid&lt;T&gt; && ::sus::mem::Copy&lt;E&gt;)</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L248">source</a></div><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& source) & -&gt; void<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::Clone&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;E&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::mem::CopyOrRefOrVoid&lt;T&gt; && ::sus::mem::Copy&lt;E&gt;)</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L474">source</a></div><a name="method.err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.err">err</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;E&gt;</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Converts from <code>Result&lt;T, E&gt;</code> to <code>Option&lt;E&gt;</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L231">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::Clone&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;E&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::mem::CopyOrRefOrVoid&lt;T&gt; && ::sus::mem::Copy&lt;E&gt;)</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L248">source</a></div><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& source) & -&gt; void<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::mem::Clone&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;E&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::mem::CopyOrRefOrVoid&lt;T&gt; && ::sus::mem::Copy&lt;E&gt;)</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L474">source</a></div><a name="method.err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.err">err</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;E&gt;</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Converts from <code>Result&lt;T, E&gt;</code> to <code>Option&lt;E&gt;</code>.</p>
 <p>Converts self into an <code>Option&lt;E&gt;</code>, consuming self, and discarding the
 success value, if any.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L578">source</a></div><a name="method.expect"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.expect">expect</a>(<span class="const">const</span> char* msg) && -&gt; T</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns the contained <code>Ok</code> value, consuming the self value.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L578">source</a></div><a name="method.expect"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.expect">expect</a>(<span class="const">const</span> char* msg) && -&gt; T</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns the contained <code>Ok</code> value, consuming the self value.</p>
 <p>Because this function may panic, its use is generally discouraged.
 Instead, prefer to use pattern matching and handle the <code>Err</code> case
 explicitly, or call <code>unwrap_or</code>, <code>unwrap_or_else</code>, or <code>unwrap_or_default</code>.</p>
@@ -499,104 +696,104 @@ explicitly, or call <code>unwrap_or</code>, <code>unwrap_or_else</code>, or <cod
 <p>Panics if the value is an Err, with a panic message including the passed
 message, and the content of the Err.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L751">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.into_iter">into_iter</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L385">source</a></div><a name="method.is_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.is_err">is_err</a>() const& -&gt; bool</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns true if the result is <code>Err</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L751">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.into_iter">into_iter</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L385">source</a></div><a name="method.is_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.is_err">is_err</a>() const& -&gt; bool</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns true if the result is <code>Err</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L379">source</a></div><a name="method.is_ok"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.is_ok">is_ok</a>() const& -&gt; bool</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns true if the result is <code>Ok</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L379">source</a></div><a name="method.is_ok"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.is_ok">is_ok</a>() const& -&gt; bool</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns true if the result is <code>Ok</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L692">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;<span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L692">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter">iter</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;<span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L724">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter_mut">iter_mut</a>() & -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;sus::result::Result::TUnlessVoid&&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L724">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter_mut">iter_mut</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;sus::result::Result::TUnlessVoid&&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L457">source</a></div><a name="method.ok"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.ok">ok</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Converts from <code>Result&lt;T, E&gt;</code> to <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L692">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;<span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L692">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter">iter</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;<span class="const">const</span> std::remove_reference_t&lt;sus::result::Result::TUnlessVoid&gt;&&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L724">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter_mut">iter_mut</a>() & -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;sus::result::Result::TUnlessVoid&&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L724">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.iter_mut">iter_mut</a>() && -&gt; <a class="type-name" href="sus-option-OptionIter.html" title="sus::option::OptionIter">OptionIter</a>&lt;sus::result::Result::TUnlessVoid&&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L457">source</a></div><a name="method.ok"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.ok">ok</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_void_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Converts from <code>Result&lt;T, E&gt;</code> to <a href="sus-option-Option.html"><code>Option&lt;T&gt;</code></a>.</p>
 <p>Converts self into an <code>Option&lt;T&gt;</code>, consuming self, and discarding the
 error, if any.</p>
 <p><a href="sus-option-Option.html"><code>Option</code></a> can not hold <code>void</code>, so this method is
 not present on <code>Result&lt;void, E&gt;</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L555">source</a></div><a name="method.unwrap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap">unwrap</a>() && -&gt; T</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns the contained <code>Ok</code> value, consuming the self value.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L555">source</a></div><a name="method.unwrap"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap">unwrap</a>() && -&gt; T</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns the contained <code>Ok</code> value, consuming the self value.</p>
 <p>Because this function may panic, its use is generally discouraged.
 Instead, prefer to use pattern matching and handle the <code>Err</code> case
 explicitly, or call <code>unwrap_or()</code>, <code>unwrap_or_else()</code>, or
@@ -604,55 +801,55 @@ explicitly, or call <code>unwrap_or()</code>, <code>unwrap_or_else()</code>, or
 <h1><a name="panics-4" href="#panics-4">Panics</a></h1>
 <p>Panics if the value is an <code>Err</code> or the Result is moved from.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L636">source</a></div><a name="method.unwrap_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_err">unwrap_err</a>() && -&gt; E</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns the contained <code>Err</code> value, consuming the self value.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L636">source</a></div><a name="method.unwrap_err"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_err">unwrap_err</a>() && -&gt; E</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns the contained <code>Err</code> value, consuming the self value.</p>
 <h1><a name="panics-5" href="#panics-5">Panics</a></h1>
 <p>Panics if the value is an <code>Ok</code> or the Result is moved from.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L658">source</a></div><a name="method.unwrap_err_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_err_unchecked">unwrap_err_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; E</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns the contained <code>Err</code> value, consuming the self value, without
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L658">source</a></div><a name="method.unwrap_err_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_err_unchecked">unwrap_err_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; E</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns the contained <code>Err</code> value, consuming the self value, without
 checking that the value is not an <code>Ok</code>.</p>
 <h1><a name="safety" href="#safety">Safety</a></h1>
 <p>Calling this method on an <code>Ok</code> or a moved-from Result is Undefined
 Behavior.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L596">source</a></div><a name="method.unwrap_or_default"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_or_default">unwrap_or_default</a>() && -&gt; T<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::construct::Default&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns the contained Ok value or a default.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L596">source</a></div><a name="method.unwrap_or_default"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_or_default">unwrap_or_default</a>() && -&gt; T<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_void_v&lt;T&gt; || ::sus::construct::Default&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns the contained Ok value or a default.</p>
 <p>Consumes the Result and, if it held an Ok value, the value is returned.
 Otherwise the default value of the Ok value's type is returned.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L680">source</a></div><a name="method.unwrap_or_else"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_or_else">unwrap_or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;T(E&&)&gt; auto op) && -&gt; T</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns the contained <code>Ok</code> value or computes it from a closure.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L680">source</a></div><a name="method.unwrap_or_else"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_or_else">unwrap_or_else</a>(<a class="type-name" href="sus-fn-FnOnce.html" title="sus::fn::FnOnce">FnOnce</a>&lt;T(E&&)&gt; auto op) && -&gt; T</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns the contained <code>Ok</code> value or computes it from a closure.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
 <p>Basic usage:</p>
 <pre><code><span class="keyword">enum</span> ECode <span class="punct">{</span> ItsHappening <span class="punct">=</span> <span class="punct">-</span>1 <span class="punct">}</span><span class="punct">;</span>
@@ -663,34 +860,34 @@ sus_check<span class="punct">(</span>sus::move<span class="punct">(</span>ok<spa
 sus_check<span class="punct">(</span>sus::move<span class="punct">(</span>err<span class="punct">)</span><span class="punct">.</span>unwrap_or_else<span class="punct">(</span>conv<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> <span class="punct">-</span>1<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L619">source</a></div><a name="method.unwrap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; T</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns the contained <code>Ok</code> value, consuming the self value, without
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L619">source</a></div><a name="method.unwrap_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.unwrap_unchecked">unwrap_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; T</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns the contained <code>Ok</code> value, consuming the self value, without
 checking that the value is not an <code>Err</code>.</p>
 <h1><a name="safety-1" href="#safety-1">Safety</a></h1>
 <p>Calling this method on an <code>Err</code> or a moved-from Result is Undefined
 Behavior.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods conversion">
-        <div class="section-header">
-          <a name="conversions" href="#conversions">Conversions</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L407">source</a></div><a name="method.operator State"></a><a class="function-name" href="sus-result-Result.html#method.operator State">operator State</a>() const&</div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>An operator which returns the state of the Result, either #Ok or #Err.</p>
+          <div class="section methods conversion">
+            <h1 class="section-header">
+              <a name="conversions" href="#conversions">Conversions</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L407">source</a></div><a name="method.operator State"></a><a class="function-name" href="sus-result-Result.html#method.operator State">operator State</a>() const&</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>An operator which returns the state of the Result, either #Ok or #Err.</p>
 <p>This supports the use of an Result in a <code>switch()</code>, allowing it to act as
 a tagged union between &quot;success&quot; and &quot;error&quot;.</p>
 <h1><a name="example" href="#example">Example</a></h1>
@@ -704,67 +901,67 @@ a tagged union between &quot;success&quot; and &quot;error&quot;.</p>
 <span class="punct">}</span>
 </code></pre>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="operators" href="#operators">Operators</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L184">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRefOrVoid&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L184">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::CopyOrRefOrVoid&lt;T&gt; || !::sus::mem::Copy&lt;E&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>Copy assignment for <code>Result&lt;T, E&gt;</code> which satisfies
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="operators" href="#operators">Operators</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L184">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;& o) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::CopyOrRefOrVoid&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;E&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L184">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::CopyOrRefOrVoid&lt;T&gt; || !::sus::mem::Copy&lt;E&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Copy assignment for <code>Result&lt;T, E&gt;</code> which satisfies
 <a href="sus-mem-Copy.html"><code>sus::mem::Copy&lt;Result&lt;T, E&gt;&gt;</code></a> if
 <a href="sus-mem-Copy.html"><code>Copy&lt;T&gt;</code></a> and
 <a href="sus-mem-Copy.html"><code>Copy&lt;E&gt;</code></a> are satisfied.</p>
 <p>If <code>T</code> and <code>E</code> can be trivially copy-assigned, then <code>Result&lt;T, E&gt;</code> can
 also be trivially copy-assigned.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L222">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::MoveOrRefOrVoid&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L222">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::MoveOrRefOrVoid&lt;T&gt; || !::sus::mem::Move&lt;E&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Move assignment for <code>Result&lt;T, E&gt;</code> which satisfies
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L222">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::MoveOrRefOrVoid&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;E&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/result/result.h#L222">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-result-Result.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&&) -&gt; <a class="type-name" href="sus-result-Result.html" title="sus::result::Result">Result</a>&lt;T, E&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::MoveOrRefOrVoid&lt;T&gt; || !::sus::mem::Move&lt;E&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Move assignment for <code>Result&lt;T, E&gt;</code> which satisfies
 <a href="sus-mem-Move.html"><code>Move</code></a>, if <code>T</code> and <code>E</code> both satisfy
 <a href="sus-mem-Move.html"><code>Move</code></a>.</p>
 <p>If <code>T</code> and <code>E</code> can be trivially move-assigned, then <code>Result&lt;T, E&gt;</code> can
@@ -772,9 +969,11 @@ also be trivially move-assigned. When trivially-moved, the <code>Result</code> i
 copied on move, and the moved-from Result is unchanged but should still
 not be used thereafter without reinitializing it.</p>
 
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
+</html>

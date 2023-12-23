@@ -1,475 +1,676 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="subdoc"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta property="og:type" content="website"></meta>
+    <meta property="og:site_name" content="Subspace"></meta>
+    <title>sus::mem - Subspace</title>
+    <meta property="og:title" content="sus::mem - Subspace"></meta>
+    <meta name="description" content=""></meta>
+    <meta property="og:description" content=""></meta>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script>
+      
+        // Delayed loading of whatever was in the search box.
+        var searchDelayLoad;
 
-<head>
-  <meta name="generator" content="subdoc"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-  <meta property="og:type" content="website"></meta>
-  <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::mem - Subspace</title>
-  <meta property="og:title" content="sus::mem - Subspace"></meta>
-  <meta name="description" content=""></meta>
-  <meta property="og:description" content=""></meta>
-  <link rel="stylesheet" href="subdoc-test-style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="alternate icon" type="image/png" href="logo32.png">
-  <link rel="alternate icon" type="image/png" href="logo16.png">
-  <meta property="og:image" content="logo.png"></meta>
-</head>
+        // The search box's dynamic behaviour.
+        document.addEventListener("keyup", e => {
+          if (e.key === 's') {
+            document.querySelector('.search-input').focus();
+          }
+          if (e.key === 'Escape') {
+            document.querySelector('.search-input').blur();
+            navigateToSearch(null);
+            e.preventDefault();
+          }
+        });
+        function navigateToSearch(query) {
+          window.clearTimeout(searchDelayLoad);
+          searchDelayLoad = null;
 
-<body>
-  <nav class="topbar">
-    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
-      ☰
-    </button>
-    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
-        <img class="topbar-logo" src="logo.png"></img>
-      </div></a>
-    <span class="topbar-text-area">
-      <span class="topbar-title">
-        <a href="#">mem</a>
+          let without_search =
+              window.location.href.replace(window.location.search, '');
+          if (query) {
+            window.history.replaceState(null, "",
+              without_search + "?" + `search=${query}`);
+          } else {
+            window.history.replaceState(null, "", without_search);
+          }
+          maybeShowSearchResults();
+        }
+        addEventListener("load", event => {
+          document.querySelector(".search-input").oninput = (e) => {
+            window.clearTimeout(searchDelayLoad);
+            searchDelayLoad = window.setTimeout(() => {
+              navigateToSearch(e.target.value);
+            }, 1000);
+          };
+          document.querySelector(".search-input").onkeypress = (e) => {
+            if (e.key == "Enter") {
+              navigateToSearch(e.target.value);
+              e.preventDefault();
+            }
+          };
+          document.querySelector(".search-input").onfocus = (e) => {
+            navigateToSearch(e.target.value);
+          };
+        });
+
+        // Show or hide any DOM element.
+        function showHide(selector, show) {
+          if (show)
+            document.querySelector(selector).classList.remove("hidden");
+          else
+            document.querySelector(selector).classList.add("hidden");
+        }
+
+        function searchQuery() {
+          const params = new Proxy(
+            new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          return params.search;
+        }
+
+        // Showing search results.
+        async function populateSearchResults(loaded) {
+          const search_db = loaded.search_db;
+          const idx = loaded.idx;
+
+          const results = idx.search(searchQuery());
+          let content = '';
+          for (r of results) {
+            const item = search_db[r.ref];
+            
+            const type = item.type;
+            const url = item.url;
+            const name = item.name;
+            const full_name = item.full_name;
+            const summmary = item.summary ? item.summary : "";
+            
+            content += `\
+              <a class="search-results-link" href="${url}">
+                <span class="search-results-type">${type}</span>\
+                <span class="search-results-name">${full_name}</span>\
+                <span class="search-results-summary">${summmary}</span>\
+              </a>\
+              `
+          }
+
+          let content_elem = document.querySelector(".search-results-content");
+          content_elem.innerHTML = content;
+
+          let header_elem = document.querySelector(".search-results-header");
+          header_elem.innerText = "Search results";
+        }
+
+        var cache_idx;
+
+        // Searching via https://lunrjs.com.
+        //
+        // Load the JSON search database, which will be turned into a search
+        // index. Returns an object with two fields:
+        // - search_db: the contents of the search.json file.
+        // - idx: the lunr search index.
+        //   Documented at https://lunrjs.com/docs/lunr.Index.html.
+        async function loadSearchIndex() {
+          async function load_search_db() {
+            let x = await import('./search.json', {
+              assert: {type: 'json'}
+            });
+            return x.default;
+          }
+
+          async function load_idx(search_db) {
+            let idx = lunr(function () {
+              this.ref('index');
+              this.field('name', {
+                'boost': 2
+              });
+              this.field('full_name', {
+                'boost': 2
+              });
+              this.field('split_name', {
+                'boost': 0.5
+              });
+              this.field('summary', {
+                'boost': 1
+              });
+              this.field('full_description', {
+                'boost': 0.75
+              });
+
+              // No stemming?
+              // this.pipeline = new lunr.Pipeline();
+
+              search_db.forEach(item => {
+                this.add(item, {
+                  'boost': item.weight
+                })
+              }, this);
+            });
+            let out = {};
+            out.search_db = search_db;
+            out.idx = idx;
+            return out;
+          };
+
+          if (!cache_idx) {
+            cache_idx = await load_search_db().then(load_idx);
+          }
+          return cache_idx;
+        }
+
+        // If there's a search query, hide the other content and asynchronously
+        // show the search results. Otherwise, hide search content and show the
+        // rest immediately.
+        function maybeShowSearchResults() {
+          const query = searchQuery();
+          if (query) {
+            showHide(".main-content", false);
+
+            let input = document.querySelector(".search-input");
+            input.value = query;
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "Loading search results...";
+
+            loadSearchIndex().then(populateSearchResults)
+          } else {
+            showHide(".main-content", true);
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "";
+
+            let content_elem = document.querySelector(".search-results-content");
+            content_elem.innerText = "";
+          }
+        }
+
+        
+    </script>
+    <link rel="stylesheet" href="subdoc-test-style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="alternate icon" type="image/png" href="logo32.png">
+    <link rel="alternate icon" type="image/png" href="logo16.png">
+    <meta property="og:image" content="logo.png"></meta>
+  </head>
+
+  <body>
+    <nav class="topbar">
+      <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+        ☰
+      </button>
+      <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+          <img class="topbar-logo" src="logo.png"></img>
+        </div></a>
+      <span class="topbar-text-area">
+        <span class="topbar-title">
+          <a href="#">mem</a>
+        </span>
       </span>
-    </span>
-  </nav>
-  <nav class="sidebar">
-    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
-        <img class="sidebar-logo" src="logo.png"></img>
-      </div></a>
-    <div class="sidebar-pretitle sidebar-text">
-      namespace
-    </div>
-    <div class="sidebar-title sidebar-text">
-      <a href="#">mem</a>
-    </div>
-    <div class="sidebar-subtitle sidebar-text">
-    </div>
-    <div class="sidebar-links sidebar-text">
-      <ul>
-        <li>
-          <a class="sidebar-header" href="#classes">Classes</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-NeverValueConstructor.html">NeverValueConstructor</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#functions">Functions</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.addressof.html">addressof</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.clone.html">clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.clone_into.html">clone_into</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.clone_or_forward.html">clone_or_forward</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.data_size_of.html">data_size_of</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.forward.html">forward</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.move.html">move</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.replace.html">replace</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.size_of.html">size_of</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.swap.html">swap</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.swap_nonoverlapping.html">swap_nonoverlapping</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.take.html">take</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.take_and_destruct.html">take_and_destruct</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-fn.take_copy_and_destruct.html">take_copy_and_destruct</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#concepts">Concepts</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-Clone.html">Clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-CloneFrom.html">CloneFrom</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-CloneOrRef.html">CloneOrRef</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-Copy.html">Copy</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-CopyOrRef.html">CopyOrRef</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-CopyOrRefOrVoid.html">CopyOrRefOrVoid</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-IsMoveRef.html">IsMoveRef</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-Move.html">Move</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-MoveOrRef.html">MoveOrRef</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-MoveOrRefOrVoid.html">MoveOrRefOrVoid</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-NeverValueField.html">NeverValueField</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-TrivialCopy.html">TrivialCopy</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-mem-TriviallyRelocatable.html">TriviallyRelocatable</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#aliases-types">Type Aliases</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="TODO">remove_rvalue_reference</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="namespace">
-      <div class="section overview">
-        <div class="section-header">
-          <div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/mem/forward.h#L22">source</a></div>
-          <span>
-            Namespace
-          </span>
-          <a class="project-name" href="index.html">Subspace</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="#">mem</a>
-        </div>
-        <div class="description long">
-        </div>
+    </nav>
+    <nav class="sidebar">
+      <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+          <img class="sidebar-logo" src="logo.png"></img>
+        </div></a>
+      <div class="sidebar-pretitle sidebar-text">
+        namespace
       </div>
-      <div class="section records classes">
-        <div class="section-header">
-          <a name="classes" href="#classes">Classes</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-NeverValueConstructor.html">NeverValueConstructor</a></div>
-            </div>
-            <div class="description short">
-            </div>
+      <div class="sidebar-title sidebar-text">
+        <a href="#">mem</a>
+      </div>
+      <div class="sidebar-subtitle sidebar-text">
+      </div>
+      <div class="sidebar-links sidebar-text">
+        <ul>
+          <li>
+            <a class="sidebar-header" href="#classes">Classes</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-NeverValueConstructor.html">NeverValueConstructor</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#functions">Functions</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.addressof.html">addressof</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.clone.html">clone</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.clone_into.html">clone_into</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.clone_or_forward.html">clone_or_forward</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.data_size_of.html">data_size_of</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.forward.html">forward</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.move.html">move</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.replace.html">replace</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.size_of.html">size_of</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.swap.html">swap</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.swap_nonoverlapping.html">swap_nonoverlapping</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.take.html">take</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.take_and_destruct.html">take_and_destruct</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-fn.take_copy_and_destruct.html">take_copy_and_destruct</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#concepts">Concepts</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-Clone.html">Clone</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-CloneFrom.html">CloneFrom</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-CloneOrRef.html">CloneOrRef</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-Copy.html">Copy</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-CopyOrRef.html">CopyOrRef</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-CopyOrRefOrVoid.html">CopyOrRefOrVoid</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-IsMoveRef.html">IsMoveRef</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-Move.html">Move</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-MoveOrRef.html">MoveOrRef</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-MoveOrRefOrVoid.html">MoveOrRefOrVoid</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-NeverValueField.html">NeverValueField</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-TrivialCopy.html">TrivialCopy</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-mem-TriviallyRelocatable.html">TriviallyRelocatable</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#aliases-types">Type Aliases</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="TODO">remove_rvalue_reference</a>
           </li>
         </ul>
       </div>
-      <div class="section functions">
-        <div class="section-header">
-          <a name="functions" href="#functions">Functions</a>
+    </nav>
+    <main>
+      <nav class="search-nav">
+        <form class="search-form">
+          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search..." onblur="this.placeholder = 'Click or press \'S\' to search...'" onfocus="this.placeholder = 'Type your search here.'">
+          </input>
+        </form>
+      </nav>
+      <section class="search-results">
+        <h1 class="search-results-header">
+        </h1>
+        <div class="search-results-content">
         </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.addressof.html">addressof</a></div>
+      </section>
+      <section class="main-content">
+        <script>maybeShowSearchResults()</script>
+        <div class="namespace">
+          <div class="section overview">
+            <h1 class="section-header">
+              <div>
+                <div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/mem/forward.h#L22">source</a></div>
+                <span>
+                  Namespace
+                </span>
+                <a class="project-name" data-pagefind-weight="1" href="index.html">Subspace</a>
+                <span class="namespace-dots">::</span>
+                <a class="namespace-name" data-pagefind-weight="1" href="namespace.sus.html">sus</a>
+                <span class="namespace-dots">::</span>
+                <a class="namespace-name" data-pagefind-weight="10" href="#">mem</a>
               </div>
+            </h1>
+            <div class="description long">
             </div>
-            <div class="description short">
-              <p>Returns the address of an object, regardless of whether a class type
+          </div>
+          <div class="section records classes">
+            <h1 class="section-header">
+              <a name="classes" href="#classes">Classes</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-NeverValueConstructor.html">NeverValueConstructor</a></div>
+                </div>
+                <div class="description short">
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section functions">
+            <h1 class="section-header">
+              <a name="functions" href="#functions">Functions</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.addressof.html">addressof</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Returns the address of an object, regardless of whether a class type
 overrides <code>operator&amp;</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.clone.html">clone</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Clones the input either by copying or cloning. Returns a new object of type
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.clone.html">clone</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Clones the input either by copying or cloning. Returns a new object of type
 <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.clone_into.html">clone_into</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Performs copy-assignment from <code>source</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.clone_or_forward.html">clone_or_forward</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Clones the input either by copying or cloning, producing an object of type
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.clone_into.html">clone_into</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Performs copy-assignment from <code>source</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.clone_or_forward.html">clone_or_forward</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Clones the input either by copying or cloning, producing an object of type
 <code>T</code>. As with <a href="sus-mem-fn.forward.html"><code>forward</code></a>, the template argument <code>T</code>
 must always be specified when calling this function to deduce the correct
 return type.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.data_size_of.html">data_size_of</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Returns the data size of the type <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.forward.html">forward</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Move from non-reference values but pass through and preserve references.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.move.html">move</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Cast <code>t</code> to an r-value reference so that it can be used to construct or be
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.data_size_of.html">data_size_of</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Returns the data size of the type <code>T</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.forward.html">forward</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Move from non-reference values but pass through and preserve references.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.move.html">move</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Cast <code>t</code> to an r-value reference so that it can be used to construct or be
 assigned to a (non-reference) object of type <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.replace.html">replace</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Replace the <code>dest</code> with <code>src</code>, and return the old value in <code>dest</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.size_of.html">size_of</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Returns the size of the type <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.swap.html">swap</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Swaps the objects <code>lhs</code> and <code>rhs</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.swap_nonoverlapping.html">swap_nonoverlapping</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Swaps the objects <code>lhs</code> and <code>rhs</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.take.html">take</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Moves from <code>t</code> and constructs a new <code>T</code> in its place. Returns the old value
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.replace.html">replace</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Replace the <code>dest</code> with <code>src</code>, and return the old value in <code>dest</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.size_of.html">size_of</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Returns the size of the type <code>T</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.swap.html">swap</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Swaps the objects <code>lhs</code> and <code>rhs</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.swap_nonoverlapping.html">swap_nonoverlapping</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Swaps the objects <code>lhs</code> and <code>rhs</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.take.html">take</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Moves from <code>t</code> and constructs a new <code>T</code> in its place. Returns the old value
 of <code>t</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.take_and_destruct.html">take_and_destruct</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Moves from <code>t</code> and destroys the object at <code>t</code>. Returns the old value of <code>t</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-mem-fn.take_copy_and_destruct.html">take_copy_and_destruct</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Copies from <code>t</code> and destroys the object at <code>t</code>. Returns the old value of
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.take_and_destruct.html">take_and_destruct</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Moves from <code>t</code> and destroys the object at <code>t</code>. Returns the old value of <code>t</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-mem-fn.take_copy_and_destruct.html">take_copy_and_destruct</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Copies from <code>t</code> and destroys the object at <code>t</code>. Returns the old value of
 <code>t</code>.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section concepts">
-        <div class="section-header">
-          <a name="concepts" href="#concepts">Concepts</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-Clone.html">Clone</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>Clone</code> type can make a new copy of itself.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-CloneFrom.html">CloneFrom</a></div>
-            </div>
-            <div class="description short">
-              <p>Determines if <code>T</code> has an optimized path <code>T::clone_from(const T&amp;)</code> that can
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section concepts">
+            <h1 class="section-header">
+              <a name="concepts" href="#concepts">Concepts</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-Clone.html">Clone</a></div>
+                </div>
+                <div class="description short">
+                  <p>A <code>Clone</code> type can make a new copy of itself.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-CloneFrom.html">CloneFrom</a></div>
+                </div>
+                <div class="description short">
+                  <p>Determines if <code>T</code> has an optimized path <code>T::clone_from(const T&amp;)</code> that can
 be used from <a href="sus-mem-fn.clone_into.html"><code>clone_into</code></a>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-CloneOrRef.html">CloneOrRef</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>CloneOrRef</code> object or reference of type <code>T</code> can be cloned to construct a
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-CloneOrRef.html">CloneOrRef</a></div>
+                </div>
+                <div class="description short">
+                  <p>A <code>CloneOrRef</code> object or reference of type <code>T</code> can be cloned to construct a
 new <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-Copy.html">Copy</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>Copy</code> type can be copied to construct a new object and can be assigned to
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-Copy.html">Copy</a></div>
+                </div>
+                <div class="description short">
+                  <p>A <code>Copy</code> type can be copied to construct a new object and can be assigned to
 by copy.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-CopyOrRef.html">CopyOrRef</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>CopyOrRef</code> object or reference of type <code>T</code> can be copied to construct a
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-CopyOrRef.html">CopyOrRef</a></div>
+                </div>
+                <div class="description short">
+                  <p>A <code>CopyOrRef</code> object or reference of type <code>T</code> can be copied to construct a
 new <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-CopyOrRefOrVoid.html">CopyOrRefOrVoid</a></div>
-            </div>
-            <div class="description short">
-              <p>Matches types which are <a href="sus-mem-CopyOrRef.html"><code>CopyOrRef</code></a> or are <code>void</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-IsMoveRef.html">IsMoveRef</a></div>
-            </div>
-            <div class="description short">
-              <p>A concept that can be used to constrain a universal reference parameter to
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-CopyOrRefOrVoid.html">CopyOrRefOrVoid</a></div>
+                </div>
+                <div class="description short">
+                  <p>Matches types which are <a href="sus-mem-CopyOrRef.html"><code>CopyOrRef</code></a> or are <code>void</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-IsMoveRef.html">IsMoveRef</a></div>
+                </div>
+                <div class="description short">
+                  <p>A concept that can be used to constrain a universal reference parameter to
 ensure the caller provides something that was moved from, akin to receiving
 by value. This avoids inadvertantly moving out of an lvalue in the caller.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-Move.html">Move</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>Move</code> type can be moved-from to construct a new object of the same type
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-Move.html">Move</a></div>
+                </div>
+                <div class="description short">
+                  <p>A <code>Move</code> type can be moved-from to construct a new object of the same type
 and can be assigned to by move.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-MoveOrRef.html">MoveOrRef</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>MoveOrRef</code> object or reference of type <code>T</code> can be moved to construct a
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-MoveOrRef.html">MoveOrRef</a></div>
+                </div>
+                <div class="description short">
+                  <p>A <code>MoveOrRef</code> object or reference of type <code>T</code> can be moved to construct a
 new <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-MoveOrRefOrVoid.html">MoveOrRefOrVoid</a></div>
-            </div>
-            <div class="description short">
-              <p>Matches types which are <a href="sus-mem-MoveOrRef.html"><code>MoveOrRef</code></a> or are <code>void</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-NeverValueField.html">NeverValueField</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>NeverValueField</code> type has a field with a never-value.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-TrivialCopy.html">TrivialCopy</a></div>
-            </div>
-            <div class="description short">
-              <p>A <code>TrivialCopy</code> type is <code>Copy</code> but may be copied with memcpy() or memmove()
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-MoveOrRefOrVoid.html">MoveOrRefOrVoid</a></div>
+                </div>
+                <div class="description short">
+                  <p>Matches types which are <a href="sus-mem-MoveOrRef.html"><code>MoveOrRef</code></a> or are <code>void</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-NeverValueField.html">NeverValueField</a></div>
+                </div>
+                <div class="description short">
+                  <p>A <code>NeverValueField</code> type has a field with a never-value.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-TrivialCopy.html">TrivialCopy</a></div>
+                </div>
+                <div class="description short">
+                  <p>A <code>TrivialCopy</code> type is <code>Copy</code> but may be copied with memcpy() or memmove()
 instead of calling the copy constructor/assignment. This allows groups of
 items to be copied in a single operation.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-mem-TriviallyRelocatable.html">TriviallyRelocatable</a></div>
-            </div>
-            <div class="description short">
-              <p>Tests if a variable of type <code>T</code> can be relocated with
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-mem-TriviallyRelocatable.html">TriviallyRelocatable</a></div>
+                </div>
+                <div class="description short">
+                  <p>Tests if a variable of type <code>T</code> can be relocated with
 <a href="sus-ptr-fn.copy.html"><code>ptr::copy</code></a>.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section aliases types">
-        <div class="section-header">
-          <a name="aliases-types" href="#aliases-types">Type Aliases</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.remove_rvalue_reference"></a><a class="type-name" href="TODO">remove_rvalue_reference</a></div>
-            </div>
-            <div class="description short">
-              <p>Performs reference collapsing, removing rvalue references but leaving lvalue
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section aliases types">
+            <h1 class="section-header">
+              <a name="aliases-types" href="#aliases-types">Type Aliases</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a name="alias.remove_rvalue_reference"></a><a class="type-name" href="TODO">remove_rvalue_reference</a></div>
+                </div>
+                <div class="description short">
+                  <p>Performs reference collapsing, removing rvalue references but leaving lvalue
 references untouched.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </main>
-</body>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

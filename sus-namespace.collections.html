@@ -1,200 +1,399 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="subdoc"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta property="og:type" content="website"></meta>
+    <meta property="og:site_name" content="Subspace"></meta>
+    <title>sus::collections - Subspace</title>
+    <meta property="og:title" content="sus::collections - Subspace"></meta>
+    <meta name="description" content="Collection types."></meta>
+    <meta property="og:description" content="Collection types."></meta>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script>
+      
+        // Delayed loading of whatever was in the search box.
+        var searchDelayLoad;
 
-<head>
-  <meta name="generator" content="subdoc"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-  <meta property="og:type" content="website"></meta>
-  <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::collections - Subspace</title>
-  <meta property="og:title" content="sus::collections - Subspace"></meta>
-  <meta name="description" content="Collection types."></meta>
-  <meta property="og:description" content="Collection types."></meta>
-  <link rel="stylesheet" href="subdoc-test-style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="alternate icon" type="image/png" href="logo32.png">
-  <link rel="alternate icon" type="image/png" href="logo16.png">
-  <meta property="og:image" content="logo.png"></meta>
-</head>
+        // The search box's dynamic behaviour.
+        document.addEventListener("keyup", e => {
+          if (e.key === 's') {
+            document.querySelector('.search-input').focus();
+          }
+          if (e.key === 'Escape') {
+            document.querySelector('.search-input').blur();
+            navigateToSearch(null);
+            e.preventDefault();
+          }
+        });
+        function navigateToSearch(query) {
+          window.clearTimeout(searchDelayLoad);
+          searchDelayLoad = null;
 
-<body>
-  <nav class="topbar">
-    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
-      ☰
-    </button>
-    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
-        <img class="topbar-logo" src="logo.png"></img>
-      </div></a>
-    <span class="topbar-text-area">
-      <span class="topbar-title">
-        <a href="#">collections</a>
+          let without_search =
+              window.location.href.replace(window.location.search, '');
+          if (query) {
+            window.history.replaceState(null, "",
+              without_search + "?" + `search=${query}`);
+          } else {
+            window.history.replaceState(null, "", without_search);
+          }
+          maybeShowSearchResults();
+        }
+        addEventListener("load", event => {
+          document.querySelector(".search-input").oninput = (e) => {
+            window.clearTimeout(searchDelayLoad);
+            searchDelayLoad = window.setTimeout(() => {
+              navigateToSearch(e.target.value);
+            }, 1000);
+          };
+          document.querySelector(".search-input").onkeypress = (e) => {
+            if (e.key == "Enter") {
+              navigateToSearch(e.target.value);
+              e.preventDefault();
+            }
+          };
+          document.querySelector(".search-input").onfocus = (e) => {
+            navigateToSearch(e.target.value);
+          };
+        });
+
+        // Show or hide any DOM element.
+        function showHide(selector, show) {
+          if (show)
+            document.querySelector(selector).classList.remove("hidden");
+          else
+            document.querySelector(selector).classList.add("hidden");
+        }
+
+        function searchQuery() {
+          const params = new Proxy(
+            new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          return params.search;
+        }
+
+        // Showing search results.
+        async function populateSearchResults(loaded) {
+          const search_db = loaded.search_db;
+          const idx = loaded.idx;
+
+          const results = idx.search(searchQuery());
+          let content = '';
+          for (r of results) {
+            const item = search_db[r.ref];
+            
+            const type = item.type;
+            const url = item.url;
+            const name = item.name;
+            const full_name = item.full_name;
+            const summmary = item.summary ? item.summary : "";
+            
+            content += `\
+              <a class="search-results-link" href="${url}">
+                <span class="search-results-type">${type}</span>\
+                <span class="search-results-name">${full_name}</span>\
+                <span class="search-results-summary">${summmary}</span>\
+              </a>\
+              `
+          }
+
+          let content_elem = document.querySelector(".search-results-content");
+          content_elem.innerHTML = content;
+
+          let header_elem = document.querySelector(".search-results-header");
+          header_elem.innerText = "Search results";
+        }
+
+        var cache_idx;
+
+        // Searching via https://lunrjs.com.
+        //
+        // Load the JSON search database, which will be turned into a search
+        // index. Returns an object with two fields:
+        // - search_db: the contents of the search.json file.
+        // - idx: the lunr search index.
+        //   Documented at https://lunrjs.com/docs/lunr.Index.html.
+        async function loadSearchIndex() {
+          async function load_search_db() {
+            let x = await import('./search.json', {
+              assert: {type: 'json'}
+            });
+            return x.default;
+          }
+
+          async function load_idx(search_db) {
+            let idx = lunr(function () {
+              this.ref('index');
+              this.field('name', {
+                'boost': 2
+              });
+              this.field('full_name', {
+                'boost': 2
+              });
+              this.field('split_name', {
+                'boost': 0.5
+              });
+              this.field('summary', {
+                'boost': 1
+              });
+              this.field('full_description', {
+                'boost': 0.75
+              });
+
+              // No stemming?
+              // this.pipeline = new lunr.Pipeline();
+
+              search_db.forEach(item => {
+                this.add(item, {
+                  'boost': item.weight
+                })
+              }, this);
+            });
+            let out = {};
+            out.search_db = search_db;
+            out.idx = idx;
+            return out;
+          };
+
+          if (!cache_idx) {
+            cache_idx = await load_search_db().then(load_idx);
+          }
+          return cache_idx;
+        }
+
+        // If there's a search query, hide the other content and asynchronously
+        // show the search results. Otherwise, hide search content and show the
+        // rest immediately.
+        function maybeShowSearchResults() {
+          const query = searchQuery();
+          if (query) {
+            showHide(".main-content", false);
+
+            let input = document.querySelector(".search-input");
+            input.value = query;
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "Loading search results...";
+
+            loadSearchIndex().then(populateSearchResults)
+          } else {
+            showHide(".main-content", true);
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "";
+
+            let content_elem = document.querySelector(".search-results-content");
+            content_elem.innerText = "";
+          }
+        }
+
+        
+    </script>
+    <link rel="stylesheet" href="subdoc-test-style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="alternate icon" type="image/png" href="logo32.png">
+    <link rel="alternate icon" type="image/png" href="logo16.png">
+    <meta property="og:image" content="logo.png"></meta>
+  </head>
+
+  <body>
+    <nav class="topbar">
+      <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+        ☰
+      </button>
+      <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+          <img class="topbar-logo" src="logo.png"></img>
+        </div></a>
+      <span class="topbar-text-area">
+        <span class="topbar-title">
+          <a href="#">collections</a>
+        </span>
       </span>
-    </span>
-  </nav>
-  <nav class="sidebar">
-    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
-        <img class="sidebar-logo" src="logo.png"></img>
-      </div></a>
-    <div class="sidebar-pretitle sidebar-text">
-      namespace
-    </div>
-    <div class="sidebar-title sidebar-text">
-      <a href="#">collections</a>
-    </div>
-    <div class="sidebar-subtitle sidebar-text">
-    </div>
-    <div class="sidebar-links sidebar-text">
-      <ul>
-        <li>
-          <a class="sidebar-header" href="#namespaces">Namespaces</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-namespace.compat.html">compat</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#classes">Classes</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html">Array</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-ArrayIntoIter.html">ArrayIntoIter</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Chunks.html">Chunks</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-ChunksExact.html">ChunksExact</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-ChunksExactMut.html">ChunksExactMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-ChunksMut.html">ChunksMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Drain.html">Drain</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-RChunks.html">RChunks</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-RChunksExact.html">RChunksExact</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-RChunksExactMut.html">RChunksExactMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-RChunksMut.html">RChunksMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-RSplit.html">RSplit</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-RSplitMut.html">RSplitMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-RSplitN.html">RSplitN</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-RSplitNMut.html">RSplitNMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Slice.html">Slice</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SliceIter.html">SliceIter</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SliceIterMut.html">SliceIterMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SliceMut.html">SliceMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Split.html">Split</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SplitInclusive.html">SplitInclusive</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SplitInclusiveMut.html">SplitInclusiveMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SplitMut.html">SplitMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SplitN.html">SplitN</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-SplitNMut.html">SplitNMut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Vec.html">Vec</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-VecIntoIter.html">VecIntoIter</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Windows.html">Windows</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-WindowsMut.html">WindowsMut</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#functions">Functions</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-fn.get.array.structured.bindings.html">get</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#operators">Operators</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-fn.operator_spaceship.array.cmp.array.html">operator&lt;=&gt;</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-fn.operator_spaceship.array.cmp.slice.html">operator&lt;=&gt;</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-fn.operator_spaceship.array.cmp.slicemut.html">operator&lt;=&gt;</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#concepts">Concepts</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Concat.html">Concat</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Join.html">Join</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#aliases-functions">Function Aliases</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-fn.begin.html">begin</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-fn.end.html">end</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="namespace">
-      <div class="section overview">
-        <div class="section-header">
-          <div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/collections.h#L273">source</a></div>
-          <span>
-            Namespace
-          </span>
-          <a class="project-name" href="index.html">Subspace</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="#">collections</a>
+    </nav>
+    <nav class="sidebar">
+      <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+          <img class="sidebar-logo" src="logo.png"></img>
+        </div></a>
+      <div class="sidebar-pretitle sidebar-text">
+        namespace
+      </div>
+      <div class="sidebar-title sidebar-text">
+        <a href="#">collections</a>
+      </div>
+      <div class="sidebar-subtitle sidebar-text">
+      </div>
+      <div class="sidebar-links sidebar-text">
+        <ul>
+          <li>
+            <a class="sidebar-header" href="#namespaces">Namespaces</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-namespace.compat.html">compat</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#classes">Classes</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html">Array</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-ArrayIntoIter.html">ArrayIntoIter</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Chunks.html">Chunks</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-ChunksExact.html">ChunksExact</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-ChunksExactMut.html">ChunksExactMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-ChunksMut.html">ChunksMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Drain.html">Drain</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-RChunks.html">RChunks</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-RChunksExact.html">RChunksExact</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-RChunksExactMut.html">RChunksExactMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-RChunksMut.html">RChunksMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-RSplit.html">RSplit</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-RSplitMut.html">RSplitMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-RSplitN.html">RSplitN</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-RSplitNMut.html">RSplitNMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Slice.html">Slice</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-SliceIter.html">SliceIter</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-SliceIterMut.html">SliceIterMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-SliceMut.html">SliceMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Split.html">Split</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-SplitInclusive.html">SplitInclusive</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-SplitInclusiveMut.html">SplitInclusiveMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-SplitMut.html">SplitMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-SplitN.html">SplitN</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-SplitNMut.html">SplitNMut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Vec.html">Vec</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-VecIntoIter.html">VecIntoIter</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Windows.html">Windows</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-WindowsMut.html">WindowsMut</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#functions">Functions</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-fn.get.array.structured.bindings.html">get</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#operators">Operators</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-fn.operator_spaceship.array.cmp.array.html">operator&lt;=&gt;</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-fn.operator_spaceship.array.cmp.slice.html">operator&lt;=&gt;</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-fn.operator_spaceship.array.cmp.slicemut.html">operator&lt;=&gt;</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#concepts">Concepts</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Concat.html">Concat</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Join.html">Join</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#aliases-functions">Function Aliases</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-iter-fn.begin.html">begin</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-iter-fn.end.html">end</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <nav class="search-nav">
+        <form class="search-form">
+          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search..." onblur="this.placeholder = 'Click or press \'S\' to search...'" onfocus="this.placeholder = 'Type your search here.'">
+          </input>
+        </form>
+      </nav>
+      <section class="search-results">
+        <h1 class="search-results-header">
+        </h1>
+        <div class="search-results-content">
         </div>
-        <div class="description long">
-          <p>Collection types.</p>
+      </section>
+      <section class="main-content">
+        <script>maybeShowSearchResults()</script>
+        <div class="namespace">
+          <div class="section overview">
+            <h1 class="section-header">
+              <div>
+                <div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/collections.h#L273">source</a></div>
+                <span>
+                  Namespace
+                </span>
+                <a class="project-name" data-pagefind-weight="1" href="index.html">Subspace</a>
+                <span class="namespace-dots">::</span>
+                <a class="namespace-name" data-pagefind-weight="1" href="namespace.sus.html">sus</a>
+                <span class="namespace-dots">::</span>
+                <a class="namespace-name" data-pagefind-weight="10" href="#">collections</a>
+              </div>
+            </h1>
+            <div class="description long">
+              <p>Collection types.</p>
 <p>The Subspace library provides implementations of common general purpose
 programming data structures, with rich APIs that allow for interactions with
 <a href="sus-namespace.iter.html">Iterators</a>, and with APIs that provide safe defaults.</p>
@@ -417,390 +616,392 @@ familiarity and working across languages, but some are necessary for use in
 C++ or interop with the standard library. Subspace also provides additional
 containers specific to C++ when needed, such as <a href="sus-collections-Array.html"><code>Array</code></a> (and TODO: FlatMap).</p>
 
-        </div>
-      </div>
-      <div class="section namespaces">
-        <div class="section-header">
-          <a name="namespaces" href="#namespaces">Namespaces</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <a class="namespace-name" href="sus-collections-namespace.compat.html">compat</a>
             </div>
-            <div class="description short">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section records classes">
-        <div class="section-header">
-          <a name="classes" href="#classes">Classes</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Array.html">Array</a></div>
-            </div>
-            <div class="description short">
-              <p>A collection of objects of type <code>T</code>, with a fixed size <code>N</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-ArrayIntoIter.html">ArrayIntoIter</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator that consumes an <code>Array</code> and returns the items from it.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Chunks.html">Chunks</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+          </div>
+          <div class="section namespaces">
+            <h1 class="section-header">
+              <a name="namespaces" href="#namespaces">Namespaces</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="item-name">
+                  <a class="namespace-name" href="sus-collections-namespace.compat.html">compat</a>
+                </div>
+                <div class="description short">
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section records classes">
+            <h1 class="section-header">
+              <a name="classes" href="#classes">Classes</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Array.html">Array</a></div>
+                </div>
+                <div class="description short">
+                  <p>A collection of objects of type <code>T</code>, with a fixed size <code>N</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-ArrayIntoIter.html">ArrayIntoIter</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator that consumes an <code>Array</code> and returns the items from it.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Chunks.html">Chunks</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
 at a time), starting at the beginning of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-ChunksExact.html">ChunksExact</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-ChunksExact.html">ChunksExact</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
 at a time), starting at the beginning of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-ChunksExactMut.html">ChunksExactMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-ChunksExactMut.html">ChunksExactMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
 elements at a time), starting at the beginning of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-ChunksMut.html">ChunksMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over mutable a slice in (non-overlapping) chunks (<code>chunk_size</code>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-ChunksMut.html">ChunksMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over mutable a slice in (non-overlapping) chunks (<code>chunk_size</code>
 elements at a time), starting at the beginning of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Drain.html">Drain</a></div>
-            </div>
-            <div class="description short">
-              <p>A draining iterator for <code>Vec&lt;T&gt;</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-RChunks.html">RChunks</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Drain.html">Drain</a></div>
+                </div>
+                <div class="description short">
+                  <p>A draining iterator for <code>Vec&lt;T&gt;</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-RChunks.html">RChunks</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
 at a time), starting at the end of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-RChunksExact.html">RChunksExact</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-RChunksExact.html">RChunksExact</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a slice in (non-overlapping) chunks (<code>chunk_size</code> elements
 at a time), starting at the end of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-RChunksExactMut.html">RChunksExactMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-RChunksExactMut.html">RChunksExactMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
 elements at a time), starting at the end of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-RChunksMut.html">RChunksMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-RChunksMut.html">RChunksMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a mutable slice in (non-overlapping) chunks (<code>chunk_size</code>
 elements at a time), starting at the end of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-RSplit.html">RSplit</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over subslices separated by elements that match a predicate
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-RSplit.html">RSplit</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over subslices separated by elements that match a predicate
 function, starting from the end of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-RSplitMut.html">RSplitMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over the subslices of the vector which are separated by elements
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-RSplitMut.html">RSplitMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over the subslices of the vector which are separated by elements
 that match pred, starting from the end of the slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-RSplitN.html">RSplitN</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over subslices separated by elements that match a predicate
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-RSplitN.html">RSplitN</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over subslices separated by elements that match a predicate
 function, limited to a given number of splits, starting from the end of the
 slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-RSplitNMut.html">RSplitNMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over subslices separated by elements that match a predicate
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-RSplitNMut.html">RSplitNMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over subslices separated by elements that match a predicate
 function, limited to a given number of splits, starting from the end of the
 slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Slice.html">Slice</a></div>
-            </div>
-            <div class="description short">
-              <p>A dynamically-sized const view into a contiguous sequence of objects of type
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Slice.html">Slice</a></div>
+                </div>
+                <div class="description short">
+                  <p>A dynamically-sized const view into a contiguous sequence of objects of type
 <code>const T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-SliceIter.html">SliceIter</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a contiguous array of objects with const access to them.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-SliceIterMut.html">SliceIterMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over a contiguous array of objects with mutable access to them.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-SliceMut.html">SliceMut</a></div>
-            </div>
-            <div class="description short">
-              <p>A dynamically-sized mutable view into a contiguous sequence of objects of
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-SliceIter.html">SliceIter</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a contiguous array of objects with const access to them.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-SliceIterMut.html">SliceIterMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over a contiguous array of objects with mutable access to them.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-SliceMut.html">SliceMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>A dynamically-sized mutable view into a contiguous sequence of objects of
 type <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Split.html">Split</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over subslices separated by elements that match a predicate
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Split.html">Split</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over subslices separated by elements that match a predicate
 function.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-SplitInclusive.html">SplitInclusive</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over subslices separated by elements that match a predicate
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-SplitInclusive.html">SplitInclusive</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over subslices separated by elements that match a predicate
 function. Unlike <code>Split</code>, it contains the matched part as a terminator
 of the subslice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-SplitInclusiveMut.html">SplitInclusiveMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over subslices separated by elements that match a predicate
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-SplitInclusiveMut.html">SplitInclusiveMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over subslices separated by elements that match a predicate
 function. Unlike <code>Split</code>, it contains the matched part as a terminator
 of the subslice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-SplitMut.html">SplitMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over subslices separated by elements that match a predicate
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-SplitMut.html">SplitMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over subslices separated by elements that match a predicate
 function.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-SplitN.html">SplitN</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over subslices separated by elements that match a predicate
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-SplitN.html">SplitN</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over subslices separated by elements that match a predicate
 function, limited to a given number of splits.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-SplitNMut.html">SplitNMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over mutable subslices separated by elements that match a
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-SplitNMut.html">SplitNMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over mutable subslices separated by elements that match a
 predicate function, limited to a given number of splits.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Vec.html">Vec</a></div>
-            </div>
-            <div class="description short">
-              <p>A resizeable contiguous buffer of type <code>T</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-VecIntoIter.html">VecIntoIter</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator that consumes a <code>Vec</code> and returns the items from it.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Windows.html">Windows</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over overlapping subslices of length <code>size</code>.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-WindowsMut.html">WindowsMut</a></div>
-            </div>
-            <div class="description short">
-              <p>An iterator over overlapping subslices of length <code>size</code>.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section functions">
-        <div class="section-header">
-          <a name="functions" href="#functions">Functions</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-collections-fn.get.array.structured.bindings.html">get</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Support for using structured bindings with <code>Array</code>.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section functions">
-        <div class="section-header">
-          <a name="operators" href="#operators">Operators</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.array.html">operator&lt;=&gt;</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Compares two Arrays.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slice.html">operator&lt;=&gt;</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Compares an Array and a Slice.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="overload-set item-name">
-              <div class="overload">
-                <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slicemut.html">operator&lt;=&gt;</a></div>
-              </div>
-            </div>
-            <div class="description short">
-              <p>Compares an Array and a SliceMut.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section concepts">
-        <div class="section-header">
-          <a name="concepts" href="#concepts">Concepts</a>
-        </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Concat.html">Concat</a></div>
-            </div>
-            <div class="description short">
-              <p>Types that support being flattened and concatenated together into a
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Vec.html">Vec</a></div>
+                </div>
+                <div class="description short">
+                  <p>A resizeable contiguous buffer of type <code>T</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-VecIntoIter.html">VecIntoIter</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator that consumes a <code>Vec</code> and returns the items from it.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Windows.html">Windows</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over overlapping subslices of length <code>size</code>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-WindowsMut.html">WindowsMut</a></div>
+                </div>
+                <div class="description short">
+                  <p>An iterator over overlapping subslices of length <code>size</code>.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section functions">
+            <h1 class="section-header">
+              <a name="functions" href="#functions">Functions</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-collections-fn.get.array.structured.bindings.html">get</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Support for using structured bindings with <code>Array</code>.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section functions">
+            <h1 class="section-header">
+              <a name="operators" href="#operators">Operators</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.array.html">operator&lt;=&gt;</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Compares two Arrays.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slice.html">operator&lt;=&gt;</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Compares an Array and a Slice.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-collections-fn.operator_spaceship.array.cmp.slicemut.html">operator&lt;=&gt;</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Compares an Array and a SliceMut.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section concepts">
+            <h1 class="section-header">
+              <a name="concepts" href="#concepts">Concepts</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Concat.html">Concat</a></div>
+                </div>
+                <div class="description short">
+                  <p>Types that support being flattened and concatenated together into a
 collection.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a class="type-name" href="sus-collections-Join.html">Join</a></div>
-            </div>
-            <div class="description short">
-              <p>Types that support being flattened and concatenated together into a
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a class="type-name" href="sus-collections-Join.html">Join</a></div>
+                </div>
+                <div class="description short">
+                  <p>Types that support being flattened and concatenated together into a
 collection, with a separator between each item. This is similar to <code>Concat</code>
 but with a separator.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section aliases functions">
-        <div class="section-header">
-          <a name="aliases-functions" href="#aliases-functions">Function Aliases</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section aliases functions">
+            <h1 class="section-header">
+              <a name="aliases-functions" href="#aliases-functions">Function Aliases</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a name="alias.begin"></a><a class="type-name" href="sus-iter-fn.begin.html">begin</a></div>
+                </div>
+                <div class="description short">
+                  <p>Implicit for-ranged loop iteration for all collections via the <code>iter</code>
+method.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="item-name">
+                  <div class="type-signature"><a name="alias.end"></a><a class="type-name" href="sus-iter-fn.end.html">end</a></div>
+                </div>
+                <div class="description short">
+                  <p>Implicit for-ranged loop iteration for all collections via the <code>iter</code>
+method.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul class="section-items item-table">
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.begin"></a><a class="type-name" href="sus-iter-fn.begin.html">begin</a></div>
-            </div>
-            <div class="description short">
-              <p>Implicit for-ranged loop iteration for all collections via the <code>iter</code>
-method.</p>
-            </div>
-          </li>
-          <li class="section-item">
-            <div class="item-name">
-              <div class="type-signature"><a name="alias.end"></a><a class="type-name" href="sus-iter-fn.end.html">end</a></div>
-            </div>
-            <div class="description short">
-              <p>Implicit for-ranged loop iteration for all collections via the <code>iter</code>
-method.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
+</html>

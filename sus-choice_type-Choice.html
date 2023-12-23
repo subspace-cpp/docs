@@ -1,138 +1,335 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="subdoc"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta property="og:type" content="website"></meta>
+    <meta property="og:site_name" content="Subspace"></meta>
+    <title>sus::choice_type::Choice - Subspace</title>
+    <meta property="og:title" content="sus::choice_type::Choice - Subspace"></meta>
+    <meta name="description" content="A tagged union, or sum type."></meta>
+    <meta property="og:description" content="A tagged union, or sum type."></meta>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script>
+      
+        // Delayed loading of whatever was in the search box.
+        var searchDelayLoad;
 
-<head>
-  <meta name="generator" content="subdoc"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-  <meta property="og:type" content="website"></meta>
-  <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::choice_type::Choice - Subspace</title>
-  <meta property="og:title" content="sus::choice_type::Choice - Subspace"></meta>
-  <meta name="description" content="A tagged union, or sum type."></meta>
-  <meta property="og:description" content="A tagged union, or sum type."></meta>
-  <link rel="stylesheet" href="subdoc-test-style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="alternate icon" type="image/png" href="logo32.png">
-  <link rel="alternate icon" type="image/png" href="logo16.png">
-  <meta property="og:image" content="logo.png"></meta>
-</head>
+        // The search box's dynamic behaviour.
+        document.addEventListener("keyup", e => {
+          if (e.key === 's') {
+            document.querySelector('.search-input').focus();
+          }
+          if (e.key === 'Escape') {
+            document.querySelector('.search-input').blur();
+            navigateToSearch(null);
+            e.preventDefault();
+          }
+        });
+        function navigateToSearch(query) {
+          window.clearTimeout(searchDelayLoad);
+          searchDelayLoad = null;
 
-<body>
-  <nav class="topbar">
-    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
-      ☰
-    </button>
-    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
-        <img class="topbar-logo" src="logo.png"></img>
-      </div></a>
-    <span class="topbar-text-area">
-      <span class="topbar-title">
-        <a href="#">Choice</a>
+          let without_search =
+              window.location.href.replace(window.location.search, '');
+          if (query) {
+            window.history.replaceState(null, "",
+              without_search + "?" + `search=${query}`);
+          } else {
+            window.history.replaceState(null, "", without_search);
+          }
+          maybeShowSearchResults();
+        }
+        addEventListener("load", event => {
+          document.querySelector(".search-input").oninput = (e) => {
+            window.clearTimeout(searchDelayLoad);
+            searchDelayLoad = window.setTimeout(() => {
+              navigateToSearch(e.target.value);
+            }, 1000);
+          };
+          document.querySelector(".search-input").onkeypress = (e) => {
+            if (e.key == "Enter") {
+              navigateToSearch(e.target.value);
+              e.preventDefault();
+            }
+          };
+          document.querySelector(".search-input").onfocus = (e) => {
+            navigateToSearch(e.target.value);
+          };
+        });
+
+        // Show or hide any DOM element.
+        function showHide(selector, show) {
+          if (show)
+            document.querySelector(selector).classList.remove("hidden");
+          else
+            document.querySelector(selector).classList.add("hidden");
+        }
+
+        function searchQuery() {
+          const params = new Proxy(
+            new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          return params.search;
+        }
+
+        // Showing search results.
+        async function populateSearchResults(loaded) {
+          const search_db = loaded.search_db;
+          const idx = loaded.idx;
+
+          const results = idx.search(searchQuery());
+          let content = '';
+          for (r of results) {
+            const item = search_db[r.ref];
+            
+            const type = item.type;
+            const url = item.url;
+            const name = item.name;
+            const full_name = item.full_name;
+            const summmary = item.summary ? item.summary : "";
+            
+            content += `\
+              <a class="search-results-link" href="${url}">
+                <span class="search-results-type">${type}</span>\
+                <span class="search-results-name">${full_name}</span>\
+                <span class="search-results-summary">${summmary}</span>\
+              </a>\
+              `
+          }
+
+          let content_elem = document.querySelector(".search-results-content");
+          content_elem.innerHTML = content;
+
+          let header_elem = document.querySelector(".search-results-header");
+          header_elem.innerText = "Search results";
+        }
+
+        var cache_idx;
+
+        // Searching via https://lunrjs.com.
+        //
+        // Load the JSON search database, which will be turned into a search
+        // index. Returns an object with two fields:
+        // - search_db: the contents of the search.json file.
+        // - idx: the lunr search index.
+        //   Documented at https://lunrjs.com/docs/lunr.Index.html.
+        async function loadSearchIndex() {
+          async function load_search_db() {
+            let x = await import('./search.json', {
+              assert: {type: 'json'}
+            });
+            return x.default;
+          }
+
+          async function load_idx(search_db) {
+            let idx = lunr(function () {
+              this.ref('index');
+              this.field('name', {
+                'boost': 2
+              });
+              this.field('full_name', {
+                'boost': 2
+              });
+              this.field('split_name', {
+                'boost': 0.5
+              });
+              this.field('summary', {
+                'boost': 1
+              });
+              this.field('full_description', {
+                'boost': 0.75
+              });
+
+              // No stemming?
+              // this.pipeline = new lunr.Pipeline();
+
+              search_db.forEach(item => {
+                this.add(item, {
+                  'boost': item.weight
+                })
+              }, this);
+            });
+            let out = {};
+            out.search_db = search_db;
+            out.idx = idx;
+            return out;
+          };
+
+          if (!cache_idx) {
+            cache_idx = await load_search_db().then(load_idx);
+          }
+          return cache_idx;
+        }
+
+        // If there's a search query, hide the other content and asynchronously
+        // show the search results. Otherwise, hide search content and show the
+        // rest immediately.
+        function maybeShowSearchResults() {
+          const query = searchQuery();
+          if (query) {
+            showHide(".main-content", false);
+
+            let input = document.querySelector(".search-input");
+            input.value = query;
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "Loading search results...";
+
+            loadSearchIndex().then(populateSearchResults)
+          } else {
+            showHide(".main-content", true);
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "";
+
+            let content_elem = document.querySelector(".search-results-content");
+            content_elem.innerText = "";
+          }
+        }
+
+        
+    </script>
+    <link rel="stylesheet" href="subdoc-test-style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="alternate icon" type="image/png" href="logo32.png">
+    <link rel="alternate icon" type="image/png" href="logo16.png">
+    <meta property="og:image" content="logo.png"></meta>
+  </head>
+
+  <body>
+    <nav class="topbar">
+      <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+        ☰
+      </button>
+      <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+          <img class="topbar-logo" src="logo.png"></img>
+        </div></a>
+      <span class="topbar-text-area">
+        <span class="topbar-title">
+          <a href="#">Choice</a>
+        </span>
       </span>
-    </span>
-  </nav>
-  <nav class="sidebar">
-    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
-        <img class="sidebar-logo" src="logo.png"></img>
-      </div></a>
-    <div class="sidebar-pretitle sidebar-text">
-      class
-    </div>
-    <div class="sidebar-title sidebar-text">
-      <a href="#">Choice</a>
-    </div>
-    <div class="sidebar-subtitle sidebar-text">
-    </div>
-    <div class="sidebar-links sidebar-text">
-      <ul>
-        <li>
-          <a class="sidebar-header" href="#static-methods">Static Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.with">with</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#methods">Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.as">as</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.as_mut">as_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.clone">clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.get">get</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.get_mut">get_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.get_unchecked">get_unchecked</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.get_unchecked_mut">get_unchecked_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.into_inner">into_inner</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.set">set</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.which">which</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#conversions">Conversions</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator TagsType">operator TagsType</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#operators">Operators</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="type record class">
-      <div class="section overview">
-        <div class="section-header">
-          <span>
-            Class
-          </span>
-          <a class="project-name" href="index.html">Subspace</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.choice_type.html">choice_type</a>
-          <span class="namespace-dots">::</span>
-          <a class="type-name" href="#">Choice</a>
+    </nav>
+    <nav class="sidebar">
+      <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+          <img class="sidebar-logo" src="logo.png"></img>
+        </div></a>
+      <div class="sidebar-pretitle sidebar-text">
+        class
+      </div>
+      <div class="sidebar-title sidebar-text">
+        <a href="#">Choice</a>
+      </div>
+      <div class="sidebar-subtitle sidebar-text">
+      </div>
+      <div class="sidebar-links sidebar-text">
+        <ul>
+          <li>
+            <a class="sidebar-header" href="#static-methods">Static Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.with">with</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#methods">Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.as">as</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.as_mut">as_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.clone">clone</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.get">get</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.get_mut">get_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.get_unchecked">get_unchecked</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.get_unchecked_mut">get_unchecked_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.into_inner">into_inner</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.set">set</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.which">which</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#conversions">Conversions</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator TagsType">operator TagsType</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#operators">Operators</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <nav class="search-nav">
+        <form class="search-form">
+          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search..." onblur="this.placeholder = 'Click or press \'S\' to search...'" onfocus="this.placeholder = 'Type your search here.'">
+          </input>
+        </form>
+      </nav>
+      <section class="search-results">
+        <h1 class="search-results-header">
+        </h1>
+        <div class="search-results-content">
         </div>
-        <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L188">source</a></div><span class="class">
-            class
-          </span><span class="type-name">
-            Choice
-          </span><span class="final">
-            final
-          </span><div class="record-body">
-            { ... };
-          </div></div>
-        <div class="description long">
-          <p>A tagged union, or sum type.</p>
+      </section>
+      <section class="main-content">
+        <script>maybeShowSearchResults()</script>
+        <div class="type record class">
+          <div class="section overview">
+            <h1 class="section-header">
+              <span>
+                Class
+              </span>
+              <a class="project-name" data-pagefind-weight="1" href="index.html">Subspace</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="namespace.sus.html">sus</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="sus-namespace.choice_type.html">choice_type</a>
+              <span class="namespace-dots">::</span>
+              <a class="type-name" data-pagefind-weight="20" href="#">Choice</a>
+            </h1>
+            <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L188">source</a></div><span class="class">
+                class
+              </span><span class="type-name">
+                Choice
+              </span><span class="final">
+                final
+              </span><div class="record-body">
+                { ... };
+              </div></div>
+            <div class="description long">
+              <p>A tagged union, or sum type.</p>
 <p>A <code>Choice</code> is always set to one of its <code>Tags</code> values, and each tag has zero
 or more types attached to it as data values.</p>
 <p><code>Choice</code> can be thought of as a combination of an <a href="https://en.cppreference.com/w/cpp/language/enum"><code>enum</code></a> and a
@@ -218,152 +415,152 @@ allows access to the Choice's values though <code>MyChoiceType::Tag::Name</code>
 <span class="keyword">auto</span> x <span class="punct">=</span> EitherOr::with<span class="punct">&lt;</span>EitherOr::Tag::First<span class="punct">&gt;</span><span class="punct">(</span>987u<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
-        </div>
-      </div>
-      <div class="section methods static">
-        <div class="section-header">
-          <a name="static-methods" href="#static-methods">Static Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L367">source</a></div><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_move_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_move_constructible_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L367">source</a></div><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_move_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_move_constructible_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L367">source</a></div><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
             </div>
           </div>
-          <div class="description long">
-            <p>Move constructor.</p>
+          <div class="section methods static">
+            <h1 class="section-header">
+              <a name="static-methods" href="#static-methods">Static Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L367">source</a></div><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_move_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_move_constructible_v&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L367">source</a></div><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_move_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_move_constructible_v&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L367">source</a></div><a name="method.Choice.move"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.move">Choice</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Move constructor.</p>
 <p><code>Choice</code> satisfies <a href="sus-mem-Move.html"><code>Move</code></a> when the types it holds all
 satisfy <a href="sus-mem-Move.html"><code>Move</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L426">source</a></div><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L426">source</a></div><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L426">source</a></div><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Copy constructor.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L426">source</a></div><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L426">source</a></div><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_constructible_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_constructible_v&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L426">source</a></div><a name="method.Choice.copy"></a><a class="function-name" href="sus-choice_type-Choice.html#method.Choice.copy">Choice</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Copy constructor.</p>
 <p><code>Choice</code> satisfies <a href="sus-mem-Copy.html"><code>Copy</code></a> when the types it holds all
 satisfy <a href="sus-mem-Copy.html"><code>Copy</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L297">source</a></div><a name="method.with"></a><div class="template">template &lt;TagsType V&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>() -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L297">source</a></div><a name="method.with"></a><div class="template">template &lt;TagsType V, class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>(U&& value) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 1u</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, U &&&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L297">source</a></div><a name="method.with"></a><div class="template">template &lt;TagsType V, class... Us&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>(Us&&... values) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 1u</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) ==</pre><pre class="requires-constraint-line">                 __private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::StorageIsSafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Constructs a <code>Choice</code> with the <code>V</code> tag indicating its active member, and
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L297">source</a></div><a name="method.with"></a><div class="template">template &lt;TagsType V&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>() -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L297">source</a></div><a name="method.with"></a><div class="template">template &lt;TagsType V, class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>(U&& value) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 1u</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, U &&&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L297">source</a></div><a name="method.with"></a><div class="template">template &lt;TagsType V, class... Us&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.with">with</a>(Us&&... values) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 1u</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) ==</pre><pre class="requires-constraint-line">                 __private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::StorageIsSafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Constructs a <code>Choice</code> with the <code>V</code> tag indicating its active member, and
 with the parameters used to set the associated values.</p>
 <p>If the associated type of the tag is <code>void</code> then <code>with()</code> takes no
 parameters.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="methods" href="#methods">Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L565">source</a></div><a name="method.as"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.as">as</a>() const& -&gt; decltype(auto)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L565">source</a></div><a name="method.as"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.as">as</a>() && -&gt; <span class="const">const</span> sus::choice_type::Choice::StorageTypeOfTag&lt;V&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="methods" href="#methods">Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L565">source</a></div><a name="method.as"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.as">as</a>() const& -&gt; decltype(auto)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L565">source</a></div><a name="method.as"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.as">as</a>() && -&gt; <span class="const">const</span> sus::choice_type::Choice::StorageTypeOfTag&lt;V&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
 member in the <code>Choice</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
@@ -375,19 +572,19 @@ active member.</p>
 <p>The function will panic if the active member does not match the tag value
 passed as the template parameter.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L591">source</a></div><a name="method.as_mut"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.as_mut">as_mut</a>() & -&gt; decltype(auto)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L591">source</a></div><a name="method.as_mut"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.as_mut">as_mut</a>() & -&gt; decltype(auto)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
 member in the <code>Choice</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
@@ -399,46 +596,46 @@ active member.</p>
 <p>The function will panic if the active member does not match the tag value
 passed as the template parameter.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L479">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Clone&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p><a href="sus-mem-Clone.html"><code>Clone</code></a> support.
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L479">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Clone&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p><a href="sus-mem-Clone.html"><code>Clone</code></a> support.
 <code>Choice</code> satisfies <a href="sus-mem-Clone.html"><code>Clone</code></a> when the types it holds all
 satisfy <a href="sus-mem-Clone.html"><code>Clone</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L630">source</a></div><a name="method.get"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get">get</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::choice_type::Choice::AccessTypeOfTagConst&lt;V&gt;&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L630">source</a></div><a name="method.get"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get">get</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::choice_type::Choice::AccessTypeOfTagConst&lt;V&gt;&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L630">source</a></div><a name="method.get"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get">get</a>() const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::choice_type::Choice::AccessTypeOfTagConst&lt;V&gt;&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L630">source</a></div><a name="method.get"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get">get</a>() && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::choice_type::Choice::AccessTypeOfTagConst&lt;V&gt;&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
 <p>If the template parameter does not match the active member in the
 <code>Choice</code>, the function returns <code>None</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
@@ -447,19 +644,19 @@ If the active member has a single value, a reference to it is returned
 directly, otherwise a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of references is
 returned to all values in the active member.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L652">source</a></div><a name="method.get_mut"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get_mut">get_mut</a>() & -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::choice_type::Choice::AccessTypeOfTagMut&lt;V&gt;&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L652">source</a></div><a name="method.get_mut"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get_mut">get_mut</a>() & -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::choice_type::Choice::AccessTypeOfTagMut&lt;V&gt;&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
 <p>If the template parameter does not match the active member in the
 <code>Choice</code>, the function returns <code>None</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
@@ -468,29 +665,29 @@ If the active member has a single value, a reference to it is returned
 directly, otherwise a <a href="sus-tuple_type-Tuple.html"><code>Tuple</code></a> of references is
 returned to all values in the active member.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L747">source</a></div><a name="method.get_unchecked"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; decltype(auto)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L747">source</a></div><a name="method.get_unchecked"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; <span class="const">const</span> sus::choice_type::Choice::StorageTypeOfTag&lt;V&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L747">source</a></div><a name="method.get_unchecked"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; decltype(auto)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L747">source</a></div><a name="method.get_unchecked"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) && -&gt; <span class="const">const</span> sus::choice_type::Choice::StorageTypeOfTag&lt;V&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a const reference to the value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
 member in the <code>Choice</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
@@ -502,19 +699,19 @@ returned to all values in the active member.</p>
 <p>If the active member does not match the tag value passed as the template
 parameter, Undefined Behaviour results.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L774">source</a></div><a name="method.get_unchecked_mut"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) & -&gt; decltype(auto)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L774">source</a></div><a name="method.get_unchecked_mut"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) & -&gt; decltype(auto)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a mutable reference to the value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
 member in the <code>Choice</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
@@ -526,19 +723,19 @@ returned to all values in the active member.</p>
 <p>If the active member does not match the tag value passed as the template
 parameter, Undefined Behaviour results.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L612">source</a></div><a name="method.into_inner"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.into_inner">into_inner</a>() && -&gt; decltype(auto)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Unwraps the <code>Choice</code> to move out the current value(s) inside the <code>Choice</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L612">source</a></div><a name="method.into_inner"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.into_inner">into_inner</a>() && -&gt; decltype(auto)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Unwraps the <code>Choice</code> to move out the current value(s) inside the <code>Choice</code>.</p>
 <p>The function has a template parameter specifying the tag of the active
 member in the <code>Choice</code>.</p>
 <p>If the active member's associated type is <code>void</code> then this method is
@@ -550,52 +747,52 @@ rvalue references is returned to all values in the active member.</p>
 <p>The function will panic if the active member does not match the tag value
 passed as the template parameter.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L665">source</a></div><a name="method.set"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>() & -&gt; void<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L665">source</a></div><a name="method.set"></a><div class="template">template &lt;TagsType V, class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>(U&& value) & -&gt; void<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 1u</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, U &&&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L665">source</a></div><a name="method.set"></a><div class="template">template &lt;TagsType V, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>(Us&&... values) & -&gt; void<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 1u</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) ==</pre><pre class="requires-constraint-line">                 __private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::StorageIsSafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Changes the <code>Choice</code> to make the tag <code>V</code> active, and sets the associated
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L665">source</a></div><a name="method.set"></a><div class="template">template &lt;TagsType V&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>() & -&gt; void<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L665">source</a></div><a name="method.set"></a><div class="template">template &lt;TagsType V, class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>(U&& value) & -&gt; void<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; == 1u</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::SafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, U &&&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L665">source</a></div><a name="method.set"></a><div class="template">template &lt;TagsType V, class... Us&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.set">set</a>(Us&&... values) & -&gt; void<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">__private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt; &gt; 1u</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Us) ==</pre><pre class="requires-constraint-line">                 __private::StorageCount&lt;StorageTypeOfTag&lt;V&gt;&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::choice_type::__private::StorageIsSafelyConstructibleFromReference&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;StorageTypeOfTag&lt;V&gt;, Us &&...&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Changes the <code>Choice</code> to make the tag <code>V</code> active, and sets the associated
 values of <code>V</code> from the paramters.</p>
 <p>If the associated type of the tag is <code>void</code> then <code>set()</code> takes no
 parameters.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L543">source</a></div><a name="method.which"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.which">which</a>() const& -&gt; sus::choice_type::Choice::TagsType</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns which is the active member of the <code>Choice</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L543">source</a></div><a name="method.which"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.which">which</a>() const& -&gt; sus::choice_type::Choice::TagsType</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns which is the active member of the <code>Choice</code>.</p>
 <p>Typically to access the data in the <code>Choice</code>, a <code>switch</code> statement would
 be used, so as to call the getter or setter methods with the right value
 specified as a template parameter. When used in a <code>switch</code> statement, the
@@ -641,105 +838,107 @@ specified as a template parameter. When used in a <code>switch</code> statement,
                             ████
 </code></pre>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods conversion">
-        <div class="section-header">
-          <a name="conversions" href="#conversions">Conversions</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L491">source</a></div><a name="method.operator TagsType"></a><a class="function-name" href="sus-choice_type-Choice.html#method.operator TagsType">operator TagsType</a>() const&</div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>Support for using Choice in a <code>switch()</code> statment.</p>
+          <div class="section methods conversion">
+            <h1 class="section-header">
+              <a name="conversions" href="#conversions">Conversions</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L491">source</a></div><a name="method.operator TagsType"></a><a class="function-name" href="sus-choice_type-Choice.html#method.operator TagsType">operator TagsType</a>() const&</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Support for using Choice in a <code>switch()</code> statment.</p>
 <p>See the type's top level documentation for an example.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="operators" href="#operators">Operators</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L394">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_move_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_move_assignable_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L394">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_move_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_move_assignable_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L394">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>Move assignment.</p>
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="operators" href="#operators">Operators</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L394">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_move_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_move_assignable_v&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L394">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_move_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_move_assignable_v&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L394">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Move&lt;Ts&gt;)</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Move assignment.</p>
 <p><code>Choice</code> satisfies <a href="sus-mem-Move.html"><code>Move</code></a> when the types it holds all
 satisfy <a href="sus-mem-Move.html"><code>Move</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L450">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L450">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L450">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Copy assignment.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L450">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">              std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L450">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(std::is_trivially_copy_assignable_v&lt;TagsType&gt; && ... &&</pre><pre class="requires-constraint-line">               std::is_trivially_copy_assignable_v&lt;Ts&gt;)</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/choice/choice.h#L450">source</a></div><a name="method.operator=.copy"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-choice_type-Choice.html#method.operator=.copy">operator=</a>(<span class="const">const</span> <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;& o) -&gt; <a class="type-name" href="sus-choice_type-Choice.html" title="sus::choice_type::Choice">Choice</a>&lt;sus::choice_type::__private::TypeList&lt;Ts...&gt;, Tags...&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!(... && ::sus::mem::Copy&lt;Ts&gt;)</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Copy assignment.</p>
 <p><code>Choice</code> satisfies <a href="sus-mem-Copy.html"><code>Copy</code></a> when the types it holds all
 satisfy <a href="sus-mem-Copy.html"><code>Copy</code></a>.</p>
 
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
+</html>

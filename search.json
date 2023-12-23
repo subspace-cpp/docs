@@ -1,0 +1,3176 @@
+[
+  {
+    "index": 0,
+    "type": "project",
+    "url": "index.html",
+    "name": "Subspace",
+    "full_name": "Subspace"
+  },
+  {
+    "index": 1,
+    "type": "namespace",
+    "url": "namespace.std.html",
+    "weight": "0.75",
+    "name": "std",
+    "full_name": "std",
+    "split_name": "std"
+  },
+  {
+    "index": 2,
+    "type": "namespace",
+    "url": "namespace.sus.html",
+    "weight": "0.75",
+    "name": "sus",
+    "full_name": "sus",
+    "split_name": "sus"
+  },
+  {
+    "index": 3,
+    "type": "namespace",
+    "url": "sus-namespace.env.html",
+    "weight": "0.75",
+    "name": "env",
+    "full_name": "sus::env",
+    "split_name": "sus env"
+  },
+  {
+    "index": 4,
+    "type": "struct",
+    "url": "sus-env-VarError.html",
+    "name": "VarError",
+    "full_name": "sus::env::VarError",
+    "split_name": "sus env Var Error"
+  },
+  {
+    "index": 5,
+    "type": "function",
+    "url": "sus-env-fn.set_var.html",
+    "name": "set_var",
+    "full_name": "sus::env::set_var",
+    "split_name": "sus env set var"
+  },
+  {
+    "index": 6,
+    "type": "function",
+    "url": "sus-env-fn.var.html",
+    "name": "var",
+    "full_name": "sus::env::var",
+    "split_name": "sus env var"
+  },
+  {
+    "index": 7,
+    "type": "namespace",
+    "url": "sus-namespace.ops.html",
+    "weight": "0.75",
+    "name": "ops",
+    "full_name": "sus::ops",
+    "split_name": "sus ops"
+  },
+  {
+    "index": 8,
+    "type": "concept",
+    "url": "sus-ops-TryErrorConvertibleTo.html",
+    "name": "TryErrorConvertibleTo",
+    "full_name": "sus::ops::TryErrorConvertibleTo",
+    "split_name": "sus ops Try Error Convertible To"
+  },
+  {
+    "index": 9,
+    "type": "concept",
+    "url": "sus-ops-TryDefault.html",
+    "name": "TryDefault",
+    "full_name": "sus::ops::TryDefault",
+    "split_name": "sus ops Try Default"
+  },
+  {
+    "index": 10,
+    "type": "concept",
+    "url": "sus-ops-RangeBounds.html",
+    "name": "RangeBounds",
+    "full_name": "sus::ops::RangeBounds",
+    "split_name": "sus ops Range Bounds"
+  },
+  {
+    "index": 11,
+    "type": "concept",
+    "url": "sus-ops-Try.html",
+    "name": "Try",
+    "full_name": "sus::ops::Try",
+    "split_name": "sus ops Try"
+  },
+  {
+    "index": 12,
+    "type": "class",
+    "url": "sus-ops-RangeFull.html",
+    "name": "RangeFull",
+    "full_name": "sus::ops::RangeFull",
+    "split_name": "sus ops Range Full"
+  },
+  {
+    "index": 13,
+    "type": "class",
+    "url": "sus-ops-RangeFrom.html",
+    "name": "RangeFrom",
+    "full_name": "sus::ops::RangeFrom",
+    "split_name": "sus ops Range From"
+  },
+  {
+    "index": 14,
+    "type": "class",
+    "url": "sus-ops-RangeTo.html",
+    "name": "RangeTo",
+    "full_name": "sus::ops::RangeTo",
+    "split_name": "sus ops Range To"
+  },
+  {
+    "index": 15,
+    "type": "class",
+    "url": "sus-ops-Range.html",
+    "name": "Range",
+    "full_name": "sus::ops::Range",
+    "split_name": "sus ops Range"
+  },
+  {
+    "index": 16,
+    "type": "struct",
+    "url": "sus-ops-TryImpl.html",
+    "name": "TryImpl",
+    "full_name": "sus::ops::TryImpl",
+    "split_name": "sus ops Try Impl"
+  },
+  {
+    "index": 17,
+    "type": "function",
+    "url": "sus-ops-fn.range_from.html",
+    "name": "range_from",
+    "full_name": "sus::ops::range_from",
+    "split_name": "sus ops range from"
+  },
+  {
+    "index": 18,
+    "type": "function",
+    "url": "sus-ops-fn.range_to.html",
+    "name": "range_to",
+    "full_name": "sus::ops::range_to",
+    "split_name": "sus ops range to"
+  },
+  {
+    "index": 19,
+    "type": "function",
+    "url": "sus-ops-fn.range.html",
+    "name": "range",
+    "full_name": "sus::ops::range",
+    "split_name": "sus ops range"
+  },
+  {
+    "index": 20,
+    "type": "function",
+    "url": "sus-ops-fn.try_preserve_error.html",
+    "name": "try_preserve_error",
+    "full_name": "sus::ops::try_preserve_error",
+    "split_name": "sus ops try preserve error"
+  },
+  {
+    "index": 21,
+    "type": "function",
+    "url": "sus-ops-fn.try_from_default.html",
+    "name": "try_from_default",
+    "full_name": "sus::ops::try_from_default",
+    "split_name": "sus ops try from default"
+  },
+  {
+    "index": 22,
+    "type": "function",
+    "url": "sus-ops-fn.try_from_output.html",
+    "name": "try_from_output",
+    "full_name": "sus::ops::try_from_output",
+    "split_name": "sus ops try from output"
+  },
+  {
+    "index": 23,
+    "type": "function",
+    "url": "sus-ops-fn.try_into_output.html",
+    "name": "try_into_output",
+    "full_name": "sus::ops::try_into_output",
+    "split_name": "sus ops try into output"
+  },
+  {
+    "index": 24,
+    "type": "function",
+    "url": "sus-ops-fn.try_is_success.html",
+    "name": "try_is_success",
+    "full_name": "sus::ops::try_is_success",
+    "split_name": "sus ops try is success"
+  },
+  {
+    "index": 25,
+    "type": "namespace",
+    "url": "sus-namespace.marker.html",
+    "weight": "0.75",
+    "name": "marker",
+    "full_name": "sus::marker",
+    "split_name": "sus marker"
+  },
+  {
+    "index": 26,
+    "type": "struct",
+    "url": "sus-marker-EmptyMarker.html",
+    "name": "EmptyMarker",
+    "full_name": "sus::marker::EmptyMarker",
+    "split_name": "sus marker Empty Marker"
+  },
+  {
+    "index": 27,
+    "type": "struct",
+    "url": "sus-marker-UnsafeFnMarker.html",
+    "name": "UnsafeFnMarker",
+    "full_name": "sus::marker::UnsafeFnMarker",
+    "split_name": "sus marker Unsafe Fn Marker"
+  },
+  {
+    "index": 28,
+    "type": "namespace",
+    "url": "sus-namespace.assertions.html",
+    "weight": "0.75",
+    "name": "assertions",
+    "full_name": "sus::assertions",
+    "split_name": "sus assertions"
+  },
+  {
+    "index": 29,
+    "type": "struct",
+    "url": "sus-assertions-PanicLocation.html",
+    "name": "PanicLocation",
+    "full_name": "sus::assertions::PanicLocation",
+    "split_name": "sus assertions Panic Location"
+  },
+  {
+    "index": 30,
+    "type": "namespace",
+    "url": "sus-namespace.prelude.html",
+    "weight": "0.75",
+    "name": "prelude",
+    "full_name": "sus::prelude",
+    "split_name": "sus prelude"
+  },
+  {
+    "index": 31,
+    "type": "namespace",
+    "url": "sus-namespace.mem.html",
+    "weight": "0.75",
+    "name": "mem",
+    "full_name": "sus::mem",
+    "split_name": "sus mem"
+  },
+  {
+    "index": 32,
+    "type": "concept",
+    "url": "sus-mem-NeverValueField.html",
+    "name": "NeverValueField",
+    "full_name": "sus::mem::NeverValueField",
+    "split_name": "sus mem Never Value Field"
+  },
+  {
+    "index": 33,
+    "type": "concept",
+    "url": "sus-mem-TriviallyRelocatable.html",
+    "name": "TriviallyRelocatable",
+    "full_name": "sus::mem::TriviallyRelocatable",
+    "split_name": "sus mem Trivially Relocatable"
+  },
+  {
+    "index": 34,
+    "type": "concept",
+    "url": "sus-mem-CloneFrom.html",
+    "name": "CloneFrom",
+    "full_name": "sus::mem::CloneFrom",
+    "split_name": "sus mem Clone From"
+  },
+  {
+    "index": 35,
+    "type": "concept",
+    "url": "sus-mem-Clone.html",
+    "name": "Clone",
+    "full_name": "sus::mem::Clone",
+    "split_name": "sus mem Clone"
+  },
+  {
+    "index": 36,
+    "type": "concept",
+    "url": "sus-mem-CopyOrRefOrVoid.html",
+    "name": "CopyOrRefOrVoid",
+    "full_name": "sus::mem::CopyOrRefOrVoid",
+    "split_name": "sus mem Copy Or Ref Or Void"
+  },
+  {
+    "index": 37,
+    "type": "concept",
+    "url": "sus-mem-CopyOrRef.html",
+    "name": "CopyOrRef",
+    "full_name": "sus::mem::CopyOrRef",
+    "split_name": "sus mem Copy Or Ref"
+  },
+  {
+    "index": 38,
+    "type": "concept",
+    "url": "sus-mem-CloneOrRef.html",
+    "name": "CloneOrRef",
+    "full_name": "sus::mem::CloneOrRef",
+    "split_name": "sus mem Clone Or Ref"
+  },
+  {
+    "index": 39,
+    "type": "concept",
+    "url": "sus-mem-TrivialCopy.html",
+    "name": "TrivialCopy",
+    "full_name": "sus::mem::TrivialCopy",
+    "split_name": "sus mem Trivial Copy"
+  },
+  {
+    "index": 40,
+    "type": "concept",
+    "url": "sus-mem-IsMoveRef.html",
+    "name": "IsMoveRef",
+    "full_name": "sus::mem::IsMoveRef",
+    "split_name": "sus mem Is Move Ref"
+  },
+  {
+    "index": 41,
+    "type": "concept",
+    "url": "sus-mem-MoveOrRefOrVoid.html",
+    "name": "MoveOrRefOrVoid",
+    "full_name": "sus::mem::MoveOrRefOrVoid",
+    "split_name": "sus mem Move Or Ref Or Void"
+  },
+  {
+    "index": 42,
+    "type": "concept",
+    "url": "sus-mem-Copy.html",
+    "name": "Copy",
+    "full_name": "sus::mem::Copy",
+    "split_name": "sus mem Copy"
+  },
+  {
+    "index": 43,
+    "type": "concept",
+    "url": "sus-mem-MoveOrRef.html",
+    "name": "MoveOrRef",
+    "full_name": "sus::mem::MoveOrRef",
+    "split_name": "sus mem Move Or Ref"
+  },
+  {
+    "index": 44,
+    "type": "concept",
+    "url": "sus-mem-Move.html",
+    "name": "Move",
+    "full_name": "sus::mem::Move",
+    "split_name": "sus mem Move"
+  },
+  {
+    "index": 45,
+    "type": "struct",
+    "url": "sus-mem-NeverValueConstructor.html",
+    "name": "NeverValueConstructor",
+    "full_name": "sus::mem::NeverValueConstructor",
+    "split_name": "sus mem Never Value Constructor"
+  },
+  {
+    "index": 46,
+    "type": "function",
+    "url": "sus-mem-fn.swap_nonoverlapping.html",
+    "name": "swap_nonoverlapping",
+    "full_name": "sus::mem::swap_nonoverlapping",
+    "split_name": "sus mem swap nonoverlapping"
+  },
+  {
+    "index": 47,
+    "type": "function",
+    "url": "sus-mem-fn.forward.html",
+    "name": "forward",
+    "full_name": "sus::mem::forward",
+    "split_name": "sus mem forward"
+  },
+  {
+    "index": 48,
+    "type": "function",
+    "url": "sus-mem-fn.move.html",
+    "name": "move",
+    "full_name": "sus::mem::move",
+    "split_name": "sus mem move"
+  },
+  {
+    "index": 49,
+    "type": "function",
+    "url": "sus-mem-fn.replace.html",
+    "name": "replace",
+    "full_name": "sus::mem::replace",
+    "split_name": "sus mem replace"
+  },
+  {
+    "index": 50,
+    "type": "function",
+    "url": "sus-mem-fn.clone_into.html",
+    "name": "clone_into",
+    "full_name": "sus::mem::clone_into",
+    "split_name": "sus mem clone into"
+  },
+  {
+    "index": 51,
+    "type": "function",
+    "url": "sus-mem-fn.clone_or_forward.html",
+    "name": "clone_or_forward",
+    "full_name": "sus::mem::clone_or_forward",
+    "split_name": "sus mem clone or forward"
+  },
+  {
+    "index": 52,
+    "type": "function",
+    "url": "sus-mem-fn.size_of.html",
+    "name": "size_of",
+    "full_name": "sus::mem::size_of",
+    "split_name": "sus mem size of"
+  },
+  {
+    "index": 53,
+    "type": "function",
+    "url": "sus-mem-fn.data_size_of.html",
+    "name": "data_size_of",
+    "full_name": "sus::mem::data_size_of",
+    "split_name": "sus mem data size of"
+  },
+  {
+    "index": 54,
+    "type": "function",
+    "url": "sus-mem-fn.addressof.html",
+    "name": "addressof",
+    "full_name": "sus::mem::addressof",
+    "split_name": "sus mem addressof"
+  },
+  {
+    "index": 55,
+    "type": "function",
+    "url": "sus-mem-fn.take_copy_and_destruct.html",
+    "name": "take_copy_and_destruct",
+    "full_name": "sus::mem::take_copy_and_destruct",
+    "split_name": "sus mem take copy and destruct"
+  },
+  {
+    "index": 56,
+    "type": "function",
+    "url": "sus-mem-fn.clone.html",
+    "name": "clone",
+    "full_name": "sus::mem::clone",
+    "split_name": "sus mem clone"
+  },
+  {
+    "index": 57,
+    "type": "function",
+    "url": "sus-mem-fn.swap.html",
+    "name": "swap",
+    "full_name": "sus::mem::swap",
+    "split_name": "sus mem swap"
+  },
+  {
+    "index": 58,
+    "type": "function",
+    "url": "sus-mem-fn.take.html",
+    "name": "take",
+    "full_name": "sus::mem::take",
+    "split_name": "sus mem take"
+  },
+  {
+    "index": 59,
+    "type": "function",
+    "url": "sus-mem-fn.take_and_destruct.html",
+    "name": "take_and_destruct",
+    "full_name": "sus::mem::take_and_destruct",
+    "split_name": "sus mem take and destruct"
+  },
+  {
+    "index": 60,
+    "type": "namespace",
+    "url": "sus-namespace.choice_type.html",
+    "weight": "0.75",
+    "name": "choice_type",
+    "full_name": "sus::choice_type",
+    "split_name": "sus choice type"
+  },
+  {
+    "index": 61,
+    "type": "concept",
+    "url": "sus-choice_type-ChoiceValueIsVoid.html",
+    "name": "ChoiceValueIsVoid",
+    "full_name": "sus::choice_type::ChoiceValueIsVoid",
+    "split_name": "sus choice type Choice Value Is Void"
+  },
+  {
+    "index": 62,
+    "type": "class",
+    "url": "sus-choice_type-Choice.html",
+    "name": "Choice",
+    "full_name": "sus::choice_type::Choice",
+    "split_name": "sus choice type Choice"
+  },
+  {
+    "index": 63,
+    "type": "struct",
+    "url": "sus-choice_type-CanConvertToStorage.html",
+    "name": "CanConvertToStorage",
+    "full_name": "sus::choice_type::CanConvertToStorage",
+    "split_name": "sus choice type Can Convert To Storage"
+  },
+  {
+    "index": 64,
+    "type": "function",
+    "url": "sus-choice_type-fn.operator_spaceship.html",
+    "name": "operator<=>",
+    "full_name": "sus::choice_type::operator<=>",
+    "split_name": "sus choice type operator<=>"
+  },
+  {
+    "index": 65,
+    "type": "function",
+    "url": "sus-choice_type-fn.operator_leftshift.html",
+    "name": "operator<<",
+    "full_name": "sus::choice_type::operator<<",
+    "split_name": "sus choice type operator<<"
+  },
+  {
+    "index": 66,
+    "type": "function",
+    "url": "sus-choice_type-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::choice_type::operator==",
+    "split_name": "sus choice type operator=="
+  },
+  {
+    "index": 67,
+    "type": "namespace",
+    "url": "sus-namespace.cmp.html",
+    "weight": "0.75",
+    "name": "cmp",
+    "full_name": "sus::cmp",
+    "split_name": "sus cmp"
+  },
+  {
+    "index": 68,
+    "type": "concept",
+    "url": "sus-cmp-ExclusivePartialOrd.html",
+    "name": "ExclusivePartialOrd",
+    "full_name": "sus::cmp::ExclusivePartialOrd",
+    "split_name": "sus cmp Exclusive Partial Ord"
+  },
+  {
+    "index": 69,
+    "type": "concept",
+    "url": "sus-cmp-PartialOrd.html",
+    "name": "PartialOrd",
+    "full_name": "sus::cmp::PartialOrd",
+    "split_name": "sus cmp Partial Ord"
+  },
+  {
+    "index": 70,
+    "type": "concept",
+    "url": "sus-cmp-Ord.html",
+    "name": "Ord",
+    "full_name": "sus::cmp::Ord",
+    "split_name": "sus cmp Ord"
+  },
+  {
+    "index": 71,
+    "type": "concept",
+    "url": "sus-cmp-StrongOrd.html",
+    "name": "StrongOrd",
+    "full_name": "sus::cmp::StrongOrd",
+    "split_name": "sus cmp Strong Ord"
+  },
+  {
+    "index": 72,
+    "type": "concept",
+    "url": "sus-cmp-ExclusiveOrd.html",
+    "name": "ExclusiveOrd",
+    "full_name": "sus::cmp::ExclusiveOrd",
+    "split_name": "sus cmp Exclusive Ord"
+  },
+  {
+    "index": 73,
+    "type": "concept",
+    "url": "sus-cmp-ExclusiveStrongOrd.html",
+    "name": "ExclusiveStrongOrd",
+    "full_name": "sus::cmp::ExclusiveStrongOrd",
+    "split_name": "sus cmp Exclusive Strong Ord"
+  },
+  {
+    "index": 74,
+    "type": "concept",
+    "url": "sus-cmp-Ordering.html",
+    "name": "Ordering",
+    "full_name": "sus::cmp::Ordering",
+    "split_name": "sus cmp Ordering"
+  },
+  {
+    "index": 75,
+    "type": "concept",
+    "url": "sus-cmp-Eq.html",
+    "name": "Eq",
+    "full_name": "sus::cmp::Eq",
+    "split_name": "sus cmp Eq"
+  },
+  {
+    "index": 76,
+    "type": "struct",
+    "url": "sus-cmp-Reverse.html",
+    "name": "Reverse",
+    "full_name": "sus::cmp::Reverse",
+    "split_name": "sus cmp Reverse"
+  },
+  {
+    "index": 77,
+    "type": "function",
+    "url": "sus-cmp-fn.max.html",
+    "name": "max",
+    "full_name": "sus::cmp::max",
+    "split_name": "sus cmp max"
+  },
+  {
+    "index": 78,
+    "type": "function",
+    "url": "sus-cmp-fn.operator_spaceship.html",
+    "name": "operator<=>",
+    "full_name": "sus::cmp::operator<=>",
+    "split_name": "sus cmp operator<=>"
+  },
+  {
+    "index": 79,
+    "type": "function",
+    "url": "sus-cmp-fn.min_by_key.html",
+    "name": "min_by_key",
+    "full_name": "sus::cmp::min_by_key",
+    "split_name": "sus cmp min by key"
+  },
+  {
+    "index": 80,
+    "type": "function",
+    "url": "sus-cmp-fn.max_by_key.html",
+    "name": "max_by_key",
+    "full_name": "sus::cmp::max_by_key",
+    "split_name": "sus cmp max by key"
+  },
+  {
+    "index": 81,
+    "type": "function",
+    "url": "sus-cmp-fn.max_by.html",
+    "name": "max_by",
+    "full_name": "sus::cmp::max_by",
+    "split_name": "sus cmp max by"
+  },
+  {
+    "index": 82,
+    "type": "function",
+    "url": "sus-cmp-fn.min_by.html",
+    "name": "min_by",
+    "full_name": "sus::cmp::min_by",
+    "split_name": "sus cmp min by"
+  },
+  {
+    "index": 83,
+    "type": "function",
+    "url": "sus-cmp-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::cmp::operator==",
+    "split_name": "sus cmp operator=="
+  },
+  {
+    "index": 84,
+    "type": "function",
+    "url": "sus-cmp-fn.clamp.html",
+    "name": "clamp",
+    "full_name": "sus::cmp::clamp",
+    "split_name": "sus cmp clamp"
+  },
+  {
+    "index": 85,
+    "type": "function",
+    "url": "sus-cmp-fn.min.html",
+    "name": "min",
+    "full_name": "sus::cmp::min",
+    "split_name": "sus cmp min"
+  },
+  {
+    "index": 86,
+    "type": "namespace",
+    "url": "sus-namespace.fn.html",
+    "weight": "0.75",
+    "name": "fn",
+    "full_name": "sus::fn",
+    "split_name": "sus fn"
+  },
+  {
+    "index": 87,
+    "type": "concept",
+    "url": "sus-fn-FnMut.html",
+    "name": "FnMut",
+    "full_name": "sus::fn::FnMut",
+    "split_name": "sus fn Fn Mut"
+  },
+  {
+    "index": 88,
+    "type": "concept",
+    "url": "sus-fn-Fn.html",
+    "name": "Fn",
+    "full_name": "sus::fn::Fn",
+    "split_name": "sus fn Fn"
+  },
+  {
+    "index": 89,
+    "type": "concept",
+    "url": "sus-fn-FnOnce.html",
+    "name": "FnOnce",
+    "full_name": "sus::fn::FnOnce",
+    "split_name": "sus fn Fn Once"
+  },
+  {
+    "index": 90,
+    "type": "struct",
+    "url": "sus-fn-DynFnOnce.html",
+    "name": "DynFnOnce",
+    "full_name": "sus::fn::DynFnOnce",
+    "split_name": "sus fn Dyn Fn Once"
+  },
+  {
+    "index": 91,
+    "type": "struct",
+    "url": "sus-fn-DynFnMut.html",
+    "name": "DynFnMut",
+    "full_name": "sus::fn::DynFnMut",
+    "split_name": "sus fn Dyn Fn Mut"
+  },
+  {
+    "index": 92,
+    "type": "struct",
+    "url": "sus-fn-DynFn.html",
+    "name": "DynFn",
+    "full_name": "sus::fn::DynFn",
+    "split_name": "sus fn Dyn Fn"
+  },
+  {
+    "index": 93,
+    "type": "struct",
+    "url": "sus-fn-Anything.html",
+    "name": "Anything",
+    "full_name": "sus::fn::Anything",
+    "split_name": "sus fn Anything"
+  },
+  {
+    "index": 94,
+    "type": "struct",
+    "url": "sus-fn-NonVoid.html",
+    "name": "NonVoid",
+    "full_name": "sus::fn::NonVoid",
+    "split_name": "sus fn Non Void"
+  },
+  {
+    "index": 95,
+    "type": "function",
+    "url": "sus-fn-fn.call.html",
+    "name": "call",
+    "full_name": "sus::fn::call",
+    "split_name": "sus fn call"
+  },
+  {
+    "index": 96,
+    "type": "function",
+    "url": "sus-fn-fn.call_mut.html",
+    "name": "call_mut",
+    "full_name": "sus::fn::call_mut",
+    "split_name": "sus fn call mut"
+  },
+  {
+    "index": 97,
+    "type": "function",
+    "url": "sus-fn-fn.call_once.html",
+    "name": "call_once",
+    "full_name": "sus::fn::call_once",
+    "split_name": "sus fn call once"
+  },
+  {
+    "index": 98,
+    "type": "namespace",
+    "url": "sus-namespace.collections.html",
+    "weight": "0.75",
+    "name": "collections",
+    "full_name": "sus::collections",
+    "split_name": "sus collections"
+  },
+  {
+    "index": 99,
+    "type": "namespace",
+    "url": "sus-collections-namespace.compat.html",
+    "weight": "0.75",
+    "name": "compat",
+    "full_name": "sus::collections::compat",
+    "split_name": "sus collections compat"
+  },
+  {
+    "index": 100,
+    "type": "concept",
+    "url": "sus-collections-compat-Pair.html",
+    "name": "Pair",
+    "full_name": "sus::collections::compat::Pair",
+    "split_name": "sus collections compat Pair"
+  },
+  {
+    "index": 101,
+    "type": "concept",
+    "url": "sus-collections-Join.html",
+    "name": "Join",
+    "full_name": "sus::collections::Join",
+    "split_name": "sus collections Join"
+  },
+  {
+    "index": 102,
+    "type": "concept",
+    "url": "sus-collections-Concat.html",
+    "name": "Concat",
+    "full_name": "sus::collections::Concat",
+    "split_name": "sus collections Concat"
+  },
+  {
+    "index": 103,
+    "type": "class",
+    "url": "sus-collections-Vec.html",
+    "name": "Vec",
+    "full_name": "sus::collections::Vec",
+    "split_name": "sus collections Vec"
+  },
+  {
+    "index": 104,
+    "type": "struct",
+    "url": "sus-collections-VecIntoIter.html",
+    "name": "VecIntoIter",
+    "full_name": "sus::collections::VecIntoIter",
+    "split_name": "sus collections Vec Into Iter"
+  },
+  {
+    "index": 105,
+    "type": "struct",
+    "url": "sus-collections-Drain.html",
+    "name": "Drain",
+    "full_name": "sus::collections::Drain",
+    "split_name": "sus collections Drain"
+  },
+  {
+    "index": 106,
+    "type": "class",
+    "url": "sus-collections-Slice.html",
+    "name": "Slice",
+    "full_name": "sus::collections::Slice",
+    "split_name": "sus collections Slice"
+  },
+  {
+    "index": 107,
+    "type": "class",
+    "url": "sus-collections-Array.html",
+    "name": "Array",
+    "full_name": "sus::collections::Array",
+    "split_name": "sus collections Array"
+  },
+  {
+    "index": 108,
+    "type": "class",
+    "url": "sus-collections-WindowsMut.html",
+    "name": "WindowsMut",
+    "full_name": "sus::collections::WindowsMut",
+    "split_name": "sus collections Windows Mut"
+  },
+  {
+    "index": 109,
+    "type": "class",
+    "url": "sus-collections-Windows.html",
+    "name": "Windows",
+    "full_name": "sus::collections::Windows",
+    "split_name": "sus collections Windows"
+  },
+  {
+    "index": 110,
+    "type": "class",
+    "url": "sus-collections-RSplitNMut.html",
+    "name": "RSplitNMut",
+    "full_name": "sus::collections::RSplitNMut",
+    "split_name": "sus collections R Split N Mut"
+  },
+  {
+    "index": 111,
+    "type": "class",
+    "url": "sus-collections-SplitNMut.html",
+    "name": "SplitNMut",
+    "full_name": "sus::collections::SplitNMut",
+    "split_name": "sus collections Split N Mut"
+  },
+  {
+    "index": 112,
+    "type": "class",
+    "url": "sus-collections-RSplitMut.html",
+    "name": "RSplitMut",
+    "full_name": "sus::collections::RSplitMut",
+    "split_name": "sus collections R Split Mut"
+  },
+  {
+    "index": 113,
+    "type": "class",
+    "url": "sus-collections-RSplit.html",
+    "name": "RSplit",
+    "full_name": "sus::collections::RSplit",
+    "split_name": "sus collections RSplit"
+  },
+  {
+    "index": 114,
+    "type": "class",
+    "url": "sus-collections-SplitInclusiveMut.html",
+    "name": "SplitInclusiveMut",
+    "full_name": "sus::collections::SplitInclusiveMut",
+    "split_name": "sus collections Split Inclusive Mut"
+  },
+  {
+    "index": 115,
+    "type": "class",
+    "url": "sus-collections-SliceMut.html",
+    "name": "SliceMut",
+    "full_name": "sus::collections::SliceMut",
+    "split_name": "sus collections Slice Mut"
+  },
+  {
+    "index": 116,
+    "type": "struct",
+    "url": "sus-collections-ArrayIntoIter.html",
+    "name": "ArrayIntoIter",
+    "full_name": "sus::collections::ArrayIntoIter",
+    "split_name": "sus collections Array Into Iter"
+  },
+  {
+    "index": 117,
+    "type": "class",
+    "url": "sus-collections-SplitInclusive.html",
+    "name": "SplitInclusive",
+    "full_name": "sus::collections::SplitInclusive",
+    "split_name": "sus collections Split Inclusive"
+  },
+  {
+    "index": 118,
+    "type": "struct",
+    "url": "sus-collections-ChunksMut.html",
+    "name": "ChunksMut",
+    "full_name": "sus::collections::ChunksMut",
+    "split_name": "sus collections Chunks Mut"
+  },
+  {
+    "index": 119,
+    "type": "struct",
+    "url": "sus-collections-SliceIterMut.html",
+    "name": "SliceIterMut",
+    "full_name": "sus::collections::SliceIterMut",
+    "split_name": "sus collections Slice Iter Mut"
+  },
+  {
+    "index": 120,
+    "type": "struct",
+    "url": "sus-collections-SliceIter.html",
+    "name": "SliceIter",
+    "full_name": "sus::collections::SliceIter",
+    "split_name": "sus collections Slice Iter"
+  },
+  {
+    "index": 121,
+    "type": "struct",
+    "url": "sus-collections-Chunks.html",
+    "name": "Chunks",
+    "full_name": "sus::collections::Chunks",
+    "split_name": "sus collections Chunks"
+  },
+  {
+    "index": 122,
+    "type": "struct",
+    "url": "sus-collections-RChunksExact.html",
+    "name": "RChunksExact",
+    "full_name": "sus::collections::RChunksExact",
+    "split_name": "sus collections R Chunks Exact"
+  },
+  {
+    "index": 123,
+    "type": "struct",
+    "url": "sus-collections-ChunksExact.html",
+    "name": "ChunksExact",
+    "full_name": "sus::collections::ChunksExact",
+    "split_name": "sus collections Chunks Exact"
+  },
+  {
+    "index": 124,
+    "type": "struct",
+    "url": "sus-collections-RChunks.html",
+    "name": "RChunks",
+    "full_name": "sus::collections::RChunks",
+    "split_name": "sus collections RChunks"
+  },
+  {
+    "index": 125,
+    "type": "struct",
+    "url": "sus-collections-RChunksMut.html",
+    "name": "RChunksMut",
+    "full_name": "sus::collections::RChunksMut",
+    "split_name": "sus collections R Chunks Mut"
+  },
+  {
+    "index": 126,
+    "type": "class",
+    "url": "sus-collections-SplitMut.html",
+    "name": "SplitMut",
+    "full_name": "sus::collections::SplitMut",
+    "split_name": "sus collections Split Mut"
+  },
+  {
+    "index": 127,
+    "type": "struct",
+    "url": "sus-collections-ChunksExactMut.html",
+    "name": "ChunksExactMut",
+    "full_name": "sus::collections::ChunksExactMut",
+    "split_name": "sus collections Chunks Exact Mut"
+  },
+  {
+    "index": 128,
+    "type": "struct",
+    "url": "sus-collections-RChunksExactMut.html",
+    "name": "RChunksExactMut",
+    "full_name": "sus::collections::RChunksExactMut",
+    "split_name": "sus collections R Chunks Exact Mut"
+  },
+  {
+    "index": 129,
+    "type": "class",
+    "url": "sus-collections-RSplitN.html",
+    "name": "RSplitN",
+    "full_name": "sus::collections::RSplitN",
+    "split_name": "sus collections R Split N"
+  },
+  {
+    "index": 130,
+    "type": "class",
+    "url": "sus-collections-SplitN.html",
+    "name": "SplitN",
+    "full_name": "sus::collections::SplitN",
+    "split_name": "sus collections Split N"
+  },
+  {
+    "index": 131,
+    "type": "class",
+    "url": "sus-collections-Split.html",
+    "name": "Split",
+    "full_name": "sus::collections::Split",
+    "split_name": "sus collections Split"
+  },
+  {
+    "index": 132,
+    "type": "function",
+    "url": "sus-collections-fn.operator_spaceship.array.cmp.slicemut.html",
+    "name": "operator<=>",
+    "full_name": "sus::collections::operator<=>",
+    "split_name": "sus collections operator<=>"
+  },
+  {
+    "index": 133,
+    "type": "function",
+    "url": "sus-collections-fn.get.array.structured.bindings.html",
+    "name": "get",
+    "full_name": "sus::collections::get",
+    "split_name": "sus collections get"
+  },
+  {
+    "index": 134,
+    "type": "function",
+    "url": "sus-collections-fn.operator_spaceship.array.cmp.slice.html",
+    "name": "operator<=>",
+    "full_name": "sus::collections::operator<=>",
+    "split_name": "sus collections operator<=>"
+  },
+  {
+    "index": 135,
+    "type": "function",
+    "url": "sus-collections-fn.operator_spaceship.array.cmp.array.html",
+    "name": "operator<=>",
+    "full_name": "sus::collections::operator<=>",
+    "split_name": "sus collections operator<=>"
+  },
+  {
+    "index": 136,
+    "type": "namespace",
+    "url": "sus-namespace.iter.html",
+    "weight": "0.75",
+    "name": "iter",
+    "full_name": "sus::iter",
+    "split_name": "sus iter"
+  },
+  {
+    "index": 137,
+    "type": "concept",
+    "url": "sus-iter-Extend.html",
+    "name": "Extend",
+    "full_name": "sus::iter::Extend",
+    "split_name": "sus iter Extend"
+  },
+  {
+    "index": 138,
+    "type": "concept",
+    "url": "sus-iter-Sum.html",
+    "name": "Sum",
+    "full_name": "sus::iter::Sum",
+    "split_name": "sus iter Sum"
+  },
+  {
+    "index": 139,
+    "type": "concept",
+    "url": "sus-iter-FromIterator.html",
+    "name": "FromIterator",
+    "full_name": "sus::iter::FromIterator",
+    "split_name": "sus iter From Iterator"
+  },
+  {
+    "index": 140,
+    "type": "concept",
+    "url": "sus-iter-IntoIteratorAny.html",
+    "name": "IntoIteratorAny",
+    "full_name": "sus::iter::IntoIteratorAny",
+    "split_name": "sus iter Into Iterator Any"
+  },
+  {
+    "index": 141,
+    "type": "concept",
+    "url": "sus-iter-TrustedLen.html",
+    "name": "TrustedLen",
+    "full_name": "sus::iter::TrustedLen",
+    "split_name": "sus iter Trusted Len"
+  },
+  {
+    "index": 142,
+    "type": "concept",
+    "url": "sus-iter-ExactSizeIterator.html",
+    "name": "ExactSizeIterator",
+    "full_name": "sus::iter::ExactSizeIterator",
+    "split_name": "sus iter Exact Size Iterator"
+  },
+  {
+    "index": 143,
+    "type": "concept",
+    "url": "sus-iter-Product.html",
+    "name": "Product",
+    "full_name": "sus::iter::Product",
+    "split_name": "sus iter Product"
+  },
+  {
+    "index": 144,
+    "type": "concept",
+    "url": "sus-iter-DoubleEndedIterator.html",
+    "name": "DoubleEndedIterator",
+    "full_name": "sus::iter::DoubleEndedIterator",
+    "split_name": "sus iter Double Ended Iterator"
+  },
+  {
+    "index": 145,
+    "type": "concept",
+    "url": "sus-iter-IntoIterator.html",
+    "name": "IntoIterator",
+    "full_name": "sus::iter::IntoIterator",
+    "split_name": "sus iter Into Iterator"
+  },
+  {
+    "index": 146,
+    "type": "concept",
+    "url": "sus-iter-IteratorAny.html",
+    "name": "IteratorAny",
+    "full_name": "sus::iter::IteratorAny",
+    "split_name": "sus iter Iterator Any"
+  },
+  {
+    "index": 147,
+    "type": "concept",
+    "url": "sus-iter-Iterator.html",
+    "name": "Iterator",
+    "full_name": "sus::iter::Iterator",
+    "split_name": "sus iter Iterator"
+  },
+  {
+    "index": 148,
+    "type": "class",
+    "url": "sus-iter-Empty.html",
+    "name": "Empty",
+    "full_name": "sus::iter::Empty",
+    "split_name": "sus iter Empty"
+  },
+  {
+    "index": 149,
+    "type": "class",
+    "url": "sus-iter-Successors.html",
+    "name": "Successors",
+    "full_name": "sus::iter::Successors",
+    "split_name": "sus iter Successors"
+  },
+  {
+    "index": 150,
+    "type": "class",
+    "url": "sus-iter-RepeatWith.html",
+    "name": "RepeatWith",
+    "full_name": "sus::iter::RepeatWith",
+    "split_name": "sus iter Repeat With"
+  },
+  {
+    "index": 151,
+    "type": "class",
+    "url": "sus-iter-IteratorOverRange.html",
+    "name": "IteratorOverRange",
+    "full_name": "sus::iter::IteratorOverRange",
+    "split_name": "sus iter Iterator Over Range"
+  },
+  {
+    "index": 152,
+    "type": "class",
+    "url": "sus-iter-Cloned.html",
+    "name": "Cloned",
+    "full_name": "sus::iter::Cloned",
+    "split_name": "sus iter Cloned"
+  },
+  {
+    "index": 153,
+    "type": "class",
+    "url": "sus-iter-Flatten.html",
+    "name": "Flatten",
+    "full_name": "sus::iter::Flatten",
+    "split_name": "sus iter Flatten"
+  },
+  {
+    "index": 154,
+    "type": "class",
+    "url": "sus-iter-Copied.html",
+    "name": "Copied",
+    "full_name": "sus::iter::Copied",
+    "split_name": "sus iter Copied"
+  },
+  {
+    "index": 155,
+    "type": "class",
+    "url": "sus-iter-Skip.html",
+    "name": "Skip",
+    "full_name": "sus::iter::Skip",
+    "split_name": "sus iter Skip"
+  },
+  {
+    "index": 156,
+    "type": "class",
+    "url": "sus-iter-OnceWith.html",
+    "name": "OnceWith",
+    "full_name": "sus::iter::OnceWith",
+    "split_name": "sus iter Once With"
+  },
+  {
+    "index": 157,
+    "type": "class",
+    "url": "sus-iter-FlatMap.html",
+    "name": "FlatMap",
+    "full_name": "sus::iter::FlatMap",
+    "split_name": "sus iter Flat Map"
+  },
+  {
+    "index": 158,
+    "type": "class",
+    "url": "sus-iter-IteratorRange.html",
+    "name": "IteratorRange",
+    "full_name": "sus::iter::IteratorRange",
+    "split_name": "sus iter Iterator Range"
+  },
+  {
+    "index": 159,
+    "type": "class",
+    "url": "sus-iter-MapWhile.html",
+    "name": "MapWhile",
+    "full_name": "sus::iter::MapWhile",
+    "split_name": "sus iter Map While"
+  },
+  {
+    "index": 160,
+    "type": "class",
+    "url": "sus-iter-SkipWhile.html",
+    "name": "SkipWhile",
+    "full_name": "sus::iter::SkipWhile",
+    "split_name": "sus iter Skip While"
+  },
+  {
+    "index": 161,
+    "type": "class",
+    "url": "sus-iter-Take.html",
+    "name": "Take",
+    "full_name": "sus::iter::Take",
+    "split_name": "sus iter Take"
+  },
+  {
+    "index": 162,
+    "type": "struct",
+    "url": "sus-iter-IterRef.html",
+    "name": "IterRef",
+    "full_name": "sus::iter::IterRef",
+    "split_name": "sus iter Iter Ref"
+  },
+  {
+    "index": 163,
+    "type": "struct",
+    "url": "sus-iter-IterRefCounter.html",
+    "name": "IterRefCounter",
+    "full_name": "sus::iter::IterRefCounter",
+    "split_name": "sus iter Iter Ref Counter"
+  },
+  {
+    "index": 164,
+    "type": "class",
+    "url": "sus-iter-Reverse.html",
+    "name": "Reverse",
+    "full_name": "sus::iter::Reverse",
+    "split_name": "sus iter Reverse"
+  },
+  {
+    "index": 165,
+    "type": "class",
+    "url": "sus-iter-Once.html",
+    "name": "Once",
+    "full_name": "sus::iter::Once",
+    "split_name": "sus iter Once"
+  },
+  {
+    "index": 166,
+    "type": "class",
+    "url": "sus-iter-Moved.html",
+    "name": "Moved",
+    "full_name": "sus::iter::Moved",
+    "split_name": "sus iter Moved"
+  },
+  {
+    "index": 167,
+    "type": "class",
+    "url": "sus-iter-Chain.html",
+    "name": "Chain",
+    "full_name": "sus::iter::Chain",
+    "split_name": "sus iter Chain"
+  },
+  {
+    "index": 168,
+    "type": "class",
+    "url": "sus-iter-Fuse.html",
+    "name": "Fuse",
+    "full_name": "sus::iter::Fuse",
+    "split_name": "sus iter Fuse"
+  },
+  {
+    "index": 169,
+    "type": "class",
+    "url": "sus-iter-Enumerate.html",
+    "name": "Enumerate",
+    "full_name": "sus::iter::Enumerate",
+    "split_name": "sus iter Enumerate"
+  },
+  {
+    "index": 170,
+    "type": "class",
+    "url": "sus-iter-StepBy.html",
+    "name": "StepBy",
+    "full_name": "sus::iter::StepBy",
+    "split_name": "sus iter Step By"
+  },
+  {
+    "index": 171,
+    "type": "class",
+    "url": "sus-iter-ByRef.html",
+    "name": "ByRef",
+    "full_name": "sus::iter::ByRef",
+    "split_name": "sus iter By Ref"
+  },
+  {
+    "index": 172,
+    "type": "struct",
+    "url": "sus-iter-SizeHint.html",
+    "name": "SizeHint",
+    "full_name": "sus::iter::SizeHint",
+    "split_name": "sus iter Size Hint"
+  },
+  {
+    "index": 173,
+    "type": "class",
+    "url": "sus-iter-Generator.html",
+    "name": "Generator",
+    "full_name": "sus::iter::Generator",
+    "split_name": "sus iter Generator"
+  },
+  {
+    "index": 174,
+    "type": "class",
+    "url": "sus-iter-IteratorBase.html",
+    "name": "IteratorBase",
+    "full_name": "sus::iter::IteratorBase",
+    "split_name": "sus iter Iterator Base"
+  },
+  {
+    "index": 175,
+    "type": "class",
+    "url": "sus-iter-Cycle.html",
+    "name": "Cycle",
+    "full_name": "sus::iter::Cycle",
+    "split_name": "sus iter Cycle"
+  },
+  {
+    "index": 176,
+    "type": "class",
+    "url": "sus-iter-Filter.html",
+    "name": "Filter",
+    "full_name": "sus::iter::Filter",
+    "split_name": "sus iter Filter"
+  },
+  {
+    "index": 177,
+    "type": "class",
+    "url": "sus-iter-Repeat.html",
+    "name": "Repeat",
+    "full_name": "sus::iter::Repeat",
+    "split_name": "sus iter Repeat"
+  },
+  {
+    "index": 178,
+    "type": "class",
+    "url": "sus-iter-Inspect.html",
+    "name": "Inspect",
+    "full_name": "sus::iter::Inspect",
+    "split_name": "sus iter Inspect"
+  },
+  {
+    "index": 179,
+    "type": "class",
+    "url": "sus-iter-Zip.html",
+    "name": "Zip",
+    "full_name": "sus::iter::Zip",
+    "split_name": "sus iter Zip"
+  },
+  {
+    "index": 180,
+    "type": "class",
+    "url": "sus-iter-Map.html",
+    "name": "Map",
+    "full_name": "sus::iter::Map",
+    "split_name": "sus iter Map"
+  },
+  {
+    "index": 181,
+    "type": "class",
+    "url": "sus-iter-Peekable.html",
+    "name": "Peekable",
+    "full_name": "sus::iter::Peekable",
+    "split_name": "sus iter Peekable"
+  },
+  {
+    "index": 182,
+    "type": "class",
+    "url": "sus-iter-FilterMap.html",
+    "name": "FilterMap",
+    "full_name": "sus::iter::FilterMap",
+    "split_name": "sus iter Filter Map"
+  },
+  {
+    "index": 183,
+    "type": "class",
+    "url": "sus-iter-Scan.html",
+    "name": "Scan",
+    "full_name": "sus::iter::Scan",
+    "split_name": "sus iter Scan"
+  },
+  {
+    "index": 184,
+    "type": "struct",
+    "url": "sus-iter-FromIteratorImpl.html",
+    "name": "FromIteratorImpl",
+    "full_name": "sus::iter::FromIteratorImpl",
+    "split_name": "sus iter From Iterator Impl"
+  },
+  {
+    "index": 185,
+    "type": "class",
+    "url": "sus-iter-TakeWhile.html",
+    "name": "TakeWhile",
+    "full_name": "sus::iter::TakeWhile",
+    "split_name": "sus iter Take While"
+  },
+  {
+    "index": 186,
+    "type": "function",
+    "url": "sus-iter-fn.zip.html",
+    "name": "zip",
+    "full_name": "sus::iter::zip",
+    "split_name": "sus iter zip"
+  },
+  {
+    "index": 187,
+    "type": "function",
+    "url": "sus-iter-fn.empty.html",
+    "name": "empty",
+    "full_name": "sus::iter::empty",
+    "split_name": "sus iter empty"
+  },
+  {
+    "index": 188,
+    "type": "function",
+    "url": "sus-iter-fn.begin.html",
+    "name": "begin",
+    "full_name": "sus::iter::begin",
+    "split_name": "sus iter begin"
+  },
+  {
+    "index": 189,
+    "type": "function",
+    "url": "sus-iter-fn.once.html",
+    "name": "once",
+    "full_name": "sus::iter::once",
+    "split_name": "sus iter once"
+  },
+  {
+    "index": 190,
+    "type": "function",
+    "url": "sus-iter-fn.once_with.html",
+    "name": "once_with",
+    "full_name": "sus::iter::once_with",
+    "split_name": "sus iter once with"
+  },
+  {
+    "index": 191,
+    "type": "function",
+    "url": "sus-iter-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::iter::operator==",
+    "split_name": "sus iter operator=="
+  },
+  {
+    "index": 192,
+    "type": "function",
+    "url": "sus-iter-fn.try_from_iter.html",
+    "name": "try_from_iter",
+    "full_name": "sus::iter::try_from_iter",
+    "split_name": "sus iter try from iter"
+  },
+  {
+    "index": 193,
+    "type": "function",
+    "url": "sus-iter-fn.from_iter.html",
+    "name": "from_iter",
+    "full_name": "sus::iter::from_iter",
+    "split_name": "sus iter from iter"
+  },
+  {
+    "index": 194,
+    "type": "function",
+    "url": "sus-iter-fn.end.html",
+    "name": "end",
+    "full_name": "sus::iter::end",
+    "split_name": "sus iter end"
+  },
+  {
+    "index": 195,
+    "type": "function",
+    "url": "sus-iter-fn.successors.html",
+    "name": "successors",
+    "full_name": "sus::iter::successors",
+    "split_name": "sus iter successors"
+  },
+  {
+    "index": 196,
+    "type": "function",
+    "url": "sus-iter-fn.from_range.html",
+    "name": "from_range",
+    "full_name": "sus::iter::from_range",
+    "split_name": "sus iter from range"
+  },
+  {
+    "index": 197,
+    "type": "function",
+    "url": "sus-iter-fn.repeat_with.html",
+    "name": "repeat_with",
+    "full_name": "sus::iter::repeat_with",
+    "split_name": "sus iter repeat with"
+  },
+  {
+    "index": 198,
+    "type": "function",
+    "url": "sus-iter-fn.from_generator.html",
+    "name": "from_generator",
+    "full_name": "sus::iter::from_generator",
+    "split_name": "sus iter from generator"
+  },
+  {
+    "index": 199,
+    "type": "function",
+    "url": "sus-iter-fn.repeat.html",
+    "name": "repeat",
+    "full_name": "sus::iter::repeat",
+    "split_name": "sus iter repeat"
+  },
+  {
+    "index": 200,
+    "type": "namespace",
+    "url": "sus-namespace.string.html",
+    "weight": "0.75",
+    "name": "string",
+    "full_name": "sus::string",
+    "split_name": "sus string"
+  },
+  {
+    "index": 201,
+    "type": "namespace",
+    "url": "sus-namespace.ptr.html",
+    "weight": "0.75",
+    "name": "ptr",
+    "full_name": "sus::ptr",
+    "split_name": "sus ptr"
+  },
+  {
+    "index": 202,
+    "type": "concept",
+    "url": "sus-ptr-SameOrSubclassOf.html",
+    "name": "SameOrSubclassOf",
+    "full_name": "sus::ptr::SameOrSubclassOf",
+    "split_name": "sus ptr Same Or Subclass Of"
+  },
+  {
+    "index": 203,
+    "type": "class",
+    "url": "sus-ptr-NonNull.html",
+    "name": "NonNull",
+    "full_name": "sus::ptr::NonNull",
+    "split_name": "sus ptr Non Null"
+  },
+  {
+    "index": 204,
+    "type": "function",
+    "url": "sus-ptr-fn.as_ref.html",
+    "name": "as_ref",
+    "full_name": "sus::ptr::as_ref",
+    "split_name": "sus ptr as ref"
+  },
+  {
+    "index": 205,
+    "type": "function",
+    "url": "sus-ptr-fn.swap_nonoverlapping.html",
+    "name": "swap_nonoverlapping",
+    "full_name": "sus::ptr::swap_nonoverlapping",
+    "split_name": "sus ptr swap nonoverlapping"
+  },
+  {
+    "index": 206,
+    "type": "function",
+    "url": "sus-ptr-fn.operator_spaceship.html",
+    "name": "operator<=>",
+    "full_name": "sus::ptr::operator<=>",
+    "split_name": "sus ptr operator<=>"
+  },
+  {
+    "index": 207,
+    "type": "function",
+    "url": "sus-ptr-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::ptr::operator==",
+    "split_name": "sus ptr operator=="
+  },
+  {
+    "index": 208,
+    "type": "function",
+    "url": "sus-ptr-fn.copy.html",
+    "name": "copy",
+    "full_name": "sus::ptr::copy",
+    "split_name": "sus ptr copy"
+  },
+  {
+    "index": 209,
+    "type": "function",
+    "url": "sus-ptr-fn.copy_nonoverlapping.html",
+    "name": "copy_nonoverlapping",
+    "full_name": "sus::ptr::copy_nonoverlapping",
+    "split_name": "sus ptr copy nonoverlapping"
+  },
+  {
+    "index": 210,
+    "type": "namespace",
+    "url": "sus-namespace.boxed.html",
+    "weight": "0.75",
+    "name": "boxed",
+    "full_name": "sus::boxed",
+    "split_name": "sus boxed"
+  },
+  {
+    "index": 211,
+    "type": "concept",
+    "url": "sus-boxed-DynConcept.html",
+    "name": "DynConcept",
+    "full_name": "sus::boxed::DynConcept",
+    "split_name": "sus boxed Dyn Concept"
+  },
+  {
+    "index": 212,
+    "type": "class",
+    "url": "sus-boxed-Box.html",
+    "name": "Box",
+    "full_name": "sus::boxed::Box",
+    "split_name": "sus boxed Box"
+  },
+  {
+    "index": 213,
+    "type": "class",
+    "url": "sus-boxed-Dyn.html",
+    "name": "Dyn",
+    "full_name": "sus::boxed::Dyn",
+    "split_name": "sus boxed Dyn"
+  },
+  {
+    "index": 214,
+    "type": "function",
+    "url": "sus-boxed-fn.operator_spaceship.box.ord.html",
+    "name": "operator<=>",
+    "full_name": "sus::boxed::operator<=>",
+    "split_name": "sus boxed operator<=>"
+  },
+  {
+    "index": 215,
+    "type": "function",
+    "url": "sus-boxed-fn.operator_eq.box.eq.html",
+    "name": "operator==",
+    "full_name": "sus::boxed::operator==",
+    "split_name": "sus boxed operator=="
+  },
+  {
+    "index": 216,
+    "type": "function",
+    "url": "sus-boxed-fn.dyn.html",
+    "name": "dyn",
+    "full_name": "sus::boxed::dyn",
+    "split_name": "sus boxed dyn"
+  },
+  {
+    "index": 217,
+    "type": "namespace",
+    "url": "sus-namespace.construct.html",
+    "weight": "0.75",
+    "name": "construct",
+    "full_name": "sus::construct",
+    "split_name": "sus construct"
+  },
+  {
+    "index": 218,
+    "type": "concept",
+    "url": "sus-construct-SafelyConstructibleFromReference.html",
+    "name": "SafelyConstructibleFromReference",
+    "full_name": "sus::construct::SafelyConstructibleFromReference",
+    "split_name": "sus construct Safely Constructible From Reference"
+  },
+  {
+    "index": 219,
+    "type": "concept",
+    "url": "sus-construct-TryInto.html",
+    "name": "TryInto",
+    "full_name": "sus::construct::TryInto",
+    "split_name": "sus construct Try Into"
+  },
+  {
+    "index": 220,
+    "type": "concept",
+    "url": "sus-construct-Into.html",
+    "name": "Into",
+    "full_name": "sus::construct::Into",
+    "split_name": "sus construct Into"
+  },
+  {
+    "index": 221,
+    "type": "concept",
+    "url": "sus-construct-TryFrom.html",
+    "name": "TryFrom",
+    "full_name": "sus::construct::TryFrom",
+    "split_name": "sus construct Try From"
+  },
+  {
+    "index": 222,
+    "type": "concept",
+    "url": "sus-construct-From.html",
+    "name": "From",
+    "full_name": "sus::construct::From",
+    "split_name": "sus construct From"
+  },
+  {
+    "index": 223,
+    "type": "concept",
+    "url": "sus-construct-Cast.html",
+    "name": "Cast",
+    "full_name": "sus::construct::Cast",
+    "split_name": "sus construct Cast"
+  },
+  {
+    "index": 224,
+    "type": "concept",
+    "url": "sus-construct-Default.html",
+    "name": "Default",
+    "full_name": "sus::construct::Default",
+    "split_name": "sus construct Default"
+  },
+  {
+    "index": 225,
+    "type": "struct",
+    "url": "sus-construct-CastImpl.html",
+    "name": "CastImpl",
+    "full_name": "sus::construct::CastImpl",
+    "split_name": "sus construct Cast Impl"
+  },
+  {
+    "index": 226,
+    "type": "function",
+    "url": "sus-construct-fn.try_into.html",
+    "name": "try_into",
+    "full_name": "sus::construct::try_into",
+    "split_name": "sus construct try into"
+  },
+  {
+    "index": 227,
+    "type": "function",
+    "url": "sus-construct-fn.move_into.html",
+    "name": "move_into",
+    "full_name": "sus::construct::move_into",
+    "split_name": "sus construct move into"
+  },
+  {
+    "index": 228,
+    "type": "function",
+    "url": "sus-construct-fn.cast.html",
+    "name": "cast",
+    "full_name": "sus::construct::cast",
+    "split_name": "sus construct cast"
+  },
+  {
+    "index": 229,
+    "type": "function",
+    "url": "sus-construct-fn.into.html",
+    "name": "into",
+    "full_name": "sus::construct::into",
+    "split_name": "sus construct into"
+  },
+  {
+    "index": 230,
+    "type": "namespace",
+    "url": "sus-namespace.num.html",
+    "weight": "0.75",
+    "name": "num",
+    "full_name": "sus::num",
+    "split_name": "sus num"
+  },
+  {
+    "index": 231,
+    "type": "concept",
+    "url": "sus-num-Shr.html",
+    "name": "Shr",
+    "full_name": "sus::num::Shr",
+    "split_name": "sus num Shr"
+  },
+  {
+    "index": 232,
+    "type": "concept",
+    "url": "sus-num-ShlAssign.html",
+    "name": "ShlAssign",
+    "full_name": "sus::num::ShlAssign",
+    "split_name": "sus num Shl Assign"
+  },
+  {
+    "index": 233,
+    "type": "concept",
+    "url": "sus-num-BitXor.html",
+    "name": "BitXor",
+    "full_name": "sus::num::BitXor",
+    "split_name": "sus num Bit Xor"
+  },
+  {
+    "index": 234,
+    "type": "concept",
+    "url": "sus-num-BitOrAssign.html",
+    "name": "BitOrAssign",
+    "full_name": "sus::num::BitOrAssign",
+    "split_name": "sus num Bit Or Assign"
+  },
+  {
+    "index": 235,
+    "type": "concept",
+    "url": "sus-num-BitAnd.html",
+    "name": "BitAnd",
+    "full_name": "sus::num::BitAnd",
+    "split_name": "sus num Bit And"
+  },
+  {
+    "index": 236,
+    "type": "concept",
+    "url": "sus-num-BitAndAssign.html",
+    "name": "BitAndAssign",
+    "full_name": "sus::num::BitAndAssign",
+    "split_name": "sus num Bit And Assign"
+  },
+  {
+    "index": 237,
+    "type": "concept",
+    "url": "sus-num-RemAssign.html",
+    "name": "RemAssign",
+    "full_name": "sus::num::RemAssign",
+    "split_name": "sus num Rem Assign"
+  },
+  {
+    "index": 238,
+    "type": "concept",
+    "url": "sus-num-UnsignedPrimitiveEnum.html",
+    "name": "UnsignedPrimitiveEnum",
+    "full_name": "sus::num::UnsignedPrimitiveEnum",
+    "split_name": "sus num Unsigned Primitive Enum"
+  },
+  {
+    "index": 239,
+    "type": "concept",
+    "url": "sus-num-UnsignedPointer.html",
+    "name": "UnsignedPointer",
+    "full_name": "sus::num::UnsignedPointer",
+    "split_name": "sus num Unsigned Pointer"
+  },
+  {
+    "index": 240,
+    "type": "concept",
+    "url": "sus-num-PrimitiveInteger.html",
+    "name": "PrimitiveInteger",
+    "full_name": "sus::num::PrimitiveInteger",
+    "split_name": "sus num Primitive Integer"
+  },
+  {
+    "index": 241,
+    "type": "concept",
+    "url": "sus-num-IntegerNumeric.html",
+    "name": "IntegerNumeric",
+    "full_name": "sus::num::IntegerNumeric",
+    "split_name": "sus num Integer Numeric"
+  },
+  {
+    "index": 242,
+    "type": "concept",
+    "url": "sus-num-Signed.html",
+    "name": "Signed",
+    "full_name": "sus::num::Signed",
+    "split_name": "sus num Signed"
+  },
+  {
+    "index": 243,
+    "type": "concept",
+    "url": "sus-num-SignedPrimitiveEnumClass.html",
+    "name": "SignedPrimitiveEnumClass",
+    "full_name": "sus::num::SignedPrimitiveEnumClass",
+    "split_name": "sus num Signed Primitive Enum Class"
+  },
+  {
+    "index": 244,
+    "type": "concept",
+    "url": "sus-num-Shl.html",
+    "name": "Shl",
+    "full_name": "sus::num::Shl",
+    "split_name": "sus num Shl"
+  },
+  {
+    "index": 245,
+    "type": "concept",
+    "url": "sus-num-Unsigned.html",
+    "name": "Unsigned",
+    "full_name": "sus::num::Unsigned",
+    "split_name": "sus num Unsigned"
+  },
+  {
+    "index": 246,
+    "type": "concept",
+    "url": "sus-num-UnsignedPrimitiveInteger.html",
+    "name": "UnsignedPrimitiveInteger",
+    "full_name": "sus::num::UnsignedPrimitiveInteger",
+    "split_name": "sus num Unsigned Primitive Integer"
+  },
+  {
+    "index": 247,
+    "type": "concept",
+    "url": "sus-num-IntegerPointer.html",
+    "name": "IntegerPointer",
+    "full_name": "sus::num::IntegerPointer",
+    "split_name": "sus num Integer Pointer"
+  },
+  {
+    "index": 248,
+    "type": "concept",
+    "url": "sus-num-UnsignedNumeric.html",
+    "name": "UnsignedNumeric",
+    "full_name": "sus::num::UnsignedNumeric",
+    "split_name": "sus num Unsigned Numeric"
+  },
+  {
+    "index": 249,
+    "type": "concept",
+    "url": "sus-num-PrimitiveFloat.html",
+    "name": "PrimitiveFloat",
+    "full_name": "sus::num::PrimitiveFloat",
+    "split_name": "sus num Primitive Float"
+  },
+  {
+    "index": 250,
+    "type": "concept",
+    "url": "sus-num-BitXorAssign.html",
+    "name": "BitXorAssign",
+    "full_name": "sus::num::BitXorAssign",
+    "split_name": "sus num Bit Xor Assign"
+  },
+  {
+    "index": 251,
+    "type": "concept",
+    "url": "sus-num-Sub.html",
+    "name": "Sub",
+    "full_name": "sus::num::Sub",
+    "split_name": "sus num Sub"
+  },
+  {
+    "index": 252,
+    "type": "concept",
+    "url": "sus-num-ShrAssign.html",
+    "name": "ShrAssign",
+    "full_name": "sus::num::ShrAssign",
+    "split_name": "sus num Shr Assign"
+  },
+  {
+    "index": 253,
+    "type": "concept",
+    "url": "sus-num-SignedPrimitiveInteger.html",
+    "name": "SignedPrimitiveInteger",
+    "full_name": "sus::num::SignedPrimitiveInteger",
+    "split_name": "sus num Signed Primitive Integer"
+  },
+  {
+    "index": 254,
+    "type": "concept",
+    "url": "sus-num-PrimitiveEnumClass.html",
+    "name": "PrimitiveEnumClass",
+    "full_name": "sus::num::PrimitiveEnumClass",
+    "split_name": "sus num Primitive Enum Class"
+  },
+  {
+    "index": 255,
+    "type": "concept",
+    "url": "sus-num-SignedPrimitiveEnum.html",
+    "name": "SignedPrimitiveEnum",
+    "full_name": "sus::num::SignedPrimitiveEnum",
+    "split_name": "sus num Signed Primitive Enum"
+  },
+  {
+    "index": 256,
+    "type": "concept",
+    "url": "sus-num-PrimitiveEnum.html",
+    "name": "PrimitiveEnum",
+    "full_name": "sus::num::PrimitiveEnum",
+    "split_name": "sus num Primitive Enum"
+  },
+  {
+    "index": 257,
+    "type": "concept",
+    "url": "sus-num-SubAssign.html",
+    "name": "SubAssign",
+    "full_name": "sus::num::SubAssign",
+    "split_name": "sus num Sub Assign"
+  },
+  {
+    "index": 258,
+    "type": "concept",
+    "url": "sus-num-Neg.html",
+    "name": "Neg",
+    "full_name": "sus::num::Neg",
+    "split_name": "sus num Neg"
+  },
+  {
+    "index": 259,
+    "type": "concept",
+    "url": "sus-num-BitNot.html",
+    "name": "BitNot",
+    "full_name": "sus::num::BitNot",
+    "split_name": "sus num Bit Not"
+  },
+  {
+    "index": 260,
+    "type": "concept",
+    "url": "sus-num-Add.html",
+    "name": "Add",
+    "full_name": "sus::num::Add",
+    "split_name": "sus num Add"
+  },
+  {
+    "index": 261,
+    "type": "concept",
+    "url": "sus-num-AddAssign.html",
+    "name": "AddAssign",
+    "full_name": "sus::num::AddAssign",
+    "split_name": "sus num Add Assign"
+  },
+  {
+    "index": 262,
+    "type": "concept",
+    "url": "sus-num-Float.html",
+    "name": "Float",
+    "full_name": "sus::num::Float",
+    "split_name": "sus num Float"
+  },
+  {
+    "index": 263,
+    "type": "concept",
+    "url": "sus-num-UnsignedPrimitiveEnumClass.html",
+    "name": "UnsignedPrimitiveEnumClass",
+    "full_name": "sus::num::UnsignedPrimitiveEnumClass",
+    "split_name": "sus num Unsigned Primitive Enum Class"
+  },
+  {
+    "index": 264,
+    "type": "concept",
+    "url": "sus-num-Mul.html",
+    "name": "Mul",
+    "full_name": "sus::num::Mul",
+    "split_name": "sus num Mul"
+  },
+  {
+    "index": 265,
+    "type": "concept",
+    "url": "sus-num-Integer.html",
+    "name": "Integer",
+    "full_name": "sus::num::Integer",
+    "split_name": "sus num Integer"
+  },
+  {
+    "index": 266,
+    "type": "concept",
+    "url": "sus-num-MulAssign.html",
+    "name": "MulAssign",
+    "full_name": "sus::num::MulAssign",
+    "split_name": "sus num Mul Assign"
+  },
+  {
+    "index": 267,
+    "type": "concept",
+    "url": "sus-num-DivAssign.html",
+    "name": "DivAssign",
+    "full_name": "sus::num::DivAssign",
+    "split_name": "sus num Div Assign"
+  },
+  {
+    "index": 268,
+    "type": "concept",
+    "url": "sus-num-Div.html",
+    "name": "Div",
+    "full_name": "sus::num::Div",
+    "split_name": "sus num Div"
+  },
+  {
+    "index": 269,
+    "type": "concept",
+    "url": "sus-num-BitOr.html",
+    "name": "BitOr",
+    "full_name": "sus::num::BitOr",
+    "split_name": "sus num Bit Or"
+  },
+  {
+    "index": 270,
+    "type": "concept",
+    "url": "sus-num-Rem.html",
+    "name": "Rem",
+    "full_name": "sus::num::Rem",
+    "split_name": "sus num Rem"
+  },
+  {
+    "index": 271,
+    "type": "class",
+    "url": "sus-num-OverflowInteger.html",
+    "name": "OverflowInteger",
+    "full_name": "sus::num::OverflowInteger",
+    "split_name": "sus num Overflow Integer"
+  },
+  {
+    "index": 272,
+    "type": "class",
+    "url": "sus-num-TryFromIntError.html",
+    "name": "TryFromIntError",
+    "full_name": "sus::num::TryFromIntError",
+    "split_name": "sus num Try From Int Error"
+  },
+  {
+    "index": 273,
+    "type": "struct",
+    "url": "sus-num-u8.html",
+    "name": "u8",
+    "full_name": "sus::num::u8",
+    "split_name": "sus num u8"
+  },
+  {
+    "index": 274,
+    "type": "struct",
+    "url": "sus-num-u64.html",
+    "name": "u64",
+    "full_name": "sus::num::u64",
+    "split_name": "sus num u64"
+  },
+  {
+    "index": 275,
+    "type": "struct",
+    "url": "sus-num-u32.html",
+    "name": "u32",
+    "full_name": "sus::num::u32",
+    "split_name": "sus num u32"
+  },
+  {
+    "index": 276,
+    "type": "struct",
+    "url": "sus-num-i16.html",
+    "name": "i16",
+    "full_name": "sus::num::i16",
+    "split_name": "sus num i16"
+  },
+  {
+    "index": 277,
+    "type": "struct",
+    "url": "sus-num-u16.html",
+    "name": "u16",
+    "full_name": "sus::num::u16",
+    "split_name": "sus num u16"
+  },
+  {
+    "index": 278,
+    "type": "struct",
+    "url": "sus-num-f64.html",
+    "name": "f64",
+    "full_name": "sus::num::f64",
+    "split_name": "sus num f64"
+  },
+  {
+    "index": 279,
+    "type": "struct",
+    "url": "sus-num-f64-consts.html",
+    "name": "consts",
+    "full_name": "sus::num::f64::consts",
+    "split_name": "sus num f64 consts"
+  },
+  {
+    "index": 280,
+    "type": "struct",
+    "url": "sus-num-usize.html",
+    "name": "usize",
+    "full_name": "sus::num::usize",
+    "split_name": "sus num usize"
+  },
+  {
+    "index": 281,
+    "type": "struct",
+    "url": "sus-num-uptr.html",
+    "name": "uptr",
+    "full_name": "sus::num::uptr",
+    "split_name": "sus num uptr"
+  },
+  {
+    "index": 282,
+    "type": "struct",
+    "url": "sus-num-i32.html",
+    "name": "i32",
+    "full_name": "sus::num::i32",
+    "split_name": "sus num i32"
+  },
+  {
+    "index": 283,
+    "type": "struct",
+    "url": "sus-num-f32.html",
+    "name": "f32",
+    "full_name": "sus::num::f32",
+    "split_name": "sus num f32"
+  },
+  {
+    "index": 284,
+    "type": "struct",
+    "url": "sus-num-f32-consts.html",
+    "name": "consts",
+    "full_name": "sus::num::f32::consts",
+    "split_name": "sus num f32 consts"
+  },
+  {
+    "index": 285,
+    "type": "struct",
+    "url": "sus-num-isize.html",
+    "name": "isize",
+    "full_name": "sus::num::isize",
+    "split_name": "sus num isize"
+  },
+  {
+    "index": 286,
+    "type": "struct",
+    "url": "sus-num-i8.html",
+    "name": "i8",
+    "full_name": "sus::num::i8",
+    "split_name": "sus num i8"
+  },
+  {
+    "index": 287,
+    "type": "struct",
+    "url": "sus-num-i64.html",
+    "name": "i64",
+    "full_name": "sus::num::i64",
+    "split_name": "sus num i64"
+  },
+  {
+    "index": 288,
+    "type": "function",
+    "url": "sus-num-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::num::operator==",
+    "split_name": "sus num operator=="
+  },
+  {
+    "index": 289,
+    "type": "function",
+    "url": "sus-num-fn.operator_rem.html",
+    "name": "operator%",
+    "full_name": "sus::num::operator%",
+    "split_name": "sus num operator%"
+  },
+  {
+    "index": 290,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub.html",
+    "name": "operator-",
+    "full_name": "sus::num::operator-",
+    "split_name": "sus num operator-"
+  },
+  {
+    "index": 291,
+    "type": "function",
+    "url": "sus-num-fn.operator_mul.float._mul.html",
+    "name": "operator*",
+    "full_name": "sus::num::operator*",
+    "split_name": "sus num operator*"
+  },
+  {
+    "index": 292,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.float._plus.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+"
+  },
+  {
+    "index": 293,
+    "type": "function",
+    "url": "sus-num-fn.operator_spaceship.float.partialord.html",
+    "name": "operator<=>",
+    "full_name": "sus::num::operator<=>",
+    "split_name": "sus num operator<=>"
+  },
+  {
+    "index": 294,
+    "type": "function",
+    "url": "sus-num-fn.operator_rightshift.signedint._rightshift.html",
+    "name": "operator>>",
+    "full_name": "sus::num::operator>>",
+    "split_name": "sus num operator>>"
+  },
+  {
+    "index": 295,
+    "type": "function",
+    "url": "sus-num-fn.operator_leftshift.signedint._leftshift.html",
+    "name": "operator<<",
+    "full_name": "sus::num::operator<<",
+    "split_name": "sus num operator<<"
+  },
+  {
+    "index": 296,
+    "type": "function",
+    "url": "sus-num-fn.operator_mul.html",
+    "name": "operator*",
+    "full_name": "sus::num::operator*",
+    "split_name": "sus num operator*"
+  },
+  {
+    "index": 297,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub=.ptr.sub.isize.html",
+    "name": "operator-=",
+    "full_name": "sus::num::operator-=",
+    "split_name": "sus num operator-="
+  },
+  {
+    "index": 298,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub.ptr.sub.isize.html",
+    "name": "operator-",
+    "full_name": "sus::num::operator-",
+    "split_name": "sus num operator-"
+  },
+  {
+    "index": 299,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus=.ptr.add.isize.html",
+    "name": "operator+=",
+    "full_name": "sus::num::operator+=",
+    "split_name": "sus num operator+="
+  },
+  {
+    "index": 300,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub.ptr.sub.usize.html",
+    "name": "operator-",
+    "full_name": "sus::num::operator-",
+    "split_name": "sus num operator-"
+  },
+  {
+    "index": 301,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.unsignedint._plus.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+"
+  },
+  {
+    "index": 302,
+    "type": "function",
+    "url": "sus-num-fn.operator_rem.float._rem.html",
+    "name": "operator%",
+    "full_name": "sus::num::operator%",
+    "split_name": "sus num operator%"
+  },
+  {
+    "index": 303,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub.float._sub.html",
+    "name": "operator-",
+    "full_name": "sus::num::operator-",
+    "split_name": "sus num operator-"
+  },
+  {
+    "index": 304,
+    "type": "function",
+    "url": "sus-num-fn.operator_eq.float.eq.html",
+    "name": "operator==",
+    "full_name": "sus::num::operator==",
+    "split_name": "sus num operator=="
+  },
+  {
+    "index": 305,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.ptr.add.usize.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+"
+  },
+  {
+    "index": 306,
+    "type": "function",
+    "url": "sus-num-fn.operator_rem.unsignedint._rem.html",
+    "name": "operator%",
+    "full_name": "sus::num::operator%",
+    "split_name": "sus num operator%"
+  },
+  {
+    "index": 307,
+    "type": "function",
+    "url": "sus-num-fn.operator_rightshift.unsignedint._rightshift.html",
+    "name": "operator>>",
+    "full_name": "sus::num::operator>>",
+    "split_name": "sus num operator>>"
+  },
+  {
+    "index": 308,
+    "type": "function",
+    "url": "sus-num-fn.operator_div.html",
+    "name": "operator/",
+    "full_name": "sus::num::operator/",
+    "split_name": "sus num operator/"
+  },
+  {
+    "index": 309,
+    "type": "function",
+    "url": "sus-num-fn.operator_mul.unsignedint._mul.html",
+    "name": "operator*",
+    "full_name": "sus::num::operator*",
+    "split_name": "sus num operator*"
+  },
+  {
+    "index": 310,
+    "type": "function",
+    "url": "sus-num-fn.operator_and.unsignedint._and.html",
+    "name": "operator&",
+    "full_name": "sus::num::operator&",
+    "split_name": "sus num operator&"
+  },
+  {
+    "index": 311,
+    "type": "function",
+    "url": "sus-num-fn.operator_xor.unsignedint._xor.html",
+    "name": "operator^",
+    "full_name": "sus::num::operator^",
+    "split_name": "sus num operator^"
+  },
+  {
+    "index": 312,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.signedint._plus.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+"
+  },
+  {
+    "index": 313,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+"
+  },
+  {
+    "index": 314,
+    "type": "function",
+    "url": "sus-num-fn.operator_or.unsignedint._or.html",
+    "name": "operator|",
+    "full_name": "sus::num::operator|",
+    "split_name": "sus num operator|"
+  },
+  {
+    "index": 315,
+    "type": "function",
+    "url": "sus-num-fn.operator_rightshift.signed.prim._rightshiftu64.html",
+    "name": "operator>>",
+    "full_name": "sus::num::operator>>",
+    "split_name": "sus num operator>>"
+  },
+  {
+    "index": 316,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub=.ptr.sub.usize.html",
+    "name": "operator-=",
+    "full_name": "sus::num::operator-=",
+    "split_name": "sus num operator-="
+  },
+  {
+    "index": 317,
+    "type": "function",
+    "url": "sus-num-fn.operator_div.float._div.html",
+    "name": "operator/",
+    "full_name": "sus::num::operator/",
+    "split_name": "sus num operator/"
+  },
+  {
+    "index": 318,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus=.ptr.add.usize.html",
+    "name": "operator+=",
+    "full_name": "sus::num::operator+=",
+    "split_name": "sus num operator+="
+  },
+  {
+    "index": 319,
+    "type": "function",
+    "url": "sus-num-fn.operator_leftshift.unsigned.prim._leftshiftu64.html",
+    "name": "operator<<",
+    "full_name": "sus::num::operator<<",
+    "split_name": "sus num operator<<"
+  },
+  {
+    "index": 320,
+    "type": "function",
+    "url": "sus-num-fn.operator_spaceship.uint.strongord.html",
+    "name": "operator<=>",
+    "full_name": "sus::num::operator<=>",
+    "split_name": "sus num operator<=>"
+  },
+  {
+    "index": 321,
+    "type": "function",
+    "url": "sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu64.html",
+    "name": "operator>>",
+    "full_name": "sus::num::operator>>",
+    "split_name": "sus num operator>>"
+  },
+  {
+    "index": 322,
+    "type": "function",
+    "url": "sus-num-fn.operator_eq.int.eq.html",
+    "name": "operator==",
+    "full_name": "sus::num::operator==",
+    "split_name": "sus num operator=="
+  },
+  {
+    "index": 323,
+    "type": "function",
+    "url": "sus-num-fn.operator_spaceship.int.strongord.html",
+    "name": "operator<=>",
+    "full_name": "sus::num::operator<=>",
+    "split_name": "sus num operator<=>"
+  },
+  {
+    "index": 324,
+    "type": "function",
+    "url": "sus-num-fn.operator_spaceship.html",
+    "name": "operator<=>",
+    "full_name": "sus::num::operator<=>",
+    "split_name": "sus num operator<=>"
+  },
+  {
+    "index": 325,
+    "type": "function",
+    "url": "sus-num-fn.operator_eq.uint.eq.html",
+    "name": "operator==",
+    "full_name": "sus::num::operator==",
+    "split_name": "sus num operator=="
+  },
+  {
+    "index": 326,
+    "type": "function",
+    "url": "sus-num-fn.operator_rem.signedint._rem.html",
+    "name": "operator%",
+    "full_name": "sus::num::operator%",
+    "split_name": "sus num operator%"
+  },
+  {
+    "index": 327,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub.unsignedint._sub.html",
+    "name": "operator-",
+    "full_name": "sus::num::operator-",
+    "split_name": "sus num operator-"
+  },
+  {
+    "index": 328,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub.signedint._sub.html",
+    "name": "operator-",
+    "full_name": "sus::num::operator-",
+    "split_name": "sus num operator-"
+  },
+  {
+    "index": 329,
+    "type": "function",
+    "url": "sus-num-fn.operator_leftshift.unsignedint._leftshift.html",
+    "name": "operator<<",
+    "full_name": "sus::num::operator<<",
+    "split_name": "sus num operator<<"
+  },
+  {
+    "index": 330,
+    "type": "function",
+    "url": "sus-num-fn.operator_mul.signedint._mul.html",
+    "name": "operator*",
+    "full_name": "sus::num::operator*",
+    "split_name": "sus num operator*"
+  },
+  {
+    "index": 331,
+    "type": "function",
+    "url": "sus-num-fn.operator_leftshift.signed.prim._leftshiftu64.html",
+    "name": "operator<<",
+    "full_name": "sus::num::operator<<",
+    "split_name": "sus num operator<<"
+  },
+  {
+    "index": 332,
+    "type": "function",
+    "url": "sus-num-fn.operator_div.unsignedint._div.html",
+    "name": "operator/",
+    "full_name": "sus::num::operator/",
+    "split_name": "sus num operator/"
+  },
+  {
+    "index": 333,
+    "type": "function",
+    "url": "sus-num-fn.operator_div.signedint._div.html",
+    "name": "operator/",
+    "full_name": "sus::num::operator/",
+    "split_name": "sus num operator/"
+  },
+  {
+    "index": 334,
+    "type": "function",
+    "url": "sus-num-fn.operator_and.signedint._and.html",
+    "name": "operator&",
+    "full_name": "sus::num::operator&",
+    "split_name": "sus num operator&"
+  },
+  {
+    "index": 335,
+    "type": "function",
+    "url": "sus-num-fn.operator_or.signedint._or.html",
+    "name": "operator|",
+    "full_name": "sus::num::operator|",
+    "split_name": "sus num operator|"
+  },
+  {
+    "index": 336,
+    "type": "function",
+    "url": "sus-num-fn.operator_xor.signedint._xor.html",
+    "name": "operator^",
+    "full_name": "sus::num::operator^",
+    "split_name": "sus num operator^"
+  },
+  {
+    "index": 337,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.ptr.add.isize.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+"
+  },
+  {
+    "index": 338,
+    "type": "namespace",
+    "url": "sus-namespace.option.html",
+    "weight": "0.75",
+    "name": "option",
+    "full_name": "sus::option",
+    "split_name": "sus option"
+  },
+  {
+    "index": 339,
+    "type": "class",
+    "url": "sus-option-OptionIter.html",
+    "name": "OptionIter",
+    "full_name": "sus::option::OptionIter",
+    "split_name": "sus option Option Iter"
+  },
+  {
+    "index": 340,
+    "type": "class",
+    "url": "sus-option-Option.html",
+    "name": "Option",
+    "full_name": "sus::option::Option",
+    "split_name": "sus option Option"
+  },
+  {
+    "index": 341,
+    "type": "function",
+    "url": "sus-option-fn.none.html",
+    "name": "none",
+    "full_name": "sus::option::none",
+    "split_name": "sus option none"
+  },
+  {
+    "index": 342,
+    "type": "function",
+    "url": "sus-option-fn.operator_spaceship.html",
+    "name": "operator<=>",
+    "full_name": "sus::option::operator<=>",
+    "split_name": "sus option operator<=>"
+  },
+  {
+    "index": 343,
+    "type": "function",
+    "url": "sus-option-fn.some.html",
+    "name": "some",
+    "full_name": "sus::option::some",
+    "split_name": "sus option some"
+  },
+  {
+    "index": 344,
+    "type": "function",
+    "url": "sus-option-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::option::operator==",
+    "split_name": "sus option operator=="
+  },
+  {
+    "index": 345,
+    "type": "namespace",
+    "url": "sus-namespace.result.html",
+    "weight": "0.75",
+    "name": "result",
+    "full_name": "sus::result",
+    "split_name": "sus result"
+  },
+  {
+    "index": 346,
+    "type": "class",
+    "url": "sus-result-Result.html",
+    "name": "Result",
+    "full_name": "sus::result::Result",
+    "split_name": "sus result Result"
+  },
+  {
+    "index": 347,
+    "type": "struct",
+    "url": "sus-result-OkVoid.html",
+    "name": "OkVoid",
+    "full_name": "sus::result::OkVoid",
+    "split_name": "sus result Ok Void"
+  },
+  {
+    "index": 348,
+    "type": "function",
+    "url": "sus-result-fn.err.html",
+    "name": "err",
+    "full_name": "sus::result::err",
+    "split_name": "sus result err"
+  },
+  {
+    "index": 349,
+    "type": "function",
+    "url": "sus-result-fn.ok.html",
+    "name": "ok",
+    "full_name": "sus::result::ok",
+    "split_name": "sus result ok"
+  },
+  {
+    "index": 350,
+    "type": "function",
+    "url": "sus-result-fn.operator_spaceship.html",
+    "name": "operator<=>",
+    "full_name": "sus::result::operator<=>",
+    "split_name": "sus result operator<=>"
+  },
+  {
+    "index": 351,
+    "type": "function",
+    "url": "sus-result-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::result::operator==",
+    "split_name": "sus result operator=="
+  },
+  {
+    "index": 352,
+    "type": "namespace",
+    "url": "sus-namespace.error.html",
+    "weight": "0.75",
+    "name": "error",
+    "full_name": "sus::error",
+    "split_name": "sus error"
+  },
+  {
+    "index": 353,
+    "type": "concept",
+    "url": "sus-error-Error.html",
+    "name": "Error",
+    "full_name": "sus::error::Error",
+    "split_name": "sus error Error"
+  },
+  {
+    "index": 354,
+    "type": "struct",
+    "url": "sus-error-ErrorImpl.html",
+    "name": "ErrorImpl",
+    "full_name": "sus::error::ErrorImpl",
+    "split_name": "sus error Error Impl"
+  },
+  {
+    "index": 355,
+    "type": "struct",
+    "url": "sus-error-DynError.html",
+    "name": "DynError",
+    "full_name": "sus::error::DynError",
+    "split_name": "sus error Dyn Error"
+  },
+  {
+    "index": 356,
+    "type": "function",
+    "url": "sus-error-fn.error_source.html",
+    "name": "error_source",
+    "full_name": "sus::error::error_source",
+    "split_name": "sus error error source"
+  },
+  {
+    "index": 357,
+    "type": "function",
+    "url": "sus-error-fn.error_display.html",
+    "name": "error_display",
+    "full_name": "sus::error::error_display",
+    "split_name": "sus error error display"
+  },
+  {
+    "index": 358,
+    "type": "namespace",
+    "url": "sus-namespace.tuple_type.html",
+    "weight": "0.75",
+    "name": "tuple_type",
+    "full_name": "sus::tuple_type",
+    "split_name": "sus tuple type"
+  },
+  {
+    "index": 359,
+    "type": "class",
+    "url": "sus-tuple_type-Tuple.html",
+    "name": "Tuple",
+    "full_name": "sus::tuple_type::Tuple",
+    "split_name": "sus tuple type Tuple"
+  },
+  {
+    "index": 360,
+    "type": "function",
+    "url": "sus-tuple_type-fn.operator_leftshift.html",
+    "name": "operator<<",
+    "full_name": "sus::tuple_type::operator<<",
+    "split_name": "sus tuple type operator<<"
+  },
+  {
+    "index": 361,
+    "type": "function",
+    "url": "sus-tuple_type-fn.tuple.html",
+    "name": "tuple",
+    "full_name": "sus::tuple_type::tuple",
+    "split_name": "sus tuple type tuple"
+  },
+  {
+    "index": 362,
+    "type": "function",
+    "url": "sus-tuple_type-fn.get.html",
+    "name": "get",
+    "full_name": "sus::tuple_type::get",
+    "split_name": "sus tuple type get"
+  },
+  {
+    "index": 363,
+    "type": "function",
+    "url": "fn._u8 literal.html",
+    "name": "_u8 literal",
+    "full_name": "_u8 literal",
+    "split_name": "u8 literal"
+  },
+  {
+    "index": 364,
+    "type": "function",
+    "url": "fn._rs literal.html",
+    "name": "_rs literal",
+    "full_name": "_rs literal",
+    "split_name": "rs literal"
+  },
+  {
+    "index": 365,
+    "type": "function",
+    "url": "fn._usize literal.html",
+    "name": "_usize literal",
+    "full_name": "_usize literal",
+    "split_name": "usize literal"
+  },
+  {
+    "index": 366,
+    "type": "function",
+    "url": "fn._i64 literal.html",
+    "name": "_i64 literal",
+    "full_name": "_i64 literal",
+    "split_name": "i64 literal"
+  },
+  {
+    "index": 367,
+    "type": "function",
+    "url": "fn._r literal.html",
+    "name": "_r literal",
+    "full_name": "_r literal",
+    "split_name": "r literal"
+  },
+  {
+    "index": 368,
+    "type": "function",
+    "url": "fn._u16 literal.html",
+    "name": "_u16 literal",
+    "full_name": "_u16 literal",
+    "split_name": "u16 literal"
+  },
+  {
+    "index": 369,
+    "type": "function",
+    "url": "fn._u32 literal.html",
+    "name": "_u32 literal",
+    "full_name": "_u32 literal",
+    "split_name": "u32 literal"
+  },
+  {
+    "index": 370,
+    "type": "function",
+    "url": "fn._f32 literal.html",
+    "name": "_f32 literal",
+    "full_name": "_f32 literal",
+    "split_name": "f32 literal"
+  },
+  {
+    "index": 371,
+    "type": "function",
+    "url": "fn._u64 literal.html",
+    "name": "_u64 literal",
+    "full_name": "_u64 literal",
+    "split_name": "u64 literal"
+  },
+  {
+    "index": 372,
+    "type": "function",
+    "url": "fn._i8 literal.html",
+    "name": "_i8 literal",
+    "full_name": "_i8 literal",
+    "split_name": "i8 literal"
+  },
+  {
+    "index": 373,
+    "type": "function",
+    "url": "fn._i16 literal.html",
+    "name": "_i16 literal",
+    "full_name": "_i16 literal",
+    "split_name": "i16 literal"
+  },
+  {
+    "index": 374,
+    "type": "function",
+    "url": "fn._i32 literal.html",
+    "name": "_i32 literal",
+    "full_name": "_i32 literal",
+    "split_name": "i32 literal"
+  },
+  {
+    "index": 375,
+    "type": "function",
+    "url": "fn._isize literal.html",
+    "name": "_isize literal",
+    "full_name": "_isize literal",
+    "split_name": "isize literal"
+  },
+  {
+    "index": 376,
+    "type": "function",
+    "url": "fn._f64 literal.html",
+    "name": "_f64 literal",
+    "full_name": "_f64 literal",
+    "split_name": "f64 literal"
+  },
+  {
+    "index": 377,
+    "type": "macro",
+    "url": "macro.SUS_NAN.html",
+    "name": "SUS_NAN",
+    "full_name": "SUS_NAN",
+    "split_name": "SUS NAN"
+  },
+  {
+    "index": 378,
+    "type": "macro",
+    "url": "macro.sus_debug_check.html",
+    "name": "sus_debug_check",
+    "full_name": "sus_debug_check",
+    "split_name": "sus debug check"
+  },
+  {
+    "index": 379,
+    "type": "macro",
+    "url": "macro.sus_panic.html",
+    "name": "sus_panic",
+    "full_name": "sus_panic",
+    "split_name": "sus panic"
+  },
+  {
+    "index": 380,
+    "type": "macro",
+    "url": "macro.sus_choice_types.html",
+    "name": "sus_choice_types",
+    "full_name": "sus_choice_types",
+    "split_name": "sus choice types"
+  },
+  {
+    "index": 381,
+    "type": "macro",
+    "url": "macro.sus_panic_with_message.html",
+    "name": "sus_panic_with_message",
+    "full_name": "sus_panic_with_message",
+    "split_name": "sus panic with message"
+  },
+  {
+    "index": 382,
+    "type": "macro",
+    "url": "macro.sus_check_with_message.html",
+    "name": "sus_check_with_message",
+    "full_name": "sus_check_with_message",
+    "split_name": "sus check with message"
+  },
+  {
+    "index": 383,
+    "type": "macro",
+    "url": "macro.sus_check.html",
+    "name": "sus_check",
+    "full_name": "sus_check",
+    "split_name": "sus check"
+  },
+  {
+    "index": 384,
+    "type": "macro",
+    "url": "macro.sus_dyn_concept_typed.html",
+    "name": "sus_dyn_concept_typed",
+    "full_name": "sus_dyn_concept_typed",
+    "split_name": "sus dyn concept typed"
+  },
+  {
+    "index": 385,
+    "type": "macro",
+    "url": "macro.sus_dyn_concept.html",
+    "name": "sus_dyn_concept",
+    "full_name": "sus_dyn_concept",
+    "split_name": "sus dyn concept"
+  },
+  {
+    "index": 386,
+    "type": "macro",
+    "url": "macro.sus_class_never_value_field.html",
+    "name": "sus_class_never_value_field",
+    "full_name": "sus_class_never_value_field",
+    "split_name": "sus class never value field"
+  },
+  {
+    "index": 387,
+    "type": "macro",
+    "url": "macro.sus_unreachable.html",
+    "name": "sus_unreachable",
+    "full_name": "sus_unreachable",
+    "split_name": "sus unreachable"
+  },
+  {
+    "index": 388,
+    "type": "macro",
+    "url": "macro.sus_unreachable_unchecked.html",
+    "name": "sus_unreachable_unchecked",
+    "full_name": "sus_unreachable_unchecked",
+    "split_name": "sus unreachable unchecked"
+  },
+  {
+    "index": 389,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable_if.html",
+    "name": "sus_class_trivially_relocatable_if",
+    "full_name": "sus_class_trivially_relocatable_if",
+    "split_name": "sus class trivially relocatable if"
+  },
+  {
+    "index": 390,
+    "type": "macro",
+    "url": "macro.SUS_INFINITY.html",
+    "name": "SUS_INFINITY",
+    "full_name": "SUS_INFINITY",
+    "split_name": "SUS INFINITY"
+  },
+  {
+    "index": 391,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable_unchecked.html",
+    "name": "sus_class_trivially_relocatable_unchecked",
+    "full_name": "sus_class_trivially_relocatable_unchecked",
+    "split_name": "sus class trivially relocatable unchecked"
+  },
+  {
+    "index": 392,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable_if_types.html",
+    "name": "sus_class_trivially_relocatable_if_types",
+    "full_name": "sus_class_trivially_relocatable_if_types",
+    "split_name": "sus class trivially relocatable if types"
+  },
+  {
+    "index": 393,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable"
+  }
+]

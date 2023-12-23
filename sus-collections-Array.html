@@ -1,633 +1,832 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="subdoc"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta property="og:type" content="website"></meta>
+    <meta property="og:site_name" content="Subspace"></meta>
+    <title>sus::collections::Array - Subspace</title>
+    <meta property="og:title" content="sus::collections::Array - Subspace"></meta>
+    <meta name="description" content="A collection of objects of type T, with a fixed size N."></meta>
+    <meta property="og:description" content="A collection of objects of type T, with a fixed size N."></meta>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script>
+      
+        // Delayed loading of whatever was in the search box.
+        var searchDelayLoad;
 
-<head>
-  <meta name="generator" content="subdoc"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-  <meta property="og:type" content="website"></meta>
-  <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::collections::Array - Subspace</title>
-  <meta property="og:title" content="sus::collections::Array - Subspace"></meta>
-  <meta name="description" content="A collection of objects of type T, with a fixed size N."></meta>
-  <meta property="og:description" content="A collection of objects of type T, with a fixed size N."></meta>
-  <link rel="stylesheet" href="subdoc-test-style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="alternate icon" type="image/png" href="logo32.png">
-  <link rel="alternate icon" type="image/png" href="logo16.png">
-  <meta property="og:image" content="logo.png"></meta>
-</head>
+        // The search box's dynamic behaviour.
+        document.addEventListener("keyup", e => {
+          if (e.key === 's') {
+            document.querySelector('.search-input').focus();
+          }
+          if (e.key === 'Escape') {
+            document.querySelector('.search-input').blur();
+            navigateToSearch(null);
+            e.preventDefault();
+          }
+        });
+        function navigateToSearch(query) {
+          window.clearTimeout(searchDelayLoad);
+          searchDelayLoad = null;
 
-<body>
-  <nav class="topbar">
-    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
-      ☰
-    </button>
-    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
-        <img class="topbar-logo" src="logo.png"></img>
-      </div></a>
-    <span class="topbar-text-area">
-      <span class="topbar-title">
-        <a href="#">Array</a>
+          let without_search =
+              window.location.href.replace(window.location.search, '');
+          if (query) {
+            window.history.replaceState(null, "",
+              without_search + "?" + `search=${query}`);
+          } else {
+            window.history.replaceState(null, "", without_search);
+          }
+          maybeShowSearchResults();
+        }
+        addEventListener("load", event => {
+          document.querySelector(".search-input").oninput = (e) => {
+            window.clearTimeout(searchDelayLoad);
+            searchDelayLoad = window.setTimeout(() => {
+              navigateToSearch(e.target.value);
+            }, 1000);
+          };
+          document.querySelector(".search-input").onkeypress = (e) => {
+            if (e.key == "Enter") {
+              navigateToSearch(e.target.value);
+              e.preventDefault();
+            }
+          };
+          document.querySelector(".search-input").onfocus = (e) => {
+            navigateToSearch(e.target.value);
+          };
+        });
+
+        // Show or hide any DOM element.
+        function showHide(selector, show) {
+          if (show)
+            document.querySelector(selector).classList.remove("hidden");
+          else
+            document.querySelector(selector).classList.add("hidden");
+        }
+
+        function searchQuery() {
+          const params = new Proxy(
+            new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          return params.search;
+        }
+
+        // Showing search results.
+        async function populateSearchResults(loaded) {
+          const search_db = loaded.search_db;
+          const idx = loaded.idx;
+
+          const results = idx.search(searchQuery());
+          let content = '';
+          for (r of results) {
+            const item = search_db[r.ref];
+            
+            const type = item.type;
+            const url = item.url;
+            const name = item.name;
+            const full_name = item.full_name;
+            const summmary = item.summary ? item.summary : "";
+            
+            content += `\
+              <a class="search-results-link" href="${url}">
+                <span class="search-results-type">${type}</span>\
+                <span class="search-results-name">${full_name}</span>\
+                <span class="search-results-summary">${summmary}</span>\
+              </a>\
+              `
+          }
+
+          let content_elem = document.querySelector(".search-results-content");
+          content_elem.innerHTML = content;
+
+          let header_elem = document.querySelector(".search-results-header");
+          header_elem.innerText = "Search results";
+        }
+
+        var cache_idx;
+
+        // Searching via https://lunrjs.com.
+        //
+        // Load the JSON search database, which will be turned into a search
+        // index. Returns an object with two fields:
+        // - search_db: the contents of the search.json file.
+        // - idx: the lunr search index.
+        //   Documented at https://lunrjs.com/docs/lunr.Index.html.
+        async function loadSearchIndex() {
+          async function load_search_db() {
+            let x = await import('./search.json', {
+              assert: {type: 'json'}
+            });
+            return x.default;
+          }
+
+          async function load_idx(search_db) {
+            let idx = lunr(function () {
+              this.ref('index');
+              this.field('name', {
+                'boost': 2
+              });
+              this.field('full_name', {
+                'boost': 2
+              });
+              this.field('split_name', {
+                'boost': 0.5
+              });
+              this.field('summary', {
+                'boost': 1
+              });
+              this.field('full_description', {
+                'boost': 0.75
+              });
+
+              // No stemming?
+              // this.pipeline = new lunr.Pipeline();
+
+              search_db.forEach(item => {
+                this.add(item, {
+                  'boost': item.weight
+                })
+              }, this);
+            });
+            let out = {};
+            out.search_db = search_db;
+            out.idx = idx;
+            return out;
+          };
+
+          if (!cache_idx) {
+            cache_idx = await load_search_db().then(load_idx);
+          }
+          return cache_idx;
+        }
+
+        // If there's a search query, hide the other content and asynchronously
+        // show the search results. Otherwise, hide search content and show the
+        // rest immediately.
+        function maybeShowSearchResults() {
+          const query = searchQuery();
+          if (query) {
+            showHide(".main-content", false);
+
+            let input = document.querySelector(".search-input");
+            input.value = query;
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "Loading search results...";
+
+            loadSearchIndex().then(populateSearchResults)
+          } else {
+            showHide(".main-content", true);
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "";
+
+            let content_elem = document.querySelector(".search-results-content");
+            content_elem.innerText = "";
+          }
+        }
+
+        
+    </script>
+    <link rel="stylesheet" href="subdoc-test-style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="alternate icon" type="image/png" href="logo32.png">
+    <link rel="alternate icon" type="image/png" href="logo16.png">
+    <meta property="og:image" content="logo.png"></meta>
+  </head>
+
+  <body>
+    <nav class="topbar">
+      <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+        ☰
+      </button>
+      <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+          <img class="topbar-logo" src="logo.png"></img>
+        </div></a>
+      <span class="topbar-text-area">
+        <span class="topbar-title">
+          <a href="#">Array</a>
+        </span>
       </span>
-    </span>
-  </nav>
-  <nav class="sidebar">
-    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
-        <img class="sidebar-logo" src="logo.png"></img>
-      </div></a>
-    <div class="sidebar-pretitle sidebar-text">
-      class
-    </div>
-    <div class="sidebar-title sidebar-text">
-      <a href="#">Array</a>
-    </div>
-    <div class="sidebar-subtitle sidebar-text">
-    </div>
-    <div class="sidebar-links sidebar-text">
-      <ul>
-        <li>
-          <a class="sidebar-header" href="#static-methods">Static Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.Array.ctor.default">Array</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.Array.ctor.values">Array</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.Array">Array</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.with_initializer">with_initializer</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.with_value">with_value</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#methods">Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.as_mut_ptr">as_mut_ptr</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.as_mut_slice">as_mut_slice</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.as_slice">as_slice</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.clone">clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.clone_from">clone_from</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.get">get</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.get_mut">get_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.get_unchecked_mut">get_unchecked_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.into_iter">into_iter</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.iter">iter</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.iter_mut">iter_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.len">len</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.map">map</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#conversions">Conversions</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.operator SliceMut">operator SliceMut</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#operators">Operators</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.operator=">operator=</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.operator==">operator==</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-collections-Array.html#method.operator[]">operator[]</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="type record class">
-      <div class="section overview">
-        <div class="section-header">
-          <span>
-            Class
-          </span>
-          <a class="project-name" href="index.html">Subspace</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.collections.html">collections</a>
-          <span class="namespace-dots">::</span>
-          <a class="type-name" href="#">Array</a>
+    </nav>
+    <nav class="sidebar">
+      <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+          <img class="sidebar-logo" src="logo.png"></img>
+        </div></a>
+      <div class="sidebar-pretitle sidebar-text">
+        class
+      </div>
+      <div class="sidebar-title sidebar-text">
+        <a href="#">Array</a>
+      </div>
+      <div class="sidebar-subtitle sidebar-text">
+      </div>
+      <div class="sidebar-links sidebar-text">
+        <ul>
+          <li>
+            <a class="sidebar-header" href="#static-methods">Static Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.Array.ctor.default">Array</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.Array.ctor.values">Array</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.Array">Array</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.with_initializer">with_initializer</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.with_value">with_value</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#methods">Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.as_mut_ptr">as_mut_ptr</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.as_mut_slice">as_mut_slice</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.as_slice">as_slice</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.clone">clone</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.clone_from">clone_from</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.get">get</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.get_mut">get_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.get_unchecked_mut">get_unchecked_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.into_iter">into_iter</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.iter">iter</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.iter_mut">iter_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.len">len</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.map">map</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#conversions">Conversions</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.operator SliceMut">operator SliceMut</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#operators">Operators</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.operator=">operator=</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.operator==">operator==</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-collections-Array.html#method.operator[]">operator[]</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <nav class="search-nav">
+        <form class="search-form">
+          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search..." onblur="this.placeholder = 'Click or press \'S\' to search...'" onfocus="this.placeholder = 'Type your search here.'">
+          </input>
+        </form>
+      </nav>
+      <section class="search-results">
+        <h1 class="search-results-header">
+        </h1>
+        <div class="search-results-content">
         </div>
-        <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L71">source</a></div><pre class="template">template &lt;class T, size_t N&gt;</pre><span class="class">
-            class
-          </span><span class="type-name">
-            Array
-          </span><span class="final">
-            final
-          </span><div class="record-body">
-            { ... };
-          </div></div>
-        <div class="description long">
-          <p>A collection of objects of type <code>T</code>, with a fixed size <code>N</code>.</p>
+      </section>
+      <section class="main-content">
+        <script>maybeShowSearchResults()</script>
+        <div class="type record class">
+          <div class="section overview">
+            <h1 class="section-header">
+              <span>
+                Class
+              </span>
+              <a class="project-name" data-pagefind-weight="1" href="index.html">Subspace</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="namespace.sus.html">sus</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="sus-namespace.collections.html">collections</a>
+              <span class="namespace-dots">::</span>
+              <a class="type-name" data-pagefind-weight="20" href="#">Array</a>
+            </h1>
+            <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L71">source</a></div><pre class="template">template &lt;class T, size_t N&gt;</pre><span class="class">
+                class
+              </span><span class="type-name">
+                Array
+              </span><span class="final">
+                final
+              </span><div class="record-body">
+                { ... };
+              </div></div>
+            <div class="description long">
+              <p>A collection of objects of type <code>T</code>, with a fixed size <code>N</code>.</p>
 <p>An Array can not be larger than <a href="sus-num-isize.html#field.MAX"><code>isize::MAX</code></a>, as
 subtracting a pointer at a greater distance results in Undefined Behaviour.</p>
 
-        </div>
-      </div>
-      <div class="section methods static">
-        <div class="section-header">
-          <a name="static-methods" href="#static-methods">Static Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L88">source</a></div><a name="method.Array.ctor.default"></a><a class="function-name" href="sus-collections-Array.html#method.Array.ctor.default">Array</a>()<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
-                </div></div>
             </div>
           </div>
-          <div class="description long">
-            <p>Default constructor of <code>Array</code> which default-constructs each object <code>T</code> in
+          <div class="section methods static">
+            <h1 class="section-header">
+              <a name="static-methods" href="#static-methods">Static Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L88">source</a></div><a name="method.Array.ctor.default"></a><a class="function-name" href="sus-collections-Array.html#method.Array.ctor.default">Array</a>()<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Default constructor of <code>Array</code> which default-constructs each object <code>T</code> in
 the array.</p>
 <p>This satisifies <a href="sus-construct-Default.html"><code>Default</code></a> for the
 <code>Array&lt;T, N&gt;</code> if <a href="sus-construct-Default.html"><code>Default</code></a> is satisifed for
 <code>T</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L98">source</a></div><a name="method.Array.ctor.values"></a><div class="template">template &lt;class... Ts&gt;</div><a class="function-name" href="sus-collections-Array.html#method.Array.ctor.values">Array</a>(Ts&&... ts)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;T&gt;...</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Ts) == N</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Constructs an <code>Array</code> with <code>N</code> elements from the <code>N</code> arguments given to
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L98">source</a></div><a name="method.Array.ctor.values"></a><div class="template">template &lt;class... Ts&gt;</div><a class="function-name" href="sus-collections-Array.html#method.Array.ctor.values">Array</a>(Ts&&... ts)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;T&gt;...</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sizeof...(Ts) == N</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Constructs an <code>Array</code> with <code>N</code> elements from the <code>N</code> arguments given to
 the constructor.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L126">source</a></div><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L126">source</a></div><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&& o)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L126">source</a></div><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::Move&lt;T&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L118">source</a></div><a name="method.with_initializer"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_initializer">with_initializer</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;T()&gt; auto f) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Constructs an <code>Array</code> with <code>N</code> elements, where each element is constructed
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L126">source</a></div><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N == 0</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L126">source</a></div><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&& o)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L126">source</a></div><a name="method.Array"></a><a class="function-name" href="sus-collections-Array.html#method.Array">Array</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::Move&lt;T&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L118">source</a></div><a name="method.with_initializer"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_initializer">with_initializer</a>(<a class="type-name" href="sus-fn-FnMut.html" title="sus::fn::FnMut">FnMut</a>&lt;T()&gt; auto f) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Constructs an <code>Array</code> with <code>N</code> elements, where each element is constructed
 from the given closure.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L110">source</a></div><a name="method.with_value"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_value">with_value</a>(<span class="const">const</span> U& t) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Constructs an <code>Array</code> with <code>N</code> elements from a single argument, repeatedly
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L110">source</a></div><a name="method.with_value"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.with_value">with_value</a>(<span class="const">const</span> U& t) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Copy&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Constructs an <code>Array</code> with <code>N</code> elements from a single argument, repeatedly
 using it to construct each element. The given argument must be <code>Copy</code> in
 order to do this.</p>
 <p>To construct an Array from a single value that is <code>Clone</code> but not <code>Copy</code>,
 use <code>with_initializer([&amp;x]() -&gt; T { return sus::clone(x); })</code>;</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="methods" href="#methods">Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L261">source</a></div><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; T*<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
-                </div></div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>Returns a mutable pointer to the first element in the array.</p>
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="methods" href="#methods">Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L261">source</a></div><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; T*<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a mutable pointer to the first element in the array.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L276">source</a></div><a name="method.as_mut_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_mut_slice">as_mut_slice</a>() & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L253">source</a></div><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> T*<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L253">source</a></div><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>() && -&gt; <span class="const">const</span> T*<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a const pointer to the first element in the array.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L276">source</a></div><a name="method.as_mut_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_mut_slice">as_mut_slice</a>() & -&gt; <a class="type-name" href="sus-collections-SliceMut.html" title="sus::collections::SliceMut">SliceMut</a>&lt;T&gt;</div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L253">source</a></div><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> T*<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L253">source</a></div><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_ptr">as_ptr</a>() && -&gt; <span class="const">const</span> T*<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a const pointer to the first element in the array.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L269">source</a></div><a name="method.as_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_slice">as_slice</a>() const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L269">source</a></div><a name="method.as_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_slice">as_slice</a>() && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L159">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L170">source</a></div><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;& source) & -&gt; void<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L196">source</a></div><a name="method.get"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get">get</a>(sus::usize i) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L196">source</a></div><a name="method.get"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get">get</a>(sus::usize i) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a const reference to the element at index <code>i</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L269">source</a></div><a name="method.as_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_slice">as_slice</a>() const& -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;</div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L269">source</a></div><a name="method.as_slice"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.as_slice">as_slice</a>() && -&gt; <a class="type-name" href="sus-collections-Slice.html" title="sus::collections::Slice">Slice</a>&lt;T&gt;<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L159">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.clone">clone</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L170">source</a></div><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;& source) & -&gt; void<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L196">source</a></div><a name="method.get"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get">get</a>(sus::usize i) const& -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L196">source</a></div><a name="method.get"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get">get</a>(sus::usize i) && -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a const reference to the element at index <code>i</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L206">source</a></div><a name="method.get_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_mut">get_mut</a>(sus::usize i) & -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a mutable reference to the element at index <code>i</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L206">source</a></div><a name="method.get_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_mut">get_mut</a>(sus::usize i) & -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a mutable reference to the element at index <code>i</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L219">source</a></div><a name="method.get_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize i) const& -&gt; <span class="const">const</span> T&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L219">source</a></div><a name="method.get_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize i) && -&gt; <span class="const">const</span> T&<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a const reference to the element at index <code>i</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L219">source</a></div><a name="method.get_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize i) const& -&gt; <span class="const">const</span> T&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L219">source</a></div><a name="method.get_unchecked"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked">get_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize i) && -&gt; <span class="const">const</span> T&<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a const reference to the element at index <code>i</code>.</p>
 <h1><a name="safety" href="#safety">Safety</a></h1>
 <p>The index <code>i</code> must be inside the bounds of the array or Undefined
 Behaviour results.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L233">source</a></div><a name="method.get_unchecked_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize i) & -&gt; T&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a mutable reference to the element at index <code>i</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L233">source</a></div><a name="method.get_unchecked_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.get_unchecked_mut">get_unchecked_mut</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, sus::usize i) & -&gt; T&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a mutable reference to the element at index <code>i</code>.</p>
 <h1><a name="safety-1" href="#safety-1">Safety</a></h1>
 <p>The index <code>i</code> must be inside the bounds of the array or Undefined
 Behaviour results.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L314">source</a></div><a name="method.into_iter"></a><div class="template">template &lt;int &... , class U = T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.into_iter">into_iter</a>() && -&gt; <a class="type-name" href="sus-collections-ArrayIntoIter.html" title="sus::collections::ArrayIntoIter">ArrayIntoIter</a>&lt;U, N&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Converts the array into an iterator that consumes the array and returns
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L314">source</a></div><a name="method.into_iter"></a><div class="template">template &lt;int &... , class U = T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.into_iter">into_iter</a>() && -&gt; <a class="type-name" href="sus-collections-ArrayIntoIter.html" title="sus::collections::ArrayIntoIter">ArrayIntoIter</a>&lt;U, N&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Converts the array into an iterator that consumes the array and returns
 each element in the same order they appear in the array.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L283">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-collections-SliceIter.html" title="sus::collections::SliceIter">SliceIter</a>&lt;<span class="const">const</span> T&&gt;</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L283">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter">iter</a>() && -&gt; <a class="type-name" href="sus-collections-SliceIter.html" title="sus::collections::SliceIter">SliceIter</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns an iterator over all the elements in the array, visited in the
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L283">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter">iter</a>() const& -&gt; <a class="type-name" href="sus-collections-SliceIter.html" title="sus::collections::SliceIter">SliceIter</a>&lt;<span class="const">const</span> T&&gt;</div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L283">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter">iter</a>() && -&gt; <a class="type-name" href="sus-collections-SliceIter.html" title="sus::collections::SliceIter">SliceIter</a>&lt;<span class="const">const</span> T&&gt;<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns an iterator over all the elements in the array, visited in the
 same order they appear in the array. The iterator gives const access to
 each element.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L300">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter_mut">iter_mut</a>() & -&gt; <a class="type-name" href="sus-collections-SliceIterMut.html" title="sus::collections::SliceIterMut">SliceIterMut</a>&lt;T&&gt;</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns an iterator over all the elements in the array, visited in the
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L300">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.iter_mut">iter_mut</a>() & -&gt; <a class="type-name" href="sus-collections-SliceIterMut.html" title="sus::collections::SliceIterMut">SliceIterMut</a>&lt;T&&gt;</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns an iterator over all the elements in the array, visited in the
 same order they appear in the array. The iterator gives mutable access to
 each element.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L193">source</a></div><a name="method.len"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.len">len</a>() const& -&gt; sus::usize</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns the number of elements in the array.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L193">source</a></div><a name="method.len"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.len">len</a>() const& -&gt; sus::usize</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns the number of elements in the array.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L327">source</a></div><a name="method.map"></a><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.map">map</a>(MapFn f) && -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;sus::fn::ReturnOnce&lt;MapFn, T&&&gt;, N&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Consumes the array, and returns a new array, mapping each element of the
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L327">source</a></div><a name="method.map"></a><div class="template">template &lt;class MapFn&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.map">map</a>(MapFn f) && -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;sus::fn::ReturnOnce&lt;MapFn, T&&&gt;, N&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;MapFn, ::sus::fn::NonVoid (T &&)&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Consumes the array, and returns a new array, mapping each element of the
 array to a new type with the given function.</p>
 <p>To just walk each element and map them, consider using <code>iter()</code> and
 <code>Iterator::map</code>. This does not require consuming the array.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods conversion">
-        <div class="section-header">
-          <a name="conversions" href="#conversions">Conversions</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() const&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() const&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &&<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
-                </div></div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L394">source</a></div><a name="method.operator SliceMut"></a><a class="function-name" href="sus-collections-Array.html#method.operator SliceMut">operator SliceMut</a>() &<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L394">source</a></div><a name="method.operator SliceMut"></a><a class="function-name" href="sus-collections-Array.html#method.operator SliceMut">operator SliceMut</a>() &<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="operators" href="#operators">Operators</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L129">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">N == 0</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L129">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&& o) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L129">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::Move&lt;T&gt;</pre></div>
-                </div><div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L338">source</a></div><a name="method.operator=="></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;U, N&gt;& r) const& -&gt; bool<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T, U&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
-                </div></div>
+          <div class="section methods conversion">
+            <h1 class="section-header">
+              <a name="conversions" href="#conversions">Conversions</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() const&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() const&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &&<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L365">source</a></div><a name="method.operator Slice"></a><a class="function-name" href="sus-collections-Array.html#method.operator Slice">operator Slice</a>() &<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L394">source</a></div><a name="method.operator SliceMut"></a><a class="function-name" href="sus-collections-Array.html#method.operator SliceMut">operator SliceMut</a>() &<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N == 0u</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L394">source</a></div><a name="method.operator SliceMut"></a><a class="function-name" href="sus-collections-Array.html#method.operator SliceMut">operator SliceMut</a>() &<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N &gt; 0u</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>Satisfies the <a href="sus-cmp-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, Array&lt;U, N&gt;&gt;</code></a> concept.</p>
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="operators" href="#operators">Operators</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L129">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">N == 0</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L129">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&& o) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L129">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator=">operator=</a>(<a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&&) -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;T, N&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::mem::Move&lt;T&gt;</pre></div>
+                    </div><div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L338">source</a></div><a name="method.operator=="></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator==">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;U, N&gt;& r) const& -&gt; bool<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T, U&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::cmp::Eq&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Satisfies the <a href="sus-cmp-Eq.html"><code>Eq&lt;Array&lt;T, N&gt;, Array&lt;U, N&gt;&gt;</code></a> concept.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L240">source</a></div><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) const& -&gt; <span class="const">const</span> T&</div>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L240">source</a></div><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) const& -&gt; <span class="const">const</span> T&</div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L240">source</a></div><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) && -&gt; <span class="const">const</span> T&<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L240">source</a></div><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) & -&gt; T&</div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
             </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L240">source</a></div><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) && -&gt; <span class="const">const</span> T&<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/collections/array.h#L240">source</a></div><a name="method.operator[]"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-collections-Array.html#method.operator[]">operator[]</a>(sus::usize i) & -&gt; T&</div>
-            </div>
-          </div>
-          <div class="description long">
           </div>
         </div>
-      </div>
-    </div>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
+</html>

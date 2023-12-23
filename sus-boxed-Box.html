@@ -1,168 +1,365 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="subdoc"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta property="og:type" content="website"></meta>
+    <meta property="og:site_name" content="Subspace"></meta>
+    <title>sus::boxed::Box - Subspace</title>
+    <meta property="og:title" content="sus::boxed::Box - Subspace"></meta>
+    <meta name="description" content="A heap allocated object."></meta>
+    <meta property="og:description" content="A heap allocated object."></meta>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script>
+      
+        // Delayed loading of whatever was in the search box.
+        var searchDelayLoad;
 
-<head>
-  <meta name="generator" content="subdoc"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-  <meta property="og:type" content="website"></meta>
-  <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::boxed::Box - Subspace</title>
-  <meta property="og:title" content="sus::boxed::Box - Subspace"></meta>
-  <meta name="description" content="A heap allocated object."></meta>
-  <meta property="og:description" content="A heap allocated object."></meta>
-  <link rel="stylesheet" href="subdoc-test-style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="alternate icon" type="image/png" href="logo32.png">
-  <link rel="alternate icon" type="image/png" href="logo16.png">
-  <meta property="og:image" content="logo.png"></meta>
-</head>
+        // The search box's dynamic behaviour.
+        document.addEventListener("keyup", e => {
+          if (e.key === 's') {
+            document.querySelector('.search-input').focus();
+          }
+          if (e.key === 'Escape') {
+            document.querySelector('.search-input').blur();
+            navigateToSearch(null);
+            e.preventDefault();
+          }
+        });
+        function navigateToSearch(query) {
+          window.clearTimeout(searchDelayLoad);
+          searchDelayLoad = null;
 
-<body>
-  <nav class="topbar">
-    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
-      ☰
-    </button>
-    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
-        <img class="topbar-logo" src="logo.png"></img>
-      </div></a>
-    <span class="topbar-text-area">
-      <span class="topbar-title">
-        <a href="#">Box</a>
+          let without_search =
+              window.location.href.replace(window.location.search, '');
+          if (query) {
+            window.history.replaceState(null, "",
+              without_search + "?" + `search=${query}`);
+          } else {
+            window.history.replaceState(null, "", without_search);
+          }
+          maybeShowSearchResults();
+        }
+        addEventListener("load", event => {
+          document.querySelector(".search-input").oninput = (e) => {
+            window.clearTimeout(searchDelayLoad);
+            searchDelayLoad = window.setTimeout(() => {
+              navigateToSearch(e.target.value);
+            }, 1000);
+          };
+          document.querySelector(".search-input").onkeypress = (e) => {
+            if (e.key == "Enter") {
+              navigateToSearch(e.target.value);
+              e.preventDefault();
+            }
+          };
+          document.querySelector(".search-input").onfocus = (e) => {
+            navigateToSearch(e.target.value);
+          };
+        });
+
+        // Show or hide any DOM element.
+        function showHide(selector, show) {
+          if (show)
+            document.querySelector(selector).classList.remove("hidden");
+          else
+            document.querySelector(selector).classList.add("hidden");
+        }
+
+        function searchQuery() {
+          const params = new Proxy(
+            new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          return params.search;
+        }
+
+        // Showing search results.
+        async function populateSearchResults(loaded) {
+          const search_db = loaded.search_db;
+          const idx = loaded.idx;
+
+          const results = idx.search(searchQuery());
+          let content = '';
+          for (r of results) {
+            const item = search_db[r.ref];
+            
+            const type = item.type;
+            const url = item.url;
+            const name = item.name;
+            const full_name = item.full_name;
+            const summmary = item.summary ? item.summary : "";
+            
+            content += `\
+              <a class="search-results-link" href="${url}">
+                <span class="search-results-type">${type}</span>\
+                <span class="search-results-name">${full_name}</span>\
+                <span class="search-results-summary">${summmary}</span>\
+              </a>\
+              `
+          }
+
+          let content_elem = document.querySelector(".search-results-content");
+          content_elem.innerHTML = content;
+
+          let header_elem = document.querySelector(".search-results-header");
+          header_elem.innerText = "Search results";
+        }
+
+        var cache_idx;
+
+        // Searching via https://lunrjs.com.
+        //
+        // Load the JSON search database, which will be turned into a search
+        // index. Returns an object with two fields:
+        // - search_db: the contents of the search.json file.
+        // - idx: the lunr search index.
+        //   Documented at https://lunrjs.com/docs/lunr.Index.html.
+        async function loadSearchIndex() {
+          async function load_search_db() {
+            let x = await import('./search.json', {
+              assert: {type: 'json'}
+            });
+            return x.default;
+          }
+
+          async function load_idx(search_db) {
+            let idx = lunr(function () {
+              this.ref('index');
+              this.field('name', {
+                'boost': 2
+              });
+              this.field('full_name', {
+                'boost': 2
+              });
+              this.field('split_name', {
+                'boost': 0.5
+              });
+              this.field('summary', {
+                'boost': 1
+              });
+              this.field('full_description', {
+                'boost': 0.75
+              });
+
+              // No stemming?
+              // this.pipeline = new lunr.Pipeline();
+
+              search_db.forEach(item => {
+                this.add(item, {
+                  'boost': item.weight
+                })
+              }, this);
+            });
+            let out = {};
+            out.search_db = search_db;
+            out.idx = idx;
+            return out;
+          };
+
+          if (!cache_idx) {
+            cache_idx = await load_search_db().then(load_idx);
+          }
+          return cache_idx;
+        }
+
+        // If there's a search query, hide the other content and asynchronously
+        // show the search results. Otherwise, hide search content and show the
+        // rest immediately.
+        function maybeShowSearchResults() {
+          const query = searchQuery();
+          if (query) {
+            showHide(".main-content", false);
+
+            let input = document.querySelector(".search-input");
+            input.value = query;
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "Loading search results...";
+
+            loadSearchIndex().then(populateSearchResults)
+          } else {
+            showHide(".main-content", true);
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "";
+
+            let content_elem = document.querySelector(".search-results-content");
+            content_elem.innerText = "";
+          }
+        }
+
+        
+    </script>
+    <link rel="stylesheet" href="subdoc-test-style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="alternate icon" type="image/png" href="logo32.png">
+    <link rel="alternate icon" type="image/png" href="logo16.png">
+    <meta property="og:image" content="logo.png"></meta>
+  </head>
+
+  <body>
+    <nav class="topbar">
+      <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+        ☰
+      </button>
+      <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+          <img class="topbar-logo" src="logo.png"></img>
+        </div></a>
+      <span class="topbar-text-area">
+        <span class="topbar-title">
+          <a href="#">Box</a>
+        </span>
       </span>
-    </span>
-  </nav>
-  <nav class="sidebar">
-    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
-        <img class="sidebar-logo" src="logo.png"></img>
-      </div></a>
-    <div class="sidebar-pretitle sidebar-text">
-      class
-    </div>
-    <div class="sidebar-title sidebar-text">
-      <a href="#">Box</a>
-    </div>
-    <div class="sidebar-subtitle sidebar-text">
-    </div>
-    <div class="sidebar-links sidebar-text">
-      <ul>
-        <li>
-          <a class="sidebar-header" href="#static-methods">Static Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.ctor.convert">Box</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.ctor.inherit">Box</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.move">Box</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.Box">Box</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.from.convert">from</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.from.inherit">from</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.from.dync">from</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.from.dynerror">from</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.from_raw">from_raw</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.with_args">with_args</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.with_default">with_default</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#methods">Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.as_mut">as_mut</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.as_ref">as_ref</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.clone">clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.clone_from">clone_from</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.exact_size_hint">exact_size_hint</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.into_inner">into_inner</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.into_raw">into_raw</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.leak">leak</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.next">next</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.next_back">next_back</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.size_hint">size_hint</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#operators">Operators</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator()">operator()</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator*">operator*</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator=.move">operator=</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-boxed-Box.html#method.operator=">operator=</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="type record class">
-      <div class="section overview">
-        <div class="section-header">
-          <span>
-            Class
-          </span>
-          <a class="project-name" href="index.html">Subspace</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.boxed.html">boxed</a>
-          <span class="namespace-dots">::</span>
-          <a class="type-name" href="#">Box</a>
+    </nav>
+    <nav class="sidebar">
+      <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+          <img class="sidebar-logo" src="logo.png"></img>
+        </div></a>
+      <div class="sidebar-pretitle sidebar-text">
+        class
+      </div>
+      <div class="sidebar-title sidebar-text">
+        <a href="#">Box</a>
+      </div>
+      <div class="sidebar-subtitle sidebar-text">
+      </div>
+      <div class="sidebar-links sidebar-text">
+        <ul>
+          <li>
+            <a class="sidebar-header" href="#static-methods">Static Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.ctor.convert">Box</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.ctor.inherit">Box</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.Box.move">Box</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.Box">Box</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.from.convert">from</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.from.inherit">from</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.from.dync">from</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.from.dynerror">from</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.from_raw">from_raw</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.with_args">with_args</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.with_default">with_default</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#methods">Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.as_mut">as_mut</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.as_ref">as_ref</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.clone">clone</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.clone_from">clone_from</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.exact_size_hint">exact_size_hint</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.into_inner">into_inner</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.into_raw">into_raw</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.leak">leak</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.next">next</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.next_back">next_back</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.size_hint">size_hint</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#operators">Operators</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.operator()">operator()</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.operator*">operator*</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.operator=.move">operator=</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-boxed-Box.html#method.operator=">operator=</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <nav class="search-nav">
+        <form class="search-form">
+          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search..." onblur="this.placeholder = 'Click or press \'S\' to search...'" onfocus="this.placeholder = 'Type your search here.'">
+          </input>
+        </form>
+      </nav>
+      <section class="search-results">
+        <h1 class="search-results-header">
+        </h1>
+        <div class="search-results-content">
         </div>
-        <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L132">source</a></div><pre class="template">template &lt;class T&gt;</pre><span class="class">
-            class
-          </span><span class="type-name">
-            Box
-          </span><span class="final">
-            final
-          </span><div class="record-body">
-            { ... };
-          </div></div>
-        <div class="description long">
-          <p>A heap allocated object.</p>
+      </section>
+      <section class="main-content">
+        <script>maybeShowSearchResults()</script>
+        <div class="type record class">
+          <div class="section overview">
+            <h1 class="section-header">
+              <span>
+                Class
+              </span>
+              <a class="project-name" data-pagefind-weight="1" href="index.html">Subspace</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="namespace.sus.html">sus</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="sus-namespace.boxed.html">boxed</a>
+              <span class="namespace-dots">::</span>
+              <a class="type-name" data-pagefind-weight="20" href="#">Box</a>
+            </h1>
+            <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L132">source</a></div><pre class="template">template &lt;class T&gt;</pre><span class="class">
+                class
+              </span><span class="type-name">
+                Box
+              </span><span class="final">
+                final
+              </span><div class="record-body">
+                { ... };
+              </div></div>
+            <div class="description long">
+              <p>A heap allocated object.</p>
 <p>A <code>Box&lt;T&gt;</code> holds ownership of an object of type <code>T</code> on the heap. When <code>Box</code>
 is destroyed, or an rvalue-qualified method is called, the inner heap
 object is freed.</p>
@@ -227,119 +424,119 @@ the <code>Box</code> to be used in templated code requiring that concept:</p>
 <li><a href="sus-iter-ExactSizeIterator.html"><code>ExactSizeIterator</code></a></li>
 </ul>
 
-        </div>
-      </div>
-      <div class="section methods static">
-        <div class="section-header">
-          <a name="static-methods" href="#static-methods">Static Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L142">source</a></div><a name="method.Box.ctor.convert"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box.ctor.convert">Box</a>(U u)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
-                </div></div>
             </div>
           </div>
-          <div class="description long">
-            <p>Constructs a Box which allocates space on the heap and moves <code>T</code> into it.</p>
+          <div class="section methods static">
+            <h1 class="section-header">
+              <a name="static-methods" href="#static-methods">Static Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L142">source</a></div><a name="method.Box.ctor.convert"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box.ctor.convert">Box</a>(U u)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Constructs a Box which allocates space on the heap and moves <code>T</code> into it.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L150">source</a></div><a name="method.Box.ctor.inherit"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box.ctor.inherit">Box</a>(U u)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *, T *&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Constructs a Box which allocates space on the heap and moves <code>T</code> into it.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L150">source</a></div><a name="method.Box.ctor.inherit"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box.ctor.inherit">Box</a>(U u)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *, T *&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Constructs a Box which allocates space on the heap and moves <code>T</code> into it.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L245">source</a></div><a name="method.Box.move"></a><a class="function-name" href="sus-boxed-Box.html#method.Box.move">Box</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&& rhs)</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Satisifes the <a href="sus-mem-Move.html"><code>Move</code></a> concept for
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L245">source</a></div><a name="method.Box.move"></a><a class="function-name" href="sus-boxed-Box.html#method.Box.move">Box</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&& rhs)</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Satisifes the <a href="sus-mem-Move.html"><code>Move</code></a> concept for
 <a href="sus-boxed-Box.html"><code>Box</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L251">source</a></div><a name="method.Box"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box">Box</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;U&gt;&& rhs)<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *, T *&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L198">source</a></div><a name="method.from.convert"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.convert">from</a>(U u) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Converts <code>U</code> into a <a href="sus-boxed-Box.html"><code>Box&lt;T&gt;</code></a>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L251">source</a></div><a name="method.Box"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-boxed-Box.html#method.Box">Box</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;U&gt;&& rhs)<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *, T *&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L198">source</a></div><a name="method.from.convert"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.convert">from</a>(U u) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!::sus::ptr::SameOrSubclassOf&lt;U*, T*&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Converts <code>U</code> into a <a href="sus-boxed-Box.html"><code>Box&lt;T&gt;</code></a>.</p>
 <p>The conversion allocates on the heap and moves <code>u</code> into it.</p>
 <p>Satisfies the <a href="sus-construct-From.html"><code>From&lt;U&gt;</code></a> concept for
 <a href="sus-boxed-Box.html"><code>Box&lt;T&gt;</code></a> where <code>U</code> is convertible to <code>T</code> and is not a
 subclass of <code>T</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L212">source</a></div><a name="method.from.inherit"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.inherit">from</a>(U u) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *, T *&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Converts <code>U</code> into a <a href="sus-boxed-Box.html"><code>Box&lt;T&gt;</code></a>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L212">source</a></div><a name="method.from.inherit"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.inherit">from</a>(U u) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *, T *&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Converts <code>U</code> into a <a href="sus-boxed-Box.html"><code>Box&lt;T&gt;</code></a>.</p>
 <p>The conversion allocates on the heap and moves <code>u</code> into it.</p>
 <p>Satisfies the <a href="sus-construct-From.html"><code>From&lt;U&gt;</code></a> concept for
 <a href="sus-boxed-Box.html"><code>Box&lt;T&gt;</code></a> where U is <code>T</code> or a subclass of <code>T</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L306">source</a></div><a name="method.from.dync"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.dync">from</a>(U u) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;U, std::remove_cvref_t&lt;U&gt;&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::boxed::DynConcept&lt;T, U&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">T::template SatisfiesConcept&lt;U&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>For a type-erased <code>DynC</code> of a concept <code>C</code>, <code>Box&lt;DynC&gt;</code> can be
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L306">source</a></div><a name="method.from.dync"></a><div class="template">template &lt;class U&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.dync">from</a>(U u) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;U&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;U, std::remove_cvref_t&lt;U&gt;&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::boxed::DynConcept&lt;T, U&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">T::template SatisfiesConcept&lt;U&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>For a type-erased <code>DynC</code> of a concept <code>C</code>, <code>Box&lt;DynC&gt;</code> can be
 constructed from a type that satisfies <code>C</code>.</p>
 <p>This satisfies the <a href="sus-construct-From.html"><code>From&lt;DynC, C&gt;</code></a> concept for
 constructing <code>Box&lt;DynC&gt;</code> from any type that satisfies the concept <code>C</code>. It
@@ -347,50 +544,50 @@ allows returning a non-templated type satisfying a concept.</p>
 <p>See <a href="sus-boxed-DynConcept.html"><code>DynConcept</code></a> for more on type erasure of
 concept-satisfying types.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L325">source</a></div><a name="method.from.dynerror"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.dynerror">from</a>(std::string s) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;T, ::sus::error::DynError&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Satisfies the <a href="sus-construct-From.html"><code>From&lt;std::string&gt;</code></a> concept for
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L325">source</a></div><a name="method.from.dynerror"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from.dynerror">from</a>(std::string s) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;T, ::sus::error::DynError&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Satisfies the <a href="sus-construct-From.html"><code>From&lt;std::string&gt;</code></a> concept for
 <a href="sus-boxed-Box.html"><code>Box</code></a><code>&lt;</code><a href="sus-error-DynError.html"><code>DynError</code></a><code>&gt;</code>. This
 conversion moves and type-erases the <code>std::string</code> into a heap-alloocated
 <a href="sus-error-DynError.html"><code>DynError</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L344">source</a></div><a name="method.from_raw"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from_raw">from_raw</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, T* raw) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>After calling this function, the raw pointer is owned by the resulting
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L344">source</a></div><a name="method.from_raw"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.from_raw">from_raw</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>, T* raw) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>After calling this function, the raw pointer is owned by the resulting
 Box. Specifically, the Box destructor will call the destructor of T and
 free the allocated memory. For this to be safe, the memory must have been
 allocated on the heap in the same way as the <code>Box</code> type, using
 <a href="https://en.cppreference.com/w/cpp/memory/new/operator_new"><code>operator new</code></a> and must not be
 an array.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L184">source</a></div><a name="method.with_args"></a><div class="template">template &lt;class... Args&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.with_args">with_args</a>(Args&&... args) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;T, Args &&...&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Constructs a Box by calling the constructor of <code>T</code> with <code>args</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L184">source</a></div><a name="method.with_args"></a><div class="template">template &lt;class... Args&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.with_args">with_args</a>(Args&&... args) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::constructible_from&lt;T, Args &&...&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Constructs a Box by calling the constructor of <code>T</code> with <code>args</code>.</p>
 <p>This allows construction of <code>T</code> directly on the heap, which is required
 for types which do not satisfy <a href="sus-mem-Move.html"><code>Move</code></a>. This is a common
 case for virtual clases which require themselves to be heap allocated.</p>
@@ -398,127 +595,127 @@ case for virtual clases which require themselves to be heap allocated.</p>
 the <a href="sus-boxed-Box.html#method.from.dync"><code>from</code></a> constructor method
 can be used to type erase the concept object and move it to the heap.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L166">source</a></div><a name="method.with_default"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.with_default">with_default</a>() -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Constructs <code>Box&lt;T&gt;</code> with the default value for the type <code>T</code>.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L166">source</a></div><a name="method.with_default"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.with_default">with_default</a>() -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::construct::Default&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Constructs <code>Box&lt;T&gt;</code> with the default value for the type <code>T</code>.</p>
 <p><code>Box</code> can not satisfy <a href="sus-construct-Default.html"><code>Default</code></a> because it
 prevents C++ from using <code>Box</code> to build recursive types where <code>T</code> holds
 an <code>Option&lt;Box&lt;T&gt;&gt;</code> as a member.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="methods" href="#methods">Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L350">source</a></div><a name="method.as_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_mut">as_mut</a>() & -&gt; T&</div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>Converts <code>Box</code> into a mutable reference of the inner type.</p>
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="methods" href="#methods">Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L350">source</a></div><a name="method.as_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_mut">as_mut</a>() & -&gt; T&</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Converts <code>Box</code> into a mutable reference of the inner type.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L356">source</a></div><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_ref">as_ref</a>() const& -&gt; <span class="const">const</span> T&</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L356">source</a></div><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_ref">as_ref</a>() && -&gt; <span class="const">const</span> T&<div class="deleted">
-                  deleted
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Converts <code>Box</code> into a const reference of the inner type.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L356">source</a></div><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_ref">as_ref</a>() const& -&gt; <span class="const">const</span> T&</div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L356">source</a></div><a name="method.as_ref"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.as_ref">as_ref</a>() && -&gt; <span class="const">const</span> T&<div class="deleted">
+                      deleted
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Converts <code>Box</code> into a const reference of the inner type.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L222">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Returns a new box with a clone() of this box’s contents.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L222">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Returns a new box with a clone() of this box’s contents.</p>
 <p>Satisfies the <a href="sus-mem-Clone.html"><code>Clone</code></a> concept if <code>T</code> satisfies
 <a href="sus-mem-Clone.html"><code>Clone</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L234">source</a></div><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; void<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Copies <code>source</code>'s contents into the contained <code>T</code> without creating a new
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L234">source</a></div><a name="method.clone_from"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.clone_from">clone_from</a>(<span class="const">const</span> <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;& rhs) -&gt; void<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Copies <code>source</code>'s contents into the contained <code>T</code> without creating a new
 allocation.</p>
 <p>An optimization to reuse the existing storage for
 <a href="sus-mem-fn.clone_into.html"><code>clone_into</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L643">source</a></div><a name="method.exact_size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; sus::usize<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::ExactSizeIterator&lt;T, typename T::Item&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Implements <a href="sus-iter-ExactSizeIterator.html"><code>ExactSizeIterator</code></a> if
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L643">source</a></div><a name="method.exact_size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.exact_size_hint">exact_size_hint</a>() const -&gt; sus::usize<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::ExactSizeIterator&lt;T, typename T::Item&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Implements <a href="sus-iter-ExactSizeIterator.html"><code>ExactSizeIterator</code></a> if
 <code>T</code> is an <a href="sus-iter-ExactSizeIterator.html"><code>ExactSizeIterator</code></a>,
 forwarding through to the inner <code>T</code> object.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L366">source</a></div><a name="method.into_inner"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.into_inner">into_inner</a>() && -&gt; T<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Consumes the <code>Box</code>, returning the wrapped value.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L366">source</a></div><a name="method.into_inner"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.into_inner">into_inner</a>() && -&gt; T<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Move&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Consumes the <code>Box</code>, returning the wrapped value.</p>
 <p>This allows the caller to make use of the wrapped object as an rvalue
 without leaving a moved-from <code>T</code> inside the <code>Box</code>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L411">source</a></div><a name="method.into_raw"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.into_raw">into_raw</a>() && -&gt; T*</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Consumes the <code>Box</code>, returning a wrapped raw pointer.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L411">source</a></div><a name="method.into_raw"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.into_raw">into_raw</a>() && -&gt; T*</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Consumes the <code>Box</code>, returning a wrapped raw pointer.</p>
 <p>The pointer will be properly aligned and non-null.</p>
 <p>After calling this function, the caller is responsible for the memory
 previously managed by the <code>Box</code>. In particular, the caller should properly
@@ -547,14 +744,14 @@ memory:</p>
 <span class="keyword">delete</span> p<span class="punct">;</span>
 </code></pre>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L434">source</a></div><a name="method.leak"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.leak">leak</a>() && -&gt; T&</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Consumes and leaks the <code>Box</code>, returning a mutable reference, <code>T&amp;</code>. Note
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L434">source</a></div><a name="method.leak"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.leak">leak</a>() && -&gt; T&</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Consumes and leaks the <code>Box</code>, returning a mutable reference, <code>T&amp;</code>. Note
 that the type T must outlive the returned reference.</p>
 <p>This function is mainly useful for data that lives for the remainder of
 the program's life. Dropping the returned reference will cause a memory
@@ -568,90 +765,90 @@ a reference type indicating it can not ever return null.</p>
 this is not a static method, since <code>Box</code> can not expose the inner type's
 methods directly in C++.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L619">source</a></div><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.next">next</a>() -&gt; auto<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Implements <a href="sus-iter-Iterator.html"><code>Iterator</code></a> if <code>T</code> is an <a href="sus-iter-Iterator.html"><code>Iterator</code></a>, forwarding through to the inner <code>T</code> object.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L619">source</a></div><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.next">next</a>() -&gt; auto<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Implements <a href="sus-iter-Iterator.html"><code>Iterator</code></a> if <code>T</code> is an <a href="sus-iter-Iterator.html"><code>Iterator</code></a>, forwarding through to the inner <code>T</code> object.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L634">source</a></div><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.next_back">next_back</a>() -&gt; auto<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;T, typename T::Item&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Implements <a href="sus-iter-DoubleEndedIterator.html"><code>DoubleEndedIterator</code></a> if
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L634">source</a></div><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.next_back">next_back</a>() -&gt; auto<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;T, typename T::Item&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Implements <a href="sus-iter-DoubleEndedIterator.html"><code>DoubleEndedIterator</code></a> if
 <code>T</code> is a <a href="sus-iter-DoubleEndedIterator.html"><code>DoubleEndedIterator</code></a>,
 forwarding through to the inner <code>T</code> object.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L626">source</a></div><a name="method.size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" href="sus-iter-SizeHint.html" title="sus::iter::SizeHint">SizeHint</a><div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Implements <a href="sus-iter-Iterator.html"><code>Iterator</code></a> if <code>T</code> is an <a href="sus-iter-Iterator.html"><code>Iterator</code></a>, forwarding through to the inner <code>T</code> object.</p>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L626">source</a></div><a name="method.size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" href="sus-iter-SizeHint.html" title="sus::iter::SizeHint">SizeHint</a><div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::IteratorAny&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Implements <a href="sus-iter-Iterator.html"><code>Iterator</code></a> if <code>T</code> is an <a href="sus-iter-Iterator.html"><code>Iterator</code></a>, forwarding through to the inner <code>T</code> object.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="operators" href="#operators">Operators</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L580">source</a></div><a name="method.operator()"></a><div class="template">template &lt;class... Args&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator()">operator()</a>(Args&&... args) const& -&gt; sus::fn::Return&lt;T, Args...&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">T::IsDynFn</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::Fn&lt;T, sus::fn::Return&lt;T, Args...&gt; (Args...)&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L580">source</a></div><a name="method.operator()"></a><div class="template">template &lt;class... Args&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator()">operator()</a>(Args&&... args) & -&gt; sus::fn::ReturnMut&lt;T, Args...&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">T::IsDynFn</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;T, sus::fn::ReturnMut&lt;T, Args...&gt; (Args...)&gt;</pre></div>
-                </div></div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L580">source</a></div><a name="method.operator()"></a><div class="template">template &lt;class... Args&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator()">operator()</a>(Args&&... args) && -&gt; sus::fn::ReturnOnce&lt;T, Args...&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">T::IsDynFn</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;T, sus::fn::ReturnOnce&lt;T, Args...&gt; (Args...)&gt;</pre></div>
-                </div></div>
+              </div>
             </div>
           </div>
-          <div class="description long">
-            <p>A <code>Box</code> holding a type-erased function type will satisfy the fn concepts
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="operators" href="#operators">Operators</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L580">source</a></div><a name="method.operator()"></a><div class="template">template &lt;class... Args&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator()">operator()</a>(Args&&... args) const& -&gt; sus::fn::Return&lt;T, Args...&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">T::IsDynFn</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::Fn&lt;T, sus::fn::Return&lt;T, Args...&gt; (Args...)&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L580">source</a></div><a name="method.operator()"></a><div class="template">template &lt;class... Args&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator()">operator()</a>(Args&&... args) & -&gt; sus::fn::ReturnMut&lt;T, Args...&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">T::IsDynFn</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnMut&lt;T, sus::fn::ReturnMut&lt;T, Args...&gt; (Args...)&gt;</pre></div>
+                    </div></div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L580">source</a></div><a name="method.operator()"></a><div class="template">template &lt;class... Args&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator()">operator()</a>(Args&&... args) && -&gt; sus::fn::ReturnOnce&lt;T, Args...&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">T::IsDynFn</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::fn::FnOnce&lt;T, sus::fn::ReturnOnce&lt;T, Args...&gt; (Args...)&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>A <code>Box</code> holding a type-erased function type will satisfy the fn concepts
 and can be used as a function type. It will forward the call through
 to the inner type.</p>
 <ul>
@@ -704,61 +901,63 @@ sus_check<span class="punct">(</span>sus::move<span class="punct">(</span>b<span
 sus_check<span class="punct">(</span>x<span class="punct">(</span><span class="punct">)</span><span class="punct">(</span><span class="string">&quot;hello world&quot;</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 11u<span class="punct">)</span><span class="punct">;</span>
 </code></pre>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L272">source</a></div><a name="method.operator*"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator*">operator*</a>() const -&gt; <span class="const">const</span> T&</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L272">source</a></div><a name="method.operator*"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator*">operator*</a>() -&gt; T&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L283">source</a></div><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>() const -&gt; <span class="const">const</span> T*</div>
-            </div>
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L283">source</a></div><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>() -&gt; T*<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L259">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&& rhs) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&</div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>Satisifes the <a href="sus-mem-Move.html"><code>Move</code></a> concept for
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L272">source</a></div><a name="method.operator*"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator*">operator*</a>() const -&gt; <span class="const">const</span> T&</div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L272">source</a></div><a name="method.operator*"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator*">operator*</a>() -&gt; T&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L283">source</a></div><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>() const -&gt; <span class="const">const</span> T*</div>
+                </div>
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L283">source</a></div><a name="method.operator-&gt;"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator-&gt;">operator-&gt;</a>() -&gt; T*<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;T&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L259">source</a></div><a name="method.operator=.move"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator=.move">operator=</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&& rhs) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&</div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>Satisifes the <a href="sus-mem-Move.html"><code>Move</code></a> concept for
 <a href="sus-boxed-Box.html"><code>Box</code></a>.</p>
 
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L266">source</a></div><a name="method.operator="></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator=">operator=</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;U&gt;&& rhs) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *, T *&gt;</pre></div>
-                </div></div>
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/boxed/box.h#L266">source</a></div><a name="method.operator="></a><div class="template">template &lt;class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-boxed-Box.html#method.operator=">operator=</a>(<a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;U&gt;&& rhs) -&gt; <a class="type-name" href="sus-boxed-Box.html" title="sus::boxed::Box">Box</a>&lt;T&gt;&<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::ptr::SameOrSubclassOf&lt;U *, T *&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
             </div>
           </div>
-          <div class="description long">
-          </div>
         </div>
-      </div>
-    </div>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
+</html>

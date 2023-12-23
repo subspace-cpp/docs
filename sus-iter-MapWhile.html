@@ -1,185 +1,384 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="subdoc"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta property="og:type" content="website"></meta>
+    <meta property="og:site_name" content="Subspace"></meta>
+    <title>sus::iter::MapWhile - Subspace</title>
+    <meta property="og:title" content="sus::iter::MapWhile - Subspace"></meta>
+    <meta name="description" content="An iterator that maps each item to a new type based on a map function."></meta>
+    <meta property="og:description" content="An iterator that maps each item to a new type based on a map function."></meta>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script>
+      
+        // Delayed loading of whatever was in the search box.
+        var searchDelayLoad;
 
-<head>
-  <meta name="generator" content="subdoc"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-  <meta property="og:type" content="website"></meta>
-  <meta property="og:site_name" content="Subspace"></meta>
-  <title>sus::iter::MapWhile - Subspace</title>
-  <meta property="og:title" content="sus::iter::MapWhile - Subspace"></meta>
-  <meta name="description" content="An iterator that maps each item to a new type based on a map function."></meta>
-  <meta property="og:description" content="An iterator that maps each item to a new type based on a map function."></meta>
-  <link rel="stylesheet" href="subdoc-test-style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="alternate icon" type="image/png" href="logo32.png">
-  <link rel="alternate icon" type="image/png" href="logo16.png">
-  <meta property="og:image" content="logo.png"></meta>
-</head>
+        // The search box's dynamic behaviour.
+        document.addEventListener("keyup", e => {
+          if (e.key === 's') {
+            document.querySelector('.search-input').focus();
+          }
+          if (e.key === 'Escape') {
+            document.querySelector('.search-input').blur();
+            navigateToSearch(null);
+            e.preventDefault();
+          }
+        });
+        function navigateToSearch(query) {
+          window.clearTimeout(searchDelayLoad);
+          searchDelayLoad = null;
 
-<body>
-  <nav class="topbar">
-    <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
-      ☰
-    </button>
-    <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
-        <img class="topbar-logo" src="logo.png"></img>
-      </div></a>
-    <span class="topbar-text-area">
-      <span class="topbar-title">
-        <a href="#">MapWhile</a>
+          let without_search =
+              window.location.href.replace(window.location.search, '');
+          if (query) {
+            window.history.replaceState(null, "",
+              without_search + "?" + `search=${query}`);
+          } else {
+            window.history.replaceState(null, "", without_search);
+          }
+          maybeShowSearchResults();
+        }
+        addEventListener("load", event => {
+          document.querySelector(".search-input").oninput = (e) => {
+            window.clearTimeout(searchDelayLoad);
+            searchDelayLoad = window.setTimeout(() => {
+              navigateToSearch(e.target.value);
+            }, 1000);
+          };
+          document.querySelector(".search-input").onkeypress = (e) => {
+            if (e.key == "Enter") {
+              navigateToSearch(e.target.value);
+              e.preventDefault();
+            }
+          };
+          document.querySelector(".search-input").onfocus = (e) => {
+            navigateToSearch(e.target.value);
+          };
+        });
+
+        // Show or hide any DOM element.
+        function showHide(selector, show) {
+          if (show)
+            document.querySelector(selector).classList.remove("hidden");
+          else
+            document.querySelector(selector).classList.add("hidden");
+        }
+
+        function searchQuery() {
+          const params = new Proxy(
+            new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          return params.search;
+        }
+
+        // Showing search results.
+        async function populateSearchResults(loaded) {
+          const search_db = loaded.search_db;
+          const idx = loaded.idx;
+
+          const results = idx.search(searchQuery());
+          let content = '';
+          for (r of results) {
+            const item = search_db[r.ref];
+            
+            const type = item.type;
+            const url = item.url;
+            const name = item.name;
+            const full_name = item.full_name;
+            const summmary = item.summary ? item.summary : "";
+            
+            content += `\
+              <a class="search-results-link" href="${url}">
+                <span class="search-results-type">${type}</span>\
+                <span class="search-results-name">${full_name}</span>\
+                <span class="search-results-summary">${summmary}</span>\
+              </a>\
+              `
+          }
+
+          let content_elem = document.querySelector(".search-results-content");
+          content_elem.innerHTML = content;
+
+          let header_elem = document.querySelector(".search-results-header");
+          header_elem.innerText = "Search results";
+        }
+
+        var cache_idx;
+
+        // Searching via https://lunrjs.com.
+        //
+        // Load the JSON search database, which will be turned into a search
+        // index. Returns an object with two fields:
+        // - search_db: the contents of the search.json file.
+        // - idx: the lunr search index.
+        //   Documented at https://lunrjs.com/docs/lunr.Index.html.
+        async function loadSearchIndex() {
+          async function load_search_db() {
+            let x = await import('./search.json', {
+              assert: {type: 'json'}
+            });
+            return x.default;
+          }
+
+          async function load_idx(search_db) {
+            let idx = lunr(function () {
+              this.ref('index');
+              this.field('name', {
+                'boost': 2
+              });
+              this.field('full_name', {
+                'boost': 2
+              });
+              this.field('split_name', {
+                'boost': 0.5
+              });
+              this.field('summary', {
+                'boost': 1
+              });
+              this.field('full_description', {
+                'boost': 0.75
+              });
+
+              // No stemming?
+              // this.pipeline = new lunr.Pipeline();
+
+              search_db.forEach(item => {
+                this.add(item, {
+                  'boost': item.weight
+                })
+              }, this);
+            });
+            let out = {};
+            out.search_db = search_db;
+            out.idx = idx;
+            return out;
+          };
+
+          if (!cache_idx) {
+            cache_idx = await load_search_db().then(load_idx);
+          }
+          return cache_idx;
+        }
+
+        // If there's a search query, hide the other content and asynchronously
+        // show the search results. Otherwise, hide search content and show the
+        // rest immediately.
+        function maybeShowSearchResults() {
+          const query = searchQuery();
+          if (query) {
+            showHide(".main-content", false);
+
+            let input = document.querySelector(".search-input");
+            input.value = query;
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "Loading search results...";
+
+            loadSearchIndex().then(populateSearchResults)
+          } else {
+            showHide(".main-content", true);
+
+            let header_elem = document.querySelector(".search-results-header");
+            header_elem.innerText = "";
+
+            let content_elem = document.querySelector(".search-results-content");
+            content_elem.innerText = "";
+          }
+        }
+
+        
+    </script>
+    <link rel="stylesheet" href="subdoc-test-style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="alternate icon" type="image/png" href="logo32.png">
+    <link rel="alternate icon" type="image/png" href="logo16.png">
+    <meta property="og:image" content="logo.png"></meta>
+  </head>
+
+  <body>
+    <nav class="topbar">
+      <button class="sidebar-menu-button" onclick="let e = document.getElementsByClassName('sidebar')[0];e.classList.toggle('shown');">
+        ☰
+      </button>
+      <a class="topbar-logo-link" href="index.html"><div class="topbar-logo-border">
+          <img class="topbar-logo" src="logo.png"></img>
+        </div></a>
+      <span class="topbar-text-area">
+        <span class="topbar-title">
+          <a href="#">MapWhile</a>
+        </span>
       </span>
-    </span>
-  </nav>
-  <nav class="sidebar">
-    <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
-        <img class="sidebar-logo" src="logo.png"></img>
-      </div></a>
-    <div class="sidebar-pretitle sidebar-text">
-      class
-    </div>
-    <div class="sidebar-title sidebar-text">
-      <a href="#">MapWhile</a>
-    </div>
-    <div class="sidebar-subtitle sidebar-text">
-    </div>
-    <div class="sidebar-links sidebar-text">
-      <ul>
-        <li>
-          <a class="sidebar-header" href="#static-methods">Static Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-MapWhile.html#method.MapWhile">MapWhile</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#methods">Methods</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-MapWhile.html#method.clone">clone</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-MapWhile.html#method.next">next</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-MapWhile.html#method.next_back">next_back</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-MapWhile.html#method.size_hint">size_hint</a>
-        </li>
-        <li>
-          <a class="sidebar-header" href="#operators">Operators</a>
-        </li>
-        <li>
-          <a class="sidebar-item" href="sus-iter-MapWhile.html#method.operator=">operator=</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="type record class">
-      <div class="section overview">
-        <div class="section-header">
-          <span>
-            Class
-          </span>
-          <a class="project-name" href="index.html">Subspace</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="namespace.sus.html">sus</a>
-          <span class="namespace-dots">::</span>
-          <a class="namespace-name" href="sus-namespace.iter.html">iter</a>
-          <span class="namespace-dots">::</span>
-          <a class="type-name" href="#">MapWhile</a>
+    </nav>
+    <nav class="sidebar">
+      <a class="sidebar-logo-link" href="index.html"><div class="sidebar-logo-border">
+          <img class="sidebar-logo" src="logo.png"></img>
+        </div></a>
+      <div class="sidebar-pretitle sidebar-text">
+        class
+      </div>
+      <div class="sidebar-title sidebar-text">
+        <a href="#">MapWhile</a>
+      </div>
+      <div class="sidebar-subtitle sidebar-text">
+      </div>
+      <div class="sidebar-links sidebar-text">
+        <ul>
+          <li>
+            <a class="sidebar-header" href="#static-methods">Static Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-iter-MapWhile.html#method.MapWhile">MapWhile</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#methods">Methods</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-iter-MapWhile.html#method.clone">clone</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-iter-MapWhile.html#method.next">next</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-iter-MapWhile.html#method.next_back">next_back</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-iter-MapWhile.html#method.size_hint">size_hint</a>
+          </li>
+          <li>
+            <a class="sidebar-header" href="#operators">Operators</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-iter-MapWhile.html#method.operator=">operator=</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <nav class="search-nav">
+        <form class="search-form">
+          <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press 'S' to search..." onblur="this.placeholder = 'Click or press \'S\' to search...'" onfocus="this.placeholder = 'Type your search here.'">
+          </input>
+        </form>
+      </nav>
+      <section class="search-results">
+        <h1 class="search-results-header">
+        </h1>
+        <div class="search-results-content">
         </div>
-        <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L30">source</a></div><pre class="template">template &lt;class ToItem, class InnerSizedIter, class MapFn&gt;</pre><span class="class">
-            class
-          </span><span class="type-name">
-            MapWhile
-          </span><span class="final">
-            final
-          </span><div class="record-body">
-            { ... };
-          </div></div>
-        <div class="description long">
-          <p>An iterator that maps each item to a new type based on a map function.</p>
+      </section>
+      <section class="main-content">
+        <script>maybeShowSearchResults()</script>
+        <div class="type record class">
+          <div class="section overview">
+            <h1 class="section-header">
+              <span>
+                Class
+              </span>
+              <a class="project-name" data-pagefind-weight="1" href="index.html">Subspace</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="namespace.sus.html">sus</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" data-pagefind-weight="1" href="sus-namespace.iter.html">iter</a>
+              <span class="namespace-dots">::</span>
+              <a class="type-name" data-pagefind-weight="20" href="#">MapWhile</a>
+            </h1>
+            <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L30">source</a></div><pre class="template">template &lt;class ToItem, class InnerSizedIter, class MapFn&gt;</pre><span class="class">
+                class
+              </span><span class="type-name">
+                MapWhile
+              </span><span class="final">
+                final
+              </span><div class="record-body">
+                { ... };
+              </div></div>
+            <div class="description long">
+              <p>An iterator that maps each item to a new type based on a map function.</p>
 <p>This type is returned from <code>Iterator::map()</code>.</p>
 
-        </div>
-      </div>
-      <div class="section methods static">
-        <div class="section-header">
-          <a name="static-methods" href="#static-methods">Static Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L39">source</a></div><a name="method.MapWhile"></a><a class="function-name" href="sus-iter-MapWhile.html#method.MapWhile">MapWhile</a>(<a class="type-name" href="sus-iter-MapWhile.html" title="sus::iter::MapWhile">MapWhile</a>&lt;ToItem, InnerSizedIter, MapFn&gt;&&)</div>
             </div>
           </div>
-          <div class="description long">
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="methods" href="#methods">Methods</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L43">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-iter-MapWhile.html" title="sus::iter::MapWhile">MapWhile</a>&lt;ToItem, InnerSizedIter, MapFn&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;MapFn&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;InnerSizedIter&gt;</pre></div>
-                </div></div>
+          <div class="section methods static">
+            <h1 class="section-header">
+              <a name="static-methods" href="#static-methods">Static Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L39">source</a></div><a name="method.MapWhile"></a><a class="function-name" href="sus-iter-MapWhile.html#method.MapWhile">MapWhile</a>(<a class="type-name" href="sus-iter-MapWhile.html" title="sus::iter::MapWhile">MapWhile</a>&lt;ToItem, InnerSizedIter, MapFn&gt;&&)</div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
             </div>
           </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L51">source</a></div><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.next">next</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::MapWhile::Item&gt;</div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L68">source</a></div><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.next_back">next_back</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::MapWhile::Item&gt;<div class="requires">
-                  <span class="requires-keyword keyword">
-                    requires
-                  </span>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;InnerSizedIter, FromItem&gt;</pre></div>
-                </div></div>
-            </div>
-          </div>
-          <div class="description long">
-          </div>
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L62">source</a></div><a name="method.size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" href="sus-iter-SizeHint.html" title="sus::iter::SizeHint">SizeHint</a></div>
-            </div>
-          </div>
-          <div class="description long">
-            <p>sus::iter::Iterator trait.</p>
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="methods" href="#methods">Methods</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L43">source</a></div><a name="method.clone"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.clone">clone</a>() const -&gt; <a class="type-name" href="sus-iter-MapWhile.html" title="sus::iter::MapWhile">MapWhile</a>&lt;ToItem, InnerSizedIter, MapFn&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;MapFn&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::mem::Clone&lt;InnerSizedIter&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L51">source</a></div><a name="method.next"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.next">next</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::MapWhile::Item&gt;</div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L68">source</a></div><a name="method.next_back"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.next_back">next_back</a>() -&gt; <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;sus::iter::MapWhile::Item&gt;<div class="requires">
+                      <span class="requires-keyword keyword">
+                        requires
+                      </span>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">sus::iter::DoubleEndedIterator&lt;InnerSizedIter, FromItem&gt;</pre></div>
+                    </div></div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L62">source</a></div><a name="method.size_hint"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.size_hint">size_hint</a>() const -&gt; <a class="type-name" href="sus-iter-SizeHint.html" title="sus::iter::SizeHint">SizeHint</a></div>
+                </div>
+              </div>
+              <div class="description long">
+                <p>sus::iter::Iterator trait.</p>
 
-          </div>
-        </div>
-      </div>
-      <div class="section methods nonstatic">
-        <div class="section-header">
-          <a name="operators" href="#operators">Operators</a>
-        </div>
-        <div class="section-items">
-          <div class="overload-set item-name">
-            <div class="overload">
-              <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L40">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.operator=">operator=</a>(<a class="type-name" href="sus-iter-MapWhile.html" title="sus::iter::MapWhile">MapWhile</a>&lt;ToItem, InnerSizedIter, MapFn&gt;&&) -&gt; <a class="type-name" href="sus-iter-MapWhile.html" title="sus::iter::MapWhile">MapWhile</a>&lt;ToItem, InnerSizedIter, MapFn&gt;&</div>
+              </div>
             </div>
           </div>
-          <div class="description long">
+          <div class="section methods nonstatic">
+            <h1 class="section-header">
+              <a name="operators" href="#operators">Operators</a>
+            </h1>
+            <div class="section-items">
+              <div class="overload-set item-name">
+                <div class="overload">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/iter/adaptors/map_while.h#L40">source</a></div><a name="method.operator="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-iter-MapWhile.html#method.operator=">operator=</a>(<a class="type-name" href="sus-iter-MapWhile.html" title="sus::iter::MapWhile">MapWhile</a>&lt;ToItem, InnerSizedIter, MapFn&gt;&&) -&gt; <a class="type-name" href="sus-iter-MapWhile.html" title="sus::iter::MapWhile">MapWhile</a>&lt;ToItem, InnerSizedIter, MapFn&gt;&</div>
+                </div>
+              </div>
+              <div class="description long">
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
+</html>
