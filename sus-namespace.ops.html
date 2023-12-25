@@ -106,9 +106,9 @@
 
               content += `\
                 <a class="search-results-link" href="${url}">
-                  <span class="search-results-type"><span>${type}</span></span>\
-                  <span class="search-results-name"><span>${full_name}</span></span>\
-                  <span class="search-results-summary"><span>${summmary}</span></span>\
+                  <span class="search-results-type"><div>${type}</div></span>\
+                  <span class="search-results-name"><div>${full_name}</div></span>\
+                  <span class="search-results-summary"><div>${summmary}</div></span>\
                 </a>\
                 `
             }
@@ -147,37 +147,64 @@
             let idx = lunr(function () {
               this.ref('index');
               this.field('name', {
-                'boost': 2
+                'boost': 2,
+                editDistance: 0
               });
               this.field('full_name', {
-                'boost': 2
+                'boost': 2,
+                editDistance: 2
               });
               this.field('split_name', {
-                'boost': 0.5
-              });
-              this.field('summary', {
-                'boost': 1
-              });
-              this.field('full_description', {
-                'boost': 0.75
+                'boost': 0.5,
+                editDistance: 2
               });
 
-              // No stemming?
-              // this.pipeline = new lunr.Pipeline();
+              // No stemming and no stopwords (like `into` and `from`).
+              this.pipeline = new lunr.Pipeline();
+              this.searchPipeline = new lunr.Pipeline();
 
+              // Queries are split by these tokens.
+              const splitBy = /(\s+|_+|(::)+)/
               this.use(builder => {
-                function splitColons(token) {
-                  return token.toString().split("::").map(str => {
+                function splitTokens(token) {
+                  return token.toString().split(splitBy).map(str => {
                     return token.clone().update(() => { return str })
                   })
                 }
-                lunr.Pipeline.registerFunction(splitColons, 'splitColons')
-                builder.searchPipeline.before(lunr.stemmer, splitColons)
+                lunr.Pipeline.registerFunction(splitTokens, 'splitTokens')
+                builder.searchPipeline.add(splitTokens)
               });
 
               search_db.forEach(item => {
+                const weights = {
+                  "concept": 3,
+                  "class": 2,
+                  "struct": 2,
+                  "union": 2,
+                  "function": 1.75,
+                  "variable": 1.75,
+                  "namespace": 1.2,
+                  "method": 1,
+                  "constructor": 1,
+                  "macro": 1,
+                  "project": 1,
+                  "field": 0.9,
+                  "conversion": 0.5,
+                  "type alias": 0.5,
+                  "concept alias": 0.5,
+                  "function alias": 0.5,
+                  "method alias": 0.5,
+                  "enum value alias": 0.5,
+                  "variable alias": 0.5,
+                }
+                let weight = weights[item.type];
+                if (!weight) {
+                  console.log(`WARNING: search item type ${item.type} ` +
+                              `has no weight defined`);
+                  weight = 1;
+                }
                 this.add(item, {
-                  'boost': item.weight ? Number(item.weight) : 1
+                  'boost': weight
                 })
               }, this);
             });
@@ -453,7 +480,8 @@
                   </div>
                 </div>
                 <div class="description short">
-                  <p>Constructs an object of type <code>T</code> that satisfies <code>TryDefault</code> (and <code>Try</code>)
+                  <p>Constructs an object of type <code>T</code> that satisfies
+<a href="sus-ops-TryDefault.html"><code>TryDefault</code></a> (and <a href="sus-ops-Try.html"><code>Try</code></a>)
 with its default success value.</p>
                 </div>
               </li>
@@ -464,8 +492,8 @@ with its default success value.</p>
                   </div>
                 </div>
                 <div class="description short">
-                  <p>Constructs an object of type <code>T</code> that satisfies <code>Try</code> from a value that
-represents success for <code>T</code>.</p>
+                  <p>Constructs an object of type <code>T</code> that satisfies <a href="sus-ops-Try.html"><code>Try</code></a>
+from a value that represents success for <code>T</code>.</p>
                 </div>
               </li>
               <li class="section-item">
@@ -475,8 +503,9 @@ represents success for <code>T</code>.</p>
                   </div>
                 </div>
                 <div class="description short">
-                  <p>Unwraps from the Try type that is currently in its success state
-(<code>is_success()</code> would return true) to produce its success value.</p>
+                  <p>Unwraps from the <a href="sus-ops-Try.html"><code>Try</code></a> type that is currently in its
+success state (<a href="sus-ops-fn.try_is_success.html"><code>try_is_success</code></a> would return
+true) to produce its success value.</p>
                 </div>
               </li>
               <li class="section-item">
@@ -486,8 +515,8 @@ represents success for <code>T</code>.</p>
                   </div>
                 </div>
                 <div class="description short">
-                  <p>Determines if a type <code>T</code> that satisfies <code>Try</code> represents success in its
-current state.</p>
+                  <p>Determines if a type <code>T</code> that satisfies <a href="sus-ops-Try.html"><code>Try</code></a> represents
+success in its current state.</p>
                 </div>
               </li>
               <li class="section-item">
@@ -497,7 +526,8 @@ current state.</p>
                   </div>
                 </div>
                 <div class="description short">
-                  <p>Converts from a <code>Try</code> type <code>T</code> to another <code>Try</code> type <code>U</code> with a compatible
+                  <p>Converts from a <a href="sus-ops-Try.html"><code>Try</code></a> type <code>T</code> to another
+<a href="sus-ops-Try.html"><code>Try</code></a> type <code>U</code> with a compatible
 error state. The input must be in an error state, and the output will be as
 well.</p>
                 </div>
@@ -530,7 +560,8 @@ well.</p>
                   <div class="type-signature"><a class="type-name" href="sus-ops-TryDefault.html">TryDefault</a></div>
                 </div>
                 <div class="description short">
-                  <p>Identifies Try types which can be constructed with a default success value.</p>
+                  <p>Identifies <a href="sus-ops-Try.html"><code>Try</code></a> types which can be constructed with a
+default success value.</p>
                 </div>
               </li>
               <li class="section-item">
@@ -538,7 +569,8 @@ well.</p>
                   <div class="type-signature"><a class="type-name" href="sus-ops-TryErrorConvertibleTo.html">TryErrorConvertibleTo</a></div>
                 </div>
                 <div class="description short">
-                  <p>Can be used to further constrain the relationship between two <code>Try</code> types
+                  <p>Can be used to further constrain the relationship between two
+<a href="sus-ops-Try.html"><code>Try</code></a> types
 such that an error in one can be used to construct the other type.</p>
                 </div>
               </li>
@@ -554,7 +586,8 @@ such that an error in one can be used to construct the other type.</p>
                   <div class="type-signature"><a name="alias.TryOutputType"></a><a class="type-name" href="TODO">TryOutputType</a></div>
                 </div>
                 <div class="description short">
-                  <p>A helper to get the <code>Output</code> type for a type <code>T</code> that satisfies <code>Try</code>.</p>
+                  <p>A helper to get the <code>Output</code> type for a type <code>T</code> that satisfies
+<a href="sus-ops-Try.html"><code>Try</code></a>.</p>
                 </div>
               </li>
               <li class="section-item">
@@ -562,7 +595,8 @@ such that an error in one can be used to construct the other type.</p>
                   <div class="type-signature"><a name="alias.TryRemapOutputType"></a><a class="type-name" href="TODO">TryRemapOutputType</a></div>
                 </div>
                 <div class="description short">
-                  <p>A helper to get the <code>RemapOutput</code> type for a type <code>T</code> that satisfies <code>Try</code>.</p>
+                  <p>A helper to get the <code>RemapOutput</code> type for a type <code>T</code> that satisfies
+<a href="sus-ops-Try.html"><code>Try</code></a>.</p>
                 </div>
               </li>
             </ul>

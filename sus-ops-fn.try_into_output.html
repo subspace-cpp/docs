@@ -8,8 +8,8 @@
     <meta property="og:site_name" content="Subspace"></meta>
     <title>sus::ops::try_into_output - Subspace</title>
     <meta property="og:title" content="sus::ops::try_into_output - Subspace"></meta>
-    <meta name="description" content="Unwraps from the Try type that is currently in its success state (is_success() would return true) to produce its success value."></meta>
-    <meta property="og:description" content="Unwraps from the Try type that is currently in its success state (is_success() would return true) to produce its success value."></meta>
+    <meta name="description" content="Unwraps from the Try type that is currently in its success state (try_is_success would return true) to produce its success value."></meta>
+    <meta property="og:description" content="Unwraps from the Try type that is currently in its success state (try_is_success would return true) to produce its success value."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -106,9 +106,9 @@
 
               content += `\
                 <a class="search-results-link" href="${url}">
-                  <span class="search-results-type"><span>${type}</span></span>\
-                  <span class="search-results-name"><span>${full_name}</span></span>\
-                  <span class="search-results-summary"><span>${summmary}</span></span>\
+                  <span class="search-results-type"><div>${type}</div></span>\
+                  <span class="search-results-name"><div>${full_name}</div></span>\
+                  <span class="search-results-summary"><div>${summmary}</div></span>\
                 </a>\
                 `
             }
@@ -147,37 +147,64 @@
             let idx = lunr(function () {
               this.ref('index');
               this.field('name', {
-                'boost': 2
+                'boost': 2,
+                editDistance: 0
               });
               this.field('full_name', {
-                'boost': 2
+                'boost': 2,
+                editDistance: 2
               });
               this.field('split_name', {
-                'boost': 0.5
-              });
-              this.field('summary', {
-                'boost': 1
-              });
-              this.field('full_description', {
-                'boost': 0.75
+                'boost': 0.5,
+                editDistance: 2
               });
 
-              // No stemming?
-              // this.pipeline = new lunr.Pipeline();
+              // No stemming and no stopwords (like `into` and `from`).
+              this.pipeline = new lunr.Pipeline();
+              this.searchPipeline = new lunr.Pipeline();
 
+              // Queries are split by these tokens.
+              const splitBy = /(\s+|_+|(::)+)/
               this.use(builder => {
-                function splitColons(token) {
-                  return token.toString().split("::").map(str => {
+                function splitTokens(token) {
+                  return token.toString().split(splitBy).map(str => {
                     return token.clone().update(() => { return str })
                   })
                 }
-                lunr.Pipeline.registerFunction(splitColons, 'splitColons')
-                builder.searchPipeline.before(lunr.stemmer, splitColons)
+                lunr.Pipeline.registerFunction(splitTokens, 'splitTokens')
+                builder.searchPipeline.add(splitTokens)
               });
 
               search_db.forEach(item => {
+                const weights = {
+                  "concept": 3,
+                  "class": 2,
+                  "struct": 2,
+                  "union": 2,
+                  "function": 1.75,
+                  "variable": 1.75,
+                  "namespace": 1.2,
+                  "method": 1,
+                  "constructor": 1,
+                  "macro": 1,
+                  "project": 1,
+                  "field": 0.9,
+                  "conversion": 0.5,
+                  "type alias": 0.5,
+                  "concept alias": 0.5,
+                  "function alias": 0.5,
+                  "method alias": 0.5,
+                  "enum value alias": 0.5,
+                  "variable alias": 0.5,
+                }
+                let weight = weights[item.type];
+                if (!weight) {
+                  console.log(`WARNING: search item type ${item.type} ` +
+                              `has no weight defined`);
+                  weight = 1;
+                }
                 this.add(item, {
-                  'boost': item.weight ? Number(item.weight) : 1
+                  'boost': weight
                 })
               }, this);
             });
@@ -293,7 +320,7 @@
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/try.h#L140">source</a></div><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">try_into_output</a>(T&& t) -&gt; sus::ops::TryImpl&lt;std::remove_cvref_t&lt;T&gt;&gt;::Output<div class="requires">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/ops/try.h#L151">source</a></div><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">try_into_output</a>(T&& t) -&gt; sus::ops::TryImpl&lt;std::remove_cvref_t&lt;T&gt;&gt;::Output<div class="requires">
                     <span class="requires-keyword keyword">
                       requires
                     </span>
@@ -303,13 +330,14 @@
               </div>
             </div>
             <div class="description long">
-              <p>Unwraps from the Try type that is currently in its success state
-(<code>is_success()</code> would return true) to produce its success value.</p>
-<p>For instance, this unwraps an <code>Result&lt;T, E&gt;</code> which can represent success or
-failure into <code>T</code> which represents only success in the type system.</p>
+              <p>Unwraps from the <a href="sus-ops-Try.html"><code>Try</code></a> type that is currently in its
+success state (<a href="sus-ops-fn.try_is_success.html"><code>try_is_success</code></a> would return
+true) to produce its success value.</p>
+<p>For instance, this unwraps an <a href="sus-result-Result.html"><code>Result&lt;T, E&gt;</code></a> which
+can represent success or failure into <code>T</code> which represents only success in
+the type system.</p>
 <h1><a name="panics" href="#panics">Panics</a></h1>
-<p>If the input is not in a success state (<code>is_success()</code> would return true)
-the function will panic.</p>
+<p>If the input is not in a success state (<a href="sus-ops-fn.try_is_success.html"><code>try_is_success</code></a> would return true) the function will panic.</p>
 
             </div>
           </div>
