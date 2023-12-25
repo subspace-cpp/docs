@@ -105,9 +105,9 @@
 
               content += `\
                 <a class="search-results-link" href="${url}">
-                  <span class="search-results-type">${type}</span>\
-                  <span class="search-results-name">${full_name}</span>\
-                  <span class="search-results-summary">${summmary}</span>\
+                  <span class="search-results-type"><span>${type}</span></span>\
+                  <span class="search-results-name"><span>${full_name}</span></span>\
+                  <span class="search-results-summary"><span>${summmary}</span></span>\
                 </a>\
                 `
             }
@@ -522,9 +522,9 @@ and returns the inner value. It will return the result of evaluating
 the provided function when empty.</li>
 </ul>
 <h1><a name="copying" href="#copying">Copying</a></h1>
-<p>Most methods of Option act on an rvalue and consume the Option to transform
-it into a new Option with a new value. This ensures that the value inside an
-Option is moved while transforming it.</p>
+<p>Most methods of <code>Option</code> act on an rvalue and consume the <code>Option</code> to
+transform it into a new <code>Option</code> with a new value. This ensures that the
+value inside an <code>Option</code> is moved while transforming it.</p>
 <p>However, if <a href="sus-option-Option.html"><code>Option</code></a> is
 <a href="sus-mem-Copy.html"><code>Copy</code></a>, then the majority of methods offer an
 overload to be called as an lvalue, in which case the
@@ -578,7 +578,7 @@ provided function to the contained value of <code>Some</code>, or returns the re
 of evaluating the provided fallback function if the
 <a href="sus-option-Option.html"><code>Option</code></a> is <code>None</code>.</li>
 </ul>
-<p>These methods combine the Some variants of two Option values:</p>
+<p>These methods combine the Some variants of two <code>Option</code> values:</p>
 <ul>
 <li><a href="sus-option-Option.html#method.zip"><code>zip</code></a> returns <code>Some(Tuple&lt;S, O&gt;(s, o)))</code> if the
 <a href="sus-option-Option.html"><code>Option</code></a> is <code>Some(s)</code>
@@ -844,7 +844,7 @@ memory-safety bugs.</p>
                 </div>
                 <div class="description short">
                   <p>Compares two options. This function requires that <code>T</code> is ordered.
-An empty Option always compares less than a non-empty Option.</p>
+An empty option always compares less than a non-empty option.</p>
                 </div>
               </li>
               <li class="section-item">

@@ -7,8 +7,8 @@
     <meta property="og:site_name" content="Subspace"></meta>
     <title>sus::option::operator&lt;=&gt; - Subspace</title>
     <meta property="og:title" content="sus::option::operator&lt;=&gt; - Subspace"></meta>
-    <meta name="description" content="Compares two options. This function requires that T is ordered. An empty Option always compares less than a non-empty Option."></meta>
-    <meta property="og:description" content="Compares two options. This function requires that T is ordered. An empty Option always compares less than a non-empty Option."></meta>
+    <meta name="description" content="Compares two options. This function requires that T is ordered. An empty option always compares less than a non-empty option."></meta>
+    <meta property="og:description" content="Compares two options. This function requires that T is ordered. An empty option always compares less than a non-empty option."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -105,9 +105,9 @@
 
               content += `\
                 <a class="search-results-link" href="${url}">
-                  <span class="search-results-type">${type}</span>\
-                  <span class="search-results-name">${full_name}</span>\
-                  <span class="search-results-summary">${summmary}</span>\
+                  <span class="search-results-type"><span>${type}</span></span>\
+                  <span class="search-results-name"><span>${full_name}</span></span>\
+                  <span class="search-results-summary"><span>${summmary}</span></span>\
                 </a>\
                 `
             }
@@ -292,7 +292,7 @@
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1759">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& r) -&gt; std::strong_ordering<div class="requires">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1761">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& r) -&gt; std::strong_ordering<div class="requires">
                     <span class="requires-keyword keyword">
                       requires
                     </span>
@@ -300,7 +300,7 @@
                   </div></div>
               </div>
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1759">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& r) -&gt; std::weak_ordering<div class="requires">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1761">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& r) -&gt; std::weak_ordering<div class="requires">
                     <span class="requires-keyword keyword">
                       requires
                     </span>
@@ -308,7 +308,7 @@
                   </div></div>
               </div>
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1759">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& r) -&gt; std::partial_ordering<div class="requires">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1761">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-option-Option.html" title="sus::option::Option">Option</a>&lt;T&gt;& r) -&gt; std::partial_ordering<div class="requires">
                     <span class="requires-keyword keyword">
                       requires
                     </span>
@@ -318,7 +318,7 @@
             </div>
             <div class="description long">
               <p>Compares two options. This function requires that <code>T</code> is ordered.
-An empty Option always compares less than a non-empty Option.</p>
+An empty option always compares less than a non-empty option.</p>
 <ul>
 <li>Satisfies <a href="sus-cmp-StrongOrd.html"><code>StrongOrd&lt;Option&lt;T&gt;&gt;</code></a> if
 <a href="sus-cmp-StrongOrd.html"><code>StrongOrd&lt;T&gt;</code></a>.</li>
