@@ -29470,25 +29470,7 @@ const g_search_db = [
   {
     "index": 3022,
     "type": "conversion",
-    "url": "sus-option-Option.html#method.operator optional.convert.optional",
-    "name": "operator optional",
-    "weight": "0.5",
-    "full_name": "sus::option::Option::operator optional",
-    "split_name": "sus option Option operator optional"
-  },
-  {
-    "index": 3023,
-    "type": "conversion",
-    "url": "sus-option-Option.html#method.operator optional.convert.optional",
-    "name": "operator optional",
-    "weight": "0.5",
-    "full_name": "sus::option::Option::operator optional",
-    "split_name": "sus option Option operator optional"
-  },
-  {
-    "index": 3024,
-    "type": "conversion",
-    "url": "sus-option-Option.html#method.operator optional.convert.optional",
+    "url": "sus-option-Option.html#method.operator optional",
     "name": "operator optional",
     "weight": "0.5",
     "full_name": "sus::option::Option::operator optional",
@@ -29496,7 +29478,7 @@ const g_search_db = [
     "summary": "Implicit conversion to std::optional."
   },
   {
-    "index": 3025,
+    "index": 3023,
     "type": "conversion",
     "url": "sus-option-Option.html#method.operator State",
     "name": "operator State",
@@ -29506,7 +29488,7 @@ const g_search_db = [
     "summary": "An operator which returns the state of the option, either Some or None."
   },
   {
-    "index": 3026,
+    "index": 3024,
     "type": "method",
     "url": "sus-option-Option.html#method.iter",
     "name": "iter",
@@ -29516,7 +29498,7 @@ const g_search_db = [
     "summary": "Produces an Iterator over the single item in the Option, or an empty iterator. The iterator will return a const reference."
   },
   {
-    "index": 3027,
+    "index": 3025,
     "type": "method",
     "url": "sus-option-Option.html#method.as_mut",
     "name": "as_mut",
@@ -29526,7 +29508,7 @@ const g_search_db = [
     "summary": "Returns an Option&lt;T&amp;&gt; from this Option&lt;T&gt;, that either holds None or a reference to the value in this option."
   },
   {
-    "index": 3028,
+    "index": 3026,
     "type": "method",
     "url": "sus-option-Option.html#method.as_ref",
     "name": "as_ref",
@@ -29536,7 +29518,7 @@ const g_search_db = [
     "summary": "Returns an Option&lt;const T&amp;&gt; from this Option&lt;T&gt;, that either holds None or a reference to the value in this option."
   },
   {
-    "index": 3029,
+    "index": 3027,
     "type": "method",
     "url": "sus-option-Option.html#method.flatten",
     "name": "flatten",
@@ -29546,7 +29528,7 @@ const g_search_db = [
     "summary": "Maps an Option&lt;Option&lt;T&gt;&gt; to an Option&lt;T&gt;."
   },
   {
-    "index": 3030,
+    "index": 3028,
     "type": "method",
     "url": "sus-option-Option.html#method.unzip",
     "name": "unzip",
@@ -29556,7 +29538,7 @@ const g_search_db = [
     "summary": "Unzips an option holding a Tuple of two values into a Tuple of two Options."
   },
   {
-    "index": 3031,
+    "index": 3029,
     "type": "method",
     "url": "sus-option-Option.html#method.zip",
     "name": "zip",
@@ -29566,7 +29548,7 @@ const g_search_db = [
     "summary": "Zips self with another option."
   },
   {
-    "index": 3032,
+    "index": 3030,
     "type": "method",
     "url": "sus-option-Option.html#method.copied",
     "name": "copied",
@@ -29576,7 +29558,7 @@ const g_search_db = [
     "summary": "Maps an Option&lt;T&amp;&gt; to an Option&lt;T&gt; by copying the referenced T."
   },
   {
-    "index": 3033,
+    "index": 3031,
     "type": "method",
     "url": "sus-option-Option.html#method.ok_or_else",
     "name": "ok_or_else",
@@ -29586,7 +29568,7 @@ const g_search_db = [
     "summary": "Transforms the Option&lt;T&gt; into a Result&lt;T, E&gt;, mapping Some(v) to Ok(v) and None to Err(f())."
   },
   {
-    "index": 3034,
+    "index": 3032,
     "type": "method",
     "url": "sus-option-Option.html#method.cloned",
     "name": "cloned",
@@ -29596,7 +29578,7 @@ const g_search_db = [
     "summary": "Maps an Option&lt;T&amp;&gt; to an Option&lt;T&gt; by cloning the referenced T."
   },
   {
-    "index": 3035,
+    "index": 3033,
     "type": "method",
     "url": "sus-option-Option.html#method.ok_or",
     "name": "ok_or",
@@ -29606,7 +29588,7 @@ const g_search_db = [
     "summary": "Transforms the Option&lt;T&gt; into a Result&lt;T, E&gt;, mapping Some(v) to Ok(v) and None to Err(e)."
   },
   {
-    "index": 3036,
+    "index": 3034,
     "type": "method",
     "url": "sus-option-Option.html#method.xor_that",
     "name": "xor_that",
@@ -29616,7 +29598,7 @@ const g_search_db = [
     "summary": "Consumes this option and returns an option holding the value from either this option or that option if exactly one of them holds a value, otherwise returns an empty Option."
   },
   {
-    "index": 3037,
+    "index": 3035,
     "type": "method",
     "url": "sus-option-Option.html#method.or_else",
     "name": "or_else",
@@ -29626,7 +29608,7 @@ const g_search_db = [
     "summary": "Consumes and returns an option with the same value if this option contains a value, otherwise returns the option returned by f."
   },
   {
-    "index": 3038,
+    "index": 3036,
     "type": "method",
     "url": "sus-option-Option.html#method.replace",
     "name": "replace",
@@ -29636,7 +29618,7 @@ const g_search_db = [
     "summary": "Replaces whatever the option is currently holding with value and returns an Option holding what was there previously, which may be empty."
   },
   {
-    "index": 3039,
+    "index": 3037,
     "type": "method",
     "url": "sus-option-Option.html#method.and_that",
     "name": "and_that",
@@ -29646,7 +29628,7 @@ const g_search_db = [
     "summary": "Consumes this option and returns an option with None if this option holds None, otherwise returns that option."
   },
   {
-    "index": 3040,
+    "index": 3038,
     "type": "method",
     "url": "sus-option-Option.html#method.into_iter",
     "name": "into_iter",
@@ -29656,7 +29638,7 @@ const g_search_db = [
     "summary": "Produces an Iterator over the single item in the Option, or an empty iterator. If the option holds a value, the iterator will return ownership of the value. If the option holds a reference, it will return that reference."
   },
   {
-    "index": 3041,
+    "index": 3039,
     "type": "method",
     "url": "sus-option-Option.html#method.filter",
     "name": "filter",
@@ -29666,7 +29648,7 @@ const g_search_db = [
     "summary": "Consumes the option and applies a predicate function to the value contained in the option. Returns a new option with the same value if the predicate returns true, otherwise returns an empty Option."
   },
   {
-    "index": 3042,
+    "index": 3040,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap_or_else",
     "name": "unwrap_or_else",
@@ -29676,7 +29658,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option, if there is one. Otherwise, returns the result of the given function."
   },
   {
-    "index": 3043,
+    "index": 3041,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap",
     "name": "unwrap",
@@ -29686,7 +29668,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option."
   },
   {
-    "index": 3044,
+    "index": 3042,
     "type": "method",
     "url": "sus-option-Option.html#method.clone",
     "name": "clone",
@@ -29696,7 +29678,7 @@ const g_search_db = [
     "summary": "Satisifies the Clone concept when Option is not Copy."
   },
   {
-    "index": 3045,
+    "index": 3043,
     "type": "method",
     "url": "sus-option-Option.html#method.operator=.move",
     "name": "operator=",
@@ -29706,7 +29688,7 @@ const g_search_db = [
     "summary": "Move assignment for Option which will satisfy Move for &lt;Option&lt;T&gt; if T satisifies Move."
   },
   {
-    "index": 3046,
+    "index": 3044,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap_or_default",
     "name": "unwrap_or_default",
@@ -29716,7 +29698,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option, if there is one. Otherwise, constructs a default value for the type and returns that."
   },
   {
-    "index": 3047,
+    "index": 3045,
     "type": "method",
     "url": "sus-option-Option.html#method.get_or_insert",
     "name": "get_or_insert",
@@ -29726,7 +29708,7 @@ const g_search_db = [
     "summary": "If the option holds a value, returns a mutable reference to it. Otherwise, stores value inside the option and returns a mutable reference to it."
   },
   {
-    "index": 3048,
+    "index": 3046,
     "type": "method",
     "url": "sus-option-Option.html#method.operator=.copy",
     "name": "operator=",
@@ -29736,7 +29718,7 @@ const g_search_db = [
     "summary": "Copy assignment for Option which will satisfy Copy for Option&lt;T&gt; if T satisifes Copy."
   },
   {
-    "index": 3049,
+    "index": 3047,
     "type": "method",
     "url": "sus-option-Option.html#method.clone_from",
     "name": "clone_from",
@@ -29746,7 +29728,7 @@ const g_search_db = [
     "summary": "Satisifies the CloneFrom concept."
   },
   {
-    "index": 3050,
+    "index": 3048,
     "type": "method",
     "url": "sus-option-Option.html#method.from_product",
     "name": "from_product",
@@ -29756,7 +29738,7 @@ const g_search_db = [
     "summary": "Computes the product of an iterator over Option&lt;T&gt; as long as there is no None found. If a None is found, the function returns None."
   },
   {
-    "index": 3051,
+    "index": 3049,
     "type": "method",
     "url": "sus-option-Option.html#method.from_sum",
     "name": "from_sum",
@@ -29766,7 +29748,7 @@ const g_search_db = [
     "summary": "Computes the sum of an iterator over Option&lt;T&gt; as long as there is no None found. If a None is found, the function returns None."
   },
   {
-    "index": 3052,
+    "index": 3050,
     "type": "method",
     "url": "sus-option-Option.html#method.as_value_unchecked",
     "name": "as_value_unchecked",
@@ -29776,7 +29758,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the contained value inside the option."
   },
   {
-    "index": 3053,
+    "index": 3051,
     "type": "method",
     "url": "sus-option-Option.html#method.as_value_mut",
     "name": "as_value_mut",
@@ -29786,7 +29768,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the contained value inside the option."
   },
   {
-    "index": 3054,
+    "index": 3052,
     "type": "method",
     "url": "sus-option-Option.html#method.operator*",
     "name": "operator*",
@@ -29796,7 +29778,7 @@ const g_search_db = [
     "summary": "Returns a reference to the contained value inside the option."
   },
   {
-    "index": 3055,
+    "index": 3053,
     "type": "method",
     "url": "sus-option-Option.html#method.insert",
     "name": "insert",
@@ -29806,7 +29788,7 @@ const g_search_db = [
     "summary": "Inserts value into the option, then returns a mutable reference to it."
   },
   {
-    "index": 3056,
+    "index": 3054,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap_or",
     "name": "unwrap_or",
@@ -29816,7 +29798,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option, if there is one. Otherwise, returns default_result."
   },
   {
-    "index": 3057,
+    "index": 3055,
     "type": "method",
     "url": "sus-option-Option.html#method.is_some",
     "name": "is_some",
@@ -29826,7 +29808,7 @@ const g_search_db = [
     "summary": "Returns whether the option currently contains a value."
   },
   {
-    "index": 3058,
+    "index": 3056,
     "type": "method",
     "url": "sus-option-Option.html#method.transpose",
     "name": "transpose",
@@ -29836,7 +29818,7 @@ const g_search_db = [
     "summary": "Transposes an Option of a Result into a Result of an Option."
   },
   {
-    "index": 3059,
+    "index": 3057,
     "type": "method",
     "url": "sus-option-Option.html#method.from.from.t",
     "name": "from",
@@ -29846,7 +29828,7 @@ const g_search_db = [
     "summary": "Moves or copies val into a new option holding Some(val)."
   },
   {
-    "index": 3060,
+    "index": 3058,
     "type": "method",
     "url": "sus-option-Option.html#method.map_or_else",
     "name": "map_or_else",
@@ -29856,7 +29838,7 @@ const g_search_db = [
     "summary": "Computes a default function result (if none), or applies a different function to the contained value (if any)."
   },
   {
-    "index": 3061,
+    "index": 3059,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap_unchecked",
     "name": "unwrap_unchecked",
@@ -29866,7 +29848,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option."
   },
   {
-    "index": 3062,
+    "index": 3060,
     "type": "method",
     "url": "sus-option-Option.html#method.get_or_insert_default",
     "name": "get_or_insert_default",
@@ -29876,7 +29858,7 @@ const g_search_db = [
     "summary": "If the option holds a value, returns a mutable reference to it. Otherwise, constructs a default value T, stores it inside the option and returns a mutable reference to the new value."
   },
   {
-    "index": 3063,
+    "index": 3061,
     "type": "method",
     "url": "sus-option-Option.html#method.iter_mut",
     "name": "iter_mut",
@@ -29886,7 +29868,7 @@ const g_search_db = [
     "summary": "Produces an Iterator over the single item in the Option, or an empty iterator. If the Option holds a value, the iterator will return a mutable reference to it. If the Option holds a reference, it will return that reference."
   },
   {
-    "index": 3064,
+    "index": 3062,
     "type": "method",
     "url": "sus-option-Option.html#method.expect",
     "name": "expect",
@@ -29896,7 +29878,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option."
   },
   {
-    "index": 3065,
+    "index": 3063,
     "type": "method",
     "url": "sus-option-Option.html#method.is_none",
     "name": "is_none",
@@ -29906,7 +29888,7 @@ const g_search_db = [
     "summary": "Returns whether the option is currently empty, containing no value."
   },
   {
-    "index": 3066,
+    "index": 3064,
     "type": "method",
     "url": "sus-option-Option.html#method.as_value",
     "name": "as_value",
@@ -29916,7 +29898,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the contained value inside the option."
   },
   {
-    "index": 3067,
+    "index": 3065,
     "type": "method",
     "url": "sus-option-Option.html#method.as_value_unchecked_mut",
     "name": "as_value_unchecked_mut",
@@ -29926,7 +29908,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the contained value inside the option."
   },
   {
-    "index": 3068,
+    "index": 3066,
     "type": "method",
     "url": "sus-option-Option.html#method.operator->",
     "name": "operator->",
@@ -29936,7 +29918,7 @@ const g_search_db = [
     "summary": "Returns a pointer to the contained value inside the option."
   },
   {
-    "index": 3069,
+    "index": 3067,
     "type": "method",
     "url": "sus-option-Option.html#method.map",
     "name": "map",
@@ -29946,7 +29928,7 @@ const g_search_db = [
     "summary": "Maps the option's value through a function."
   },
   {
-    "index": 3070,
+    "index": 3068,
     "type": "method",
     "url": "sus-option-Option.html#method.or_that",
     "name": "or_that",
@@ -29956,7 +29938,7 @@ const g_search_db = [
     "summary": "Consumes and returns an option with the same value if this option contains a value, otherwise returns that option."
   },
   {
-    "index": 3071,
+    "index": 3069,
     "type": "method",
     "url": "sus-option-Option.html#method.get_or_insert_with",
     "name": "get_or_insert_with",
@@ -29966,7 +29948,7 @@ const g_search_db = [
     "summary": "If the option holds a value, returns a mutable reference to it. Otherwise, constructs a T by calling f, stores it inside the option and returns a mutable reference to the new value."
   },
   {
-    "index": 3072,
+    "index": 3070,
     "type": "method",
     "url": "sus-option-Option.html#method.and_then",
     "name": "and_then",
@@ -29976,7 +29958,7 @@ const g_search_db = [
     "summary": "Consumes this option and returns an option with None if this option holds None, otherwise calls f with the contained value and returns the result."
   },
   {
-    "index": 3073,
+    "index": 3071,
     "type": "method",
     "url": "sus-option-Option.html#method.take",
     "name": "take",
@@ -29986,7 +29968,7 @@ const g_search_db = [
     "summary": "Returns a new option containing whatever was inside the current option."
   },
   {
-    "index": 3074,
+    "index": 3072,
     "type": "method",
     "url": "sus-option-Option.html#method.map_or",
     "name": "map_or",
@@ -29996,7 +29978,7 @@ const g_search_db = [
     "summary": "Returns the provided default result (if none), or applies a function to the contained value (if any)."
   },
   {
-    "index": 3075,
+    "index": 3073,
     "type": "function",
     "url": "sus-option-fn.none.html",
     "name": "none",
@@ -30004,7 +29986,7 @@ const g_search_db = [
     "split_name": "sus option none"
   },
   {
-    "index": 3076,
+    "index": 3074,
     "type": "function",
     "url": "sus-option-fn.operator_spaceship.html",
     "name": "operator<=>",
@@ -30012,7 +29994,7 @@ const g_search_db = [
     "split_name": "sus option operator<=>"
   },
   {
-    "index": 3077,
+    "index": 3075,
     "type": "function",
     "url": "sus-option-fn.some.html",
     "name": "some",
@@ -30020,7 +30002,7 @@ const g_search_db = [
     "split_name": "sus option some"
   },
   {
-    "index": 3078,
+    "index": 3076,
     "type": "function",
     "url": "sus-option-fn.operator_eq.html",
     "name": "operator==",
@@ -30028,7 +30010,7 @@ const g_search_db = [
     "split_name": "sus option operator=="
   },
   {
-    "index": 3079,
+    "index": 3077,
     "url": "sus-namespace.result.html",
     "type": "namespace",
     "weight": "1.2",
@@ -30038,7 +30020,7 @@ const g_search_db = [
     "summary": "The Result type, and the ok and err type-deduction constructor functions."
   },
   {
-    "index": 3080,
+    "index": 3078,
     "type": "function alias",
     "url": "sus-iter-fn.end.html",
     "weight": "0.5",
@@ -30048,7 +30030,7 @@ const g_search_db = [
     "summary": "Implicit for-ranged loop iteration via Result::iter()."
   },
   {
-    "index": 3081,
+    "index": 3079,
     "type": "function alias",
     "url": "sus-iter-fn.begin.html",
     "weight": "0.5",
@@ -30058,7 +30040,7 @@ const g_search_db = [
     "summary": "Implicit for-ranged loop iteration via Result::iter()."
   },
   {
-    "index": 3082,
+    "index": 3080,
     "type": "type alias",
     "url": "sus-iter-Once.html",
     "weight": "0.5",
@@ -30068,7 +30050,7 @@ const g_search_db = [
     "summary": "An Iterator that walks over at most a single Item."
   },
   {
-    "index": 3083,
+    "index": 3081,
     "type": "class",
     "url": "sus-result-Result.html",
     "weight": "2",
@@ -30077,7 +30059,7 @@ const g_search_db = [
     "split_name": "sus result Result"
   },
   {
-    "index": 3084,
+    "index": 3082,
     "type": "constructor",
     "url": "sus-result-Result.html#method.Result.move",
     "name": "Result",
@@ -30087,7 +30069,7 @@ const g_search_db = [
     "summary": "Move constructor for Result&lt;T, E&gt; which satisfies Move, if T and E both satisfy Move."
   },
   {
-    "index": 3085,
+    "index": 3083,
     "type": "constructor",
     "url": "sus-result-Result.html#method.Result.copy",
     "name": "Result",
@@ -30097,7 +30079,7 @@ const g_search_db = [
     "summary": "Copy constructor for Result&lt;T, E&gt; which satisfies sus::mem::Copy&lt;Result&lt;T, E&gt;&gt; if Copy&lt;T&gt; and Copy&lt;E&gt; are satisfied."
   },
   {
-    "index": 3086,
+    "index": 3084,
     "type": "constructor",
     "url": "sus-result-Result.html#method.Result.ctor.ok",
     "name": "Result",
@@ -30107,7 +30089,7 @@ const g_search_db = [
     "summary": "Construct an Result that is holding the given success value."
   },
   {
-    "index": 3087,
+    "index": 3085,
     "type": "conversion",
     "url": "sus-result-Result.html#method.operator State",
     "name": "operator State",
@@ -30117,7 +30099,7 @@ const g_search_db = [
     "summary": "An operator which returns the state of the Result, either #Ok or #Err."
   },
   {
-    "index": 3088,
+    "index": 3086,
     "type": "method",
     "url": "sus-result-Result.html#method.iter_mut",
     "name": "iter_mut",
@@ -30126,7 +30108,7 @@ const g_search_db = [
     "split_name": "sus result Result iter mut"
   },
   {
-    "index": 3089,
+    "index": 3087,
     "type": "method",
     "url": "sus-result-Result.html#method.iter",
     "name": "iter",
@@ -30135,7 +30117,7 @@ const g_search_db = [
     "split_name": "sus result Result iter"
   },
   {
-    "index": 3090,
+    "index": 3088,
     "type": "method",
     "url": "sus-result-Result.html#method.into_iter",
     "name": "into_iter",
@@ -30144,7 +30126,7 @@ const g_search_db = [
     "split_name": "sus result Result into iter"
   },
   {
-    "index": 3091,
+    "index": 3089,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_or_else",
     "name": "unwrap_or_else",
@@ -30154,7 +30136,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value or computes it from a closure."
   },
   {
-    "index": 3092,
+    "index": 3090,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_err_unchecked",
     "name": "unwrap_err_unchecked",
@@ -30164,7 +30146,7 @@ const g_search_db = [
     "summary": "Returns the contained Err value, consuming the self value, without checking that the value is not an Ok."
   },
   {
-    "index": 3093,
+    "index": 3091,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_err",
     "name": "unwrap_err",
@@ -30174,7 +30156,7 @@ const g_search_db = [
     "summary": "Returns the contained Err value, consuming the self value."
   },
   {
-    "index": 3094,
+    "index": 3092,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_unchecked",
     "name": "unwrap_unchecked",
@@ -30184,7 +30166,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value, consuming the self value, without checking that the value is not an Err."
   },
   {
-    "index": 3095,
+    "index": 3093,
     "type": "method",
     "url": "sus-result-Result.html#method.expect",
     "name": "expect",
@@ -30194,7 +30176,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value, consuming the self value."
   },
   {
-    "index": 3096,
+    "index": 3094,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap",
     "name": "unwrap",
@@ -30204,7 +30186,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value, consuming the self value."
   },
   {
-    "index": 3097,
+    "index": 3095,
     "type": "method",
     "url": "sus-result-Result.html#method.with_err",
     "name": "with_err",
@@ -30214,7 +30196,7 @@ const g_search_db = [
     "summary": "Construct an Result that is holding the given error value."
   },
   {
-    "index": 3098,
+    "index": 3096,
     "type": "method",
     "url": "sus-result-Result.html#method.as_value",
     "name": "as_value",
@@ -30224,7 +30206,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the contained Ok value."
   },
   {
-    "index": 3099,
+    "index": 3097,
     "type": "method",
     "url": "sus-result-Result.html#method.operator=.copy",
     "name": "operator=",
@@ -30234,7 +30216,7 @@ const g_search_db = [
     "summary": "Copy assignment for Result&lt;T, E&gt; which satisfies sus::mem::Copy&lt;Result&lt;T, E&gt;&gt; if Copy&lt;T&gt; and Copy&lt;E&gt; are satisfied."
   },
   {
-    "index": 3100,
+    "index": 3098,
     "type": "method",
     "url": "sus-result-Result.html#method.as_err",
     "name": "as_err",
@@ -30244,7 +30226,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the contained Err value."
   },
   {
-    "index": 3101,
+    "index": 3099,
     "type": "method",
     "url": "sus-result-Result.html#method.ok",
     "name": "ok",
@@ -30254,7 +30236,7 @@ const g_search_db = [
     "summary": "Converts from Result&lt;T, E&gt; to Option&lt;T&gt;."
   },
   {
-    "index": 3102,
+    "index": 3100,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_or_default",
     "name": "unwrap_or_default",
@@ -30264,7 +30246,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value or a default."
   },
   {
-    "index": 3103,
+    "index": 3101,
     "type": "method",
     "url": "sus-result-Result.html#method.operator=.move",
     "name": "operator=",
@@ -30274,7 +30256,7 @@ const g_search_db = [
     "summary": "Move assignment for Result&lt;T, E&gt; which satisfies Move, if T and E both satisfy Move."
   },
   {
-    "index": 3104,
+    "index": 3102,
     "type": "method",
     "url": "sus-result-Result.html#method.as_value_mut",
     "name": "as_value_mut",
@@ -30284,7 +30266,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the contained Ok value."
   },
   {
-    "index": 3105,
+    "index": 3103,
     "type": "method",
     "url": "sus-result-Result.html#method.from_sum",
     "name": "from_sum",
@@ -30294,7 +30276,7 @@ const g_search_db = [
     "summary": "Computes the sum of an iterator over Result&lt;T, E&gt; as long as there is no Err found. If an Err is found, the function returns the first Err."
   },
   {
-    "index": 3106,
+    "index": 3104,
     "type": "method",
     "url": "sus-result-Result.html#method.clone_from",
     "name": "clone_from",
@@ -30303,7 +30285,7 @@ const g_search_db = [
     "split_name": "sus result Result clone from"
   },
   {
-    "index": 3107,
+    "index": 3105,
     "type": "method",
     "url": "sus-result-Result.html#method.from_product",
     "name": "from_product",
@@ -30313,7 +30295,7 @@ const g_search_db = [
     "summary": "Computes the product of an iterator over Result&lt;T, E&gt; as long as there is no Err found. If an Err is found, the function returns the first Err."
   },
   {
-    "index": 3108,
+    "index": 3106,
     "type": "method",
     "url": "sus-result-Result.html#method.is_err",
     "name": "is_err",
@@ -30323,7 +30305,7 @@ const g_search_db = [
     "summary": "Returns true if the result is Err."
   },
   {
-    "index": 3109,
+    "index": 3107,
     "type": "method",
     "url": "sus-result-Result.html#method.err",
     "name": "err",
@@ -30333,7 +30315,7 @@ const g_search_db = [
     "summary": "Converts from Result&lt;T, E&gt; to Option&lt;E&gt;."
   },
   {
-    "index": 3110,
+    "index": 3108,
     "type": "method",
     "url": "sus-result-Result.html#method.is_ok",
     "name": "is_ok",
@@ -30343,7 +30325,7 @@ const g_search_db = [
     "summary": "Returns true if the result is Ok."
   },
   {
-    "index": 3111,
+    "index": 3109,
     "type": "method",
     "url": "sus-result-Result.html#method.clone",
     "name": "clone",
@@ -30352,7 +30334,7 @@ const g_search_db = [
     "split_name": "sus result Result clone"
   },
   {
-    "index": 3112,
+    "index": 3110,
     "type": "method",
     "url": "sus-result-Result.html#method.and_then",
     "name": "and_then",
@@ -30362,7 +30344,7 @@ const g_search_db = [
     "summary": "Calls op if the result is Ok, otherwise returns the Err value of self."
   },
   {
-    "index": 3113,
+    "index": 3111,
     "type": "type alias",
     "url": "TODO",
     "weight": "0.5",
@@ -30372,7 +30354,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 3114,
+    "index": 3112,
     "type": "type alias",
     "url": "TODO",
     "weight": "0.5",
@@ -30382,7 +30364,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 3115,
+    "index": 3113,
     "type": "struct",
     "url": "sus-result-OkVoid.html",
     "weight": "2",
@@ -30392,7 +30374,7 @@ const g_search_db = [
     "summary": "A marker type for constructing Result with an Ok(void) value."
   },
   {
-    "index": 3116,
+    "index": 3114,
     "type": "function",
     "url": "sus-result-fn.err.html",
     "name": "err",
@@ -30400,7 +30382,7 @@ const g_search_db = [
     "split_name": "sus result err"
   },
   {
-    "index": 3117,
+    "index": 3115,
     "type": "function",
     "url": "sus-result-fn.ok.html",
     "name": "ok",
@@ -30408,7 +30390,7 @@ const g_search_db = [
     "split_name": "sus result ok"
   },
   {
-    "index": 3118,
+    "index": 3116,
     "type": "function",
     "url": "sus-result-fn.operator_spaceship.html",
     "name": "operator<=>",
@@ -30416,7 +30398,7 @@ const g_search_db = [
     "split_name": "sus result operator<=>"
   },
   {
-    "index": 3119,
+    "index": 3117,
     "type": "function",
     "url": "sus-result-fn.operator_eq.html",
     "name": "operator==",
@@ -30424,7 +30406,7 @@ const g_search_db = [
     "split_name": "sus result operator=="
   },
   {
-    "index": 3120,
+    "index": 3118,
     "url": "sus-namespace.error.html",
     "type": "namespace",
     "weight": "1.2",
@@ -30434,7 +30416,7 @@ const g_search_db = [
     "summary": "Interfaces for working with Errors."
   },
   {
-    "index": 3121,
+    "index": 3119,
     "type": "concept",
     "url": "sus-error-Error.html",
     "name": "Error",
@@ -30442,7 +30424,7 @@ const g_search_db = [
     "split_name": "sus error Error"
   },
   {
-    "index": 3122,
+    "index": 3120,
     "type": "struct",
     "url": "sus-error-ErrorImpl.html",
     "weight": "2",
@@ -30451,7 +30433,7 @@ const g_search_db = [
     "split_name": "sus error Error Impl"
   },
   {
-    "index": 3123,
+    "index": 3121,
     "type": "method",
     "url": "sus-error-ErrorImpl.html#method.source",
     "name": "source",
@@ -30460,7 +30442,7 @@ const g_search_db = [
     "split_name": "sus error Error Impl source"
   },
   {
-    "index": 3124,
+    "index": 3122,
     "type": "method",
     "url": "sus-error-ErrorImpl.html#method.display",
     "name": "display",
@@ -30469,7 +30451,7 @@ const g_search_db = [
     "split_name": "sus error Error Impl display"
   },
   {
-    "index": 3125,
+    "index": 3123,
     "type": "type alias",
     "url": "TODO",
     "weight": "0.5",
@@ -30479,7 +30461,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 3126,
+    "index": 3124,
     "type": "struct",
     "url": "sus-error-DynError.html",
     "weight": "2",
@@ -30489,7 +30471,7 @@ const g_search_db = [
     "summary": "A type-erased Error object."
   },
   {
-    "index": 3127,
+    "index": 3125,
     "type": "method",
     "url": "sus-error-DynError.html#method.source",
     "name": "source",
@@ -30499,7 +30481,7 @@ const g_search_db = [
     "summary": "Forwards to the Error implementation of E."
   },
   {
-    "index": 3128,
+    "index": 3126,
     "type": "method",
     "url": "sus-error-DynError.html#method.display",
     "name": "display",
@@ -30509,7 +30491,7 @@ const g_search_db = [
     "summary": "Forwards to the Error implementation of E."
   },
   {
-    "index": 3129,
+    "index": 3127,
     "type": "function",
     "url": "sus-error-fn.error_source.html",
     "name": "error_source",
@@ -30517,7 +30499,7 @@ const g_search_db = [
     "split_name": "sus error error source"
   },
   {
-    "index": 3130,
+    "index": 3128,
     "type": "function",
     "url": "sus-error-fn.error_display.html",
     "name": "error_display",
@@ -30525,7 +30507,7 @@ const g_search_db = [
     "split_name": "sus error error display"
   },
   {
-    "index": 3131,
+    "index": 3129,
     "url": "sus-namespace.tuple_type.html",
     "type": "namespace",
     "weight": "1.2",
@@ -30535,7 +30517,7 @@ const g_search_db = [
     "summary": "The Tuple type, and the tuple type-deduction constructor function."
   },
   {
-    "index": 3132,
+    "index": 3130,
     "type": "class",
     "url": "sus-tuple_type-Tuple.html",
     "weight": "2",
@@ -30545,7 +30527,7 @@ const g_search_db = [
     "summary": "A Tuple is a finite sequence of one or more heterogeneous values."
   },
   {
-    "index": 3133,
+    "index": 3131,
     "type": "constructor",
     "url": "sus-tuple_type-Tuple.html#method.Tuple.ctor.convert",
     "name": "Tuple",
@@ -30555,7 +30537,7 @@ const g_search_db = [
     "summary": "Converts from Tuple&lt;X', Y', Z'&gt; to Tuple&lt;X, Y, Z&gt; when X', Y', and Z' can be converted to X, Y, and Z."
   },
   {
-    "index": 3134,
+    "index": 3132,
     "type": "constructor",
     "url": "sus-tuple_type-Tuple.html#method.Tuple.ctor.values",
     "name": "Tuple",
@@ -30565,7 +30547,7 @@ const g_search_db = [
     "summary": "Construct a Tuple with the given values."
   },
   {
-    "index": 3135,
+    "index": 3133,
     "type": "constructor",
     "url": "sus-tuple_type-Tuple.html#method.Tuple.ctor.default",
     "name": "Tuple",
@@ -30575,7 +30557,7 @@ const g_search_db = [
     "summary": "Construct a Tuple with the default value for the types it contains."
   },
   {
-    "index": 3136,
+    "index": 3134,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.extend",
     "name": "extend",
@@ -30585,7 +30567,7 @@ const g_search_db = [
     "summary": "Satisfies sus::iter::Extend for a Tuple of collections that each satisfies Extend for its position-relative type in the iterator of tuples."
   },
   {
-    "index": 3137,
+    "index": 3135,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.operator<=>",
     "name": "operator<=>",
@@ -30595,7 +30577,7 @@ const g_search_db = [
     "summary": "Compares two Tuples."
   },
   {
-    "index": 3138,
+    "index": 3136,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.operator==",
     "name": "operator==",
@@ -30605,7 +30587,7 @@ const g_search_db = [
     "summary": "Satisfies the Eq concept if the types inside satisfy Eq."
   },
   {
-    "index": 3139,
+    "index": 3137,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.into_inner",
     "name": "into_inner",
@@ -30615,7 +30597,7 @@ const g_search_db = [
     "summary": "Removes the Ith element from the tuple, leaving the Tuple in a moved-from state where it should no longer be used."
   },
   {
-    "index": 3140,
+    "index": 3138,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.at_mut",
     "name": "at_mut",
@@ -30625,7 +30607,7 @@ const g_search_db = [
     "summary": "Gets a mutable reference to the Ith element in the tuple."
   },
   {
-    "index": 3141,
+    "index": 3139,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.at",
     "name": "at",
@@ -30635,7 +30617,7 @@ const g_search_db = [
     "summary": "Gets a const reference to the Ith element in the tuple."
   },
   {
-    "index": 3142,
+    "index": 3140,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.clone",
     "name": "clone",
@@ -30645,7 +30627,7 @@ const g_search_db = [
     "summary": "sus::mem::Clone trait."
   },
   {
-    "index": 3143,
+    "index": 3141,
     "type": "function",
     "url": "sus-tuple_type-fn.operator_leftshift.html",
     "name": "operator<<",
@@ -30653,7 +30635,7 @@ const g_search_db = [
     "split_name": "sus tuple type operator<<"
   },
   {
-    "index": 3144,
+    "index": 3142,
     "type": "function",
     "url": "sus-tuple_type-fn.tuple.html",
     "name": "tuple",
@@ -30661,7 +30643,7 @@ const g_search_db = [
     "split_name": "sus tuple type tuple"
   },
   {
-    "index": 3145,
+    "index": 3143,
     "type": "function",
     "url": "sus-tuple_type-fn.get.html",
     "name": "get",
@@ -30669,7 +30651,7 @@ const g_search_db = [
     "split_name": "sus tuple type get"
   },
   {
-    "index": 3146,
+    "index": 3144,
     "type": "function",
     "url": "fn._u8 literal.html",
     "name": "_u8 literal",
@@ -30677,7 +30659,7 @@ const g_search_db = [
     "split_name": "u8 literal"
   },
   {
-    "index": 3147,
+    "index": 3145,
     "type": "function",
     "url": "fn._rs literal.html",
     "name": "_rs literal",
@@ -30685,7 +30667,7 @@ const g_search_db = [
     "split_name": "rs literal"
   },
   {
-    "index": 3148,
+    "index": 3146,
     "type": "function",
     "url": "fn._usize literal.html",
     "name": "_usize literal",
@@ -30693,7 +30675,7 @@ const g_search_db = [
     "split_name": "usize literal"
   },
   {
-    "index": 3149,
+    "index": 3147,
     "type": "function",
     "url": "fn._i64 literal.html",
     "name": "_i64 literal",
@@ -30701,7 +30683,7 @@ const g_search_db = [
     "split_name": "i64 literal"
   },
   {
-    "index": 3150,
+    "index": 3148,
     "type": "function",
     "url": "fn._r literal.html",
     "name": "_r literal",
@@ -30709,7 +30691,7 @@ const g_search_db = [
     "split_name": "r literal"
   },
   {
-    "index": 3151,
+    "index": 3149,
     "type": "function",
     "url": "fn._u16 literal.html",
     "name": "_u16 literal",
@@ -30717,7 +30699,7 @@ const g_search_db = [
     "split_name": "u16 literal"
   },
   {
-    "index": 3152,
+    "index": 3150,
     "type": "function",
     "url": "fn._u32 literal.html",
     "name": "_u32 literal",
@@ -30725,7 +30707,7 @@ const g_search_db = [
     "split_name": "u32 literal"
   },
   {
-    "index": 3153,
+    "index": 3151,
     "type": "function",
     "url": "fn._f32 literal.html",
     "name": "_f32 literal",
@@ -30733,7 +30715,7 @@ const g_search_db = [
     "split_name": "f32 literal"
   },
   {
-    "index": 3154,
+    "index": 3152,
     "type": "function",
     "url": "fn._u64 literal.html",
     "name": "_u64 literal",
@@ -30741,7 +30723,7 @@ const g_search_db = [
     "split_name": "u64 literal"
   },
   {
-    "index": 3155,
+    "index": 3153,
     "type": "function",
     "url": "fn._i8 literal.html",
     "name": "_i8 literal",
@@ -30749,7 +30731,7 @@ const g_search_db = [
     "split_name": "i8 literal"
   },
   {
-    "index": 3156,
+    "index": 3154,
     "type": "function",
     "url": "fn._i16 literal.html",
     "name": "_i16 literal",
@@ -30757,7 +30739,7 @@ const g_search_db = [
     "split_name": "i16 literal"
   },
   {
-    "index": 3157,
+    "index": 3155,
     "type": "function",
     "url": "fn._i32 literal.html",
     "name": "_i32 literal",
@@ -30765,7 +30747,7 @@ const g_search_db = [
     "split_name": "i32 literal"
   },
   {
-    "index": 3158,
+    "index": 3156,
     "type": "function",
     "url": "fn._isize literal.html",
     "name": "_isize literal",
@@ -30773,7 +30755,7 @@ const g_search_db = [
     "split_name": "isize literal"
   },
   {
-    "index": 3159,
+    "index": 3157,
     "type": "function",
     "url": "fn._f64 literal.html",
     "name": "_f64 literal",
@@ -30781,7 +30763,7 @@ const g_search_db = [
     "split_name": "f64 literal"
   },
   {
-    "index": 3160,
+    "index": 3158,
     "type": "macro",
     "url": "macro.SUS_NAN.html",
     "name": "SUS_NAN",
@@ -30789,7 +30771,7 @@ const g_search_db = [
     "split_name": "SUS NAN"
   },
   {
-    "index": 3161,
+    "index": 3159,
     "type": "macro",
     "url": "macro.sus_debug_check.html",
     "name": "sus_debug_check",
@@ -30797,7 +30779,7 @@ const g_search_db = [
     "split_name": "sus debug check"
   },
   {
-    "index": 3162,
+    "index": 3160,
     "type": "macro",
     "url": "macro.sus_panic.html",
     "name": "sus_panic",
@@ -30805,7 +30787,7 @@ const g_search_db = [
     "split_name": "sus panic"
   },
   {
-    "index": 3163,
+    "index": 3161,
     "type": "macro",
     "url": "macro.sus_choice_types.html",
     "name": "sus_choice_types",
@@ -30813,7 +30795,7 @@ const g_search_db = [
     "split_name": "sus choice types"
   },
   {
-    "index": 3164,
+    "index": 3162,
     "type": "macro",
     "url": "macro.sus_panic_with_message.html",
     "name": "sus_panic_with_message",
@@ -30821,12 +30803,28 @@ const g_search_db = [
     "split_name": "sus panic with message"
   },
   {
-    "index": 3165,
+    "index": 3163,
     "type": "macro",
     "url": "macro.sus_check_with_message.html",
     "name": "sus_check_with_message",
     "full_name": "sus_check_with_message",
     "split_name": "sus check with message"
+  },
+  {
+    "index": 3164,
+    "type": "macro",
+    "url": "macro.sus_dyn_concept.html",
+    "name": "sus_dyn_concept",
+    "full_name": "sus_dyn_concept",
+    "split_name": "sus dyn concept"
+  },
+  {
+    "index": 3165,
+    "type": "macro",
+    "url": "macro.sus_class_never_value_field.html",
+    "name": "sus_class_never_value_field",
+    "full_name": "sus_class_never_value_field",
+    "split_name": "sus class never value field"
   },
   {
     "index": 3166,
@@ -30847,29 +30845,13 @@ const g_search_db = [
   {
     "index": 3168,
     "type": "macro",
-    "url": "macro.sus_dyn_concept.html",
-    "name": "sus_dyn_concept",
-    "full_name": "sus_dyn_concept",
-    "split_name": "sus dyn concept"
-  },
-  {
-    "index": 3169,
-    "type": "macro",
-    "url": "macro.sus_class_never_value_field.html",
-    "name": "sus_class_never_value_field",
-    "full_name": "sus_class_never_value_field",
-    "split_name": "sus class never value field"
-  },
-  {
-    "index": 3170,
-    "type": "macro",
     "url": "macro.sus_unreachable.html",
     "name": "sus_unreachable",
     "full_name": "sus_unreachable",
     "split_name": "sus unreachable"
   },
   {
-    "index": 3171,
+    "index": 3169,
     "type": "macro",
     "url": "macro.sus_unreachable_unchecked.html",
     "name": "sus_unreachable_unchecked",
@@ -30877,7 +30859,7 @@ const g_search_db = [
     "split_name": "sus unreachable unchecked"
   },
   {
-    "index": 3172,
+    "index": 3170,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if.html",
     "name": "sus_class_trivially_relocatable_if",
@@ -30885,7 +30867,7 @@ const g_search_db = [
     "split_name": "sus class trivially relocatable if"
   },
   {
-    "index": 3173,
+    "index": 3171,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable.html",
     "name": "sus_class_trivially_relocatable",
@@ -30893,7 +30875,7 @@ const g_search_db = [
     "split_name": "sus class trivially relocatable"
   },
   {
-    "index": 3174,
+    "index": 3172,
     "type": "macro",
     "url": "macro.SUS_INFINITY.html",
     "name": "SUS_INFINITY",
@@ -30901,7 +30883,7 @@ const g_search_db = [
     "split_name": "SUS INFINITY"
   },
   {
-    "index": 3175,
+    "index": 3173,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -30909,7 +30891,7 @@ const g_search_db = [
     "split_name": "sus class trivially relocatable unchecked"
   },
   {
-    "index": 3176,
+    "index": 3174,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",

@@ -424,13 +424,7 @@
             <a class="sidebar-item" href="sus-option-Option.html#method.operator State">operator State</a>
           </li>
           <li>
-            <a class="sidebar-item" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>
-          </li>
-          <li>
-            <a class="sidebar-item" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>
-          </li>
-          <li>
-            <a class="sidebar-item" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>
+            <a class="sidebar-item" href="sus-option-Option.html#method.operator optional">operator optional</a>
           </li>
           <li>
             <a class="sidebar-header" href="#operators">Operators</a>
@@ -653,27 +647,26 @@ value out of the option when the option may be used again afterward.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1899">source</a></div><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(std::optional&lt;U&gt;&& s)<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1897">source</a></div><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(std::optional&lt;U&gt;&& s)<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
-                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U &&, T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;U, T&gt;</pre></div>
                       <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                     </div></div>
                 </div>
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1899">source</a></div><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(<span class="const">const</span> std::optional&lt;U&gt;& s)<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1897">source</a></div><a name="method.Option.ctor.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.Option.ctor.optional">Option</a>(<span class="const">const</span> std::optional&lt;U&gt;& s)<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
-                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;const U &, T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;U, T&gt;</pre></div>
                       <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                     </div></div>
                 </div>
               </div>
               <div class="description long">
                 <p>Implicit conversion from <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
-<p>May convert from <code>U</code> in <code>optional&lt;U&gt;</code> to <code>T</code> in <code>Option&lt;T&gt;</code>.</p>
 
               </div>
               <div class="overload-set item-name">
@@ -1203,10 +1196,10 @@ which doesn’t update the value if the option already contains <code>Some</code
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2279">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() && -&gt; sus::option::OptionIter&lt;T&gt;</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2247">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() && -&gt; sus::option::OptionIter&lt;T&gt;</div>
                 </div>
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2279">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() const& -&gt; sus::option::OptionIter&lt;T&gt;<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2247">source</a></div><a name="method.into_iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.into_iter">into_iter</a>() const& -&gt; sus::option::OptionIter&lt;T&gt;<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1250,10 +1243,10 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2242">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2210">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;</div>
                 </div>
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2242">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() && -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2210">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() && -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1261,7 +1254,7 @@ and <a href="sus-option-Option.html#method.operator-%3E"><code>operator-&gt;</co
                     </div></div>
                 </div>
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2242">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2210">source</a></div><a name="method.iter"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter">iter</a>() const& -&gt; sus::option::OptionIter&lt;<span class="const">const</span> std::remove_reference_t&lt;T&gt;&&gt;<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1277,10 +1270,10 @@ reference.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2262">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() & -&gt; sus::option::OptionIter&lt;T&&gt;</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2230">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() & -&gt; sus::option::OptionIter&lt;T&&gt;</div>
                 </div>
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2262">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() && -&gt; sus::option::OptionIter&lt;T&&gt;<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2230">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() && -&gt; sus::option::OptionIter&lt;T&&gt;<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1288,7 +1281,7 @@ reference.</p>
                     </div></div>
                 </div>
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2262">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() const& -&gt; sus::option::OptionIter&lt;T&&gt;<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L2230">source</a></div><a name="method.iter_mut"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-option-Option.html#method.iter_mut">iter_mut</a>() const& -&gt; sus::option::OptionIter&lt;T&&gt;<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1760,51 +1753,29 @@ a tagged union between &quot;some value&quot; and &quot;no value&quot;.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1920">source</a></div><a name="method.operator optional.convert.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1916">source</a></div><a name="method.operator optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.operator optional">operator optional</a>() const&<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
-                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;const std::remove_reference_t&lt;T&gt; &, U&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;U, T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                     </div></div>
                 </div>
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1920">source</a></div><a name="method.operator optional.convert.optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() &&<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1916">source</a></div><a name="method.operator optional"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-option-Option.html#method.operator optional">operator optional</a>() &&<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
-                      <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;T, U&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">std::same_as&lt;U, T&gt;</pre></div>
+                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_reference_v&lt;T&gt;</pre></div>
                     </div></div>
                 </div>
               </div>
               <div class="description long">
                 <p>Implicit conversion to <a href="https://en.cppreference.com/w/cpp/utility/optional"><code>std::optional</code></a>.</p>
-<p>May convert from <code>T</code> in <code>Option&lt;T&gt;</code> to <code>U</code> in <code>optional&lt;U&gt;</code>.</p>
+<p>When the option is holding a reference, it will not convert. Use <a href="sus-option-Option.html#method.map"><code>map</code></a> to convert to a pointer or
+<a href="sus-option-Option.html#method.cloned"><code>cloned</code></a> to create a cloned value.</p>
 
-              </div>
-              <div class="overload-set item-name">
-                <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1941">source</a></div><a name="method.operator optional.convert.optional"></a><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
-                      <span class="requires-keyword keyword">
-                        requires
-                      </span>
-                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
-                    </div></div>
-                </div>
-              </div>
-              <div class="description long">
-              </div>
-              <div class="overload-set item-name">
-                <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/option/option.h#L1955">source</a></div><a name="method.operator optional.convert.optional"></a><a class="function-name" href="sus-option-Option.html#method.operator optional.convert.optional">operator optional</a>() const&<div class="requires">
-                      <span class="requires-keyword keyword">
-                        requires
-                      </span>
-                      <div class="requires-constraint"><pre class="requires-constraint-line">!std::is_const_v&lt;std::remove_reference_t&lt;T&gt;&gt;</pre></div>
-                      <div class="requires-constraint"><pre class="requires-constraint-line">std::is_reference_v&lt;T&gt;</pre></div>
-                    </div></div>
-                </div>
-              </div>
-              <div class="description long">
               </div>
             </div>
           </div>
