@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
     <meta name="generator" content="subdoc"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta property="og:type" content="website"></meta>
     <meta property="og:site_name" content="Subspace"></meta>
     <title>sus::construct::cast - Subspace</title>
     <meta property="og:title" content="sus::construct::cast - Subspace"></meta>
-    <meta name="description" content="An infallible conversion (cast) that may lose the original value in the process. If the input can not be represented in the output, some other value will be produced, which may lead to application bugs and memory unsafety if used incorrectly. This behaves like static_cast&lt;To&gt;() but without Undefined Behaviour."></meta>
-    <meta property="og:description" content="An infallible conversion (cast) that may lose the original value in the process. If the input can not be represented in the output, some other value will be produced, which may lead to application bugs and memory unsafety if used incorrectly. This behaves like static_cast&lt;To&gt;() but without Undefined Behaviour."></meta>
+    <meta name="description" content="An infallible conversion (cast) that may lose the original value in the process."></meta>
+    <meta property="og:description" content="An infallible conversion (cast) that may lose the original value in the process."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -292,7 +293,7 @@
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/construct/cast.h#L171">source</a></div><div class="template">template &lt;class To, class From&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">cast</a>(<span class="const">const</span> From& from) -&gt; To<div class="requires">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/construct/cast.h#L161">source</a></div><div class="template">template &lt;class To, class From&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">cast</a>(<span class="const">const</span> From& from) -&gt; To<div class="requires">
                     <span class="requires-keyword keyword">
                       requires
                     </span>
@@ -302,55 +303,21 @@
             </div>
             <div class="description long">
               <p>An infallible conversion (cast) that may lose the original
-value in the process. If the input can not be represented in the output,
+value in the process.</p>
+<p>See the <a href="sus-namespace.option.html">namespace level documentation</a> for more about
+converting types.</p>
+<p>If the input can not be represented in the output,
 some other value will be produced, which may lead to application bugs and
 memory unsafety if used incorrectly. This behaves like <code>static_cast&lt;To&gt;()</code>
-but without Undefined Behaviour.</p>
+but does not cause Undefined Behaviour for any input
+and output type. without Undefined Behaviour.</p>
 <p>The <a href="sus-construct-fn.cast.html"><code>cast</code></a> operation is supported for types
 <code>To</code> and <code>From</code> that satisfy <a href="sus-construct-Cast.html"><code>Cast&lt;To, From&gt;</code></a>.</p>
-<p>Usually prefer to convert between types with the value-preserving methods
-of <a href="sus-construct-From.html"><code>From</code></a> and
-<a href="sus-construct-Into.html"><code>Into</code></a> and <a href="sus-construct-TryInto.html"><code>TryInto</code></a>
-when possible. <a href="sus-construct-Cast.html"><code>Cast</code></a> is required for converting
-from floating point to integer values, and from larger integer types to
-floating point, as these are lossy conversions.</p>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Usage</th>
-<th>Infallible</th>
-<th>Preserves values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="sus-construct-From.html"><code>From</code></a> / <a href="sus-construct-Into.html"><code>Into</code></a></td>
-<td><code>T::from(x)</code> / <a href="sus-construct-fn.into.html"><code>sus::into(x)</code></a></td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><a href="sus-construct-TryFrom.html"><code>TryFrom</code></a> / <a href="sus-construct-TryInto.html"><code>TryInto</code></a></td>
-<td><code>T::try_from(x)</code> / <a href="sus-construct-fn.try_into.html"><code>sus::try_into&lt;T&gt;(x)</code></a></td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><a href="sus-construct-Cast.html"><code>Cast</code></a></td>
-<td><code>sus::cast&lt;T&gt;(x)</code></td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-</tbody>
-</table>
-<p>See <a href="sus-construct-Cast.html"><code>Cast</code></a> for how numeric and
-primitive values are converted.</p>
 <p>It is best practice to place a <code>// SAFETY:</code> comment on use of <a href="sus-construct-fn.cast.html"><code>sus::cast</code></a> in order to explain why the code intends to change
 the value during the cast.</p>
 <h1><a name="examples" href="#examples">Examples</a></h1>
-<p>This converts <code>-1_i64</code> into a <code>u32</code>, which both changes its meaning,
-becoming a large positive number, and truncates the high 32 bits, losing the
+<p>This converts <code>-1</code> as an <code>i64</code> into a <code>u32</code>, which both changes its meaning,
+becoming a large positive number, and truncates the high 32 bits losing the
 original bits.</p>
 <pre><code class="language-cpp"><span class="comment">// SAFETY: We're intending to convert negative numbers into large positive</span>
 <span class="comment">// values for this example.</span>

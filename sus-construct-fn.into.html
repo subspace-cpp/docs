@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
     <meta name="generator" content="subdoc"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta property="og:type" content="website"></meta>
@@ -292,7 +293,7 @@
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/construct/into.h#L112">source</a></div><div class="template">template &lt;class FromType&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">into</a>(FromType&& from) -&gt; auto</div>
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/construct/into.h#L135">source</a></div><div class="template">template &lt;class FromType&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">into</a>(FromType&& from) -&gt; auto</div>
               </div>
             </div>
             <div class="description long">
@@ -306,6 +307,25 @@ it.</p>
 <p>If the argument to <code>into</code> is <a href="sus-mem-Copy.html"><code>Copy</code></a> then it will be
 copied if it is an lvalue or const. If the argument to <code>into</code> is an rvalue,
 it will be moved when constructing the <code>ToType</code>.</p>
+<h1><a name="examples" href="#examples">Examples</a></h1>
+<p>The <code>into</code> function deduces the target type while performing an <em>explicit</em>
+conversion via the <a href="sus-construct-From.html"><code>From</code></a> concept (and thus a
+static <code>from</code> method on the target type).</p>
+<pre><code><span class="keyword">auto</span> f <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>Option<span class="punct">&lt;</span>i32<span class="punct">&gt;</span> i<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> i<span class="punct">.</span>unwrap_or<span class="punct">(</span><span class="punct">-</span>1<span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">auto</span> num <span class="punct">=</span> 3_i32<span class="punct">;</span>
+<span class="comment">// Option&lt;T&gt; can be converted into from its inner type T.</span>
+sus_check<span class="punct">(</span>f<span class="punct">(</span>sus::into<span class="punct">(</span>num<span class="punct">)</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3<span class="punct">)</span><span class="punct">;</span>
+</code></pre>
+<p>The <a href="sus-construct-Into.html"><code>Into</code></a> concept allows generic code to accept
+any input type that can be explicitly converted into the target type. The
+body of the function can use the <a href="sus-construct-fn.into.html"><code>into</code></a> function to
+perform the conversion.</p>
+<pre><code><span class="comment">// f() accepts anything that can be converted to Option&lt;i32&gt; via into().</span>
+<span class="keyword">auto</span> f <span class="punct">=</span> <span class="punct">[</span><span class="punct">]</span><span class="punct">(</span>Into<span class="punct">&lt;</span>Option<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">&gt;</span> <span class="keyword">auto</span> in<span class="punct">)</span> <span class="punct">{</span> <span class="keyword">return</span> Option<span class="punct">&lt;</span>i32<span class="punct">&gt;</span><span class="punct">(</span>sus::into<span class="punct">(</span>in<span class="punct">)</span><span class="punct">)</span><span class="punct">;</span> <span class="punct">}</span><span class="punct">;</span>
+<span class="keyword">auto</span> num <span class="punct">=</span> 3_i32<span class="punct">;</span>
+<span class="comment">// num will be passed to Option&lt;i32&gt;::from() inside f().</span>
+sus_check<span class="punct">(</span>f<span class="punct">(</span>num<span class="punct">)</span><span class="punct">.</span>unwrap_or<span class="punct">(</span><span class="punct">-</span>1<span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span> 3<span class="punct">)</span><span class="punct">;</span>
+</code></pre>
 
             </div>
           </div>

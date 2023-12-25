@@ -496,7 +496,7 @@ const g_search_db = [
     "name": "cast",
     "full_name": "sus::cast",
     "split_name": "sus cast",
-    "summary": "An infallible conversion (cast) that may lose the original value in the process. If the input can not be represented in the output, some other value will be produced, which may lead to application bugs and memory unsafety if used incorrectly. This behaves like static_cast&lt;To&gt;() but without Undefined Behaviour."
+    "summary": "An infallible conversion (cast) that may lose the original value in the process."
   },
   {
     "index": 50,
@@ -30782,18 +30782,18 @@ const g_search_db = [
   {
     "index": 3160,
     "type": "macro",
-    "url": "macro.sus_panic.html",
-    "name": "sus_panic",
-    "full_name": "sus_panic",
-    "split_name": "sus panic"
-  },
-  {
-    "index": 3161,
-    "type": "macro",
     "url": "macro.sus_choice_types.html",
     "name": "sus_choice_types",
     "full_name": "sus_choice_types",
     "split_name": "sus choice types"
+  },
+  {
+    "index": 3161,
+    "type": "macro",
+    "url": "macro.sus_panic_with_message.html",
+    "name": "sus_panic_with_message",
+    "full_name": "sus_panic_with_message",
+    "split_name": "sus panic with message"
   },
   {
     "index": 3162,
@@ -30806,10 +30806,10 @@ const g_search_db = [
   {
     "index": 3163,
     "type": "macro",
-    "url": "macro.sus_panic_with_message.html",
-    "name": "sus_panic_with_message",
-    "full_name": "sus_panic_with_message",
-    "split_name": "sus panic with message"
+    "url": "macro.sus_panic.html",
+    "name": "sus_panic",
+    "full_name": "sus_panic",
+    "split_name": "sus panic"
   },
   {
     "index": 3164,

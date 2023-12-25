@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
     <meta name="generator" content="subdoc"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta property="og:type" content="website"></meta>
@@ -292,7 +293,7 @@
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/construct/into.h#L167">source</a></div><div class="template">template &lt;class ToType, class FromType&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">try_into</a>(FromType&& from) -&gt; auto<div class="requires">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/construct/into.h#L190">source</a></div><div class="template">template &lt;class ToType, class FromType&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">try_into</a>(FromType&& from) -&gt; auto<div class="requires">
                     <span class="requires-keyword keyword">
                       requires
                     </span>
@@ -309,7 +310,7 @@ type and allow the caller the chance to handle the error condition.</p>
 <p>The <code>TryFrom</code> concept requires a <code>try_from()</code> method that returns a
 <a href="sus-result-Result.html"><code>Result</code></a>. That <a href="sus-result-Result.html"><code>Result</code></a>
 will be the return type of this function.</p>
-<h1><a name="example" href="#example">Example</a></h1>
+<h1><a name="examples" href="#examples">Examples</a></h1>
 <pre><code><span class="keyword">auto</span> valid <span class="punct">=</span> sus::try_into<span class="punct">&lt;</span>u8<span class="punct">&gt;</span><span class="punct">(</span>123_i32<span class="punct">)</span><span class="punct">.</span>unwrap_or_default<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
 sus_check<span class="punct">(</span>valid <span class="punct">=</span><span class="punct">=</span> 123<span class="punct">)</span><span class="punct">;</span>
 <span class="keyword">auto</span> invalid <span class="punct">=</span> sus::try_into<span class="punct">&lt;</span>u8<span class="punct">&gt;</span><span class="punct">(</span><span class="punct">-</span>1_i32<span class="punct">)</span><span class="punct">.</span>unwrap_or_default<span class="punct">(</span><span class="punct">)</span><span class="punct">;</span>
