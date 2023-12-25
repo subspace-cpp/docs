@@ -28086,15 +28086,6 @@ const g_search_db = [
   {
     "index": 3162,
     "type": "macro",
-    "url": "macro.sus_check_with_message.html",
-    "name": "sus_check_with_message",
-    "full_name": "sus_check_with_message",
-    "split_name": "sus check with message",
-    "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
-  },
-  {
-    "index": 3163,
-    "type": "macro",
     "url": "macro.sus_panic_with_message.html",
     "name": "sus_panic_with_message",
     "full_name": "sus_panic_with_message",
@@ -28102,25 +28093,16 @@ const g_search_db = [
     "summary": "Terminate the program, after printing a message."
   },
   {
+    "index": 3163,
+    "type": "macro",
+    "url": "macro.sus_check_with_message.html",
+    "name": "sus_check_with_message",
+    "full_name": "sus_check_with_message",
+    "split_name": "sus check with message",
+    "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
+  },
+  {
     "index": 3164,
-    "type": "macro",
-    "url": "macro.sus_dyn_concept.html",
-    "name": "sus_dyn_concept",
-    "full_name": "sus_dyn_concept",
-    "split_name": "sus dyn concept",
-    "summary": "Macro to help implement DynC for a concept C. The macro is placed in the body of the DynC class."
-  },
-  {
-    "index": 3165,
-    "type": "macro",
-    "url": "macro.sus_class_never_value_field.html",
-    "name": "sus_class_never_value_field",
-    "full_name": "sus_class_never_value_field",
-    "split_name": "sus class never value field",
-    "summary": "Mark a class field as never being a specific value, often a zero, after a constructor has run and before the destructor has completed. This allows querying if a class is constructed in a memory location, since the class is constructed iff the value of the field is not the never-value."
-  },
-  {
-    "index": 3166,
     "type": "macro",
     "url": "macro.sus_check.html",
     "name": "sus_check",
@@ -28129,13 +28111,31 @@ const g_search_db = [
     "summary": "Verifies that the input, evaluated to a bool, is true. Otherwise, it will panic, printing a message and terminating the program."
   },
   {
-    "index": 3167,
+    "index": 3165,
     "type": "macro",
     "url": "macro.sus_dyn_concept_typed.html",
     "name": "sus_dyn_concept_typed",
     "full_name": "sus_dyn_concept_typed",
     "split_name": "sus dyn concept typed",
     "summary": "Macro to help implement DynCTyped for a concept C. The macro is placed in the body of the DynCTyped class."
+  },
+  {
+    "index": 3166,
+    "type": "macro",
+    "url": "macro.sus_dyn_concept.html",
+    "name": "sus_dyn_concept",
+    "full_name": "sus_dyn_concept",
+    "split_name": "sus dyn concept",
+    "summary": "Macro to help implement DynC for a concept C. The macro is placed in the body of the DynC class."
+  },
+  {
+    "index": 3167,
+    "type": "macro",
+    "url": "macro.sus_class_never_value_field.html",
+    "name": "sus_class_never_value_field",
+    "full_name": "sus_class_never_value_field",
+    "split_name": "sus class never value field",
+    "summary": "Mark a class field as never being a specific value, often a zero, after a constructor has run and before the destructor has completed. This allows querying if a class is constructed in a memory location, since the class is constructed iff the value of the field is not the never-value."
   },
   {
     "index": 3168,
@@ -28167,15 +28167,6 @@ const g_search_db = [
   {
     "index": 3171,
     "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable.html",
-    "name": "sus_class_trivially_relocatable",
-    "full_name": "sus_class_trivially_relocatable",
-    "split_name": "sus class trivially relocatable",
-    "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
-  },
-  {
-    "index": 3172,
-    "type": "macro",
     "url": "macro.SUS_INFINITY.html",
     "name": "SUS_INFINITY",
     "full_name": "SUS_INFINITY",
@@ -28183,7 +28174,7 @@ const g_search_db = [
     "summary": "A macro that replaces the INFINITY macro from the &lt;cmath&gt; header. Consider using f32::INFINITY instead."
   },
   {
-    "index": 3173,
+    "index": 3172,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -28192,12 +28183,21 @@ const g_search_db = [
     "summary": "Mark a class as unconditionally trivially relocatable, without any additional assertion to help verify correctness."
   },
   {
-    "index": 3174,
+    "index": 3173,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
     "full_name": "sus_class_trivially_relocatable_if_types",
     "split_name": "sus class trivially relocatable if types",
     "summary": "Mark a class as trivially relocatable if the types passed as arguments are all trivially relocatable."
+  },
+  {
+    "index": 3174,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable",
+    "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
   }
 ]
