@@ -25913,29 +25913,13 @@ const g_search_db = [
   {
     "index": 3177,
     "type": "macro",
-    "url": "macro.sus_check.html",
-    "name": "sus_check",
-    "full_name": "sus_check",
-    "split_name": "sus check"
-  },
-  {
-    "index": 3178,
-    "type": "macro",
-    "url": "macro.sus_dyn_concept_typed.html",
-    "name": "sus_dyn_concept_typed",
-    "full_name": "sus_dyn_concept_typed",
-    "split_name": "sus dyn concept typed"
-  },
-  {
-    "index": 3179,
-    "type": "macro",
     "url": "macro.sus_dyn_concept.html",
     "name": "sus_dyn_concept",
     "full_name": "sus_dyn_concept",
     "split_name": "sus dyn concept"
   },
   {
-    "index": 3180,
+    "index": 3178,
     "type": "macro",
     "url": "macro.sus_class_never_value_field.html",
     "name": "sus_class_never_value_field",
@@ -25943,20 +25927,36 @@ const g_search_db = [
     "split_name": "sus class never value field"
   },
   {
-    "index": 3181,
+    "index": 3179,
     "type": "macro",
-    "url": "macro.sus_unreachable_unchecked.html",
-    "name": "sus_unreachable_unchecked",
-    "full_name": "sus_unreachable_unchecked",
-    "split_name": "sus unreachable unchecked"
+    "url": "macro.sus_check.html",
+    "name": "sus_check",
+    "full_name": "sus_check",
+    "split_name": "sus check"
   },
   {
-    "index": 3182,
+    "index": 3180,
+    "type": "macro",
+    "url": "macro.sus_dyn_concept_typed.html",
+    "name": "sus_dyn_concept_typed",
+    "full_name": "sus_dyn_concept_typed",
+    "split_name": "sus dyn concept typed"
+  },
+  {
+    "index": 3181,
     "type": "macro",
     "url": "macro.sus_unreachable.html",
     "name": "sus_unreachable",
     "full_name": "sus_unreachable",
     "split_name": "sus unreachable"
+  },
+  {
+    "index": 3182,
+    "type": "macro",
+    "url": "macro.sus_unreachable_unchecked.html",
+    "name": "sus_unreachable_unchecked",
+    "full_name": "sus_unreachable_unchecked",
+    "split_name": "sus unreachable unchecked"
   },
   {
     "index": 3183,
@@ -25969,13 +25969,21 @@ const g_search_db = [
   {
     "index": 3184,
     "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable"
+  },
+  {
+    "index": 3185,
+    "type": "macro",
     "url": "macro.SUS_INFINITY.html",
     "name": "SUS_INFINITY",
     "full_name": "SUS_INFINITY",
     "split_name": "SUS INFINITY"
   },
   {
-    "index": 3185,
+    "index": 3186,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -25983,19 +25991,11 @@ const g_search_db = [
     "split_name": "sus class trivially relocatable unchecked"
   },
   {
-    "index": 3186,
+    "index": 3187,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
     "full_name": "sus_class_trivially_relocatable_if_types",
     "split_name": "sus class trivially relocatable if types"
-  },
-  {
-    "index": 3187,
-    "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable.html",
-    "name": "sus_class_trivially_relocatable",
-    "full_name": "sus_class_trivially_relocatable",
-    "split_name": "sus class trivially relocatable"
   }
 ]
