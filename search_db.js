@@ -10,178 +10,178 @@ const g_search_db = [
     "index": 1,
     "type": "type alias",
     "url": "sus-result-Result.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Result",
-    "full_name": "::Result",
+    "full_name": "Result",
     "split_name": "Result"
   },
   {
     "index": 2,
     "type": "type alias",
     "url": "sus-collections-Slice.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Slice",
-    "full_name": "::Slice",
+    "full_name": "Slice",
     "split_name": "Slice"
   },
   {
     "index": 3,
     "type": "type alias",
     "url": "sus-collections-Array.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Array",
-    "full_name": "::Array",
+    "full_name": "Array",
     "split_name": "Array"
   },
   {
     "index": 4,
     "type": "type alias",
     "url": "sus-num-uptr.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "uptr",
-    "full_name": "::uptr",
+    "full_name": "uptr",
     "split_name": "uptr"
   },
   {
     "index": 5,
     "type": "type alias",
     "url": "sus-collections-Vec.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Vec",
-    "full_name": "::Vec",
+    "full_name": "Vec",
     "split_name": "Vec"
   },
   {
     "index": 6,
     "type": "type alias",
     "url": "sus-num-u16.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u16",
-    "full_name": "::u16",
+    "full_name": "u16",
     "split_name": "u16"
   },
   {
     "index": 7,
     "type": "type alias",
     "url": "sus-num-f32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "f32",
-    "full_name": "::f32",
+    "full_name": "f32",
     "split_name": "f32"
   },
   {
     "index": 8,
     "type": "type alias",
     "url": "sus-num-i32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i32",
-    "full_name": "::i32",
+    "full_name": "i32",
     "split_name": "i32"
   },
   {
     "index": 9,
     "type": "type alias",
     "url": "sus-num-usize.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "usize",
-    "full_name": "::usize",
+    "full_name": "usize",
     "split_name": "usize"
   },
   {
     "index": 10,
     "type": "type alias",
     "url": "sus-num-f64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "f64",
-    "full_name": "::f64",
+    "full_name": "f64",
     "split_name": "f64"
   },
   {
     "index": 11,
     "type": "type alias",
     "url": "sus-num-i16.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i16",
-    "full_name": "::i16",
+    "full_name": "i16",
     "split_name": "i16"
   },
   {
     "index": 12,
     "type": "type alias",
     "url": "sus-num-u32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u32",
-    "full_name": "::u32",
+    "full_name": "u32",
     "split_name": "u32"
   },
   {
     "index": 13,
     "type": "variable alias",
     "url": "sus-namespace.marker.html#variable.unsafe_fn",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "unsafe_fn",
-    "full_name": "::unsafe_fn",
+    "full_name": "unsafe_fn",
     "split_name": "unsafe fn"
   },
   {
     "index": 14,
     "type": "type alias",
     "url": "sus-num-i64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i64",
-    "full_name": "::i64",
+    "full_name": "i64",
     "split_name": "i64"
   },
   {
     "index": 15,
     "type": "type alias",
     "url": "sus-num-i8.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i8",
-    "full_name": "::i8",
+    "full_name": "i8",
     "split_name": "i8"
   },
   {
     "index": 16,
     "type": "type alias",
     "url": "sus-num-isize.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "isize",
-    "full_name": "::isize",
+    "full_name": "isize",
     "split_name": "isize"
   },
   {
     "index": 17,
     "type": "type alias",
     "url": "sus-option-Option.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Option",
-    "full_name": "::Option",
+    "full_name": "Option",
     "split_name": "Option"
   },
   {
     "index": 18,
     "type": "type alias",
     "url": "sus-num-u64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u64",
-    "full_name": "::u64",
+    "full_name": "u64",
     "split_name": "u64"
   },
   {
     "index": 19,
     "type": "type alias",
     "url": "sus-num-u8.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u8",
-    "full_name": "::u8",
+    "full_name": "u8",
     "split_name": "u8"
   },
   {
     "index": 20,
     "type": "namespace",
     "url": "namespace.std.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "std",
     "full_name": "std",
     "split_name": "std"
@@ -190,7 +190,7 @@ const g_search_db = [
     "index": 21,
     "type": "namespace",
     "url": "namespace.sus.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "sus",
     "full_name": "sus",
     "split_name": "sus"
@@ -199,7 +199,7 @@ const g_search_db = [
     "index": 22,
     "type": "type alias",
     "url": "sus-boxed-Box.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Box",
     "full_name": "sus::Box",
     "split_name": "sus Box"
@@ -208,7 +208,7 @@ const g_search_db = [
     "index": 23,
     "type": "type alias",
     "url": "sus-num-f64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "f64",
     "full_name": "sus::f64",
     "split_name": "sus f64"
@@ -217,7 +217,7 @@ const g_search_db = [
     "index": 24,
     "type": "type alias",
     "url": "sus-num-f32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "f32",
     "full_name": "sus::f32",
     "split_name": "sus f32"
@@ -226,7 +226,7 @@ const g_search_db = [
     "index": 25,
     "type": "type alias",
     "url": "sus-collections-Vec.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Vec",
     "full_name": "sus::Vec",
     "split_name": "sus Vec"
@@ -235,7 +235,7 @@ const g_search_db = [
     "index": 26,
     "type": "type alias",
     "url": "sus-collections-Array.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Array",
     "full_name": "sus::Array",
     "split_name": "sus Array"
@@ -244,7 +244,7 @@ const g_search_db = [
     "index": 27,
     "type": "type alias",
     "url": "sus-collections-Slice.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Slice",
     "full_name": "sus::Slice",
     "split_name": "sus Slice"
@@ -253,7 +253,7 @@ const g_search_db = [
     "index": 28,
     "type": "function alias",
     "url": "sus-option-fn.some.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "some",
     "full_name": "sus::some",
     "split_name": "sus some"
@@ -262,7 +262,7 @@ const g_search_db = [
     "index": 29,
     "type": "function alias",
     "url": "sus-mem-fn.size_of.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "size_of",
     "full_name": "sus::size_of",
     "split_name": "sus size of"
@@ -271,7 +271,7 @@ const g_search_db = [
     "index": 30,
     "type": "function alias",
     "url": "sus-mem-fn.data_size_of.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "data_size_of",
     "full_name": "sus::data_size_of",
     "split_name": "sus data size of"
@@ -280,7 +280,7 @@ const g_search_db = [
     "index": 31,
     "type": "type alias",
     "url": "sus-option-Option.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Option",
     "full_name": "sus::Option",
     "split_name": "sus Option"
@@ -289,7 +289,7 @@ const g_search_db = [
     "index": 32,
     "type": "type alias",
     "url": "sus-num-u64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u64",
     "full_name": "sus::u64",
     "split_name": "sus u64"
@@ -298,7 +298,7 @@ const g_search_db = [
     "index": 33,
     "type": "function alias",
     "url": "sus-construct-fn.try_into.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "try_into",
     "full_name": "sus::try_into",
     "split_name": "sus try into"
@@ -307,7 +307,7 @@ const g_search_db = [
     "index": 34,
     "type": "function alias",
     "url": "sus-construct-fn.move_into.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "move_into",
     "full_name": "sus::move_into",
     "split_name": "sus move into"
@@ -316,7 +316,7 @@ const g_search_db = [
     "index": 35,
     "type": "type alias",
     "url": "sus-num-u32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u32",
     "full_name": "sus::u32",
     "split_name": "sus u32"
@@ -325,7 +325,7 @@ const g_search_db = [
     "index": 36,
     "type": "type alias",
     "url": "sus-choice_type-Choice.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Choice",
     "full_name": "sus::Choice",
     "split_name": "sus Choice"
@@ -334,7 +334,7 @@ const g_search_db = [
     "index": 37,
     "type": "function alias",
     "url": "sus-construct-fn.into.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "into",
     "full_name": "sus::into",
     "split_name": "sus into"
@@ -343,7 +343,7 @@ const g_search_db = [
     "index": 38,
     "type": "function alias",
     "url": "sus-mem-fn.clone_into.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "clone_into",
     "full_name": "sus::clone_into",
     "split_name": "sus clone into"
@@ -352,7 +352,7 @@ const g_search_db = [
     "index": 39,
     "type": "function alias",
     "url": "sus-mem-fn.clone.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "clone",
     "full_name": "sus::clone",
     "split_name": "sus clone"
@@ -361,7 +361,7 @@ const g_search_db = [
     "index": 40,
     "type": "function alias",
     "url": "sus-result-fn.err.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "err",
     "full_name": "sus::err",
     "split_name": "sus err"
@@ -370,7 +370,7 @@ const g_search_db = [
     "index": 41,
     "type": "type alias",
     "url": "sus-num-u16.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u16",
     "full_name": "sus::u16",
     "split_name": "sus u16"
@@ -379,7 +379,7 @@ const g_search_db = [
     "index": 42,
     "type": "function alias",
     "url": "sus-tuple_type-fn.tuple.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "tuple",
     "full_name": "sus::tuple",
     "split_name": "sus tuple"
@@ -388,7 +388,7 @@ const g_search_db = [
     "index": 43,
     "type": "variable alias",
     "url": "sus-namespace.marker.html#variable.empty",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "empty",
     "full_name": "sus::empty",
     "split_name": "sus empty"
@@ -397,7 +397,7 @@ const g_search_db = [
     "index": 44,
     "type": "function alias",
     "url": "sus-mem-fn.move.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "move",
     "full_name": "sus::move",
     "split_name": "sus move"
@@ -406,7 +406,7 @@ const g_search_db = [
     "index": 45,
     "type": "type alias",
     "url": "sus-collections-SliceMut.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "SliceMut",
     "full_name": "sus::SliceMut",
     "split_name": "sus Slice Mut"
@@ -415,7 +415,7 @@ const g_search_db = [
     "index": 46,
     "type": "function alias",
     "url": "sus-mem-fn.forward.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "forward",
     "full_name": "sus::forward",
     "split_name": "sus forward"
@@ -424,7 +424,7 @@ const g_search_db = [
     "index": 47,
     "type": "function alias",
     "url": "sus-boxed-fn.dyn.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "dyn",
     "full_name": "sus::dyn",
     "split_name": "sus dyn"
@@ -433,7 +433,7 @@ const g_search_db = [
     "index": 48,
     "type": "type alias",
     "url": "sus-num-u8.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u8",
     "full_name": "sus::u8",
     "split_name": "sus u8"
@@ -442,7 +442,7 @@ const g_search_db = [
     "index": 49,
     "type": "function alias",
     "url": "sus-construct-fn.cast.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "cast",
     "full_name": "sus::cast",
     "split_name": "sus cast"
@@ -451,7 +451,7 @@ const g_search_db = [
     "index": 50,
     "type": "function alias",
     "url": "sus-option-fn.none.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "none",
     "full_name": "sus::none",
     "split_name": "sus none"
@@ -460,7 +460,7 @@ const g_search_db = [
     "index": 51,
     "type": "type alias",
     "url": "sus-num-uptr.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "uptr",
     "full_name": "sus::uptr",
     "split_name": "sus uptr"
@@ -469,7 +469,7 @@ const g_search_db = [
     "index": 52,
     "type": "type alias",
     "url": "sus-num-i16.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i16",
     "full_name": "sus::i16",
     "split_name": "sus i16"
@@ -478,7 +478,7 @@ const g_search_db = [
     "index": 53,
     "type": "type alias",
     "url": "sus-num-usize.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "usize",
     "full_name": "sus::usize",
     "split_name": "sus usize"
@@ -487,7 +487,7 @@ const g_search_db = [
     "index": 54,
     "type": "type alias",
     "url": "sus-tuple_type-Tuple.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Tuple",
     "full_name": "sus::Tuple",
     "split_name": "sus Tuple"
@@ -496,7 +496,7 @@ const g_search_db = [
     "index": 55,
     "type": "function alias",
     "url": "sus-result-fn.ok.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "ok",
     "full_name": "sus::ok",
     "split_name": "sus ok"
@@ -505,7 +505,7 @@ const g_search_db = [
     "index": 56,
     "type": "type alias",
     "url": "sus-result-Result.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Result",
     "full_name": "sus::Result",
     "split_name": "sus Result"
@@ -514,7 +514,7 @@ const g_search_db = [
     "index": 57,
     "type": "type alias",
     "url": "sus-num-i32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i32",
     "full_name": "sus::i32",
     "split_name": "sus i32"
@@ -523,7 +523,7 @@ const g_search_db = [
     "index": 58,
     "type": "type alias",
     "url": "sus-num-i64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i64",
     "full_name": "sus::i64",
     "split_name": "sus i64"
@@ -532,7 +532,7 @@ const g_search_db = [
     "index": 59,
     "type": "type alias",
     "url": "sus-num-i8.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i8",
     "full_name": "sus::i8",
     "split_name": "sus i8"
@@ -541,7 +541,7 @@ const g_search_db = [
     "index": 60,
     "type": "type alias",
     "url": "sus-num-isize.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "isize",
     "full_name": "sus::isize",
     "split_name": "sus isize"
@@ -550,7 +550,7 @@ const g_search_db = [
     "index": 61,
     "type": "namespace",
     "url": "sus-namespace.env.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "env",
     "full_name": "sus::env",
     "split_name": "sus env"
@@ -559,6 +559,7 @@ const g_search_db = [
     "index": 62,
     "type": "struct",
     "url": "sus-env-VarError.html",
+    "weight": "2",
     "name": "VarError",
     "full_name": "sus::env::VarError",
     "split_name": "sus env Var Error"
@@ -608,7 +609,7 @@ const g_search_db = [
     "index": 68,
     "type": "namespace",
     "url": "sus-namespace.ops.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "ops",
     "full_name": "sus::ops",
     "split_name": "sus ops"
@@ -617,7 +618,7 @@ const g_search_db = [
     "index": 69,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "TryRemapOutputType",
     "full_name": "sus::ops::TryRemapOutputType",
     "split_name": "sus ops Try Remap Output Type"
@@ -626,7 +627,7 @@ const g_search_db = [
     "index": 70,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "TryOutputType",
     "full_name": "sus::ops::TryOutputType",
     "split_name": "sus ops Try Output Type"
@@ -667,6 +668,7 @@ const g_search_db = [
     "index": 75,
     "type": "class",
     "url": "sus-ops-RangeFull.html",
+    "weight": "2",
     "name": "RangeFull",
     "full_name": "sus::ops::RangeFull",
     "split_name": "sus ops Range Full"
@@ -731,6 +733,7 @@ const g_search_db = [
     "index": 83,
     "type": "class",
     "url": "sus-ops-RangeFrom.html",
+    "weight": "2",
     "name": "RangeFrom",
     "full_name": "sus::ops::RangeFrom",
     "split_name": "sus ops Range From"
@@ -804,6 +807,7 @@ const g_search_db = [
     "index": 92,
     "type": "class",
     "url": "sus-ops-RangeTo.html",
+    "weight": "2",
     "name": "RangeTo",
     "full_name": "sus::ops::RangeTo",
     "split_name": "sus ops Range To"
@@ -877,6 +881,7 @@ const g_search_db = [
     "index": 101,
     "type": "class",
     "url": "sus-ops-Range.html",
+    "weight": "2",
     "name": "Range",
     "full_name": "sus::ops::Range",
     "split_name": "sus ops Range"
@@ -967,6 +972,7 @@ const g_search_db = [
     "index": 112,
     "type": "struct",
     "url": "sus-ops-TryImpl.html",
+    "weight": "2",
     "name": "TryImpl",
     "full_name": "sus::ops::TryImpl",
     "split_name": "sus ops Try Impl"
@@ -1015,7 +1021,7 @@ const g_search_db = [
     "index": 118,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "RemapOutput",
     "full_name": "sus::ops::TryImpl::RemapOutput",
     "split_name": "sus ops Try Impl Remap Output"
@@ -1024,7 +1030,7 @@ const g_search_db = [
     "index": 119,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Output",
     "full_name": "sus::ops::TryImpl::Output",
     "split_name": "sus ops Try Impl Output"
@@ -1097,7 +1103,7 @@ const g_search_db = [
     "index": 128,
     "type": "namespace",
     "url": "sus-namespace.marker.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "marker",
     "full_name": "sus::marker",
     "split_name": "sus marker"
@@ -1106,6 +1112,7 @@ const g_search_db = [
     "index": 129,
     "type": "struct",
     "url": "sus-marker-EmptyMarker.html",
+    "weight": "2",
     "name": "EmptyMarker",
     "full_name": "sus::marker::EmptyMarker",
     "split_name": "sus marker Empty Marker"
@@ -1114,6 +1121,7 @@ const g_search_db = [
     "index": 130,
     "type": "struct",
     "url": "sus-marker-UnsafeFnMarker.html",
+    "weight": "2",
     "name": "UnsafeFnMarker",
     "full_name": "sus::marker::UnsafeFnMarker",
     "split_name": "sus marker Unsafe Fn Marker"
@@ -1122,7 +1130,7 @@ const g_search_db = [
     "index": 131,
     "type": "namespace",
     "url": "sus-namespace.assertions.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "assertions",
     "full_name": "sus::assertions",
     "split_name": "sus assertions"
@@ -1131,6 +1139,7 @@ const g_search_db = [
     "index": 132,
     "type": "struct",
     "url": "sus-assertions-PanicLocation.html",
+    "weight": "2",
     "name": "PanicLocation",
     "full_name": "sus::assertions::PanicLocation",
     "split_name": "sus assertions Panic Location"
@@ -1174,7 +1183,7 @@ const g_search_db = [
     "index": 137,
     "type": "namespace",
     "url": "sus-namespace.prelude.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "prelude",
     "full_name": "sus::prelude",
     "split_name": "sus prelude"
@@ -1183,7 +1192,7 @@ const g_search_db = [
     "index": 138,
     "type": "type alias",
     "url": "sus-num-uptr.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "uptr",
     "full_name": "sus::prelude::uptr",
     "split_name": "sus prelude uptr"
@@ -1192,7 +1201,7 @@ const g_search_db = [
     "index": 139,
     "type": "type alias",
     "url": "sus-collections-Vec.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Vec",
     "full_name": "sus::prelude::Vec",
     "split_name": "sus prelude Vec"
@@ -1201,7 +1210,7 @@ const g_search_db = [
     "index": 140,
     "type": "type alias",
     "url": "sus-num-u16.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u16",
     "full_name": "sus::prelude::u16",
     "split_name": "sus prelude u16"
@@ -1210,7 +1219,7 @@ const g_search_db = [
     "index": 141,
     "type": "type alias",
     "url": "sus-num-f32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "f32",
     "full_name": "sus::prelude::f32",
     "split_name": "sus prelude f32"
@@ -1219,7 +1228,7 @@ const g_search_db = [
     "index": 142,
     "type": "type alias",
     "url": "sus-num-i32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i32",
     "full_name": "sus::prelude::i32",
     "split_name": "sus prelude i32"
@@ -1228,7 +1237,7 @@ const g_search_db = [
     "index": 143,
     "type": "type alias",
     "url": "sus-num-usize.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "usize",
     "full_name": "sus::prelude::usize",
     "split_name": "sus prelude usize"
@@ -1237,7 +1246,7 @@ const g_search_db = [
     "index": 144,
     "type": "type alias",
     "url": "sus-num-f64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "f64",
     "full_name": "sus::prelude::f64",
     "split_name": "sus prelude f64"
@@ -1246,7 +1255,7 @@ const g_search_db = [
     "index": 145,
     "type": "type alias",
     "url": "sus-num-i16.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i16",
     "full_name": "sus::prelude::i16",
     "split_name": "sus prelude i16"
@@ -1255,7 +1264,7 @@ const g_search_db = [
     "index": 146,
     "type": "type alias",
     "url": "sus-num-u32.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u32",
     "full_name": "sus::prelude::u32",
     "split_name": "sus prelude u32"
@@ -1264,7 +1273,7 @@ const g_search_db = [
     "index": 147,
     "type": "variable alias",
     "url": "sus-namespace.marker.html#variable.unsafe_fn",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "unsafe_fn",
     "full_name": "sus::prelude::unsafe_fn",
     "split_name": "sus prelude unsafe fn"
@@ -1273,7 +1282,7 @@ const g_search_db = [
     "index": 148,
     "type": "type alias",
     "url": "sus-num-i64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i64",
     "full_name": "sus::prelude::i64",
     "split_name": "sus prelude i64"
@@ -1282,7 +1291,7 @@ const g_search_db = [
     "index": 149,
     "type": "type alias",
     "url": "sus-num-i8.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "i8",
     "full_name": "sus::prelude::i8",
     "split_name": "sus prelude i8"
@@ -1291,7 +1300,7 @@ const g_search_db = [
     "index": 150,
     "type": "type alias",
     "url": "sus-num-isize.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "isize",
     "full_name": "sus::prelude::isize",
     "split_name": "sus prelude isize"
@@ -1300,7 +1309,7 @@ const g_search_db = [
     "index": 151,
     "type": "type alias",
     "url": "sus-option-Option.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Option",
     "full_name": "sus::prelude::Option",
     "split_name": "sus prelude Option"
@@ -1309,7 +1318,7 @@ const g_search_db = [
     "index": 152,
     "type": "type alias",
     "url": "sus-num-u64.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u64",
     "full_name": "sus::prelude::u64",
     "split_name": "sus prelude u64"
@@ -1318,7 +1327,7 @@ const g_search_db = [
     "index": 153,
     "type": "type alias",
     "url": "sus-num-u8.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "u8",
     "full_name": "sus::prelude::u8",
     "split_name": "sus prelude u8"
@@ -1327,7 +1336,7 @@ const g_search_db = [
     "index": 154,
     "type": "namespace",
     "url": "sus-namespace.mem.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "mem",
     "full_name": "sus::mem",
     "split_name": "sus mem"
@@ -1336,7 +1345,7 @@ const g_search_db = [
     "index": 155,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "remove_rvalue_reference",
     "full_name": "sus::mem::remove_rvalue_reference",
     "split_name": "sus mem remove rvalue reference"
@@ -1449,6 +1458,7 @@ const g_search_db = [
     "index": 169,
     "type": "struct",
     "url": "sus-mem-NeverValueConstructor.html",
+    "weight": "2",
     "name": "NeverValueConstructor",
     "full_name": "sus::mem::NeverValueConstructor",
     "split_name": "sus mem Never Value Constructor"
@@ -1569,7 +1579,7 @@ const g_search_db = [
     "index": 184,
     "type": "namespace",
     "url": "sus-namespace.choice_type.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "choice_type",
     "full_name": "sus::choice_type",
     "split_name": "sus choice type"
@@ -1586,6 +1596,7 @@ const g_search_db = [
     "index": 186,
     "type": "class",
     "url": "sus-choice_type-Choice.html",
+    "weight": "2",
     "name": "Choice",
     "full_name": "sus::choice_type::Choice",
     "split_name": "sus choice type Choice"
@@ -1618,6 +1629,7 @@ const g_search_db = [
     "index": 190,
     "type": "conversion",
     "url": "sus-choice_type-Choice.html#method.operator TagsType",
+    "weight": "0.5",
     "name": "operator TagsType",
     "full_name": "sus::choice_type::Choice::operator TagsType",
     "split_name": "sus choice type Choice operator  Tags Type"
@@ -1730,7 +1742,7 @@ const g_search_db = [
     "index": 204,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "TypeForTag",
     "full_name": "sus::choice_type::Choice::TypeForTag",
     "split_name": "sus choice type Choice Type For Tag"
@@ -1739,7 +1751,7 @@ const g_search_db = [
     "index": 205,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Tag",
     "full_name": "sus::choice_type::Choice::Tag",
     "split_name": "sus choice type Choice Tag"
@@ -1748,6 +1760,7 @@ const g_search_db = [
     "index": 206,
     "type": "struct",
     "url": "sus-choice_type-CanConvertToStorage.html",
+    "weight": "2",
     "name": "CanConvertToStorage",
     "full_name": "sus::choice_type::CanConvertToStorage",
     "split_name": "sus choice type Can Convert To Storage"
@@ -1783,7 +1796,7 @@ const g_search_db = [
     "index": 210,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "TargetType",
     "full_name": "sus::choice_type::CanConvertToStorage::TargetType",
     "split_name": "sus choice type Can Convert To Storage Target Type"
@@ -1816,7 +1829,7 @@ const g_search_db = [
     "index": 214,
     "type": "namespace",
     "url": "sus-namespace.cmp.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "cmp",
     "full_name": "sus::cmp",
     "split_name": "sus cmp"
@@ -1889,6 +1902,7 @@ const g_search_db = [
     "index": 223,
     "type": "struct",
     "url": "sus-cmp-Reverse.html",
+    "weight": "2",
     "name": "Reverse",
     "full_name": "sus::cmp::Reverse",
     "split_name": "sus cmp Reverse"
@@ -1994,7 +2008,7 @@ const g_search_db = [
     "index": 236,
     "type": "namespace",
     "url": "sus-namespace.fn.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "fn",
     "full_name": "sus::fn",
     "split_name": "sus fn"
@@ -2003,7 +2017,7 @@ const g_search_db = [
     "index": 237,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Return",
     "full_name": "sus::fn::Return",
     "split_name": "sus fn Return"
@@ -2012,7 +2026,7 @@ const g_search_db = [
     "index": 238,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "ReturnMut",
     "full_name": "sus::fn::ReturnMut",
     "split_name": "sus fn Return Mut"
@@ -2021,7 +2035,7 @@ const g_search_db = [
     "index": 239,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "ReturnOnce",
     "full_name": "sus::fn::ReturnOnce",
     "split_name": "sus fn Return Once"
@@ -2054,6 +2068,7 @@ const g_search_db = [
     "index": 243,
     "type": "struct",
     "url": "sus-fn-DynFnOnce.html",
+    "weight": "2",
     "name": "DynFnOnce",
     "full_name": "sus::fn::DynFnOnce",
     "split_name": "sus fn Dyn Fn Once"
@@ -2112,7 +2127,7 @@ const g_search_db = [
     "index": 250,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "DynTyped",
     "full_name": "sus::fn::DynFnOnce::DynTyped",
     "split_name": "sus fn Dyn Fn Once Dyn Typed"
@@ -2121,6 +2136,7 @@ const g_search_db = [
     "index": 251,
     "type": "struct",
     "url": "sus-fn-DynFnMut.html",
+    "weight": "2",
     "name": "DynFnMut",
     "full_name": "sus::fn::DynFnMut",
     "split_name": "sus fn Dyn Fn Mut"
@@ -2179,7 +2195,7 @@ const g_search_db = [
     "index": 258,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "DynTyped",
     "full_name": "sus::fn::DynFnMut::DynTyped",
     "split_name": "sus fn Dyn Fn Mut Dyn Typed"
@@ -2188,6 +2204,7 @@ const g_search_db = [
     "index": 259,
     "type": "struct",
     "url": "sus-fn-DynFn.html",
+    "weight": "2",
     "name": "DynFn",
     "full_name": "sus::fn::DynFn",
     "split_name": "sus fn Dyn Fn"
@@ -2246,7 +2263,7 @@ const g_search_db = [
     "index": 266,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "DynTyped",
     "full_name": "sus::fn::DynFn::DynTyped",
     "split_name": "sus fn Dyn Fn Dyn Typed"
@@ -2255,6 +2272,7 @@ const g_search_db = [
     "index": 267,
     "type": "struct",
     "url": "sus-fn-Anything.html",
+    "weight": "2",
     "name": "Anything",
     "full_name": "sus::fn::Anything",
     "split_name": "sus fn Anything"
@@ -2271,6 +2289,7 @@ const g_search_db = [
     "index": 269,
     "type": "struct",
     "url": "sus-fn-NonVoid.html",
+    "weight": "2",
     "name": "NonVoid",
     "full_name": "sus::fn::NonVoid",
     "split_name": "sus fn Non Void"
@@ -2311,7 +2330,7 @@ const g_search_db = [
     "index": 274,
     "type": "namespace",
     "url": "sus-namespace.collections.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "collections",
     "full_name": "sus::collections",
     "split_name": "sus collections"
@@ -2320,7 +2339,7 @@ const g_search_db = [
     "index": 275,
     "type": "function alias",
     "url": "sus-iter-fn.end.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "end",
     "full_name": "sus::collections::end",
     "split_name": "sus collections end"
@@ -2329,7 +2348,7 @@ const g_search_db = [
     "index": 276,
     "type": "function alias",
     "url": "sus-iter-fn.begin.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "begin",
     "full_name": "sus::collections::begin",
     "split_name": "sus collections begin"
@@ -2338,7 +2357,7 @@ const g_search_db = [
     "index": 277,
     "type": "namespace",
     "url": "sus-collections-namespace.compat.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "compat",
     "full_name": "sus::collections::compat",
     "split_name": "sus collections compat"
@@ -2371,6 +2390,7 @@ const g_search_db = [
     "index": 281,
     "type": "class",
     "url": "sus-collections-Vec.html",
+    "weight": "2",
     "name": "Vec",
     "full_name": "sus::collections::Vec",
     "split_name": "sus collections Vec"
@@ -2411,6 +2431,7 @@ const g_search_db = [
     "index": 286,
     "type": "conversion",
     "url": "sus-collections-Vec.html#method.operator SliceMut",
+    "weight": "0.5",
     "name": "operator SliceMut",
     "full_name": "sus::collections::Vec::operator SliceMut",
     "split_name": "sus collections Vec operator  Slice Mut"
@@ -2419,6 +2440,7 @@ const g_search_db = [
     "index": 287,
     "type": "conversion",
     "url": "sus-collections-Vec.html#method.operator Slice",
+    "weight": "0.5",
     "name": "operator Slice",
     "full_name": "sus::collections::Vec::operator Slice",
     "split_name": "sus collections Vec operator Slice"
@@ -3355,7 +3377,7 @@ const g_search_db = [
     "index": 404,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "JoinOutputType",
     "full_name": "sus::collections::Vec::JoinOutputType",
     "split_name": "sus collections Vec Join Output Type"
@@ -3364,7 +3386,7 @@ const g_search_db = [
     "index": 405,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "ConcatOutputType",
     "full_name": "sus::collections::Vec::ConcatOutputType",
     "split_name": "sus collections Vec Concat Output Type"
@@ -3373,6 +3395,7 @@ const g_search_db = [
     "index": 406,
     "type": "struct",
     "url": "sus-collections-VecIntoIter.html",
+    "weight": "2",
     "name": "VecIntoIter",
     "full_name": "sus::collections::VecIntoIter",
     "split_name": "sus collections Vec Into Iter"
@@ -3429,7 +3452,7 @@ const g_search_db = [
     "index": 413,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::VecIntoIter::Item",
     "split_name": "sus collections Vec Into Iter Item"
@@ -3438,6 +3461,7 @@ const g_search_db = [
     "index": 414,
     "type": "struct",
     "url": "sus-collections-Drain.html",
+    "weight": "2",
     "name": "Drain",
     "full_name": "sus::collections::Drain",
     "split_name": "sus collections Drain"
@@ -3510,7 +3534,7 @@ const g_search_db = [
     "index": 423,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::Drain::Item",
     "split_name": "sus collections Drain Item"
@@ -3519,6 +3543,7 @@ const g_search_db = [
     "index": 424,
     "type": "class",
     "url": "sus-collections-Slice.html",
+    "weight": "2",
     "name": "Slice",
     "full_name": "sus::collections::Slice",
     "split_name": "sus collections Slice"
@@ -3927,7 +3952,7 @@ const g_search_db = [
     "index": 475,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "JoinOutputType",
     "full_name": "sus::collections::Slice::JoinOutputType",
     "split_name": "sus collections Slice Join Output Type"
@@ -3936,7 +3961,7 @@ const g_search_db = [
     "index": 476,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "ConcatOutputType",
     "full_name": "sus::collections::Slice::ConcatOutputType",
     "split_name": "sus collections Slice Concat Output Type"
@@ -3945,6 +3970,7 @@ const g_search_db = [
     "index": 477,
     "type": "class",
     "url": "sus-collections-Array.html",
+    "weight": "2",
     "name": "Array",
     "full_name": "sus::collections::Array",
     "split_name": "sus collections Array"
@@ -3985,6 +4011,7 @@ const g_search_db = [
     "index": 482,
     "type": "conversion",
     "url": "sus-collections-Array.html#method.operator SliceMut",
+    "weight": "0.5",
     "name": "operator SliceMut",
     "full_name": "sus::collections::Array::operator SliceMut",
     "split_name": "sus collections Array operator  Slice Mut"
@@ -3993,6 +4020,7 @@ const g_search_db = [
     "index": 483,
     "type": "conversion",
     "url": "sus-collections-Array.html#method.operator Slice",
+    "weight": "0.5",
     "name": "operator Slice",
     "full_name": "sus::collections::Array::operator Slice",
     "split_name": "sus collections Array operator Slice"
@@ -4161,6 +4189,7 @@ const g_search_db = [
     "index": 504,
     "type": "class",
     "url": "sus-collections-WindowsMut.html",
+    "weight": "2",
     "name": "WindowsMut",
     "full_name": "sus::collections::WindowsMut",
     "split_name": "sus collections Windows Mut"
@@ -4225,7 +4254,7 @@ const g_search_db = [
     "index": 512,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::WindowsMut::Item",
     "split_name": "sus collections Windows Mut Item"
@@ -4234,6 +4263,7 @@ const g_search_db = [
     "index": 513,
     "type": "class",
     "url": "sus-collections-Windows.html",
+    "weight": "2",
     "name": "Windows",
     "full_name": "sus::collections::Windows",
     "split_name": "sus collections Windows"
@@ -4274,7 +4304,7 @@ const g_search_db = [
     "index": 518,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::Windows::Item",
     "split_name": "sus collections Windows Item"
@@ -4283,6 +4313,7 @@ const g_search_db = [
     "index": 519,
     "type": "class",
     "url": "sus-collections-RSplitNMut.html",
+    "weight": "2",
     "name": "RSplitNMut",
     "full_name": "sus::collections::RSplitNMut",
     "split_name": "sus collections R Split N Mut"
@@ -4307,7 +4338,7 @@ const g_search_db = [
     "index": 522,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::RSplitNMut::Item",
     "split_name": "sus collections R Split N Mut Item"
@@ -4316,6 +4347,7 @@ const g_search_db = [
     "index": 523,
     "type": "class",
     "url": "sus-collections-SplitNMut.html",
+    "weight": "2",
     "name": "SplitNMut",
     "full_name": "sus::collections::SplitNMut",
     "split_name": "sus collections Split N Mut"
@@ -4340,7 +4372,7 @@ const g_search_db = [
     "index": 526,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::SplitNMut::Item",
     "split_name": "sus collections Split N Mut Item"
@@ -4349,6 +4381,7 @@ const g_search_db = [
     "index": 527,
     "type": "class",
     "url": "sus-collections-RSplitMut.html",
+    "weight": "2",
     "name": "RSplitMut",
     "full_name": "sus::collections::RSplitMut",
     "split_name": "sus collections R Split Mut"
@@ -4381,7 +4414,7 @@ const g_search_db = [
     "index": 531,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::RSplitMut::Item",
     "split_name": "sus collections R Split Mut Item"
@@ -4390,6 +4423,7 @@ const g_search_db = [
     "index": 532,
     "type": "class",
     "url": "sus-collections-RSplit.html",
+    "weight": "2",
     "name": "RSplit",
     "full_name": "sus::collections::RSplit",
     "split_name": "sus collections RSplit"
@@ -4422,7 +4456,7 @@ const g_search_db = [
     "index": 536,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::RSplit::Item",
     "split_name": "sus collections RSplit Item"
@@ -4431,6 +4465,7 @@ const g_search_db = [
     "index": 537,
     "type": "class",
     "url": "sus-collections-SplitInclusiveMut.html",
+    "weight": "2",
     "name": "SplitInclusiveMut",
     "full_name": "sus::collections::SplitInclusiveMut",
     "split_name": "sus collections Split Inclusive Mut"
@@ -4463,7 +4498,7 @@ const g_search_db = [
     "index": 541,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::SplitInclusiveMut::Item",
     "split_name": "sus collections Split Inclusive Mut Item"
@@ -4472,6 +4507,7 @@ const g_search_db = [
     "index": 542,
     "type": "class",
     "url": "sus-collections-SliceMut.html",
+    "weight": "2",
     "name": "SliceMut",
     "full_name": "sus::collections::SliceMut",
     "split_name": "sus collections Slice Mut"
@@ -4496,6 +4532,7 @@ const g_search_db = [
     "index": 545,
     "type": "conversion",
     "url": "sus-collections-SliceMut.html#method.operator Slice",
+    "weight": "0.5",
     "name": "operator Slice",
     "full_name": "sus::collections::SliceMut::operator Slice",
     "split_name": "sus collections Slice Mut operator  Slice"
@@ -4504,6 +4541,7 @@ const g_search_db = [
     "index": 546,
     "type": "conversion",
     "url": "sus-collections-SliceMut.html#method.operator Slice",
+    "weight": "0.5",
     "name": "operator Slice",
     "full_name": "sus::collections::SliceMut::operator Slice",
     "split_name": "sus collections Slice Mut operator  Slice"
@@ -4512,6 +4550,7 @@ const g_search_db = [
     "index": 547,
     "type": "conversion",
     "url": "sus-collections-SliceMut.html#method.operator Slice",
+    "weight": "0.5",
     "name": "operator Slice",
     "full_name": "sus::collections::SliceMut::operator Slice",
     "split_name": "sus collections Slice Mut operator  Slice"
@@ -5280,7 +5319,7 @@ const g_search_db = [
     "index": 643,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "JoinOutputType",
     "full_name": "sus::collections::SliceMut::JoinOutputType",
     "split_name": "sus collections Slice Mut Join Output Type"
@@ -5289,7 +5328,7 @@ const g_search_db = [
     "index": 644,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "ConcatOutputType",
     "full_name": "sus::collections::SliceMut::ConcatOutputType",
     "split_name": "sus collections Slice Mut Concat Output Type"
@@ -5298,6 +5337,7 @@ const g_search_db = [
     "index": 645,
     "type": "struct",
     "url": "sus-collections-ArrayIntoIter.html",
+    "weight": "2",
     "name": "ArrayIntoIter",
     "full_name": "sus::collections::ArrayIntoIter",
     "split_name": "sus collections Array Into Iter"
@@ -5363,7 +5403,7 @@ const g_search_db = [
     "index": 653,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::ArrayIntoIter::Item",
     "split_name": "sus collections Array Into Iter Item"
@@ -5372,6 +5412,7 @@ const g_search_db = [
     "index": 654,
     "type": "class",
     "url": "sus-collections-SplitInclusive.html",
+    "weight": "2",
     "name": "SplitInclusive",
     "full_name": "sus::collections::SplitInclusive",
     "split_name": "sus collections Split Inclusive"
@@ -5404,7 +5445,7 @@ const g_search_db = [
     "index": 658,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::SplitInclusive::Item",
     "split_name": "sus collections Split Inclusive Item"
@@ -5413,6 +5454,7 @@ const g_search_db = [
     "index": 659,
     "type": "struct",
     "url": "sus-collections-ChunksMut.html",
+    "weight": "2",
     "name": "ChunksMut",
     "full_name": "sus::collections::ChunksMut",
     "split_name": "sus collections Chunks Mut"
@@ -5453,7 +5495,7 @@ const g_search_db = [
     "index": 664,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::ChunksMut::Item",
     "split_name": "sus collections Chunks Mut Item"
@@ -5462,6 +5504,7 @@ const g_search_db = [
     "index": 665,
     "type": "struct",
     "url": "sus-collections-SliceIterMut.html",
+    "weight": "2",
     "name": "SliceIterMut",
     "full_name": "sus::collections::SliceIterMut",
     "split_name": "sus collections Slice Iter Mut"
@@ -5518,7 +5561,7 @@ const g_search_db = [
     "index": 672,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::SliceIterMut::Item",
     "split_name": "sus collections Slice Iter Mut Item"
@@ -5527,6 +5570,7 @@ const g_search_db = [
     "index": 673,
     "type": "struct",
     "url": "sus-collections-SliceIter.html",
+    "weight": "2",
     "name": "SliceIter",
     "full_name": "sus::collections::SliceIter",
     "split_name": "sus collections Slice Iter"
@@ -5583,7 +5627,7 @@ const g_search_db = [
     "index": 680,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::SliceIter::Item",
     "split_name": "sus collections Slice Iter Item"
@@ -5592,6 +5636,7 @@ const g_search_db = [
     "index": 681,
     "type": "struct",
     "url": "sus-collections-Chunks.html",
+    "weight": "2",
     "name": "Chunks",
     "full_name": "sus::collections::Chunks",
     "split_name": "sus collections Chunks"
@@ -5632,7 +5677,7 @@ const g_search_db = [
     "index": 686,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::Chunks::Item",
     "split_name": "sus collections Chunks Item"
@@ -5641,6 +5686,7 @@ const g_search_db = [
     "index": 687,
     "type": "struct",
     "url": "sus-collections-RChunksExact.html",
+    "weight": "2",
     "name": "RChunksExact",
     "full_name": "sus::collections::RChunksExact",
     "split_name": "sus collections R Chunks Exact"
@@ -5689,7 +5735,7 @@ const g_search_db = [
     "index": 693,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::RChunksExact::Item",
     "split_name": "sus collections R Chunks Exact Item"
@@ -5698,6 +5744,7 @@ const g_search_db = [
     "index": 694,
     "type": "struct",
     "url": "sus-collections-ChunksExact.html",
+    "weight": "2",
     "name": "ChunksExact",
     "full_name": "sus::collections::ChunksExact",
     "split_name": "sus collections Chunks Exact"
@@ -5746,7 +5793,7 @@ const g_search_db = [
     "index": 700,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::ChunksExact::Item",
     "split_name": "sus collections Chunks Exact Item"
@@ -5755,6 +5802,7 @@ const g_search_db = [
     "index": 701,
     "type": "struct",
     "url": "sus-collections-RChunks.html",
+    "weight": "2",
     "name": "RChunks",
     "full_name": "sus::collections::RChunks",
     "split_name": "sus collections RChunks"
@@ -5795,7 +5843,7 @@ const g_search_db = [
     "index": 706,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::RChunks::Item",
     "split_name": "sus collections RChunks Item"
@@ -5804,6 +5852,7 @@ const g_search_db = [
     "index": 707,
     "type": "struct",
     "url": "sus-collections-RChunksMut.html",
+    "weight": "2",
     "name": "RChunksMut",
     "full_name": "sus::collections::RChunksMut",
     "split_name": "sus collections R Chunks Mut"
@@ -5844,7 +5893,7 @@ const g_search_db = [
     "index": 712,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::RChunksMut::Item",
     "split_name": "sus collections R Chunks Mut Item"
@@ -5853,6 +5902,7 @@ const g_search_db = [
     "index": 713,
     "type": "class",
     "url": "sus-collections-SplitMut.html",
+    "weight": "2",
     "name": "SplitMut",
     "full_name": "sus::collections::SplitMut",
     "split_name": "sus collections Split Mut"
@@ -5885,7 +5935,7 @@ const g_search_db = [
     "index": 717,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::SplitMut::Item",
     "split_name": "sus collections Split Mut Item"
@@ -5894,6 +5944,7 @@ const g_search_db = [
     "index": 718,
     "type": "struct",
     "url": "sus-collections-ChunksExactMut.html",
+    "weight": "2",
     "name": "ChunksExactMut",
     "full_name": "sus::collections::ChunksExactMut",
     "split_name": "sus collections Chunks Exact Mut"
@@ -5942,7 +5993,7 @@ const g_search_db = [
     "index": 724,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::ChunksExactMut::Item",
     "split_name": "sus collections Chunks Exact Mut Item"
@@ -5951,6 +6002,7 @@ const g_search_db = [
     "index": 725,
     "type": "struct",
     "url": "sus-collections-RChunksExactMut.html",
+    "weight": "2",
     "name": "RChunksExactMut",
     "full_name": "sus::collections::RChunksExactMut",
     "split_name": "sus collections R Chunks Exact Mut"
@@ -5999,7 +6051,7 @@ const g_search_db = [
     "index": 731,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::RChunksExactMut::Item",
     "split_name": "sus collections R Chunks Exact Mut Item"
@@ -6008,6 +6060,7 @@ const g_search_db = [
     "index": 732,
     "type": "class",
     "url": "sus-collections-RSplitN.html",
+    "weight": "2",
     "name": "RSplitN",
     "full_name": "sus::collections::RSplitN",
     "split_name": "sus collections R Split N"
@@ -6032,7 +6085,7 @@ const g_search_db = [
     "index": 735,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::RSplitN::Item",
     "split_name": "sus collections R Split N Item"
@@ -6041,6 +6094,7 @@ const g_search_db = [
     "index": 736,
     "type": "class",
     "url": "sus-collections-SplitN.html",
+    "weight": "2",
     "name": "SplitN",
     "full_name": "sus::collections::SplitN",
     "split_name": "sus collections Split N"
@@ -6065,7 +6119,7 @@ const g_search_db = [
     "index": 739,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::SplitN::Item",
     "split_name": "sus collections Split N Item"
@@ -6074,6 +6128,7 @@ const g_search_db = [
     "index": 740,
     "type": "class",
     "url": "sus-collections-Split.html",
+    "weight": "2",
     "name": "Split",
     "full_name": "sus::collections::Split",
     "split_name": "sus collections Split"
@@ -6106,7 +6161,7 @@ const g_search_db = [
     "index": 744,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::collections::Split::Item",
     "split_name": "sus collections Split Item"
@@ -6147,7 +6202,7 @@ const g_search_db = [
     "index": 749,
     "type": "namespace",
     "url": "sus-namespace.iter.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "iter",
     "full_name": "sus::iter",
     "split_name": "sus iter"
@@ -6156,7 +6211,7 @@ const g_search_db = [
     "index": 750,
     "type": "concept alias",
     "url": "sus-mem-TriviallyRelocatable.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "TriviallyRelocatable",
     "full_name": "sus::iter::TriviallyRelocatable",
     "split_name": "sus iter Trivially Relocatable"
@@ -6165,7 +6220,7 @@ const g_search_db = [
     "index": 751,
     "type": "type alias",
     "url": "sus-option-Option.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Option",
     "full_name": "sus::iter::Option",
     "split_name": "sus iter Option"
@@ -6174,7 +6229,7 @@ const g_search_db = [
     "index": 752,
     "type": "concept alias",
     "url": "sus-construct-Into.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Into",
     "full_name": "sus::iter::Into",
     "split_name": "sus iter Into"
@@ -6183,7 +6238,7 @@ const g_search_db = [
     "index": 753,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "IntoIteratorOutputType",
     "full_name": "sus::iter::IntoIteratorOutputType",
     "split_name": "sus iter Into Iterator Output Type"
@@ -6280,6 +6335,7 @@ const g_search_db = [
     "index": 765,
     "type": "class",
     "url": "sus-iter-Empty.html",
+    "weight": "2",
     "name": "Empty",
     "full_name": "sus::iter::Empty",
     "split_name": "sus iter Empty"
@@ -6320,7 +6376,7 @@ const g_search_db = [
     "index": 770,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Empty::Item",
     "split_name": "sus iter Empty Item"
@@ -6329,6 +6385,7 @@ const g_search_db = [
     "index": 771,
     "type": "class",
     "url": "sus-iter-Successors.html",
+    "weight": "2",
     "name": "Successors",
     "full_name": "sus::iter::Successors",
     "split_name": "sus iter Successors"
@@ -6377,7 +6434,7 @@ const g_search_db = [
     "index": 777,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Successors::Item",
     "split_name": "sus iter Successors Item"
@@ -6386,6 +6443,7 @@ const g_search_db = [
     "index": 778,
     "type": "class",
     "url": "sus-iter-RepeatWith.html",
+    "weight": "2",
     "name": "RepeatWith",
     "full_name": "sus::iter::RepeatWith",
     "split_name": "sus iter Repeat With"
@@ -6442,7 +6500,7 @@ const g_search_db = [
     "index": 785,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::RepeatWith::Item",
     "split_name": "sus iter Repeat With Item"
@@ -6451,6 +6509,7 @@ const g_search_db = [
     "index": 786,
     "type": "class",
     "url": "sus-iter-IteratorOverRange.html",
+    "weight": "2",
     "name": "IteratorOverRange",
     "full_name": "sus::iter::IteratorOverRange",
     "split_name": "sus iter Iterator Over Range"
@@ -6523,7 +6582,7 @@ const g_search_db = [
     "index": 795,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::IteratorOverRange::Item",
     "split_name": "sus iter Iterator Over Range Item"
@@ -6532,6 +6591,7 @@ const g_search_db = [
     "index": 796,
     "type": "class",
     "url": "sus-iter-Cloned.html",
+    "weight": "2",
     "name": "Cloned",
     "full_name": "sus::iter::Cloned",
     "split_name": "sus iter Cloned"
@@ -6604,7 +6664,7 @@ const g_search_db = [
     "index": 805,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Cloned::Item",
     "split_name": "sus iter Cloned Item"
@@ -6613,6 +6673,7 @@ const g_search_db = [
     "index": 806,
     "type": "class",
     "url": "sus-iter-Flatten.html",
+    "weight": "2",
     "name": "Flatten",
     "full_name": "sus::iter::Flatten",
     "split_name": "sus iter Flatten"
@@ -6669,7 +6730,7 @@ const g_search_db = [
     "index": 813,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Flatten::Item",
     "split_name": "sus iter Flatten Item"
@@ -6678,6 +6739,7 @@ const g_search_db = [
     "index": 814,
     "type": "class",
     "url": "sus-iter-Copied.html",
+    "weight": "2",
     "name": "Copied",
     "full_name": "sus::iter::Copied",
     "split_name": "sus iter Copied"
@@ -6750,7 +6812,7 @@ const g_search_db = [
     "index": 823,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Copied::Item",
     "split_name": "sus iter Copied Item"
@@ -6759,6 +6821,7 @@ const g_search_db = [
     "index": 824,
     "type": "class",
     "url": "sus-iter-Skip.html",
+    "weight": "2",
     "name": "Skip",
     "full_name": "sus::iter::Skip",
     "split_name": "sus iter Skip"
@@ -6823,7 +6886,7 @@ const g_search_db = [
     "index": 832,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Skip::Item",
     "split_name": "sus iter Skip Item"
@@ -6832,6 +6895,7 @@ const g_search_db = [
     "index": 833,
     "type": "class",
     "url": "sus-iter-OnceWith.html",
+    "weight": "2",
     "name": "OnceWith",
     "full_name": "sus::iter::OnceWith",
     "split_name": "sus iter Once With"
@@ -6896,7 +6960,7 @@ const g_search_db = [
     "index": 841,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::OnceWith::Item",
     "split_name": "sus iter Once With Item"
@@ -6905,6 +6969,7 @@ const g_search_db = [
     "index": 842,
     "type": "class",
     "url": "sus-iter-FlatMap.html",
+    "weight": "2",
     "name": "FlatMap",
     "full_name": "sus::iter::FlatMap",
     "split_name": "sus iter Flat Map"
@@ -6961,7 +7026,7 @@ const g_search_db = [
     "index": 849,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::FlatMap::Item",
     "split_name": "sus iter Flat Map Item"
@@ -6970,6 +7035,7 @@ const g_search_db = [
     "index": 850,
     "type": "class",
     "url": "sus-iter-IteratorRange.html",
+    "weight": "2",
     "name": "IteratorRange",
     "full_name": "sus::iter::IteratorRange",
     "split_name": "sus iter Iterator Range"
@@ -6994,6 +7060,7 @@ const g_search_db = [
     "index": 853,
     "type": "class",
     "url": "sus-iter-MapWhile.html",
+    "weight": "2",
     "name": "MapWhile",
     "full_name": "sus::iter::MapWhile",
     "split_name": "sus iter Map While"
@@ -7050,7 +7117,7 @@ const g_search_db = [
     "index": 860,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::MapWhile::Item",
     "split_name": "sus iter Map While Item"
@@ -7059,6 +7126,7 @@ const g_search_db = [
     "index": 861,
     "type": "class",
     "url": "sus-iter-SkipWhile.html",
+    "weight": "2",
     "name": "SkipWhile",
     "full_name": "sus::iter::SkipWhile",
     "split_name": "sus iter Skip While"
@@ -7107,7 +7175,7 @@ const g_search_db = [
     "index": 867,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::SkipWhile::Item",
     "split_name": "sus iter Skip While Item"
@@ -7116,6 +7184,7 @@ const g_search_db = [
     "index": 868,
     "type": "class",
     "url": "sus-iter-Take.html",
+    "weight": "2",
     "name": "Take",
     "full_name": "sus::iter::Take",
     "split_name": "sus iter Take"
@@ -7188,7 +7257,7 @@ const g_search_db = [
     "index": 877,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Take::Item",
     "split_name": "sus iter Take Item"
@@ -7197,6 +7266,7 @@ const g_search_db = [
     "index": 878,
     "type": "struct",
     "url": "sus-iter-IterRef.html",
+    "weight": "2",
     "name": "IterRef",
     "full_name": "sus::iter::IterRef",
     "split_name": "sus iter Iter Ref"
@@ -7237,6 +7307,7 @@ const g_search_db = [
     "index": 883,
     "type": "struct",
     "url": "sus-iter-IterRefCounter.html",
+    "weight": "2",
     "name": "IterRefCounter",
     "full_name": "sus::iter::IterRefCounter",
     "split_name": "sus iter Iter Ref Counter"
@@ -7317,6 +7388,7 @@ const g_search_db = [
     "index": 893,
     "type": "class",
     "url": "sus-iter-Reverse.html",
+    "weight": "2",
     "name": "Reverse",
     "full_name": "sus::iter::Reverse",
     "split_name": "sus iter Reverse"
@@ -7389,7 +7461,7 @@ const g_search_db = [
     "index": 902,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Reverse::Item",
     "split_name": "sus iter Reverse Item"
@@ -7398,6 +7470,7 @@ const g_search_db = [
     "index": 903,
     "type": "class",
     "url": "sus-iter-Once.html",
+    "weight": "2",
     "name": "Once",
     "full_name": "sus::iter::Once",
     "split_name": "sus iter Once"
@@ -7446,7 +7519,7 @@ const g_search_db = [
     "index": 909,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Once::Item",
     "split_name": "sus iter Once Item"
@@ -7455,6 +7528,7 @@ const g_search_db = [
     "index": 910,
     "type": "class",
     "url": "sus-iter-Moved.html",
+    "weight": "2",
     "name": "Moved",
     "full_name": "sus::iter::Moved",
     "split_name": "sus iter Moved"
@@ -7527,7 +7601,7 @@ const g_search_db = [
     "index": 919,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Moved::Item",
     "split_name": "sus iter Moved Item"
@@ -7536,6 +7610,7 @@ const g_search_db = [
     "index": 920,
     "type": "class",
     "url": "sus-iter-Chain.html",
+    "weight": "2",
     "name": "Chain",
     "full_name": "sus::iter::Chain",
     "split_name": "sus iter Chain"
@@ -7600,7 +7675,7 @@ const g_search_db = [
     "index": 928,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Chain::Item",
     "split_name": "sus iter Chain Item"
@@ -7609,6 +7684,7 @@ const g_search_db = [
     "index": 929,
     "type": "class",
     "url": "sus-iter-Fuse.html",
+    "weight": "2",
     "name": "Fuse",
     "full_name": "sus::iter::Fuse",
     "split_name": "sus iter Fuse"
@@ -7681,7 +7757,7 @@ const g_search_db = [
     "index": 938,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Fuse::Item",
     "split_name": "sus iter Fuse Item"
@@ -7690,6 +7766,7 @@ const g_search_db = [
     "index": 939,
     "type": "class",
     "url": "sus-iter-Enumerate.html",
+    "weight": "2",
     "name": "Enumerate",
     "full_name": "sus::iter::Enumerate",
     "split_name": "sus iter Enumerate"
@@ -7762,7 +7839,7 @@ const g_search_db = [
     "index": 948,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Enumerate::Item",
     "split_name": "sus iter Enumerate Item"
@@ -7771,6 +7848,7 @@ const g_search_db = [
     "index": 949,
     "type": "class",
     "url": "sus-iter-StepBy.html",
+    "weight": "2",
     "name": "StepBy",
     "full_name": "sus::iter::StepBy",
     "split_name": "sus iter Step By"
@@ -7878,7 +7956,7 @@ const g_search_db = [
     "index": 962,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::StepBy::Item",
     "split_name": "sus iter Step By Item"
@@ -7887,6 +7965,7 @@ const g_search_db = [
     "index": 963,
     "type": "class",
     "url": "sus-iter-ByRef.html",
+    "weight": "2",
     "name": "ByRef",
     "full_name": "sus::iter::ByRef",
     "split_name": "sus iter By Ref"
@@ -7967,7 +8046,7 @@ const g_search_db = [
     "index": 973,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::ByRef::Item",
     "split_name": "sus iter By Ref Item"
@@ -7976,6 +8055,7 @@ const g_search_db = [
     "index": 974,
     "type": "struct",
     "url": "sus-iter-SizeHint.html",
+    "weight": "2",
     "name": "SizeHint",
     "full_name": "sus::iter::SizeHint",
     "split_name": "sus iter Size Hint"
@@ -8002,6 +8082,7 @@ const g_search_db = [
     "index": 977,
     "type": "class",
     "url": "sus-iter-Generator.html",
+    "weight": "2",
     "name": "Generator",
     "full_name": "sus::iter::Generator",
     "split_name": "sus iter Generator"
@@ -8058,7 +8139,7 @@ const g_search_db = [
     "index": 984,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Generator::Item",
     "split_name": "sus iter Generator Item"
@@ -8067,7 +8148,7 @@ const g_search_db = [
     "index": 985,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "promise_type",
     "full_name": "sus::iter::Generator::promise_type",
     "split_name": "sus iter Generator promise type"
@@ -8076,6 +8157,7 @@ const g_search_db = [
     "index": 986,
     "type": "class",
     "url": "sus-iter-IteratorBase.html",
+    "weight": "2",
     "name": "IteratorBase",
     "full_name": "sus::iter::IteratorBase",
     "split_name": "sus iter Iterator Base"
@@ -8676,7 +8758,7 @@ const g_search_db = [
     "index": 1061,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::IteratorBase::Item",
     "split_name": "sus iter Iterator Base Item"
@@ -8685,6 +8767,7 @@ const g_search_db = [
     "index": 1062,
     "type": "class",
     "url": "sus-iter-Cycle.html",
+    "weight": "2",
     "name": "Cycle",
     "full_name": "sus::iter::Cycle",
     "split_name": "sus iter Cycle"
@@ -8741,7 +8824,7 @@ const g_search_db = [
     "index": 1069,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Cycle::Item",
     "split_name": "sus iter Cycle Item"
@@ -8750,6 +8833,7 @@ const g_search_db = [
     "index": 1070,
     "type": "class",
     "url": "sus-iter-Filter.html",
+    "weight": "2",
     "name": "Filter",
     "full_name": "sus::iter::Filter",
     "split_name": "sus iter Filter"
@@ -8806,7 +8890,7 @@ const g_search_db = [
     "index": 1077,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Filter::Item",
     "split_name": "sus iter Filter Item"
@@ -8815,6 +8899,7 @@ const g_search_db = [
     "index": 1078,
     "type": "class",
     "url": "sus-iter-Repeat.html",
+    "weight": "2",
     "name": "Repeat",
     "full_name": "sus::iter::Repeat",
     "split_name": "sus iter Repeat"
@@ -8855,7 +8940,7 @@ const g_search_db = [
     "index": 1083,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Repeat::Item",
     "split_name": "sus iter Repeat Item"
@@ -8864,6 +8949,7 @@ const g_search_db = [
     "index": 1084,
     "type": "class",
     "url": "sus-iter-Inspect.html",
+    "weight": "2",
     "name": "Inspect",
     "full_name": "sus::iter::Inspect",
     "split_name": "sus iter Inspect"
@@ -8936,7 +9022,7 @@ const g_search_db = [
     "index": 1093,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Inspect::Item",
     "split_name": "sus iter Inspect Item"
@@ -8945,6 +9031,7 @@ const g_search_db = [
     "index": 1094,
     "type": "class",
     "url": "sus-iter-Zip.html",
+    "weight": "2",
     "name": "Zip",
     "full_name": "sus::iter::Zip",
     "split_name": "sus iter Zip"
@@ -9009,7 +9096,7 @@ const g_search_db = [
     "index": 1102,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Zip::Item",
     "split_name": "sus iter Zip Item"
@@ -9018,6 +9105,7 @@ const g_search_db = [
     "index": 1103,
     "type": "class",
     "url": "sus-iter-Map.html",
+    "weight": "2",
     "name": "Map",
     "full_name": "sus::iter::Map",
     "split_name": "sus iter Map"
@@ -9090,7 +9178,7 @@ const g_search_db = [
     "index": 1112,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Map::Item",
     "split_name": "sus iter Map Item"
@@ -9099,6 +9187,7 @@ const g_search_db = [
     "index": 1113,
     "type": "class",
     "url": "sus-iter-Peekable.html",
+    "weight": "2",
     "name": "Peekable",
     "full_name": "sus::iter::Peekable",
     "split_name": "sus iter Peekable"
@@ -9203,7 +9292,7 @@ const g_search_db = [
     "index": 1126,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Peekable::Item",
     "split_name": "sus iter Peekable Item"
@@ -9212,6 +9301,7 @@ const g_search_db = [
     "index": 1127,
     "type": "class",
     "url": "sus-iter-FilterMap.html",
+    "weight": "2",
     "name": "FilterMap",
     "full_name": "sus::iter::FilterMap",
     "split_name": "sus iter Filter Map"
@@ -9268,7 +9358,7 @@ const g_search_db = [
     "index": 1134,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::FilterMap::Item",
     "split_name": "sus iter Filter Map Item"
@@ -9277,6 +9367,7 @@ const g_search_db = [
     "index": 1135,
     "type": "class",
     "url": "sus-iter-Scan.html",
+    "weight": "2",
     "name": "Scan",
     "full_name": "sus::iter::Scan",
     "split_name": "sus iter Scan"
@@ -9325,7 +9416,7 @@ const g_search_db = [
     "index": 1141,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::Scan::Item",
     "split_name": "sus iter Scan Item"
@@ -9334,6 +9425,7 @@ const g_search_db = [
     "index": 1142,
     "type": "struct",
     "url": "sus-iter-FromIteratorImpl.html",
+    "weight": "2",
     "name": "FromIteratorImpl",
     "full_name": "sus::iter::FromIteratorImpl",
     "split_name": "sus iter From Iterator Impl"
@@ -9350,6 +9442,7 @@ const g_search_db = [
     "index": 1144,
     "type": "class",
     "url": "sus-iter-TakeWhile.html",
+    "weight": "2",
     "name": "TakeWhile",
     "full_name": "sus::iter::TakeWhile",
     "split_name": "sus iter Take While"
@@ -9398,7 +9491,7 @@ const g_search_db = [
     "index": 1150,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::iter::TakeWhile::Item",
     "split_name": "sus iter Take While Item"
@@ -9519,7 +9612,7 @@ const g_search_db = [
     "index": 1165,
     "type": "namespace",
     "url": "sus-namespace.string.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "string",
     "full_name": "sus::string",
     "split_name": "sus string"
@@ -9528,7 +9621,7 @@ const g_search_db = [
     "index": 1166,
     "type": "namespace",
     "url": "sus-namespace.ptr.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "ptr",
     "full_name": "sus::ptr",
     "split_name": "sus ptr"
@@ -9545,6 +9638,7 @@ const g_search_db = [
     "index": 1168,
     "type": "class",
     "url": "sus-ptr-NonNull.html",
+    "weight": "2",
     "name": "NonNull",
     "full_name": "sus::ptr::NonNull",
     "split_name": "sus ptr Non Null"
@@ -9689,7 +9783,7 @@ const g_search_db = [
     "index": 1186,
     "type": "namespace",
     "url": "sus-namespace.boxed.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "boxed",
     "full_name": "sus::boxed",
     "split_name": "sus boxed"
@@ -9706,6 +9800,7 @@ const g_search_db = [
     "index": 1188,
     "type": "class",
     "url": "sus-boxed-Box.html",
+    "weight": "2",
     "name": "Box",
     "full_name": "sus::boxed::Box",
     "split_name": "sus boxed Box"
@@ -9938,6 +10033,7 @@ const g_search_db = [
     "index": 1217,
     "type": "class",
     "url": "sus-boxed-Dyn.html",
+    "weight": "2",
     "name": "Dyn",
     "full_name": "sus::boxed::Dyn",
     "split_name": "sus boxed Dyn"
@@ -9970,6 +10066,7 @@ const g_search_db = [
     "index": 1221,
     "type": "conversion",
     "url": "sus-boxed-Dyn.html#method.operator DynC",
+    "weight": "0.5",
     "name": "operator DynC",
     "full_name": "sus::boxed::Dyn::operator DynC",
     "split_name": "sus boxed Dyn operator  Dyn C"
@@ -9978,6 +10075,7 @@ const g_search_db = [
     "index": 1222,
     "type": "conversion",
     "url": "sus-boxed-Dyn.html#method.operator DynC",
+    "weight": "0.5",
     "name": "operator DynC",
     "full_name": "sus::boxed::Dyn::operator DynC",
     "split_name": "sus boxed Dyn operator  Dyn C"
@@ -9986,6 +10084,7 @@ const g_search_db = [
     "index": 1223,
     "type": "conversion",
     "url": "sus-boxed-Dyn.html#method.operator DynC",
+    "weight": "0.5",
     "name": "operator DynC",
     "full_name": "sus::boxed::Dyn::operator DynC",
     "split_name": "sus boxed Dyn operator  Dyn C"
@@ -10026,7 +10125,7 @@ const g_search_db = [
     "index": 1228,
     "type": "namespace",
     "url": "sus-namespace.construct.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "construct",
     "full_name": "sus::construct",
     "split_name": "sus construct"
@@ -10091,6 +10190,7 @@ const g_search_db = [
     "index": 1236,
     "type": "struct",
     "url": "sus-construct-CastImpl.html",
+    "weight": "2",
     "name": "CastImpl",
     "full_name": "sus::construct::CastImpl",
     "split_name": "sus construct Cast Impl"
@@ -10139,7 +10239,7 @@ const g_search_db = [
     "index": 1242,
     "type": "namespace",
     "url": "sus-namespace.num.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "num",
     "full_name": "sus::num",
     "split_name": "sus num"
@@ -10468,6 +10568,7 @@ const g_search_db = [
     "index": 1283,
     "type": "class",
     "url": "sus-num-OverflowInteger.html",
+    "weight": "2",
     "name": "OverflowInteger",
     "full_name": "sus::num::OverflowInteger",
     "split_name": "sus num Overflow Integer"
@@ -10620,6 +10721,7 @@ const g_search_db = [
     "index": 1302,
     "type": "class",
     "url": "sus-num-TryFromIntError.html",
+    "weight": "2",
     "name": "TryFromIntError",
     "full_name": "sus::num::TryFromIntError",
     "split_name": "sus num Try From Int Error"
@@ -10652,6 +10754,7 @@ const g_search_db = [
     "index": 1306,
     "type": "struct",
     "url": "sus-num-u8.html",
+    "weight": "2",
     "name": "u8",
     "full_name": "sus::num::u8",
     "split_name": "sus num u8"
@@ -10754,6 +10857,7 @@ const g_search_db = [
     "index": 1318,
     "type": "conversion",
     "url": "sus-num-u8.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::u8::operator U",
     "split_name": "sus num u8 operator U"
@@ -11626,6 +11730,7 @@ const g_search_db = [
     "index": 1427,
     "type": "struct",
     "url": "sus-num-u64.html",
+    "weight": "2",
     "name": "u64",
     "full_name": "sus::num::u64",
     "split_name": "sus num u64"
@@ -11728,6 +11833,7 @@ const g_search_db = [
     "index": 1439,
     "type": "conversion",
     "url": "sus-num-u64.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::u64::operator U",
     "split_name": "sus num u64 operator U"
@@ -12600,6 +12706,7 @@ const g_search_db = [
     "index": 1548,
     "type": "struct",
     "url": "sus-num-u32.html",
+    "weight": "2",
     "name": "u32",
     "full_name": "sus::num::u32",
     "split_name": "sus num u32"
@@ -12702,6 +12809,7 @@ const g_search_db = [
     "index": 1560,
     "type": "conversion",
     "url": "sus-num-u32.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::u32::operator U",
     "split_name": "sus num u32 operator U"
@@ -13582,6 +13690,7 @@ const g_search_db = [
     "index": 1670,
     "type": "struct",
     "url": "sus-num-i16.html",
+    "weight": "2",
     "name": "i16",
     "full_name": "sus::num::i16",
     "split_name": "sus num i16"
@@ -13716,6 +13825,7 @@ const g_search_db = [
     "index": 1686,
     "type": "conversion",
     "url": "sus-num-i16.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::i16::operator U",
     "split_name": "sus num i16 operator U"
@@ -14676,6 +14786,7 @@ const g_search_db = [
     "index": 1806,
     "type": "struct",
     "url": "sus-num-u16.html",
+    "weight": "2",
     "name": "u16",
     "full_name": "sus::num::u16",
     "split_name": "sus num u16"
@@ -14778,6 +14889,7 @@ const g_search_db = [
     "index": 1818,
     "type": "conversion",
     "url": "sus-num-u16.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::u16::operator U",
     "split_name": "sus num u16 operator U"
@@ -15650,6 +15762,7 @@ const g_search_db = [
     "index": 1927,
     "type": "struct",
     "url": "sus-num-f64.html",
+    "weight": "2",
     "name": "f64",
     "full_name": "sus::num::f64",
     "split_name": "sus num f64"
@@ -15835,6 +15948,7 @@ const g_search_db = [
     "index": 1948,
     "type": "conversion",
     "url": "sus-num-f64.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::f64::operator U",
     "split_name": "sus num f64 operator U"
@@ -16515,6 +16629,7 @@ const g_search_db = [
     "index": 2033,
     "type": "struct",
     "url": "sus-num-f64-consts.html",
+    "weight": "2",
     "name": "consts",
     "full_name": "sus::num::f64::consts",
     "split_name": "sus num f64 consts"
@@ -16694,6 +16809,7 @@ const g_search_db = [
     "index": 2053,
     "type": "struct",
     "url": "sus-num-usize.html",
+    "weight": "2",
     "name": "usize",
     "full_name": "sus::num::usize",
     "split_name": "sus num usize"
@@ -16796,6 +16912,7 @@ const g_search_db = [
     "index": 2065,
     "type": "conversion",
     "url": "sus-num-usize.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::usize::operator U",
     "split_name": "sus num usize operator U"
@@ -17668,6 +17785,7 @@ const g_search_db = [
     "index": 2174,
     "type": "struct",
     "url": "sus-num-uptr.html",
+    "weight": "2",
     "name": "uptr",
     "full_name": "sus::num::uptr",
     "split_name": "sus num uptr"
@@ -17779,6 +17897,7 @@ const g_search_db = [
     "index": 2187,
     "type": "conversion",
     "url": "sus-num-uptr.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::uptr::operator U",
     "split_name": "sus num uptr operator U"
@@ -18619,6 +18738,7 @@ const g_search_db = [
     "index": 2292,
     "type": "struct",
     "url": "sus-num-i32.html",
+    "weight": "2",
     "name": "i32",
     "full_name": "sus::num::i32",
     "split_name": "sus num i32"
@@ -18753,6 +18873,7 @@ const g_search_db = [
     "index": 2308,
     "type": "conversion",
     "url": "sus-num-i32.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::i32::operator U",
     "split_name": "sus num i32 operator U"
@@ -19713,6 +19834,7 @@ const g_search_db = [
     "index": 2428,
     "type": "struct",
     "url": "sus-num-f32.html",
+    "weight": "2",
     "name": "f32",
     "full_name": "sus::num::f32",
     "split_name": "sus num f32"
@@ -19898,6 +20020,7 @@ const g_search_db = [
     "index": 2449,
     "type": "conversion",
     "url": "sus-num-f32.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::f32::operator U",
     "split_name": "sus num f32 operator U"
@@ -20578,6 +20701,7 @@ const g_search_db = [
     "index": 2534,
     "type": "struct",
     "url": "sus-num-f32-consts.html",
+    "weight": "2",
     "name": "consts",
     "full_name": "sus::num::f32::consts",
     "split_name": "sus num f32 consts"
@@ -20757,6 +20881,7 @@ const g_search_db = [
     "index": 2554,
     "type": "struct",
     "url": "sus-num-isize.html",
+    "weight": "2",
     "name": "isize",
     "full_name": "sus::num::isize",
     "split_name": "sus num isize"
@@ -20891,6 +21016,7 @@ const g_search_db = [
     "index": 2570,
     "type": "conversion",
     "url": "sus-num-isize.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::isize::operator U",
     "split_name": "sus num isize operator U"
@@ -21851,6 +21977,7 @@ const g_search_db = [
     "index": 2690,
     "type": "struct",
     "url": "sus-num-i8.html",
+    "weight": "2",
     "name": "i8",
     "full_name": "sus::num::i8",
     "split_name": "sus num i8"
@@ -21985,6 +22112,7 @@ const g_search_db = [
     "index": 2706,
     "type": "conversion",
     "url": "sus-num-i8.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::i8::operator U",
     "split_name": "sus num i8 operator U"
@@ -22945,6 +23073,7 @@ const g_search_db = [
     "index": 2826,
     "type": "struct",
     "url": "sus-num-i64.html",
+    "weight": "2",
     "name": "i64",
     "full_name": "sus::num::i64",
     "split_name": "sus num i64"
@@ -23079,6 +23208,7 @@ const g_search_db = [
     "index": 2842,
     "type": "conversion",
     "url": "sus-num-i64.html#method.operator U",
+    "weight": "0.5",
     "name": "operator U",
     "full_name": "sus::num::i64::operator U",
     "split_name": "sus num i64 operator U"
@@ -24439,7 +24569,7 @@ const g_search_db = [
     "index": 3012,
     "type": "namespace",
     "url": "sus-namespace.option.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "option",
     "full_name": "sus::option",
     "split_name": "sus option"
@@ -24448,7 +24578,7 @@ const g_search_db = [
     "index": 3013,
     "type": "function alias",
     "url": "sus-iter-fn.end.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "end",
     "full_name": "sus::option::end",
     "split_name": "sus option end"
@@ -24457,7 +24587,7 @@ const g_search_db = [
     "index": 3014,
     "type": "function alias",
     "url": "sus-iter-fn.begin.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "begin",
     "full_name": "sus::option::begin",
     "split_name": "sus option begin"
@@ -24466,6 +24596,7 @@ const g_search_db = [
     "index": 3015,
     "type": "class",
     "url": "sus-option-OptionIter.html",
+    "weight": "2",
     "name": "OptionIter",
     "full_name": "sus::option::OptionIter",
     "split_name": "sus option Option Iter"
@@ -24530,7 +24661,7 @@ const g_search_db = [
     "index": 3023,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Item",
     "full_name": "sus::option::OptionIter::Item",
     "split_name": "sus option Option Iter Item"
@@ -24539,6 +24670,7 @@ const g_search_db = [
     "index": 3024,
     "type": "class",
     "url": "sus-option-Option.html",
+    "weight": "2",
     "name": "Option",
     "full_name": "sus::option::Option",
     "split_name": "sus option Option"
@@ -24603,6 +24735,7 @@ const g_search_db = [
     "index": 3032,
     "type": "conversion",
     "url": "sus-option-Option.html#method.operator optional.convert.optional",
+    "weight": "0.5",
     "name": "operator optional",
     "full_name": "sus::option::Option::operator optional",
     "split_name": "sus option Option operator optional"
@@ -24611,6 +24744,7 @@ const g_search_db = [
     "index": 3033,
     "type": "conversion",
     "url": "sus-option-Option.html#method.operator optional.convert.optional",
+    "weight": "0.5",
     "name": "operator optional",
     "full_name": "sus::option::Option::operator optional",
     "split_name": "sus option Option operator optional"
@@ -24619,6 +24753,7 @@ const g_search_db = [
     "index": 3034,
     "type": "conversion",
     "url": "sus-option-Option.html#method.operator optional.convert.optional",
+    "weight": "0.5",
     "name": "operator optional",
     "full_name": "sus::option::Option::operator optional",
     "split_name": "sus option Option operator optional"
@@ -24627,6 +24762,7 @@ const g_search_db = [
     "index": 3035,
     "type": "conversion",
     "url": "sus-option-Option.html#method.operator State",
+    "weight": "0.5",
     "name": "operator State",
     "full_name": "sus::option::Option::operator State",
     "split_name": "sus option Option operator State"
@@ -25059,7 +25195,7 @@ const g_search_db = [
     "index": 3089,
     "type": "namespace",
     "url": "sus-namespace.result.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "result",
     "full_name": "sus::result",
     "split_name": "sus result"
@@ -25068,7 +25204,7 @@ const g_search_db = [
     "index": 3090,
     "type": "function alias",
     "url": "sus-iter-fn.end.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "end",
     "full_name": "sus::result::end",
     "split_name": "sus result end"
@@ -25077,7 +25213,7 @@ const g_search_db = [
     "index": 3091,
     "type": "function alias",
     "url": "sus-iter-fn.begin.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "begin",
     "full_name": "sus::result::begin",
     "split_name": "sus result begin"
@@ -25086,7 +25222,7 @@ const g_search_db = [
     "index": 3092,
     "type": "type alias",
     "url": "sus-iter-Once.html",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "Once",
     "full_name": "sus::result::Once",
     "split_name": "sus result Once"
@@ -25095,6 +25231,7 @@ const g_search_db = [
     "index": 3093,
     "type": "class",
     "url": "sus-result-Result.html",
+    "weight": "2",
     "name": "Result",
     "full_name": "sus::result::Result",
     "split_name": "sus result Result"
@@ -25135,6 +25272,7 @@ const g_search_db = [
     "index": 3098,
     "type": "conversion",
     "url": "sus-result-Result.html#method.operator State",
+    "weight": "0.5",
     "name": "operator State",
     "full_name": "sus::result::Result::operator State",
     "split_name": "sus result Result operator State"
@@ -25343,7 +25481,7 @@ const g_search_db = [
     "index": 3124,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "ErrType",
     "full_name": "sus::result::Result::ErrType",
     "split_name": "sus result Result Err Type"
@@ -25352,7 +25490,7 @@ const g_search_db = [
     "index": 3125,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "OkType",
     "full_name": "sus::result::Result::OkType",
     "split_name": "sus result Result Ok Type"
@@ -25361,6 +25499,7 @@ const g_search_db = [
     "index": 3126,
     "type": "struct",
     "url": "sus-result-OkVoid.html",
+    "weight": "2",
     "name": "OkVoid",
     "full_name": "sus::result::OkVoid",
     "split_name": "sus result Ok Void"
@@ -25401,7 +25540,7 @@ const g_search_db = [
     "index": 3131,
     "type": "namespace",
     "url": "sus-namespace.error.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "error",
     "full_name": "sus::error",
     "split_name": "sus error"
@@ -25418,6 +25557,7 @@ const g_search_db = [
     "index": 3133,
     "type": "struct",
     "url": "sus-error-ErrorImpl.html",
+    "weight": "2",
     "name": "ErrorImpl",
     "full_name": "sus::error::ErrorImpl",
     "split_name": "sus error Error Impl"
@@ -25442,7 +25582,7 @@ const g_search_db = [
     "index": 3136,
     "type": "type alias",
     "url": "TODO",
-    "weight": "0.8",
+    "weight": "0.5",
     "name": "StringError",
     "full_name": "sus::error::ErrorImpl::StringError",
     "split_name": "sus error Error Impl String Error"
@@ -25451,6 +25591,7 @@ const g_search_db = [
     "index": 3137,
     "type": "struct",
     "url": "sus-error-DynError.html",
+    "weight": "2",
     "name": "DynError",
     "full_name": "sus::error::DynError",
     "split_name": "sus error Dyn Error"
@@ -25491,7 +25632,7 @@ const g_search_db = [
     "index": 3142,
     "type": "namespace",
     "url": "sus-namespace.tuple_type.html",
-    "weight": "0.75",
+    "weight": "1.2",
     "name": "tuple_type",
     "full_name": "sus::tuple_type",
     "split_name": "sus tuple type"
@@ -25500,6 +25641,7 @@ const g_search_db = [
     "index": 3143,
     "type": "class",
     "url": "sus-tuple_type-Tuple.html",
+    "weight": "2",
     "name": "Tuple",
     "full_name": "sus::tuple_type::Tuple",
     "split_name": "sus tuple type Tuple"
@@ -25755,18 +25897,18 @@ const g_search_db = [
   {
     "index": 3175,
     "type": "macro",
-    "url": "macro.sus_panic_with_message.html",
-    "name": "sus_panic_with_message",
-    "full_name": "sus_panic_with_message",
-    "split_name": "sus panic with message"
-  },
-  {
-    "index": 3176,
-    "type": "macro",
     "url": "macro.sus_check_with_message.html",
     "name": "sus_check_with_message",
     "full_name": "sus_check_with_message",
     "split_name": "sus check with message"
+  },
+  {
+    "index": 3176,
+    "type": "macro",
+    "url": "macro.sus_panic_with_message.html",
+    "name": "sus_panic_with_message",
+    "full_name": "sus_panic_with_message",
+    "split_name": "sus panic with message"
   },
   {
     "index": 3177,
@@ -25803,18 +25945,18 @@ const g_search_db = [
   {
     "index": 3181,
     "type": "macro",
-    "url": "macro.sus_unreachable.html",
-    "name": "sus_unreachable",
-    "full_name": "sus_unreachable",
-    "split_name": "sus unreachable"
-  },
-  {
-    "index": 3182,
-    "type": "macro",
     "url": "macro.sus_unreachable_unchecked.html",
     "name": "sus_unreachable_unchecked",
     "full_name": "sus_unreachable_unchecked",
     "split_name": "sus unreachable unchecked"
+  },
+  {
+    "index": 3182,
+    "type": "macro",
+    "url": "macro.sus_unreachable.html",
+    "name": "sus_unreachable",
+    "full_name": "sus_unreachable",
+    "split_name": "sus unreachable"
   },
   {
     "index": 3183,
@@ -25827,21 +25969,13 @@ const g_search_db = [
   {
     "index": 3184,
     "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable.html",
-    "name": "sus_class_trivially_relocatable",
-    "full_name": "sus_class_trivially_relocatable",
-    "split_name": "sus class trivially relocatable"
-  },
-  {
-    "index": 3185,
-    "type": "macro",
     "url": "macro.SUS_INFINITY.html",
     "name": "SUS_INFINITY",
     "full_name": "SUS_INFINITY",
     "split_name": "SUS INFINITY"
   },
   {
-    "index": 3186,
+    "index": 3185,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -25849,11 +25983,19 @@ const g_search_db = [
     "split_name": "sus class trivially relocatable unchecked"
   },
   {
-    "index": 3187,
+    "index": 3186,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
     "full_name": "sus_class_trivially_relocatable_if_types",
     "split_name": "sus class trivially relocatable if types"
+  },
+  {
+    "index": 3187,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable"
   }
 ]
