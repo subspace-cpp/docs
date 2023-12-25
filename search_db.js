@@ -11673,7 +11673,8 @@ const g_search_db = [
     "weight": "1.2",
     "name": "construct",
     "full_name": "sus::construct",
-    "split_name": "sus construct"
+    "split_name": "sus construct",
+    "summary": "Concepts and functions for constructing and converting between types."
   },
   {
     "index": 1220,
@@ -30797,18 +30798,18 @@ const g_search_db = [
   {
     "index": 3162,
     "type": "macro",
-    "url": "macro.sus_panic_with_message.html",
-    "name": "sus_panic_with_message",
-    "full_name": "sus_panic_with_message",
-    "split_name": "sus panic with message"
-  },
-  {
-    "index": 3163,
-    "type": "macro",
     "url": "macro.sus_check_with_message.html",
     "name": "sus_check_with_message",
     "full_name": "sus_check_with_message",
     "split_name": "sus check with message"
+  },
+  {
+    "index": 3163,
+    "type": "macro",
+    "url": "macro.sus_panic_with_message.html",
+    "name": "sus_panic_with_message",
+    "full_name": "sus_panic_with_message",
+    "split_name": "sus panic with message"
   },
   {
     "index": 3164,
@@ -30869,21 +30870,13 @@ const g_search_db = [
   {
     "index": 3171,
     "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable.html",
-    "name": "sus_class_trivially_relocatable",
-    "full_name": "sus_class_trivially_relocatable",
-    "split_name": "sus class trivially relocatable"
-  },
-  {
-    "index": 3172,
-    "type": "macro",
     "url": "macro.SUS_INFINITY.html",
     "name": "SUS_INFINITY",
     "full_name": "SUS_INFINITY",
     "split_name": "SUS INFINITY"
   },
   {
-    "index": 3173,
+    "index": 3172,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -30891,11 +30884,19 @@ const g_search_db = [
     "split_name": "sus class trivially relocatable unchecked"
   },
   {
-    "index": 3174,
+    "index": 3173,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
     "full_name": "sus_class_trivially_relocatable_if_types",
     "split_name": "sus class trivially relocatable if types"
+  },
+  {
+    "index": 3174,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable"
   }
 ]

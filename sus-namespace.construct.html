@@ -7,8 +7,8 @@
     <meta property="og:site_name" content="Subspace"></meta>
     <title>sus::construct - Subspace</title>
     <meta property="og:title" content="sus::construct - Subspace"></meta>
-    <meta name="description" content=""></meta>
-    <meta property="og:description" content=""></meta>
+    <meta name="description" content="Concepts and functions for constructing and converting between types."></meta>
+    <meta property="og:description" content="Concepts and functions for constructing and converting between types."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -325,7 +325,7 @@
           <div class="section overview">
             <h1 class="section-header">
               <div>
-                <div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/construct/default.h#L19">source</a></div>
+                <div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/construct/construct.h#L41">source</a></div>
                 <span>
                   Namespace
                 </span>
@@ -337,6 +337,24 @@
               </div>
             </h1>
             <div class="description long">
+              <p>Concepts and functions for constructing and converting between types.</p>
+<p>The <a href="sus-construct-fn.cast.html"><code>cast</code></a> function is built on the
+<a href="sus-construct-Cast.html"><code>Cast</code></a> concept to convert between numeric and
+primitive types in a safer way than <code>static_cast</code>.</p>
+<p>The <a href="sus-construct-From.html"><code>From</code></a> and <a href="sus-construct-Into.html"><code>Into</code></a>
+concepts allow converting in a lossless and infallible way between types,
+and accepting generics that can convert to a desired type. The
+<a href="sus-construct-fn.into.html"><code>into</code></a> function allows explicit conversion while
+deducing the target type, such as for converting function arguments or
+return values.</p>
+<p>The <a href="sus-construct-Default.html"><code>Default</code></a> concept matches types which can be
+default constructed, allowing their use in generic code.</p>
+<p>The <a href="sus-construct-SafelyConstructibleFromReference.html"><code>SafelyConstructibleFromReference</code></a> concept pairs with the
+<code>[[clang::lifetimebound]]</code> attribute, which gives better protection with
+Clang. The concept can be used in generic code that accepts reference types
+to prevent receiving references to implicit temporary objects in a
+standard way.</p>
+
             </div>
           </div>
           <div class="section records classes">
