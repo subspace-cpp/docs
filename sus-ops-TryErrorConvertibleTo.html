@@ -254,7 +254,6 @@
     <link rel="stylesheet" href="subdoc-test-style.css">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="alternate icon" type="image/png" href="logo32.png">
-    <link rel="alternate icon" type="image/png" href="logo16.png">
     <meta property="og:image" content="logo.png"></meta>
   </head>
 
@@ -329,7 +328,7 @@
                   </span>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;From&gt;</pre></div>
                   <div class="requires-constraint"><pre class="requires-constraint-line">sus::ops::Try&lt;To&gt;</pre></div>
-                  <div class="requires-constraint"><pre class="requires-constraint-line">requires(From&& f) {</pre><pre class="requires-constraint-line">      // preserve_error() constructs a Try type from another related type while</pre><pre class="requires-constraint-line">      // passing the error state along.</pre><pre class="requires-constraint-line">      {</pre><pre class="requires-constraint-line">        TryImpl&lt;To&gt;::template preserve_error(::sus::move(f))</pre><pre class="requires-constraint-line">      } -&gt; std::same_as&lt;To&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
+                  <div class="requires-constraint"><pre class="requires-constraint-line">requires(From&& f) {</pre><pre class="requires-constraint-line">      // preserve_error() constructs a Try type from another related type while</pre><pre class="requires-constraint-line">      // passing the error state along.</pre><pre class="requires-constraint-line">      {</pre><pre class="requires-constraint-line">        TryImpl&lt;To&gt;::preserve_error(::sus::move(f))</pre><pre class="requires-constraint-line">      } -&gt; std::same_as&lt;To&gt;;</pre><pre class="requires-constraint-line">    }</pre></div>
                 </div>
               </div></div>
             <div class="description long">
