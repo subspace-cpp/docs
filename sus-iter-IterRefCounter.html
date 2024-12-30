@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta property="og:type" content="website"></meta>
     <meta property="og:site_name" content="Subspace"></meta>
+    <meta property="og:url" content="https://suslib.cc/sus-iter-IterRefCounter.html"></meta>
     <title>sus::iter::IterRefCounter - Subspace</title>
     <meta property="og:title" content="sus::iter::IterRefCounter - Subspace"></meta>
     <meta name="description" content="Reference counting outstanding iterators (and view types since they need to be able to produce iterators) in order to catch iterator invalidation and prevent them from being used afterward. Mutating the collection should check that the count is empty. This is much like a RefCell in Rust, using runtime verfication that modification does not occur while there are outstanding references."></meta>
