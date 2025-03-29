@@ -28068,15 +28068,6 @@ const g_search_db = [
   {
     "index": 3160,
     "type": "macro",
-    "url": "macro.sus_panic.html",
-    "name": "sus_panic",
-    "full_name": "sus_panic",
-    "split_name": "sus panic",
-    "summary": "Terminate the program."
-  },
-  {
-    "index": 3161,
-    "type": "macro",
     "url": "macro.sus_choice_types.html",
     "name": "sus_choice_types",
     "full_name": "sus_choice_types",
@@ -28084,7 +28075,7 @@ const g_search_db = [
     "summary": "A macro used to declare the value-type pairings in a Choice. See the Choice type for examples of its use."
   },
   {
-    "index": 3162,
+    "index": 3161,
     "type": "macro",
     "url": "macro.sus_panic_with_message.html",
     "name": "sus_panic_with_message",
@@ -28093,13 +28084,22 @@ const g_search_db = [
     "summary": "Terminate the program, after printing a message."
   },
   {
-    "index": 3163,
+    "index": 3162,
     "type": "macro",
     "url": "macro.sus_check_with_message.html",
     "name": "sus_check_with_message",
     "full_name": "sus_check_with_message",
     "split_name": "sus check with message",
     "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
+  },
+  {
+    "index": 3163,
+    "type": "macro",
+    "url": "macro.sus_panic.html",
+    "name": "sus_panic",
+    "full_name": "sus_panic",
+    "split_name": "sus panic",
+    "summary": "Terminate the program."
   },
   {
     "index": 3164,
@@ -28140,20 +28140,20 @@ const g_search_db = [
   {
     "index": 3168,
     "type": "macro",
-    "url": "macro.sus_unreachable.html",
-    "name": "sus_unreachable",
-    "full_name": "sus_unreachable",
-    "split_name": "sus unreachable",
-    "summary": "Indicates to the developer that the location should not be reached, and terminates the program with a panic."
-  },
-  {
-    "index": 3169,
-    "type": "macro",
     "url": "macro.sus_unreachable_unchecked.html",
     "name": "sus_unreachable_unchecked",
     "full_name": "sus_unreachable_unchecked",
     "split_name": "sus unreachable unchecked",
     "summary": "Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."
+  },
+  {
+    "index": 3169,
+    "type": "macro",
+    "url": "macro.sus_unreachable.html",
+    "name": "sus_unreachable",
+    "full_name": "sus_unreachable",
+    "split_name": "sus unreachable",
+    "summary": "Indicates to the developer that the location should not be reached, and terminates the program with a panic."
   },
   {
     "index": 3170,
@@ -28167,15 +28167,6 @@ const g_search_db = [
   {
     "index": 3171,
     "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable.html",
-    "name": "sus_class_trivially_relocatable",
-    "full_name": "sus_class_trivially_relocatable",
-    "split_name": "sus class trivially relocatable",
-    "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
-  },
-  {
-    "index": 3172,
-    "type": "macro",
     "url": "macro.SUS_INFINITY.html",
     "name": "SUS_INFINITY",
     "full_name": "SUS_INFINITY",
@@ -28183,7 +28174,7 @@ const g_search_db = [
     "summary": "A macro that replaces the INFINITY macro from the &lt;cmath&gt; header. Consider using f32::INFINITY instead."
   },
   {
-    "index": 3173,
+    "index": 3172,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -28192,12 +28183,21 @@ const g_search_db = [
     "summary": "Mark a class as unconditionally trivially relocatable, without any additional assertion to help verify correctness."
   },
   {
-    "index": 3174,
+    "index": 3173,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
     "full_name": "sus_class_trivially_relocatable_if_types",
     "split_name": "sus class trivially relocatable if types",
     "summary": "Mark a class as trivially relocatable if the types passed as arguments are all trivially relocatable."
+  },
+  {
+    "index": 3174,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable",
+    "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
   }
 ]
