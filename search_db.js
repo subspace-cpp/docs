@@ -28068,6 +28068,15 @@ const g_search_db = [
   {
     "index": 3160,
     "type": "macro",
+    "url": "macro.sus_panic.html",
+    "name": "sus_panic",
+    "full_name": "sus_panic",
+    "split_name": "sus panic",
+    "summary": "Terminate the program."
+  },
+  {
+    "index": 3161,
+    "type": "macro",
     "url": "macro.sus_choice_types.html",
     "name": "sus_choice_types",
     "full_name": "sus_choice_types",
@@ -28075,7 +28084,7 @@ const g_search_db = [
     "summary": "A macro used to declare the value-type pairings in a Choice. See the Choice type for examples of its use."
   },
   {
-    "index": 3161,
+    "index": 3162,
     "type": "macro",
     "url": "macro.sus_panic_with_message.html",
     "name": "sus_panic_with_message",
@@ -28084,22 +28093,13 @@ const g_search_db = [
     "summary": "Terminate the program, after printing a message."
   },
   {
-    "index": 3162,
+    "index": 3163,
     "type": "macro",
     "url": "macro.sus_check_with_message.html",
     "name": "sus_check_with_message",
     "full_name": "sus_check_with_message",
     "split_name": "sus check with message",
     "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
-  },
-  {
-    "index": 3163,
-    "type": "macro",
-    "url": "macro.sus_panic.html",
-    "name": "sus_panic",
-    "full_name": "sus_panic",
-    "split_name": "sus panic",
-    "summary": "Terminate the program."
   },
   {
     "index": 3164,
