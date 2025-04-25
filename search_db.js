@@ -28167,6 +28167,15 @@ const g_search_db = [
   {
     "index": 3171,
     "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable",
+    "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
+  },
+  {
+    "index": 3172,
+    "type": "macro",
     "url": "macro.SUS_INFINITY.html",
     "name": "SUS_INFINITY",
     "full_name": "SUS_INFINITY",
@@ -28174,7 +28183,7 @@ const g_search_db = [
     "summary": "A macro that replaces the INFINITY macro from the &lt;cmath&gt; header. Consider using f32::INFINITY instead."
   },
   {
-    "index": 3172,
+    "index": 3173,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -28183,21 +28192,12 @@ const g_search_db = [
     "summary": "Mark a class as unconditionally trivially relocatable, without any additional assertion to help verify correctness."
   },
   {
-    "index": 3173,
+    "index": 3174,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
     "full_name": "sus_class_trivially_relocatable_if_types",
     "split_name": "sus class trivially relocatable if types",
     "summary": "Mark a class as trivially relocatable if the types passed as arguments are all trivially relocatable."
-  },
-  {
-    "index": 3174,
-    "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable.html",
-    "name": "sus_class_trivially_relocatable",
-    "full_name": "sus_class_trivially_relocatable",
-    "split_name": "sus class trivially relocatable",
-    "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
   }
 ]
