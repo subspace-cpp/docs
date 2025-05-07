@@ -353,12 +353,12 @@ as it has defined behaviour for all inputs:</p>
 <ul>
 <li>Casting from a float to an integer will perform a static_cast, which
 rounds the float towards zero, except:<ul>
-<li><code>NAN</code> will return 0.</li>
+<li><code>NaN</code> will return 0.</li>
 <li>Values larger than the maximum integer value, including
-<a href="sus-num-f32.html#field.INFINITY"><code>f32::INFINITY</code></a>,
+<a href="sus-num-f32.html#field.INF"><code>f32::INF</code></a>,
 will saturate to the maximum value of the integer type.</li>
 <li>Values smaller than the minimum integer value, including
-<a href="sus-num-f32.html#field.NEG_INFINITY"><code>f32::NEG_INFINITY</code></a>, will saturate to
+<a href="sus-num-f32.html#field.NEG_INF"><code>f32::NEG_INF</code></a>, will saturate to
 the minimum value of the integer type.</li>
 </ul>
 </li>
@@ -373,10 +373,10 @@ value unchanged.</li>
 <a href="sus-num-f32.html"><code>f32</code></a> (or float) performs the same action as a
 <code>static_cast</code> if the value is in range for <a href="sus-num-f32.html"><code>f32</code></a>,
 otherwise:<ul>
-<li><code>NAN</code> will return a <code>NAN</code>.</li>
+<li><code>NaN</code> will return a <code>NaN</code>.</li>
 <li>Values outside of <a href="sus-num-f32.html"><code>f32</code></a>'s range will return
-<a href="sus-num-f32.html#field.INFINITY"><code>f32::INFINITY</code></a> or
-<a href="sus-num-f32.html#field.NEG_INFINITY"><code>f32::NEG_INFINITY</code></a> for positive and
+<a href="sus-num-f32.html#field.INF"><code>f32::INF</code></a> or
+<a href="sus-num-f32.html#field.NEG_INF"><code>f32::NEG_INF</code></a> for positive and
 negative values respectively.</li>
 </ul>
 </li>

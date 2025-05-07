@@ -296,7 +296,7 @@
             <a class="sidebar-item" href="sus-num-f64.html#field.EPSILON">EPSILON</a>
           </li>
           <li>
-            <a class="sidebar-item" href="sus-num-f64.html#field.INFINITY">INFINITY</a>
+            <a class="sidebar-item" href="sus-num-f64.html#field.INF">INF</a>
           </li>
           <li>
             <a class="sidebar-item" href="sus-num-f64.html#field.MANTISSA_DIGITS">MANTISSA_DIGITS</a>
@@ -329,10 +329,10 @@
             <a class="sidebar-item" href="sus-num-f64.html#field.MIN_PRIMITIVE">MIN_PRIMITIVE</a>
           </li>
           <li>
-            <a class="sidebar-item" href="sus-num-f64.html#field.NAN">NAN</a>
+            <a class="sidebar-item" href="sus-num-f64.html#field.NEG_INF">NEG_INF</a>
           </li>
           <li>
-            <a class="sidebar-item" href="sus-num-f64.html#field.NEG_INFINITY">NEG_INFINITY</a>
+            <a class="sidebar-item" href="sus-num-f64.html#field.NaN">NaN</a>
           </li>
           <li>
             <a class="sidebar-item" href="sus-num-f64.html#field.RADIX">RADIX</a>
@@ -651,7 +651,7 @@
               <span class="namespace-dots">::</span>
               <a class="type-name" href="#">f64</a>
             </h1>
-            <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/float.h#L71">source</a></div><span class="struct">
+            <div class="type-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/float.h#L70">source</a></div><span class="struct">
                 struct
               </span><span class="type-name">
                 f64
@@ -692,9 +692,11 @@ number.</p>
                 </div>
               </div>
               <div class="section-item">
-                <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_consts.inc#L49">source</a></div><a name="field.INFINITY"></a><span class="static">static</span> <span class="const">const</span> <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> <a class="field-name" href="sus-num-f64.html#field.INFINITY">INFINITY</a></div>
+                <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_consts.inc#L49">source</a></div><a name="field.INF"></a><span class="static">static</span> <span class="const">const</span> <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> <a class="field-name" href="sus-num-f64.html#field.INF">INF</a></div>
                 <div class="description long">
                   <p>Infinity.</p>
+<p>We have chosen the name INF so that we don't clash with the C++ standard
+library macro INFINITY.</p>
 
                 </div>
               </div>
@@ -769,7 +771,14 @@ number.</p>
                 </div>
               </div>
               <div class="section-item">
-                <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_consts.inc#L48">source</a></div><a name="field.NAN"></a><span class="static">static</span> <span class="const">const</span> <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> <a class="field-name" href="sus-num-f64.html#field.NAN">NAN</a></div>
+                <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_consts.inc#L51">source</a></div><a name="field.NEG_INF"></a><span class="static">static</span> <span class="const">const</span> <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> <a class="field-name" href="sus-num-f64.html#field.NEG_INF">NEG_INF</a></div>
+                <div class="description long">
+                  <p>Negative infinity.</p>
+
+                </div>
+              </div>
+              <div class="section-item">
+                <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_consts.inc#L48">source</a></div><a name="field.NaN"></a><span class="static">static</span> <span class="const">const</span> <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> <a class="field-name" href="sus-num-f64.html#field.NaN">NaN</a></div>
                 <div class="description long">
                   <p>Not a Number (NaN).</p>
 <p>Note that IEEE-745 doesn't define just a single NaN value; a plethora of
@@ -781,13 +790,9 @@ stability of its representation over Subspace versions and target
 platforms isn't guaranteed.</p>
 <p>This value is not constexpr because the value can differ in a constexpr
 evaluation context from a runtime context, leading to bugs.</p>
-
-                </div>
-              </div>
-              <div class="section-item">
-                <div class="item-name member-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_consts.inc#L51">source</a></div><a name="field.NEG_INFINITY"></a><span class="static">static</span> <span class="const">const</span> <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> <a class="field-name" href="sus-num-f64.html#field.NEG_INFINITY">NEG_INFINITY</a></div>
-                <div class="description long">
-                  <p>Negative infinity.</p>
+<p>We have chosen the name NaN so that we don't clash with the C++ standard
+library macro NaN. It's not an ideal name, but is the best we've been able
+to come up with so far.</p>
 
                 </div>
               </div>
@@ -808,7 +813,7 @@ evaluation context from a runtime context, leading to bugs.</p>
             <div class="section-items">
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L143">source</a></div><a name="method.f64.ctor.from_primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-f64.html#method.f64.ctor.from_primitive">f64</a>(P v)<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L150">source</a></div><a name="method.f64.ctor.from_primitive"></a><div class="template">template &lt;class P&gt;</div><a class="function-name" href="sus-num-f64.html#method.f64.ctor.from_primitive">f64</a>(P v)<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -823,7 +828,7 @@ evaluation context from a runtime context, leading to bugs.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L136">source</a></div><a name="method.f64.ctor.from_float"></a><div class="template">template &lt;class F&gt;</div><a class="function-name" href="sus-num-f64.html#method.f64.ctor.from_float">f64</a>(F v)<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L143">source</a></div><a name="method.f64.ctor.from_float"></a><div class="template">template &lt;class F&gt;</div><a class="function-name" href="sus-num-f64.html#method.f64.ctor.from_float">f64</a>(F v)<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -838,7 +843,7 @@ evaluation context from a runtime context, leading to bugs.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L129">source</a></div><a name="method.f64.ctor.default"></a><a class="function-name" href="sus-num-f64.html#method.f64.ctor.default">f64</a>()</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L136">source</a></div><a name="method.f64.ctor.default"></a><a class="function-name" href="sus-num-f64.html#method.f64.ctor.default">f64</a>()</div>
                 </div>
               </div>
               <div class="description long">
@@ -848,7 +853,7 @@ evaluation context from a runtime context, leading to bugs.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L150">source</a></div><a name="method.from.from.float"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.float">from</a>(F v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L157">source</a></div><a name="method.from.from.float"></a><div class="template">template &lt;class F&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.float">from</a>(F v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -863,7 +868,7 @@ evaluation context from a runtime context, leading to bugs.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L159">source</a></div><a name="method.from.from.primitive_float"></a><div class="template">template &lt;class P&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.primitive_float">from</a>(P v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L166">source</a></div><a name="method.from.from.primitive_float"></a><div class="template">template &lt;class P&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.primitive_float">from</a>(P v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -878,7 +883,7 @@ evaluation context from a runtime context, leading to bugs.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L192">source</a></div><a name="method.from.from.int"></a><div class="template">template &lt;class I&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.int">from</a>(I v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L199">source</a></div><a name="method.from.from.int"></a><div class="template">template &lt;class I&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.int">from</a>(I v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -895,7 +900,7 @@ For <a href="sus-num-f64.html"><code>f64</code></a> this includes integer types 
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L205">source</a></div><a name="method.from.from.primitive_int"></a><div class="template">template &lt;class P&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.primitive_int">from</a>(P v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L212">source</a></div><a name="method.from.from.primitive_int"></a><div class="template">template &lt;class P&gt;</div><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from.from.primitive_int">from</a>(P v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -912,7 +917,7 @@ For <a href="sus-num-f64.html"><code>f64</code></a> this includes integer types 
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1135">source</a></div><a name="method.from_be_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_be_bytes">from_be_bytes</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1142">source</a></div><a name="method.from_be_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_be_bytes">from_be_bytes</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -924,7 +929,7 @@ not  constexpr.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L995">source</a></div><a name="method.from_bits"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_bits">from_bits</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1002">source</a></div><a name="method.from_bits"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_bits">from_bits</a>(<a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a> v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -962,7 +967,7 @@ exact bits in a constexpr context.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1143">source</a></div><a name="method.from_le_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_le_bytes">from_le_bytes</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1150">source</a></div><a name="method.from_le_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_le_bytes">from_le_bytes</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -974,7 +979,7 @@ not constexpr.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1156">source</a></div><a name="method.from_ne_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_ne_bytes">from_ne_bytes</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1163">source</a></div><a name="method.from_ne_bytes"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_ne_bytes">from_ne_bytes</a>(<span class="const">const</span> <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;& bytes) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -990,7 +995,7 @@ not constexpr.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L232">source</a></div><a name="method.from_product"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L239">source</a></div><a name="method.from_product"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_product">from_product</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1009,7 +1014,7 @@ called for iterators over <a href="sus-num-f64.html"><code>f64 </code></a>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L217">source</a></div><a name="method.from_sum"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_sum">from_sum</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L224">source</a></div><a name="method.from_sum"></a><span class="static">static</span> <span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.from_sum">from_sum</a>(<a class="type-name" href="sus-iter-Iterator.html" title="sus::iter::Iterator">Iterator</a>&lt;<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&gt; auto&& it) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a><div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1036,14 +1041,14 @@ iterators over <a href="sus-num-f64.html"><code>f64 </code></a>.</p>
             <div class="section-items">
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L541">source</a></div><a name="method.abs"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.abs">abs</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L548">source</a></div><a name="method.abs"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.abs">abs</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L549">source</a></div><a name="method.acos"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.acos">acos</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L556">source</a></div><a name="method.acos"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.acos">acos</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1053,7 +1058,7 @@ range [0, pi] or NaN if the number is outside the range [-1, 1].</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L558">source</a></div><a name="method.acosh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.acosh">acosh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L565">source</a></div><a name="method.acosh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.acosh">acosh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1063,7 +1068,7 @@ range [0, pi] or NaN if the number is outside the range [-1, 1].</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L269">source</a></div><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; double*</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L276">source</a></div><a name="method.as_mut_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.as_mut_ptr">as_mut_ptr</a>() & -&gt; double*</div>
                 </div>
               </div>
               <div class="description long">
@@ -1074,10 +1079,10 @@ C++ primitive type.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L277">source</a></div><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> double*</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L284">source</a></div><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.as_ptr">as_ptr</a>() const& -&gt; <span class="const">const</span> double*</div>
                 </div>
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L277">source</a></div><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.as_ptr">as_ptr</a>() && -&gt; <span class="const">const</span> double*<div class="deleted">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L284">source</a></div><a name="method.as_ptr"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.as_ptr">as_ptr</a>() && -&gt; <span class="const">const</span> double*<div class="deleted">
                       deleted
                     </div></div>
                 </div>
@@ -1090,7 +1095,7 @@ C++ primitive type.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L566">source</a></div><a name="method.asin"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.asin">asin</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L573">source</a></div><a name="method.asin"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.asin">asin</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1100,7 +1105,7 @@ range [-pi/2, pi/2] or NaN if the number is outside the range [-1, 1].</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L574">source</a></div><a name="method.asinh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.asinh">asinh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L581">source</a></div><a name="method.asinh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.asinh">asinh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1109,7 +1114,7 @@ range [-pi/2, pi/2] or NaN if the number is outside the range [-1, 1].</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L582">source</a></div><a name="method.atan"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.atan">atan</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L589">source</a></div><a name="method.atan"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.atan">atan</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1119,7 +1124,7 @@ range [-pi/2, pi/2];</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L595">source</a></div><a name="method.atan2"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.atan2">atan2</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L602">source</a></div><a name="method.atan2"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.atan2">atan2</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1136,7 +1141,7 @@ radians.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L601">source</a></div><a name="method.atanh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.atanh">atanh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L608">source</a></div><a name="method.atanh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.atanh">atanh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1145,7 +1150,7 @@ radians.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L606">source</a></div><a name="method.cbrt"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.cbrt">cbrt</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L613">source</a></div><a name="method.cbrt"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.cbrt">cbrt</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1154,7 +1159,7 @@ radians.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L611">source</a></div><a name="method.ceil"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.ceil">ceil</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L618">source</a></div><a name="method.ceil"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.ceil">ceil</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1163,7 +1168,7 @@ radians.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1068">source</a></div><a name="method.clamp"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.clamp">clamp</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> min, <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> max) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1075">source</a></div><a name="method.clamp"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.clamp">clamp</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> min, <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> max) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1177,7 +1182,7 @@ min. Otherwise this returns self.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1017">source</a></div><a name="method.classify"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.classify">classify</a>() const& -&gt; sus::num::FpCategory</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1024">source</a></div><a name="method.classify"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.classify">classify</a>() const& -&gt; sus::num::FpCategory</div>
                 </div>
               </div>
               <div class="description long">
@@ -1188,7 +1193,7 @@ the specific predicate instead.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L621">source</a></div><a name="method.copysign"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.copysign">copysign</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> sign) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L628">source</a></div><a name="method.copysign"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.copysign">copysign</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> sign) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1201,7 +1206,7 @@ arithmetical operations is not generally guaranteed.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L627">source</a></div><a name="method.cos"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.cos">cos</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L634">source</a></div><a name="method.cos"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.cos">cos</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1210,7 +1215,7 @@ arithmetical operations is not generally guaranteed.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L632">source</a></div><a name="method.cosh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.cosh">cosh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L639">source</a></div><a name="method.cosh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.cosh">cosh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1219,7 +1224,7 @@ arithmetical operations is not generally guaranteed.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1083">source</a></div><a name="method.div_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.div_euclid">div_euclid</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> rhs) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1090">source</a></div><a name="method.div_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.div_euclid">div_euclid</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> rhs) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1231,7 +1236,7 @@ to the integer <code>n</code> such that <code>self &gt;= n * rhs</code>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L637">source</a></div><a name="method.exp"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.exp">exp</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L644">source</a></div><a name="method.exp"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.exp">exp</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1240,7 +1245,7 @@ to the integer <code>n</code> such that <code>self &gt;= n * rhs</code>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L642">source</a></div><a name="method.exp2"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.exp2">exp2</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L649">source</a></div><a name="method.exp2"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.exp2">exp2</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1249,7 +1254,7 @@ to the integer <code>n</code> such that <code>self &gt;= n * rhs</code>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L648">source</a></div><a name="method.exp_m1"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.exp_m1">exp_m1</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L655">source</a></div><a name="method.exp_m1"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.exp_m1">exp_m1</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1259,7 +1264,7 @@ close to zero.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L653">source</a></div><a name="method.floor"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.floor">floor</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L660">source</a></div><a name="method.floor"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.floor">floor</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1268,14 +1273,14 @@ close to zero.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L920">source</a></div><a name="method.fract"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.fract">fract</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L927">source</a></div><a name="method.fract"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.fract">fract</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L659">source</a></div><a name="method.hypot"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.hypot">hypot</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L666">source</a></div><a name="method.hypot"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.hypot">hypot</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1285,7 +1290,7 @@ legs of length x and y.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1021">source</a></div><a name="method.is_finite"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_finite">is_finite</a>() const& -&gt; bool</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1028">source</a></div><a name="method.is_finite"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_finite">is_finite</a>() const& -&gt; bool</div>
                 </div>
               </div>
               <div class="description long">
@@ -1294,7 +1299,7 @@ legs of length x and y.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1026">source</a></div><a name="method.is_infinite"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_infinite">is_infinite</a>() const& -&gt; bool</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1033">source</a></div><a name="method.is_infinite"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_infinite">is_infinite</a>() const& -&gt; bool</div>
                 </div>
               </div>
               <div class="description long">
@@ -1304,7 +1309,7 @@ and false otherwise.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1030">source</a></div><a name="method.is_nan"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_nan">is_nan</a>() const& -&gt; bool</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1037">source</a></div><a name="method.is_nan"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_nan">is_nan</a>() const& -&gt; bool</div>
                 </div>
               </div>
               <div class="description long">
@@ -1313,7 +1318,7 @@ and false otherwise.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1034">source</a></div><a name="method.is_normal"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_normal">is_normal</a>() const& -&gt; bool</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1041">source</a></div><a name="method.is_normal"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_normal">is_normal</a>() const& -&gt; bool</div>
                 </div>
               </div>
               <div class="description long">
@@ -1322,7 +1327,7 @@ and false otherwise.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1042">source</a></div><a name="method.is_sign_negative"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_sign_negative">is_sign_negative</a>() const& -&gt; bool</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1049">source</a></div><a name="method.is_sign_negative"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_sign_negative">is_sign_negative</a>() const& -&gt; bool</div>
                 </div>
               </div>
               <div class="description long">
@@ -1334,7 +1339,7 @@ a NaN</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1050">source</a></div><a name="method.is_sign_positive"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_sign_positive">is_sign_positive</a>() const& -&gt; bool</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1057">source</a></div><a name="method.is_sign_positive"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_sign_positive">is_sign_positive</a>() const& -&gt; bool</div>
                 </div>
               </div>
               <div class="description long">
@@ -1346,7 +1351,7 @@ a NaN.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1054">source</a></div><a name="method.is_subnormal"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_subnormal">is_subnormal</a>() const& -&gt; bool</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1061">source</a></div><a name="method.is_subnormal"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.is_subnormal">is_subnormal</a>() const& -&gt; bool</div>
                 </div>
               </div>
               <div class="description long">
@@ -1355,7 +1360,7 @@ a NaN.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L665">source</a></div><a name="method.ln"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.ln">ln</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L672">source</a></div><a name="method.ln"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.ln">ln</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1364,7 +1369,7 @@ a NaN.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L671">source</a></div><a name="method.ln_1p"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.ln_1p">ln_1p</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L678">source</a></div><a name="method.ln_1p"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.ln_1p">ln_1p</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1374,7 +1379,7 @@ operations were performed separately.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L690">source</a></div><a name="method.log"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.log">log</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> base) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L697">source</a></div><a name="method.log"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.log">log</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> base) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1386,7 +1391,7 @@ self.log10() can produce more accurate results for base 10.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L676">source</a></div><a name="method.log10"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.log10">log10</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L683">source</a></div><a name="method.log10"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.log10">log10</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1395,7 +1400,7 @@ self.log10() can produce more accurate results for base 10.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L681">source</a></div><a name="method.log2"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.log2">log2</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L688">source</a></div><a name="method.log2"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.log2">log2</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1404,7 +1409,7 @@ self.log10() can produce more accurate results for base 10.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L696">source</a></div><a name="method.max"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.max">max</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L703">source</a></div><a name="method.max"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.max">max</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1414,7 +1419,7 @@ self.log10() can produce more accurate results for base 10.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L704">source</a></div><a name="method.min"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.min">min</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L711">source</a></div><a name="method.min"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.min">min</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1424,7 +1429,7 @@ self.log10() can produce more accurate results for base 10.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L716">source</a></div><a name="method.mul_add"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.mul_add">mul_add</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> a, <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> b) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L723">source</a></div><a name="method.mul_add"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.mul_add">mul_add</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> a, <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> b) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1438,13 +1443,13 @@ with specific target hardware in mind.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L731">source</a></div><a name="method.next_toward"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.next_toward">next_toward</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> toward) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L738">source</a></div><a name="method.next_toward"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.next_toward">next_toward</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> toward) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
                 <p>Returns the next representable value of the float type after <code>self</code> in the
 direction of <code>toward</code>. If <code>self == toward</code>, <code>toward</code> is returned. If either
-<code>self</code> or <code>toward</code> is NAN, NAN is returned.</p>
+<code>self</code> or <code>toward</code> is NaN, NaN is returned.</p>
 <p>This is implemented by the
 <a href="https://en.cppreference.com/w/c/numeric/math/nextafter">cmath</a> library, see
 the documentation for details on errors.</p>
@@ -1452,7 +1457,7 @@ the documentation for details on errors.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L736">source</a></div><a name="method.powf"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.powf">powf</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> n) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L743">source</a></div><a name="method.powf"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.powf">powf</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> n) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1461,7 +1466,7 @@ the documentation for details on errors.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L745">source</a></div><a name="method.powi"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.powi">powi</a>(<a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a> n) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L752">source</a></div><a name="method.powi"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.powi">powi</a>(<a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a> n) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1473,7 +1478,7 @@ might have a different sequence of rounding operations than
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L751">source</a></div><a name="method.recip"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.recip">recip</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L758">source</a></div><a name="method.recip"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.recip">recip</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1482,7 +1487,7 @@ might have a different sequence of rounding operations than
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1103">source</a></div><a name="method.rem_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.rem_euclid">rem_euclid</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> rhs) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1110">source</a></div><a name="method.rem_euclid"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.rem_euclid">rem_euclid</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> rhs) const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1499,7 +1504,7 @@ approximately.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L770">source</a></div><a name="method.round"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round">round</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L777">source</a></div><a name="method.round"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round">round</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1517,7 +1522,7 @@ unlike <a href="https://en.cppreference.com/w/cpp/numeric/math/round"><code>std:
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L798">source</a></div><a name="method.round_ties"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_ties">round_ties</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L805">source</a></div><a name="method.round_ties"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_ties">round_ties</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1540,7 +1545,7 @@ preserves the sign bit when the result is <code>-0.0</code>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L827">source</a></div><a name="method.round_to_i16"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_i16">round_to_i16</a>() const& -&gt; <a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L834">source</a></div><a name="method.round_to_i16"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_i16">round_to_i16</a>() const& -&gt; <a class="type-name" href="sus-num-i16.html" title="sus::num::i16">i16</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1555,7 +1560,7 @@ to break ties. The default mode will round ties to the nearest even number.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L842">source</a></div><a name="method.round_to_i32"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_i32">round_to_i32</a>() const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L849">source</a></div><a name="method.round_to_i32"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_i32">round_to_i32</a>() const& -&gt; <a class="type-name" href="sus-num-i32.html" title="sus::num::i32">i32</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1570,7 +1575,7 @@ to break ties. The default mode will round ties to the nearest even number.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L857">source</a></div><a name="method.round_to_i64"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_i64">round_to_i64</a>() const& -&gt; <a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L864">source</a></div><a name="method.round_to_i64"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_i64">round_to_i64</a>() const& -&gt; <a class="type-name" href="sus-num-i64.html" title="sus::num::i64">i64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1585,7 +1590,7 @@ to break ties. The default mode will round ties to the nearest even number.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L812">source</a></div><a name="method.round_to_i8"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_i8">round_to_i8</a>() const& -&gt; <a class="type-name" href="sus-num-i8.html" title="sus::num::i8">i8</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L819">source</a></div><a name="method.round_to_i8"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_i8">round_to_i8</a>() const& -&gt; <a class="type-name" href="sus-num-i8.html" title="sus::num::i8">i8</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1600,7 +1605,7 @@ to break ties. The default mode will round ties to the nearest even number.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L872">source</a></div><a name="method.round_to_isize"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_isize">round_to_isize</a>() const& -&gt; <a class="type-name" href="sus-num-isize.html" title="sus::num::isize">isize</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L879">source</a></div><a name="method.round_to_isize"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.round_to_isize">round_to_isize</a>() const& -&gt; <a class="type-name" href="sus-num-isize.html" title="sus::num::isize">isize</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1615,15 +1620,15 @@ to break ties. The default mode will round ties to the nearest even number.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L884">source</a></div><a name="method.signum"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.signum">signum</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L891">source</a></div><a name="method.signum"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.signum">signum</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
                 <p>Returns a number that represents the sign of self.</p>
 <ul>
-<li><code>1.0</code> if the number is positive, <code>+0.0</code> or <a href="sus-num-f64.html#field.INFINITY"><code>INFINITY</code></a>.</li>
+<li><code>1.0</code> if the number is positive, <code>+0.0</code> or <a href="sus-num-f64.html#field.INF"><code>INF</code></a>.</li>
 <li><code>-1.0</code> if the number is negative, <code>-0.0</code> or
-<a href="sus-num-f64.html#field.NEG_INFINITY"><code>NEG_INFINITY</code></a>.</li>
+<a href="sus-num-f64.html#field.NEG_INF"><code>NEG_INF</code></a>.</li>
 <li><code>NaN</code> if the number is <code>NaN</code>. The input value is returned exactly,
 preserving signaling NaNs.</li>
 </ul>
@@ -1631,7 +1636,7 @@ preserving signaling NaNs.</li>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L890">source</a></div><a name="method.sin"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.sin">sin</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L897">source</a></div><a name="method.sin"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.sin">sin</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1640,7 +1645,7 @@ preserving signaling NaNs.</li>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L895">source</a></div><a name="method.sinh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.sinh">sinh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L902">source</a></div><a name="method.sinh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.sinh">sinh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1649,7 +1654,7 @@ preserving signaling NaNs.</li>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L902">source</a></div><a name="method.sqrt"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.sqrt">sqrt</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L909">source</a></div><a name="method.sqrt"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.sqrt">sqrt</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1659,7 +1664,7 @@ preserving signaling NaNs.</li>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L909">source</a></div><a name="method.tan"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.tan">tan</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L916">source</a></div><a name="method.tan"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.tan">tan</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1668,7 +1673,7 @@ preserving signaling NaNs.</li>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L914">source</a></div><a name="method.tanh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.tanh">tanh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L921">source</a></div><a name="method.tanh"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.tanh">tanh</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1677,7 +1682,7 @@ preserving signaling NaNs.</li>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1115">source</a></div><a name="method.to_be_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_be_bytes">to_be_bytes</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1122">source</a></div><a name="method.to_be_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_be_bytes">to_be_bytes</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
                 </div>
               </div>
               <div class="description long">
@@ -1687,7 +1692,7 @@ array in big-endian (network) byte order.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1009">source</a></div><a name="method.to_bits"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_bits">to_bits</a>() const& -&gt; <a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1016">source</a></div><a name="method.to_bits"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_bits">to_bits</a>() const& -&gt; <a class="type-name" href="sus-num-u64.html" title="sus::num::u64">u64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1702,7 +1707,7 @@ attempts to preserve the <em>numeric</em> value, and not the bitwise value.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L930">source</a></div><a name="method.to_degrees"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_degrees">to_degrees</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L937">source</a></div><a name="method.to_degrees"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_degrees">to_degrees</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1711,7 +1716,7 @@ attempts to preserve the <em>numeric</em> value, and not the bitwise value.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L950">source</a></div><a name="method.to_int_unchecked"></a><div class="template">template &lt;class Int&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_int_unchecked">to_int_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; Int<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L957">source</a></div><a name="method.to_int_unchecked"></a><div class="template">template &lt;class Int&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_int_unchecked">to_int_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) const& -&gt; Int<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1734,7 +1739,7 @@ fractional part.</li>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1120">source</a></div><a name="method.to_le_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_le_bytes">to_le_bytes</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1127">source</a></div><a name="method.to_le_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_le_bytes">to_le_bytes</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
                 </div>
               </div>
               <div class="description long">
@@ -1744,7 +1749,7 @@ array in little-endian byte order.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1129">source</a></div><a name="method.to_ne_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_ne_bytes">to_ne_bytes</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L1136">source</a></div><a name="method.to_ne_bytes"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_ne_bytes">to_ne_bytes</a>() const& -&gt; <a class="type-name" href="sus-collections-Array.html" title="sus::collections::Array">Array</a>&lt;<a class="type-name" href="sus-num-u8.html" title="sus::num::u8">u8</a>, ::sus::mem::size_of&lt;_primitive&gt;()&gt;</div>
                 </div>
               </div>
               <div class="description long">
@@ -1757,7 +1762,7 @@ use <a href="sus-num-f64.html#method.to_be_bytes"><code>to_be_bytes</code></a> o
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L936">source</a></div><a name="method.to_radians"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_radians">to_radians</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L943">source</a></div><a name="method.to_radians"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.to_radians">to_radians</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1766,7 +1771,7 @@ use <a href="sus-num-f64.html#method.to_be_bytes"><code>to_be_bytes</code></a> o
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L353">source</a></div><a name="method.total_cmp"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.total_cmp">total_cmp</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; std::weak_ordering</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L360">source</a></div><a name="method.total_cmp"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.total_cmp">total_cmp</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> other) const& -&gt; std::weak_ordering</div>
                 </div>
               </div>
               <div class="description long">
@@ -1804,7 +1809,7 @@ because different NaNs will be ordered equivalently.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L925">source</a></div><a name="method.trunc"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.trunc">trunc</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L932">source</a></div><a name="method.trunc"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.trunc">trunc</a>() const& -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1821,7 +1826,7 @@ are always truncated towards zero.</p>
             <div class="section-items">
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L261">source</a></div><a name="method.operator U"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-f64.html#method.operator U">operator U</a>() const<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L268">source</a></div><a name="method.operator U"></a><div class="template">template &lt;class U&gt;</div><a class="function-name" href="sus-num-f64.html#method.operator U">operator U</a>() const<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1856,7 +1861,7 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
             <div class="section-items">
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L534">source</a></div><a name="method.operator%="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator%=">operator%=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L541">source</a></div><a name="method.operator%="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator%=">operator%=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
                 </div>
               </div>
               <div class="description long">
@@ -1868,7 +1873,7 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L521">source</a></div><a name="method.operator*="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator*=">operator*=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L528">source</a></div><a name="method.operator*="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator*=">operator*=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
                 </div>
               </div>
               <div class="description long">
@@ -1877,7 +1882,7 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L513">source</a></div><a name="method.operator+="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator+=">operator+=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L520">source</a></div><a name="method.operator+="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator+=">operator+=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
                 </div>
               </div>
               <div class="description long">
@@ -1886,7 +1891,7 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L359">source</a></div><a name="method.operator-"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator-">operator-</a>() const -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L366">source</a></div><a name="method.operator-"></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator-">operator-</a>() const -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a></div>
                 </div>
               </div>
               <div class="description long">
@@ -1895,7 +1900,7 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L517">source</a></div><a name="method.operator-="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator-=">operator-=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L524">source</a></div><a name="method.operator-="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator-=">operator-=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
                 </div>
               </div>
               <div class="description long">
@@ -1904,7 +1909,7 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L525">source</a></div><a name="method.operator/="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator/=">operator/=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L532">source</a></div><a name="method.operator/="></a><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator/=">operator/=</a>(<a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a> r) & -&gt; void</div>
                 </div>
               </div>
               <div class="description long">
@@ -1913,7 +1918,7 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L168">source</a></div><a name="method.operator=.assign.from_float"></a><div class="template">template &lt;class F&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator=.assign.from_float">operator=</a>(F v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L175">source</a></div><a name="method.operator=.assign.from_float"></a><div class="template">template &lt;class F&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator=.assign.from_float">operator=</a>(F v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>
@@ -1928,7 +1933,7 @@ the <a href="sus-num-f64.html"><code>f64</code></a>.</p>
               </div>
               <div class="overload-set item-name">
                 <div class="overload">
-                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L178">source</a></div><a name="method.operator=.assign.from_primitive"></a><div class="template">template &lt;class P&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator=.assign.from_primitive">operator=</a>(P v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&<div class="requires">
+                  <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/__private/float_methods.inc#L185">source</a></div><a name="method.operator=.assign.from_primitive"></a><div class="template">template &lt;class P&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="sus-num-f64.html#method.operator=.assign.from_primitive">operator=</a>(P v) -&gt; <a class="type-name" href="sus-num-f64.html" title="sus::num::f64">f64</a>&<div class="requires">
                       <span class="requires-keyword keyword">
                         requires
                       </span>

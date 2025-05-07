@@ -16927,23 +16927,14 @@ const g_search_db = [
   {
     "index": 1919,
     "type": "field",
-    "url": "sus-num-f64.html#field.NEG_INFINITY",
-    "name": "NEG_INFINITY",
-    "full_name": "sus::num::f64::NEG_INFINITY",
-    "split_name": "sus num f64 NEG INFINITY",
-    "summary": "Negative infinity."
+    "url": "sus-num-f64.html#field.NaN",
+    "name": "NaN",
+    "full_name": "sus::num::f64::NaN",
+    "split_name": "sus num f64 Na N",
+    "summary": "Not a Number (NaN)."
   },
   {
     "index": 1920,
-    "type": "field",
-    "url": "sus-num-f64.html#field.INFINITY",
-    "name": "INFINITY",
-    "full_name": "sus::num::f64::INFINITY",
-    "split_name": "sus num f64 INFINITY",
-    "summary": "Infinity."
-  },
-  {
-    "index": 1921,
     "type": "field",
     "url": "sus-num-f64.html#field.MAX_10_EXP",
     "name": "MAX_10_EXP",
@@ -16952,7 +16943,7 @@ const g_search_db = [
     "summary": "Maximum possible power of 10 exponent."
   },
   {
-    "index": 1922,
+    "index": 1921,
     "type": "field",
     "url": "sus-num-f64.html#field.primitive_value",
     "name": "primitive_value",
@@ -16961,7 +16952,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with float{n} for a numeric value n."
   },
   {
-    "index": 1923,
+    "index": 1922,
     "type": "field",
     "url": "sus-num-f64.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -16970,13 +16961,22 @@ const g_search_db = [
     "summary": "Smallest finite primitive value."
   },
   {
-    "index": 1924,
+    "index": 1923,
     "type": "field",
     "url": "sus-num-f64.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
     "full_name": "sus::num::f64::MAX_PRIMITIVE",
     "split_name": "sus num f64 MAX PRIMITIVE",
     "summary": "Largest finite primitive value."
+  },
+  {
+    "index": 1924,
+    "type": "field",
+    "url": "sus-num-f64.html#field.INF",
+    "name": "INF",
+    "full_name": "sus::num::f64::INF",
+    "split_name": "sus num f64 INF",
+    "summary": "Infinity."
   },
   {
     "index": 1925,
@@ -17026,20 +17026,20 @@ const g_search_db = [
   {
     "index": 1930,
     "type": "field",
+    "url": "sus-num-f64.html#field.NEG_INF",
+    "name": "NEG_INF",
+    "full_name": "sus::num::f64::NEG_INF",
+    "split_name": "sus num f64 NEG INF",
+    "summary": "Negative infinity."
+  },
+  {
+    "index": 1931,
+    "type": "field",
     "url": "sus-num-f64.html#field.EPSILON",
     "name": "EPSILON",
     "full_name": "sus::num::f64::EPSILON",
     "split_name": "sus num f64 EPSILON",
     "summary": "Machine epsilon value for f64."
-  },
-  {
-    "index": 1931,
-    "type": "field",
-    "url": "sus-num-f64.html#field.NAN",
-    "name": "NAN",
-    "full_name": "sus::num::f64::NAN",
-    "split_name": "sus num f64 NAN",
-    "summary": "Not a Number (NaN)."
   },
   {
     "index": 1932,
@@ -17704,7 +17704,7 @@ const g_search_db = [
     "name": "next_toward",
     "full_name": "sus::num::f64::next_toward",
     "split_name": "sus num f64 next toward",
-    "summary": "Returns the next representable value of the float type after self in the direction of toward. If self == toward, toward is returned. If either self or toward is NAN, NAN is returned."
+    "summary": "Returns the next representable value of the float type after self in the direction of toward. If self == toward, toward is returned. If either self or toward is NaN, NaN is returned."
   },
   {
     "index": 2006,
@@ -21433,10 +21433,10 @@ const g_search_db = [
   {
     "index": 2420,
     "type": "field",
-    "url": "sus-num-f32.html#field.NAN",
-    "name": "NAN",
-    "full_name": "sus::num::f32::NAN",
-    "split_name": "sus num f32 NAN",
+    "url": "sus-num-f32.html#field.NaN",
+    "name": "NaN",
+    "full_name": "sus::num::f32::NaN",
+    "split_name": "sus num f32 Na N",
     "summary": "Not a Number (NaN)."
   },
   {
@@ -21514,6 +21514,15 @@ const g_search_db = [
   {
     "index": 2429,
     "type": "field",
+    "url": "sus-num-f32.html#field.INF",
+    "name": "INF",
+    "full_name": "sus::num::f32::INF",
+    "split_name": "sus num f32 INF",
+    "summary": "Infinity."
+  },
+  {
+    "index": 2430,
+    "type": "field",
     "url": "sus-num-f32.html#field.MAX",
     "name": "MAX",
     "full_name": "sus::num::f32::MAX",
@@ -21521,25 +21530,7 @@ const g_search_db = [
     "summary": "Largest finite f32."
   },
   {
-    "index": 2430,
-    "type": "field",
-    "url": "sus-num-f32.html#field.NEG_INFINITY",
-    "name": "NEG_INFINITY",
-    "full_name": "sus::num::f32::NEG_INFINITY",
-    "split_name": "sus num f32 NEG INFINITY",
-    "summary": "Negative infinity."
-  },
-  {
     "index": 2431,
-    "type": "field",
-    "url": "sus-num-f32.html#field.INFINITY",
-    "name": "INFINITY",
-    "full_name": "sus::num::f32::INFINITY",
-    "split_name": "sus num f32 INFINITY",
-    "summary": "Infinity."
-  },
-  {
-    "index": 2432,
     "type": "field",
     "url": "sus-num-f32.html#field.RADIX",
     "name": "RADIX",
@@ -21548,13 +21539,22 @@ const g_search_db = [
     "summary": "The radix or base of the internal representation of f32."
   },
   {
-    "index": 2433,
+    "index": 2432,
     "type": "field",
     "url": "sus-num-f32.html#field.MIN_POSITIVE",
     "name": "MIN_POSITIVE",
     "full_name": "sus::num::f32::MIN_POSITIVE",
     "split_name": "sus num f32 MIN POSITIVE",
     "summary": "Smallest positive normal f32 value."
+  },
+  {
+    "index": 2433,
+    "type": "field",
+    "url": "sus-num-f32.html#field.NEG_INF",
+    "name": "NEG_INF",
+    "full_name": "sus::num::f32::NEG_INF",
+    "split_name": "sus num f32 NEG INF",
+    "summary": "Negative infinity."
   },
   {
     "index": 2434,
@@ -22210,7 +22210,7 @@ const g_search_db = [
     "name": "next_toward",
     "full_name": "sus::num::f32::next_toward",
     "split_name": "sus num f32 next toward",
-    "summary": "Returns the next representable value of the float type after self in the direction of toward. If self == toward, toward is returned. If either self or toward is NAN, NAN is returned."
+    "summary": "Returns the next representable value of the float type after self in the direction of toward. If self == toward, toward is returned. If either self or toward is NaN, NaN is returned."
   },
   {
     "index": 2507,
@@ -28050,15 +28050,6 @@ const g_search_db = [
   {
     "index": 3158,
     "type": "macro",
-    "url": "macro.SUS_NAN.html",
-    "name": "SUS_NAN",
-    "full_name": "SUS_NAN",
-    "split_name": "SUS NAN",
-    "summary": "A macro that replaces the NAN macro from the &lt;cmath&gt; header. Consider using f32::NAN instead."
-  },
-  {
-    "index": 3159,
-    "type": "macro",
     "url": "macro.sus_debug_check.html",
     "name": "sus_debug_check",
     "full_name": "sus_debug_check",
@@ -28066,7 +28057,7 @@ const g_search_db = [
     "summary": "Check a condition in debug builds, causing a sus_panic() if the condition fails. Nothing is checked in release builds."
   },
   {
-    "index": 3160,
+    "index": 3159,
     "type": "macro",
     "url": "macro.sus_panic.html",
     "name": "sus_panic",
@@ -28075,13 +28066,22 @@ const g_search_db = [
     "summary": "Terminate the program."
   },
   {
-    "index": 3161,
+    "index": 3160,
     "type": "macro",
     "url": "macro.sus_choice_types.html",
     "name": "sus_choice_types",
     "full_name": "sus_choice_types",
     "split_name": "sus choice types",
     "summary": "A macro used to declare the value-type pairings in a Choice. See the Choice type for examples of its use."
+  },
+  {
+    "index": 3161,
+    "type": "macro",
+    "url": "macro.sus_check_with_message.html",
+    "name": "sus_check_with_message",
+    "full_name": "sus_check_with_message",
+    "split_name": "sus check with message",
+    "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
   },
   {
     "index": 3162,
@@ -28095,33 +28095,6 @@ const g_search_db = [
   {
     "index": 3163,
     "type": "macro",
-    "url": "macro.sus_check_with_message.html",
-    "name": "sus_check_with_message",
-    "full_name": "sus_check_with_message",
-    "split_name": "sus check with message",
-    "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
-  },
-  {
-    "index": 3164,
-    "type": "macro",
-    "url": "macro.sus_dyn_concept.html",
-    "name": "sus_dyn_concept",
-    "full_name": "sus_dyn_concept",
-    "split_name": "sus dyn concept",
-    "summary": "Macro to help implement DynC for a concept C. The macro is placed in the body of the DynC class."
-  },
-  {
-    "index": 3165,
-    "type": "macro",
-    "url": "macro.sus_class_never_value_field.html",
-    "name": "sus_class_never_value_field",
-    "full_name": "sus_class_never_value_field",
-    "split_name": "sus class never value field",
-    "summary": "Mark a class field as never being a specific value, often a zero, after a constructor has run and before the destructor has completed. This allows querying if a class is constructed in a memory location, since the class is constructed iff the value of the field is not the never-value."
-  },
-  {
-    "index": 3166,
-    "type": "macro",
     "url": "macro.sus_check.html",
     "name": "sus_check",
     "full_name": "sus_check",
@@ -28129,7 +28102,7 @@ const g_search_db = [
     "summary": "Verifies that the input, evaluated to a bool, is true. Otherwise, it will panic, printing a message and terminating the program."
   },
   {
-    "index": 3167,
+    "index": 3164,
     "type": "macro",
     "url": "macro.sus_dyn_concept_typed.html",
     "name": "sus_dyn_concept_typed",
@@ -28138,7 +28111,25 @@ const g_search_db = [
     "summary": "Macro to help implement DynCTyped for a concept C. The macro is placed in the body of the DynCTyped class."
   },
   {
-    "index": 3168,
+    "index": 3165,
+    "type": "macro",
+    "url": "macro.sus_dyn_concept.html",
+    "name": "sus_dyn_concept",
+    "full_name": "sus_dyn_concept",
+    "split_name": "sus dyn concept",
+    "summary": "Macro to help implement DynC for a concept C. The macro is placed in the body of the DynC class."
+  },
+  {
+    "index": 3166,
+    "type": "macro",
+    "url": "macro.sus_class_never_value_field.html",
+    "name": "sus_class_never_value_field",
+    "full_name": "sus_class_never_value_field",
+    "split_name": "sus class never value field",
+    "summary": "Mark a class field as never being a specific value, often a zero, after a constructor has run and before the destructor has completed. This allows querying if a class is constructed in a memory location, since the class is constructed iff the value of the field is not the never-value."
+  },
+  {
+    "index": 3167,
     "type": "macro",
     "url": "macro.sus_unreachable_unchecked.html",
     "name": "sus_unreachable_unchecked",
@@ -28147,7 +28138,7 @@ const g_search_db = [
     "summary": "Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."
   },
   {
-    "index": 3169,
+    "index": 3168,
     "type": "macro",
     "url": "macro.sus_unreachable.html",
     "name": "sus_unreachable",
@@ -28156,7 +28147,7 @@ const g_search_db = [
     "summary": "Indicates to the developer that the location should not be reached, and terminates the program with a panic."
   },
   {
-    "index": 3170,
+    "index": 3169,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if.html",
     "name": "sus_class_trivially_relocatable_if",
@@ -28165,7 +28156,7 @@ const g_search_db = [
     "summary": "Mark a class as trivially relocatable based on a compile-time condition."
   },
   {
-    "index": 3171,
+    "index": 3170,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable.html",
     "name": "sus_class_trivially_relocatable",
@@ -28174,16 +28165,7 @@ const g_search_db = [
     "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
   },
   {
-    "index": 3172,
-    "type": "macro",
-    "url": "macro.SUS_INFINITY.html",
-    "name": "SUS_INFINITY",
-    "full_name": "SUS_INFINITY",
-    "split_name": "SUS INFINITY",
-    "summary": "A macro that replaces the INFINITY macro from the &lt;cmath&gt; header. Consider using f32::INFINITY instead."
-  },
-  {
-    "index": 3173,
+    "index": 3171,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -28192,7 +28174,7 @@ const g_search_db = [
     "summary": "Mark a class as unconditionally trivially relocatable, without any additional assertion to help verify correctness."
   },
   {
-    "index": 3174,
+    "index": 3172,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",

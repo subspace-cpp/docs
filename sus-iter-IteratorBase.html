@@ -1364,7 +1364,7 @@ the iterator is empty, None is returned.</p>
 <p>Note that <code>f32</code>/<code>f64</code> doesn’t implement <code>StrongOrd</code> due to NaN being
 incomparable. You can work around this by using <a href="sus::iter::IteratorBase::reduce"><code>Iterator::reduce</code></a>:</p>
 <pre><code class="language-cpp">sus_check<span class="punct">(</span>
-    sus::Array<span class="punct">&lt;</span>f32<span class="punct">,</span> 3<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">.</span>4<span class="punct">,</span> f32::NAN<span class="punct">,</span> 1<span class="punct">.</span>3<span class="punct">)</span>
+    sus::Array<span class="punct">&lt;</span>f32<span class="punct">,</span> 3<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">.</span>4<span class="punct">,</span> f32::NaN<span class="punct">,</span> 1<span class="punct">.</span>3<span class="punct">)</span>
         <span class="punct">.</span>into_iter<span class="punct">(</span><span class="punct">)</span>
         <span class="punct">.</span>reduce<span class="punct">(</span><span class="punct">&amp;</span>f32::max<span class="punct">)</span>
         <span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span>
@@ -1431,7 +1431,7 @@ the iterator is empty, None is returned.</p>
 <p>Note that <code>f32</code>/<code>f64</code> doesn’t implement <code>StrongOrd</code> due to NaN being
 incomparable. You can work around this by using <a href="sus::iter::IteratorBase::reduce"><code>Iterator::reduce</code></a>:</p>
 <pre><code class="language-cpp">sus_check<span class="punct">(</span>
-    sus::Array<span class="punct">&lt;</span>f32<span class="punct">,</span> 3<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">.</span>4<span class="punct">,</span> f32::NAN<span class="punct">,</span> 1<span class="punct">.</span>3<span class="punct">)</span>
+    sus::Array<span class="punct">&lt;</span>f32<span class="punct">,</span> 3<span class="punct">&gt;</span><span class="punct">(</span>2<span class="punct">.</span>4<span class="punct">,</span> f32::NaN<span class="punct">,</span> 1<span class="punct">.</span>3<span class="punct">)</span>
         <span class="punct">.</span>into_iter<span class="punct">(</span><span class="punct">)</span>
         <span class="punct">.</span>reduce<span class="punct">(</span><span class="punct">&amp;</span>f32::min<span class="punct">)</span>
         <span class="punct">.</span>unwrap<span class="punct">(</span><span class="punct">)</span> <span class="punct">=</span><span class="punct">=</span>
