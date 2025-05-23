@@ -584,15 +584,6 @@ const g_search_db = [
   },
   {
     "index": 65,
-    "type": "method",
-    "url": "sus-env-VarError.html#method.operator==",
-    "name": "operator==",
-    "full_name": "sus::env::VarError::operator==",
-    "split_name": "sus env Var Error operator==",
-    "summary": "Satisfies the Eq concept."
-  },
-  {
-    "index": 66,
     "type": "function",
     "url": "sus-env-fn.set_var.html",
     "name": "set_var",
@@ -601,13 +592,22 @@ const g_search_db = [
     "summary": "Sets the environment variable key to the value value for the currently running process."
   },
   {
-    "index": 67,
+    "index": 66,
     "type": "function",
     "url": "sus-env-fn.var.html",
     "name": "var",
     "full_name": "sus::env::var",
     "split_name": "sus env var",
     "summary": "Fetches the environment variable key from the current process."
+  },
+  {
+    "index": 67,
+    "type": "function",
+    "url": "sus-env-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::env::operator==",
+    "split_name": "sus env operator==",
+    "summary": "Satisfies the Eq concept."
   },
   {
     "index": 68,
@@ -691,14 +691,6 @@ const g_search_db = [
   {
     "index": 77,
     "type": "method",
-    "url": "sus-ops-RangeFull.html#method.operator==",
-    "name": "operator==",
-    "full_name": "sus::ops::RangeFull::operator==",
-    "split_name": "sus ops Range Full operator=="
-  },
-  {
-    "index": 78,
-    "type": "method",
     "url": "sus-ops-RangeFull.html#method.end_at",
     "name": "end_at",
     "full_name": "sus::ops::RangeFull::end_at",
@@ -706,7 +698,7 @@ const g_search_db = [
     "summary": "Return a new Range that has no start and ends at t."
   },
   {
-    "index": 79,
+    "index": 78,
     "type": "method",
     "url": "sus-ops-RangeFull.html#method.end_bound",
     "name": "end_bound",
@@ -715,7 +707,7 @@ const g_search_db = [
     "summary": "Returns None for the end of the RangeBounds."
   },
   {
-    "index": 80,
+    "index": 79,
     "type": "method",
     "url": "sus-ops-RangeFull.html#method.start_at",
     "name": "start_at",
@@ -724,7 +716,7 @@ const g_search_db = [
     "summary": "Return a new Range that starts at t and has no end."
   },
   {
-    "index": 81,
+    "index": 80,
     "type": "method",
     "url": "sus-ops-RangeFull.html#method.start_bound",
     "name": "start_bound",
@@ -733,7 +725,7 @@ const g_search_db = [
     "summary": "Returns None for the start of the RangeBounds."
   },
   {
-    "index": 82,
+    "index": 81,
     "type": "method",
     "url": "sus-ops-RangeFull.html#method.contains",
     "name": "contains",
@@ -742,7 +734,7 @@ const g_search_db = [
     "summary": "Returns true if item is contained in the range. For RangeFull it is always true."
   },
   {
-    "index": 83,
+    "index": 82,
     "type": "class",
     "url": "sus-ops-RangeFrom.html",
     "name": "RangeFrom",
@@ -751,7 +743,7 @@ const g_search_db = [
     "summary": "A range only bounded inclusively below (start..)."
   },
   {
-    "index": 84,
+    "index": 83,
     "type": "field",
     "url": "sus-ops-RangeFrom.html#field.start",
     "name": "start",
@@ -760,7 +752,7 @@ const g_search_db = [
     "summary": "The beginning of the range, inclusive of the given value."
   },
   {
-    "index": 85,
+    "index": 84,
     "type": "constructor",
     "url": "sus-ops-RangeFrom.html#method.RangeFrom",
     "name": "RangeFrom",
@@ -768,15 +760,7 @@ const g_search_db = [
     "split_name": "sus ops Range From Range From"
   },
   {
-    "index": 86,
-    "type": "method",
-    "url": "sus-ops-RangeFrom.html#method.operator==",
-    "name": "operator==",
-    "full_name": "sus::ops::RangeFrom::operator==",
-    "split_name": "sus ops Range From operator=="
-  },
-  {
-    "index": 87,
+    "index": 85,
     "type": "method",
     "url": "sus-ops-RangeFrom.html#method.end_at",
     "name": "end_at",
@@ -785,7 +769,7 @@ const g_search_db = [
     "summary": "Return a new Range that starts at where the original Range did and ends at t."
   },
   {
-    "index": 88,
+    "index": 86,
     "type": "method",
     "url": "sus-ops-RangeFrom.html#method.end_bound",
     "name": "end_bound",
@@ -794,7 +778,7 @@ const g_search_db = [
     "summary": "Returns None for the end of the RangeBounds."
   },
   {
-    "index": 89,
+    "index": 87,
     "type": "method",
     "url": "sus-ops-RangeFrom.html#method.start_at",
     "name": "start_at",
@@ -803,7 +787,7 @@ const g_search_db = [
     "summary": "Return a new RangeFrom that starts at t and still has no end."
   },
   {
-    "index": 90,
+    "index": 88,
     "type": "method",
     "url": "sus-ops-RangeFrom.html#method.start_bound",
     "name": "start_bound",
@@ -812,7 +796,7 @@ const g_search_db = [
     "summary": "Returns the beginning of the RangeBounds, inclusive of its own value."
   },
   {
-    "index": 91,
+    "index": 89,
     "type": "method",
     "url": "sus-ops-RangeFrom.html#method.contains",
     "name": "contains",
@@ -821,7 +805,7 @@ const g_search_db = [
     "summary": "Returns true if item is contained in the range."
   },
   {
-    "index": 92,
+    "index": 90,
     "type": "class",
     "url": "sus-ops-RangeTo.html",
     "name": "RangeTo",
@@ -830,7 +814,7 @@ const g_search_db = [
     "summary": "A range only bounded exclusively above (..end)."
   },
   {
-    "index": 93,
+    "index": 91,
     "type": "field",
     "url": "sus-ops-RangeTo.html#field.finish",
     "name": "finish",
@@ -839,7 +823,7 @@ const g_search_db = [
     "summary": "The end of the range, exclusive of the given value."
   },
   {
-    "index": 94,
+    "index": 92,
     "type": "constructor",
     "url": "sus-ops-RangeTo.html#method.RangeTo",
     "name": "RangeTo",
@@ -847,15 +831,7 @@ const g_search_db = [
     "split_name": "sus ops Range To Range To"
   },
   {
-    "index": 95,
-    "type": "method",
-    "url": "sus-ops-RangeTo.html#method.operator==",
-    "name": "operator==",
-    "full_name": "sus::ops::RangeTo::operator==",
-    "split_name": "sus ops Range To operator=="
-  },
-  {
-    "index": 96,
+    "index": 93,
     "type": "method",
     "url": "sus-ops-RangeTo.html#method.end_at",
     "name": "end_at",
@@ -864,7 +840,7 @@ const g_search_db = [
     "summary": "Return a new Range that still has no start and ends at t."
   },
   {
-    "index": 97,
+    "index": 94,
     "type": "method",
     "url": "sus-ops-RangeTo.html#method.end_bound",
     "name": "end_bound",
@@ -873,7 +849,7 @@ const g_search_db = [
     "summary": "Returns the end of the RangeBounds, exclusive of its own value."
   },
   {
-    "index": 98,
+    "index": 95,
     "type": "method",
     "url": "sus-ops-RangeTo.html#method.start_at",
     "name": "start_at",
@@ -882,7 +858,7 @@ const g_search_db = [
     "summary": "Return a new Range that starts at t and ends where the original Range did."
   },
   {
-    "index": 99,
+    "index": 96,
     "type": "method",
     "url": "sus-ops-RangeTo.html#method.start_bound",
     "name": "start_bound",
@@ -891,7 +867,7 @@ const g_search_db = [
     "summary": "Returns None for the beginning of the RangeBounds."
   },
   {
-    "index": 100,
+    "index": 97,
     "type": "method",
     "url": "sus-ops-RangeTo.html#method.contains",
     "name": "contains",
@@ -900,7 +876,7 @@ const g_search_db = [
     "summary": "Returns true if item is contained in the range."
   },
   {
-    "index": 101,
+    "index": 98,
     "type": "class",
     "url": "sus-ops-Range.html",
     "name": "Range",
@@ -909,7 +885,7 @@ const g_search_db = [
     "summary": "A (half-open) range bounded inclusively below and exclusively above (start..end)."
   },
   {
-    "index": 102,
+    "index": 99,
     "type": "field",
     "url": "sus-ops-Range.html#field.finish",
     "name": "finish",
@@ -918,7 +894,7 @@ const g_search_db = [
     "summary": "The end of the range, exclusive of the given value."
   },
   {
-    "index": 103,
+    "index": 100,
     "type": "field",
     "url": "sus-ops-Range.html#field.start",
     "name": "start",
@@ -927,7 +903,7 @@ const g_search_db = [
     "summary": "The beginning of the range, inclusive of the given value."
   },
   {
-    "index": 104,
+    "index": 101,
     "type": "constructor",
     "url": "sus-ops-Range.html#method.Range",
     "name": "Range",
@@ -935,16 +911,7 @@ const g_search_db = [
     "split_name": "sus ops Range Range"
   },
   {
-    "index": 105,
-    "type": "method",
-    "url": "sus-ops-Range.html#method.operator==",
-    "name": "operator==",
-    "full_name": "sus::ops::Range::operator==",
-    "split_name": "sus ops Range operator==",
-    "summary": "Compares two Range for equality, satisfying the Eq concept if T satisfies Eq."
-  },
-  {
-    "index": 106,
+    "index": 102,
     "type": "method",
     "url": "sus-ops-Range.html#method.end_at",
     "name": "end_at",
@@ -953,7 +920,7 @@ const g_search_db = [
     "summary": "Return a new Range that starts at where the original Range did and ends at t."
   },
   {
-    "index": 107,
+    "index": 103,
     "type": "method",
     "url": "sus-ops-Range.html#method.is_empty",
     "name": "is_empty",
@@ -962,7 +929,7 @@ const g_search_db = [
     "summary": "Returns true if the range contains no items."
   },
   {
-    "index": 108,
+    "index": 104,
     "type": "method",
     "url": "sus-ops-Range.html#method.end_bound",
     "name": "end_bound",
@@ -971,7 +938,7 @@ const g_search_db = [
     "summary": "Returns the end of the RangeBounds, exclusive of its own value."
   },
   {
-    "index": 109,
+    "index": 105,
     "type": "method",
     "url": "sus-ops-Range.html#method.start_at",
     "name": "start_at",
@@ -980,7 +947,7 @@ const g_search_db = [
     "summary": "Return a new Range that starts at t and ends where the original Range did."
   },
   {
-    "index": 110,
+    "index": 106,
     "type": "method",
     "url": "sus-ops-Range.html#method.start_bound",
     "name": "start_bound",
@@ -989,7 +956,7 @@ const g_search_db = [
     "summary": "Returns the beginning of the RangeBounds, inclusive of its own value."
   },
   {
-    "index": 111,
+    "index": 107,
     "type": "method",
     "url": "sus-ops-Range.html#method.contains",
     "name": "contains",
@@ -998,7 +965,7 @@ const g_search_db = [
     "summary": "Returns true if item is contained in the range."
   },
   {
-    "index": 112,
+    "index": 108,
     "type": "struct",
     "url": "sus-ops-TryImpl.html",
     "name": "TryImpl",
@@ -1006,7 +973,7 @@ const g_search_db = [
     "split_name": "sus ops Try Impl"
   },
   {
-    "index": 113,
+    "index": 109,
     "type": "method",
     "url": "sus-ops-TryImpl.html#method.from_default",
     "name": "from_default",
@@ -1014,7 +981,7 @@ const g_search_db = [
     "split_name": "sus ops Try Impl from default"
   },
   {
-    "index": 114,
+    "index": 110,
     "type": "method",
     "url": "sus-ops-TryImpl.html#method.preserve_error",
     "name": "preserve_error",
@@ -1022,7 +989,7 @@ const g_search_db = [
     "split_name": "sus ops Try Impl preserve error"
   },
   {
-    "index": 115,
+    "index": 111,
     "type": "method",
     "url": "sus-ops-TryImpl.html#method.from_output",
     "name": "from_output",
@@ -1030,7 +997,7 @@ const g_search_db = [
     "split_name": "sus ops Try Impl from output"
   },
   {
-    "index": 116,
+    "index": 112,
     "type": "method",
     "url": "sus-ops-TryImpl.html#method.into_output",
     "name": "into_output",
@@ -1038,7 +1005,7 @@ const g_search_db = [
     "split_name": "sus ops Try Impl into output"
   },
   {
-    "index": 117,
+    "index": 113,
     "type": "method",
     "url": "sus-ops-TryImpl.html#method.is_success",
     "name": "is_success",
@@ -1046,7 +1013,7 @@ const g_search_db = [
     "split_name": "sus ops Try Impl is success"
   },
   {
-    "index": 118,
+    "index": 114,
     "type": "type alias",
     "url": "TODO",
     "name": "RemapOutput",
@@ -1055,7 +1022,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 119,
+    "index": 115,
     "type": "type alias",
     "url": "TODO",
     "name": "Output",
@@ -1064,7 +1031,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 120,
+    "index": 116,
     "type": "function",
     "url": "sus-ops-fn.range_from.html",
     "name": "range_from",
@@ -1073,7 +1040,7 @@ const g_search_db = [
     "summary": "Return a new Range that starts at t and has no end."
   },
   {
-    "index": 121,
+    "index": 117,
     "type": "function",
     "url": "sus-ops-fn.range_to.html",
     "name": "range_to",
@@ -1082,7 +1049,7 @@ const g_search_db = [
     "summary": "Return a new Range that has no start and ends at t."
   },
   {
-    "index": 122,
+    "index": 118,
     "type": "function",
     "url": "sus-ops-fn.range.html",
     "name": "range",
@@ -1091,7 +1058,16 @@ const g_search_db = [
     "summary": "Return a new Range that starts at start and ends at end."
   },
   {
-    "index": 123,
+    "index": 119,
+    "type": "function",
+    "url": "sus-ops-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::ops::operator==",
+    "split_name": "sus ops operator==",
+    "summary": "Compares two Range for equality, satisfying the Eq concept if T satisfies Eq."
+  },
+  {
+    "index": 120,
     "type": "function",
     "url": "sus-ops-fn.try_preserve_error.html",
     "name": "try_preserve_error",
@@ -1100,7 +1076,7 @@ const g_search_db = [
     "summary": "Converts from a Try type T to another Try type U with a compatible error state. The input must be in an error state, and the output will be as well."
   },
   {
-    "index": 124,
+    "index": 121,
     "type": "function",
     "url": "sus-ops-fn.try_from_default.html",
     "name": "try_from_default",
@@ -1109,7 +1085,7 @@ const g_search_db = [
     "summary": "Constructs an object of type T that satisfies TryDefault (and Try) with its default success value."
   },
   {
-    "index": 125,
+    "index": 122,
     "type": "function",
     "url": "sus-ops-fn.try_from_output.html",
     "name": "try_from_output",
@@ -1118,7 +1094,7 @@ const g_search_db = [
     "summary": "Constructs an object of type T that satisfies Try from a value that represents success for T."
   },
   {
-    "index": 126,
+    "index": 123,
     "type": "function",
     "url": "sus-ops-fn.try_into_output.html",
     "name": "try_into_output",
@@ -1127,7 +1103,7 @@ const g_search_db = [
     "summary": "Unwraps from the Try type that is currently in its success state (try_is_success would return true) to produce its success value."
   },
   {
-    "index": 127,
+    "index": 124,
     "type": "function",
     "url": "sus-ops-fn.try_is_success.html",
     "name": "try_is_success",
@@ -1136,7 +1112,7 @@ const g_search_db = [
     "summary": "Determines if a type T that satisfies Try represents success in its current state."
   },
   {
-    "index": 128,
+    "index": 125,
     "url": "sus-namespace.marker.html",
     "type": "namespace",
     "name": "marker",
@@ -1145,7 +1121,7 @@ const g_search_db = [
     "summary": "Marker types, such as for accessing unsafe APIs, for overload resolution, or type elision."
   },
   {
-    "index": 129,
+    "index": 126,
     "type": "variable",
     "url": "sus-namespace.marker.html#variable.empty",
     "name": "empty",
@@ -1154,7 +1130,7 @@ const g_search_db = [
     "summary": "The global EmptyMarker which can be passed to constructors to allow type deduction instead of having to write out the full default constructor."
   },
   {
-    "index": 130,
+    "index": 127,
     "type": "variable",
     "url": "sus-namespace.marker.html#variable.unsafe_fn",
     "name": "unsafe_fn",
@@ -1163,7 +1139,7 @@ const g_search_db = [
     "summary": "The global UnsafeFnMarker which can be passed to unsafe functions. See the UnsafeFnMarker type for an explanation."
   },
   {
-    "index": 131,
+    "index": 128,
     "type": "struct",
     "url": "sus-marker-EmptyMarker.html",
     "name": "EmptyMarker",
@@ -1172,7 +1148,7 @@ const g_search_db = [
     "summary": "A marker that designates emptinesss, for constructing an empty collection."
   },
   {
-    "index": 132,
+    "index": 129,
     "type": "struct",
     "url": "sus-marker-UnsafeFnMarker.html",
     "name": "UnsafeFnMarker",
@@ -1181,7 +1157,7 @@ const g_search_db = [
     "summary": "A marker that designates a function as unsafe, or containing Undefined Behaviour if its preconditions are not met."
   },
   {
-    "index": 133,
+    "index": 130,
     "url": "sus-namespace.assertions.html",
     "type": "namespace",
     "name": "assertions",
@@ -1190,7 +1166,7 @@ const g_search_db = [
     "summary": "Checking for (e.g. sus_check) and handling (e.g. sus_panic, sus_unreachable) unexpected runtime conditions."
   },
   {
-    "index": 134,
+    "index": 131,
     "type": "struct",
     "url": "sus-assertions-PanicLocation.html",
     "name": "PanicLocation",
@@ -1199,7 +1175,7 @@ const g_search_db = [
     "summary": "Records the location where a panic occured."
   },
   {
-    "index": 135,
+    "index": 132,
     "type": "field",
     "url": "sus-assertions-PanicLocation.html#field.column",
     "name": "column",
@@ -1207,7 +1183,7 @@ const g_search_db = [
     "split_name": "sus assertions Panic Location column"
   },
   {
-    "index": 136,
+    "index": 133,
     "type": "field",
     "url": "sus-assertions-PanicLocation.html#field.line",
     "name": "line",
@@ -1215,7 +1191,7 @@ const g_search_db = [
     "split_name": "sus assertions Panic Location line"
   },
   {
-    "index": 137,
+    "index": 134,
     "type": "field",
     "url": "sus-assertions-PanicLocation.html#field.file_name",
     "name": "file_name",
@@ -1223,7 +1199,7 @@ const g_search_db = [
     "split_name": "sus assertions Panic Location file name"
   },
   {
-    "index": 138,
+    "index": 135,
     "type": "method",
     "url": "sus-assertions-PanicLocation.html#method.current",
     "name": "current",
@@ -1231,7 +1207,7 @@ const g_search_db = [
     "split_name": "sus assertions Panic Location current"
   },
   {
-    "index": 139,
+    "index": 136,
     "url": "sus-namespace.prelude.html",
     "type": "namespace",
     "name": "prelude",
@@ -1240,7 +1216,7 @@ const g_search_db = [
     "summary": "Commonly used things that can be pulled into the global top level namespace. This is done by default when including the sus/prelude.h header."
   },
   {
-    "index": 140,
+    "index": 137,
     "type": "type alias",
     "url": "sus-num-uptr.html",
     "name": "uptr",
@@ -1249,7 +1225,7 @@ const g_search_db = [
     "summary": "A pointer-sized unsigned integer."
   },
   {
-    "index": 141,
+    "index": 138,
     "type": "type alias",
     "url": "sus-collections-Vec.html",
     "name": "Vec",
@@ -1258,7 +1234,7 @@ const g_search_db = [
     "summary": "A resizeable contiguous buffer of type T."
   },
   {
-    "index": 142,
+    "index": 139,
     "type": "type alias",
     "url": "sus-num-u16.html",
     "name": "u16",
@@ -1267,7 +1243,7 @@ const g_search_db = [
     "summary": "A 16-bit unsigned integer."
   },
   {
-    "index": 143,
+    "index": 140,
     "type": "type alias",
     "url": "sus-num-f32.html",
     "name": "f32",
@@ -1276,7 +1252,7 @@ const g_search_db = [
     "summary": "A 32-bit floating point type."
   },
   {
-    "index": 144,
+    "index": 141,
     "type": "type alias",
     "url": "sus-num-i32.html",
     "name": "i32",
@@ -1285,7 +1261,7 @@ const g_search_db = [
     "summary": "A 32-bit signed integer."
   },
   {
-    "index": 145,
+    "index": 142,
     "type": "type alias",
     "url": "sus-num-usize.html",
     "name": "usize",
@@ -1294,7 +1270,7 @@ const g_search_db = [
     "summary": "An address-sized unsigned integer."
   },
   {
-    "index": 146,
+    "index": 143,
     "type": "type alias",
     "url": "sus-num-f64.html",
     "name": "f64",
@@ -1303,7 +1279,7 @@ const g_search_db = [
     "summary": "A 64-bit floating point type."
   },
   {
-    "index": 147,
+    "index": 144,
     "type": "type alias",
     "url": "sus-num-i16.html",
     "name": "i16",
@@ -1312,7 +1288,7 @@ const g_search_db = [
     "summary": "A 16-bit signed integer."
   },
   {
-    "index": 148,
+    "index": 145,
     "type": "type alias",
     "url": "sus-num-u32.html",
     "name": "u32",
@@ -1321,7 +1297,7 @@ const g_search_db = [
     "summary": "A 32-bit unsigned integer."
   },
   {
-    "index": 149,
+    "index": 146,
     "type": "variable alias",
     "url": "sus-namespace.marker.html#variable.unsafe_fn",
     "name": "unsafe_fn",
@@ -1330,7 +1306,7 @@ const g_search_db = [
     "summary": "The global UnsafeFnMarker which can be passed to unsafe functions. See the UnsafeFnMarker type for an explanation."
   },
   {
-    "index": 150,
+    "index": 147,
     "type": "type alias",
     "url": "sus-num-i64.html",
     "name": "i64",
@@ -1339,7 +1315,7 @@ const g_search_db = [
     "summary": "A 64-bit signed integer."
   },
   {
-    "index": 151,
+    "index": 148,
     "type": "type alias",
     "url": "sus-num-i8.html",
     "name": "i8",
@@ -1348,7 +1324,7 @@ const g_search_db = [
     "summary": "An 8-bit signed integer."
   },
   {
-    "index": 152,
+    "index": 149,
     "type": "type alias",
     "url": "sus-num-isize.html",
     "name": "isize",
@@ -1357,7 +1333,7 @@ const g_search_db = [
     "summary": "An address-sized signed integer."
   },
   {
-    "index": 153,
+    "index": 150,
     "type": "type alias",
     "url": "sus-option-Option.html",
     "name": "Option",
@@ -1366,7 +1342,7 @@ const g_search_db = [
     "summary": "The Option type."
   },
   {
-    "index": 154,
+    "index": 151,
     "type": "type alias",
     "url": "sus-num-u64.html",
     "name": "u64",
@@ -1375,7 +1351,7 @@ const g_search_db = [
     "summary": "A 64-bit unsigned integer."
   },
   {
-    "index": 155,
+    "index": 152,
     "type": "type alias",
     "url": "sus-num-u8.html",
     "name": "u8",
@@ -1384,7 +1360,7 @@ const g_search_db = [
     "summary": "An 8-bit unsigned integer."
   },
   {
-    "index": 156,
+    "index": 153,
     "url": "sus-namespace.mem.html",
     "type": "namespace",
     "name": "mem",
@@ -1392,7 +1368,7 @@ const g_search_db = [
     "split_name": "sus mem"
   },
   {
-    "index": 157,
+    "index": 154,
     "type": "type alias",
     "url": "TODO",
     "name": "remove_rvalue_reference",
@@ -1401,7 +1377,7 @@ const g_search_db = [
     "summary": "Performs reference collapsing, removing rvalue references but leaving lvalue references untouched."
   },
   {
-    "index": 158,
+    "index": 155,
     "type": "concept",
     "url": "sus-mem-NeverValueField.html",
     "name": "NeverValueField",
@@ -1410,7 +1386,7 @@ const g_search_db = [
     "summary": "A NeverValueField type has a field with a never-value."
   },
   {
-    "index": 159,
+    "index": 156,
     "type": "concept",
     "url": "sus-mem-TriviallyRelocatable.html",
     "name": "TriviallyRelocatable",
@@ -1419,7 +1395,7 @@ const g_search_db = [
     "summary": "Tests if a variable of type T can be relocated with ptr::copy."
   },
   {
-    "index": 160,
+    "index": 157,
     "type": "concept",
     "url": "sus-mem-CloneFrom.html",
     "name": "CloneFrom",
@@ -1428,7 +1404,7 @@ const g_search_db = [
     "summary": "Determines if T has an optimized path T::clone_from(const T&amp;) that can be used from clone_into."
   },
   {
-    "index": 161,
+    "index": 158,
     "type": "concept",
     "url": "sus-mem-Clone.html",
     "name": "Clone",
@@ -1437,7 +1413,7 @@ const g_search_db = [
     "summary": "A Clone type can make a new copy of itself."
   },
   {
-    "index": 162,
+    "index": 159,
     "type": "concept",
     "url": "sus-mem-CopyOrRefOrVoid.html",
     "name": "CopyOrRefOrVoid",
@@ -1446,7 +1422,7 @@ const g_search_db = [
     "summary": "Matches types which are CopyOrRef or are void."
   },
   {
-    "index": 163,
+    "index": 160,
     "type": "concept",
     "url": "sus-mem-CopyOrRef.html",
     "name": "CopyOrRef",
@@ -1455,7 +1431,7 @@ const g_search_db = [
     "summary": "A CopyOrRef object or reference of type T can be copied to construct a new T."
   },
   {
-    "index": 164,
+    "index": 161,
     "type": "concept",
     "url": "sus-mem-CloneOrRef.html",
     "name": "CloneOrRef",
@@ -1464,7 +1440,7 @@ const g_search_db = [
     "summary": "A CloneOrRef object or reference of type T can be cloned to construct a new T."
   },
   {
-    "index": 165,
+    "index": 162,
     "type": "concept",
     "url": "sus-mem-TrivialCopy.html",
     "name": "TrivialCopy",
@@ -1473,7 +1449,7 @@ const g_search_db = [
     "summary": "A TrivialCopy type is Copy but may be copied with memcpy() or memmove() instead of calling the copy constructor/assignment. This allows groups of items to be copied in a single operation."
   },
   {
-    "index": 166,
+    "index": 163,
     "type": "concept",
     "url": "sus-mem-IsMoveRef.html",
     "name": "IsMoveRef",
@@ -1482,7 +1458,7 @@ const g_search_db = [
     "summary": "A concept that can be used to constrain a universal reference parameter to ensure the caller provides something that was moved from, akin to receiving by value. This avoids inadvertantly moving out of an lvalue in the caller."
   },
   {
-    "index": 167,
+    "index": 164,
     "type": "concept",
     "url": "sus-mem-MoveOrRefOrVoid.html",
     "name": "MoveOrRefOrVoid",
@@ -1491,7 +1467,7 @@ const g_search_db = [
     "summary": "Matches types which are MoveOrRef or are void."
   },
   {
-    "index": 168,
+    "index": 165,
     "type": "concept",
     "url": "sus-mem-Copy.html",
     "name": "Copy",
@@ -1500,7 +1476,7 @@ const g_search_db = [
     "summary": "A Copy type can be copied to construct a new object and can be assigned to by copy."
   },
   {
-    "index": 169,
+    "index": 166,
     "type": "concept",
     "url": "sus-mem-MoveOrRef.html",
     "name": "MoveOrRef",
@@ -1509,7 +1485,7 @@ const g_search_db = [
     "summary": "A MoveOrRef object or reference of type T can be moved to construct a new T."
   },
   {
-    "index": 170,
+    "index": 167,
     "type": "concept",
     "url": "sus-mem-Move.html",
     "name": "Move",
@@ -1518,7 +1494,7 @@ const g_search_db = [
     "summary": "A Move type can be moved-from to construct a new object of the same type and can be assigned to by move."
   },
   {
-    "index": 171,
+    "index": 168,
     "type": "struct",
     "url": "sus-mem-NeverValueConstructor.html",
     "name": "NeverValueConstructor",
@@ -1526,7 +1502,7 @@ const g_search_db = [
     "split_name": "sus mem Never Value Constructor"
   },
   {
-    "index": 172,
+    "index": 169,
     "type": "function",
     "url": "sus-mem-fn.swap_nonoverlapping.html",
     "name": "swap_nonoverlapping",
@@ -1535,7 +1511,7 @@ const g_search_db = [
     "summary": "Swaps the objects lhs and rhs."
   },
   {
-    "index": 173,
+    "index": 170,
     "type": "function",
     "url": "sus-mem-fn.forward.html",
     "name": "forward",
@@ -1544,7 +1520,7 @@ const g_search_db = [
     "summary": "Move from non-reference values but pass through and preserve references."
   },
   {
-    "index": 174,
+    "index": 171,
     "type": "function",
     "url": "sus-mem-fn.move.html",
     "name": "move",
@@ -1553,7 +1529,7 @@ const g_search_db = [
     "summary": "Cast t to an r-value reference so that it can be used to construct or be assigned to a (non-reference) object of type T."
   },
   {
-    "index": 175,
+    "index": 172,
     "type": "function",
     "url": "sus-mem-fn.replace.html",
     "name": "replace",
@@ -1562,7 +1538,7 @@ const g_search_db = [
     "summary": "Replace the dest with src, and return the old value in dest."
   },
   {
-    "index": 176,
+    "index": 173,
     "type": "function",
     "url": "sus-mem-fn.clone_into.html",
     "name": "clone_into",
@@ -1571,7 +1547,7 @@ const g_search_db = [
     "summary": "Performs copy-assignment from source."
   },
   {
-    "index": 177,
+    "index": 174,
     "type": "function",
     "url": "sus-mem-fn.clone_or_forward.html",
     "name": "clone_or_forward",
@@ -1580,7 +1556,7 @@ const g_search_db = [
     "summary": "Clones the input either by copying or cloning, producing an object of type T. As with forward, the template argument T must always be specified when calling this function to deduce the correct return type."
   },
   {
-    "index": 178,
+    "index": 175,
     "type": "function",
     "url": "sus-mem-fn.size_of.html",
     "name": "size_of",
@@ -1589,7 +1565,7 @@ const g_search_db = [
     "summary": "Returns the size of the type T."
   },
   {
-    "index": 179,
+    "index": 176,
     "type": "function",
     "url": "sus-mem-fn.data_size_of.html",
     "name": "data_size_of",
@@ -1598,7 +1574,7 @@ const g_search_db = [
     "summary": "Returns the data size of the type T."
   },
   {
-    "index": 180,
+    "index": 177,
     "type": "function",
     "url": "sus-mem-fn.addressof.html",
     "name": "addressof",
@@ -1607,7 +1583,7 @@ const g_search_db = [
     "summary": "Returns the address of an object, regardless of whether a class type overrides operator&amp;."
   },
   {
-    "index": 181,
+    "index": 178,
     "type": "function",
     "url": "sus-mem-fn.take_copy_and_destruct.html",
     "name": "take_copy_and_destruct",
@@ -1616,7 +1592,7 @@ const g_search_db = [
     "summary": "Copies from t and destroys the object at t. Returns the old value of t."
   },
   {
-    "index": 182,
+    "index": 179,
     "type": "function",
     "url": "sus-mem-fn.clone.html",
     "name": "clone",
@@ -1625,7 +1601,7 @@ const g_search_db = [
     "summary": "Clones the input either by copying or cloning. Returns a new object of type T."
   },
   {
-    "index": 183,
+    "index": 180,
     "type": "function",
     "url": "sus-mem-fn.swap.html",
     "name": "swap",
@@ -1634,7 +1610,7 @@ const g_search_db = [
     "summary": "Swaps the objects lhs and rhs."
   },
   {
-    "index": 184,
+    "index": 181,
     "type": "function",
     "url": "sus-mem-fn.take.html",
     "name": "take",
@@ -1643,7 +1619,7 @@ const g_search_db = [
     "summary": "Moves from t and constructs a new T in its place. Returns the old value of t."
   },
   {
-    "index": 185,
+    "index": 182,
     "type": "function",
     "url": "sus-mem-fn.take_and_destruct.html",
     "name": "take_and_destruct",
@@ -1652,7 +1628,7 @@ const g_search_db = [
     "summary": "Moves from t and destroys the object at t. Returns the old value of t."
   },
   {
-    "index": 186,
+    "index": 183,
     "url": "sus-namespace.choice_type.html",
     "type": "namespace",
     "name": "choice_type",
@@ -1661,7 +1637,7 @@ const g_search_db = [
     "summary": "The Choice type."
   },
   {
-    "index": 187,
+    "index": 184,
     "type": "concept",
     "url": "sus-choice_type-ChoiceValueIsVoid.html",
     "name": "ChoiceValueIsVoid",
@@ -1670,7 +1646,7 @@ const g_search_db = [
     "summary": "A helper concept that reports if the value in a Choice for the given Tag is null. When true, the accessor and setter methods are not available."
   },
   {
-    "index": 188,
+    "index": 185,
     "type": "class",
     "url": "sus-choice_type-Choice.html",
     "name": "Choice",
@@ -1679,7 +1655,7 @@ const g_search_db = [
     "summary": "A tagged union, or sum type."
   },
   {
-    "index": 189,
+    "index": 186,
     "type": "constructor",
     "url": "sus-choice_type-Choice.html#method.Choice.copy",
     "name": "Choice",
@@ -1688,7 +1664,7 @@ const g_search_db = [
     "summary": "Copy constructor."
   },
   {
-    "index": 190,
+    "index": 187,
     "type": "constructor",
     "url": "sus-choice_type-Choice.html#method.Choice.move",
     "name": "Choice",
@@ -1697,7 +1673,7 @@ const g_search_db = [
     "summary": "Move constructor."
   },
   {
-    "index": 191,
+    "index": 188,
     "type": "conversion",
     "url": "sus-choice_type-Choice.html#method.operator TagsType",
     "name": "operator TagsType",
@@ -1706,7 +1682,7 @@ const g_search_db = [
     "summary": "Support for using Choice in a switch() statment."
   },
   {
-    "index": 192,
+    "index": 189,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.get_unchecked_mut",
     "name": "get_unchecked_mut",
@@ -1715,7 +1691,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the value(s) inside the Choice."
   },
   {
-    "index": 193,
+    "index": 190,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.get_mut",
     "name": "get_mut",
@@ -1724,7 +1700,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the value(s) inside the Choice."
   },
   {
-    "index": 194,
+    "index": 191,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.get_unchecked",
     "name": "get_unchecked",
@@ -1733,7 +1709,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the value(s) inside the Choice."
   },
   {
-    "index": 195,
+    "index": 192,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.set",
     "name": "set",
@@ -1742,7 +1718,7 @@ const g_search_db = [
     "summary": "Changes the Choice to make the tag V active, and sets the associated values of V from the paramters."
   },
   {
-    "index": 196,
+    "index": 193,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.get",
     "name": "get",
@@ -1751,7 +1727,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the value(s) inside the Choice."
   },
   {
-    "index": 197,
+    "index": 194,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.into_inner",
     "name": "into_inner",
@@ -1760,7 +1736,7 @@ const g_search_db = [
     "summary": "Unwraps the Choice to move out the current value(s) inside the Choice."
   },
   {
-    "index": 198,
+    "index": 195,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.as_mut",
     "name": "as_mut",
@@ -1769,7 +1745,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the value(s) inside the Choice."
   },
   {
-    "index": 199,
+    "index": 196,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.as",
     "name": "as",
@@ -1778,7 +1754,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the value(s) inside the Choice."
   },
   {
-    "index": 200,
+    "index": 197,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.which",
     "name": "which",
@@ -1787,7 +1763,7 @@ const g_search_db = [
     "summary": "Returns which is the active member of the Choice."
   },
   {
-    "index": 201,
+    "index": 198,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.clone",
     "name": "clone",
@@ -1796,7 +1772,7 @@ const g_search_db = [
     "summary": "Clone"
   },
   {
-    "index": 202,
+    "index": 199,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.operator=.copy",
     "name": "operator=",
@@ -1805,7 +1781,7 @@ const g_search_db = [
     "summary": "Copy assignment."
   },
   {
-    "index": 203,
+    "index": 200,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.operator=.move",
     "name": "operator=",
@@ -1814,7 +1790,7 @@ const g_search_db = [
     "summary": "Move assignment."
   },
   {
-    "index": 204,
+    "index": 201,
     "type": "method",
     "url": "sus-choice_type-Choice.html#method.with",
     "name": "with",
@@ -1823,7 +1799,7 @@ const g_search_db = [
     "summary": "Constructs a Choice with the V tag indicating its active member, and with the parameters used to set the associated values."
   },
   {
-    "index": 205,
+    "index": 202,
     "type": "type alias",
     "url": "TODO",
     "name": "TypeForTag",
@@ -1832,7 +1808,7 @@ const g_search_db = [
     "summary": "The type associated with a tag. If multiple types are associated, the resulting type here is a Tuple of those types."
   },
   {
-    "index": 206,
+    "index": 203,
     "type": "type alias",
     "url": "TODO",
     "name": "Tag",
@@ -1841,7 +1817,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 207,
+    "index": 204,
     "type": "struct",
     "url": "sus-choice_type-CanConvertToStorage.html",
     "name": "CanConvertToStorage",
@@ -1849,31 +1825,31 @@ const g_search_db = [
     "split_name": "sus choice type Can Convert To Storage"
   },
   {
+    "index": 205,
+    "type": "field",
+    "url": "sus-choice_type-CanConvertToStorage.html#field.value",
+    "name": "value",
+    "full_name": "sus::choice_type::CanConvertToStorage::value",
+    "split_name": "sus choice type Can Convert To Storage value"
+  },
+  {
+    "index": 206,
+    "type": "field",
+    "url": "sus-choice_type-CanConvertToStorage.html#field.value",
+    "name": "value",
+    "full_name": "sus::choice_type::CanConvertToStorage::value",
+    "split_name": "sus choice type Can Convert To Storage value"
+  },
+  {
+    "index": 207,
+    "type": "field",
+    "url": "sus-choice_type-CanConvertToStorage.html#field.value",
+    "name": "value",
+    "full_name": "sus::choice_type::CanConvertToStorage::value",
+    "split_name": "sus choice type Can Convert To Storage value"
+  },
+  {
     "index": 208,
-    "type": "field",
-    "url": "sus-choice_type-CanConvertToStorage.html#field.value",
-    "name": "value",
-    "full_name": "sus::choice_type::CanConvertToStorage::value",
-    "split_name": "sus choice type Can Convert To Storage value"
-  },
-  {
-    "index": 209,
-    "type": "field",
-    "url": "sus-choice_type-CanConvertToStorage.html#field.value",
-    "name": "value",
-    "full_name": "sus::choice_type::CanConvertToStorage::value",
-    "split_name": "sus choice type Can Convert To Storage value"
-  },
-  {
-    "index": 210,
-    "type": "field",
-    "url": "sus-choice_type-CanConvertToStorage.html#field.value",
-    "name": "value",
-    "full_name": "sus::choice_type::CanConvertToStorage::value",
-    "split_name": "sus choice type Can Convert To Storage value"
-  },
-  {
-    "index": 211,
     "type": "type alias",
     "url": "TODO",
     "name": "TargetType",
@@ -1882,7 +1858,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 212,
+    "index": 209,
     "type": "function",
     "url": "sus-choice_type-fn.operator_spaceship.html",
     "name": "operator<=>",
@@ -1891,15 +1867,7 @@ const g_search_db = [
     "summary": "Compares two Choices for ordering."
   },
   {
-    "index": 213,
-    "type": "function",
-    "url": "sus-choice_type-fn.operator_leftshift.html",
-    "name": "operator<<",
-    "full_name": "sus::choice_type::operator<<",
-    "split_name": "sus choice type operator<<"
-  },
-  {
-    "index": 214,
+    "index": 210,
     "type": "function",
     "url": "sus-choice_type-fn.operator_eq.html",
     "name": "operator==",
@@ -1908,7 +1876,7 @@ const g_search_db = [
     "summary": "Compares two Choices for equality if the types inside satisfy Eq."
   },
   {
-    "index": 215,
+    "index": 211,
     "url": "sus-namespace.cmp.html",
     "type": "namespace",
     "name": "cmp",
@@ -1917,7 +1885,7 @@ const g_search_db = [
     "summary": "Utilities for comparing and ordering values."
   },
   {
-    "index": 216,
+    "index": 212,
     "type": "concept",
     "url": "sus-cmp-ExclusivePartialOrd.html",
     "name": "ExclusivePartialOrd",
@@ -1926,7 +1894,7 @@ const g_search_db = [
     "summary": "Determines if the types Lhs and Rhs have a partial ordering (aka std::partial_ordering), and that this is the strongest ordering that exists between the types."
   },
   {
-    "index": 217,
+    "index": 213,
     "type": "concept",
     "url": "sus-cmp-PartialOrd.html",
     "name": "PartialOrd",
@@ -1935,7 +1903,7 @@ const g_search_db = [
     "summary": "Concept for types that form a partial ordering (aka std::partial_ordering)."
   },
   {
-    "index": 218,
+    "index": 214,
     "type": "concept",
     "url": "sus-cmp-Ord.html",
     "name": "Ord",
@@ -1944,7 +1912,7 @@ const g_search_db = [
     "summary": "Concept for types that form a total ordering (aka std::weak_ordering)."
   },
   {
-    "index": 219,
+    "index": 215,
     "type": "concept",
     "url": "sus-cmp-StrongOrd.html",
     "name": "StrongOrd",
@@ -1953,7 +1921,7 @@ const g_search_db = [
     "summary": "Concept for types that form a unique total order (aka std::strong_ordering). Objects that sort the same for ordering must also compare as equal."
   },
   {
-    "index": 220,
+    "index": 216,
     "type": "concept",
     "url": "sus-cmp-ExclusiveOrd.html",
     "name": "ExclusiveOrd",
@@ -1962,7 +1930,7 @@ const g_search_db = [
     "summary": "Determines if the types Lhs and Rhs have total ordering (aka std::weak_ordering), and that this is the strongest ordering that exists between the types."
   },
   {
-    "index": 221,
+    "index": 217,
     "type": "concept",
     "url": "sus-cmp-ExclusiveStrongOrd.html",
     "name": "ExclusiveStrongOrd",
@@ -1971,7 +1939,7 @@ const g_search_db = [
     "summary": "Concept for types that have a unique total ordering (aka std::strong_ordering)."
   },
   {
-    "index": 222,
+    "index": 218,
     "type": "concept",
     "url": "sus-cmp-Ordering.html",
     "name": "Ordering",
@@ -1980,7 +1948,7 @@ const g_search_db = [
     "summary": "Concept that combines all ordering types together."
   },
   {
-    "index": 223,
+    "index": 219,
     "type": "concept",
     "url": "sus-cmp-Eq.html",
     "name": "Eq",
@@ -1989,7 +1957,7 @@ const g_search_db = [
     "summary": "Concept for types that can be compared for equality with the == and != operators. There is no guarantee of a full equivalence relation, and a partial equivalence is possible, which allows for values that compare not-equal to themselves (such as NaN)."
   },
   {
-    "index": 224,
+    "index": 220,
     "type": "struct",
     "url": "sus-cmp-Reverse.html",
     "name": "Reverse",
@@ -1998,7 +1966,7 @@ const g_search_db = [
     "summary": "A helper struct for reverse ordering."
   },
   {
-    "index": 225,
+    "index": 221,
     "type": "field",
     "url": "sus-cmp-Reverse.html#field.value",
     "name": "value",
@@ -2006,7 +1974,7 @@ const g_search_db = [
     "split_name": "sus cmp Reverse value"
   },
   {
-    "index": 226,
+    "index": 222,
     "type": "method",
     "url": "sus-cmp-Reverse.html#method.clone_from",
     "name": "clone_from",
@@ -2014,7 +1982,7 @@ const g_search_db = [
     "split_name": "sus cmp Reverse clone from"
   },
   {
-    "index": 227,
+    "index": 223,
     "type": "method",
     "url": "sus-cmp-Reverse.html#method.clone",
     "name": "clone",
@@ -2022,7 +1990,7 @@ const g_search_db = [
     "split_name": "sus cmp Reverse clone"
   },
   {
-    "index": 228,
+    "index": 224,
     "type": "function",
     "url": "sus-cmp-fn.max.html",
     "name": "max",
@@ -2031,7 +1999,7 @@ const g_search_db = [
     "summary": "Compares and returns the maximum of two values."
   },
   {
-    "index": 229,
+    "index": 225,
     "type": "function",
     "url": "sus-cmp-fn.operator_spaceship.html",
     "name": "operator<=>",
@@ -2040,7 +2008,7 @@ const g_search_db = [
     "summary": "Returns the reverse ordering of the values in two Reserve objects."
   },
   {
-    "index": 230,
+    "index": 226,
     "type": "function",
     "url": "sus-cmp-fn.min_by_key.html",
     "name": "min_by_key",
@@ -2049,7 +2017,7 @@ const g_search_db = [
     "summary": "Returns the element that gives the minimum value from the specified function."
   },
   {
-    "index": 231,
+    "index": 227,
     "type": "function",
     "url": "sus-cmp-fn.max_by_key.html",
     "name": "max_by_key",
@@ -2058,7 +2026,7 @@ const g_search_db = [
     "summary": "Returns the element that gives the maximum value from the specified function."
   },
   {
-    "index": 232,
+    "index": 228,
     "type": "function",
     "url": "sus-cmp-fn.max_by.html",
     "name": "max_by",
@@ -2067,7 +2035,7 @@ const g_search_db = [
     "summary": "Compares and returns the maximum of two values with respect to the specified comparison function."
   },
   {
-    "index": 233,
+    "index": 229,
     "type": "function",
     "url": "sus-cmp-fn.min_by.html",
     "name": "min_by",
@@ -2076,7 +2044,7 @@ const g_search_db = [
     "summary": "Compares and returns the minimum of two values with respect to the specified comparison function."
   },
   {
-    "index": 234,
+    "index": 230,
     "type": "function",
     "url": "sus-cmp-fn.operator_eq.html",
     "name": "operator==",
@@ -2085,7 +2053,7 @@ const g_search_db = [
     "summary": "Compares the values in two Reserve objects."
   },
   {
-    "index": 235,
+    "index": 231,
     "type": "function",
     "url": "sus-cmp-fn.clamp.html",
     "name": "clamp",
@@ -2094,7 +2062,7 @@ const g_search_db = [
     "summary": "Restrict a value to a certain interval."
   },
   {
-    "index": 236,
+    "index": 232,
     "type": "function",
     "url": "sus-cmp-fn.min.html",
     "name": "min",
@@ -2103,7 +2071,7 @@ const g_search_db = [
     "summary": "Compares and returns the minimum of two values."
   },
   {
-    "index": 237,
+    "index": 233,
     "url": "sus-namespace.fn.html",
     "type": "namespace",
     "name": "fn",
@@ -2112,7 +2080,7 @@ const g_search_db = [
     "summary": "The Fn, FnMut and FnOnce concepts for working with functors and callable types."
   },
   {
-    "index": 238,
+    "index": 234,
     "type": "type alias",
     "url": "TODO",
     "name": "Return",
@@ -2121,7 +2089,7 @@ const g_search_db = [
     "summary": "Resolves to the return type of a Fn object when passed Args...."
   },
   {
-    "index": 239,
+    "index": 235,
     "type": "type alias",
     "url": "TODO",
     "name": "ReturnMut",
@@ -2130,7 +2098,7 @@ const g_search_db = [
     "summary": "Resolves to the return type of a FnMut object when passed Args...."
   },
   {
-    "index": 240,
+    "index": 236,
     "type": "type alias",
     "url": "TODO",
     "name": "ReturnOnce",
@@ -2139,7 +2107,7 @@ const g_search_db = [
     "summary": "Resolves to the return type of a FnOnce object when passed Args...."
   },
   {
-    "index": 241,
+    "index": 237,
     "type": "concept",
     "url": "sus-fn-FnMut.html",
     "name": "FnMut",
@@ -2148,7 +2116,7 @@ const g_search_db = [
     "summary": "The version of a callable object that is allowed to mutate internal state and may be called multiple times."
   },
   {
-    "index": 242,
+    "index": 238,
     "type": "concept",
     "url": "sus-fn-Fn.html",
     "name": "Fn",
@@ -2157,7 +2125,7 @@ const g_search_db = [
     "summary": "The version of a callable object that may be called multiple times without mutating internal state."
   },
   {
-    "index": 243,
+    "index": 239,
     "type": "concept",
     "url": "sus-fn-FnOnce.html",
     "name": "FnOnce",
@@ -2166,7 +2134,7 @@ const g_search_db = [
     "summary": "The version of a callable object that may be called only once."
   },
   {
-    "index": 244,
+    "index": 240,
     "type": "struct",
     "url": "sus-fn-DynFnOnce.html",
     "name": "DynFnOnce",
@@ -2175,7 +2143,7 @@ const g_search_db = [
     "summary": "A type-erased object which satisifies the concept FnOnce&lt;R(Args...)&gt;."
   },
   {
-    "index": 245,
+    "index": 241,
     "type": "field",
     "url": "sus-fn-DynFnOnce.html#field.IsDynFn",
     "name": "IsDynFn",
@@ -2183,7 +2151,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Once Is Dyn Fn"
   },
   {
-    "index": 246,
+    "index": 242,
     "type": "field",
     "url": "sus-fn-DynFnOnce.html#field.SatisfiesConcept",
     "name": "SatisfiesConcept",
@@ -2191,7 +2159,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Once Satisfies Concept"
   },
   {
-    "index": 247,
+    "index": 243,
     "type": "constructor",
     "url": "sus-fn-DynFnOnce.html#method.DynFnOnce",
     "name": "DynFnOnce",
@@ -2199,7 +2167,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Once Dyn Fn Once"
   },
   {
-    "index": 248,
+    "index": 244,
     "type": "method",
     "url": "sus-fn-DynFnOnce.html#method.operator()",
     "name": "operator()",
@@ -2207,7 +2175,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Once operator()"
   },
   {
-    "index": 249,
+    "index": 245,
     "type": "method",
     "url": "sus-fn-DynFnOnce.html#method.operator=",
     "name": "operator=",
@@ -2215,7 +2183,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Once operator="
   },
   {
-    "index": 250,
+    "index": 246,
     "type": "type alias",
     "url": "TODO",
     "name": "DynTyped",
@@ -2224,7 +2192,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 251,
+    "index": 247,
     "type": "struct",
     "url": "sus-fn-DynFnMut.html",
     "name": "DynFnMut",
@@ -2233,7 +2201,7 @@ const g_search_db = [
     "summary": "A type-erased object which satisifies the concept FnMut&lt;R(Args...)&gt;."
   },
   {
-    "index": 252,
+    "index": 248,
     "type": "field",
     "url": "sus-fn-DynFnMut.html#field.IsDynFn",
     "name": "IsDynFn",
@@ -2241,7 +2209,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Mut Is Dyn Fn"
   },
   {
-    "index": 253,
+    "index": 249,
     "type": "field",
     "url": "sus-fn-DynFnMut.html#field.SatisfiesConcept",
     "name": "SatisfiesConcept",
@@ -2249,7 +2217,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Mut Satisfies Concept"
   },
   {
-    "index": 254,
+    "index": 250,
     "type": "constructor",
     "url": "sus-fn-DynFnMut.html#method.DynFnMut",
     "name": "DynFnMut",
@@ -2257,7 +2225,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Mut Dyn Fn Mut"
   },
   {
-    "index": 255,
+    "index": 251,
     "type": "method",
     "url": "sus-fn-DynFnMut.html#method.operator()",
     "name": "operator()",
@@ -2265,7 +2233,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Mut operator()"
   },
   {
-    "index": 256,
+    "index": 252,
     "type": "method",
     "url": "sus-fn-DynFnMut.html#method.operator=",
     "name": "operator=",
@@ -2273,7 +2241,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Mut operator="
   },
   {
-    "index": 257,
+    "index": 253,
     "type": "type alias",
     "url": "TODO",
     "name": "DynTyped",
@@ -2282,7 +2250,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 258,
+    "index": 254,
     "type": "struct",
     "url": "sus-fn-DynFn.html",
     "name": "DynFn",
@@ -2291,7 +2259,7 @@ const g_search_db = [
     "summary": "A type-erased object which satisifies the concept Fn&lt;R(Args...)&gt;."
   },
   {
-    "index": 259,
+    "index": 255,
     "type": "field",
     "url": "sus-fn-DynFn.html#field.IsDynFn",
     "name": "IsDynFn",
@@ -2299,7 +2267,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Is Dyn Fn"
   },
   {
-    "index": 260,
+    "index": 256,
     "type": "field",
     "url": "sus-fn-DynFn.html#field.SatisfiesConcept",
     "name": "SatisfiesConcept",
@@ -2307,7 +2275,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Satisfies Concept"
   },
   {
-    "index": 261,
+    "index": 257,
     "type": "constructor",
     "url": "sus-fn-DynFn.html#method.DynFn",
     "name": "DynFn",
@@ -2315,7 +2283,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn Dyn Fn"
   },
   {
-    "index": 262,
+    "index": 258,
     "type": "method",
     "url": "sus-fn-DynFn.html#method.operator()",
     "name": "operator()",
@@ -2323,7 +2291,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn operator()"
   },
   {
-    "index": 263,
+    "index": 259,
     "type": "method",
     "url": "sus-fn-DynFn.html#method.operator=",
     "name": "operator=",
@@ -2331,7 +2299,7 @@ const g_search_db = [
     "split_name": "sus fn Dyn Fn operator="
   },
   {
-    "index": 264,
+    "index": 260,
     "type": "type alias",
     "url": "TODO",
     "name": "DynTyped",
@@ -2340,7 +2308,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 265,
+    "index": 261,
     "type": "struct",
     "url": "sus-fn-Anything.html",
     "name": "Anything",
@@ -2349,7 +2317,7 @@ const g_search_db = [
     "summary": "When used as the return type of the function signature in Fn, FnMut and FnOnce, the concepts will match against any return type from a functor including void."
   },
   {
-    "index": 266,
+    "index": 262,
     "type": "constructor",
     "url": "sus-fn-Anything.html#method.Anything",
     "name": "Anything",
@@ -2357,7 +2325,7 @@ const g_search_db = [
     "split_name": "sus fn Anything Anything"
   },
   {
-    "index": 267,
+    "index": 263,
     "type": "struct",
     "url": "sus-fn-NonVoid.html",
     "name": "NonVoid",
@@ -2366,7 +2334,7 @@ const g_search_db = [
     "summary": "When used as the return type of the function signature in Fn, FnMut and FnOnce, the concepts will match against any return type from a functor except void."
   },
   {
-    "index": 268,
+    "index": 264,
     "type": "constructor",
     "url": "sus-fn-NonVoid.html#method.NonVoid",
     "name": "NonVoid",
@@ -2374,7 +2342,7 @@ const g_search_db = [
     "split_name": "sus fn Non Void Non Void"
   },
   {
-    "index": 269,
+    "index": 265,
     "type": "function",
     "url": "sus-fn-fn.call.html",
     "name": "call",
@@ -2383,7 +2351,7 @@ const g_search_db = [
     "summary": "Invokes the Fn, passing any given arguments along, and returning the result."
   },
   {
-    "index": 270,
+    "index": 266,
     "type": "function",
     "url": "sus-fn-fn.call_mut.html",
     "name": "call_mut",
@@ -2392,7 +2360,7 @@ const g_search_db = [
     "summary": "Invokes the FnMut, passing any given arguments along, and returning the result."
   },
   {
-    "index": 271,
+    "index": 267,
     "type": "function",
     "url": "sus-fn-fn.call_once.html",
     "name": "call_once",
@@ -2401,7 +2369,7 @@ const g_search_db = [
     "summary": "Invokes the FnOnce, passing any given arguments along, and returning the result."
   },
   {
-    "index": 272,
+    "index": 268,
     "url": "sus-namespace.collections.html",
     "type": "namespace",
     "name": "collections",
@@ -2410,7 +2378,7 @@ const g_search_db = [
     "summary": "Collection types."
   },
   {
-    "index": 273,
+    "index": 269,
     "type": "function alias",
     "url": "sus-iter-fn.end.html",
     "name": "end",
@@ -2419,7 +2387,7 @@ const g_search_db = [
     "summary": "Implicit for-ranged loop iteration for all collections via the iter method."
   },
   {
-    "index": 274,
+    "index": 270,
     "type": "function alias",
     "url": "sus-iter-fn.begin.html",
     "name": "begin",
@@ -2428,7 +2396,7 @@ const g_search_db = [
     "summary": "Implicit for-ranged loop iteration for all collections via the iter method."
   },
   {
-    "index": 275,
+    "index": 271,
     "url": "sus-collections-namespace.compat.html",
     "type": "namespace",
     "name": "compat",
@@ -2436,7 +2404,7 @@ const g_search_db = [
     "split_name": "sus collections compat"
   },
   {
-    "index": 276,
+    "index": 272,
     "type": "concept",
     "url": "sus-collections-compat-Pair.html",
     "name": "Pair",
@@ -2444,7 +2412,7 @@ const g_search_db = [
     "split_name": "sus collections compat Pair"
   },
   {
-    "index": 277,
+    "index": 273,
     "type": "concept",
     "url": "sus-collections-Join.html",
     "name": "Join",
@@ -2453,7 +2421,7 @@ const g_search_db = [
     "summary": "Types that support being flattened and concatenated together into a collection, with a separator between each item. This is similar to Concat but with a separator."
   },
   {
-    "index": 278,
+    "index": 274,
     "type": "concept",
     "url": "sus-collections-Concat.html",
     "name": "Concat",
@@ -2462,7 +2430,7 @@ const g_search_db = [
     "summary": "Types that support being flattened and concatenated together into a collection."
   },
   {
-    "index": 279,
+    "index": 275,
     "type": "class",
     "url": "sus-collections-Vec.html",
     "name": "Vec",
@@ -2471,7 +2439,7 @@ const g_search_db = [
     "summary": "A resizeable contiguous buffer of type T."
   },
   {
-    "index": 280,
+    "index": 276,
     "type": "constructor",
     "url": "sus-collections-Vec.html#method.Vec.vec.move",
     "name": "Vec",
@@ -2480,7 +2448,7 @@ const g_search_db = [
     "summary": "Satisifes the Move concept."
   },
   {
-    "index": 281,
+    "index": 277,
     "type": "constructor",
     "url": "sus-collections-Vec.html#method.Vec",
     "name": "Vec",
@@ -2489,7 +2457,7 @@ const g_search_db = [
     "summary": "Constructs a Vec, which constructs objects of type T from the given values."
   },
   {
-    "index": 282,
+    "index": 278,
     "type": "constructor",
     "url": "sus-collections-Vec.html#method.Vec.empty",
     "name": "Vec",
@@ -2498,7 +2466,7 @@ const g_search_db = [
     "summary": "Constructs an empty Vec."
   },
   {
-    "index": 283,
+    "index": 279,
     "type": "conversion",
     "url": "sus-collections-Vec.html#method.operator SliceMut",
     "name": "operator SliceMut",
@@ -2507,7 +2475,7 @@ const g_search_db = [
     "summary": "Converts to a SliceMut&lt;T&gt;. A mutable Vec can be used anywhere a SliceMut is wanted."
   },
   {
-    "index": 284,
+    "index": 280,
     "type": "conversion",
     "url": "sus-collections-Vec.html#method.operator Slice",
     "name": "operator Slice",
@@ -2516,7 +2484,7 @@ const g_search_db = [
     "summary": "Converts to a Slice&lt;T&gt;. A Vec can be used anywhere a Slice is wanted."
   },
   {
-    "index": 285,
+    "index": 281,
     "type": "method",
     "url": "sus-collections-Vec.html#method.windows_mut",
     "name": "windows_mut",
@@ -2525,7 +2493,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all contiguous windows of length size. The windows overlap. If the slice is shorter than size, the iterator returns no values."
   },
   {
-    "index": 286,
+    "index": 282,
     "type": "method",
     "url": "sus-collections-Vec.html#method.swap_with_slice",
     "name": "swap_with_slice",
@@ -2534,7 +2502,7 @@ const g_search_db = [
     "summary": "Swaps all elements in *this with those in other."
   },
   {
-    "index": 287,
+    "index": 283,
     "type": "method",
     "url": "sus-collections-Vec.html#method.swap",
     "name": "swap",
@@ -2543,7 +2511,7 @@ const g_search_db = [
     "summary": "Swaps two elements in the slice."
   },
   {
-    "index": 288,
+    "index": 284,
     "type": "method",
     "url": "sus-collections-Vec.html#method.subrange_mut",
     "name": "subrange_mut",
@@ -2552,7 +2520,7 @@ const g_search_db = [
     "summary": "Returns a mutable subslice which contains elements in the range which is specified by a start and an end. This is an alias for the subscript operator with a RangeBounds argument, but without the need to construct a RangeBounds."
   },
   {
-    "index": 289,
+    "index": 285,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_last_mut",
     "name": "split_last_mut",
@@ -2561,7 +2529,7 @@ const g_search_db = [
     "summary": "Returns the last and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 290,
+    "index": 286,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_inclusive_mut",
     "name": "split_inclusive_mut",
@@ -2570,7 +2538,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred. The matched element is contained in the end of the previous subslice as a terminator."
   },
   {
-    "index": 291,
+    "index": 287,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_first_mut",
     "name": "split_first_mut",
@@ -2579,7 +2547,7 @@ const g_search_db = [
     "summary": "Returns the first and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 292,
+    "index": 288,
     "type": "method",
     "url": "sus-collections-Vec.html#method.sort_unstable_by_key",
     "name": "sort_unstable_by_key",
@@ -2588,7 +2556,7 @@ const g_search_db = [
     "summary": "Sorts the slice with a key extraction function, but might not preserve the order of equal elements."
   },
   {
-    "index": 293,
+    "index": 289,
     "type": "method",
     "url": "sus-collections-Vec.html#method.swap_nonoverlapping",
     "name": "swap_nonoverlapping",
@@ -2597,7 +2565,7 @@ const g_search_db = [
     "summary": "Swaps two elements in the slice. The arguments must not both refer to the same element."
   },
   {
-    "index": 294,
+    "index": 290,
     "type": "method",
     "url": "sus-collections-Vec.html#method.sort_unstable",
     "name": "sort_unstable",
@@ -2606,7 +2574,7 @@ const g_search_db = [
     "summary": "Sorts the slice, but might not preserve the order of equal elements."
   },
   {
-    "index": 295,
+    "index": 291,
     "type": "method",
     "url": "sus-collections-Vec.html#method.swap_unchecked",
     "name": "swap_unchecked",
@@ -2615,7 +2583,7 @@ const g_search_db = [
     "summary": "Swaps two elements in the slice."
   },
   {
-    "index": 296,
+    "index": 292,
     "type": "method",
     "url": "sus-collections-Vec.html#method.sort_by_key",
     "name": "sort_by_key",
@@ -2624,7 +2592,7 @@ const g_search_db = [
     "summary": "Sorts the slice with a key extraction function."
   },
   {
-    "index": 297,
+    "index": 293,
     "type": "method",
     "url": "sus-collections-Vec.html#method.sort",
     "name": "sort",
@@ -2633,7 +2601,7 @@ const g_search_db = [
     "summary": "Sorts the slice."
   },
   {
-    "index": 298,
+    "index": 294,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rsplit_mut",
     "name": "rsplit_mut",
@@ -2642,7 +2610,7 @@ const g_search_db = [
     "summary": "Returns an iterator over mutable subslices separated by elements that match pred, starting at the end of the slice and working backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 299,
+    "index": 295,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rotate_right",
     "name": "rotate_right",
@@ -2651,7 +2619,7 @@ const g_search_db = [
     "summary": "Rotates the slice in-place such that the first len() - k elements of the slice move to the end while the last k elements move to the front. After calling rotate_right(), the element previously at index len() - k will become the first element in the slice."
   },
   {
-    "index": 300,
+    "index": 296,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rchunks_mut",
     "name": "rchunks_mut",
@@ -2660,7 +2628,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 301,
+    "index": 297,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_mut",
     "name": "split_mut",
@@ -2669,7 +2637,7 @@ const g_search_db = [
     "summary": "Returns an iterator over mutable subslices separated by elements that match pred. The matched element is not contained in the subslices."
   },
   {
-    "index": 302,
+    "index": 298,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rsplitn_mut",
     "name": "rsplitn_mut",
@@ -2678,7 +2646,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred limited to returning at most n items. This starts at the end of the slice and works backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 303,
+    "index": 299,
     "type": "method",
     "url": "sus-collections-Vec.html#method.last_mut",
     "name": "last_mut",
@@ -2687,7 +2655,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the last element of the slice, or None if it is empty."
   },
   {
-    "index": 304,
+    "index": 300,
     "type": "method",
     "url": "sus-collections-Vec.html#method.sort_unstable_by",
     "name": "sort_unstable_by",
@@ -2696,7 +2664,7 @@ const g_search_db = [
     "summary": "Sorts the slice with a comparator function, but might not preserve the order of equal elements."
   },
   {
-    "index": 305,
+    "index": 301,
     "type": "method",
     "url": "sus-collections-Vec.html#method.iter_mut",
     "name": "iter_mut",
@@ -2705,7 +2673,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all the elements in the slice, visited in the same order they appear in the slice. The iterator gives mutable access to each element."
   },
   {
-    "index": 306,
+    "index": 302,
     "type": "method",
     "url": "sus-collections-Vec.html#method.get_range_mut_unchecked",
     "name": "get_range_mut_unchecked",
@@ -2714,7 +2682,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 307,
+    "index": 303,
     "type": "method",
     "url": "sus-collections-Vec.html#method.sort_by",
     "name": "sort_by",
@@ -2723,7 +2691,7 @@ const g_search_db = [
     "summary": "Sorts the slice with a comparator function."
   },
   {
-    "index": 308,
+    "index": 304,
     "type": "method",
     "url": "sus-collections-Vec.html#method.clone_from_slice",
     "name": "clone_from_slice",
@@ -2732,7 +2700,7 @@ const g_search_db = [
     "summary": "Copies the elements from src into *this."
   },
   {
-    "index": 309,
+    "index": 305,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rchunks_exact_mut",
     "name": "rchunks_exact_mut",
@@ -2741,7 +2709,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 310,
+    "index": 306,
     "type": "method",
     "url": "sus-collections-Vec.html#method.copy_from_slice_unchecked",
     "name": "copy_from_slice_unchecked",
@@ -2750,7 +2718,7 @@ const g_search_db = [
     "summary": "Copies all elements from src into *this, using a memcpy() or equivalent."
   },
   {
-    "index": 311,
+    "index": 307,
     "type": "method",
     "url": "sus-collections-Vec.html#method.chunks_exact_mut",
     "name": "chunks_exact_mut",
@@ -2759,7 +2727,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 312,
+    "index": 308,
     "type": "method",
     "url": "sus-collections-Vec.html#method.as_mut_ptr_range",
     "name": "as_mut_ptr_range",
@@ -2768,7 +2736,7 @@ const g_search_db = [
     "summary": "Returns the two mutable pointers spanning the slice."
   },
   {
-    "index": 313,
+    "index": 309,
     "type": "method",
     "url": "sus-collections-Vec.html#method.subrange",
     "name": "subrange",
@@ -2777,7 +2745,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in the range which is specified by a start and an end. This is an alias for the subscript operator with a RangeBounds argument, but without the need to construct a RangeBounds."
   },
   {
-    "index": 314,
+    "index": 310,
     "type": "method",
     "url": "sus-collections-Vec.html#method.strip_prefix",
     "name": "strip_prefix",
@@ -2786,7 +2754,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the prefix removed."
   },
   {
-    "index": 315,
+    "index": 311,
     "type": "method",
     "url": "sus-collections-Vec.html#method.starts_with",
     "name": "starts_with",
@@ -2795,7 +2763,7 @@ const g_search_db = [
     "summary": "Returns true if needle is a prefix of the slice."
   },
   {
-    "index": 316,
+    "index": 312,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_first",
     "name": "split_first",
@@ -2804,7 +2772,7 @@ const g_search_db = [
     "summary": "Returns the first and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 317,
+    "index": 313,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_at_unchecked",
     "name": "split_at_unchecked",
@@ -2813,7 +2781,7 @@ const g_search_db = [
     "summary": "Divides one slice into two at an index, without doing bounds checking."
   },
   {
-    "index": 318,
+    "index": 314,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_at",
     "name": "split_at",
@@ -2822,7 +2790,7 @@ const g_search_db = [
     "summary": "Divides one slice into two at an index."
   },
   {
-    "index": 319,
+    "index": 315,
     "type": "method",
     "url": "sus-collections-Vec.html#method.fill_with",
     "name": "fill_with",
@@ -2831,7 +2799,7 @@ const g_search_db = [
     "summary": "Fills the slice with elements returned by calling a closure repeatedly."
   },
   {
-    "index": 320,
+    "index": 316,
     "type": "method",
     "url": "sus-collections-Vec.html#method.splitn",
     "name": "splitn",
@@ -2840,7 +2808,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred, limited to returning at most n items. The matched element is not contained in the subslices."
   },
   {
-    "index": 321,
+    "index": 317,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split",
     "name": "split",
@@ -2849,7 +2817,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred. The matched element is not contained in the subslices."
   },
   {
-    "index": 322,
+    "index": 318,
     "type": "method",
     "url": "sus-collections-Vec.html#method.operator[].vec.index.range",
     "name": "operator[]",
@@ -2858,7 +2826,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 323,
+    "index": 319,
     "type": "method",
     "url": "sus-collections-Vec.html#method.as_ptr_range",
     "name": "as_ptr_range",
@@ -2867,7 +2835,7 @@ const g_search_db = [
     "summary": "Returns the two const pointers spanning the slice."
   },
   {
-    "index": 324,
+    "index": 320,
     "type": "method",
     "url": "sus-collections-Vec.html#method.binary_search_by",
     "name": "binary_search_by",
@@ -2876,7 +2844,7 @@ const g_search_db = [
     "summary": "Binary searches this slice with a comparator function. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 325,
+    "index": 321,
     "type": "method",
     "url": "sus-collections-Vec.html#method.operator[].vec.index_mut.usize",
     "name": "operator[]",
@@ -2885,7 +2853,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the element at position i in the Vec."
   },
   {
-    "index": 326,
+    "index": 322,
     "type": "method",
     "url": "sus-collections-Vec.html#method.operator[].vec.index.usize",
     "name": "operator[]",
@@ -2894,7 +2862,7 @@ const g_search_db = [
     "summary": "Returns a reference to the element at position i in the Vec."
   },
   {
-    "index": 327,
+    "index": 323,
     "type": "method",
     "url": "sus-collections-Vec.html#method.len",
     "name": "len",
@@ -2903,7 +2871,7 @@ const g_search_db = [
     "summary": "Returns the number of elements in the slice."
   },
   {
-    "index": 328,
+    "index": 324,
     "type": "method",
     "url": "sus-collections-Vec.html#method.fill_with_default",
     "name": "fill_with_default",
@@ -2912,7 +2880,7 @@ const g_search_db = [
     "summary": "Fills the slice with default-constructed elements of type T."
   },
   {
-    "index": 329,
+    "index": 325,
     "type": "method",
     "url": "sus-collections-Vec.html#method.into_iter",
     "name": "into_iter",
@@ -2921,7 +2889,7 @@ const g_search_db = [
     "summary": "Consumes the Vec into an Iterator that will return ownership of each element in the same order they appear in the Vec."
   },
   {
-    "index": 330,
+    "index": 326,
     "type": "method",
     "url": "sus-collections-Vec.html#method.emplace",
     "name": "emplace",
@@ -2930,7 +2898,7 @@ const g_search_db = [
     "summary": "Constructs and appends an element to the back of the vector."
   },
   {
-    "index": 331,
+    "index": 327,
     "type": "method",
     "url": "sus-collections-Vec.html#method.sort_by_cached_key",
     "name": "sort_by_cached_key",
@@ -2938,7 +2906,7 @@ const g_search_db = [
     "split_name": "sus collections Vec sort by cached key"
   },
   {
-    "index": 332,
+    "index": 328,
     "type": "method",
     "url": "sus-collections-Vec.html#method.as_ptr",
     "name": "as_ptr",
@@ -2947,7 +2915,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the first element in the slice."
   },
   {
-    "index": 333,
+    "index": 329,
     "type": "method",
     "url": "sus-collections-Vec.html#method.to_vec",
     "name": "to_vec",
@@ -2956,7 +2924,7 @@ const g_search_db = [
     "summary": "Constructs a Vec&lt;T&gt; by cloning each value in the Slice."
   },
   {
-    "index": 334,
+    "index": 330,
     "type": "method",
     "url": "sus-collections-Vec.html#method.as_mut_slice",
     "name": "as_mut_slice",
@@ -2965,7 +2933,7 @@ const g_search_db = [
     "summary": "Returns a SliceMut that references all the elements of the vector as mutable references."
   },
   {
-    "index": 335,
+    "index": 331,
     "type": "method",
     "url": "sus-collections-Vec.html#method.strip_suffix",
     "name": "strip_suffix",
@@ -2974,7 +2942,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the suffix removed."
   },
   {
-    "index": 336,
+    "index": 332,
     "type": "method",
     "url": "sus-collections-Vec.html#method.truncate",
     "name": "truncate",
@@ -2983,7 +2951,7 @@ const g_search_db = [
     "summary": "Shortens the vector, keeping the first len elements and dropping the rest."
   },
   {
-    "index": 337,
+    "index": 333,
     "type": "method",
     "url": "sus-collections-Vec.html#method.operator[].vec.index_mut.range",
     "name": "operator[]",
@@ -2992,7 +2960,7 @@ const g_search_db = [
     "summary": "Returns a mutable subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 338,
+    "index": 334,
     "type": "method",
     "url": "sus-collections-Vec.html#method.first_mut",
     "name": "first_mut",
@@ -3001,7 +2969,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the first element of the slice, or None if it is empty."
   },
   {
-    "index": 339,
+    "index": 335,
     "type": "method",
     "url": "sus-collections-Vec.html#method.reserve",
     "name": "reserve",
@@ -3010,7 +2978,7 @@ const g_search_db = [
     "summary": "Reserves capacity for at least additional more elements to be inserted in the given Vec&lt;T&gt;. The collection may reserve more space to speculatively avoid frequent reallocations. After calling reserve, capacity will be greater than or equal to self.len() + additional. Does nothing if capacity is already sufficient."
   },
   {
-    "index": 340,
+    "index": 336,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_last",
     "name": "split_last",
@@ -3019,7 +2987,7 @@ const g_search_db = [
     "summary": "Returns the last and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 341,
+    "index": 337,
     "type": "method",
     "url": "sus-collections-Vec.html#method.pop",
     "name": "pop",
@@ -3028,7 +2996,7 @@ const g_search_db = [
     "summary": "Removes the last element from a vector and returns it, or None if it is empty."
   },
   {
-    "index": 342,
+    "index": 338,
     "type": "method",
     "url": "sus-collections-Vec.html#method.grow_to_exact",
     "name": "grow_to_exact",
@@ -3037,7 +3005,7 @@ const g_search_db = [
     "summary": "Increase the capacity of the vector (the total number of elements that the vector can hold without requiring reallocation) to cap, if there is not already room. Does nothing if capacity is already sufficient."
   },
   {
-    "index": 343,
+    "index": 339,
     "type": "method",
     "url": "sus-collections-Vec.html#method.capacity",
     "name": "capacity",
@@ -3046,7 +3014,7 @@ const g_search_db = [
     "summary": "Returns the number of elements there is space allocated for in the vector."
   },
   {
-    "index": 344,
+    "index": 340,
     "type": "method",
     "url": "sus-collections-Vec.html#method.reverse",
     "name": "reverse",
@@ -3055,7 +3023,7 @@ const g_search_db = [
     "summary": "Reverses the order of elements in the slice, in place."
   },
   {
-    "index": 345,
+    "index": 341,
     "type": "method",
     "url": "sus-collections-Vec.html#method.is_empty",
     "name": "is_empty",
@@ -3064,7 +3032,7 @@ const g_search_db = [
     "summary": "Returns true if the slice has a length of 0."
   },
   {
-    "index": 346,
+    "index": 342,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_at_mut",
     "name": "split_at_mut",
@@ -3073,7 +3041,7 @@ const g_search_db = [
     "summary": "Divides one mutable slice into two at an index."
   },
   {
-    "index": 347,
+    "index": 343,
     "type": "method",
     "url": "sus-collections-Vec.html#method.extend_from_slice",
     "name": "extend_from_slice",
@@ -3082,7 +3050,7 @@ const g_search_db = [
     "summary": "Extends the Vec by cloning the contents of a slice."
   },
   {
-    "index": 348,
+    "index": 344,
     "type": "method",
     "url": "sus-collections-Vec.html#method.get_range_mut",
     "name": "get_range_mut",
@@ -3091,7 +3059,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 349,
+    "index": 345,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_inclusive",
     "name": "split_inclusive",
@@ -3100,7 +3068,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred. The matched element is contained in the end of the previous subslice as a terminator."
   },
   {
-    "index": 350,
+    "index": 346,
     "type": "method",
     "url": "sus-collections-Vec.html#method.from.from.slice",
     "name": "from",
@@ -3109,7 +3077,7 @@ const g_search_db = [
     "summary": "Constructs a Vec by cloning elements out of a slice."
   },
   {
-    "index": 351,
+    "index": 347,
     "type": "method",
     "url": "sus-collections-Vec.html#method.get_range_unchecked",
     "name": "get_range_unchecked",
@@ -3118,7 +3086,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 352,
+    "index": 348,
     "type": "method",
     "url": "sus-collections-Vec.html#method.clear",
     "name": "clear",
@@ -3127,7 +3095,7 @@ const g_search_db = [
     "summary": "Clears the vector, removing all values."
   },
   {
-    "index": 353,
+    "index": 349,
     "type": "method",
     "url": "sus-collections-Vec.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -3136,7 +3104,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the first element in the slice."
   },
   {
-    "index": 354,
+    "index": 350,
     "type": "method",
     "url": "sus-collections-Vec.html#method.extend.vec.extend.const",
     "name": "extend",
@@ -3145,7 +3113,7 @@ const g_search_db = [
     "summary": "Extends the Vec with the contents of an iterator, copying from the elements."
   },
   {
-    "index": 355,
+    "index": 351,
     "type": "method",
     "url": "sus-collections-Vec.html#method.from_raw_parts",
     "name": "from_raw_parts",
@@ -3154,7 +3122,7 @@ const g_search_db = [
     "summary": "Creates a Vec directly from a pointer, a capacity, and a length."
   },
   {
-    "index": 356,
+    "index": 352,
     "type": "method",
     "url": "sus-collections-Vec.html#method.get_mut",
     "name": "get_mut",
@@ -3163,7 +3131,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the element at index i, or None if i is beyond the end of the Slice."
   },
   {
-    "index": 357,
+    "index": 353,
     "type": "method",
     "url": "sus-collections-Vec.html#method.windows",
     "name": "windows",
@@ -3172,7 +3140,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all contiguous windows of length size. The windows overlap. If the slice is shorter than size, the iterator returns no values."
   },
   {
-    "index": 358,
+    "index": 354,
     "type": "method",
     "url": "sus-collections-Vec.html#method.push",
     "name": "push",
@@ -3181,7 +3149,7 @@ const g_search_db = [
     "summary": "Appends an element to the back of the vector."
   },
   {
-    "index": 359,
+    "index": 355,
     "type": "method",
     "url": "sus-collections-Vec.html#method.chunks_mut",
     "name": "chunks_mut",
@@ -3190,7 +3158,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 360,
+    "index": 356,
     "type": "method",
     "url": "sus-collections-Vec.html#method.reserve_exact",
     "name": "reserve_exact",
@@ -3199,7 +3167,7 @@ const g_search_db = [
     "summary": "Reserves the minimum capacity for at least additional more elements to be inserted in the given Vec&lt;T&gt;. Unlike reserve, this will not deliberately over-allocate to speculatively avoid frequent allocations. After calling reserve_exact, capacity will be greater than or equal to len() + additional. Does nothing if the capacity is already sufficient."
   },
   {
-    "index": 361,
+    "index": 357,
     "type": "method",
     "url": "sus-collections-Vec.html#method.set_len",
     "name": "set_len",
@@ -3208,7 +3176,7 @@ const g_search_db = [
     "summary": "Forces the length of the vector to new_len."
   },
   {
-    "index": 362,
+    "index": 358,
     "type": "method",
     "url": "sus-collections-Vec.html#method.with_capacity",
     "name": "with_capacity",
@@ -3217,7 +3185,7 @@ const g_search_db = [
     "summary": "Creates a Vec with at least the specified capacity."
   },
   {
-    "index": 363,
+    "index": 359,
     "type": "method",
     "url": "sus-collections-Vec.html#method.operator=.vec.move",
     "name": "operator=",
@@ -3226,7 +3194,7 @@ const g_search_db = [
     "summary": "Satisifes the Move concept."
   },
   {
-    "index": 364,
+    "index": 360,
     "type": "method",
     "url": "sus-collections-Vec.html#method.splitn_mut",
     "name": "splitn_mut",
@@ -3235,7 +3203,7 @@ const g_search_db = [
     "summary": "Returns an iterator over mutable subslices separated by elements that match pred, limited to returning at most n items. The matched element is not contained in the subslices."
   },
   {
-    "index": 365,
+    "index": 361,
     "type": "method",
     "url": "sus-collections-Vec.html#method.clone",
     "name": "clone",
@@ -3244,7 +3212,7 @@ const g_search_db = [
     "summary": "Satisfies the Clone concept."
   },
   {
-    "index": 366,
+    "index": 362,
     "type": "method",
     "url": "sus-collections-Vec.html#method.concat",
     "name": "concat",
@@ -3253,7 +3221,7 @@ const g_search_db = [
     "summary": "Flattens and concatenates the items in the Slice."
   },
   {
-    "index": 367,
+    "index": 363,
     "type": "method",
     "url": "sus-collections-Vec.html#method.clone_from",
     "name": "clone_from",
@@ -3262,7 +3230,7 @@ const g_search_db = [
     "summary": "An optimization to reuse the existing storage for Clone."
   },
   {
-    "index": 368,
+    "index": 364,
     "type": "method",
     "url": "sus-collections-Vec.html#method.from",
     "name": "from",
@@ -3271,7 +3239,7 @@ const g_search_db = [
     "summary": "Allocate a Vec&lt;u8&gt; and fill it with a string from a char array."
   },
   {
-    "index": 369,
+    "index": 365,
     "type": "method",
     "url": "sus-collections-Vec.html#method.first",
     "name": "first",
@@ -3280,7 +3248,7 @@ const g_search_db = [
     "summary": "Returns the first element of the slice, or None if it is empty."
   },
   {
-    "index": 370,
+    "index": 366,
     "type": "method",
     "url": "sus-collections-Vec.html#method.extend.vec.extend.val",
     "name": "extend",
@@ -3289,7 +3257,7 @@ const g_search_db = [
     "summary": "Extends the Vec with the contents of an iterator."
   },
   {
-    "index": 371,
+    "index": 367,
     "type": "method",
     "url": "sus-collections-Vec.html#method.into_raw_parts",
     "name": "into_raw_parts",
@@ -3298,7 +3266,7 @@ const g_search_db = [
     "summary": "Decomposes a Vec into its raw components."
   },
   {
-    "index": 372,
+    "index": 368,
     "type": "method",
     "url": "sus-collections-Vec.html#method.copy_from_slice",
     "name": "copy_from_slice",
@@ -3307,7 +3275,7 @@ const g_search_db = [
     "summary": "Copies all elements from src into *this, using a memcpy() or equivalent."
   },
   {
-    "index": 373,
+    "index": 369,
     "type": "method",
     "url": "sus-collections-Vec.html#method.chunks",
     "name": "chunks",
@@ -3316,7 +3284,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 374,
+    "index": 370,
     "type": "method",
     "url": "sus-collections-Vec.html#method.concat_into",
     "name": "concat_into",
@@ -3325,7 +3293,7 @@ const g_search_db = [
     "summary": "Concatenates a clone of each element in the slice into vec."
   },
   {
-    "index": 375,
+    "index": 371,
     "type": "method",
     "url": "sus-collections-Vec.html#method.contains",
     "name": "contains",
@@ -3334,7 +3302,7 @@ const g_search_db = [
     "summary": "Returns true if the slice contains an element with the given value."
   },
   {
-    "index": 376,
+    "index": 372,
     "type": "method",
     "url": "sus-collections-Vec.html#method.get",
     "name": "get",
@@ -3343,7 +3311,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the element at index i, or None if i is beyond the end of the Slice."
   },
   {
-    "index": 377,
+    "index": 373,
     "type": "method",
     "url": "sus-collections-Vec.html#method.strip_suffix_mut",
     "name": "strip_suffix_mut",
@@ -3352,7 +3320,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the suffix removed."
   },
   {
-    "index": 378,
+    "index": 374,
     "type": "method",
     "url": "sus-collections-Vec.html#method.get_unchecked_mut",
     "name": "get_unchecked_mut",
@@ -3361,7 +3329,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the element at index i."
   },
   {
-    "index": 379,
+    "index": 375,
     "type": "method",
     "url": "sus-collections-Vec.html#method.ends_with",
     "name": "ends_with",
@@ -3370,7 +3338,7 @@ const g_search_db = [
     "summary": "Returns true if suffix is a suffix of the slice."
   },
   {
-    "index": 380,
+    "index": 376,
     "type": "method",
     "url": "sus-collections-Vec.html#method.binary_search",
     "name": "binary_search",
@@ -3379,7 +3347,7 @@ const g_search_db = [
     "summary": "Binary searches this slice for a given element. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 381,
+    "index": 377,
     "type": "method",
     "url": "sus-collections-Vec.html#method.get_range",
     "name": "get_range",
@@ -3388,7 +3356,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 382,
+    "index": 378,
     "type": "method",
     "url": "sus-collections-Vec.html#method.chunks_exact",
     "name": "chunks_exact",
@@ -3397,7 +3365,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 383,
+    "index": 379,
     "type": "method",
     "url": "sus-collections-Vec.html#method.get_unchecked",
     "name": "get_unchecked",
@@ -3406,7 +3374,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the element at index i."
   },
   {
-    "index": 384,
+    "index": 380,
     "type": "method",
     "url": "sus-collections-Vec.html#method.iter",
     "name": "iter",
@@ -3415,7 +3383,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all the elements in the slice, visited in the same order they appear in the slice. The iterator gives const access to each element."
   },
   {
-    "index": 385,
+    "index": 381,
     "type": "method",
     "url": "sus-collections-Vec.html#method.last",
     "name": "last",
@@ -3424,7 +3392,7 @@ const g_search_db = [
     "summary": "Returns the last element of the slice, or None if it is empty."
   },
   {
-    "index": 386,
+    "index": 382,
     "type": "method",
     "url": "sus-collections-Vec.html#method.join_into",
     "name": "join_into",
@@ -3433,7 +3401,7 @@ const g_search_db = [
     "summary": "Joins a clone of each element in the slice into vec."
   },
   {
-    "index": 387,
+    "index": 383,
     "type": "method",
     "url": "sus-collections-Vec.html#method.binary_search_by_key",
     "name": "binary_search_by_key",
@@ -3442,7 +3410,7 @@ const g_search_db = [
     "summary": "Binary searches this slice with a key extraction function. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 388,
+    "index": 384,
     "type": "method",
     "url": "sus-collections-Vec.html#method.join",
     "name": "join",
@@ -3451,7 +3419,7 @@ const g_search_db = [
     "summary": "Flattens and concatenates the items in the Slice, cloning a separator between each item."
   },
   {
-    "index": 389,
+    "index": 385,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rsplit",
     "name": "rsplit",
@@ -3460,7 +3428,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred, starting at the end of the slice and working backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 390,
+    "index": 386,
     "type": "method",
     "url": "sus-collections-Vec.html#method.fill",
     "name": "fill",
@@ -3469,7 +3437,7 @@ const g_search_db = [
     "summary": "Fills the slice with elements by cloning value."
   },
   {
-    "index": 391,
+    "index": 387,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rsplitn",
     "name": "rsplitn",
@@ -3478,7 +3446,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred limited to returning at most n items. This starts at the end of the slice and works backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 392,
+    "index": 388,
     "type": "method",
     "url": "sus-collections-Vec.html#method.strip_prefix_mut",
     "name": "strip_prefix_mut",
@@ -3487,7 +3455,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the prefix removed."
   },
   {
-    "index": 393,
+    "index": 389,
     "type": "method",
     "url": "sus-collections-Vec.html#method.split_at_mut_unchecked",
     "name": "split_at_mut_unchecked",
@@ -3496,7 +3464,7 @@ const g_search_db = [
     "summary": "Divides one slice of mutable references into two at an index, without doing bounds checking."
   },
   {
-    "index": 394,
+    "index": 390,
     "type": "method",
     "url": "sus-collections-Vec.html#method.as_slice",
     "name": "as_slice",
@@ -3505,7 +3473,7 @@ const g_search_db = [
     "summary": "Returns a Slice that references all the elements of the vector as const references."
   },
   {
-    "index": 395,
+    "index": 391,
     "type": "method",
     "url": "sus-collections-Vec.html#method.partition_point",
     "name": "partition_point",
@@ -3514,7 +3482,7 @@ const g_search_db = [
     "summary": "Returns the index of the partition point according to the given predicate (the index of the first element of the second partition)."
   },
   {
-    "index": 396,
+    "index": 392,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rchunks",
     "name": "rchunks",
@@ -3523,7 +3491,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 397,
+    "index": 393,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rotate_left",
     "name": "rotate_left",
@@ -3532,7 +3500,7 @@ const g_search_db = [
     "summary": "Rotates the slice in-place such that the first mid elements of the slice move to the end while the last self.len() - mid elements move to the front. After calling rotate_left(), the element previously at index mid will become the first element in the slice."
   },
   {
-    "index": 398,
+    "index": 394,
     "type": "method",
     "url": "sus-collections-Vec.html#method.drain",
     "name": "drain",
@@ -3541,7 +3509,7 @@ const g_search_db = [
     "summary": "Removes the specified range from the vector in bulk, returning all removed elements as an iterator. If the iterator is dropped before being fully consumed, it drops the remaining removed elements."
   },
   {
-    "index": 399,
+    "index": 395,
     "type": "method",
     "url": "sus-collections-Vec.html#method.repeat",
     "name": "repeat",
@@ -3550,7 +3518,7 @@ const g_search_db = [
     "summary": "Creates a vector by copying a slice n times."
   },
   {
-    "index": 400,
+    "index": 396,
     "type": "method",
     "url": "sus-collections-Vec.html#method.rchunks_exact",
     "name": "rchunks_exact",
@@ -3559,7 +3527,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 401,
+    "index": 397,
     "type": "type alias",
     "url": "TODO",
     "name": "JoinOutputType",
@@ -3568,7 +3536,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 402,
+    "index": 398,
     "type": "type alias",
     "url": "TODO",
     "name": "ConcatOutputType",
@@ -3577,7 +3545,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 403,
+    "index": 399,
     "type": "struct",
     "url": "sus-collections-VecIntoIter.html",
     "name": "VecIntoIter",
@@ -3586,7 +3554,7 @@ const g_search_db = [
     "summary": "An iterator that consumes a Vec and returns the items from it."
   },
   {
-    "index": 404,
+    "index": 400,
     "type": "constructor",
     "url": "sus-collections-VecIntoIter.html#method.VecIntoIter",
     "name": "VecIntoIter",
@@ -3594,7 +3562,7 @@ const g_search_db = [
     "split_name": "sus collections Vec Into Iter Vec Into Iter"
   },
   {
-    "index": 405,
+    "index": 401,
     "type": "method",
     "url": "sus-collections-VecIntoIter.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -3603,7 +3571,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 406,
+    "index": 402,
     "type": "method",
     "url": "sus-collections-VecIntoIter.html#method.next_back",
     "name": "next_back",
@@ -3612,7 +3580,7 @@ const g_search_db = [
     "summary": "sus::iter::DoubleEndedIterator trait."
   },
   {
-    "index": 407,
+    "index": 403,
     "type": "method",
     "url": "sus-collections-VecIntoIter.html#method.next",
     "name": "next",
@@ -3621,7 +3589,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 408,
+    "index": 404,
     "type": "method",
     "url": "sus-collections-VecIntoIter.html#method.size_hint",
     "name": "size_hint",
@@ -3630,7 +3598,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 409,
+    "index": 405,
     "type": "method",
     "url": "sus-collections-VecIntoIter.html#method.clone",
     "name": "clone",
@@ -3638,7 +3606,7 @@ const g_search_db = [
     "split_name": "sus collections Vec Into Iter clone"
   },
   {
-    "index": 410,
+    "index": 406,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -3647,7 +3615,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 411,
+    "index": 407,
     "type": "struct",
     "url": "sus-collections-Drain.html",
     "name": "Drain",
@@ -3656,7 +3624,7 @@ const g_search_db = [
     "summary": "A draining iterator for Vec&lt;T&gt;."
   },
   {
-    "index": 412,
+    "index": 408,
     "type": "constructor",
     "url": "sus-collections-Drain.html#method.Drain",
     "name": "Drain",
@@ -3664,7 +3632,7 @@ const g_search_db = [
     "split_name": "sus collections Drain Drain"
   },
   {
-    "index": 413,
+    "index": 409,
     "type": "method",
     "url": "sus-collections-Drain.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -3673,7 +3641,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 414,
+    "index": 410,
     "type": "method",
     "url": "sus-collections-Drain.html#method.size_hint",
     "name": "size_hint",
@@ -3681,7 +3649,7 @@ const g_search_db = [
     "split_name": "sus collections Drain size hint"
   },
   {
-    "index": 415,
+    "index": 411,
     "type": "method",
     "url": "sus-collections-Drain.html#method.next_back",
     "name": "next_back",
@@ -3689,7 +3657,7 @@ const g_search_db = [
     "split_name": "sus collections Drain next back"
   },
   {
-    "index": 416,
+    "index": 412,
     "type": "method",
     "url": "sus-collections-Drain.html#method.next",
     "name": "next",
@@ -3697,7 +3665,7 @@ const g_search_db = [
     "split_name": "sus collections Drain next"
   },
   {
-    "index": 417,
+    "index": 413,
     "type": "method",
     "url": "sus-collections-Drain.html#method.keep_rest",
     "name": "keep_rest",
@@ -3706,7 +3674,7 @@ const g_search_db = [
     "summary": "Keep unyielded elements in the source Vec."
   },
   {
-    "index": 418,
+    "index": 414,
     "type": "method",
     "url": "sus-collections-Drain.html#method.operator=",
     "name": "operator=",
@@ -3715,7 +3683,7 @@ const g_search_db = [
     "summary": "Drain may be move-constructed in order to be stored as a member of other objects, but it can not be assigned-to. See the class documentation for more."
   },
   {
-    "index": 419,
+    "index": 415,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -3724,7 +3692,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 420,
+    "index": 416,
     "type": "class",
     "url": "sus-collections-Slice.html",
     "name": "Slice",
@@ -3733,7 +3701,7 @@ const g_search_db = [
     "summary": "A dynamically-sized const view into a contiguous sequence of objects of type const T."
   },
   {
-    "index": 421,
+    "index": 417,
     "type": "constructor",
     "url": "sus-collections-Slice.html#method.Slice",
     "name": "Slice",
@@ -3742,7 +3710,7 @@ const g_search_db = [
     "summary": "Constructs an empty Slice, which has no elements."
   },
   {
-    "index": 422,
+    "index": 418,
     "type": "constructor",
     "url": "sus-collections-Slice.html#method.Slice.empty",
     "name": "Slice",
@@ -3751,7 +3719,7 @@ const g_search_db = [
     "summary": "Constructs an empty Slice."
   },
   {
-    "index": 423,
+    "index": 419,
     "type": "method",
     "url": "sus-collections-Slice.html#method.to_vec",
     "name": "to_vec",
@@ -3760,7 +3728,7 @@ const g_search_db = [
     "summary": "Constructs a Vec&lt;T&gt; by cloning each value in the Slice."
   },
   {
-    "index": 424,
+    "index": 420,
     "type": "method",
     "url": "sus-collections-Slice.html#method.strip_suffix",
     "name": "strip_suffix",
@@ -3769,7 +3737,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the suffix removed."
   },
   {
-    "index": 425,
+    "index": 421,
     "type": "method",
     "url": "sus-collections-Slice.html#method.starts_with",
     "name": "starts_with",
@@ -3778,7 +3746,7 @@ const g_search_db = [
     "summary": "Returns true if needle is a prefix of the slice."
   },
   {
-    "index": 426,
+    "index": 422,
     "type": "method",
     "url": "sus-collections-Slice.html#method.split_last",
     "name": "split_last",
@@ -3787,7 +3755,7 @@ const g_search_db = [
     "summary": "Returns the last and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 427,
+    "index": 423,
     "type": "method",
     "url": "sus-collections-Slice.html#method.split_at",
     "name": "split_at",
@@ -3796,7 +3764,7 @@ const g_search_db = [
     "summary": "Divides one slice into two at an index."
   },
   {
-    "index": 428,
+    "index": 424,
     "type": "method",
     "url": "sus-collections-Slice.html#method.split",
     "name": "split",
@@ -3805,7 +3773,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred. The matched element is not contained in the subslices."
   },
   {
-    "index": 429,
+    "index": 425,
     "type": "method",
     "url": "sus-collections-Slice.html#method.repeat",
     "name": "repeat",
@@ -3814,7 +3782,7 @@ const g_search_db = [
     "summary": "Creates a vector by copying a slice n times."
   },
   {
-    "index": 430,
+    "index": 426,
     "type": "method",
     "url": "sus-collections-Slice.html#method.rchunks_exact",
     "name": "rchunks_exact",
@@ -3823,7 +3791,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 431,
+    "index": 427,
     "type": "method",
     "url": "sus-collections-Slice.html#method.rchunks",
     "name": "rchunks",
@@ -3832,7 +3800,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 432,
+    "index": 428,
     "type": "method",
     "url": "sus-collections-Slice.html#method.partition_point",
     "name": "partition_point",
@@ -3841,7 +3809,7 @@ const g_search_db = [
     "summary": "Returns the index of the partition point according to the given predicate (the index of the first element of the second partition)."
   },
   {
-    "index": 433,
+    "index": 429,
     "type": "method",
     "url": "sus-collections-Slice.html#method.binary_search",
     "name": "binary_search",
@@ -3850,7 +3818,7 @@ const g_search_db = [
     "summary": "Binary searches this slice for a given element. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 434,
+    "index": 430,
     "type": "method",
     "url": "sus-collections-Slice.html#method.concat_into",
     "name": "concat_into",
@@ -3859,7 +3827,7 @@ const g_search_db = [
     "summary": "Concatenates a clone of each element in the slice into vec."
   },
   {
-    "index": 435,
+    "index": 431,
     "type": "method",
     "url": "sus-collections-Slice.html#method.strip_prefix",
     "name": "strip_prefix",
@@ -3868,7 +3836,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the prefix removed."
   },
   {
-    "index": 436,
+    "index": 432,
     "type": "method",
     "url": "sus-collections-Slice.html#method.first",
     "name": "first",
@@ -3877,7 +3845,7 @@ const g_search_db = [
     "summary": "Returns the first element of the slice, or None if it is empty."
   },
   {
-    "index": 437,
+    "index": 433,
     "type": "method",
     "url": "sus-collections-Slice.html#method.subrange",
     "name": "subrange",
@@ -3886,7 +3854,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in the range which is specified by a start and an end. This is an alias for the subscript operator with a RangeBounds argument, but without the need to construct a RangeBounds."
   },
   {
-    "index": 438,
+    "index": 434,
     "type": "method",
     "url": "sus-collections-Slice.html#method.contains",
     "name": "contains",
@@ -3895,7 +3863,7 @@ const g_search_db = [
     "summary": "Returns true if the slice contains an element with the given value."
   },
   {
-    "index": 439,
+    "index": 435,
     "type": "method",
     "url": "sus-collections-Slice.html#method.len",
     "name": "len",
@@ -3904,7 +3872,7 @@ const g_search_db = [
     "summary": "Returns the number of elements in the slice."
   },
   {
-    "index": 440,
+    "index": 436,
     "type": "method",
     "url": "sus-collections-Slice.html#method.from_raw_parts",
     "name": "from_raw_parts",
@@ -3913,7 +3881,7 @@ const g_search_db = [
     "summary": "Constructs a slice from its raw parts."
   },
   {
-    "index": 441,
+    "index": 437,
     "type": "method",
     "url": "sus-collections-Slice.html#method.chunks",
     "name": "chunks",
@@ -3922,7 +3890,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 442,
+    "index": 438,
     "type": "method",
     "url": "sus-collections-Slice.html#method.split_inclusive",
     "name": "split_inclusive",
@@ -3931,7 +3899,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred. The matched element is contained in the end of the previous subslice as a terminator."
   },
   {
-    "index": 443,
+    "index": 439,
     "type": "method",
     "url": "sus-collections-Slice.html#method.chunks_exact",
     "name": "chunks_exact",
@@ -3940,7 +3908,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 444,
+    "index": 440,
     "type": "method",
     "url": "sus-collections-Slice.html#method.windows",
     "name": "windows",
@@ -3949,7 +3917,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all contiguous windows of length size. The windows overlap. If the slice is shorter than size, the iterator returns no values."
   },
   {
-    "index": 445,
+    "index": 441,
     "type": "method",
     "url": "sus-collections-Slice.html#method.iter",
     "name": "iter",
@@ -3958,7 +3926,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all the elements in the slice, visited in the same order they appear in the slice. The iterator gives const access to each element."
   },
   {
-    "index": 446,
+    "index": 442,
     "type": "method",
     "url": "sus-collections-Slice.html#method.is_empty",
     "name": "is_empty",
@@ -3967,7 +3935,7 @@ const g_search_db = [
     "summary": "Returns true if the slice has a length of 0."
   },
   {
-    "index": 447,
+    "index": 443,
     "type": "method",
     "url": "sus-collections-Slice.html#method.operator[].slice.index.range",
     "name": "operator[]",
@@ -3976,7 +3944,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and an end."
   },
   {
-    "index": 448,
+    "index": 444,
     "type": "method",
     "url": "sus-collections-Slice.html#method.get_range_unchecked",
     "name": "get_range_unchecked",
@@ -3985,7 +3953,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 449,
+    "index": 445,
     "type": "method",
     "url": "sus-collections-Slice.html#method.operator[].slice.index.usize",
     "name": "operator[]",
@@ -3994,7 +3962,7 @@ const g_search_db = [
     "summary": "Returns a reference to the element at position i in the Slice."
   },
   {
-    "index": 450,
+    "index": 446,
     "type": "method",
     "url": "sus-collections-Slice.html#method.splitn",
     "name": "splitn",
@@ -4003,7 +3971,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred, limited to returning at most n items. The matched element is not contained in the subslices."
   },
   {
-    "index": 451,
+    "index": 447,
     "type": "method",
     "url": "sus-collections-Slice.html#method.as_ptr",
     "name": "as_ptr",
@@ -4012,7 +3980,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the first element in the slice."
   },
   {
-    "index": 452,
+    "index": 448,
     "type": "method",
     "url": "sus-collections-Slice.html#method.into_iter",
     "name": "into_iter",
@@ -4021,7 +3989,7 @@ const g_search_db = [
     "summary": "Converts the slice into an iterator that consumes the slice and returns each element in the same order they appear in the slice."
   },
   {
-    "index": 453,
+    "index": 449,
     "type": "method",
     "url": "sus-collections-Slice.html#method.drop_iterator_invalidation_tracking",
     "name": "drop_iterator_invalidation_tracking",
@@ -4030,7 +3998,7 @@ const g_search_db = [
     "summary": "Stops tracking iterator invalidation."
   },
   {
-    "index": 454,
+    "index": 450,
     "type": "method",
     "url": "sus-collections-Slice.html#method.split_first",
     "name": "split_first",
@@ -4039,7 +4007,7 @@ const g_search_db = [
     "summary": "Returns the first and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 455,
+    "index": 451,
     "type": "method",
     "url": "sus-collections-Slice.html#method.from_raw_collection",
     "name": "from_raw_collection",
@@ -4048,7 +4016,7 @@ const g_search_db = [
     "summary": "Constructs a slice from its raw parts with iterator invalidation tracking. Iterators produced from this slice will interact with the collection to allow it to know when they are being invalidated by the collection."
   },
   {
-    "index": 456,
+    "index": 452,
     "type": "method",
     "url": "sus-collections-Slice.html#method.concat",
     "name": "concat",
@@ -4057,7 +4025,7 @@ const g_search_db = [
     "summary": "Flattens and concatenates the items in the Slice."
   },
   {
-    "index": 457,
+    "index": 453,
     "type": "method",
     "url": "sus-collections-Slice.html#method.as_ptr_range",
     "name": "as_ptr_range",
@@ -4066,7 +4034,7 @@ const g_search_db = [
     "summary": "Returns the two const pointers spanning the slice."
   },
   {
-    "index": 458,
+    "index": 454,
     "type": "method",
     "url": "sus-collections-Slice.html#method.binary_search_by",
     "name": "binary_search_by",
@@ -4075,7 +4043,7 @@ const g_search_db = [
     "summary": "Binary searches this slice with a comparator function. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 459,
+    "index": 455,
     "type": "method",
     "url": "sus-collections-Slice.html#method.from.from.array",
     "name": "from",
@@ -4084,7 +4052,7 @@ const g_search_db = [
     "summary": "sus::construct::From&lt;T[N]&gt; trait."
   },
   {
-    "index": 460,
+    "index": 456,
     "type": "method",
     "url": "sus-collections-Slice.html#method.binary_search_by_key",
     "name": "binary_search_by_key",
@@ -4093,7 +4061,7 @@ const g_search_db = [
     "summary": "Binary searches this slice with a key extraction function. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 461,
+    "index": 457,
     "type": "method",
     "url": "sus-collections-Slice.html#method.ends_with",
     "name": "ends_with",
@@ -4102,7 +4070,7 @@ const g_search_db = [
     "summary": "Returns true if suffix is a suffix of the slice."
   },
   {
-    "index": 462,
+    "index": 458,
     "type": "method",
     "url": "sus-collections-Slice.html#method.rsplitn",
     "name": "rsplitn",
@@ -4111,7 +4079,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred limited to returning at most n items. This starts at the end of the slice and works backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 463,
+    "index": 459,
     "type": "method",
     "url": "sus-collections-Slice.html#method.rsplit",
     "name": "rsplit",
@@ -4120,7 +4088,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred, starting at the end of the slice and working backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 464,
+    "index": 460,
     "type": "method",
     "url": "sus-collections-Slice.html#method.join_into",
     "name": "join_into",
@@ -4129,7 +4097,7 @@ const g_search_db = [
     "summary": "Joins a clone of each element in the slice into vec."
   },
   {
-    "index": 465,
+    "index": 461,
     "type": "method",
     "url": "sus-collections-Slice.html#method.get",
     "name": "get",
@@ -4138,7 +4106,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the element at index i, or None if i is beyond the end of the Slice."
   },
   {
-    "index": 466,
+    "index": 462,
     "type": "method",
     "url": "sus-collections-Slice.html#method.split_at_unchecked",
     "name": "split_at_unchecked",
@@ -4147,7 +4115,7 @@ const g_search_db = [
     "summary": "Divides one slice into two at an index, without doing bounds checking."
   },
   {
-    "index": 467,
+    "index": 463,
     "type": "method",
     "url": "sus-collections-Slice.html#method.get_unchecked",
     "name": "get_unchecked",
@@ -4156,7 +4124,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the element at index i."
   },
   {
-    "index": 468,
+    "index": 464,
     "type": "method",
     "url": "sus-collections-Slice.html#method.get_range",
     "name": "get_range",
@@ -4165,7 +4133,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 469,
+    "index": 465,
     "type": "method",
     "url": "sus-collections-Slice.html#method.last",
     "name": "last",
@@ -4174,7 +4142,7 @@ const g_search_db = [
     "summary": "Returns the last element of the slice, or None if it is empty."
   },
   {
-    "index": 470,
+    "index": 466,
     "type": "method",
     "url": "sus-collections-Slice.html#method.join",
     "name": "join",
@@ -4183,7 +4151,7 @@ const g_search_db = [
     "summary": "Flattens and concatenates the items in the Slice, cloning a separator between each item."
   },
   {
-    "index": 471,
+    "index": 467,
     "type": "type alias",
     "url": "TODO",
     "name": "JoinOutputType",
@@ -4192,7 +4160,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 472,
+    "index": 468,
     "type": "type alias",
     "url": "TODO",
     "name": "ConcatOutputType",
@@ -4201,7 +4169,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 473,
+    "index": 469,
     "type": "class",
     "url": "sus-collections-Array.html",
     "name": "Array",
@@ -4210,7 +4178,7 @@ const g_search_db = [
     "summary": "A collection of objects of type T, with a fixed size N."
   },
   {
-    "index": 474,
+    "index": 470,
     "type": "constructor",
     "url": "sus-collections-Array.html#method.Array",
     "name": "Array",
@@ -4218,7 +4186,7 @@ const g_search_db = [
     "split_name": "sus collections Array Array"
   },
   {
-    "index": 475,
+    "index": 471,
     "type": "constructor",
     "url": "sus-collections-Array.html#method.Array.ctor.values",
     "name": "Array",
@@ -4227,7 +4195,7 @@ const g_search_db = [
     "summary": "Constructs an Array with N elements from the N arguments given to the constructor."
   },
   {
-    "index": 476,
+    "index": 472,
     "type": "constructor",
     "url": "sus-collections-Array.html#method.Array.ctor.default",
     "name": "Array",
@@ -4236,7 +4204,7 @@ const g_search_db = [
     "summary": "Default constructor of Array which default-constructs each object T in the array."
   },
   {
-    "index": 477,
+    "index": 473,
     "type": "conversion",
     "url": "sus-collections-Array.html#method.operator SliceMut",
     "name": "operator SliceMut",
@@ -4244,7 +4212,7 @@ const g_search_db = [
     "split_name": "sus collections Array operator  Slice Mut"
   },
   {
-    "index": 478,
+    "index": 474,
     "type": "conversion",
     "url": "sus-collections-Array.html#method.operator Slice",
     "name": "operator Slice",
@@ -4252,7 +4220,7 @@ const g_search_db = [
     "split_name": "sus collections Array operator Slice"
   },
   {
-    "index": 479,
+    "index": 475,
     "type": "method",
     "url": "sus-collections-Array.html#method.map",
     "name": "map",
@@ -4261,7 +4229,7 @@ const g_search_db = [
     "summary": "Consumes the array, and returns a new array, mapping each element of the array to a new type with the given function."
   },
   {
-    "index": 480,
+    "index": 476,
     "type": "method",
     "url": "sus-collections-Array.html#method.iter_mut",
     "name": "iter_mut",
@@ -4270,7 +4238,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all the elements in the array, visited in the same order they appear in the array. The iterator gives mutable access to each element."
   },
   {
-    "index": 481,
+    "index": 477,
     "type": "method",
     "url": "sus-collections-Array.html#method.iter",
     "name": "iter",
@@ -4279,16 +4247,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all the elements in the array, visited in the same order they appear in the array. The iterator gives const access to each element."
   },
   {
-    "index": 482,
-    "type": "method",
-    "url": "sus-collections-Array.html#method.operator==",
-    "name": "operator==",
-    "full_name": "sus::collections::Array::operator==",
-    "split_name": "sus collections Array operator==",
-    "summary": "Satisfies the Eq&lt;Array&lt;T, N&gt;, Array&lt;U, N&gt;&gt; concept."
-  },
-  {
-    "index": 483,
+    "index": 478,
     "type": "method",
     "url": "sus-collections-Array.html#method.as_mut_slice",
     "name": "as_mut_slice",
@@ -4296,7 +4255,7 @@ const g_search_db = [
     "split_name": "sus collections Array as mut slice"
   },
   {
-    "index": 484,
+    "index": 479,
     "type": "method",
     "url": "sus-collections-Array.html#method.as_slice",
     "name": "as_slice",
@@ -4304,7 +4263,7 @@ const g_search_db = [
     "split_name": "sus collections Array as slice"
   },
   {
-    "index": 485,
+    "index": 480,
     "type": "method",
     "url": "sus-collections-Array.html#method.with_value",
     "name": "with_value",
@@ -4313,7 +4272,7 @@ const g_search_db = [
     "summary": "Constructs an Array with N elements from a single argument, repeatedly using it to construct each element. The given argument must be Copy in order to do this."
   },
   {
-    "index": 486,
+    "index": 481,
     "type": "method",
     "url": "sus-collections-Array.html#method.clone_from",
     "name": "clone_from",
@@ -4321,7 +4280,7 @@ const g_search_db = [
     "split_name": "sus collections Array clone from"
   },
   {
-    "index": 487,
+    "index": 482,
     "type": "method",
     "url": "sus-collections-Array.html#method.get_unchecked",
     "name": "get_unchecked",
@@ -4330,7 +4289,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the element at index i."
   },
   {
-    "index": 488,
+    "index": 483,
     "type": "method",
     "url": "sus-collections-Array.html#method.get",
     "name": "get",
@@ -4339,7 +4298,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the element at index i."
   },
   {
-    "index": 489,
+    "index": 484,
     "type": "method",
     "url": "sus-collections-Array.html#method.operator=",
     "name": "operator=",
@@ -4347,7 +4306,7 @@ const g_search_db = [
     "split_name": "sus collections Array operator="
   },
   {
-    "index": 490,
+    "index": 485,
     "type": "method",
     "url": "sus-collections-Array.html#method.clone",
     "name": "clone",
@@ -4355,7 +4314,7 @@ const g_search_db = [
     "split_name": "sus collections Array clone"
   },
   {
-    "index": 491,
+    "index": 486,
     "type": "method",
     "url": "sus-collections-Array.html#method.len",
     "name": "len",
@@ -4364,7 +4323,7 @@ const g_search_db = [
     "summary": "Returns the number of elements in the array."
   },
   {
-    "index": 492,
+    "index": 487,
     "type": "method",
     "url": "sus-collections-Array.html#method.get_unchecked_mut",
     "name": "get_unchecked_mut",
@@ -4373,7 +4332,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the element at index i."
   },
   {
-    "index": 493,
+    "index": 488,
     "type": "method",
     "url": "sus-collections-Array.html#method.as_ptr",
     "name": "as_ptr",
@@ -4382,7 +4341,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the first element in the array."
   },
   {
-    "index": 494,
+    "index": 489,
     "type": "method",
     "url": "sus-collections-Array.html#method.with_initializer",
     "name": "with_initializer",
@@ -4391,7 +4350,7 @@ const g_search_db = [
     "summary": "Constructs an Array with N elements, where each element is constructed from the given closure."
   },
   {
-    "index": 495,
+    "index": 490,
     "type": "method",
     "url": "sus-collections-Array.html#method.get_mut",
     "name": "get_mut",
@@ -4400,7 +4359,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the element at index i."
   },
   {
-    "index": 496,
+    "index": 491,
     "type": "method",
     "url": "sus-collections-Array.html#method.operator[]",
     "name": "operator[]",
@@ -4408,7 +4367,7 @@ const g_search_db = [
     "split_name": "sus collections Array operator[]"
   },
   {
-    "index": 497,
+    "index": 492,
     "type": "method",
     "url": "sus-collections-Array.html#method.into_iter",
     "name": "into_iter",
@@ -4417,7 +4376,7 @@ const g_search_db = [
     "summary": "Converts the array into an iterator that consumes the array and returns each element in the same order they appear in the array."
   },
   {
-    "index": 498,
+    "index": 493,
     "type": "method",
     "url": "sus-collections-Array.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -4426,7 +4385,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the first element in the array."
   },
   {
-    "index": 499,
+    "index": 494,
     "type": "class",
     "url": "sus-collections-WindowsMut.html",
     "name": "WindowsMut",
@@ -4435,7 +4394,7 @@ const g_search_db = [
     "summary": "An iterator over overlapping subslices of length size."
   },
   {
-    "index": 500,
+    "index": 495,
     "type": "constructor",
     "url": "sus-collections-WindowsMut.html#method.WindowsMut",
     "name": "WindowsMut",
@@ -4443,7 +4402,7 @@ const g_search_db = [
     "split_name": "sus collections Windows Mut Windows Mut"
   },
   {
-    "index": 501,
+    "index": 496,
     "type": "method",
     "url": "sus-collections-WindowsMut.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -4452,7 +4411,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 502,
+    "index": 497,
     "type": "method",
     "url": "sus-collections-WindowsMut.html#method.next_back",
     "name": "next_back",
@@ -4460,7 +4419,7 @@ const g_search_db = [
     "split_name": "sus collections Windows Mut next back"
   },
   {
-    "index": 503,
+    "index": 498,
     "type": "method",
     "url": "sus-collections-WindowsMut.html#method.next",
     "name": "next",
@@ -4468,7 +4427,7 @@ const g_search_db = [
     "split_name": "sus collections Windows Mut next"
   },
   {
-    "index": 504,
+    "index": 499,
     "type": "method",
     "url": "sus-collections-WindowsMut.html#method.size_hint",
     "name": "size_hint",
@@ -4476,7 +4435,7 @@ const g_search_db = [
     "split_name": "sus collections Windows Mut size hint"
   },
   {
-    "index": 505,
+    "index": 500,
     "type": "method",
     "url": "sus-collections-WindowsMut.html#method.clone",
     "name": "clone",
@@ -4485,7 +4444,7 @@ const g_search_db = [
     "summary": "sus::mem::Clone trait."
   },
   {
-    "index": 506,
+    "index": 501,
     "type": "method",
     "url": "sus-collections-WindowsMut.html#method.operator=",
     "name": "operator=",
@@ -4493,7 +4452,7 @@ const g_search_db = [
     "split_name": "sus collections Windows Mut operator="
   },
   {
-    "index": 507,
+    "index": 502,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -4502,7 +4461,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 508,
+    "index": 503,
     "type": "class",
     "url": "sus-collections-Windows.html",
     "name": "Windows",
@@ -4511,7 +4470,7 @@ const g_search_db = [
     "summary": "An iterator over overlapping subslices of length size."
   },
   {
-    "index": 509,
+    "index": 504,
     "type": "method",
     "url": "sus-collections-Windows.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -4520,7 +4479,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 510,
+    "index": 505,
     "type": "method",
     "url": "sus-collections-Windows.html#method.size_hint",
     "name": "size_hint",
@@ -4528,7 +4487,7 @@ const g_search_db = [
     "split_name": "sus collections Windows size hint"
   },
   {
-    "index": 511,
+    "index": 506,
     "type": "method",
     "url": "sus-collections-Windows.html#method.next_back",
     "name": "next_back",
@@ -4536,7 +4495,7 @@ const g_search_db = [
     "split_name": "sus collections Windows next back"
   },
   {
-    "index": 512,
+    "index": 507,
     "type": "method",
     "url": "sus-collections-Windows.html#method.next",
     "name": "next",
@@ -4544,7 +4503,7 @@ const g_search_db = [
     "split_name": "sus collections Windows next"
   },
   {
-    "index": 513,
+    "index": 508,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -4553,7 +4512,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 514,
+    "index": 509,
     "type": "class",
     "url": "sus-collections-RSplitNMut.html",
     "name": "RSplitNMut",
@@ -4562,7 +4521,7 @@ const g_search_db = [
     "summary": "An iterator over subslices separated by elements that match a predicate function, limited to a given number of splits, starting from the end of the slice."
   },
   {
-    "index": 515,
+    "index": 510,
     "type": "method",
     "url": "sus-collections-RSplitNMut.html#method.size_hint",
     "name": "size_hint",
@@ -4570,7 +4529,7 @@ const g_search_db = [
     "split_name": "sus collections R Split N Mut size hint"
   },
   {
-    "index": 516,
+    "index": 511,
     "type": "method",
     "url": "sus-collections-RSplitNMut.html#method.next",
     "name": "next",
@@ -4578,7 +4537,7 @@ const g_search_db = [
     "split_name": "sus collections R Split N Mut next"
   },
   {
-    "index": 517,
+    "index": 512,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -4587,7 +4546,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 518,
+    "index": 513,
     "type": "class",
     "url": "sus-collections-SplitNMut.html",
     "name": "SplitNMut",
@@ -4596,7 +4555,7 @@ const g_search_db = [
     "summary": "An iterator over mutable subslices separated by elements that match a predicate function, limited to a given number of splits."
   },
   {
-    "index": 519,
+    "index": 514,
     "type": "method",
     "url": "sus-collections-SplitNMut.html#method.size_hint",
     "name": "size_hint",
@@ -4604,7 +4563,7 @@ const g_search_db = [
     "split_name": "sus collections Split N Mut size hint"
   },
   {
-    "index": 520,
+    "index": 515,
     "type": "method",
     "url": "sus-collections-SplitNMut.html#method.next",
     "name": "next",
@@ -4612,7 +4571,7 @@ const g_search_db = [
     "split_name": "sus collections Split N Mut next"
   },
   {
-    "index": 521,
+    "index": 516,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -4621,7 +4580,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 522,
+    "index": 517,
     "type": "class",
     "url": "sus-collections-RSplitMut.html",
     "name": "RSplitMut",
@@ -4630,7 +4589,7 @@ const g_search_db = [
     "summary": "An iterator over the subslices of the vector which are separated by elements that match pred, starting from the end of the slice."
   },
   {
-    "index": 523,
+    "index": 518,
     "type": "method",
     "url": "sus-collections-RSplitMut.html#method.size_hint",
     "name": "size_hint",
@@ -4638,7 +4597,7 @@ const g_search_db = [
     "split_name": "sus collections R Split Mut size hint"
   },
   {
-    "index": 524,
+    "index": 519,
     "type": "method",
     "url": "sus-collections-RSplitMut.html#method.next_back",
     "name": "next_back",
@@ -4646,7 +4605,7 @@ const g_search_db = [
     "split_name": "sus collections R Split Mut next back"
   },
   {
-    "index": 525,
+    "index": 520,
     "type": "method",
     "url": "sus-collections-RSplitMut.html#method.next",
     "name": "next",
@@ -4654,7 +4613,7 @@ const g_search_db = [
     "split_name": "sus collections R Split Mut next"
   },
   {
-    "index": 526,
+    "index": 521,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -4663,7 +4622,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 527,
+    "index": 522,
     "type": "class",
     "url": "sus-collections-RSplit.html",
     "name": "RSplit",
@@ -4672,7 +4631,7 @@ const g_search_db = [
     "summary": "An iterator over subslices separated by elements that match a predicate function, starting from the end of the slice."
   },
   {
-    "index": 528,
+    "index": 523,
     "type": "method",
     "url": "sus-collections-RSplit.html#method.size_hint",
     "name": "size_hint",
@@ -4680,7 +4639,7 @@ const g_search_db = [
     "split_name": "sus collections RSplit size hint"
   },
   {
-    "index": 529,
+    "index": 524,
     "type": "method",
     "url": "sus-collections-RSplit.html#method.next_back",
     "name": "next_back",
@@ -4688,7 +4647,7 @@ const g_search_db = [
     "split_name": "sus collections RSplit next back"
   },
   {
-    "index": 530,
+    "index": 525,
     "type": "method",
     "url": "sus-collections-RSplit.html#method.next",
     "name": "next",
@@ -4696,7 +4655,7 @@ const g_search_db = [
     "split_name": "sus collections RSplit next"
   },
   {
-    "index": 531,
+    "index": 526,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -4705,7 +4664,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 532,
+    "index": 527,
     "type": "class",
     "url": "sus-collections-SplitInclusiveMut.html",
     "name": "SplitInclusiveMut",
@@ -4714,7 +4673,7 @@ const g_search_db = [
     "summary": "An iterator over subslices separated by elements that match a predicate function. Unlike Split, it contains the matched part as a terminator of the subslice."
   },
   {
-    "index": 533,
+    "index": 528,
     "type": "method",
     "url": "sus-collections-SplitInclusiveMut.html#method.size_hint",
     "name": "size_hint",
@@ -4722,7 +4681,7 @@ const g_search_db = [
     "split_name": "sus collections Split Inclusive Mut size hint"
   },
   {
-    "index": 534,
+    "index": 529,
     "type": "method",
     "url": "sus-collections-SplitInclusiveMut.html#method.next_back",
     "name": "next_back",
@@ -4730,7 +4689,7 @@ const g_search_db = [
     "split_name": "sus collections Split Inclusive Mut next back"
   },
   {
-    "index": 535,
+    "index": 530,
     "type": "method",
     "url": "sus-collections-SplitInclusiveMut.html#method.next",
     "name": "next",
@@ -4738,7 +4697,7 @@ const g_search_db = [
     "split_name": "sus collections Split Inclusive Mut next"
   },
   {
-    "index": 536,
+    "index": 531,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -4747,7 +4706,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 537,
+    "index": 532,
     "type": "class",
     "url": "sus-collections-SliceMut.html",
     "name": "SliceMut",
@@ -4756,7 +4715,7 @@ const g_search_db = [
     "summary": "A dynamically-sized mutable view into a contiguous sequence of objects of type T."
   },
   {
-    "index": 538,
+    "index": 533,
     "type": "constructor",
     "url": "sus-collections-SliceMut.html#method.SliceMut",
     "name": "SliceMut",
@@ -4765,7 +4724,7 @@ const g_search_db = [
     "summary": "Constructs an empty SliceMut, which has no elements."
   },
   {
-    "index": 539,
+    "index": 534,
     "type": "constructor",
     "url": "sus-collections-SliceMut.html#method.SliceMut.empty",
     "name": "SliceMut",
@@ -4774,7 +4733,7 @@ const g_search_db = [
     "summary": "Constructs an empty Slice."
   },
   {
-    "index": 540,
+    "index": 535,
     "type": "conversion",
     "url": "sus-collections-SliceMut.html#method.operator Slice",
     "name": "operator Slice",
@@ -4782,7 +4741,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Mut operator  Slice"
   },
   {
-    "index": 541,
+    "index": 536,
     "type": "conversion",
     "url": "sus-collections-SliceMut.html#method.operator Slice",
     "name": "operator Slice",
@@ -4790,7 +4749,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Mut operator  Slice"
   },
   {
-    "index": 542,
+    "index": 537,
     "type": "conversion",
     "url": "sus-collections-SliceMut.html#method.operator Slice",
     "name": "operator Slice",
@@ -4798,7 +4757,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Mut operator  Slice"
   },
   {
-    "index": 543,
+    "index": 538,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.windows_mut",
     "name": "windows_mut",
@@ -4807,7 +4766,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all contiguous windows of length size. The windows overlap. If the slice is shorter than size, the iterator returns no values."
   },
   {
-    "index": 544,
+    "index": 539,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.swap_with_slice",
     "name": "swap_with_slice",
@@ -4816,7 +4775,7 @@ const g_search_db = [
     "summary": "Swaps all elements in *this with those in other."
   },
   {
-    "index": 545,
+    "index": 540,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.swap",
     "name": "swap",
@@ -4825,7 +4784,7 @@ const g_search_db = [
     "summary": "Swaps two elements in the slice."
   },
   {
-    "index": 546,
+    "index": 541,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.subrange_mut",
     "name": "subrange_mut",
@@ -4834,7 +4793,7 @@ const g_search_db = [
     "summary": "Returns a mutable subslice which contains elements in the range which is specified by a start and an end. This is an alias for the subscript operator with a RangeBounds argument, but without the need to construct a RangeBounds."
   },
   {
-    "index": 547,
+    "index": 542,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_last_mut",
     "name": "split_last_mut",
@@ -4843,7 +4802,7 @@ const g_search_db = [
     "summary": "Returns the last and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 548,
+    "index": 543,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_inclusive_mut",
     "name": "split_inclusive_mut",
@@ -4852,7 +4811,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred. The matched element is contained in the end of the previous subslice as a terminator."
   },
   {
-    "index": 549,
+    "index": 544,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_first_mut",
     "name": "split_first_mut",
@@ -4861,7 +4820,7 @@ const g_search_db = [
     "summary": "Returns the first and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 550,
+    "index": 545,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_at_mut",
     "name": "split_at_mut",
@@ -4870,7 +4829,7 @@ const g_search_db = [
     "summary": "Divides one mutable slice into two at an index."
   },
   {
-    "index": 551,
+    "index": 546,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.sort_unstable_by_key",
     "name": "sort_unstable_by_key",
@@ -4879,7 +4838,7 @@ const g_search_db = [
     "summary": "Sorts the slice with a key extraction function, but might not preserve the order of equal elements."
   },
   {
-    "index": 552,
+    "index": 547,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.swap_nonoverlapping",
     "name": "swap_nonoverlapping",
@@ -4888,7 +4847,7 @@ const g_search_db = [
     "summary": "Swaps two elements in the slice. The arguments must not both refer to the same element."
   },
   {
-    "index": 553,
+    "index": 548,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.sort_unstable",
     "name": "sort_unstable",
@@ -4897,7 +4856,7 @@ const g_search_db = [
     "summary": "Sorts the slice, but might not preserve the order of equal elements."
   },
   {
-    "index": 554,
+    "index": 549,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.swap_unchecked",
     "name": "swap_unchecked",
@@ -4906,7 +4865,7 @@ const g_search_db = [
     "summary": "Swaps two elements in the slice."
   },
   {
-    "index": 555,
+    "index": 550,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.sort_by_key",
     "name": "sort_by_key",
@@ -4915,7 +4874,7 @@ const g_search_db = [
     "summary": "Sorts the slice with a key extraction function."
   },
   {
-    "index": 556,
+    "index": 551,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.sort",
     "name": "sort",
@@ -4924,7 +4883,7 @@ const g_search_db = [
     "summary": "Sorts the slice."
   },
   {
-    "index": 557,
+    "index": 552,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rsplit_mut",
     "name": "rsplit_mut",
@@ -4933,7 +4892,7 @@ const g_search_db = [
     "summary": "Returns an iterator over mutable subslices separated by elements that match pred, starting at the end of the slice and working backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 558,
+    "index": 553,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rotate_right",
     "name": "rotate_right",
@@ -4942,7 +4901,7 @@ const g_search_db = [
     "summary": "Rotates the slice in-place such that the first len() - k elements of the slice move to the end while the last k elements move to the front. After calling rotate_right(), the element previously at index len() - k will become the first element in the slice."
   },
   {
-    "index": 559,
+    "index": 554,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_mut",
     "name": "split_mut",
@@ -4951,7 +4910,7 @@ const g_search_db = [
     "summary": "Returns an iterator over mutable subslices separated by elements that match pred. The matched element is not contained in the subslices."
   },
   {
-    "index": 560,
+    "index": 555,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rsplitn_mut",
     "name": "rsplitn_mut",
@@ -4960,7 +4919,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred limited to returning at most n items. This starts at the end of the slice and works backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 561,
+    "index": 556,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.last_mut",
     "name": "last_mut",
@@ -4969,7 +4928,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the last element of the slice, or None if it is empty."
   },
   {
-    "index": 562,
+    "index": 557,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.sort_unstable_by",
     "name": "sort_unstable_by",
@@ -4978,7 +4937,7 @@ const g_search_db = [
     "summary": "Sorts the slice with a comparator function, but might not preserve the order of equal elements."
   },
   {
-    "index": 563,
+    "index": 558,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.iter_mut",
     "name": "iter_mut",
@@ -4987,7 +4946,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all the elements in the slice, visited in the same order they appear in the slice. The iterator gives mutable access to each element."
   },
   {
-    "index": 564,
+    "index": 559,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.get_range_mut_unchecked",
     "name": "get_range_mut_unchecked",
@@ -4996,7 +4955,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 565,
+    "index": 560,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.first_mut",
     "name": "first_mut",
@@ -5005,7 +4964,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the first element of the slice, or None if it is empty."
   },
   {
-    "index": 566,
+    "index": 561,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.get_range_unchecked",
     "name": "get_range_unchecked",
@@ -5014,7 +4973,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 567,
+    "index": 562,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_at_unchecked",
     "name": "split_at_unchecked",
@@ -5023,7 +4982,7 @@ const g_search_db = [
     "summary": "Divides one slice into two at an index, without doing bounds checking."
   },
   {
-    "index": 568,
+    "index": 563,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.join_into",
     "name": "join_into",
@@ -5032,7 +4991,7 @@ const g_search_db = [
     "summary": "Joins a clone of each element in the slice into vec."
   },
   {
-    "index": 569,
+    "index": 564,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.binary_search_by",
     "name": "binary_search_by",
@@ -5041,7 +5000,7 @@ const g_search_db = [
     "summary": "Binary searches this slice with a comparator function. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 570,
+    "index": 565,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.as_ptr_range",
     "name": "as_ptr_range",
@@ -5050,7 +5009,7 @@ const g_search_db = [
     "summary": "Returns the two const pointers spanning the slice."
   },
   {
-    "index": 571,
+    "index": 566,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.from.from.array",
     "name": "from",
@@ -5059,7 +5018,7 @@ const g_search_db = [
     "summary": "sus::construct::From&lt;T[N]&gt; trait."
   },
   {
-    "index": 572,
+    "index": 567,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.concat",
     "name": "concat",
@@ -5068,7 +5027,7 @@ const g_search_db = [
     "summary": "Flattens and concatenates the items in the Slice."
   },
   {
-    "index": 573,
+    "index": 568,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.get_mut",
     "name": "get_mut",
@@ -5077,7 +5036,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the element at index i, or None if i is beyond the end of the Slice."
   },
   {
-    "index": 574,
+    "index": 569,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.windows",
     "name": "windows",
@@ -5086,7 +5045,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all contiguous windows of length size. The windows overlap. If the slice is shorter than size, the iterator returns no values."
   },
   {
-    "index": 575,
+    "index": 570,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.get_unchecked",
     "name": "get_unchecked",
@@ -5095,7 +5054,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the element at index i."
   },
   {
-    "index": 576,
+    "index": 571,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.iter",
     "name": "iter",
@@ -5104,7 +5063,7 @@ const g_search_db = [
     "summary": "Returns an iterator over all the elements in the slice, visited in the same order they appear in the slice. The iterator gives const access to each element."
   },
   {
-    "index": 577,
+    "index": 572,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.chunks_exact",
     "name": "chunks_exact",
@@ -5113,7 +5072,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 578,
+    "index": 573,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.get_range_mut",
     "name": "get_range_mut",
@@ -5122,7 +5081,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 579,
+    "index": 574,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_inclusive",
     "name": "split_inclusive",
@@ -5131,7 +5090,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred. The matched element is contained in the end of the previous subslice as a terminator."
   },
   {
-    "index": 580,
+    "index": 575,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.copy_from_slice",
     "name": "copy_from_slice",
@@ -5140,7 +5099,7 @@ const g_search_db = [
     "summary": "Copies all elements from src into *this, using a memcpy() or equivalent."
   },
   {
-    "index": 581,
+    "index": 576,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.chunks",
     "name": "chunks",
@@ -5149,7 +5108,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 582,
+    "index": 577,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.from_raw_parts_mut",
     "name": "from_raw_parts_mut",
@@ -5158,7 +5117,7 @@ const g_search_db = [
     "summary": "Constructs a slice from its raw parts."
   },
   {
-    "index": 583,
+    "index": 578,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.strip_suffix",
     "name": "strip_suffix",
@@ -5167,7 +5126,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the suffix removed."
   },
   {
-    "index": 584,
+    "index": 579,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.first",
     "name": "first",
@@ -5176,7 +5135,7 @@ const g_search_db = [
     "summary": "Returns the first element of the slice, or None if it is empty."
   },
   {
-    "index": 585,
+    "index": 580,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.strip_prefix",
     "name": "strip_prefix",
@@ -5185,7 +5144,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the prefix removed."
   },
   {
-    "index": 586,
+    "index": 581,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rsplit",
     "name": "rsplit",
@@ -5194,7 +5153,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred, starting at the end of the slice and working backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 587,
+    "index": 582,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.binary_search_by_key",
     "name": "binary_search_by_key",
@@ -5203,7 +5162,7 @@ const g_search_db = [
     "summary": "Binary searches this slice with a key extraction function. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 588,
+    "index": 583,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.join",
     "name": "join",
@@ -5212,7 +5171,7 @@ const g_search_db = [
     "summary": "Flattens and concatenates the items in the Slice, cloning a separator between each item."
   },
   {
-    "index": 589,
+    "index": 584,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.last",
     "name": "last",
@@ -5221,7 +5180,7 @@ const g_search_db = [
     "summary": "Returns the last element of the slice, or None if it is empty."
   },
   {
-    "index": 590,
+    "index": 585,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rchunks_exact_mut",
     "name": "rchunks_exact_mut",
@@ -5230,7 +5189,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 591,
+    "index": 586,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.copy_from_slice_unchecked",
     "name": "copy_from_slice_unchecked",
@@ -5239,7 +5198,7 @@ const g_search_db = [
     "summary": "Copies all elements from src into *this, using a memcpy() or equivalent."
   },
   {
-    "index": 592,
+    "index": 587,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.from_raw_collection_mut",
     "name": "from_raw_collection_mut",
@@ -5248,7 +5207,7 @@ const g_search_db = [
     "summary": "Constructs a slice from its raw parts with iterator invalidation tracking. Iterators produced from this slice will interact with the collection to allow it to know when they are being invalidated by the collection."
   },
   {
-    "index": 593,
+    "index": 588,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.fill_with_default",
     "name": "fill_with_default",
@@ -5257,7 +5216,7 @@ const g_search_db = [
     "summary": "Fills the slice with default-constructed elements of type T."
   },
   {
-    "index": 594,
+    "index": 589,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.into_iter",
     "name": "into_iter",
@@ -5266,7 +5225,7 @@ const g_search_db = [
     "summary": "Converts the slice into an iterator that consumes the slice and returns each element in the same order they appear in the slice."
   },
   {
-    "index": 595,
+    "index": 590,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.sort_by_cached_key",
     "name": "sort_by_cached_key",
@@ -5274,7 +5233,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Mut sort by cached key"
   },
   {
-    "index": 596,
+    "index": 591,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.as_ptr",
     "name": "as_ptr",
@@ -5283,7 +5242,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the first element in the slice."
   },
   {
-    "index": 597,
+    "index": 592,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_last",
     "name": "split_last",
@@ -5292,7 +5251,7 @@ const g_search_db = [
     "summary": "Returns the last and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 598,
+    "index": 593,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.reverse",
     "name": "reverse",
@@ -5301,7 +5260,7 @@ const g_search_db = [
     "summary": "Reverses the order of elements in the slice, in place."
   },
   {
-    "index": 599,
+    "index": 594,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.is_empty",
     "name": "is_empty",
@@ -5310,7 +5269,7 @@ const g_search_db = [
     "summary": "Returns true if the slice has a length of 0."
   },
   {
-    "index": 600,
+    "index": 595,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rchunks_mut",
     "name": "rchunks_mut",
@@ -5319,7 +5278,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 601,
+    "index": 596,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.drop_iterator_invalidation_tracking",
     "name": "drop_iterator_invalidation_tracking",
@@ -5328,7 +5287,7 @@ const g_search_db = [
     "summary": "Stops tracking iterator invalidation."
   },
   {
-    "index": 602,
+    "index": 597,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.get",
     "name": "get",
@@ -5337,7 +5296,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the element at index i, or None if i is beyond the end of the Slice."
   },
   {
-    "index": 603,
+    "index": 598,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.splitn_mut",
     "name": "splitn_mut",
@@ -5346,7 +5305,7 @@ const g_search_db = [
     "summary": "Returns an iterator over mutable subslices separated by elements that match pred, limited to returning at most n items. The matched element is not contained in the subslices."
   },
   {
-    "index": 604,
+    "index": 599,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.operator[].slicemut.index.range",
     "name": "operator[]",
@@ -5355,7 +5314,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and an end."
   },
   {
-    "index": 605,
+    "index": 600,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.len",
     "name": "len",
@@ -5364,7 +5323,7 @@ const g_search_db = [
     "summary": "Returns the number of elements in the slice."
   },
   {
-    "index": 606,
+    "index": 601,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.contains",
     "name": "contains",
@@ -5373,7 +5332,7 @@ const g_search_db = [
     "summary": "Returns true if the slice contains an element with the given value."
   },
   {
-    "index": 607,
+    "index": 602,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.subrange",
     "name": "subrange",
@@ -5382,7 +5341,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in the range which is specified by a start and an end. This is an alias for the subscript operator with a RangeBounds argument, but without the need to construct a RangeBounds."
   },
   {
-    "index": 608,
+    "index": 603,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.concat_into",
     "name": "concat_into",
@@ -5391,7 +5350,7 @@ const g_search_db = [
     "summary": "Concatenates a clone of each element in the slice into vec."
   },
   {
-    "index": 609,
+    "index": 604,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rsplitn",
     "name": "rsplitn",
@@ -5400,7 +5359,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred limited to returning at most n items. This starts at the end of the slice and works backwards. The matched element is not contained in the subslices."
   },
   {
-    "index": 610,
+    "index": 605,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.fill",
     "name": "fill",
@@ -5409,7 +5368,7 @@ const g_search_db = [
     "summary": "Fills the slice with elements by cloning value."
   },
   {
-    "index": 611,
+    "index": 606,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.strip_suffix_mut",
     "name": "strip_suffix_mut",
@@ -5418,7 +5377,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the suffix removed."
   },
   {
-    "index": 612,
+    "index": 607,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.get_unchecked_mut",
     "name": "get_unchecked_mut",
@@ -5427,7 +5386,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the element at index i."
   },
   {
-    "index": 613,
+    "index": 608,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.get_range",
     "name": "get_range",
@@ -5436,7 +5395,7 @@ const g_search_db = [
     "summary": "Returns a subslice which contains elements in range, which specifies a start and a length."
   },
   {
-    "index": 614,
+    "index": 609,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.ends_with",
     "name": "ends_with",
@@ -5445,7 +5404,7 @@ const g_search_db = [
     "summary": "Returns true if suffix is a suffix of the slice."
   },
   {
-    "index": 615,
+    "index": 610,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.binary_search",
     "name": "binary_search",
@@ -5454,7 +5413,7 @@ const g_search_db = [
     "summary": "Binary searches this slice for a given element. This behaves similarly to contains if this slice is sorted."
   },
   {
-    "index": 616,
+    "index": 611,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.strip_prefix_mut",
     "name": "strip_prefix_mut",
@@ -5463,7 +5422,7 @@ const g_search_db = [
     "summary": "Returns a subslice with the prefix removed."
   },
   {
-    "index": 617,
+    "index": 612,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_at_mut_unchecked",
     "name": "split_at_mut_unchecked",
@@ -5472,7 +5431,7 @@ const g_search_db = [
     "summary": "Divides one slice of mutable references into two at an index, without doing bounds checking."
   },
   {
-    "index": 618,
+    "index": 613,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.as_slice",
     "name": "as_slice",
@@ -5480,7 +5439,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Mut as slice"
   },
   {
-    "index": 619,
+    "index": 614,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.partition_point",
     "name": "partition_point",
@@ -5489,7 +5448,7 @@ const g_search_db = [
     "summary": "Returns the index of the partition point according to the given predicate (the index of the first element of the second partition)."
   },
   {
-    "index": 620,
+    "index": 615,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rchunks",
     "name": "rchunks",
@@ -5498,7 +5457,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 621,
+    "index": 616,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rotate_left",
     "name": "rotate_left",
@@ -5507,7 +5466,7 @@ const g_search_db = [
     "summary": "Rotates the slice in-place such that the first mid elements of the slice move to the end while the last self.len() - mid elements move to the front. After calling rotate_left(), the element previously at index mid will become the first element in the slice."
   },
   {
-    "index": 622,
+    "index": 617,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.rchunks_exact",
     "name": "rchunks_exact",
@@ -5516,7 +5475,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the end of the slice."
   },
   {
-    "index": 623,
+    "index": 618,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.repeat",
     "name": "repeat",
@@ -5525,7 +5484,7 @@ const g_search_db = [
     "summary": "Creates a vector by copying a slice n times."
   },
   {
-    "index": 624,
+    "index": 619,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.fill_with",
     "name": "fill_with",
@@ -5534,7 +5493,7 @@ const g_search_db = [
     "summary": "Fills the slice with elements returned by calling a closure repeatedly."
   },
   {
-    "index": 625,
+    "index": 620,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.splitn",
     "name": "splitn",
@@ -5543,7 +5502,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred, limited to returning at most n items. The matched element is not contained in the subslices."
   },
   {
-    "index": 626,
+    "index": 621,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split",
     "name": "split",
@@ -5552,7 +5511,7 @@ const g_search_db = [
     "summary": "Returns an iterator over subslices separated by elements that match pred. The matched element is not contained in the subslices."
   },
   {
-    "index": 627,
+    "index": 622,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_at",
     "name": "split_at",
@@ -5561,7 +5520,7 @@ const g_search_db = [
     "summary": "Divides one slice into two at an index."
   },
   {
-    "index": 628,
+    "index": 623,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.split_first",
     "name": "split_first",
@@ -5570,7 +5529,7 @@ const g_search_db = [
     "summary": "Returns the first and all the rest of the elements of the slice, or None if it is empty."
   },
   {
-    "index": 629,
+    "index": 624,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.starts_with",
     "name": "starts_with",
@@ -5579,7 +5538,7 @@ const g_search_db = [
     "summary": "Returns true if needle is a prefix of the slice."
   },
   {
-    "index": 630,
+    "index": 625,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.to_vec",
     "name": "to_vec",
@@ -5588,7 +5547,7 @@ const g_search_db = [
     "summary": "Constructs a Vec&lt;T&gt; by cloning each value in the Slice."
   },
   {
-    "index": 631,
+    "index": 626,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.chunks_mut",
     "name": "chunks_mut",
@@ -5597,7 +5556,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 632,
+    "index": 627,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -5606,7 +5565,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the first element in the slice."
   },
   {
-    "index": 633,
+    "index": 628,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.operator[].slicemut.index.usize",
     "name": "operator[]",
@@ -5615,7 +5574,7 @@ const g_search_db = [
     "summary": "Returns a reference to the element at position i in the Slice."
   },
   {
-    "index": 634,
+    "index": 629,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.as_mut_ptr_range",
     "name": "as_mut_ptr_range",
@@ -5624,7 +5583,7 @@ const g_search_db = [
     "summary": "Returns the two mutable pointers spanning the slice."
   },
   {
-    "index": 635,
+    "index": 630,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.chunks_exact_mut",
     "name": "chunks_exact_mut",
@@ -5633,7 +5592,7 @@ const g_search_db = [
     "summary": "Returns an iterator over chunk_size elements of the slice at a time, starting at the beginning of the slice."
   },
   {
-    "index": 636,
+    "index": 631,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.sort_by",
     "name": "sort_by",
@@ -5642,7 +5601,7 @@ const g_search_db = [
     "summary": "Sorts the slice with a comparator function."
   },
   {
-    "index": 637,
+    "index": 632,
     "type": "method",
     "url": "sus-collections-SliceMut.html#method.clone_from_slice",
     "name": "clone_from_slice",
@@ -5651,7 +5610,7 @@ const g_search_db = [
     "summary": "Copies the elements from src into *this."
   },
   {
-    "index": 638,
+    "index": 633,
     "type": "type alias",
     "url": "TODO",
     "name": "JoinOutputType",
@@ -5660,7 +5619,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 639,
+    "index": 634,
     "type": "type alias",
     "url": "TODO",
     "name": "ConcatOutputType",
@@ -5669,7 +5628,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 640,
+    "index": 635,
     "type": "struct",
     "url": "sus-collections-ArrayIntoIter.html",
     "name": "ArrayIntoIter",
@@ -5678,7 +5637,7 @@ const g_search_db = [
     "summary": "An iterator that consumes an Array and returns the items from it."
   },
   {
-    "index": 641,
+    "index": 636,
     "type": "field",
     "url": "sus-collections-ArrayIntoIter.html#field.Size",
     "name": "Size",
@@ -5686,7 +5645,7 @@ const g_search_db = [
     "split_name": "sus collections Array Into Iter Size"
   },
   {
-    "index": 642,
+    "index": 637,
     "type": "constructor",
     "url": "sus-collections-ArrayIntoIter.html#method.ArrayIntoIter",
     "name": "ArrayIntoIter",
@@ -5694,7 +5653,7 @@ const g_search_db = [
     "split_name": "sus collections Array Into Iter Array Into Iter"
   },
   {
-    "index": 643,
+    "index": 638,
     "type": "method",
     "url": "sus-collections-ArrayIntoIter.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -5703,7 +5662,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 644,
+    "index": 639,
     "type": "method",
     "url": "sus-collections-ArrayIntoIter.html#method.next_back",
     "name": "next_back",
@@ -5712,7 +5671,7 @@ const g_search_db = [
     "summary": "sus::iter::DoubleEndedIterator trait."
   },
   {
-    "index": 645,
+    "index": 640,
     "type": "method",
     "url": "sus-collections-ArrayIntoIter.html#method.next",
     "name": "next",
@@ -5721,7 +5680,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 646,
+    "index": 641,
     "type": "method",
     "url": "sus-collections-ArrayIntoIter.html#method.size_hint",
     "name": "size_hint",
@@ -5730,7 +5689,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 647,
+    "index": 642,
     "type": "method",
     "url": "sus-collections-ArrayIntoIter.html#method.clone",
     "name": "clone",
@@ -5738,7 +5697,7 @@ const g_search_db = [
     "split_name": "sus collections Array Into Iter clone"
   },
   {
-    "index": 648,
+    "index": 643,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -5747,7 +5706,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 649,
+    "index": 644,
     "type": "class",
     "url": "sus-collections-SplitInclusive.html",
     "name": "SplitInclusive",
@@ -5756,7 +5715,7 @@ const g_search_db = [
     "summary": "An iterator over subslices separated by elements that match a predicate function. Unlike Split, it contains the matched part as a terminator of the subslice."
   },
   {
-    "index": 650,
+    "index": 645,
     "type": "method",
     "url": "sus-collections-SplitInclusive.html#method.size_hint",
     "name": "size_hint",
@@ -5764,7 +5723,7 @@ const g_search_db = [
     "split_name": "sus collections Split Inclusive size hint"
   },
   {
-    "index": 651,
+    "index": 646,
     "type": "method",
     "url": "sus-collections-SplitInclusive.html#method.next_back",
     "name": "next_back",
@@ -5772,7 +5731,7 @@ const g_search_db = [
     "split_name": "sus collections Split Inclusive next back"
   },
   {
-    "index": 652,
+    "index": 647,
     "type": "method",
     "url": "sus-collections-SplitInclusive.html#method.next",
     "name": "next",
@@ -5780,7 +5739,7 @@ const g_search_db = [
     "split_name": "sus collections Split Inclusive next"
   },
   {
-    "index": 653,
+    "index": 648,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -5789,7 +5748,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 654,
+    "index": 649,
     "type": "struct",
     "url": "sus-collections-ChunksMut.html",
     "name": "ChunksMut",
@@ -5798,7 +5757,7 @@ const g_search_db = [
     "summary": "An iterator over mutable a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the beginning of the slice."
   },
   {
-    "index": 655,
+    "index": 650,
     "type": "method",
     "url": "sus-collections-ChunksMut.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -5807,7 +5766,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 656,
+    "index": 651,
     "type": "method",
     "url": "sus-collections-ChunksMut.html#method.size_hint",
     "name": "size_hint",
@@ -5815,7 +5774,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Mut size hint"
   },
   {
-    "index": 657,
+    "index": 652,
     "type": "method",
     "url": "sus-collections-ChunksMut.html#method.next_back",
     "name": "next_back",
@@ -5823,7 +5782,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Mut next back"
   },
   {
-    "index": 658,
+    "index": 653,
     "type": "method",
     "url": "sus-collections-ChunksMut.html#method.next",
     "name": "next",
@@ -5831,7 +5790,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Mut next"
   },
   {
-    "index": 659,
+    "index": 654,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -5840,7 +5799,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 660,
+    "index": 655,
     "type": "struct",
     "url": "sus-collections-SliceIterMut.html",
     "name": "SliceIterMut",
@@ -5849,7 +5808,7 @@ const g_search_db = [
     "summary": "An iterator over a contiguous array of objects with mutable access to them."
   },
   {
-    "index": 661,
+    "index": 656,
     "type": "constructor",
     "url": "sus-collections-SliceIterMut.html#method.SliceIterMut",
     "name": "SliceIterMut",
@@ -5857,7 +5816,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Iter Mut Slice Iter Mut"
   },
   {
-    "index": 662,
+    "index": 657,
     "type": "method",
     "url": "sus-collections-SliceIterMut.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -5866,7 +5825,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 663,
+    "index": 658,
     "type": "method",
     "url": "sus-collections-SliceIterMut.html#method.size_hint",
     "name": "size_hint",
@@ -5874,7 +5833,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Iter Mut size hint"
   },
   {
-    "index": 664,
+    "index": 659,
     "type": "method",
     "url": "sus-collections-SliceIterMut.html#method.next_back",
     "name": "next_back",
@@ -5882,7 +5841,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Iter Mut next back"
   },
   {
-    "index": 665,
+    "index": 660,
     "type": "method",
     "url": "sus-collections-SliceIterMut.html#method.next",
     "name": "next",
@@ -5890,7 +5849,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Iter Mut next"
   },
   {
-    "index": 666,
+    "index": 661,
     "type": "method",
     "url": "sus-collections-SliceIterMut.html#method.as_mut_slice",
     "name": "as_mut_slice",
@@ -5899,7 +5858,7 @@ const g_search_db = [
     "summary": "Returns a mutable slice of the items left to be iterated, consuming the iterator."
   },
   {
-    "index": 667,
+    "index": 662,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -5908,7 +5867,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 668,
+    "index": 663,
     "type": "struct",
     "url": "sus-collections-SliceIter.html",
     "name": "SliceIter",
@@ -5917,7 +5876,7 @@ const g_search_db = [
     "summary": "An iterator over a contiguous array of objects with const access to them."
   },
   {
-    "index": 669,
+    "index": 664,
     "type": "constructor",
     "url": "sus-collections-SliceIter.html#method.SliceIter",
     "name": "SliceIter",
@@ -5925,7 +5884,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Iter Slice Iter"
   },
   {
-    "index": 670,
+    "index": 665,
     "type": "method",
     "url": "sus-collections-SliceIter.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -5934,7 +5893,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 671,
+    "index": 666,
     "type": "method",
     "url": "sus-collections-SliceIter.html#method.next_back",
     "name": "next_back",
@@ -5942,7 +5901,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Iter next back"
   },
   {
-    "index": 672,
+    "index": 667,
     "type": "method",
     "url": "sus-collections-SliceIter.html#method.next",
     "name": "next",
@@ -5950,7 +5909,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Iter next"
   },
   {
-    "index": 673,
+    "index": 668,
     "type": "method",
     "url": "sus-collections-SliceIter.html#method.size_hint",
     "name": "size_hint",
@@ -5958,7 +5917,7 @@ const g_search_db = [
     "split_name": "sus collections Slice Iter size hint"
   },
   {
-    "index": 674,
+    "index": 669,
     "type": "method",
     "url": "sus-collections-SliceIter.html#method.as_slice",
     "name": "as_slice",
@@ -5967,7 +5926,7 @@ const g_search_db = [
     "summary": "Returns a slice of the items left to be iterated."
   },
   {
-    "index": 675,
+    "index": 670,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -5976,7 +5935,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 676,
+    "index": 671,
     "type": "struct",
     "url": "sus-collections-Chunks.html",
     "name": "Chunks",
@@ -5985,7 +5944,7 @@ const g_search_db = [
     "summary": "An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the beginning of the slice."
   },
   {
-    "index": 677,
+    "index": 672,
     "type": "method",
     "url": "sus-collections-Chunks.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -5994,7 +5953,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 678,
+    "index": 673,
     "type": "method",
     "url": "sus-collections-Chunks.html#method.size_hint",
     "name": "size_hint",
@@ -6002,7 +5961,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks size hint"
   },
   {
-    "index": 679,
+    "index": 674,
     "type": "method",
     "url": "sus-collections-Chunks.html#method.next_back",
     "name": "next_back",
@@ -6010,7 +5969,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks next back"
   },
   {
-    "index": 680,
+    "index": 675,
     "type": "method",
     "url": "sus-collections-Chunks.html#method.next",
     "name": "next",
@@ -6018,7 +5977,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks next"
   },
   {
-    "index": 681,
+    "index": 676,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6027,7 +5986,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 682,
+    "index": 677,
     "type": "struct",
     "url": "sus-collections-RChunksExact.html",
     "name": "RChunksExact",
@@ -6036,7 +5995,7 @@ const g_search_db = [
     "summary": "An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the end of the slice."
   },
   {
-    "index": 683,
+    "index": 678,
     "type": "method",
     "url": "sus-collections-RChunksExact.html#method.size_hint",
     "name": "size_hint",
@@ -6044,7 +6003,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Exact size hint"
   },
   {
-    "index": 684,
+    "index": 679,
     "type": "method",
     "url": "sus-collections-RChunksExact.html#method.next_back",
     "name": "next_back",
@@ -6052,7 +6011,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Exact next back"
   },
   {
-    "index": 685,
+    "index": 680,
     "type": "method",
     "url": "sus-collections-RChunksExact.html#method.next",
     "name": "next",
@@ -6060,7 +6019,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Exact next"
   },
   {
-    "index": 686,
+    "index": 681,
     "type": "method",
     "url": "sus-collections-RChunksExact.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -6069,7 +6028,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 687,
+    "index": 682,
     "type": "method",
     "url": "sus-collections-RChunksExact.html#method.remainder",
     "name": "remainder",
@@ -6078,7 +6037,7 @@ const g_search_db = [
     "summary": "Returns the remainder of the original slice that is not going to be returned by the iterator. The returned slice has at most chunk_size-1 elements."
   },
   {
-    "index": 688,
+    "index": 683,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6087,7 +6046,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 689,
+    "index": 684,
     "type": "struct",
     "url": "sus-collections-ChunksExact.html",
     "name": "ChunksExact",
@@ -6096,7 +6055,7 @@ const g_search_db = [
     "summary": "An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the beginning of the slice."
   },
   {
-    "index": 690,
+    "index": 685,
     "type": "method",
     "url": "sus-collections-ChunksExact.html#method.size_hint",
     "name": "size_hint",
@@ -6104,7 +6063,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Exact size hint"
   },
   {
-    "index": 691,
+    "index": 686,
     "type": "method",
     "url": "sus-collections-ChunksExact.html#method.next_back",
     "name": "next_back",
@@ -6112,7 +6071,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Exact next back"
   },
   {
-    "index": 692,
+    "index": 687,
     "type": "method",
     "url": "sus-collections-ChunksExact.html#method.next",
     "name": "next",
@@ -6120,7 +6079,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Exact next"
   },
   {
-    "index": 693,
+    "index": 688,
     "type": "method",
     "url": "sus-collections-ChunksExact.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -6129,7 +6088,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 694,
+    "index": 689,
     "type": "method",
     "url": "sus-collections-ChunksExact.html#method.remainder",
     "name": "remainder",
@@ -6138,7 +6097,7 @@ const g_search_db = [
     "summary": "Returns the remainder of the original slice that is not going to be returned by the iterator. The returned slice has at most chunk_size-1 elements."
   },
   {
-    "index": 695,
+    "index": 690,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6147,7 +6106,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 696,
+    "index": 691,
     "type": "struct",
     "url": "sus-collections-RChunks.html",
     "name": "RChunks",
@@ -6156,7 +6115,7 @@ const g_search_db = [
     "summary": "An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the end of the slice."
   },
   {
-    "index": 697,
+    "index": 692,
     "type": "method",
     "url": "sus-collections-RChunks.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -6165,7 +6124,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 698,
+    "index": 693,
     "type": "method",
     "url": "sus-collections-RChunks.html#method.size_hint",
     "name": "size_hint",
@@ -6173,7 +6132,7 @@ const g_search_db = [
     "split_name": "sus collections RChunks size hint"
   },
   {
-    "index": 699,
+    "index": 694,
     "type": "method",
     "url": "sus-collections-RChunks.html#method.next_back",
     "name": "next_back",
@@ -6181,7 +6140,7 @@ const g_search_db = [
     "split_name": "sus collections RChunks next back"
   },
   {
-    "index": 700,
+    "index": 695,
     "type": "method",
     "url": "sus-collections-RChunks.html#method.next",
     "name": "next",
@@ -6189,7 +6148,7 @@ const g_search_db = [
     "split_name": "sus collections RChunks next"
   },
   {
-    "index": 701,
+    "index": 696,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6198,7 +6157,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 702,
+    "index": 697,
     "type": "struct",
     "url": "sus-collections-RChunksMut.html",
     "name": "RChunksMut",
@@ -6207,7 +6166,7 @@ const g_search_db = [
     "summary": "An iterator over a mutable slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the end of the slice."
   },
   {
-    "index": 703,
+    "index": 698,
     "type": "method",
     "url": "sus-collections-RChunksMut.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -6216,7 +6175,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 704,
+    "index": 699,
     "type": "method",
     "url": "sus-collections-RChunksMut.html#method.size_hint",
     "name": "size_hint",
@@ -6224,7 +6183,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Mut size hint"
   },
   {
-    "index": 705,
+    "index": 700,
     "type": "method",
     "url": "sus-collections-RChunksMut.html#method.next_back",
     "name": "next_back",
@@ -6232,7 +6191,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Mut next back"
   },
   {
-    "index": 706,
+    "index": 701,
     "type": "method",
     "url": "sus-collections-RChunksMut.html#method.next",
     "name": "next",
@@ -6240,7 +6199,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Mut next"
   },
   {
-    "index": 707,
+    "index": 702,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6249,7 +6208,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 708,
+    "index": 703,
     "type": "class",
     "url": "sus-collections-SplitMut.html",
     "name": "SplitMut",
@@ -6258,7 +6217,7 @@ const g_search_db = [
     "summary": "An iterator over subslices separated by elements that match a predicate function."
   },
   {
-    "index": 709,
+    "index": 704,
     "type": "method",
     "url": "sus-collections-SplitMut.html#method.size_hint",
     "name": "size_hint",
@@ -6266,7 +6225,7 @@ const g_search_db = [
     "split_name": "sus collections Split Mut size hint"
   },
   {
-    "index": 710,
+    "index": 705,
     "type": "method",
     "url": "sus-collections-SplitMut.html#method.next_back",
     "name": "next_back",
@@ -6274,7 +6233,7 @@ const g_search_db = [
     "split_name": "sus collections Split Mut next back"
   },
   {
-    "index": 711,
+    "index": 706,
     "type": "method",
     "url": "sus-collections-SplitMut.html#method.next",
     "name": "next",
@@ -6282,7 +6241,7 @@ const g_search_db = [
     "split_name": "sus collections Split Mut next"
   },
   {
-    "index": 712,
+    "index": 707,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6291,7 +6250,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 713,
+    "index": 708,
     "type": "struct",
     "url": "sus-collections-ChunksExactMut.html",
     "name": "ChunksExactMut",
@@ -6300,7 +6259,7 @@ const g_search_db = [
     "summary": "An iterator over a mutable slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the beginning of the slice."
   },
   {
-    "index": 714,
+    "index": 709,
     "type": "method",
     "url": "sus-collections-ChunksExactMut.html#method.size_hint",
     "name": "size_hint",
@@ -6308,7 +6267,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Exact Mut size hint"
   },
   {
-    "index": 715,
+    "index": 710,
     "type": "method",
     "url": "sus-collections-ChunksExactMut.html#method.next_back",
     "name": "next_back",
@@ -6316,7 +6275,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Exact Mut next back"
   },
   {
-    "index": 716,
+    "index": 711,
     "type": "method",
     "url": "sus-collections-ChunksExactMut.html#method.next",
     "name": "next",
@@ -6324,7 +6283,7 @@ const g_search_db = [
     "split_name": "sus collections Chunks Exact Mut next"
   },
   {
-    "index": 717,
+    "index": 712,
     "type": "method",
     "url": "sus-collections-ChunksExactMut.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -6333,7 +6292,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 718,
+    "index": 713,
     "type": "method",
     "url": "sus-collections-ChunksExactMut.html#method.remainder",
     "name": "remainder",
@@ -6342,7 +6301,7 @@ const g_search_db = [
     "summary": "Returns the remainder of the original slice that is not going to be returned by the iterator. The returned slice has at most chunk_size-1 elements."
   },
   {
-    "index": 719,
+    "index": 714,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6351,7 +6310,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 720,
+    "index": 715,
     "type": "struct",
     "url": "sus-collections-RChunksExactMut.html",
     "name": "RChunksExactMut",
@@ -6360,7 +6319,7 @@ const g_search_db = [
     "summary": "An iterator over a mutable slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the end of the slice."
   },
   {
-    "index": 721,
+    "index": 716,
     "type": "method",
     "url": "sus-collections-RChunksExactMut.html#method.size_hint",
     "name": "size_hint",
@@ -6368,7 +6327,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Exact Mut size hint"
   },
   {
-    "index": 722,
+    "index": 717,
     "type": "method",
     "url": "sus-collections-RChunksExactMut.html#method.next_back",
     "name": "next_back",
@@ -6376,7 +6335,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Exact Mut next back"
   },
   {
-    "index": 723,
+    "index": 718,
     "type": "method",
     "url": "sus-collections-RChunksExactMut.html#method.next",
     "name": "next",
@@ -6384,7 +6343,7 @@ const g_search_db = [
     "split_name": "sus collections R Chunks Exact Mut next"
   },
   {
-    "index": 724,
+    "index": 719,
     "type": "method",
     "url": "sus-collections-RChunksExactMut.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -6393,7 +6352,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 725,
+    "index": 720,
     "type": "method",
     "url": "sus-collections-RChunksExactMut.html#method.remainder",
     "name": "remainder",
@@ -6402,7 +6361,7 @@ const g_search_db = [
     "summary": "Returns the remainder of the original slice that is not going to be returned by the iterator. The returned slice has at most chunk_size-1 elements."
   },
   {
-    "index": 726,
+    "index": 721,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6411,7 +6370,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 727,
+    "index": 722,
     "type": "class",
     "url": "sus-collections-RSplitN.html",
     "name": "RSplitN",
@@ -6420,7 +6379,7 @@ const g_search_db = [
     "summary": "An iterator over subslices separated by elements that match a predicate function, limited to a given number of splits, starting from the end of the slice."
   },
   {
-    "index": 728,
+    "index": 723,
     "type": "method",
     "url": "sus-collections-RSplitN.html#method.size_hint",
     "name": "size_hint",
@@ -6428,7 +6387,7 @@ const g_search_db = [
     "split_name": "sus collections R Split N size hint"
   },
   {
-    "index": 729,
+    "index": 724,
     "type": "method",
     "url": "sus-collections-RSplitN.html#method.next",
     "name": "next",
@@ -6436,7 +6395,7 @@ const g_search_db = [
     "split_name": "sus collections R Split N next"
   },
   {
-    "index": 730,
+    "index": 725,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6445,7 +6404,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 731,
+    "index": 726,
     "type": "class",
     "url": "sus-collections-SplitN.html",
     "name": "SplitN",
@@ -6454,7 +6413,7 @@ const g_search_db = [
     "summary": "An iterator over subslices separated by elements that match a predicate function, limited to a given number of splits."
   },
   {
-    "index": 732,
+    "index": 727,
     "type": "method",
     "url": "sus-collections-SplitN.html#method.size_hint",
     "name": "size_hint",
@@ -6462,7 +6421,7 @@ const g_search_db = [
     "split_name": "sus collections Split N size hint"
   },
   {
-    "index": 733,
+    "index": 728,
     "type": "method",
     "url": "sus-collections-SplitN.html#method.next",
     "name": "next",
@@ -6470,7 +6429,7 @@ const g_search_db = [
     "split_name": "sus collections Split N next"
   },
   {
-    "index": 734,
+    "index": 729,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6479,7 +6438,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 735,
+    "index": 730,
     "type": "class",
     "url": "sus-collections-Split.html",
     "name": "Split",
@@ -6488,7 +6447,7 @@ const g_search_db = [
     "summary": "An iterator over subslices separated by elements that match a predicate function."
   },
   {
-    "index": 736,
+    "index": 731,
     "type": "method",
     "url": "sus-collections-Split.html#method.size_hint",
     "name": "size_hint",
@@ -6496,7 +6455,7 @@ const g_search_db = [
     "split_name": "sus collections Split size hint"
   },
   {
-    "index": 737,
+    "index": 732,
     "type": "method",
     "url": "sus-collections-Split.html#method.next_back",
     "name": "next_back",
@@ -6504,7 +6463,7 @@ const g_search_db = [
     "split_name": "sus collections Split next back"
   },
   {
-    "index": 738,
+    "index": 733,
     "type": "method",
     "url": "sus-collections-Split.html#method.next",
     "name": "next",
@@ -6512,7 +6471,7 @@ const g_search_db = [
     "split_name": "sus collections Split next"
   },
   {
-    "index": 739,
+    "index": 734,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6521,16 +6480,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 740,
-    "type": "function",
-    "url": "sus-collections-fn.operator_spaceship.array.cmp.slicemut.html",
-    "name": "operator<=>",
-    "full_name": "sus::collections::operator<=>",
-    "split_name": "sus collections operator<=>",
-    "summary": "Compares an Array and a SliceMut."
-  },
-  {
-    "index": 741,
+    "index": 735,
     "type": "function",
     "url": "sus-collections-fn.get.array.structured.bindings.html",
     "name": "get",
@@ -6539,25 +6489,7 @@ const g_search_db = [
     "summary": "Support for using structured bindings with Array."
   },
   {
-    "index": 742,
-    "type": "function",
-    "url": "sus-collections-fn.operator_spaceship.array.cmp.slice.html",
-    "name": "operator<=>",
-    "full_name": "sus::collections::operator<=>",
-    "split_name": "sus collections operator<=>",
-    "summary": "Compares an Array and a Slice."
-  },
-  {
-    "index": 743,
-    "type": "function",
-    "url": "sus-collections-fn.operator_spaceship.array.cmp.array.html",
-    "name": "operator<=>",
-    "full_name": "sus::collections::operator<=>",
-    "split_name": "sus collections operator<=>",
-    "summary": "Compares two Arrays."
-  },
-  {
-    "index": 744,
+    "index": 736,
     "url": "sus-namespace.iter.html",
     "type": "namespace",
     "name": "iter",
@@ -6566,7 +6498,7 @@ const g_search_db = [
     "summary": "Composable external iteration."
   },
   {
-    "index": 745,
+    "index": 737,
     "type": "concept alias",
     "url": "sus-mem-TriviallyRelocatable.html",
     "name": "TriviallyRelocatable",
@@ -6575,7 +6507,7 @@ const g_search_db = [
     "summary": "Tests if a variable of type T can be relocated with ptr::copy."
   },
   {
-    "index": 746,
+    "index": 738,
     "type": "type alias",
     "url": "sus-option-Option.html",
     "name": "Option",
@@ -6584,7 +6516,7 @@ const g_search_db = [
     "summary": "The Option type."
   },
   {
-    "index": 747,
+    "index": 739,
     "type": "concept alias",
     "url": "sus-construct-Into.html",
     "name": "Into",
@@ -6593,7 +6525,7 @@ const g_search_db = [
     "summary": "A concept that declares FromType can be converted to ToType."
   },
   {
-    "index": 748,
+    "index": 740,
     "type": "type alias",
     "url": "TODO",
     "name": "IntoIteratorOutputType",
@@ -6602,7 +6534,7 @@ const g_search_db = [
     "summary": "Returns the type of iterator that will be produced from T where T satisifies IntoIteratorAny&lt;T&gt;."
   },
   {
-    "index": 749,
+    "index": 741,
     "type": "concept",
     "url": "sus-iter-Extend.html",
     "name": "Extend",
@@ -6611,7 +6543,7 @@ const g_search_db = [
     "summary": "Extend a collection with the contents of an iterator."
   },
   {
-    "index": 750,
+    "index": 742,
     "type": "concept",
     "url": "sus-iter-Sum.html",
     "name": "Sum",
@@ -6620,7 +6552,7 @@ const g_search_db = [
     "summary": "Trait to represent types that can be created by adding elements of an iterator."
   },
   {
-    "index": 751,
+    "index": 743,
     "type": "concept",
     "url": "sus-iter-FromIterator.html",
     "name": "FromIterator",
@@ -6629,7 +6561,7 @@ const g_search_db = [
     "summary": "A concept that indicates ToType can be constructed from an Iterator, via sus::iter::from_iter&lt;ToType&gt;(Iterator&lt;IterType&gt;)."
   },
   {
-    "index": 752,
+    "index": 744,
     "type": "concept",
     "url": "sus-iter-IntoIteratorAny.html",
     "name": "IntoIteratorAny",
@@ -6638,7 +6570,7 @@ const g_search_db = [
     "summary": "Conversion into an Iterator over any type of values."
   },
   {
-    "index": 753,
+    "index": 745,
     "type": "concept",
     "url": "sus-iter-TrustedLen.html",
     "name": "TrustedLen",
@@ -6647,7 +6579,7 @@ const g_search_db = [
     "summary": "An iterator that reports an accurate length."
   },
   {
-    "index": 754,
+    "index": 746,
     "type": "concept",
     "url": "sus-iter-ExactSizeIterator.html",
     "name": "ExactSizeIterator",
@@ -6656,7 +6588,7 @@ const g_search_db = [
     "summary": "An Iterator that knows its exact length."
   },
   {
-    "index": 755,
+    "index": 747,
     "type": "concept",
     "url": "sus-iter-Product.html",
     "name": "Product",
@@ -6665,7 +6597,7 @@ const g_search_db = [
     "summary": "Trait to represent types that can be created by multiplying elements of an iterator."
   },
   {
-    "index": 756,
+    "index": 748,
     "type": "concept",
     "url": "sus-iter-DoubleEndedIterator.html",
     "name": "DoubleEndedIterator",
@@ -6674,7 +6606,7 @@ const g_search_db = [
     "summary": "An Iterator able to yield elements from both ends."
   },
   {
-    "index": 757,
+    "index": 749,
     "type": "concept",
     "url": "sus-iter-IntoIterator.html",
     "name": "IntoIterator",
@@ -6683,7 +6615,7 @@ const g_search_db = [
     "summary": "Conversion into an Iterator."
   },
   {
-    "index": 758,
+    "index": 750,
     "type": "concept",
     "url": "sus-iter-IteratorAny.html",
     "name": "IteratorAny",
@@ -6692,7 +6624,7 @@ const g_search_db = [
     "summary": "A concept for testing if a type T is an Iterator without testing its Item type."
   },
   {
-    "index": 759,
+    "index": 751,
     "type": "concept",
     "url": "sus-iter-Iterator.html",
     "name": "Iterator",
@@ -6701,7 +6633,7 @@ const g_search_db = [
     "summary": "A concept for all implementations of iterators. See IteratorBase for the methods on an Iterator."
   },
   {
-    "index": 760,
+    "index": 752,
     "type": "class",
     "url": "sus-iter-Empty.html",
     "name": "Empty",
@@ -6710,7 +6642,7 @@ const g_search_db = [
     "summary": "An Iterator that never returns an Item."
   },
   {
-    "index": 761,
+    "index": 753,
     "type": "method",
     "url": "sus-iter-Empty.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -6718,7 +6650,7 @@ const g_search_db = [
     "split_name": "sus iter Empty exact size hint"
   },
   {
-    "index": 762,
+    "index": 754,
     "type": "method",
     "url": "sus-iter-Empty.html#method.next_back",
     "name": "next_back",
@@ -6726,7 +6658,7 @@ const g_search_db = [
     "split_name": "sus iter Empty next back"
   },
   {
-    "index": 763,
+    "index": 755,
     "type": "method",
     "url": "sus-iter-Empty.html#method.size_hint",
     "name": "size_hint",
@@ -6735,7 +6667,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 764,
+    "index": 756,
     "type": "method",
     "url": "sus-iter-Empty.html#method.next",
     "name": "next",
@@ -6743,7 +6675,7 @@ const g_search_db = [
     "split_name": "sus iter Empty next"
   },
   {
-    "index": 765,
+    "index": 757,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6752,7 +6684,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 766,
+    "index": 758,
     "type": "class",
     "url": "sus-iter-Successors.html",
     "name": "Successors",
@@ -6761,7 +6693,7 @@ const g_search_db = [
     "summary": "An Iterator that generates each item from a function that takes the previous item."
   },
   {
-    "index": 767,
+    "index": 759,
     "type": "constructor",
     "url": "sus-iter-Successors.html#method.Successors",
     "name": "Successors",
@@ -6769,7 +6701,7 @@ const g_search_db = [
     "split_name": "sus iter Successors Successors"
   },
   {
-    "index": 768,
+    "index": 760,
     "type": "method",
     "url": "sus-iter-Successors.html#method.next",
     "name": "next",
@@ -6777,7 +6709,7 @@ const g_search_db = [
     "split_name": "sus iter Successors next"
   },
   {
-    "index": 769,
+    "index": 761,
     "type": "method",
     "url": "sus-iter-Successors.html#method.size_hint",
     "name": "size_hint",
@@ -6786,7 +6718,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 770,
+    "index": 762,
     "type": "method",
     "url": "sus-iter-Successors.html#method.clone",
     "name": "clone",
@@ -6794,7 +6726,7 @@ const g_search_db = [
     "split_name": "sus iter Successors clone"
   },
   {
-    "index": 771,
+    "index": 763,
     "type": "method",
     "url": "sus-iter-Successors.html#method.operator=",
     "name": "operator=",
@@ -6802,7 +6734,7 @@ const g_search_db = [
     "split_name": "sus iter Successors operator="
   },
   {
-    "index": 772,
+    "index": 764,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6811,7 +6743,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 773,
+    "index": 765,
     "type": "class",
     "url": "sus-iter-RepeatWith.html",
     "name": "RepeatWith",
@@ -6820,7 +6752,7 @@ const g_search_db = [
     "summary": "An Iterator that walks over at most a single Item."
   },
   {
-    "index": 774,
+    "index": 766,
     "type": "constructor",
     "url": "sus-iter-RepeatWith.html#method.RepeatWith",
     "name": "RepeatWith",
@@ -6828,7 +6760,7 @@ const g_search_db = [
     "split_name": "sus iter Repeat With Repeat With"
   },
   {
-    "index": 775,
+    "index": 767,
     "type": "method",
     "url": "sus-iter-RepeatWith.html#method.next_back",
     "name": "next_back",
@@ -6836,7 +6768,7 @@ const g_search_db = [
     "split_name": "sus iter Repeat With next back"
   },
   {
-    "index": 776,
+    "index": 768,
     "type": "method",
     "url": "sus-iter-RepeatWith.html#method.next",
     "name": "next",
@@ -6844,7 +6776,7 @@ const g_search_db = [
     "split_name": "sus iter Repeat With next"
   },
   {
-    "index": 777,
+    "index": 769,
     "type": "method",
     "url": "sus-iter-RepeatWith.html#method.size_hint",
     "name": "size_hint",
@@ -6853,7 +6785,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 778,
+    "index": 770,
     "type": "method",
     "url": "sus-iter-RepeatWith.html#method.clone",
     "name": "clone",
@@ -6861,7 +6793,7 @@ const g_search_db = [
     "split_name": "sus iter Repeat With clone"
   },
   {
-    "index": 779,
+    "index": 771,
     "type": "method",
     "url": "sus-iter-RepeatWith.html#method.operator=",
     "name": "operator=",
@@ -6869,7 +6801,7 @@ const g_search_db = [
     "split_name": "sus iter Repeat With operator="
   },
   {
-    "index": 780,
+    "index": 772,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6878,7 +6810,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 781,
+    "index": 773,
     "type": "class",
     "url": "sus-iter-IteratorOverRange.html",
     "name": "IteratorOverRange",
@@ -6887,7 +6819,7 @@ const g_search_db = [
     "summary": "The iterator created from a std::range via from_range."
   },
   {
-    "index": 782,
+    "index": 774,
     "type": "constructor",
     "url": "sus-iter-IteratorOverRange.html#method.IteratorOverRange",
     "name": "IteratorOverRange",
@@ -6895,7 +6827,7 @@ const g_search_db = [
     "split_name": "sus iter Iterator Over Range Iterator Over Range"
   },
   {
-    "index": 783,
+    "index": 775,
     "type": "method",
     "url": "sus-iter-IteratorOverRange.html#method.moved",
     "name": "moved",
@@ -6904,7 +6836,7 @@ const g_search_db = [
     "summary": "Creates an iterator which moves all of its elements. If the range does not own its elements, or the elements are used afterward, this can cause use- after-move and Undefined Behaviour."
   },
   {
-    "index": 784,
+    "index": 776,
     "type": "method",
     "url": "sus-iter-IteratorOverRange.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -6913,7 +6845,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 785,
+    "index": 777,
     "type": "method",
     "url": "sus-iter-IteratorOverRange.html#method.next_back",
     "name": "next_back",
@@ -6922,7 +6854,7 @@ const g_search_db = [
     "summary": "sus::iter::DoubleEndedIterator trait."
   },
   {
-    "index": 786,
+    "index": 778,
     "type": "method",
     "url": "sus-iter-IteratorOverRange.html#method.next",
     "name": "next",
@@ -6931,7 +6863,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 787,
+    "index": 779,
     "type": "method",
     "url": "sus-iter-IteratorOverRange.html#method.size_hint",
     "name": "size_hint",
@@ -6940,7 +6872,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 788,
+    "index": 780,
     "type": "method",
     "url": "sus-iter-IteratorOverRange.html#method.clone",
     "name": "clone",
@@ -6949,7 +6881,7 @@ const g_search_db = [
     "summary": "sus::mem::Clone trait."
   },
   {
-    "index": 789,
+    "index": 781,
     "type": "method",
     "url": "sus-iter-IteratorOverRange.html#method.operator=",
     "name": "operator=",
@@ -6957,7 +6889,7 @@ const g_search_db = [
     "split_name": "sus iter Iterator Over Range operator="
   },
   {
-    "index": 790,
+    "index": 782,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -6966,7 +6898,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 791,
+    "index": 783,
     "type": "class",
     "url": "sus-iter-Cloned.html",
     "name": "Cloned",
@@ -6975,7 +6907,7 @@ const g_search_db = [
     "summary": "An iterator that clones the elements of an underlying iterator."
   },
   {
-    "index": 792,
+    "index": 784,
     "type": "constructor",
     "url": "sus-iter-Cloned.html#method.Cloned",
     "name": "Cloned",
@@ -6983,7 +6915,7 @@ const g_search_db = [
     "split_name": "sus iter Cloned Cloned"
   },
   {
-    "index": 793,
+    "index": 785,
     "type": "method",
     "url": "sus-iter-Cloned.html#method.trusted_len",
     "name": "trusted_len",
@@ -6992,7 +6924,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 794,
+    "index": 786,
     "type": "method",
     "url": "sus-iter-Cloned.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -7000,7 +6932,7 @@ const g_search_db = [
     "split_name": "sus iter Cloned exact size hint"
   },
   {
-    "index": 795,
+    "index": 787,
     "type": "method",
     "url": "sus-iter-Cloned.html#method.next_back",
     "name": "next_back",
@@ -7008,7 +6940,7 @@ const g_search_db = [
     "split_name": "sus iter Cloned next back"
   },
   {
-    "index": 796,
+    "index": 788,
     "type": "method",
     "url": "sus-iter-Cloned.html#method.next",
     "name": "next",
@@ -7016,7 +6948,7 @@ const g_search_db = [
     "split_name": "sus iter Cloned next"
   },
   {
-    "index": 797,
+    "index": 789,
     "type": "method",
     "url": "sus-iter-Cloned.html#method.size_hint",
     "name": "size_hint",
@@ -7025,7 +6957,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 798,
+    "index": 790,
     "type": "method",
     "url": "sus-iter-Cloned.html#method.clone",
     "name": "clone",
@@ -7033,7 +6965,7 @@ const g_search_db = [
     "split_name": "sus iter Cloned clone"
   },
   {
-    "index": 799,
+    "index": 791,
     "type": "method",
     "url": "sus-iter-Cloned.html#method.operator=",
     "name": "operator=",
@@ -7041,7 +6973,7 @@ const g_search_db = [
     "split_name": "sus iter Cloned operator="
   },
   {
-    "index": 800,
+    "index": 792,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7050,7 +6982,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 801,
+    "index": 793,
     "type": "class",
     "url": "sus-iter-Flatten.html",
     "name": "Flatten",
@@ -7059,7 +6991,7 @@ const g_search_db = [
     "summary": "An iterator that flattens an iterator of iterable types into an iterator of those iterable types' items."
   },
   {
-    "index": 802,
+    "index": 794,
     "type": "constructor",
     "url": "sus-iter-Flatten.html#method.Flatten",
     "name": "Flatten",
@@ -7067,7 +6999,7 @@ const g_search_db = [
     "split_name": "sus iter Flatten Flatten"
   },
   {
-    "index": 803,
+    "index": 795,
     "type": "method",
     "url": "sus-iter-Flatten.html#method.next_back",
     "name": "next_back",
@@ -7075,7 +7007,7 @@ const g_search_db = [
     "split_name": "sus iter Flatten next back"
   },
   {
-    "index": 804,
+    "index": 796,
     "type": "method",
     "url": "sus-iter-Flatten.html#method.next",
     "name": "next",
@@ -7083,7 +7015,7 @@ const g_search_db = [
     "split_name": "sus iter Flatten next"
   },
   {
-    "index": 805,
+    "index": 797,
     "type": "method",
     "url": "sus-iter-Flatten.html#method.size_hint",
     "name": "size_hint",
@@ -7092,7 +7024,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 806,
+    "index": 798,
     "type": "method",
     "url": "sus-iter-Flatten.html#method.clone",
     "name": "clone",
@@ -7100,7 +7032,7 @@ const g_search_db = [
     "split_name": "sus iter Flatten clone"
   },
   {
-    "index": 807,
+    "index": 799,
     "type": "method",
     "url": "sus-iter-Flatten.html#method.operator=",
     "name": "operator=",
@@ -7108,7 +7040,7 @@ const g_search_db = [
     "split_name": "sus iter Flatten operator="
   },
   {
-    "index": 808,
+    "index": 800,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7117,7 +7049,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 809,
+    "index": 801,
     "type": "class",
     "url": "sus-iter-Copied.html",
     "name": "Copied",
@@ -7126,7 +7058,7 @@ const g_search_db = [
     "summary": "An iterator that copies the elements of an underlying iterator."
   },
   {
-    "index": 810,
+    "index": 802,
     "type": "constructor",
     "url": "sus-iter-Copied.html#method.Copied",
     "name": "Copied",
@@ -7134,7 +7066,7 @@ const g_search_db = [
     "split_name": "sus iter Copied Copied"
   },
   {
-    "index": 811,
+    "index": 803,
     "type": "method",
     "url": "sus-iter-Copied.html#method.trusted_len",
     "name": "trusted_len",
@@ -7143,7 +7075,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 812,
+    "index": 804,
     "type": "method",
     "url": "sus-iter-Copied.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -7151,7 +7083,7 @@ const g_search_db = [
     "split_name": "sus iter Copied exact size hint"
   },
   {
-    "index": 813,
+    "index": 805,
     "type": "method",
     "url": "sus-iter-Copied.html#method.next_back",
     "name": "next_back",
@@ -7159,7 +7091,7 @@ const g_search_db = [
     "split_name": "sus iter Copied next back"
   },
   {
-    "index": 814,
+    "index": 806,
     "type": "method",
     "url": "sus-iter-Copied.html#method.next",
     "name": "next",
@@ -7167,7 +7099,7 @@ const g_search_db = [
     "split_name": "sus iter Copied next"
   },
   {
-    "index": 815,
+    "index": 807,
     "type": "method",
     "url": "sus-iter-Copied.html#method.size_hint",
     "name": "size_hint",
@@ -7176,7 +7108,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 816,
+    "index": 808,
     "type": "method",
     "url": "sus-iter-Copied.html#method.clone",
     "name": "clone",
@@ -7184,7 +7116,7 @@ const g_search_db = [
     "split_name": "sus iter Copied clone"
   },
   {
-    "index": 817,
+    "index": 809,
     "type": "method",
     "url": "sus-iter-Copied.html#method.operator=",
     "name": "operator=",
@@ -7192,7 +7124,7 @@ const g_search_db = [
     "split_name": "sus iter Copied operator="
   },
   {
-    "index": 818,
+    "index": 810,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7201,7 +7133,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 819,
+    "index": 811,
     "type": "class",
     "url": "sus-iter-Skip.html",
     "name": "Skip",
@@ -7210,7 +7142,7 @@ const g_search_db = [
     "summary": "An iterator that skips over n elements of another iterator."
   },
   {
-    "index": 820,
+    "index": 812,
     "type": "constructor",
     "url": "sus-iter-Skip.html#method.Skip",
     "name": "Skip",
@@ -7218,7 +7150,7 @@ const g_search_db = [
     "split_name": "sus iter Skip Skip"
   },
   {
-    "index": 821,
+    "index": 813,
     "type": "method",
     "url": "sus-iter-Skip.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -7226,7 +7158,7 @@ const g_search_db = [
     "split_name": "sus iter Skip exact size hint"
   },
   {
-    "index": 822,
+    "index": 814,
     "type": "method",
     "url": "sus-iter-Skip.html#method.next_back",
     "name": "next_back",
@@ -7234,7 +7166,7 @@ const g_search_db = [
     "split_name": "sus iter Skip next back"
   },
   {
-    "index": 823,
+    "index": 815,
     "type": "method",
     "url": "sus-iter-Skip.html#method.next",
     "name": "next",
@@ -7242,7 +7174,7 @@ const g_search_db = [
     "split_name": "sus iter Skip next"
   },
   {
-    "index": 824,
+    "index": 816,
     "type": "method",
     "url": "sus-iter-Skip.html#method.size_hint",
     "name": "size_hint",
@@ -7251,7 +7183,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 825,
+    "index": 817,
     "type": "method",
     "url": "sus-iter-Skip.html#method.clone",
     "name": "clone",
@@ -7259,7 +7191,7 @@ const g_search_db = [
     "split_name": "sus iter Skip clone"
   },
   {
-    "index": 826,
+    "index": 818,
     "type": "method",
     "url": "sus-iter-Skip.html#method.operator=",
     "name": "operator=",
@@ -7267,7 +7199,7 @@ const g_search_db = [
     "split_name": "sus iter Skip operator="
   },
   {
-    "index": 827,
+    "index": 819,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7276,7 +7208,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 828,
+    "index": 820,
     "type": "class",
     "url": "sus-iter-OnceWith.html",
     "name": "OnceWith",
@@ -7285,7 +7217,7 @@ const g_search_db = [
     "summary": "An Iterator that walks over at most a single Item."
   },
   {
-    "index": 829,
+    "index": 821,
     "type": "constructor",
     "url": "sus-iter-OnceWith.html#method.OnceWith",
     "name": "OnceWith",
@@ -7293,7 +7225,7 @@ const g_search_db = [
     "split_name": "sus iter Once With Once With"
   },
   {
-    "index": 830,
+    "index": 822,
     "type": "method",
     "url": "sus-iter-OnceWith.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -7301,7 +7233,7 @@ const g_search_db = [
     "split_name": "sus iter Once With exact size hint"
   },
   {
-    "index": 831,
+    "index": 823,
     "type": "method",
     "url": "sus-iter-OnceWith.html#method.next_back",
     "name": "next_back",
@@ -7309,7 +7241,7 @@ const g_search_db = [
     "split_name": "sus iter Once With next back"
   },
   {
-    "index": 832,
+    "index": 824,
     "type": "method",
     "url": "sus-iter-OnceWith.html#method.next",
     "name": "next",
@@ -7317,7 +7249,7 @@ const g_search_db = [
     "split_name": "sus iter Once With next"
   },
   {
-    "index": 833,
+    "index": 825,
     "type": "method",
     "url": "sus-iter-OnceWith.html#method.size_hint",
     "name": "size_hint",
@@ -7326,7 +7258,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 834,
+    "index": 826,
     "type": "method",
     "url": "sus-iter-OnceWith.html#method.clone",
     "name": "clone",
@@ -7334,7 +7266,7 @@ const g_search_db = [
     "split_name": "sus iter Once With clone"
   },
   {
-    "index": 835,
+    "index": 827,
     "type": "method",
     "url": "sus-iter-OnceWith.html#method.operator=",
     "name": "operator=",
@@ -7342,7 +7274,7 @@ const g_search_db = [
     "split_name": "sus iter Once With operator="
   },
   {
-    "index": 836,
+    "index": 828,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7351,7 +7283,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 837,
+    "index": 829,
     "type": "class",
     "url": "sus-iter-FlatMap.html",
     "name": "FlatMap",
@@ -7360,7 +7292,7 @@ const g_search_db = [
     "summary": "An iterator that maps an iterator of types into an iterator of iterable types through a user-defined function, and then flattens them into an interator of those those iterable types' items."
   },
   {
-    "index": 838,
+    "index": 830,
     "type": "constructor",
     "url": "sus-iter-FlatMap.html#method.FlatMap",
     "name": "FlatMap",
@@ -7368,7 +7300,7 @@ const g_search_db = [
     "split_name": "sus iter Flat Map Flat Map"
   },
   {
-    "index": 839,
+    "index": 831,
     "type": "method",
     "url": "sus-iter-FlatMap.html#method.next_back",
     "name": "next_back",
@@ -7376,7 +7308,7 @@ const g_search_db = [
     "split_name": "sus iter Flat Map next back"
   },
   {
-    "index": 840,
+    "index": 832,
     "type": "method",
     "url": "sus-iter-FlatMap.html#method.next",
     "name": "next",
@@ -7384,7 +7316,7 @@ const g_search_db = [
     "split_name": "sus iter Flat Map next"
   },
   {
-    "index": 841,
+    "index": 833,
     "type": "method",
     "url": "sus-iter-FlatMap.html#method.size_hint",
     "name": "size_hint",
@@ -7393,7 +7325,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 842,
+    "index": 834,
     "type": "method",
     "url": "sus-iter-FlatMap.html#method.clone",
     "name": "clone",
@@ -7401,7 +7333,7 @@ const g_search_db = [
     "split_name": "sus iter Flat Map clone"
   },
   {
-    "index": 843,
+    "index": 835,
     "type": "method",
     "url": "sus-iter-FlatMap.html#method.operator=",
     "name": "operator=",
@@ -7409,7 +7341,7 @@ const g_search_db = [
     "split_name": "sus iter Flat Map operator="
   },
   {
-    "index": 844,
+    "index": 836,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7418,7 +7350,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 845,
+    "index": 837,
     "type": "class",
     "url": "sus-iter-IteratorRange.html",
     "name": "IteratorRange",
@@ -7427,7 +7359,7 @@ const g_search_db = [
     "summary": "Support for use of a sus::Iterator as a std::ranges::input_range in the std::ranges library."
   },
   {
-    "index": 846,
+    "index": 838,
     "type": "method",
     "url": "sus-iter-IteratorRange.html#method.end",
     "name": "end",
@@ -7435,7 +7367,7 @@ const g_search_db = [
     "split_name": "sus iter Iterator Range end"
   },
   {
-    "index": 847,
+    "index": 839,
     "type": "method",
     "url": "sus-iter-IteratorRange.html#method.begin",
     "name": "begin",
@@ -7443,7 +7375,7 @@ const g_search_db = [
     "split_name": "sus iter Iterator Range begin"
   },
   {
-    "index": 848,
+    "index": 840,
     "type": "class",
     "url": "sus-iter-MapWhile.html",
     "name": "MapWhile",
@@ -7452,7 +7384,7 @@ const g_search_db = [
     "summary": "An iterator that maps each item to a new type based on a map function."
   },
   {
-    "index": 849,
+    "index": 841,
     "type": "constructor",
     "url": "sus-iter-MapWhile.html#method.MapWhile",
     "name": "MapWhile",
@@ -7460,7 +7392,7 @@ const g_search_db = [
     "split_name": "sus iter Map While Map While"
   },
   {
-    "index": 850,
+    "index": 842,
     "type": "method",
     "url": "sus-iter-MapWhile.html#method.next_back",
     "name": "next_back",
@@ -7468,7 +7400,7 @@ const g_search_db = [
     "split_name": "sus iter Map While next back"
   },
   {
-    "index": 851,
+    "index": 843,
     "type": "method",
     "url": "sus-iter-MapWhile.html#method.next",
     "name": "next",
@@ -7476,7 +7408,7 @@ const g_search_db = [
     "split_name": "sus iter Map While next"
   },
   {
-    "index": 852,
+    "index": 844,
     "type": "method",
     "url": "sus-iter-MapWhile.html#method.size_hint",
     "name": "size_hint",
@@ -7485,7 +7417,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 853,
+    "index": 845,
     "type": "method",
     "url": "sus-iter-MapWhile.html#method.clone",
     "name": "clone",
@@ -7493,7 +7425,7 @@ const g_search_db = [
     "split_name": "sus iter Map While clone"
   },
   {
-    "index": 854,
+    "index": 846,
     "type": "method",
     "url": "sus-iter-MapWhile.html#method.operator=",
     "name": "operator=",
@@ -7501,7 +7433,7 @@ const g_search_db = [
     "split_name": "sus iter Map While operator="
   },
   {
-    "index": 855,
+    "index": 847,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7510,7 +7442,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 856,
+    "index": 848,
     "type": "class",
     "url": "sus-iter-SkipWhile.html",
     "name": "SkipWhile",
@@ -7519,7 +7451,7 @@ const g_search_db = [
     "summary": "An iterator that rejects elements while pred returns true."
   },
   {
-    "index": 857,
+    "index": 849,
     "type": "constructor",
     "url": "sus-iter-SkipWhile.html#method.SkipWhile",
     "name": "SkipWhile",
@@ -7527,7 +7459,7 @@ const g_search_db = [
     "split_name": "sus iter Skip While Skip While"
   },
   {
-    "index": 858,
+    "index": 850,
     "type": "method",
     "url": "sus-iter-SkipWhile.html#method.next",
     "name": "next",
@@ -7535,7 +7467,7 @@ const g_search_db = [
     "split_name": "sus iter Skip While next"
   },
   {
-    "index": 859,
+    "index": 851,
     "type": "method",
     "url": "sus-iter-SkipWhile.html#method.size_hint",
     "name": "size_hint",
@@ -7544,7 +7476,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 860,
+    "index": 852,
     "type": "method",
     "url": "sus-iter-SkipWhile.html#method.clone",
     "name": "clone",
@@ -7552,7 +7484,7 @@ const g_search_db = [
     "split_name": "sus iter Skip While clone"
   },
   {
-    "index": 861,
+    "index": 853,
     "type": "method",
     "url": "sus-iter-SkipWhile.html#method.operator=",
     "name": "operator=",
@@ -7560,7 +7492,7 @@ const g_search_db = [
     "split_name": "sus iter Skip While operator="
   },
   {
-    "index": 862,
+    "index": 854,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7569,7 +7501,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 863,
+    "index": 855,
     "type": "class",
     "url": "sus-iter-Take.html",
     "name": "Take",
@@ -7578,7 +7510,7 @@ const g_search_db = [
     "summary": "An iterator that only iterates over the first n iterations of another iterator."
   },
   {
-    "index": 864,
+    "index": 856,
     "type": "constructor",
     "url": "sus-iter-Take.html#method.Take",
     "name": "Take",
@@ -7586,7 +7518,7 @@ const g_search_db = [
     "split_name": "sus iter Take Take"
   },
   {
-    "index": 865,
+    "index": 857,
     "type": "method",
     "url": "sus-iter-Take.html#method.trusted_len",
     "name": "trusted_len",
@@ -7595,7 +7527,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 866,
+    "index": 858,
     "type": "method",
     "url": "sus-iter-Take.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -7603,7 +7535,7 @@ const g_search_db = [
     "split_name": "sus iter Take exact size hint"
   },
   {
-    "index": 867,
+    "index": 859,
     "type": "method",
     "url": "sus-iter-Take.html#method.next_back",
     "name": "next_back",
@@ -7611,7 +7543,7 @@ const g_search_db = [
     "split_name": "sus iter Take next back"
   },
   {
-    "index": 868,
+    "index": 860,
     "type": "method",
     "url": "sus-iter-Take.html#method.next",
     "name": "next",
@@ -7619,7 +7551,7 @@ const g_search_db = [
     "split_name": "sus iter Take next"
   },
   {
-    "index": 869,
+    "index": 861,
     "type": "method",
     "url": "sus-iter-Take.html#method.size_hint",
     "name": "size_hint",
@@ -7628,7 +7560,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 870,
+    "index": 862,
     "type": "method",
     "url": "sus-iter-Take.html#method.clone",
     "name": "clone",
@@ -7636,7 +7568,7 @@ const g_search_db = [
     "split_name": "sus iter Take clone"
   },
   {
-    "index": 871,
+    "index": 863,
     "type": "method",
     "url": "sus-iter-Take.html#method.operator=",
     "name": "operator=",
@@ -7644,7 +7576,7 @@ const g_search_db = [
     "split_name": "sus iter Take operator="
   },
   {
-    "index": 872,
+    "index": 864,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7653,7 +7585,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 873,
+    "index": 865,
     "type": "struct",
     "url": "sus-iter-IterRef.html",
     "name": "IterRef",
@@ -7662,7 +7594,7 @@ const g_search_db = [
     "summary": "An iterator's refcount on the owning collection, preventig mutation while the iterator is alive."
   },
   {
-    "index": 874,
+    "index": 866,
     "type": "constructor",
     "url": "sus-iter-IterRef.html#method.IterRef",
     "name": "IterRef",
@@ -7670,7 +7602,7 @@ const g_search_db = [
     "split_name": "sus iter Iter Ref Iter Ref"
   },
   {
-    "index": 875,
+    "index": 867,
     "type": "method",
     "url": "sus-iter-IterRef.html#method.to_view",
     "name": "to_view",
@@ -7678,7 +7610,7 @@ const g_search_db = [
     "split_name": "sus iter Iter Ref to view"
   },
   {
-    "index": 876,
+    "index": 868,
     "type": "method",
     "url": "sus-iter-IterRef.html#method.operator=",
     "name": "operator=",
@@ -7686,7 +7618,7 @@ const g_search_db = [
     "split_name": "sus iter Iter Ref operator="
   },
   {
-    "index": 877,
+    "index": 869,
     "type": "struct",
     "url": "sus-iter-IterRefCounter.html",
     "name": "IterRefCounter",
@@ -7695,7 +7627,7 @@ const g_search_db = [
     "summary": "Reference counting outstanding iterators (and view types since they need to be able to produce iterators) in order to catch iterator invalidation and prevent them from being used afterward. Mutating the collection should check that the count is empty. This is much like a RefCell in Rust, using runtime verfication that modification does not occur while there are outstanding references."
   },
   {
-    "index": 878,
+    "index": 870,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.take_for_view",
     "name": "take_for_view",
@@ -7704,7 +7636,7 @@ const g_search_db = [
     "summary": "Resets self to no pointer to a ref count, returning a new IterRefCounter containing the old pointetr."
   },
   {
-    "index": 879,
+    "index": 871,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.take_for_owner",
     "name": "take_for_owner",
@@ -7713,7 +7645,7 @@ const g_search_db = [
     "summary": "Resets self to no ref counts, returning a new IterRefCounter containing the old ref counts."
   },
   {
-    "index": 880,
+    "index": 872,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.count_from_owner",
     "name": "count_from_owner",
@@ -7722,7 +7654,7 @@ const g_search_db = [
     "summary": "Only valid to be called on owning collections such as Vec."
   },
   {
-    "index": 881,
+    "index": 873,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.to_view_from_view",
     "name": "to_view_from_view",
@@ -7731,7 +7663,7 @@ const g_search_db = [
     "summary": "Only valid to be called on non-owning views such as Slice."
   },
   {
-    "index": 882,
+    "index": 874,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.to_view_from_owner",
     "name": "to_view_from_owner",
@@ -7740,7 +7672,7 @@ const g_search_db = [
     "summary": "Only valid to be called on owning collections such as Vec."
   },
   {
-    "index": 883,
+    "index": 875,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.to_iter_from_owner",
     "name": "to_iter_from_owner",
@@ -7749,7 +7681,7 @@ const g_search_db = [
     "summary": "Only valid to be called on owning collections such as Vec."
   },
   {
-    "index": 884,
+    "index": 876,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.empty_for_view",
     "name": "empty_for_view",
@@ -7757,7 +7689,7 @@ const g_search_db = [
     "split_name": "sus iter Iter Ref Counter empty for view"
   },
   {
-    "index": 885,
+    "index": 877,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.to_iter_from_view",
     "name": "to_iter_from_view",
@@ -7766,7 +7698,7 @@ const g_search_db = [
     "summary": "Only valid to be called on non-owning views such as Slice."
   },
   {
-    "index": 886,
+    "index": 878,
     "type": "method",
     "url": "sus-iter-IterRefCounter.html#method.for_owner",
     "name": "for_owner",
@@ -7774,7 +7706,7 @@ const g_search_db = [
     "split_name": "sus iter Iter Ref Counter for owner"
   },
   {
-    "index": 887,
+    "index": 879,
     "type": "class",
     "url": "sus-iter-Reverse.html",
     "name": "Reverse",
@@ -7783,7 +7715,7 @@ const g_search_db = [
     "summary": "An iterator that iterates over another iterator but in reverse."
   },
   {
-    "index": 888,
+    "index": 880,
     "type": "constructor",
     "url": "sus-iter-Reverse.html#method.Reverse",
     "name": "Reverse",
@@ -7791,7 +7723,7 @@ const g_search_db = [
     "split_name": "sus iter Reverse Reverse"
   },
   {
-    "index": 889,
+    "index": 881,
     "type": "method",
     "url": "sus-iter-Reverse.html#method.trusted_len",
     "name": "trusted_len",
@@ -7800,7 +7732,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 890,
+    "index": 882,
     "type": "method",
     "url": "sus-iter-Reverse.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -7809,7 +7741,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 891,
+    "index": 883,
     "type": "method",
     "url": "sus-iter-Reverse.html#method.next_back",
     "name": "next_back",
@@ -7818,7 +7750,7 @@ const g_search_db = [
     "summary": "sus::iter::DoubleEndedIterator trait."
   },
   {
-    "index": 892,
+    "index": 884,
     "type": "method",
     "url": "sus-iter-Reverse.html#method.next",
     "name": "next",
@@ -7827,7 +7759,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 893,
+    "index": 885,
     "type": "method",
     "url": "sus-iter-Reverse.html#method.size_hint",
     "name": "size_hint",
@@ -7836,7 +7768,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 894,
+    "index": 886,
     "type": "method",
     "url": "sus-iter-Reverse.html#method.clone",
     "name": "clone",
@@ -7845,7 +7777,7 @@ const g_search_db = [
     "summary": "sus::mem::Clone implementation"
   },
   {
-    "index": 895,
+    "index": 887,
     "type": "method",
     "url": "sus-iter-Reverse.html#method.operator=",
     "name": "operator=",
@@ -7853,7 +7785,7 @@ const g_search_db = [
     "split_name": "sus iter Reverse operator="
   },
   {
-    "index": 896,
+    "index": 888,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7862,7 +7794,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 897,
+    "index": 889,
     "type": "class",
     "url": "sus-iter-Once.html",
     "name": "Once",
@@ -7871,7 +7803,7 @@ const g_search_db = [
     "summary": "An Iterator that walks over at most a single Item."
   },
   {
-    "index": 898,
+    "index": 890,
     "type": "method",
     "url": "sus-iter-Once.html#method.trusted_len",
     "name": "trusted_len",
@@ -7879,7 +7811,7 @@ const g_search_db = [
     "split_name": "sus iter Once trusted len"
   },
   {
-    "index": 899,
+    "index": 891,
     "type": "method",
     "url": "sus-iter-Once.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -7887,7 +7819,7 @@ const g_search_db = [
     "split_name": "sus iter Once exact size hint"
   },
   {
-    "index": 900,
+    "index": 892,
     "type": "method",
     "url": "sus-iter-Once.html#method.next_back",
     "name": "next_back",
@@ -7895,7 +7827,7 @@ const g_search_db = [
     "split_name": "sus iter Once next back"
   },
   {
-    "index": 901,
+    "index": 893,
     "type": "method",
     "url": "sus-iter-Once.html#method.size_hint",
     "name": "size_hint",
@@ -7904,7 +7836,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 902,
+    "index": 894,
     "type": "method",
     "url": "sus-iter-Once.html#method.next",
     "name": "next",
@@ -7912,7 +7844,7 @@ const g_search_db = [
     "split_name": "sus iter Once next"
   },
   {
-    "index": 903,
+    "index": 895,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -7921,7 +7853,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 904,
+    "index": 896,
     "type": "class",
     "url": "sus-iter-Moved.html",
     "name": "Moved",
@@ -7930,7 +7862,7 @@ const g_search_db = [
     "summary": "An iterator that moves from the elements of an underlying iterator."
   },
   {
-    "index": 905,
+    "index": 897,
     "type": "constructor",
     "url": "sus-iter-Moved.html#method.Moved",
     "name": "Moved",
@@ -7938,7 +7870,7 @@ const g_search_db = [
     "split_name": "sus iter Moved Moved"
   },
   {
-    "index": 906,
+    "index": 898,
     "type": "method",
     "url": "sus-iter-Moved.html#method.trusted_len",
     "name": "trusted_len",
@@ -7947,7 +7879,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 907,
+    "index": 899,
     "type": "method",
     "url": "sus-iter-Moved.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -7955,7 +7887,7 @@ const g_search_db = [
     "split_name": "sus iter Moved exact size hint"
   },
   {
-    "index": 908,
+    "index": 900,
     "type": "method",
     "url": "sus-iter-Moved.html#method.next_back",
     "name": "next_back",
@@ -7963,7 +7895,7 @@ const g_search_db = [
     "split_name": "sus iter Moved next back"
   },
   {
-    "index": 909,
+    "index": 901,
     "type": "method",
     "url": "sus-iter-Moved.html#method.next",
     "name": "next",
@@ -7971,7 +7903,7 @@ const g_search_db = [
     "split_name": "sus iter Moved next"
   },
   {
-    "index": 910,
+    "index": 902,
     "type": "method",
     "url": "sus-iter-Moved.html#method.size_hint",
     "name": "size_hint",
@@ -7980,7 +7912,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 911,
+    "index": 903,
     "type": "method",
     "url": "sus-iter-Moved.html#method.clone",
     "name": "clone",
@@ -7988,7 +7920,7 @@ const g_search_db = [
     "split_name": "sus iter Moved clone"
   },
   {
-    "index": 912,
+    "index": 904,
     "type": "method",
     "url": "sus-iter-Moved.html#method.operator=",
     "name": "operator=",
@@ -7996,7 +7928,7 @@ const g_search_db = [
     "split_name": "sus iter Moved operator="
   },
   {
-    "index": 913,
+    "index": 905,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -8005,7 +7937,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 914,
+    "index": 906,
     "type": "class",
     "url": "sus-iter-Chain.html",
     "name": "Chain",
@@ -8014,7 +7946,7 @@ const g_search_db = [
     "summary": "An iterator that yields the current count and the element during iteration."
   },
   {
-    "index": 915,
+    "index": 907,
     "type": "constructor",
     "url": "sus-iter-Chain.html#method.Chain",
     "name": "Chain",
@@ -8022,7 +7954,7 @@ const g_search_db = [
     "split_name": "sus iter Chain Chain"
   },
   {
-    "index": 916,
+    "index": 908,
     "type": "method",
     "url": "sus-iter-Chain.html#method.trusted_len",
     "name": "trusted_len",
@@ -8031,7 +7963,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 917,
+    "index": 909,
     "type": "method",
     "url": "sus-iter-Chain.html#method.next_back",
     "name": "next_back",
@@ -8039,7 +7971,7 @@ const g_search_db = [
     "split_name": "sus iter Chain next back"
   },
   {
-    "index": 918,
+    "index": 910,
     "type": "method",
     "url": "sus-iter-Chain.html#method.next",
     "name": "next",
@@ -8047,7 +7979,7 @@ const g_search_db = [
     "split_name": "sus iter Chain next"
   },
   {
-    "index": 919,
+    "index": 911,
     "type": "method",
     "url": "sus-iter-Chain.html#method.size_hint",
     "name": "size_hint",
@@ -8055,7 +7987,7 @@ const g_search_db = [
     "split_name": "sus iter Chain size hint"
   },
   {
-    "index": 920,
+    "index": 912,
     "type": "method",
     "url": "sus-iter-Chain.html#method.clone",
     "name": "clone",
@@ -8063,7 +7995,7 @@ const g_search_db = [
     "split_name": "sus iter Chain clone"
   },
   {
-    "index": 921,
+    "index": 913,
     "type": "method",
     "url": "sus-iter-Chain.html#method.operator=",
     "name": "operator=",
@@ -8071,7 +8003,7 @@ const g_search_db = [
     "split_name": "sus iter Chain operator="
   },
   {
-    "index": 922,
+    "index": 914,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -8080,7 +8012,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 923,
+    "index": 915,
     "type": "class",
     "url": "sus-iter-Fuse.html",
     "name": "Fuse",
@@ -8089,7 +8021,7 @@ const g_search_db = [
     "summary": "An iterator that returns the inner iterator's values until it sees None, and then only returns None."
   },
   {
-    "index": 924,
+    "index": 916,
     "type": "constructor",
     "url": "sus-iter-Fuse.html#method.Fuse",
     "name": "Fuse",
@@ -8097,7 +8029,7 @@ const g_search_db = [
     "split_name": "sus iter Fuse Fuse"
   },
   {
-    "index": 925,
+    "index": 917,
     "type": "method",
     "url": "sus-iter-Fuse.html#method.next_back",
     "name": "next_back",
@@ -8105,7 +8037,7 @@ const g_search_db = [
     "split_name": "sus iter Fuse next back"
   },
   {
-    "index": 926,
+    "index": 918,
     "type": "method",
     "url": "sus-iter-Fuse.html#method.trusted_len",
     "name": "trusted_len",
@@ -8114,7 +8046,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 927,
+    "index": 919,
     "type": "method",
     "url": "sus-iter-Fuse.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -8123,7 +8055,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 928,
+    "index": 920,
     "type": "method",
     "url": "sus-iter-Fuse.html#method.next",
     "name": "next",
@@ -8131,7 +8063,7 @@ const g_search_db = [
     "split_name": "sus iter Fuse next"
   },
   {
-    "index": 929,
+    "index": 921,
     "type": "method",
     "url": "sus-iter-Fuse.html#method.size_hint",
     "name": "size_hint",
@@ -8140,7 +8072,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 930,
+    "index": 922,
     "type": "method",
     "url": "sus-iter-Fuse.html#method.clone",
     "name": "clone",
@@ -8148,7 +8080,7 @@ const g_search_db = [
     "split_name": "sus iter Fuse clone"
   },
   {
-    "index": 931,
+    "index": 923,
     "type": "method",
     "url": "sus-iter-Fuse.html#method.operator=",
     "name": "operator=",
@@ -8156,7 +8088,7 @@ const g_search_db = [
     "split_name": "sus iter Fuse operator="
   },
   {
-    "index": 932,
+    "index": 924,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -8165,7 +8097,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 933,
+    "index": 925,
     "type": "class",
     "url": "sus-iter-Enumerate.html",
     "name": "Enumerate",
@@ -8174,7 +8106,7 @@ const g_search_db = [
     "summary": "An iterator that yields the current count and the element during iteration."
   },
   {
-    "index": 934,
+    "index": 926,
     "type": "constructor",
     "url": "sus-iter-Enumerate.html#method.Enumerate",
     "name": "Enumerate",
@@ -8182,7 +8114,7 @@ const g_search_db = [
     "split_name": "sus iter Enumerate Enumerate"
   },
   {
-    "index": 935,
+    "index": 927,
     "type": "method",
     "url": "sus-iter-Enumerate.html#method.trusted_len",
     "name": "trusted_len",
@@ -8191,7 +8123,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 936,
+    "index": 928,
     "type": "method",
     "url": "sus-iter-Enumerate.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -8199,7 +8131,7 @@ const g_search_db = [
     "split_name": "sus iter Enumerate exact size hint"
   },
   {
-    "index": 937,
+    "index": 929,
     "type": "method",
     "url": "sus-iter-Enumerate.html#method.next_back",
     "name": "next_back",
@@ -8207,7 +8139,7 @@ const g_search_db = [
     "split_name": "sus iter Enumerate next back"
   },
   {
-    "index": 938,
+    "index": 930,
     "type": "method",
     "url": "sus-iter-Enumerate.html#method.next",
     "name": "next",
@@ -8215,7 +8147,7 @@ const g_search_db = [
     "split_name": "sus iter Enumerate next"
   },
   {
-    "index": 939,
+    "index": 931,
     "type": "method",
     "url": "sus-iter-Enumerate.html#method.size_hint",
     "name": "size_hint",
@@ -8224,7 +8156,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 940,
+    "index": 932,
     "type": "method",
     "url": "sus-iter-Enumerate.html#method.clone",
     "name": "clone",
@@ -8232,7 +8164,7 @@ const g_search_db = [
     "split_name": "sus iter Enumerate clone"
   },
   {
-    "index": 941,
+    "index": 933,
     "type": "method",
     "url": "sus-iter-Enumerate.html#method.operator=",
     "name": "operator=",
@@ -8240,7 +8172,7 @@ const g_search_db = [
     "split_name": "sus iter Enumerate operator="
   },
   {
-    "index": 942,
+    "index": 934,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -8249,7 +8181,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 943,
+    "index": 935,
     "type": "class",
     "url": "sus-iter-StepBy.html",
     "name": "StepBy",
@@ -8258,7 +8190,7 @@ const g_search_db = [
     "summary": "An iterator that skips over n elements of another iterator."
   },
   {
-    "index": 944,
+    "index": 936,
     "type": "field",
     "url": "sus-iter-StepBy.html#field.next_iter_",
     "name": "next_iter_",
@@ -8266,7 +8198,7 @@ const g_search_db = [
     "split_name": "sus iter Step By next iter "
   },
   {
-    "index": 945,
+    "index": 937,
     "type": "field",
     "url": "sus-iter-StepBy.html#field.first_take_",
     "name": "first_take_",
@@ -8274,7 +8206,7 @@ const g_search_db = [
     "split_name": "sus iter Step By first take "
   },
   {
-    "index": 946,
+    "index": 938,
     "type": "field",
     "url": "sus-iter-StepBy.html#field.step_",
     "name": "step_",
@@ -8282,7 +8214,7 @@ const g_search_db = [
     "split_name": "sus iter Step By step "
   },
   {
-    "index": 947,
+    "index": 939,
     "type": "constructor",
     "url": "sus-iter-StepBy.html#method.StepBy",
     "name": "StepBy",
@@ -8290,7 +8222,7 @@ const g_search_db = [
     "split_name": "sus iter Step By Step By"
   },
   {
-    "index": 948,
+    "index": 940,
     "type": "method",
     "url": "sus-iter-StepBy.html#method.next_back_index",
     "name": "next_back_index",
@@ -8298,7 +8230,7 @@ const g_search_db = [
     "split_name": "sus iter Step By next back index"
   },
   {
-    "index": 949,
+    "index": 941,
     "type": "method",
     "url": "sus-iter-StepBy.html#method.trusted_len",
     "name": "trusted_len",
@@ -8307,7 +8239,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 950,
+    "index": 942,
     "type": "method",
     "url": "sus-iter-StepBy.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -8315,7 +8247,7 @@ const g_search_db = [
     "split_name": "sus iter Step By exact size hint"
   },
   {
-    "index": 951,
+    "index": 943,
     "type": "method",
     "url": "sus-iter-StepBy.html#method.next_back",
     "name": "next_back",
@@ -8323,7 +8255,7 @@ const g_search_db = [
     "split_name": "sus iter Step By next back"
   },
   {
-    "index": 952,
+    "index": 944,
     "type": "method",
     "url": "sus-iter-StepBy.html#method.next",
     "name": "next",
@@ -8331,7 +8263,7 @@ const g_search_db = [
     "split_name": "sus iter Step By next"
   },
   {
-    "index": 953,
+    "index": 945,
     "type": "method",
     "url": "sus-iter-StepBy.html#method.size_hint",
     "name": "size_hint",
@@ -8340,7 +8272,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 954,
+    "index": 946,
     "type": "method",
     "url": "sus-iter-StepBy.html#method.clone",
     "name": "clone",
@@ -8348,7 +8280,7 @@ const g_search_db = [
     "split_name": "sus iter Step By clone"
   },
   {
-    "index": 955,
+    "index": 947,
     "type": "method",
     "url": "sus-iter-StepBy.html#method.operator=",
     "name": "operator=",
@@ -8356,7 +8288,7 @@ const g_search_db = [
     "split_name": "sus iter Step By operator="
   },
   {
-    "index": 956,
+    "index": 948,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -8365,7 +8297,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 957,
+    "index": 949,
     "type": "class",
     "url": "sus-iter-ByRef.html",
     "name": "ByRef",
@@ -8374,7 +8306,7 @@ const g_search_db = [
     "summary": "An iterator that holds a reference to another iterator and proxies calls through to it. Used to create multiple iterators that share underlying state. The ByRef class must outlive the iterator it refers to."
   },
   {
-    "index": 958,
+    "index": 950,
     "type": "constructor",
     "url": "sus-iter-ByRef.html#method.ByRef",
     "name": "ByRef",
@@ -8382,7 +8314,7 @@ const g_search_db = [
     "split_name": "sus iter By Ref By Ref"
   },
   {
-    "index": 959,
+    "index": 951,
     "type": "method",
     "url": "sus-iter-ByRef.html#method.trusted_len",
     "name": "trusted_len",
@@ -8391,7 +8323,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 960,
+    "index": 952,
     "type": "method",
     "url": "sus-iter-ByRef.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -8400,7 +8332,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 961,
+    "index": 953,
     "type": "method",
     "url": "sus-iter-ByRef.html#method.next_back",
     "name": "next_back",
@@ -8409,7 +8341,7 @@ const g_search_db = [
     "summary": "sus::iter::DoubleEndedIterator trait."
   },
   {
-    "index": 962,
+    "index": 954,
     "type": "method",
     "url": "sus-iter-ByRef.html#method.next",
     "name": "next",
@@ -8418,7 +8350,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 963,
+    "index": 955,
     "type": "method",
     "url": "sus-iter-ByRef.html#method.size_hint",
     "name": "size_hint",
@@ -8427,7 +8359,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 964,
+    "index": 956,
     "type": "method",
     "url": "sus-iter-ByRef.html#method.clone",
     "name": "clone",
@@ -8435,7 +8367,7 @@ const g_search_db = [
     "split_name": "sus iter By Ref clone"
   },
   {
-    "index": 965,
+    "index": 957,
     "type": "method",
     "url": "sus-iter-ByRef.html#method.operator=",
     "name": "operator=",
@@ -8443,7 +8375,7 @@ const g_search_db = [
     "split_name": "sus iter By Ref operator="
   },
   {
-    "index": 966,
+    "index": 958,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -8452,7 +8384,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 967,
+    "index": 959,
     "type": "struct",
     "url": "sus-iter-SizeHint.html",
     "name": "SizeHint",
@@ -8460,7 +8392,7 @@ const g_search_db = [
     "split_name": "sus iter Size Hint"
   },
   {
-    "index": 968,
+    "index": 960,
     "type": "field",
     "url": "sus-iter-SizeHint.html#field.upper",
     "name": "upper",
@@ -8468,7 +8400,7 @@ const g_search_db = [
     "split_name": "sus iter Size Hint upper"
   },
   {
-    "index": 969,
+    "index": 961,
     "type": "field",
     "url": "sus-iter-SizeHint.html#field.lower",
     "name": "lower",
@@ -8476,7 +8408,7 @@ const g_search_db = [
     "split_name": "sus iter Size Hint lower"
   },
   {
-    "index": 970,
+    "index": 962,
     "type": "class",
     "url": "sus-iter-Generator.html",
     "name": "Generator",
@@ -8485,7 +8417,7 @@ const g_search_db = [
     "summary": "A generator type that is a sus::iter::Iterator over type T."
   },
   {
-    "index": 971,
+    "index": 963,
     "type": "constructor",
     "url": "sus-iter-Generator.html#method.Generator",
     "name": "Generator",
@@ -8494,7 +8426,7 @@ const g_search_db = [
     "summary": "sus::mem::Move trait."
   },
   {
-    "index": 972,
+    "index": 964,
     "type": "method",
     "url": "sus-iter-Generator.html#method.begin",
     "name": "begin",
@@ -8503,7 +8435,7 @@ const g_search_db = [
     "summary": "Adaptor method for using Generator in ranged for loops."
   },
   {
-    "index": 973,
+    "index": 965,
     "type": "method",
     "url": "sus-iter-Generator.html#method.size_hint",
     "name": "size_hint",
@@ -8512,7 +8444,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 974,
+    "index": 966,
     "type": "method",
     "url": "sus-iter-Generator.html#method.next",
     "name": "next",
@@ -8521,7 +8453,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 975,
+    "index": 967,
     "type": "method",
     "url": "sus-iter-Generator.html#method.operator=",
     "name": "operator=",
@@ -8530,7 +8462,7 @@ const g_search_db = [
     "summary": "sus::mem::Move trait."
   },
   {
-    "index": 976,
+    "index": 968,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -8539,7 +8471,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 977,
+    "index": 969,
     "type": "type alias",
     "url": "TODO",
     "name": "promise_type",
@@ -8548,7 +8480,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 978,
+    "index": 970,
     "type": "class",
     "url": "sus-iter-IteratorBase.html",
     "name": "IteratorBase",
@@ -8557,7 +8489,7 @@ const g_search_db = [
     "summary": "The base class for all Iterator types."
   },
   {
-    "index": 979,
+    "index": 971,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.collect",
     "name": "collect",
@@ -8566,7 +8498,7 @@ const g_search_db = [
     "summary": "Transforms an iterator into a collection."
   },
   {
-    "index": 980,
+    "index": 972,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.zip",
     "name": "zip",
@@ -8575,7 +8507,7 @@ const g_search_db = [
     "summary": "&quot;Zips up&quot; two iterators into a single iterator of pairs."
   },
   {
-    "index": 981,
+    "index": 973,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.unzip",
     "name": "unzip",
@@ -8584,7 +8516,7 @@ const g_search_db = [
     "summary": "Converts an iterator of pairs into a pair of collections."
   },
   {
-    "index": 982,
+    "index": 974,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.try_for_each",
     "name": "try_for_each",
@@ -8593,7 +8525,7 @@ const g_search_db = [
     "summary": "An iterator method that applies a fallible function to each item in the iterator, stopping at the first error and returning that error."
   },
   {
-    "index": 983,
+    "index": 975,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.try_rfold",
     "name": "try_rfold",
@@ -8602,7 +8534,7 @@ const g_search_db = [
     "summary": "This is the reverse version of Iterator::try_fold(): it takes elements starting from the back of the iterator."
   },
   {
-    "index": 984,
+    "index": 976,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.try_fold",
     "name": "try_fold",
@@ -8611,7 +8543,7 @@ const g_search_db = [
     "summary": "This function acts like fold() but the closure returns a type that satisfies sus::ops::Try and which converts to the accumulator type on success through the Try concept. If the closure ever returns failure, the fold operation immediately stops and returns the failure (short-circuiting)."
   },
   {
-    "index": 985,
+    "index": 977,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.collect_vec",
     "name": "collect_vec",
@@ -8620,7 +8552,7 @@ const g_search_db = [
     "summary": "Transforms an iterator into a Vec."
   },
   {
-    "index": 986,
+    "index": 978,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.try_collect",
     "name": "try_collect",
@@ -8629,7 +8561,7 @@ const g_search_db = [
     "summary": "Fallibly transforms an iterator into a collection, short circuiting if a failure is encountered."
   },
   {
-    "index": 987,
+    "index": 979,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.take_while",
     "name": "take_while",
@@ -8638,7 +8570,7 @@ const g_search_db = [
     "summary": "Creates an iterator that yields elements based on a predicate."
   },
   {
-    "index": 988,
+    "index": 980,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.strong_cmp_by",
     "name": "strong_cmp_by",
@@ -8647,7 +8579,7 @@ const g_search_db = [
     "summary": "Lexicographically"
   },
   {
-    "index": 989,
+    "index": 981,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.strong_cmp",
     "name": "strong_cmp",
@@ -8656,7 +8588,7 @@ const g_search_db = [
     "summary": "Lexicographically"
   },
   {
-    "index": 990,
+    "index": 982,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.position",
     "name": "position",
@@ -8665,7 +8597,7 @@ const g_search_db = [
     "summary": "Searches for an element in an iterator, returning its index."
   },
   {
-    "index": 991,
+    "index": 983,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.generate",
     "name": "generate",
@@ -8674,7 +8606,7 @@ const g_search_db = [
     "summary": "Creates an iterator from a generator function that consumes the current iterator."
   },
   {
-    "index": 992,
+    "index": 984,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.flatten",
     "name": "flatten",
@@ -8683,7 +8615,7 @@ const g_search_db = [
     "summary": "Creates an iterator that flattens nested structure."
   },
   {
-    "index": 993,
+    "index": 985,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.all",
     "name": "all",
@@ -8692,7 +8624,7 @@ const g_search_db = [
     "summary": "Tests whether all elements of the iterator match a predicate."
   },
   {
-    "index": 994,
+    "index": 986,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.ne",
     "name": "ne",
@@ -8701,7 +8633,7 @@ const g_search_db = [
     "summary": "Determines if the elements of this Iterator are not equal to those of another."
   },
   {
-    "index": 995,
+    "index": 987,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.partial_cmp",
     "name": "partial_cmp",
@@ -8710,7 +8642,7 @@ const g_search_db = [
     "summary": "Lexicographically"
   },
   {
-    "index": 996,
+    "index": 988,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.fold",
     "name": "fold",
@@ -8719,7 +8651,7 @@ const g_search_db = [
     "summary": "Folds every element into an accumulator by applying an operation, returning the final result."
   },
   {
-    "index": 997,
+    "index": 989,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.reduce",
     "name": "reduce",
@@ -8728,7 +8660,7 @@ const g_search_db = [
     "summary": "Reduces the elements to a single one, by repeatedly applying a reducing operation."
   },
   {
-    "index": 998,
+    "index": 990,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.filter_map",
     "name": "filter_map",
@@ -8736,7 +8668,7 @@ const g_search_db = [
     "split_name": "sus iter Iterator Base filter map"
   },
   {
-    "index": 999,
+    "index": 991,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.fuse",
     "name": "fuse",
@@ -8745,7 +8677,7 @@ const g_search_db = [
     "summary": "Creates an iterator which ends after the first None."
   },
   {
-    "index": 1000,
+    "index": 992,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.enumerate",
     "name": "enumerate",
@@ -8754,7 +8686,7 @@ const g_search_db = [
     "summary": "Creates an iterator which gives the current iteration count as well as the next value."
   },
   {
-    "index": 1001,
+    "index": 993,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.inspect",
     "name": "inspect",
@@ -8763,7 +8695,7 @@ const g_search_db = [
     "summary": "Does something with each element of an iterator, passing the value on."
   },
   {
-    "index": 1002,
+    "index": 994,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.flat_map",
     "name": "flat_map",
@@ -8772,7 +8704,7 @@ const g_search_db = [
     "summary": "Creates an iterator that works like map, but flattens nested structure."
   },
   {
-    "index": 1003,
+    "index": 995,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.begin",
     "name": "begin",
@@ -8781,7 +8713,7 @@ const g_search_db = [
     "summary": "Adaptor for use in ranged for loops."
   },
   {
-    "index": 1004,
+    "index": 996,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.cycle",
     "name": "cycle",
@@ -8790,7 +8722,7 @@ const g_search_db = [
     "summary": "Repeats an iterator endlessly."
   },
   {
-    "index": 1005,
+    "index": 997,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.into_iter",
     "name": "into_iter",
@@ -8799,7 +8731,7 @@ const g_search_db = [
     "summary": "An Iterator also satisfies IntoIterator, which simply returns itself."
   },
   {
-    "index": 1006,
+    "index": 998,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.any",
     "name": "any",
@@ -8808,7 +8740,7 @@ const g_search_db = [
     "summary": "Tests whether any elements of the iterator match a predicate."
   },
   {
-    "index": 1007,
+    "index": 999,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.gt",
     "name": "gt",
@@ -8817,7 +8749,7 @@ const g_search_db = [
     "summary": "Determines if the elements of this Iterator are lexicographically greater than those of another."
   },
   {
-    "index": 1008,
+    "index": 1000,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.max_by_key",
     "name": "max_by_key",
@@ -8826,7 +8758,7 @@ const g_search_db = [
     "summary": "Returns the element that gives the maximum value from the specified function."
   },
   {
-    "index": 1009,
+    "index": 1001,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.rfold",
     "name": "rfold",
@@ -8835,7 +8767,7 @@ const g_search_db = [
     "summary": "An iterator method that reduces the iterator’s elements to a single, final value, starting from the back."
   },
   {
-    "index": 1010,
+    "index": 1002,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.eq",
     "name": "eq",
@@ -8844,7 +8776,7 @@ const g_search_db = [
     "summary": "Determines if the elements of this Iterator are equal to those of another."
   },
   {
-    "index": 1011,
+    "index": 1003,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.range",
     "name": "range",
@@ -8853,7 +8785,7 @@ const g_search_db = [
     "summary": "Converts the iterator into a std::ranges::range for use with the std ranges library."
   },
   {
-    "index": 1012,
+    "index": 1004,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.copied",
     "name": "copied",
@@ -8862,7 +8794,7 @@ const g_search_db = [
     "summary": "Creates an iterator which copies all of its elements."
   },
   {
-    "index": 1013,
+    "index": 1005,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.lt",
     "name": "lt",
@@ -8871,7 +8803,7 @@ const g_search_db = [
     "summary": "Determines if the elements of this Iterator are lexicographically less than those of another."
   },
   {
-    "index": 1014,
+    "index": 1006,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.for_each",
     "name": "for_each",
@@ -8880,7 +8812,7 @@ const g_search_db = [
     "summary": "Calls a closure on each element of an iterator."
   },
   {
-    "index": 1015,
+    "index": 1007,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.is_sorted",
     "name": "is_sorted",
@@ -8889,7 +8821,7 @@ const g_search_db = [
     "summary": "Checks if the elements of this iterator are sorted."
   },
   {
-    "index": 1016,
+    "index": 1008,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.cloned",
     "name": "cloned",
@@ -8898,7 +8830,7 @@ const g_search_db = [
     "summary": "Creates an iterator which clones all of its elements."
   },
   {
-    "index": 1017,
+    "index": 1009,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.sum",
     "name": "sum",
@@ -8907,7 +8839,7 @@ const g_search_db = [
     "summary": "Sums the elements of an iterator."
   },
   {
-    "index": 1018,
+    "index": 1010,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.skip",
     "name": "skip",
@@ -8916,7 +8848,7 @@ const g_search_db = [
     "summary": "Creates an iterator that skips the first n elements."
   },
   {
-    "index": 1019,
+    "index": 1011,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.find",
     "name": "find",
@@ -8925,7 +8857,7 @@ const g_search_db = [
     "summary": "Searches for an element of an iterator that satisfies a predicate."
   },
   {
-    "index": 1020,
+    "index": 1012,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.eq_by",
     "name": "eq_by",
@@ -8934,7 +8866,7 @@ const g_search_db = [
     "summary": "Determines if the elements of this Iterator are equal to those of another with respect to the specified equality function."
   },
   {
-    "index": 1021,
+    "index": 1013,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.chain",
     "name": "chain",
@@ -8943,7 +8875,7 @@ const g_search_db = [
     "summary": "Takes two iterators and creates a new iterator over both in sequence."
   },
   {
-    "index": 1022,
+    "index": 1014,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.cmp",
     "name": "cmp",
@@ -8952,7 +8884,7 @@ const g_search_db = [
     "summary": "Lexicographically"
   },
   {
-    "index": 1023,
+    "index": 1015,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.max",
     "name": "max",
@@ -8961,7 +8893,7 @@ const g_search_db = [
     "summary": "Returns the maximum element of an iterator."
   },
   {
-    "index": 1024,
+    "index": 1016,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.min",
     "name": "min",
@@ -8970,7 +8902,7 @@ const g_search_db = [
     "summary": "Returns the minimum element of an iterator."
   },
   {
-    "index": 1025,
+    "index": 1017,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.rev",
     "name": "rev",
@@ -8979,7 +8911,7 @@ const g_search_db = [
     "summary": "Reverses an iterator's direction."
   },
   {
-    "index": 1026,
+    "index": 1018,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.count",
     "name": "count",
@@ -8988,7 +8920,7 @@ const g_search_db = [
     "summary": "Consumes the iterator, and returns the number of elements that were in it."
   },
   {
-    "index": 1027,
+    "index": 1019,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.step_by",
     "name": "step_by",
@@ -8997,7 +8929,7 @@ const g_search_db = [
     "summary": "Creates an iterator starting at the same point, but stepping by the given amount at each iteration."
   },
   {
-    "index": 1028,
+    "index": 1020,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.is_sorted_by",
     "name": "is_sorted_by",
@@ -9006,7 +8938,7 @@ const g_search_db = [
     "summary": "Checks if the elements of this iterator are sorted using the given comparator function."
   },
   {
-    "index": 1029,
+    "index": 1021,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.find_map",
     "name": "find_map",
@@ -9015,7 +8947,7 @@ const g_search_db = [
     "summary": "Applies function to the elements of iterator and returns the first non-none result."
   },
   {
-    "index": 1030,
+    "index": 1022,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.le",
     "name": "le",
@@ -9024,7 +8956,7 @@ const g_search_db = [
     "summary": "Determines if the elements of this Iterator are lexicographically less than or equal to those of another."
   },
   {
-    "index": 1031,
+    "index": 1023,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.skip_while",
     "name": "skip_while",
@@ -9033,7 +8965,7 @@ const g_search_db = [
     "summary": "Creates an iterator that skips elements based on a predicate."
   },
   {
-    "index": 1032,
+    "index": 1024,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.filter",
     "name": "filter",
@@ -9042,7 +8974,7 @@ const g_search_db = [
     "summary": "Creates an iterator which uses a closure to determine if an element should be yielded."
   },
   {
-    "index": 1033,
+    "index": 1025,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.cmp_by",
     "name": "cmp_by",
@@ -9051,7 +8983,7 @@ const g_search_db = [
     "summary": "Lexicographically"
   },
   {
-    "index": 1034,
+    "index": 1026,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.scan",
     "name": "scan",
@@ -9060,7 +8992,7 @@ const g_search_db = [
     "summary": "An iterator adapter which, like fold(), holds internal state, but unlike fold(), produces a new iterator."
   },
   {
-    "index": 1035,
+    "index": 1027,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.min_by_key",
     "name": "min_by_key",
@@ -9069,7 +9001,7 @@ const g_search_db = [
     "summary": "Returns the element that gives the minimum value from the specified function."
   },
   {
-    "index": 1036,
+    "index": 1028,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.take",
     "name": "take",
@@ -9078,7 +9010,7 @@ const g_search_db = [
     "summary": "Creates an iterator that yields the first n elements, or fewer if the underlying iterator ends sooner."
   },
   {
-    "index": 1037,
+    "index": 1029,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.map",
     "name": "map",
@@ -9087,7 +9019,7 @@ const g_search_db = [
     "summary": "Creates an iterator which uses a closure to map each element to another type."
   },
   {
-    "index": 1038,
+    "index": 1030,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.max_by",
     "name": "max_by",
@@ -9096,7 +9028,7 @@ const g_search_db = [
     "summary": "Returns the element that gives the maximum value with respect to the specified comparison function."
   },
   {
-    "index": 1039,
+    "index": 1031,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.last",
     "name": "last",
@@ -9105,7 +9037,7 @@ const g_search_db = [
     "summary": "Consumes the iterator, returning the last element."
   },
   {
-    "index": 1040,
+    "index": 1032,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.map_while",
     "name": "map_while",
@@ -9114,7 +9046,7 @@ const g_search_db = [
     "summary": "Creates an iterator that both yields elements based on a predicate and maps."
   },
   {
-    "index": 1041,
+    "index": 1033,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.min_by",
     "name": "min_by",
@@ -9123,7 +9055,7 @@ const g_search_db = [
     "summary": "Returns the element that gives the minimum value with respect to the specified comparison function."
   },
   {
-    "index": 1042,
+    "index": 1034,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.by_ref",
     "name": "by_ref",
@@ -9132,7 +9064,7 @@ const g_search_db = [
     "summary": "Returns an iterator that refers to this iterator, and for which operations on it will also be applied to this iterator."
   },
   {
-    "index": 1043,
+    "index": 1035,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.nth",
     "name": "nth",
@@ -9141,7 +9073,7 @@ const g_search_db = [
     "summary": "Returns the nth element of the iterator."
   },
   {
-    "index": 1044,
+    "index": 1036,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.nth_back",
     "name": "nth_back",
@@ -9150,7 +9082,7 @@ const g_search_db = [
     "summary": "Returns the nth element from the end of the iterator."
   },
   {
-    "index": 1045,
+    "index": 1037,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.end",
     "name": "end",
@@ -9159,7 +9091,7 @@ const g_search_db = [
     "summary": "Adaptor for use in ranged for loops."
   },
   {
-    "index": 1046,
+    "index": 1038,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.partial_cmp_by",
     "name": "partial_cmp_by",
@@ -9168,7 +9100,7 @@ const g_search_db = [
     "summary": "Lexicographically"
   },
   {
-    "index": 1047,
+    "index": 1039,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.partition",
     "name": "partition",
@@ -9177,7 +9109,7 @@ const g_search_db = [
     "summary": "Consumes an iterator, creating two disjoint collections from it."
   },
   {
-    "index": 1048,
+    "index": 1040,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.product",
     "name": "product",
@@ -9186,7 +9118,7 @@ const g_search_db = [
     "summary": "Iterates over the entire iterator, multiplying all the elements."
   },
   {
-    "index": 1049,
+    "index": 1041,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.ge",
     "name": "ge",
@@ -9195,7 +9127,7 @@ const g_search_db = [
     "summary": "Determines if the elements of this Iterator are lexicographically greater than or equal to those of another."
   },
   {
-    "index": 1050,
+    "index": 1042,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.peekable",
     "name": "peekable",
@@ -9204,7 +9136,7 @@ const g_search_db = [
     "summary": "Creates an iterator which can use the peek() and peek_mut() methods to look at the next element of the iterator without consuming it. See their documentation for more information."
   },
   {
-    "index": 1051,
+    "index": 1043,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.rfind",
     "name": "rfind",
@@ -9213,7 +9145,7 @@ const g_search_db = [
     "summary": "Searches for an element of an iterator from the back that satisfies a predicate."
   },
   {
-    "index": 1052,
+    "index": 1044,
     "type": "method",
     "url": "sus-iter-IteratorBase.html#method.rposition",
     "name": "rposition",
@@ -9222,7 +9154,7 @@ const g_search_db = [
     "summary": "Searches for an element in an iterator from the right, returning its index."
   },
   {
-    "index": 1053,
+    "index": 1045,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9231,7 +9163,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1054,
+    "index": 1046,
     "type": "class",
     "url": "sus-iter-Cycle.html",
     "name": "Cycle",
@@ -9240,7 +9172,7 @@ const g_search_db = [
     "summary": "An iterator that repeats endlessly."
   },
   {
-    "index": 1055,
+    "index": 1047,
     "type": "constructor",
     "url": "sus-iter-Cycle.html#method.Cycle",
     "name": "Cycle",
@@ -9248,7 +9180,7 @@ const g_search_db = [
     "split_name": "sus iter Cycle Cycle"
   },
   {
-    "index": 1056,
+    "index": 1048,
     "type": "method",
     "url": "sus-iter-Cycle.html#method.trusted_len",
     "name": "trusted_len",
@@ -9257,7 +9189,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 1057,
+    "index": 1049,
     "type": "method",
     "url": "sus-iter-Cycle.html#method.next",
     "name": "next",
@@ -9265,7 +9197,7 @@ const g_search_db = [
     "split_name": "sus iter Cycle next"
   },
   {
-    "index": 1058,
+    "index": 1050,
     "type": "method",
     "url": "sus-iter-Cycle.html#method.size_hint",
     "name": "size_hint",
@@ -9274,7 +9206,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1059,
+    "index": 1051,
     "type": "method",
     "url": "sus-iter-Cycle.html#method.clone",
     "name": "clone",
@@ -9282,7 +9214,7 @@ const g_search_db = [
     "split_name": "sus iter Cycle clone"
   },
   {
-    "index": 1060,
+    "index": 1052,
     "type": "method",
     "url": "sus-iter-Cycle.html#method.operator=",
     "name": "operator=",
@@ -9290,7 +9222,7 @@ const g_search_db = [
     "split_name": "sus iter Cycle operator="
   },
   {
-    "index": 1061,
+    "index": 1053,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9299,7 +9231,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1062,
+    "index": 1054,
     "type": "class",
     "url": "sus-iter-Filter.html",
     "name": "Filter",
@@ -9308,7 +9240,7 @@ const g_search_db = [
     "summary": "An iterator that filters based on a predicate function."
   },
   {
-    "index": 1063,
+    "index": 1055,
     "type": "constructor",
     "url": "sus-iter-Filter.html#method.Filter",
     "name": "Filter",
@@ -9316,7 +9248,7 @@ const g_search_db = [
     "split_name": "sus iter Filter Filter"
   },
   {
-    "index": 1064,
+    "index": 1056,
     "type": "method",
     "url": "sus-iter-Filter.html#method.next_back",
     "name": "next_back",
@@ -9324,7 +9256,7 @@ const g_search_db = [
     "split_name": "sus iter Filter next back"
   },
   {
-    "index": 1065,
+    "index": 1057,
     "type": "method",
     "url": "sus-iter-Filter.html#method.next",
     "name": "next",
@@ -9332,7 +9264,7 @@ const g_search_db = [
     "split_name": "sus iter Filter next"
   },
   {
-    "index": 1066,
+    "index": 1058,
     "type": "method",
     "url": "sus-iter-Filter.html#method.size_hint",
     "name": "size_hint",
@@ -9341,7 +9273,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1067,
+    "index": 1059,
     "type": "method",
     "url": "sus-iter-Filter.html#method.clone",
     "name": "clone",
@@ -9349,7 +9281,7 @@ const g_search_db = [
     "split_name": "sus iter Filter clone"
   },
   {
-    "index": 1068,
+    "index": 1060,
     "type": "method",
     "url": "sus-iter-Filter.html#method.operator=",
     "name": "operator=",
@@ -9357,7 +9289,7 @@ const g_search_db = [
     "split_name": "sus iter Filter operator="
   },
   {
-    "index": 1069,
+    "index": 1061,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9366,7 +9298,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1070,
+    "index": 1062,
     "type": "class",
     "url": "sus-iter-Repeat.html",
     "name": "Repeat",
@@ -9375,7 +9307,7 @@ const g_search_db = [
     "summary": "An Iterator that walks over at most a single Item."
   },
   {
-    "index": 1071,
+    "index": 1063,
     "type": "method",
     "url": "sus-iter-Repeat.html#method.next_back",
     "name": "next_back",
@@ -9383,7 +9315,7 @@ const g_search_db = [
     "split_name": "sus iter Repeat next back"
   },
   {
-    "index": 1072,
+    "index": 1064,
     "type": "method",
     "url": "sus-iter-Repeat.html#method.next",
     "name": "next",
@@ -9391,7 +9323,7 @@ const g_search_db = [
     "split_name": "sus iter Repeat next"
   },
   {
-    "index": 1073,
+    "index": 1065,
     "type": "method",
     "url": "sus-iter-Repeat.html#method.size_hint",
     "name": "size_hint",
@@ -9400,7 +9332,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1074,
+    "index": 1066,
     "type": "method",
     "url": "sus-iter-Repeat.html#method.clone",
     "name": "clone",
@@ -9408,7 +9340,7 @@ const g_search_db = [
     "split_name": "sus iter Repeat clone"
   },
   {
-    "index": 1075,
+    "index": 1067,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9417,7 +9349,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1076,
+    "index": 1068,
     "type": "class",
     "url": "sus-iter-Inspect.html",
     "name": "Inspect",
@@ -9426,7 +9358,7 @@ const g_search_db = [
     "summary": "An iterator that calls a function with a reference to each element before yielding it."
   },
   {
-    "index": 1077,
+    "index": 1069,
     "type": "constructor",
     "url": "sus-iter-Inspect.html#method.Inspect",
     "name": "Inspect",
@@ -9434,7 +9366,7 @@ const g_search_db = [
     "split_name": "sus iter Inspect Inspect"
   },
   {
-    "index": 1078,
+    "index": 1070,
     "type": "method",
     "url": "sus-iter-Inspect.html#method.trusted_len",
     "name": "trusted_len",
@@ -9443,7 +9375,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 1079,
+    "index": 1071,
     "type": "method",
     "url": "sus-iter-Inspect.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -9451,7 +9383,7 @@ const g_search_db = [
     "split_name": "sus iter Inspect exact size hint"
   },
   {
-    "index": 1080,
+    "index": 1072,
     "type": "method",
     "url": "sus-iter-Inspect.html#method.next_back",
     "name": "next_back",
@@ -9459,7 +9391,7 @@ const g_search_db = [
     "split_name": "sus iter Inspect next back"
   },
   {
-    "index": 1081,
+    "index": 1073,
     "type": "method",
     "url": "sus-iter-Inspect.html#method.next",
     "name": "next",
@@ -9467,7 +9399,7 @@ const g_search_db = [
     "split_name": "sus iter Inspect next"
   },
   {
-    "index": 1082,
+    "index": 1074,
     "type": "method",
     "url": "sus-iter-Inspect.html#method.size_hint",
     "name": "size_hint",
@@ -9476,7 +9408,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1083,
+    "index": 1075,
     "type": "method",
     "url": "sus-iter-Inspect.html#method.clone",
     "name": "clone",
@@ -9484,7 +9416,7 @@ const g_search_db = [
     "split_name": "sus iter Inspect clone"
   },
   {
-    "index": 1084,
+    "index": 1076,
     "type": "method",
     "url": "sus-iter-Inspect.html#method.operator=",
     "name": "operator=",
@@ -9492,7 +9424,7 @@ const g_search_db = [
     "split_name": "sus iter Inspect operator="
   },
   {
-    "index": 1085,
+    "index": 1077,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9501,7 +9433,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1086,
+    "index": 1078,
     "type": "class",
     "url": "sus-iter-Zip.html",
     "name": "Zip",
@@ -9510,7 +9442,7 @@ const g_search_db = [
     "summary": "An iterator that iterates a group of other iterators simultaneously."
   },
   {
-    "index": 1087,
+    "index": 1079,
     "type": "constructor",
     "url": "sus-iter-Zip.html#method.Zip",
     "name": "Zip",
@@ -9518,7 +9450,7 @@ const g_search_db = [
     "split_name": "sus iter Zip Zip"
   },
   {
-    "index": 1088,
+    "index": 1080,
     "type": "method",
     "url": "sus-iter-Zip.html#method.trusted_len",
     "name": "trusted_len",
@@ -9527,7 +9459,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 1089,
+    "index": 1081,
     "type": "method",
     "url": "sus-iter-Zip.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -9535,7 +9467,7 @@ const g_search_db = [
     "split_name": "sus iter Zip exact size hint"
   },
   {
-    "index": 1090,
+    "index": 1082,
     "type": "method",
     "url": "sus-iter-Zip.html#method.next",
     "name": "next",
@@ -9543,7 +9475,7 @@ const g_search_db = [
     "split_name": "sus iter Zip next"
   },
   {
-    "index": 1091,
+    "index": 1083,
     "type": "method",
     "url": "sus-iter-Zip.html#method.size_hint",
     "name": "size_hint",
@@ -9552,7 +9484,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1092,
+    "index": 1084,
     "type": "method",
     "url": "sus-iter-Zip.html#method.clone",
     "name": "clone",
@@ -9560,7 +9492,7 @@ const g_search_db = [
     "split_name": "sus iter Zip clone"
   },
   {
-    "index": 1093,
+    "index": 1085,
     "type": "method",
     "url": "sus-iter-Zip.html#method.operator=",
     "name": "operator=",
@@ -9568,7 +9500,7 @@ const g_search_db = [
     "split_name": "sus iter Zip operator="
   },
   {
-    "index": 1094,
+    "index": 1086,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9577,7 +9509,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1095,
+    "index": 1087,
     "type": "class",
     "url": "sus-iter-Map.html",
     "name": "Map",
@@ -9586,7 +9518,7 @@ const g_search_db = [
     "summary": "An iterator that maps each item to a new type based on a map function."
   },
   {
-    "index": 1096,
+    "index": 1088,
     "type": "constructor",
     "url": "sus-iter-Map.html#method.Map",
     "name": "Map",
@@ -9595,7 +9527,7 @@ const g_search_db = [
     "summary": "Type is Move and (can be) Clone."
   },
   {
-    "index": 1097,
+    "index": 1089,
     "type": "method",
     "url": "sus-iter-Map.html#method.trusted_len",
     "name": "trusted_len",
@@ -9604,7 +9536,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 1098,
+    "index": 1090,
     "type": "method",
     "url": "sus-iter-Map.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -9613,7 +9545,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 1099,
+    "index": 1091,
     "type": "method",
     "url": "sus-iter-Map.html#method.next_back",
     "name": "next_back",
@@ -9622,7 +9554,7 @@ const g_search_db = [
     "summary": "sus::iter::DoubleEndedIterator trait."
   },
   {
-    "index": 1100,
+    "index": 1092,
     "type": "method",
     "url": "sus-iter-Map.html#method.next",
     "name": "next",
@@ -9631,7 +9563,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1101,
+    "index": 1093,
     "type": "method",
     "url": "sus-iter-Map.html#method.size_hint",
     "name": "size_hint",
@@ -9640,7 +9572,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1102,
+    "index": 1094,
     "type": "method",
     "url": "sus-iter-Map.html#method.clone",
     "name": "clone",
@@ -9649,7 +9581,7 @@ const g_search_db = [
     "summary": "sus::mem::Clone trait."
   },
   {
-    "index": 1103,
+    "index": 1095,
     "type": "method",
     "url": "sus-iter-Map.html#method.operator=",
     "name": "operator=",
@@ -9657,7 +9589,7 @@ const g_search_db = [
     "split_name": "sus iter Map operator="
   },
   {
-    "index": 1104,
+    "index": 1096,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9666,7 +9598,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1105,
+    "index": 1097,
     "type": "class",
     "url": "sus-iter-Peekable.html",
     "name": "Peekable",
@@ -9675,7 +9607,7 @@ const g_search_db = [
     "summary": "An iterator with a peek() that returns an optional reference to the next element."
   },
   {
-    "index": 1106,
+    "index": 1098,
     "type": "constructor",
     "url": "sus-iter-Peekable.html#method.Peekable",
     "name": "Peekable",
@@ -9683,7 +9615,7 @@ const g_search_db = [
     "split_name": "sus iter Peekable Peekable"
   },
   {
-    "index": 1107,
+    "index": 1099,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.trusted_len",
     "name": "trusted_len",
@@ -9692,7 +9624,7 @@ const g_search_db = [
     "summary": "sus::iter::TrustedLen trait."
   },
   {
-    "index": 1108,
+    "index": 1100,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -9701,7 +9633,7 @@ const g_search_db = [
     "summary": "sus::iter::ExactSizeIterator trait."
   },
   {
-    "index": 1109,
+    "index": 1101,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.next_back",
     "name": "next_back",
@@ -9710,7 +9642,7 @@ const g_search_db = [
     "summary": "sus::iter::DoubleEndedIterator trait."
   },
   {
-    "index": 1110,
+    "index": 1102,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.next",
     "name": "next",
@@ -9719,7 +9651,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1111,
+    "index": 1103,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.next_if_eq",
     "name": "next_if_eq",
@@ -9728,7 +9660,7 @@ const g_search_db = [
     "summary": "Consume and return the next item if it is equal to expected."
   },
   {
-    "index": 1112,
+    "index": 1104,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.next_if",
     "name": "next_if",
@@ -9737,7 +9669,7 @@ const g_search_db = [
     "summary": "Consume and return the next value of this iterator if a condition is true."
   },
   {
-    "index": 1113,
+    "index": 1105,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.peek_mut",
     "name": "peek_mut",
@@ -9746,7 +9678,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the next() value without advancing the iterator."
   },
   {
-    "index": 1114,
+    "index": 1106,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.peek",
     "name": "peek",
@@ -9755,7 +9687,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the next() value without advancing the iterator."
   },
   {
-    "index": 1115,
+    "index": 1107,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.size_hint",
     "name": "size_hint",
@@ -9764,7 +9696,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1116,
+    "index": 1108,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.clone",
     "name": "clone",
@@ -9773,7 +9705,7 @@ const g_search_db = [
     "summary": "sus::mem::Clone implementation"
   },
   {
-    "index": 1117,
+    "index": 1109,
     "type": "method",
     "url": "sus-iter-Peekable.html#method.operator=",
     "name": "operator=",
@@ -9781,7 +9713,7 @@ const g_search_db = [
     "split_name": "sus iter Peekable operator="
   },
   {
-    "index": 1118,
+    "index": 1110,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9790,7 +9722,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1119,
+    "index": 1111,
     "type": "class",
     "url": "sus-iter-FilterMap.html",
     "name": "FilterMap",
@@ -9799,7 +9731,7 @@ const g_search_db = [
     "summary": "An iterator that uses a function to both filter and map elements from another Iterator."
   },
   {
-    "index": 1120,
+    "index": 1112,
     "type": "constructor",
     "url": "sus-iter-FilterMap.html#method.FilterMap",
     "name": "FilterMap",
@@ -9807,7 +9739,7 @@ const g_search_db = [
     "split_name": "sus iter Filter Map Filter Map"
   },
   {
-    "index": 1121,
+    "index": 1113,
     "type": "method",
     "url": "sus-iter-FilterMap.html#method.next_back",
     "name": "next_back",
@@ -9815,7 +9747,7 @@ const g_search_db = [
     "split_name": "sus iter Filter Map next back"
   },
   {
-    "index": 1122,
+    "index": 1114,
     "type": "method",
     "url": "sus-iter-FilterMap.html#method.next",
     "name": "next",
@@ -9823,7 +9755,7 @@ const g_search_db = [
     "split_name": "sus iter Filter Map next"
   },
   {
-    "index": 1123,
+    "index": 1115,
     "type": "method",
     "url": "sus-iter-FilterMap.html#method.size_hint",
     "name": "size_hint",
@@ -9832,7 +9764,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1124,
+    "index": 1116,
     "type": "method",
     "url": "sus-iter-FilterMap.html#method.clone",
     "name": "clone",
@@ -9840,7 +9772,7 @@ const g_search_db = [
     "split_name": "sus iter Filter Map clone"
   },
   {
-    "index": 1125,
+    "index": 1117,
     "type": "method",
     "url": "sus-iter-FilterMap.html#method.operator=",
     "name": "operator=",
@@ -9848,7 +9780,7 @@ const g_search_db = [
     "split_name": "sus iter Filter Map operator="
   },
   {
-    "index": 1126,
+    "index": 1118,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9857,7 +9789,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1127,
+    "index": 1119,
     "type": "class",
     "url": "sus-iter-Scan.html",
     "name": "Scan",
@@ -9866,7 +9798,7 @@ const g_search_db = [
     "summary": "An iterator to maintain state while iterating another iterator."
   },
   {
-    "index": 1128,
+    "index": 1120,
     "type": "constructor",
     "url": "sus-iter-Scan.html#method.Scan",
     "name": "Scan",
@@ -9874,7 +9806,7 @@ const g_search_db = [
     "split_name": "sus iter Scan Scan"
   },
   {
-    "index": 1129,
+    "index": 1121,
     "type": "method",
     "url": "sus-iter-Scan.html#method.next",
     "name": "next",
@@ -9882,7 +9814,7 @@ const g_search_db = [
     "split_name": "sus iter Scan next"
   },
   {
-    "index": 1130,
+    "index": 1122,
     "type": "method",
     "url": "sus-iter-Scan.html#method.size_hint",
     "name": "size_hint",
@@ -9891,7 +9823,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1131,
+    "index": 1123,
     "type": "method",
     "url": "sus-iter-Scan.html#method.clone",
     "name": "clone",
@@ -9899,7 +9831,7 @@ const g_search_db = [
     "split_name": "sus iter Scan clone"
   },
   {
-    "index": 1132,
+    "index": 1124,
     "type": "method",
     "url": "sus-iter-Scan.html#method.operator=",
     "name": "operator=",
@@ -9907,7 +9839,7 @@ const g_search_db = [
     "split_name": "sus iter Scan operator="
   },
   {
-    "index": 1133,
+    "index": 1125,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9916,7 +9848,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1134,
+    "index": 1126,
     "type": "struct",
     "url": "sus-iter-FromIteratorImpl.html",
     "name": "FromIteratorImpl",
@@ -9924,7 +9856,7 @@ const g_search_db = [
     "split_name": "sus iter From Iterator Impl"
   },
   {
-    "index": 1135,
+    "index": 1127,
     "type": "method",
     "url": "sus-iter-FromIteratorImpl.html#method.from_iter",
     "name": "from_iter",
@@ -9933,7 +9865,7 @@ const g_search_db = [
     "summary": "Constructs a vector by taking all the elements from the iterator."
   },
   {
-    "index": 1136,
+    "index": 1128,
     "type": "class",
     "url": "sus-iter-TakeWhile.html",
     "name": "TakeWhile",
@@ -9942,7 +9874,7 @@ const g_search_db = [
     "summary": "An iterator that only accepts elements while pred returns true."
   },
   {
-    "index": 1137,
+    "index": 1129,
     "type": "constructor",
     "url": "sus-iter-TakeWhile.html#method.TakeWhile",
     "name": "TakeWhile",
@@ -9950,7 +9882,7 @@ const g_search_db = [
     "split_name": "sus iter Take While Take While"
   },
   {
-    "index": 1138,
+    "index": 1130,
     "type": "method",
     "url": "sus-iter-TakeWhile.html#method.next",
     "name": "next",
@@ -9958,7 +9890,7 @@ const g_search_db = [
     "split_name": "sus iter Take While next"
   },
   {
-    "index": 1139,
+    "index": 1131,
     "type": "method",
     "url": "sus-iter-TakeWhile.html#method.size_hint",
     "name": "size_hint",
@@ -9967,7 +9899,7 @@ const g_search_db = [
     "summary": "sus::iter::Iterator trait."
   },
   {
-    "index": 1140,
+    "index": 1132,
     "type": "method",
     "url": "sus-iter-TakeWhile.html#method.clone",
     "name": "clone",
@@ -9975,7 +9907,7 @@ const g_search_db = [
     "split_name": "sus iter Take While clone"
   },
   {
-    "index": 1141,
+    "index": 1133,
     "type": "method",
     "url": "sus-iter-TakeWhile.html#method.operator=",
     "name": "operator=",
@@ -9983,7 +9915,7 @@ const g_search_db = [
     "split_name": "sus iter Take While operator="
   },
   {
-    "index": 1142,
+    "index": 1134,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -9992,13 +9924,82 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 1143,
+    "index": 1135,
     "type": "function",
     "url": "sus-iter-fn.zip.html",
     "name": "zip",
     "full_name": "sus::iter::zip",
     "split_name": "sus iter zip",
     "summary": "Converts the arguments to iterators and zips them."
+  },
+  {
+    "index": 1136,
+    "type": "function",
+    "url": "sus-iter-fn.begin.html",
+    "name": "begin",
+    "full_name": "sus::iter::begin",
+    "split_name": "sus iter begin"
+  },
+  {
+    "index": 1137,
+    "type": "function",
+    "url": "sus-iter-fn.once.html",
+    "name": "once",
+    "full_name": "sus::iter::once",
+    "split_name": "sus iter once",
+    "summary": "Constructs a Once iterator that will return o and then None."
+  },
+  {
+    "index": 1138,
+    "type": "function",
+    "url": "sus-iter-fn.once_with.html",
+    "name": "once_with",
+    "full_name": "sus::iter::once_with",
+    "split_name": "sus iter once with",
+    "summary": "Creates an iterator that lazily generates a value exactly once by invoking the provided closure."
+  },
+  {
+    "index": 1139,
+    "type": "function",
+    "url": "sus-iter-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::iter::operator==",
+    "split_name": "sus iter operator=="
+  },
+  {
+    "index": 1140,
+    "type": "function",
+    "url": "sus-iter-fn.try_from_iter.html",
+    "name": "try_from_iter",
+    "full_name": "sus::iter::try_from_iter",
+    "split_name": "sus iter try from iter",
+    "summary": "Constructs ToType from a type that can be turned into an Iterator over elements of type ItemType."
+  },
+  {
+    "index": 1141,
+    "type": "function",
+    "url": "sus-iter-fn.from_iter.html",
+    "name": "from_iter",
+    "full_name": "sus::iter::from_iter",
+    "split_name": "sus iter from iter",
+    "summary": "Constructs ToType from a type that can be turned into an Iterator over elements of type ItemType."
+  },
+  {
+    "index": 1142,
+    "type": "function",
+    "url": "sus-iter-fn.end.html",
+    "name": "end",
+    "full_name": "sus::iter::end",
+    "split_name": "sus iter end"
+  },
+  {
+    "index": 1143,
+    "type": "function",
+    "url": "sus-iter-fn.successors.html",
+    "name": "successors",
+    "full_name": "sus::iter::successors",
+    "split_name": "sus iter successors",
+    "summary": "Creates a new iterator where each successive item is computed based on the preceding one."
   },
   {
     "index": 1144,
@@ -10012,75 +10013,6 @@ const g_search_db = [
   {
     "index": 1145,
     "type": "function",
-    "url": "sus-iter-fn.begin.html",
-    "name": "begin",
-    "full_name": "sus::iter::begin",
-    "split_name": "sus iter begin"
-  },
-  {
-    "index": 1146,
-    "type": "function",
-    "url": "sus-iter-fn.once.html",
-    "name": "once",
-    "full_name": "sus::iter::once",
-    "split_name": "sus iter once",
-    "summary": "Constructs a Once iterator that will return o and then None."
-  },
-  {
-    "index": 1147,
-    "type": "function",
-    "url": "sus-iter-fn.once_with.html",
-    "name": "once_with",
-    "full_name": "sus::iter::once_with",
-    "split_name": "sus iter once with",
-    "summary": "Creates an iterator that lazily generates a value exactly once by invoking the provided closure."
-  },
-  {
-    "index": 1148,
-    "type": "function",
-    "url": "sus-iter-fn.operator_eq.html",
-    "name": "operator==",
-    "full_name": "sus::iter::operator==",
-    "split_name": "sus iter operator=="
-  },
-  {
-    "index": 1149,
-    "type": "function",
-    "url": "sus-iter-fn.try_from_iter.html",
-    "name": "try_from_iter",
-    "full_name": "sus::iter::try_from_iter",
-    "split_name": "sus iter try from iter",
-    "summary": "Constructs ToType from a type that can be turned into an Iterator over elements of type ItemType."
-  },
-  {
-    "index": 1150,
-    "type": "function",
-    "url": "sus-iter-fn.from_iter.html",
-    "name": "from_iter",
-    "full_name": "sus::iter::from_iter",
-    "split_name": "sus iter from iter",
-    "summary": "Constructs ToType from a type that can be turned into an Iterator over elements of type ItemType."
-  },
-  {
-    "index": 1151,
-    "type": "function",
-    "url": "sus-iter-fn.end.html",
-    "name": "end",
-    "full_name": "sus::iter::end",
-    "split_name": "sus iter end"
-  },
-  {
-    "index": 1152,
-    "type": "function",
-    "url": "sus-iter-fn.successors.html",
-    "name": "successors",
-    "full_name": "sus::iter::successors",
-    "split_name": "sus iter successors",
-    "summary": "Creates a new iterator where each successive item is computed based on the preceding one."
-  },
-  {
-    "index": 1153,
-    "type": "function",
     "url": "sus-iter-fn.from_range.html",
     "name": "from_range",
     "full_name": "sus::iter::from_range",
@@ -10088,7 +10020,7 @@ const g_search_db = [
     "summary": "Constructs an Iterator from a std::ranges::input_range."
   },
   {
-    "index": 1154,
+    "index": 1146,
     "type": "function",
     "url": "sus-iter-fn.repeat_with.html",
     "name": "repeat_with",
@@ -10097,7 +10029,7 @@ const g_search_db = [
     "summary": "Creates a new iterator that repeats elements of type Item endlessly by applying the provided closure, the repeater, FnMut&lt;Item()&gt;."
   },
   {
-    "index": 1155,
+    "index": 1147,
     "type": "function",
     "url": "sus-iter-fn.from_generator.html",
     "name": "from_generator",
@@ -10106,7 +10038,7 @@ const g_search_db = [
     "summary": "Produces an iterator over Item from a coroutine function that returns Generator&lt;Item&gt; and yields Items."
   },
   {
-    "index": 1156,
+    "index": 1148,
     "type": "function",
     "url": "sus-iter-fn.repeat.html",
     "name": "repeat",
@@ -10115,7 +10047,7 @@ const g_search_db = [
     "summary": "Creates a new iterator that endlessly repeats a single element."
   },
   {
-    "index": 1157,
+    "index": 1149,
     "url": "sus-namespace.string.html",
     "type": "namespace",
     "name": "string",
@@ -10123,7 +10055,7 @@ const g_search_db = [
     "split_name": "sus string"
   },
   {
-    "index": 1158,
+    "index": 1150,
     "url": "sus-namespace.ptr.html",
     "type": "namespace",
     "name": "ptr",
@@ -10131,7 +10063,7 @@ const g_search_db = [
     "split_name": "sus ptr"
   },
   {
-    "index": 1159,
+    "index": 1151,
     "type": "concept",
     "url": "sus-ptr-SameOrSubclassOf.html",
     "name": "SameOrSubclassOf",
@@ -10140,7 +10072,7 @@ const g_search_db = [
     "summary": "SameOrSubclassOf&lt;T*, U*&gt;"
   },
   {
-    "index": 1160,
+    "index": 1152,
     "type": "class",
     "url": "sus-ptr-NonNull.html",
     "name": "NonNull",
@@ -10149,7 +10081,7 @@ const g_search_db = [
     "summary": "A pointer wrapper which holds a never-null pointer."
   },
   {
-    "index": 1161,
+    "index": 1153,
     "type": "constructor",
     "url": "sus-ptr-NonNull.html#method.NonNull",
     "name": "NonNull",
@@ -10158,7 +10090,7 @@ const g_search_db = [
     "summary": "Constructs a NonNull&lt;T&gt; from a reference to T."
   },
   {
-    "index": 1162,
+    "index": 1154,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.downcast",
     "name": "downcast",
@@ -10167,7 +10099,7 @@ const g_search_db = [
     "summary": "Cast the pointer of type T in NonNull&lt;T&gt; to a pointer of type U and return a NonNull&lt;U&gt;."
   },
   {
-    "index": 1163,
+    "index": 1155,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -10176,7 +10108,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the pointee."
   },
   {
-    "index": 1164,
+    "index": 1156,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.as_mut",
     "name": "as_mut",
@@ -10185,7 +10117,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the pointee."
   },
   {
-    "index": 1165,
+    "index": 1157,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.as_ref",
     "name": "as_ref",
@@ -10194,7 +10126,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the pointee."
   },
   {
-    "index": 1166,
+    "index": 1158,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.operator->",
     "name": "operator->",
@@ -10203,7 +10135,7 @@ const g_search_db = [
     "summary": "Gives access to the object pointed to by NonNull."
   },
   {
-    "index": 1167,
+    "index": 1159,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.from",
     "name": "from",
@@ -10212,7 +10144,7 @@ const g_search_db = [
     "summary": "Satisfies the sus::construct::From&lt;NonNull&lt;T&gt;, T&amp;&gt; concept."
   },
   {
-    "index": 1168,
+    "index": 1160,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.as_ptr",
     "name": "as_ptr",
@@ -10221,7 +10153,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the pointee."
   },
   {
-    "index": 1169,
+    "index": 1161,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.with_ptr_unchecked",
     "name": "with_ptr_unchecked",
@@ -10230,7 +10162,7 @@ const g_search_db = [
     "summary": "Constructs a NonNull&lt;T&gt; from a pointer to T."
   },
   {
-    "index": 1170,
+    "index": 1162,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.cast",
     "name": "cast",
@@ -10239,7 +10171,7 @@ const g_search_db = [
     "summary": "Cast the pointer of type T in NonNull&lt;T&gt; to a pointer of type U and return a NonNull&lt;U&gt;."
   },
   {
-    "index": 1171,
+    "index": 1163,
     "type": "method",
     "url": "sus-ptr-NonNull.html#method.with_ptr",
     "name": "with_ptr",
@@ -10248,7 +10180,7 @@ const g_search_db = [
     "summary": "Constructs a NonNull&lt;T&gt; from a pointer to T."
   },
   {
-    "index": 1172,
+    "index": 1164,
     "type": "function",
     "url": "sus-ptr-fn.as_ref.html",
     "name": "as_ref",
@@ -10257,7 +10189,7 @@ const g_search_db = [
     "summary": "Returns an empty Option&lt;T&amp;&gt; if the T* pointer is null, or else returns a reference to the value T wrapped in an Option&lt;T&amp;&gt;."
   },
   {
-    "index": 1173,
+    "index": 1165,
     "type": "function",
     "url": "sus-ptr-fn.swap_nonoverlapping.html",
     "name": "swap_nonoverlapping",
@@ -10266,25 +10198,7 @@ const g_search_db = [
     "summary": "Swaps the object array at x with the object array at y, where both arrays have a length of count."
   },
   {
-    "index": 1174,
-    "type": "function",
-    "url": "sus-ptr-fn.operator_spaceship.html",
-    "name": "operator<=>",
-    "full_name": "sus::ptr::operator<=>",
-    "split_name": "sus ptr operator<=>",
-    "summary": "Satisfies the StrongOrd&lt;NonNull&lt;T&gt;&gt; concept if the pointers are comparable and thus satisfy StrongOrd as well."
-  },
-  {
-    "index": 1175,
-    "type": "function",
-    "url": "sus-ptr-fn.operator_eq.html",
-    "name": "operator==",
-    "full_name": "sus::ptr::operator==",
-    "split_name": "sus ptr operator==",
-    "summary": "Satisfies the Eq&lt;NonNull&lt;T&gt;, NonNull&lt;U&gt;&gt; concept if the pointers are comparable and thus satisfy Eq as well."
-  },
-  {
-    "index": 1176,
+    "index": 1166,
     "type": "function",
     "url": "sus-ptr-fn.copy.html",
     "name": "copy",
@@ -10293,7 +10207,7 @@ const g_search_db = [
     "summary": "Copies count * size_of&lt;T&gt;() bytes from src to dst. The source and destination may overlap."
   },
   {
-    "index": 1177,
+    "index": 1167,
     "type": "function",
     "url": "sus-ptr-fn.copy_nonoverlapping.html",
     "name": "copy_nonoverlapping",
@@ -10302,7 +10216,7 @@ const g_search_db = [
     "summary": "Copies count * size_of&lt;T&gt;() bytes from src to dst. The source and destination must not overlap."
   },
   {
-    "index": 1178,
+    "index": 1168,
     "url": "sus-namespace.boxed.html",
     "type": "namespace",
     "name": "boxed",
@@ -10311,7 +10225,7 @@ const g_search_db = [
     "summary": "The Box&lt;T&gt; type for heap allocation and other tools for type-erasure of concepts."
   },
   {
-    "index": 1179,
+    "index": 1169,
     "type": "concept",
     "url": "sus-boxed-DynConcept.html",
     "name": "DynConcept",
@@ -10320,7 +10234,7 @@ const g_search_db = [
     "summary": "A concept for generalized type erasure of concepts, allowing use of a concept-satisfying type T without knowing the concrete type T."
   },
   {
-    "index": 1180,
+    "index": 1170,
     "type": "class",
     "url": "sus-boxed-Box.html",
     "name": "Box",
@@ -10329,7 +10243,7 @@ const g_search_db = [
     "summary": "A heap allocated object."
   },
   {
-    "index": 1181,
+    "index": 1171,
     "type": "constructor",
     "url": "sus-boxed-Box.html#method.Box",
     "name": "Box",
@@ -10337,7 +10251,7 @@ const g_search_db = [
     "split_name": "sus boxed Box Box"
   },
   {
-    "index": 1182,
+    "index": 1172,
     "type": "constructor",
     "url": "sus-boxed-Box.html#method.Box.move",
     "name": "Box",
@@ -10346,7 +10260,7 @@ const g_search_db = [
     "summary": "Satisifes the Move concept for Box."
   },
   {
-    "index": 1183,
+    "index": 1173,
     "type": "constructor",
     "url": "sus-boxed-Box.html#method.Box.ctor.inherit",
     "name": "Box",
@@ -10355,7 +10269,7 @@ const g_search_db = [
     "summary": "Constructs a Box which allocates space on the heap and moves T into it."
   },
   {
-    "index": 1184,
+    "index": 1174,
     "type": "constructor",
     "url": "sus-boxed-Box.html#method.Box.ctor.convert",
     "name": "Box",
@@ -10364,7 +10278,7 @@ const g_search_db = [
     "summary": "Constructs a Box which allocates space on the heap and moves T into it."
   },
   {
-    "index": 1185,
+    "index": 1175,
     "type": "method",
     "url": "sus-boxed-Box.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -10373,7 +10287,7 @@ const g_search_db = [
     "summary": "Implements ExactSizeIterator if T is an ExactSizeIterator, forwarding through to the inner T object."
   },
   {
-    "index": 1186,
+    "index": 1176,
     "type": "method",
     "url": "sus-boxed-Box.html#method.next_back",
     "name": "next_back",
@@ -10382,7 +10296,7 @@ const g_search_db = [
     "summary": "Implements DoubleEndedIterator if T is a DoubleEndedIterator, forwarding through to the inner T object."
   },
   {
-    "index": 1187,
+    "index": 1177,
     "type": "method",
     "url": "sus-boxed-Box.html#method.size_hint",
     "name": "size_hint",
@@ -10391,7 +10305,7 @@ const g_search_db = [
     "summary": "Implements Iterator if T is an Iterator, forwarding through to the inner T object."
   },
   {
-    "index": 1188,
+    "index": 1178,
     "type": "method",
     "url": "sus-boxed-Box.html#method.next",
     "name": "next",
@@ -10400,7 +10314,7 @@ const g_search_db = [
     "summary": "Implements Iterator if T is an Iterator, forwarding through to the inner T object."
   },
   {
-    "index": 1189,
+    "index": 1179,
     "type": "method",
     "url": "sus-boxed-Box.html#method.into_inner",
     "name": "into_inner",
@@ -10409,7 +10323,7 @@ const g_search_db = [
     "summary": "Consumes the Box, returning the wrapped value."
   },
   {
-    "index": 1190,
+    "index": 1180,
     "type": "method",
     "url": "sus-boxed-Box.html#method.as_mut",
     "name": "as_mut",
@@ -10418,7 +10332,7 @@ const g_search_db = [
     "summary": "Converts Box into a mutable reference of the inner type."
   },
   {
-    "index": 1191,
+    "index": 1181,
     "type": "method",
     "url": "sus-boxed-Box.html#method.with_default",
     "name": "with_default",
@@ -10427,7 +10341,7 @@ const g_search_db = [
     "summary": "Constructs Box&lt;T&gt; with the default value for the type T."
   },
   {
-    "index": 1192,
+    "index": 1182,
     "type": "method",
     "url": "sus-boxed-Box.html#method.with_args",
     "name": "with_args",
@@ -10436,7 +10350,7 @@ const g_search_db = [
     "summary": "Constructs a Box by calling the constructor of T with args."
   },
   {
-    "index": 1193,
+    "index": 1183,
     "type": "method",
     "url": "sus-boxed-Box.html#method.operator()",
     "name": "operator()",
@@ -10445,7 +10359,7 @@ const g_search_db = [
     "summary": "A Box holding a type-erased function type will satisfy the fn concepts and can be used as a function type. It will forward the call through to the inner type."
   },
   {
-    "index": 1194,
+    "index": 1184,
     "type": "method",
     "url": "sus-boxed-Box.html#method.from.dynerror",
     "name": "from",
@@ -10454,7 +10368,7 @@ const g_search_db = [
     "summary": "Satisfies the From&lt;std::string&gt; concept for Box&lt;DynError&gt;. This conversion moves and type-erases the std::string into a heap-alloocated DynError."
   },
   {
-    "index": 1195,
+    "index": 1185,
     "type": "method",
     "url": "sus-boxed-Box.html#method.from.convert",
     "name": "from",
@@ -10463,7 +10377,7 @@ const g_search_db = [
     "summary": "Converts U into a Box&lt;T&gt;."
   },
   {
-    "index": 1196,
+    "index": 1186,
     "type": "method",
     "url": "sus-boxed-Box.html#method.into_raw",
     "name": "into_raw",
@@ -10472,7 +10386,7 @@ const g_search_db = [
     "summary": "Consumes the Box, returning a wrapped raw pointer."
   },
   {
-    "index": 1197,
+    "index": 1187,
     "type": "method",
     "url": "sus-boxed-Box.html#method.clone",
     "name": "clone",
@@ -10481,7 +10395,7 @@ const g_search_db = [
     "summary": "Returns a new box with a clone() of this box’s contents."
   },
   {
-    "index": 1198,
+    "index": 1188,
     "type": "method",
     "url": "sus-boxed-Box.html#method.from.inherit",
     "name": "from",
@@ -10490,7 +10404,7 @@ const g_search_db = [
     "summary": "Converts U into a Box&lt;T&gt;."
   },
   {
-    "index": 1199,
+    "index": 1189,
     "type": "method",
     "url": "sus-boxed-Box.html#method.operator*",
     "name": "operator*",
@@ -10498,7 +10412,7 @@ const g_search_db = [
     "split_name": "sus boxed Box operator*"
   },
   {
-    "index": 1200,
+    "index": 1190,
     "type": "method",
     "url": "sus-boxed-Box.html#method.clone_from",
     "name": "clone_from",
@@ -10507,7 +10421,7 @@ const g_search_db = [
     "summary": "Copies source's contents into the contained T without creating a new allocation."
   },
   {
-    "index": 1201,
+    "index": 1191,
     "type": "method",
     "url": "sus-boxed-Box.html#method.as_ref",
     "name": "as_ref",
@@ -10516,7 +10430,7 @@ const g_search_db = [
     "summary": "Converts Box into a const reference of the inner type."
   },
   {
-    "index": 1202,
+    "index": 1192,
     "type": "method",
     "url": "sus-boxed-Box.html#method.operator=.move",
     "name": "operator=",
@@ -10525,7 +10439,7 @@ const g_search_db = [
     "summary": "Satisifes the Move concept for Box."
   },
   {
-    "index": 1203,
+    "index": 1193,
     "type": "method",
     "url": "sus-boxed-Box.html#method.from.dync",
     "name": "from",
@@ -10534,7 +10448,7 @@ const g_search_db = [
     "summary": "For a type-erased DynC of a concept C, Box&lt;DynC&gt; can be constructed from a type that satisfies C."
   },
   {
-    "index": 1204,
+    "index": 1194,
     "type": "method",
     "url": "sus-boxed-Box.html#method.operator->",
     "name": "operator->",
@@ -10542,7 +10456,7 @@ const g_search_db = [
     "split_name": "sus boxed Box operator->"
   },
   {
-    "index": 1205,
+    "index": 1195,
     "type": "method",
     "url": "sus-boxed-Box.html#method.leak",
     "name": "leak",
@@ -10551,7 +10465,7 @@ const g_search_db = [
     "summary": "Consumes and leaks the Box, returning a mutable reference, T&amp;. Note that the type T must outlive the returned reference."
   },
   {
-    "index": 1206,
+    "index": 1196,
     "type": "method",
     "url": "sus-boxed-Box.html#method.operator=",
     "name": "operator=",
@@ -10559,7 +10473,7 @@ const g_search_db = [
     "split_name": "sus boxed Box operator="
   },
   {
-    "index": 1207,
+    "index": 1197,
     "type": "method",
     "url": "sus-boxed-Box.html#method.from_raw",
     "name": "from_raw",
@@ -10568,7 +10482,7 @@ const g_search_db = [
     "summary": "After calling this function, the raw pointer is owned by the resulting Box. Specifically, the Box destructor will call the destructor of T and free the allocated memory. For this to be safe, the memory must have been allocated on the heap in the same way as the Box type, using operator new and must not be an array."
   },
   {
-    "index": 1208,
+    "index": 1198,
     "type": "class",
     "url": "sus-boxed-Dyn.html",
     "name": "Dyn",
@@ -10577,7 +10491,7 @@ const g_search_db = [
     "summary": "A type erasure of a type satisfying a concept, which can be used as a reference without heap allocation or templates. Returned from dyn."
   },
   {
-    "index": 1209,
+    "index": 1199,
     "type": "constructor",
     "url": "sus-boxed-Dyn.html#method.Dyn",
     "name": "Dyn",
@@ -10586,7 +10500,7 @@ const g_search_db = [
     "summary": "Dyn"
   },
   {
-    "index": 1210,
+    "index": 1200,
     "type": "constructor",
     "url": "sus-boxed-Dyn.html#method.Dyn.const",
     "name": "Dyn",
@@ -10595,7 +10509,7 @@ const g_search_db = [
     "summary": "Construct a Dyn&lt;const DynC, T&gt; from a reference to T, which will vend a const reference const DynC&amp;."
   },
   {
-    "index": 1211,
+    "index": 1201,
     "type": "constructor",
     "url": "sus-boxed-Dyn.html#method.Dyn.mut",
     "name": "Dyn",
@@ -10604,7 +10518,7 @@ const g_search_db = [
     "summary": "Construct a Dyn&lt;DynC, T&gt; from a mutable reference to T, which will vend a mutable reference DynC&amp;."
   },
   {
-    "index": 1212,
+    "index": 1202,
     "type": "conversion",
     "url": "sus-boxed-Dyn.html#method.operator DynC",
     "name": "operator DynC",
@@ -10612,7 +10526,7 @@ const g_search_db = [
     "split_name": "sus boxed Dyn operator  Dyn C"
   },
   {
-    "index": 1213,
+    "index": 1203,
     "type": "conversion",
     "url": "sus-boxed-Dyn.html#method.operator DynC",
     "name": "operator DynC",
@@ -10620,7 +10534,7 @@ const g_search_db = [
     "split_name": "sus boxed Dyn operator  Dyn C"
   },
   {
-    "index": 1214,
+    "index": 1204,
     "type": "conversion",
     "url": "sus-boxed-Dyn.html#method.operator DynC",
     "name": "operator DynC",
@@ -10629,7 +10543,7 @@ const g_search_db = [
     "summary": "Converts the reference to ConcreteT into a DynC reference."
   },
   {
-    "index": 1215,
+    "index": 1205,
     "type": "method",
     "url": "sus-boxed-Dyn.html#method.operator=",
     "name": "operator=",
@@ -10638,7 +10552,7 @@ const g_search_db = [
     "summary": "Dyn"
   },
   {
-    "index": 1216,
+    "index": 1206,
     "type": "function",
     "url": "sus-boxed-fn.operator_spaceship.box.ord.html",
     "name": "operator<=>",
@@ -10647,7 +10561,7 @@ const g_search_db = [
     "summary": "Compares the inner value of two Box objects for ordering. This compares the values pointed to from the Box, not the pointers themselves."
   },
   {
-    "index": 1217,
+    "index": 1207,
     "type": "function",
     "url": "sus-boxed-fn.operator_eq.box.eq.html",
     "name": "operator==",
@@ -10656,7 +10570,7 @@ const g_search_db = [
     "summary": "Compares the inner value of two Box objects for equality. This does not perform pointer equality on the boxes themselves."
   },
   {
-    "index": 1218,
+    "index": 1208,
     "type": "function",
     "url": "sus-boxed-fn.dyn.html",
     "name": "dyn",
@@ -10665,7 +10579,7 @@ const g_search_db = [
     "summary": "Type erases a reference to a type T&amp; which satisfies a concept C, into a reference DynC&amp; that also satisfies C but without templates."
   },
   {
-    "index": 1219,
+    "index": 1209,
     "url": "sus-namespace.construct.html",
     "type": "namespace",
     "name": "construct",
@@ -10674,7 +10588,7 @@ const g_search_db = [
     "summary": "Concepts and functions for constructing and converting between types."
   },
   {
-    "index": 1220,
+    "index": 1210,
     "type": "concept",
     "url": "sus-construct-SafelyConstructibleFromReference.html",
     "name": "SafelyConstructibleFromReference",
@@ -10683,7 +10597,7 @@ const g_search_db = [
     "summary": "Returns whether a type From is safely constructible from a reference of type To. If To is a const reference, then the types must match, as a conversion would create a reference to a temporary."
   },
   {
-    "index": 1221,
+    "index": 1211,
     "type": "concept",
     "url": "sus-construct-TryInto.html",
     "name": "TryInto",
@@ -10692,7 +10606,7 @@ const g_search_db = [
     "summary": "A concept that declares FromType can (sometimes) be converted to ToType through the TryFrom concept or through an identity transformation."
   },
   {
-    "index": 1222,
+    "index": 1212,
     "type": "concept",
     "url": "sus-construct-Into.html",
     "name": "Into",
@@ -10701,7 +10615,7 @@ const g_search_db = [
     "summary": "A concept that declares FromType can be converted to ToType."
   },
   {
-    "index": 1223,
+    "index": 1213,
     "type": "concept",
     "url": "sus-construct-TryFrom.html",
     "name": "TryFrom",
@@ -10710,7 +10624,7 @@ const g_search_db = [
     "summary": "A concept that indicates ToType can be (sometimes) constructed from a FromType, via ToType::try_from(FromType)."
   },
   {
-    "index": 1224,
+    "index": 1214,
     "type": "concept",
     "url": "sus-construct-From.html",
     "name": "From",
@@ -10719,7 +10633,7 @@ const g_search_db = [
     "summary": "A concept that indicates ToType can be constructed from a FromType, via ToType::from(FromType)."
   },
   {
-    "index": 1225,
+    "index": 1215,
     "type": "concept",
     "url": "sus-construct-Cast.html",
     "name": "Cast",
@@ -10728,7 +10642,7 @@ const g_search_db = [
     "summary": "When a pair of types T and F satisfy Cast&lt;T, F&gt;, it means that F can be cast to T through a conversion that will always succeed in producing some value, but may be lossy or produce a value with a different meaning. The conversion may truncate or extend F in order to do the conversion to T."
   },
   {
-    "index": 1226,
+    "index": 1216,
     "type": "concept",
     "url": "sus-construct-Default.html",
     "name": "Default",
@@ -10737,7 +10651,7 @@ const g_search_db = [
     "summary": "Default types are able to be constructed with a default value."
   },
   {
-    "index": 1227,
+    "index": 1217,
     "type": "struct",
     "url": "sus-construct-CastImpl.html",
     "name": "CastImpl",
@@ -10745,7 +10659,7 @@ const g_search_db = [
     "split_name": "sus construct Cast Impl"
   },
   {
-    "index": 1228,
+    "index": 1218,
     "type": "method",
     "url": "sus-construct-CastImpl.html#method.cast_from",
     "name": "cast_from",
@@ -10753,7 +10667,7 @@ const g_search_db = [
     "split_name": "sus construct Cast Impl cast from"
   },
   {
-    "index": 1229,
+    "index": 1219,
     "type": "function",
     "url": "sus-construct-fn.try_into.html",
     "name": "try_into",
@@ -10762,7 +10676,7 @@ const g_search_db = [
     "summary": "Attempts to convert from the given value to a ToType."
   },
   {
-    "index": 1230,
+    "index": 1220,
     "type": "function",
     "url": "sus-construct-fn.move_into.html",
     "name": "move_into",
@@ -10771,7 +10685,7 @@ const g_search_db = [
     "summary": "Moves from and converts from the given value to whatever a receiver requires."
   },
   {
-    "index": 1231,
+    "index": 1221,
     "type": "function",
     "url": "sus-construct-fn.cast.html",
     "name": "cast",
@@ -10780,7 +10694,7 @@ const g_search_db = [
     "summary": "An infallible conversion (cast) that may lose the original value in the process."
   },
   {
-    "index": 1232,
+    "index": 1222,
     "type": "function",
     "url": "sus-construct-fn.into.html",
     "name": "into",
@@ -10789,7 +10703,7 @@ const g_search_db = [
     "summary": "Converts from the given value to whatever a receiver requires."
   },
   {
-    "index": 1233,
+    "index": 1223,
     "url": "sus-namespace.num.html",
     "type": "namespace",
     "name": "num",
@@ -10798,7 +10712,7 @@ const g_search_db = [
     "summary": "Safe integer (e.g. i32) and floating point (e.g. f32) numerics, and numeric concepts."
   },
   {
-    "index": 1234,
+    "index": 1224,
     "type": "concept",
     "url": "sus-num-Shr.html",
     "name": "Shr",
@@ -10806,7 +10720,7 @@ const g_search_db = [
     "split_name": "sus num Shr"
   },
   {
-    "index": 1235,
+    "index": 1225,
     "type": "concept",
     "url": "sus-num-ShlAssign.html",
     "name": "ShlAssign",
@@ -10814,7 +10728,7 @@ const g_search_db = [
     "split_name": "sus num Shl Assign"
   },
   {
-    "index": 1236,
+    "index": 1226,
     "type": "concept",
     "url": "sus-num-BitXor.html",
     "name": "BitXor",
@@ -10822,7 +10736,7 @@ const g_search_db = [
     "split_name": "sus num Bit Xor"
   },
   {
-    "index": 1237,
+    "index": 1227,
     "type": "concept",
     "url": "sus-num-BitOrAssign.html",
     "name": "BitOrAssign",
@@ -10830,7 +10744,7 @@ const g_search_db = [
     "split_name": "sus num Bit Or Assign"
   },
   {
-    "index": 1238,
+    "index": 1228,
     "type": "concept",
     "url": "sus-num-BitAnd.html",
     "name": "BitAnd",
@@ -10838,7 +10752,7 @@ const g_search_db = [
     "split_name": "sus num Bit And"
   },
   {
-    "index": 1239,
+    "index": 1229,
     "type": "concept",
     "url": "sus-num-BitAndAssign.html",
     "name": "BitAndAssign",
@@ -10846,7 +10760,7 @@ const g_search_db = [
     "split_name": "sus num Bit And Assign"
   },
   {
-    "index": 1240,
+    "index": 1230,
     "type": "concept",
     "url": "sus-num-RemAssign.html",
     "name": "RemAssign",
@@ -10854,7 +10768,7 @@ const g_search_db = [
     "split_name": "sus num Rem Assign"
   },
   {
-    "index": 1241,
+    "index": 1231,
     "type": "concept",
     "url": "sus-num-UnsignedPrimitiveEnum.html",
     "name": "UnsignedPrimitiveEnum",
@@ -10863,7 +10777,7 @@ const g_search_db = [
     "summary": "Enum types that are backed by an unsigned value, excluding enum class types."
   },
   {
-    "index": 1242,
+    "index": 1232,
     "type": "concept",
     "url": "sus-num-UnsignedPointer.html",
     "name": "UnsignedPointer",
@@ -10872,7 +10786,7 @@ const g_search_db = [
     "summary": "Unsigned Subspace pointer integer types. This is the rest of Unsigned that is not included in UnsignedNumeric, which is just uptr."
   },
   {
-    "index": 1243,
+    "index": 1233,
     "type": "concept",
     "url": "sus-num-PrimitiveInteger.html",
     "name": "PrimitiveInteger",
@@ -10881,7 +10795,7 @@ const g_search_db = [
     "summary": "Signed or unsigned primitive integer types (char, int, unsigned int, unsigned long, etc)."
   },
   {
-    "index": 1244,
+    "index": 1234,
     "type": "concept",
     "url": "sus-num-IntegerNumeric.html",
     "name": "IntegerNumeric",
@@ -10890,7 +10804,7 @@ const g_search_db = [
     "summary": "All Subspace numeric integer types. This includes all safe integer types except uptr which represents pointers. See UnsignedNumeric and UnsignedPointer."
   },
   {
-    "index": 1245,
+    "index": 1235,
     "type": "concept",
     "url": "sus-num-Signed.html",
     "name": "Signed",
@@ -10899,7 +10813,7 @@ const g_search_db = [
     "summary": "Signed Subspace integer types: i8, i16, i32, i64, and isize."
   },
   {
-    "index": 1246,
+    "index": 1236,
     "type": "concept",
     "url": "sus-num-SignedPrimitiveEnumClass.html",
     "name": "SignedPrimitiveEnumClass",
@@ -10908,7 +10822,7 @@ const g_search_db = [
     "summary": "Enum class (scoped enumeration) types that are backed by a signed value."
   },
   {
-    "index": 1247,
+    "index": 1237,
     "type": "concept",
     "url": "sus-num-Shl.html",
     "name": "Shl",
@@ -10916,7 +10830,7 @@ const g_search_db = [
     "split_name": "sus num Shl"
   },
   {
-    "index": 1248,
+    "index": 1238,
     "type": "concept",
     "url": "sus-num-Unsigned.html",
     "name": "Unsigned",
@@ -10925,7 +10839,7 @@ const g_search_db = [
     "summary": "Unsigned Subspace integer types: u8, u16, u32, u64, usize, and uptr."
   },
   {
-    "index": 1249,
+    "index": 1239,
     "type": "concept",
     "url": "sus-num-UnsignedPrimitiveInteger.html",
     "name": "UnsignedPrimitiveInteger",
@@ -10934,7 +10848,7 @@ const g_search_db = [
     "summary": "Unsigned primitive integer types (unsigned char, unsigned int, etc)."
   },
   {
-    "index": 1250,
+    "index": 1240,
     "type": "concept",
     "url": "sus-num-IntegerPointer.html",
     "name": "IntegerPointer",
@@ -10943,7 +10857,7 @@ const g_search_db = [
     "summary": "All Subspace pointer integer types. This includes safe integer types that represent pointer values, which is just uptr. See UnsignedNumeric and UnsignedPointer."
   },
   {
-    "index": 1251,
+    "index": 1241,
     "type": "concept",
     "url": "sus-num-UnsignedNumeric.html",
     "name": "UnsignedNumeric",
@@ -10952,7 +10866,7 @@ const g_search_db = [
     "summary": "Unsigned Subspace numeric integer types. All of Unsigned but excluding uptr."
   },
   {
-    "index": 1252,
+    "index": 1242,
     "type": "concept",
     "url": "sus-num-PrimitiveFloat.html",
     "name": "PrimitiveFloat",
@@ -10960,7 +10874,7 @@ const g_search_db = [
     "split_name": "sus num Primitive Float"
   },
   {
-    "index": 1253,
+    "index": 1243,
     "type": "concept",
     "url": "sus-num-BitXorAssign.html",
     "name": "BitXorAssign",
@@ -10968,7 +10882,7 @@ const g_search_db = [
     "split_name": "sus num Bit Xor Assign"
   },
   {
-    "index": 1254,
+    "index": 1244,
     "type": "concept",
     "url": "sus-num-Sub.html",
     "name": "Sub",
@@ -10976,7 +10890,7 @@ const g_search_db = [
     "split_name": "sus num Sub"
   },
   {
-    "index": 1255,
+    "index": 1245,
     "type": "concept",
     "url": "sus-num-ShrAssign.html",
     "name": "ShrAssign",
@@ -10984,7 +10898,7 @@ const g_search_db = [
     "split_name": "sus num Shr Assign"
   },
   {
-    "index": 1256,
+    "index": 1246,
     "type": "concept",
     "url": "sus-num-SignedPrimitiveInteger.html",
     "name": "SignedPrimitiveInteger",
@@ -10993,7 +10907,7 @@ const g_search_db = [
     "summary": "Signed primitive integer types (signed char, int, long, etc)."
   },
   {
-    "index": 1257,
+    "index": 1247,
     "type": "concept",
     "url": "sus-num-PrimitiveEnumClass.html",
     "name": "PrimitiveEnumClass",
@@ -11002,7 +10916,7 @@ const g_search_db = [
     "summary": "Enum class (scoped enumeration) types that are backed by a signed or unsigned value."
   },
   {
-    "index": 1258,
+    "index": 1248,
     "type": "concept",
     "url": "sus-num-SignedPrimitiveEnum.html",
     "name": "SignedPrimitiveEnum",
@@ -11011,7 +10925,7 @@ const g_search_db = [
     "summary": "Enum types that are backed by a signed value, excluding enum class types."
   },
   {
-    "index": 1259,
+    "index": 1249,
     "type": "concept",
     "url": "sus-num-PrimitiveEnum.html",
     "name": "PrimitiveEnum",
@@ -11020,7 +10934,7 @@ const g_search_db = [
     "summary": "Enum types that are backed by a signed or unsigned value, excluding enum class types."
   },
   {
-    "index": 1260,
+    "index": 1250,
     "type": "concept",
     "url": "sus-num-SubAssign.html",
     "name": "SubAssign",
@@ -11028,7 +10942,7 @@ const g_search_db = [
     "split_name": "sus num Sub Assign"
   },
   {
-    "index": 1261,
+    "index": 1251,
     "type": "concept",
     "url": "sus-num-Neg.html",
     "name": "Neg",
@@ -11036,7 +10950,7 @@ const g_search_db = [
     "split_name": "sus num Neg"
   },
   {
-    "index": 1262,
+    "index": 1252,
     "type": "concept",
     "url": "sus-num-BitNot.html",
     "name": "BitNot",
@@ -11044,7 +10958,7 @@ const g_search_db = [
     "split_name": "sus num Bit Not"
   },
   {
-    "index": 1263,
+    "index": 1253,
     "type": "concept",
     "url": "sus-num-Add.html",
     "name": "Add",
@@ -11052,7 +10966,7 @@ const g_search_db = [
     "split_name": "sus num Add"
   },
   {
-    "index": 1264,
+    "index": 1254,
     "type": "concept",
     "url": "sus-num-AddAssign.html",
     "name": "AddAssign",
@@ -11060,7 +10974,7 @@ const g_search_db = [
     "split_name": "sus num Add Assign"
   },
   {
-    "index": 1265,
+    "index": 1255,
     "type": "concept",
     "url": "sus-num-Float.html",
     "name": "Float",
@@ -11068,7 +10982,7 @@ const g_search_db = [
     "split_name": "sus num Float"
   },
   {
-    "index": 1266,
+    "index": 1256,
     "type": "concept",
     "url": "sus-num-UnsignedPrimitiveEnumClass.html",
     "name": "UnsignedPrimitiveEnumClass",
@@ -11077,7 +10991,7 @@ const g_search_db = [
     "summary": "Enum class (scoped enumeration) types that are backed by an unsigned value."
   },
   {
-    "index": 1267,
+    "index": 1257,
     "type": "concept",
     "url": "sus-num-Mul.html",
     "name": "Mul",
@@ -11085,7 +10999,7 @@ const g_search_db = [
     "split_name": "sus num Mul"
   },
   {
-    "index": 1268,
+    "index": 1258,
     "type": "concept",
     "url": "sus-num-Integer.html",
     "name": "Integer",
@@ -11094,7 +11008,7 @@ const g_search_db = [
     "summary": "Signed or unsigned Subspace integer types: u8, u16, u32, u64, usize, uptr, i8, i16, i32, i64, and isize."
   },
   {
-    "index": 1269,
+    "index": 1259,
     "type": "concept",
     "url": "sus-num-MulAssign.html",
     "name": "MulAssign",
@@ -11102,7 +11016,7 @@ const g_search_db = [
     "split_name": "sus num Mul Assign"
   },
   {
-    "index": 1270,
+    "index": 1260,
     "type": "concept",
     "url": "sus-num-DivAssign.html",
     "name": "DivAssign",
@@ -11110,7 +11024,7 @@ const g_search_db = [
     "split_name": "sus num Div Assign"
   },
   {
-    "index": 1271,
+    "index": 1261,
     "type": "concept",
     "url": "sus-num-Div.html",
     "name": "Div",
@@ -11118,7 +11032,7 @@ const g_search_db = [
     "split_name": "sus num Div"
   },
   {
-    "index": 1272,
+    "index": 1262,
     "type": "concept",
     "url": "sus-num-BitOr.html",
     "name": "BitOr",
@@ -11126,7 +11040,7 @@ const g_search_db = [
     "split_name": "sus num Bit Or"
   },
   {
-    "index": 1273,
+    "index": 1263,
     "type": "concept",
     "url": "sus-num-Rem.html",
     "name": "Rem",
@@ -11134,7 +11048,7 @@ const g_search_db = [
     "split_name": "sus num Rem"
   },
   {
-    "index": 1274,
+    "index": 1264,
     "type": "class",
     "url": "sus-num-OverflowInteger.html",
     "name": "OverflowInteger",
@@ -11143,7 +11057,7 @@ const g_search_db = [
     "summary": "An integer type that handles overflow instead of panicing."
   },
   {
-    "index": 1275,
+    "index": 1265,
     "type": "constructor",
     "url": "sus-num-OverflowInteger.html#method.OverflowInteger",
     "name": "OverflowInteger",
@@ -11152,7 +11066,7 @@ const g_search_db = [
     "summary": "Constructs an OverflowInteger from the same subspace integer type."
   },
   {
-    "index": 1276,
+    "index": 1266,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.operator%=",
     "name": "operator%=",
@@ -11160,7 +11074,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer operator%="
   },
   {
-    "index": 1277,
+    "index": 1267,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.operator/=",
     "name": "operator/=",
@@ -11168,7 +11082,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer operator/="
   },
   {
-    "index": 1278,
+    "index": 1268,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.operator*=",
     "name": "operator*=",
@@ -11176,7 +11090,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer operator*="
   },
   {
-    "index": 1279,
+    "index": 1269,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.operator-=",
     "name": "operator-=",
@@ -11184,7 +11098,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer operator-="
   },
   {
-    "index": 1280,
+    "index": 1270,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.try_from",
     "name": "try_from",
@@ -11193,7 +11107,7 @@ const g_search_db = [
     "summary": "Satisfies sus::construct::TryFrom&lt;OverflowInteger&lt;I&gt;, U&gt; if the inner integer type I satisfies sus::construct::TryFrom&lt;I, U&gt;."
   },
   {
-    "index": 1281,
+    "index": 1271,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.unwrap_unchecked",
     "name": "unwrap_unchecked",
@@ -11201,7 +11115,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer unwrap unchecked"
   },
   {
-    "index": 1282,
+    "index": 1272,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.from_product",
     "name": "from_product",
@@ -11210,7 +11124,7 @@ const g_search_db = [
     "summary": "Constructs an OverflowInteger from an Iterator by computing the product of all elements in the iterator."
   },
   {
-    "index": 1283,
+    "index": 1273,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.as_value",
     "name": "as_value",
@@ -11218,7 +11132,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer as value"
   },
   {
-    "index": 1284,
+    "index": 1274,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.as_value_unchecked_mut",
     "name": "as_value_unchecked_mut",
@@ -11226,7 +11140,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer as value unchecked mut"
   },
   {
-    "index": 1285,
+    "index": 1275,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.is_valid",
     "name": "is_valid",
@@ -11234,7 +11148,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer is valid"
   },
   {
-    "index": 1286,
+    "index": 1276,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.is_overflow",
     "name": "is_overflow",
@@ -11242,7 +11156,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer is overflow"
   },
   {
-    "index": 1287,
+    "index": 1277,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.as_value_mut",
     "name": "as_value_mut",
@@ -11250,7 +11164,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer as value mut"
   },
   {
-    "index": 1288,
+    "index": 1278,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.as_value_unchecked",
     "name": "as_value_unchecked",
@@ -11258,7 +11172,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer as value unchecked"
   },
   {
-    "index": 1289,
+    "index": 1279,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.unwrap",
     "name": "unwrap",
@@ -11266,7 +11180,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer unwrap"
   },
   {
-    "index": 1290,
+    "index": 1280,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.from",
     "name": "from",
@@ -11275,7 +11189,7 @@ const g_search_db = [
     "summary": "Satisfies sus::construct::From&lt;OverflowInteger&lt;I&gt;, U&gt; if the OverflowInteger is constructible from U."
   },
   {
-    "index": 1291,
+    "index": 1281,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.to_option",
     "name": "to_option",
@@ -11284,7 +11198,7 @@ const g_search_db = [
     "summary": "Converts the OverflowInteger into an Option that contains the integer value. If overflow has occured, returns None."
   },
   {
-    "index": 1292,
+    "index": 1282,
     "type": "method",
     "url": "sus-num-OverflowInteger.html#method.operator+=",
     "name": "operator+=",
@@ -11292,7 +11206,7 @@ const g_search_db = [
     "split_name": "sus num Overflow Integer operator+="
   },
   {
-    "index": 1293,
+    "index": 1283,
     "type": "class",
     "url": "sus-num-TryFromIntError.html",
     "name": "TryFromIntError",
@@ -11301,16 +11215,7 @@ const g_search_db = [
     "summary": "The error type returned when a checked integral type conversion fails."
   },
   {
-    "index": 1294,
-    "type": "method",
-    "url": "sus-num-TryFromIntError.html#method.operator==",
-    "name": "operator==",
-    "full_name": "sus::num::TryFromIntError::operator==",
-    "split_name": "sus num Try From Int Error operator==",
-    "summary": "Satisfies the Eq concept."
-  },
-  {
-    "index": 1295,
+    "index": 1284,
     "type": "method",
     "url": "sus-num-TryFromIntError.html#method.kind",
     "name": "kind",
@@ -11319,7 +11224,7 @@ const g_search_db = [
     "summary": "Gives the kind of error that occured."
   },
   {
-    "index": 1296,
+    "index": 1285,
     "type": "method",
     "url": "sus-num-TryFromIntError.html#method.with_out_of_bounds",
     "name": "with_out_of_bounds",
@@ -11328,1096 +11233,7 @@ const g_search_db = [
     "summary": "Constructs a TryFromIntError with kind OutOfBounds."
   },
   {
-    "index": 1297,
-    "type": "struct",
-    "url": "sus-num-u8.html",
-    "name": "u8",
-    "full_name": "sus::num::u8",
-    "split_name": "sus num u8",
-    "summary": "An 8-bit unsigned integer."
-  },
-  {
-    "index": 1298,
-    "type": "field",
-    "url": "sus-num-u8.html#field.BITS",
-    "name": "BITS",
-    "full_name": "sus::num::u8::BITS",
-    "split_name": "sus num u8 BITS",
-    "summary": "The size of and u8 in bits."
-  },
-  {
-    "index": 1299,
-    "type": "field",
-    "url": "sus-num-u8.html#field.MAX",
-    "name": "MAX",
-    "full_name": "sus::num::u8::MAX",
-    "split_name": "sus num u8 MAX",
-    "summary": "The largest value that can be represented by an u8."
-  },
-  {
-    "index": 1300,
-    "type": "field",
-    "url": "sus-num-u8.html#field.MAX_PRIMITIVE",
-    "name": "MAX_PRIMITIVE",
-    "full_name": "sus::num::u8::MAX_PRIMITIVE",
-    "split_name": "sus num u8 MAX PRIMITIVE",
-    "summary": "The largest value that can be represented by an u8, as a native C++ primitive."
-  },
-  {
-    "index": 1301,
-    "type": "field",
-    "url": "sus-num-u8.html#field.MIN_PRIMITIVE",
-    "name": "MIN_PRIMITIVE",
-    "full_name": "sus::num::u8::MIN_PRIMITIVE",
-    "split_name": "sus num u8 MIN PRIMITIVE",
-    "summary": "The smallest value that can be represented by an u8, as a native C++ primitive."
-  },
-  {
-    "index": 1302,
-    "type": "field",
-    "url": "sus-num-u8.html#field.MIN",
-    "name": "MIN",
-    "full_name": "sus::num::u8::MIN",
-    "split_name": "sus num u8 MIN",
-    "summary": "The smallest value that can be represented by an u8."
-  },
-  {
-    "index": 1303,
-    "type": "field",
-    "url": "sus-num-u8.html#field.primitive_value",
-    "name": "primitive_value",
-    "full_name": "sus::num::u8::primitive_value",
-    "split_name": "sus num u8 primitive value",
-    "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with uint32_t{n} for a numeric value n."
-  },
-  {
-    "index": 1304,
-    "type": "constructor",
-    "url": "sus-num-u8.html#method.u8.ctor.unsigned.smallenumclass",
-    "name": "u8",
-    "full_name": "sus::num::u8::u8",
-    "split_name": "sus num u8 u8",
-    "summary": "Construction from unsigned enum class types where no bits are lost."
-  },
-  {
-    "index": 1305,
-    "type": "constructor",
-    "url": "sus-num-u8.html#method.u8.ctor.unsigned.smallenum",
-    "name": "u8",
-    "full_name": "sus::num::u8::u8",
-    "split_name": "sus num u8 u8",
-    "summary": "Construction from unsigned enum types where no bits are lost."
-  },
-  {
-    "index": 1306,
-    "type": "constructor",
-    "url": "sus-num-u8.html#method.u8.ctor.unsigned.small.primitive",
-    "name": "u8",
-    "full_name": "sus::num::u8::u8",
-    "split_name": "sus num u8 u8",
-    "summary": "Construction from unsigned primitive types where no bits are lost."
-  },
-  {
-    "index": 1307,
-    "type": "constructor",
-    "url": "sus-num-u8.html#method.u8.ctor.unsigned.small.typed",
-    "name": "u8",
-    "full_name": "sus::num::u8::u8",
-    "split_name": "sus num u8 u8",
-    "summary": "Construction from unsigned types where no bits are lost."
-  },
-  {
-    "index": 1308,
-    "type": "constructor",
-    "url": "sus-num-u8.html#method.u8.ctor.default",
-    "name": "u8",
-    "full_name": "sus::num::u8::u8",
-    "split_name": "sus num u8 u8",
-    "summary": "Default constructor, which sets the integer to 0."
-  },
-  {
-    "index": 1309,
-    "type": "conversion",
-    "url": "sus-num-u8.html#method.operator U",
-    "name": "operator U",
-    "full_name": "sus::num::u8::operator U",
-    "split_name": "sus num u8 operator U",
-    "summary": "Conversion from the numeric type to a C++ primitive type."
-  },
-  {
-    "index": 1310,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from_ne_bytes",
-    "name": "from_ne_bytes",
-    "full_name": "sus::num::u8::from_ne_bytes",
-    "split_name": "sus num u8 from ne bytes",
-    "summary": "Create an integer value from its memory representation as a byte array in native endianness."
-  },
-  {
-    "index": 1311,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from_le_bytes",
-    "name": "from_le_bytes",
-    "full_name": "sus::num::u8::from_le_bytes",
-    "split_name": "sus num u8 from le bytes",
-    "summary": "Create an integer value from its representation as a byte array in little endian."
-  },
-  {
-    "index": 1312,
-    "type": "method",
-    "url": "sus-num-u8.html#method.to_le_bytes",
-    "name": "to_le_bytes",
-    "full_name": "sus::num::u8::to_le_bytes",
-    "split_name": "sus num u8 to le bytes",
-    "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
-  },
-  {
-    "index": 1313,
-    "type": "method",
-    "url": "sus-num-u8.html#method.to_be_bytes",
-    "name": "to_be_bytes",
-    "full_name": "sus::num::u8::to_be_bytes",
-    "split_name": "sus num u8 to be bytes",
-    "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
-  },
-  {
-    "index": 1314,
-    "type": "method",
-    "url": "sus-num-u8.html#method.to_le",
-    "name": "to_le",
-    "full_name": "sus::num::u8::to_le",
-    "split_name": "sus num u8 to le",
-    "summary": "Converts self to little endian from the target's endianness."
-  },
-  {
-    "index": 1315,
-    "type": "method",
-    "url": "sus-num-u8.html#method.to_be",
-    "name": "to_be",
-    "full_name": "sus::num::u8::to_be",
-    "split_name": "sus num u8 to be",
-    "summary": "Converts self to big endian from the target's endianness."
-  },
-  {
-    "index": 1316,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from_le",
-    "name": "from_le",
-    "full_name": "sus::num::u8::from_le",
-    "split_name": "sus num u8 from le",
-    "summary": "Converts an integer from little endian to the target's endianness."
-  },
-  {
-    "index": 1317,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_next_power_of_two",
-    "name": "wrapping_next_power_of_two",
-    "full_name": "sus::num::u8::wrapping_next_power_of_two",
-    "split_name": "sus num u8 wrapping next power of two",
-    "summary": "Returns the smallest power of two greater than or equal to self."
-  },
-  {
-    "index": 1318,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_next_multiple_of",
-    "name": "checked_next_multiple_of",
-    "full_name": "sus::num::u8::checked_next_multiple_of",
-    "split_name": "sus num u8 checked next multiple of",
-    "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs. Returns None if rhs is zero or the operation would result in overflow."
-  },
-  {
-    "index": 1319,
-    "type": "method",
-    "url": "sus-num-u8.html#method.log10",
-    "name": "log10",
-    "full_name": "sus::num::u8::log10",
-    "split_name": "sus num u8 log10",
-    "summary": "Returns the base 10 logarithm of the number, rounded down."
-  },
-  {
-    "index": 1320,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_log10",
-    "name": "checked_log10",
-    "full_name": "sus::num::u8::checked_log10",
-    "split_name": "sus num u8 checked log10",
-    "summary": "Returns the base 10 logarithm of the number, rounded down."
-  },
-  {
-    "index": 1321,
-    "type": "method",
-    "url": "sus-num-u8.html#method.log2",
-    "name": "log2",
-    "full_name": "sus::num::u8::log2",
-    "split_name": "sus num u8 log2",
-    "summary": "Returns the base 2 logarithm of the number, rounded down."
-  },
-  {
-    "index": 1322,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_log2",
-    "name": "checked_log2",
-    "full_name": "sus::num::u8::checked_log2",
-    "split_name": "sus num u8 checked log2",
-    "summary": "Returns the base 2 logarithm of the number, rounded down."
-  },
-  {
-    "index": 1323,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_pow",
-    "name": "wrapping_pow",
-    "full_name": "sus::num::u8::wrapping_pow",
-    "split_name": "sus num u8 wrapping pow",
-    "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
-  },
-  {
-    "index": 1324,
-    "type": "method",
-    "url": "sus-num-u8.html#method.rotate_left",
-    "name": "rotate_left",
-    "full_name": "sus::num::u8::rotate_left",
-    "split_name": "sus num u8 rotate left",
-    "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
-  },
-  {
-    "index": 1325,
-    "type": "method",
-    "url": "sus-num-u8.html#method.reverse_bits",
-    "name": "reverse_bits",
-    "full_name": "sus::num::u8::reverse_bits",
-    "split_name": "sus num u8 reverse bits",
-    "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
-  },
-  {
-    "index": 1326,
-    "type": "method",
-    "url": "sus-num-u8.html#method.trailing_zeros",
-    "name": "trailing_zeros",
-    "full_name": "sus::num::u8::trailing_zeros",
-    "split_name": "sus num u8 trailing zeros",
-    "summary": "Returns the number of trailing zeros in the binary representation of the current value."
-  },
-  {
-    "index": 1327,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_sub",
-    "name": "wrapping_sub",
-    "full_name": "sus::num::u8::wrapping_sub",
-    "split_name": "sus num u8 wrapping sub",
-    "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
-  },
-  {
-    "index": 1328,
-    "type": "method",
-    "url": "sus-num-u8.html#method.log",
-    "name": "log",
-    "full_name": "sus::num::u8::log",
-    "split_name": "sus num u8 log",
-    "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
-  },
-  {
-    "index": 1329,
-    "type": "method",
-    "url": "sus-num-u8.html#method.unchecked_sub",
-    "name": "unchecked_sub",
-    "full_name": "sus::num::u8::unchecked_sub",
-    "split_name": "sus num u8 unchecked sub",
-    "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
-  },
-  {
-    "index": 1330,
-    "type": "method",
-    "url": "sus-num-u8.html#method.to_ne_bytes",
-    "name": "to_ne_bytes",
-    "full_name": "sus::num::u8::to_ne_bytes",
-    "split_name": "sus num u8 to ne bytes",
-    "summary": "Return the memory representation of this integer as a byte array in native byte order."
-  },
-  {
-    "index": 1331,
-    "type": "method",
-    "url": "sus-num-u8.html#method.saturating_sub",
-    "name": "saturating_sub",
-    "full_name": "sus::num::u8::saturating_sub",
-    "split_name": "sus num u8 saturating sub",
-    "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
-  },
-  {
-    "index": 1332,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_sub",
-    "name": "overflowing_sub",
-    "full_name": "sus::num::u8::overflowing_sub",
-    "split_name": "sus num u8 overflowing sub",
-    "summary": "Calculates self - rhs."
-  },
-  {
-    "index": 1333,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_sub",
-    "name": "checked_sub",
-    "full_name": "sus::num::u8::checked_sub",
-    "split_name": "sus num u8 checked sub",
-    "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
-  },
-  {
-    "index": 1334,
-    "type": "method",
-    "url": "sus-num-u8.html#method.count_zeros",
-    "name": "count_zeros",
-    "full_name": "sus::num::u8::count_zeros",
-    "split_name": "sus num u8 count zeros",
-    "summary": "Returns the number of zeros in the binary representation of the current value."
-  },
-  {
-    "index": 1335,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_shr",
-    "name": "overflowing_shr",
-    "full_name": "sus::num::u8::overflowing_shr",
-    "split_name": "sus num u8 overflowing shr",
-    "summary": "Shifts self right by rhs bits."
-  },
-  {
-    "index": 1336,
-    "type": "method",
-    "url": "sus-num-u8.html#method.next_power_of_two",
-    "name": "next_power_of_two",
-    "full_name": "sus::num::u8::next_power_of_two",
-    "split_name": "sus num u8 next power of two",
-    "summary": "Returns the smallest power of two greater than or equal to self."
-  },
-  {
-    "index": 1337,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_shr",
-    "name": "checked_shr",
-    "full_name": "sus::num::u8::checked_shr",
-    "split_name": "sus num u8 checked shr",
-    "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
-  },
-  {
-    "index": 1338,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_shl",
-    "name": "wrapping_shl",
-    "full_name": "sus::num::u8::wrapping_shl",
-    "split_name": "sus num u8 wrapping shl",
-    "summary": "Panic-free bitwise shift-left; yields self &lt;&lt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
-  },
-  {
-    "index": 1339,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_rem_euclid",
-    "name": "wrapping_rem_euclid",
-    "full_name": "sus::num::u8::wrapping_rem_euclid",
-    "split_name": "sus num u8 wrapping rem euclid",
-    "summary": "Wrapping Euclidean modulo. Computes self.rem_euclid(rhs). Wrapped modulo calculation on unsigned types is just the regular remainder calculation."
-  },
-  {
-    "index": 1340,
-    "type": "method",
-    "url": "sus-num-u8.html#method.abs_diff",
-    "name": "abs_diff",
-    "full_name": "sus::num::u8::abs_diff",
-    "split_name": "sus num u8 abs diff",
-    "summary": "Computes the absolute difference between self and other."
-  },
-  {
-    "index": 1341,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from_product",
-    "name": "from_product",
-    "full_name": "sus::num::u8::from_product",
-    "split_name": "sus num u8 from product",
-    "summary": "Constructs a u8 from an Iterator by computing the product of all elements in the iterator."
-  },
-  {
-    "index": 1342,
-    "type": "method",
-    "url": "sus-num-u8.html#method.swap_bytes",
-    "name": "swap_bytes",
-    "full_name": "sus::num::u8::swap_bytes",
-    "split_name": "sus num u8 swap bytes",
-    "summary": "Reverses the byte order of the integer."
-  },
-  {
-    "index": 1343,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_add",
-    "name": "overflowing_add",
-    "full_name": "sus::num::u8::overflowing_add",
-    "split_name": "sus num u8 overflowing add",
-    "summary": "Calculates self + rhs."
-  },
-  {
-    "index": 1344,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator>>=",
-    "name": "operator>>=",
-    "full_name": "sus::num::u8::operator>>=",
-    "split_name": "sus num u8 operator>>=",
-    "summary": "Shifts itself right by r bits."
-  },
-  {
-    "index": 1345,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator^=",
-    "name": "operator^=",
-    "full_name": "sus::num::u8::operator^=",
-    "split_name": "sus num u8 operator^=",
-    "summary": "Assigns the bitwise XOR of itself and r."
-  },
-  {
-    "index": 1346,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator|=",
-    "name": "operator|=",
-    "full_name": "sus::num::u8::operator|=",
-    "split_name": "sus num u8 operator|=",
-    "summary": "Assigns the bitwise OR of itself and r."
-  },
-  {
-    "index": 1347,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from.unsigned.from.unsignedprimitive",
-    "name": "from",
-    "full_name": "sus::num::u8::from",
-    "split_name": "sus num u8 from",
-    "summary": "Constructs a u8 from an unsigned primitive integer type (unsigned int, unsigned long, etc.) where no bits are lost."
-  },
-  {
-    "index": 1348,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator/=",
-    "name": "operator/=",
-    "full_name": "sus::num::u8::operator/=",
-    "split_name": "sus num u8 operator/=",
-    "summary": "Divides itself by r."
-  },
-  {
-    "index": 1349,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_rem_euclid",
-    "name": "overflowing_rem_euclid",
-    "full_name": "sus::num::u8::overflowing_rem_euclid",
-    "split_name": "sus num u8 overflowing rem euclid",
-    "summary": "Calculates the remainder self.rem_euclid(rhs) as if by Euclidean division."
-  },
-  {
-    "index": 1350,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator*=",
-    "name": "operator*=",
-    "full_name": "sus::num::u8::operator*=",
-    "split_name": "sus num u8 operator*=",
-    "summary": "Multiplies itself by r."
-  },
-  {
-    "index": 1351,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_div",
-    "name": "checked_div",
-    "full_name": "sus::num::u8::checked_div",
-    "split_name": "sus num u8 checked div",
-    "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0."
-  },
-  {
-    "index": 1352,
-    "type": "method",
-    "url": "sus-num-u8.html#method.leading_zeros",
-    "name": "leading_zeros",
-    "full_name": "sus::num::u8::leading_zeros",
-    "split_name": "sus num u8 leading zeros",
-    "summary": "Returns the number of leading zeros in the binary representation of the current value."
-  },
-  {
-    "index": 1353,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_shl",
-    "name": "overflowing_shl",
-    "full_name": "sus::num::u8::overflowing_shl",
-    "split_name": "sus num u8 overflowing shl",
-    "summary": "Shifts self left by rhs bits."
-  },
-  {
-    "index": 1354,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator-=",
-    "name": "operator-=",
-    "full_name": "sus::num::u8::operator-=",
-    "split_name": "sus num u8 operator-=",
-    "summary": "Subtracts r from itself."
-  },
-  {
-    "index": 1355,
-    "type": "method",
-    "url": "sus-num-u8.html#method.trailing_ones",
-    "name": "trailing_ones",
-    "full_name": "sus::num::u8::trailing_ones",
-    "split_name": "sus num u8 trailing ones",
-    "summary": "Returns the number of trailing ones in the binary representation of the current value."
-  },
-  {
-    "index": 1356,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator~",
-    "name": "operator~",
-    "full_name": "sus::num::u8::operator~",
-    "split_name": "sus num u8 operator~",
-    "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
-  },
-  {
-    "index": 1357,
-    "type": "method",
-    "url": "sus-num-u8.html#method.saturating_mul",
-    "name": "saturating_mul",
-    "full_name": "sus::num::u8::saturating_mul",
-    "split_name": "sus num u8 saturating mul",
-    "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
-  },
-  {
-    "index": 1358,
-    "type": "method",
-    "url": "sus-num-u8.html#method.as_mut_ptr",
-    "name": "as_mut_ptr",
-    "full_name": "sus::num::u8::as_mut_ptr",
-    "split_name": "sus num u8 as mut ptr",
-    "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
-  },
-  {
-    "index": 1359,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_div",
-    "name": "overflowing_div",
-    "full_name": "sus::num::u8::overflowing_div",
-    "split_name": "sus num u8 overflowing div",
-    "summary": "Calculates the divisor when self is divided by rhs."
-  },
-  {
-    "index": 1360,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_shr",
-    "name": "wrapping_shr",
-    "full_name": "sus::num::u8::wrapping_shr",
-    "split_name": "sus num u8 wrapping shr",
-    "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
-  },
-  {
-    "index": 1361,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from_sum",
-    "name": "from_sum",
-    "full_name": "sus::num::u8::from_sum",
-    "split_name": "sus num u8 from sum",
-    "summary": "Constructs a u8 from an Iterator by computing the sum of all elements in the itertor."
-  },
-  {
-    "index": 1362,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator=.assign.unsigned.small.typed",
-    "name": "operator=",
-    "full_name": "sus::num::u8::operator=",
-    "split_name": "sus num u8 operator=",
-    "summary": "Assignment from unsigned types (u8, u16, etc.) where no bits are lost."
-  },
-  {
-    "index": 1363,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_add",
-    "name": "checked_add",
-    "full_name": "sus::num::u8::checked_add",
-    "split_name": "sus num u8 checked add",
-    "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
-  },
-  {
-    "index": 1364,
-    "type": "method",
-    "url": "sus-num-u8.html#method.rotate_right",
-    "name": "rotate_right",
-    "full_name": "sus::num::u8::rotate_right",
-    "split_name": "sus num u8 rotate right",
-    "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
-  },
-  {
-    "index": 1365,
-    "type": "method",
-    "url": "sus-num-u8.html#method.try_from.unsigned.enum",
-    "name": "try_from",
-    "full_name": "sus::num::u8::try_from",
-    "split_name": "sus num u8 try from",
-    "summary": "Tries to construct a u8 from an unsigned enum type (or enum class)."
-  },
-  {
-    "index": 1366,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_log",
-    "name": "checked_log",
-    "full_name": "sus::num::u8::checked_log",
-    "split_name": "sus num u8 checked log",
-    "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
-  },
-  {
-    "index": 1367,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator&=",
-    "name": "operator&=",
-    "full_name": "sus::num::u8::operator&=",
-    "split_name": "sus num u8 operator&=",
-    "summary": "Assigns the bitwise AND of itself and r."
-  },
-  {
-    "index": 1368,
-    "type": "method",
-    "url": "sus-num-u8.html#method.try_from.unsigned",
-    "name": "try_from",
-    "full_name": "sus::num::u8::try_from",
-    "split_name": "sus num u8 try from",
-    "summary": "Tries to construct a u8 from an unsigned integer type (u8, u16, u32, etc.)."
-  },
-  {
-    "index": 1369,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator=.assign.unsigned.small.primitive",
-    "name": "operator=",
-    "full_name": "sus::num::u8::operator=",
-    "split_name": "sus num u8 operator=",
-    "summary": "Assignment from unsigned primitive types (unsigned int, unsigned long, etc.) where no bits are lost."
-  },
-  {
-    "index": 1370,
-    "type": "method",
-    "url": "sus-num-u8.html#method.try_from.signed",
-    "name": "try_from",
-    "full_name": "sus::num::u8::try_from",
-    "split_name": "sus num u8 try from",
-    "summary": "Tries to construct a u8 from a signed integer type (i8, i16, i32, etc.)."
-  },
-  {
-    "index": 1371,
-    "type": "method",
-    "url": "sus-num-u8.html#method.try_from.signed.primitive",
-    "name": "try_from",
-    "full_name": "sus::num::u8::try_from",
-    "split_name": "sus num u8 try from",
-    "summary": "Tries to construct a u8 from a signed primitive integer type ( int, long, etc.)."
-  },
-  {
-    "index": 1372,
-    "type": "method",
-    "url": "sus-num-u8.html#method.saturating_add_signed",
-    "name": "saturating_add_signed",
-    "full_name": "sus::num::u8::saturating_add_signed",
-    "split_name": "sus num u8 saturating add signed",
-    "summary": "Saturating integer addition with a signed rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
-  },
-  {
-    "index": 1373,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from.unsigned.from.unsigned",
-    "name": "from",
-    "full_name": "sus::num::u8::from",
-    "split_name": "sus num u8 from",
-    "summary": "Constructs a u8 from an unsigned integer type (u8, u16, u32, etc.) where no bits are lost."
-  },
-  {
-    "index": 1374,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from.unsigned.from.unsignedenum",
-    "name": "from",
-    "full_name": "sus::num::u8::from",
-    "split_name": "sus num u8 from",
-    "summary": "Constructs a u8 from an unsigned enum type (or enum class) where no bits are lost."
-  },
-  {
-    "index": 1375,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator+=",
-    "name": "operator+=",
-    "full_name": "sus::num::u8::operator+=",
-    "split_name": "sus num u8 operator+=",
-    "summary": "Adds r to itself."
-  },
-  {
-    "index": 1376,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_mul",
-    "name": "checked_mul",
-    "full_name": "sus::num::u8::checked_mul",
-    "split_name": "sus num u8 checked mul",
-    "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
-  },
-  {
-    "index": 1377,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_div",
-    "name": "wrapping_div",
-    "full_name": "sus::num::u8::wrapping_div",
-    "split_name": "sus num u8 wrapping div",
-    "summary": "Wrapping (modular) division. Computes self / rhs. Wrapped division on unsigned types is just normal division. There's no way wrapping could ever happen. This function exists, so that all operations are accounted for in the wrapping operations."
-  },
-  {
-    "index": 1378,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_rem_euclid",
-    "name": "checked_rem_euclid",
-    "full_name": "sus::num::u8::checked_rem_euclid",
-    "split_name": "sus num u8 checked rem euclid",
-    "summary": "Checked Euclidean modulo. Computes self.rem_euclid(rhs), returning None if rhs == 0."
-  },
-  {
-    "index": 1379,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from_be",
-    "name": "from_be",
-    "full_name": "sus::num::u8::from_be",
-    "split_name": "sus num u8 from be",
-    "summary": "Converts an integer from big endian to the target's endianness."
-  },
-  {
-    "index": 1380,
-    "type": "method",
-    "url": "sus-num-u8.html#method.try_from.signed.enum",
-    "name": "try_from",
-    "full_name": "sus::num::u8::try_from",
-    "split_name": "sus num u8 try from",
-    "summary": "Tries to construct a u8 from a signed enum type (or enum class)."
-  },
-  {
-    "index": 1381,
-    "type": "method",
-    "url": "sus-num-u8.html#method.as_ptr",
-    "name": "as_ptr",
-    "full_name": "sus::num::u8::as_ptr",
-    "split_name": "sus num u8 as ptr",
-    "summary": "Returns a const pointer to the underlying C++ primitive value type."
-  },
-  {
-    "index": 1382,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator<<=",
-    "name": "operator<<=",
-    "full_name": "sus::num::u8::operator<<=",
-    "split_name": "sus num u8 operator<<=",
-    "summary": "Shifts itself left by r bits."
-  },
-  {
-    "index": 1383,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_pow",
-    "name": "overflowing_pow",
-    "full_name": "sus::num::u8::overflowing_pow",
-    "split_name": "sus num u8 overflowing pow",
-    "summary": "Raises self to the power of exp, using exponentiation by squaring."
-  },
-  {
-    "index": 1384,
-    "type": "method",
-    "url": "sus-num-u8.html#method.pow",
-    "name": "pow",
-    "full_name": "sus::num::u8::pow",
-    "split_name": "sus num u8 pow",
-    "summary": "Raises self to the power of exp, using exponentiation by squaring."
-  },
-  {
-    "index": 1385,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_shl",
-    "name": "checked_shl",
-    "full_name": "sus::num::u8::checked_shl",
-    "split_name": "sus num u8 checked shl",
-    "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
-  },
-  {
-    "index": 1386,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator=.assign.unsigned.smallenum",
-    "name": "operator=",
-    "full_name": "sus::num::u8::operator=",
-    "split_name": "sus num u8 operator=",
-    "summary": "Assignment from unsigned enum types where no bits are lost."
-  },
-  {
-    "index": 1387,
-    "type": "method",
-    "url": "sus-num-u8.html#method.try_from.unsigned.primitive",
-    "name": "try_from",
-    "full_name": "sus::num::u8::try_from",
-    "split_name": "sus num u8 try from",
-    "summary": "Tries to construct a u8 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
-  },
-  {
-    "index": 1388,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_add_signed",
-    "name": "checked_add_signed",
-    "full_name": "sus::num::u8::checked_add_signed",
-    "split_name": "sus num u8 checked add signed",
-    "summary": "Checked integer addition with a signed rhs. Computes self + rhs, returning None if overflow occurred."
-  },
-  {
-    "index": 1389,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_neg",
-    "name": "overflowing_neg",
-    "full_name": "sus::num::u8::overflowing_neg",
-    "split_name": "sus num u8 overflowing neg",
-    "summary": "Negates self in an overflowing fashion."
-  },
-  {
-    "index": 1390,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_next_power_of_two",
-    "name": "checked_next_power_of_two",
-    "full_name": "sus::num::u8::checked_next_power_of_two",
-    "split_name": "sus num u8 checked next power of two",
-    "summary": "Returns the smallest power of two greater than or equal to self."
-  },
-  {
-    "index": 1391,
-    "type": "method",
-    "url": "sus-num-u8.html#method.operator%=",
-    "name": "operator%=",
-    "full_name": "sus::num::u8::operator%=",
-    "split_name": "sus num u8 operator%=",
-    "summary": "Assigns the remainder of dividing itself by r."
-  },
-  {
-    "index": 1392,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_add_signed",
-    "name": "overflowing_add_signed",
-    "full_name": "sus::num::u8::overflowing_add_signed",
-    "split_name": "sus num u8 overflowing add signed",
-    "summary": "Calculates self + rhs with a signed rhs."
-  },
-  {
-    "index": 1393,
-    "type": "method",
-    "url": "sus-num-u8.html#method.leading_ones",
-    "name": "leading_ones",
-    "full_name": "sus::num::u8::leading_ones",
-    "split_name": "sus num u8 leading ones",
-    "summary": "Returns the number of leading ones in the binary representation of the current value."
-  },
-  {
-    "index": 1394,
-    "type": "method",
-    "url": "sus-num-u8.html#method.saturating_add",
-    "name": "saturating_add",
-    "full_name": "sus::num::u8::saturating_add",
-    "split_name": "sus num u8 saturating add",
-    "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
-  },
-  {
-    "index": 1395,
-    "type": "method",
-    "url": "sus-num-u8.html#method.unchecked_add",
-    "name": "unchecked_add",
-    "full_name": "sus::num::u8::unchecked_add",
-    "split_name": "sus num u8 unchecked add",
-    "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
-  },
-  {
-    "index": 1396,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_pow",
-    "name": "checked_pow",
-    "full_name": "sus::num::u8::checked_pow",
-    "split_name": "sus num u8 checked pow",
-    "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
-  },
-  {
-    "index": 1397,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_add",
-    "name": "wrapping_add",
-    "full_name": "sus::num::u8::wrapping_add",
-    "split_name": "sus num u8 wrapping add",
-    "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
-  },
-  {
-    "index": 1398,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_add_signed",
-    "name": "wrapping_add_signed",
-    "full_name": "sus::num::u8::wrapping_add_signed",
-    "split_name": "sus num u8 wrapping add signed",
-    "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
-  },
-  {
-    "index": 1399,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_rem",
-    "name": "checked_rem",
-    "full_name": "sus::num::u8::checked_rem",
-    "split_name": "sus num u8 checked rem",
-    "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0."
-  },
-  {
-    "index": 1400,
-    "type": "method",
-    "url": "sus-num-u8.html#method.is_power_of_two",
-    "name": "is_power_of_two",
-    "full_name": "sus::num::u8::is_power_of_two",
-    "split_name": "sus num u8 is power of two",
-    "summary": "Returns true if and only if self == 2^k for some k."
-  },
-  {
-    "index": 1401,
-    "type": "method",
-    "url": "sus-num-u8.html#method.saturating_div",
-    "name": "saturating_div",
-    "full_name": "sus::num::u8::saturating_div",
-    "split_name": "sus num u8 saturating div",
-    "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing. Note that for unsigned integers overflow never occurs, so the value will always be strictly the result of division."
-  },
-  {
-    "index": 1402,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_neg",
-    "name": "wrapping_neg",
-    "full_name": "sus::num::u8::wrapping_neg",
-    "split_name": "sus num u8 wrapping neg",
-    "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
-  },
-  {
-    "index": 1403,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_mul",
-    "name": "overflowing_mul",
-    "full_name": "sus::num::u8::overflowing_mul",
-    "split_name": "sus num u8 overflowing mul",
-    "summary": "Calculates the multiplication of self and rhs."
-  },
-  {
-    "index": 1404,
-    "type": "method",
-    "url": "sus-num-u8.html#method.unchecked_mul",
-    "name": "unchecked_mul",
-    "full_name": "sus::num::u8::unchecked_mul",
-    "split_name": "sus num u8 unchecked mul",
-    "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
-  },
-  {
-    "index": 1405,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_mul",
-    "name": "wrapping_mul",
-    "full_name": "sus::num::u8::wrapping_mul",
-    "split_name": "sus num u8 wrapping mul",
-    "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
-  },
-  {
-    "index": 1406,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_rem",
-    "name": "overflowing_rem",
-    "full_name": "sus::num::u8::overflowing_rem",
-    "split_name": "sus num u8 overflowing rem",
-    "summary": "Calculates the remainder when self is divided by rhs."
-  },
-  {
-    "index": 1407,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_div_euclid",
-    "name": "wrapping_div_euclid",
-    "full_name": "sus::num::u8::wrapping_div_euclid",
-    "split_name": "sus num u8 wrapping div euclid",
-    "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs). Wrapped division on unsigned types is just normal division."
-  },
-  {
-    "index": 1408,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_neg",
-    "name": "checked_neg",
-    "full_name": "sus::num::u8::checked_neg",
-    "split_name": "sus num u8 checked neg",
-    "summary": "Checked negation. Computes -self, returning None unless self == 0."
-  },
-  {
-    "index": 1409,
-    "type": "method",
-    "url": "sus-num-u8.html#method.checked_div_euclid",
-    "name": "checked_div_euclid",
-    "full_name": "sus::num::u8::checked_div_euclid",
-    "split_name": "sus num u8 checked div euclid",
-    "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0."
-  },
-  {
-    "index": 1410,
-    "type": "method",
-    "url": "sus-num-u8.html#method.from_be_bytes",
-    "name": "from_be_bytes",
-    "full_name": "sus::num::u8::from_be_bytes",
-    "split_name": "sus num u8 from be bytes",
-    "summary": "Create an integer value from its representation as a byte array in big endian."
-  },
-  {
-    "index": 1411,
-    "type": "method",
-    "url": "sus-num-u8.html#method.next_multiple_of",
-    "name": "next_multiple_of",
-    "full_name": "sus::num::u8::next_multiple_of",
-    "split_name": "sus num u8 next multiple of",
-    "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs."
-  },
-  {
-    "index": 1412,
-    "type": "method",
-    "url": "sus-num-u8.html#method.wrapping_rem",
-    "name": "wrapping_rem",
-    "full_name": "sus::num::u8::wrapping_rem",
-    "split_name": "sus num u8 wrapping rem",
-    "summary": "Wrapping (modular) remainder. Computes self % rhs. Wrapped remainder calculation on unsigned types is just the regular remainder calculation."
-  },
-  {
-    "index": 1413,
-    "type": "method",
-    "url": "sus-num-u8.html#method.count_ones",
-    "name": "count_ones",
-    "full_name": "sus::num::u8::count_ones",
-    "split_name": "sus num u8 count ones",
-    "summary": "Returns the number of ones in the binary representation of the current value."
-  },
-  {
-    "index": 1414,
-    "type": "method",
-    "url": "sus-num-u8.html#method.div_ceil",
-    "name": "div_ceil",
-    "full_name": "sus::num::u8::div_ceil",
-    "split_name": "sus num u8 div ceil",
-    "summary": "Calculates the quotient of itself and rhs, rounding the result towards positive infinity."
-  },
-  {
-    "index": 1415,
-    "type": "method",
-    "url": "sus-num-u8.html#method.div_euclid",
-    "name": "div_euclid",
-    "full_name": "sus::num::u8::div_euclid",
-    "split_name": "sus num u8 div euclid",
-    "summary": "Performs Euclidean division."
-  },
-  {
-    "index": 1416,
-    "type": "method",
-    "url": "sus-num-u8.html#method.overflowing_div_euclid",
-    "name": "overflowing_div_euclid",
-    "full_name": "sus::num::u8::overflowing_div_euclid",
-    "split_name": "sus num u8 overflowing div euclid",
-    "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
-  },
-  {
-    "index": 1417,
-    "type": "method",
-    "url": "sus-num-u8.html#method.rem_euclid",
-    "name": "rem_euclid",
-    "full_name": "sus::num::u8::rem_euclid",
-    "split_name": "sus num u8 rem euclid",
-    "summary": "Calculates the least remainder of self (mod rhs)."
-  },
-  {
-    "index": 1418,
+    "index": 1286,
     "type": "struct",
     "url": "sus-num-u64.html",
     "name": "u64",
@@ -12426,7 +11242,7 @@ const g_search_db = [
     "summary": "A 64-bit unsigned integer."
   },
   {
-    "index": 1419,
+    "index": 1287,
     "type": "field",
     "url": "sus-num-u64.html#field.BITS",
     "name": "BITS",
@@ -12435,7 +11251,7 @@ const g_search_db = [
     "summary": "The size of and u64 in bits."
   },
   {
-    "index": 1420,
+    "index": 1288,
     "type": "field",
     "url": "sus-num-u64.html#field.MIN",
     "name": "MIN",
@@ -12444,7 +11260,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an u64."
   },
   {
-    "index": 1421,
+    "index": 1289,
     "type": "field",
     "url": "sus-num-u64.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -12453,7 +11269,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an u64, as a native C++ primitive."
   },
   {
-    "index": 1422,
+    "index": 1290,
     "type": "field",
     "url": "sus-num-u64.html#field.MAX",
     "name": "MAX",
@@ -12462,7 +11278,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an u64."
   },
   {
-    "index": 1423,
+    "index": 1291,
     "type": "field",
     "url": "sus-num-u64.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -12471,7 +11287,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an u64, as a native C++ primitive."
   },
   {
-    "index": 1424,
+    "index": 1292,
     "type": "field",
     "url": "sus-num-u64.html#field.primitive_value",
     "name": "primitive_value",
@@ -12480,7 +11296,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with uint32_t{n} for a numeric value n."
   },
   {
-    "index": 1425,
+    "index": 1293,
     "type": "constructor",
     "url": "sus-num-u64.html#method.u64.ctor.unsigned.smallenumclass",
     "name": "u64",
@@ -12489,7 +11305,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 1426,
+    "index": 1294,
     "type": "constructor",
     "url": "sus-num-u64.html#method.u64.ctor.unsigned.smallenum",
     "name": "u64",
@@ -12498,7 +11314,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 1427,
+    "index": 1295,
     "type": "constructor",
     "url": "sus-num-u64.html#method.u64.ctor.unsigned.small.primitive",
     "name": "u64",
@@ -12507,7 +11323,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 1428,
+    "index": 1296,
     "type": "constructor",
     "url": "sus-num-u64.html#method.u64.ctor.unsigned.small.typed",
     "name": "u64",
@@ -12516,7 +11332,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 1429,
+    "index": 1297,
     "type": "constructor",
     "url": "sus-num-u64.html#method.u64.ctor.default",
     "name": "u64",
@@ -12525,7 +11341,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 1430,
+    "index": 1298,
     "type": "conversion",
     "url": "sus-num-u64.html#method.operator U",
     "name": "operator U",
@@ -12534,7 +11350,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 1431,
+    "index": 1299,
     "type": "method",
     "url": "sus-num-u64.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -12543,7 +11359,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 1432,
+    "index": 1300,
     "type": "method",
     "url": "sus-num-u64.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -12552,7 +11368,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 1433,
+    "index": 1301,
     "type": "method",
     "url": "sus-num-u64.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -12561,7 +11377,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 1434,
+    "index": 1302,
     "type": "method",
     "url": "sus-num-u64.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -12570,7 +11386,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 1435,
+    "index": 1303,
     "type": "method",
     "url": "sus-num-u64.html#method.to_le",
     "name": "to_le",
@@ -12579,7 +11395,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 1436,
+    "index": 1304,
     "type": "method",
     "url": "sus-num-u64.html#method.to_be",
     "name": "to_be",
@@ -12588,7 +11404,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 1437,
+    "index": 1305,
     "type": "method",
     "url": "sus-num-u64.html#method.from_le",
     "name": "from_le",
@@ -12597,7 +11413,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 1438,
+    "index": 1306,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_next_power_of_two",
     "name": "wrapping_next_power_of_two",
@@ -12606,7 +11422,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1439,
+    "index": 1307,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_next_multiple_of",
     "name": "checked_next_multiple_of",
@@ -12615,7 +11431,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs. Returns None if rhs is zero or the operation would result in overflow."
   },
   {
-    "index": 1440,
+    "index": 1308,
     "type": "method",
     "url": "sus-num-u64.html#method.log10",
     "name": "log10",
@@ -12624,7 +11440,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 1441,
+    "index": 1309,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_log10",
     "name": "checked_log10",
@@ -12633,7 +11449,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 1442,
+    "index": 1310,
     "type": "method",
     "url": "sus-num-u64.html#method.log2",
     "name": "log2",
@@ -12642,7 +11458,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 1443,
+    "index": 1311,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_log2",
     "name": "checked_log2",
@@ -12651,7 +11467,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 1444,
+    "index": 1312,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -12660,7 +11476,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 1445,
+    "index": 1313,
     "type": "method",
     "url": "sus-num-u64.html#method.rotate_left",
     "name": "rotate_left",
@@ -12669,7 +11485,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 1446,
+    "index": 1314,
     "type": "method",
     "url": "sus-num-u64.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -12678,7 +11494,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 1447,
+    "index": 1315,
     "type": "method",
     "url": "sus-num-u64.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -12687,7 +11503,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 1448,
+    "index": 1316,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -12696,7 +11512,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1449,
+    "index": 1317,
     "type": "method",
     "url": "sus-num-u64.html#method.log",
     "name": "log",
@@ -12705,7 +11521,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 1450,
+    "index": 1318,
     "type": "method",
     "url": "sus-num-u64.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -12714,7 +11530,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1451,
+    "index": 1319,
     "type": "method",
     "url": "sus-num-u64.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -12723,7 +11539,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 1452,
+    "index": 1320,
     "type": "method",
     "url": "sus-num-u64.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -12732,7 +11548,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1453,
+    "index": 1321,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -12741,7 +11557,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 1454,
+    "index": 1322,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_sub",
     "name": "checked_sub",
@@ -12750,7 +11566,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 1455,
+    "index": 1323,
     "type": "method",
     "url": "sus-num-u64.html#method.count_zeros",
     "name": "count_zeros",
@@ -12759,7 +11575,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 1456,
+    "index": 1324,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -12768,7 +11584,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 1457,
+    "index": 1325,
     "type": "method",
     "url": "sus-num-u64.html#method.next_power_of_two",
     "name": "next_power_of_two",
@@ -12777,7 +11593,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1458,
+    "index": 1326,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_shr",
     "name": "checked_shr",
@@ -12786,7 +11602,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 1459,
+    "index": 1327,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -12795,7 +11611,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-left; yields self &lt;&lt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 1460,
+    "index": 1328,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -12804,7 +11620,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean modulo. Computes self.rem_euclid(rhs). Wrapped modulo calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 1461,
+    "index": 1329,
     "type": "method",
     "url": "sus-num-u64.html#method.abs_diff",
     "name": "abs_diff",
@@ -12813,7 +11629,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 1462,
+    "index": 1330,
     "type": "method",
     "url": "sus-num-u64.html#method.from_product",
     "name": "from_product",
@@ -12822,7 +11638,7 @@ const g_search_db = [
     "summary": "Constructs a u64 from an Iterator by computing the product of all elements in the iterator."
   },
   {
-    "index": 1463,
+    "index": 1331,
     "type": "method",
     "url": "sus-num-u64.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -12831,7 +11647,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 1464,
+    "index": 1332,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -12840,7 +11656,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 1465,
+    "index": 1333,
     "type": "method",
     "url": "sus-num-u64.html#method.operator>>=",
     "name": "operator>>=",
@@ -12849,7 +11665,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 1466,
+    "index": 1334,
     "type": "method",
     "url": "sus-num-u64.html#method.operator^=",
     "name": "operator^=",
@@ -12858,7 +11674,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 1467,
+    "index": 1335,
     "type": "method",
     "url": "sus-num-u64.html#method.operator|=",
     "name": "operator|=",
@@ -12867,7 +11683,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 1468,
+    "index": 1336,
     "type": "method",
     "url": "sus-num-u64.html#method.from.unsigned.from.unsignedprimitive",
     "name": "from",
@@ -12876,7 +11692,7 @@ const g_search_db = [
     "summary": "Constructs a u64 from an unsigned primitive integer type (unsigned int, unsigned long, etc.) where no bits are lost."
   },
   {
-    "index": 1469,
+    "index": 1337,
     "type": "method",
     "url": "sus-num-u64.html#method.operator/=",
     "name": "operator/=",
@@ -12885,7 +11701,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 1470,
+    "index": 1338,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -12894,7 +11710,7 @@ const g_search_db = [
     "summary": "Calculates the remainder self.rem_euclid(rhs) as if by Euclidean division."
   },
   {
-    "index": 1471,
+    "index": 1339,
     "type": "method",
     "url": "sus-num-u64.html#method.operator*=",
     "name": "operator*=",
@@ -12903,7 +11719,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 1472,
+    "index": 1340,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_div",
     "name": "checked_div",
@@ -12912,7 +11728,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0."
   },
   {
-    "index": 1473,
+    "index": 1341,
     "type": "method",
     "url": "sus-num-u64.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -12921,7 +11737,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 1474,
+    "index": 1342,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -12930,7 +11746,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 1475,
+    "index": 1343,
     "type": "method",
     "url": "sus-num-u64.html#method.operator-=",
     "name": "operator-=",
@@ -12939,7 +11755,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 1476,
+    "index": 1344,
     "type": "method",
     "url": "sus-num-u64.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -12948,7 +11764,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 1477,
+    "index": 1345,
     "type": "method",
     "url": "sus-num-u64.html#method.operator~",
     "name": "operator~",
@@ -12957,7 +11773,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 1478,
+    "index": 1346,
     "type": "method",
     "url": "sus-num-u64.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -12966,7 +11782,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1479,
+    "index": 1347,
     "type": "method",
     "url": "sus-num-u64.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -12975,7 +11791,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1480,
+    "index": 1348,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -12984,7 +11800,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 1481,
+    "index": 1349,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -12993,7 +11809,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 1482,
+    "index": 1350,
     "type": "method",
     "url": "sus-num-u64.html#method.from_sum",
     "name": "from_sum",
@@ -13002,7 +11818,7 @@ const g_search_db = [
     "summary": "Constructs a u64 from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 1483,
+    "index": 1351,
     "type": "method",
     "url": "sus-num-u64.html#method.operator=.assign.unsigned.small.typed",
     "name": "operator=",
@@ -13011,7 +11827,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned types (u8, u16, etc.) where no bits are lost."
   },
   {
-    "index": 1484,
+    "index": 1352,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_add",
     "name": "checked_add",
@@ -13020,7 +11836,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 1485,
+    "index": 1353,
     "type": "method",
     "url": "sus-num-u64.html#method.rotate_right",
     "name": "rotate_right",
@@ -13029,7 +11845,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 1486,
+    "index": 1354,
     "type": "method",
     "url": "sus-num-u64.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -13038,7 +11854,7 @@ const g_search_db = [
     "summary": "Tries to construct a u64 from an unsigned enum type (or enum class)."
   },
   {
-    "index": 1487,
+    "index": 1355,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_log",
     "name": "checked_log",
@@ -13047,7 +11863,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 1488,
+    "index": 1356,
     "type": "method",
     "url": "sus-num-u64.html#method.operator&=",
     "name": "operator&=",
@@ -13056,7 +11872,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 1489,
+    "index": 1357,
     "type": "method",
     "url": "sus-num-u64.html#method.try_from.unsigned",
     "name": "try_from",
@@ -13065,7 +11881,7 @@ const g_search_db = [
     "summary": "Tries to construct a u64 from an unsigned integer type (u8, u16, u32, etc.)."
   },
   {
-    "index": 1490,
+    "index": 1358,
     "type": "method",
     "url": "sus-num-u64.html#method.operator=.assign.unsigned.small.primitive",
     "name": "operator=",
@@ -13074,7 +11890,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned primitive types (unsigned int, unsigned long, etc.) where no bits are lost."
   },
   {
-    "index": 1491,
+    "index": 1359,
     "type": "method",
     "url": "sus-num-u64.html#method.try_from.signed",
     "name": "try_from",
@@ -13083,7 +11899,7 @@ const g_search_db = [
     "summary": "Tries to construct a u64 from a signed integer type (i8, i16, i32, etc.)."
   },
   {
-    "index": 1492,
+    "index": 1360,
     "type": "method",
     "url": "sus-num-u64.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -13092,7 +11908,7 @@ const g_search_db = [
     "summary": "Tries to construct a u64 from a signed primitive integer type ( int, long, etc.)."
   },
   {
-    "index": 1493,
+    "index": 1361,
     "type": "method",
     "url": "sus-num-u64.html#method.saturating_add_signed",
     "name": "saturating_add_signed",
@@ -13101,7 +11917,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with a signed rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1494,
+    "index": 1362,
     "type": "method",
     "url": "sus-num-u64.html#method.from.unsigned.from.unsigned",
     "name": "from",
@@ -13110,7 +11926,7 @@ const g_search_db = [
     "summary": "Constructs a u64 from an unsigned integer type (u8, u16, u32, etc.) where no bits are lost."
   },
   {
-    "index": 1495,
+    "index": 1363,
     "type": "method",
     "url": "sus-num-u64.html#method.from.unsigned.from.unsignedenum",
     "name": "from",
@@ -13119,7 +11935,7 @@ const g_search_db = [
     "summary": "Constructs a u64 from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 1496,
+    "index": 1364,
     "type": "method",
     "url": "sus-num-u64.html#method.operator+=",
     "name": "operator+=",
@@ -13128,7 +11944,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 1497,
+    "index": 1365,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_mul",
     "name": "checked_mul",
@@ -13137,7 +11953,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 1498,
+    "index": 1366,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -13146,7 +11962,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs. Wrapped division on unsigned types is just normal division. There's no way wrapping could ever happen. This function exists, so that all operations are accounted for in the wrapping operations."
   },
   {
-    "index": 1499,
+    "index": 1367,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -13155,7 +11971,7 @@ const g_search_db = [
     "summary": "Checked Euclidean modulo. Computes self.rem_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 1500,
+    "index": 1368,
     "type": "method",
     "url": "sus-num-u64.html#method.from_be",
     "name": "from_be",
@@ -13164,7 +11980,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 1501,
+    "index": 1369,
     "type": "method",
     "url": "sus-num-u64.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -13173,7 +11989,7 @@ const g_search_db = [
     "summary": "Tries to construct a u64 from a signed enum type (or enum class)."
   },
   {
-    "index": 1502,
+    "index": 1370,
     "type": "method",
     "url": "sus-num-u64.html#method.as_ptr",
     "name": "as_ptr",
@@ -13182,7 +11998,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1503,
+    "index": 1371,
     "type": "method",
     "url": "sus-num-u64.html#method.operator<<=",
     "name": "operator<<=",
@@ -13191,7 +12007,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 1504,
+    "index": 1372,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -13200,7 +12016,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 1505,
+    "index": 1373,
     "type": "method",
     "url": "sus-num-u64.html#method.pow",
     "name": "pow",
@@ -13209,7 +12025,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 1506,
+    "index": 1374,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_shl",
     "name": "checked_shl",
@@ -13218,7 +12034,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 1507,
+    "index": 1375,
     "type": "method",
     "url": "sus-num-u64.html#method.operator=.assign.unsigned.smallenum",
     "name": "operator=",
@@ -13227,7 +12043,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned enum types where no bits are lost."
   },
   {
-    "index": 1508,
+    "index": 1376,
     "type": "method",
     "url": "sus-num-u64.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -13236,7 +12052,7 @@ const g_search_db = [
     "summary": "Tries to construct a u64 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 1509,
+    "index": 1377,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_add_signed",
     "name": "checked_add_signed",
@@ -13245,7 +12061,7 @@ const g_search_db = [
     "summary": "Checked integer addition with a signed rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 1510,
+    "index": 1378,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -13254,7 +12070,7 @@ const g_search_db = [
     "summary": "Negates self in an overflowing fashion."
   },
   {
-    "index": 1511,
+    "index": 1379,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_next_power_of_two",
     "name": "checked_next_power_of_two",
@@ -13263,7 +12079,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1512,
+    "index": 1380,
     "type": "method",
     "url": "sus-num-u64.html#method.operator%=",
     "name": "operator%=",
@@ -13272,7 +12088,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 1513,
+    "index": 1381,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_add_signed",
     "name": "overflowing_add_signed",
@@ -13281,7 +12097,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with a signed rhs."
   },
   {
-    "index": 1514,
+    "index": 1382,
     "type": "method",
     "url": "sus-num-u64.html#method.leading_ones",
     "name": "leading_ones",
@@ -13290,7 +12106,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 1515,
+    "index": 1383,
     "type": "method",
     "url": "sus-num-u64.html#method.saturating_add",
     "name": "saturating_add",
@@ -13299,7 +12115,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1516,
+    "index": 1384,
     "type": "method",
     "url": "sus-num-u64.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -13308,7 +12124,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1517,
+    "index": 1385,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_pow",
     "name": "checked_pow",
@@ -13317,7 +12133,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 1518,
+    "index": 1386,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -13326,7 +12142,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1519,
+    "index": 1387,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_add_signed",
     "name": "wrapping_add_signed",
@@ -13335,7 +12151,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1520,
+    "index": 1388,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_rem",
     "name": "checked_rem",
@@ -13344,7 +12160,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0."
   },
   {
-    "index": 1521,
+    "index": 1389,
     "type": "method",
     "url": "sus-num-u64.html#method.is_power_of_two",
     "name": "is_power_of_two",
@@ -13353,7 +12169,7 @@ const g_search_db = [
     "summary": "Returns true if and only if self == 2^k for some k."
   },
   {
-    "index": 1522,
+    "index": 1390,
     "type": "method",
     "url": "sus-num-u64.html#method.saturating_div",
     "name": "saturating_div",
@@ -13362,7 +12178,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing. Note that for unsigned integers overflow never occurs, so the value will always be strictly the result of division."
   },
   {
-    "index": 1523,
+    "index": 1391,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -13371,7 +12187,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 1524,
+    "index": 1392,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -13380,7 +12196,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 1525,
+    "index": 1393,
     "type": "method",
     "url": "sus-num-u64.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -13389,7 +12205,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1526,
+    "index": 1394,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -13398,7 +12214,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1527,
+    "index": 1395,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -13407,7 +12223,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 1528,
+    "index": 1396,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -13416,7 +12232,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs). Wrapped division on unsigned types is just normal division."
   },
   {
-    "index": 1529,
+    "index": 1397,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_neg",
     "name": "checked_neg",
@@ -13425,7 +12241,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None unless self == 0."
   },
   {
-    "index": 1530,
+    "index": 1398,
     "type": "method",
     "url": "sus-num-u64.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -13434,7 +12250,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 1531,
+    "index": 1399,
     "type": "method",
     "url": "sus-num-u64.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -13443,7 +12259,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 1532,
+    "index": 1400,
     "type": "method",
     "url": "sus-num-u64.html#method.next_multiple_of",
     "name": "next_multiple_of",
@@ -13452,7 +12268,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs."
   },
   {
-    "index": 1533,
+    "index": 1401,
     "type": "method",
     "url": "sus-num-u64.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -13461,7 +12277,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs. Wrapped remainder calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 1534,
+    "index": 1402,
     "type": "method",
     "url": "sus-num-u64.html#method.count_ones",
     "name": "count_ones",
@@ -13470,7 +12286,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 1535,
+    "index": 1403,
     "type": "method",
     "url": "sus-num-u64.html#method.div_ceil",
     "name": "div_ceil",
@@ -13479,7 +12295,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of itself and rhs, rounding the result towards positive infinity."
   },
   {
-    "index": 1536,
+    "index": 1404,
     "type": "method",
     "url": "sus-num-u64.html#method.div_euclid",
     "name": "div_euclid",
@@ -13488,7 +12304,7 @@ const g_search_db = [
     "summary": "Performs Euclidean division."
   },
   {
-    "index": 1537,
+    "index": 1405,
     "type": "method",
     "url": "sus-num-u64.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -13497,7 +12313,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 1538,
+    "index": 1406,
     "type": "method",
     "url": "sus-num-u64.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -13506,7 +12322,1096 @@ const g_search_db = [
     "summary": "Calculates the least remainder of self (mod rhs)."
   },
   {
-    "index": 1539,
+    "index": 1407,
+    "type": "struct",
+    "url": "sus-num-u8.html",
+    "name": "u8",
+    "full_name": "sus::num::u8",
+    "split_name": "sus num u8",
+    "summary": "An 8-bit unsigned integer."
+  },
+  {
+    "index": 1408,
+    "type": "field",
+    "url": "sus-num-u8.html#field.BITS",
+    "name": "BITS",
+    "full_name": "sus::num::u8::BITS",
+    "split_name": "sus num u8 BITS",
+    "summary": "The size of and u8 in bits."
+  },
+  {
+    "index": 1409,
+    "type": "field",
+    "url": "sus-num-u8.html#field.MAX",
+    "name": "MAX",
+    "full_name": "sus::num::u8::MAX",
+    "split_name": "sus num u8 MAX",
+    "summary": "The largest value that can be represented by an u8."
+  },
+  {
+    "index": 1410,
+    "type": "field",
+    "url": "sus-num-u8.html#field.MAX_PRIMITIVE",
+    "name": "MAX_PRIMITIVE",
+    "full_name": "sus::num::u8::MAX_PRIMITIVE",
+    "split_name": "sus num u8 MAX PRIMITIVE",
+    "summary": "The largest value that can be represented by an u8, as a native C++ primitive."
+  },
+  {
+    "index": 1411,
+    "type": "field",
+    "url": "sus-num-u8.html#field.MIN_PRIMITIVE",
+    "name": "MIN_PRIMITIVE",
+    "full_name": "sus::num::u8::MIN_PRIMITIVE",
+    "split_name": "sus num u8 MIN PRIMITIVE",
+    "summary": "The smallest value that can be represented by an u8, as a native C++ primitive."
+  },
+  {
+    "index": 1412,
+    "type": "field",
+    "url": "sus-num-u8.html#field.MIN",
+    "name": "MIN",
+    "full_name": "sus::num::u8::MIN",
+    "split_name": "sus num u8 MIN",
+    "summary": "The smallest value that can be represented by an u8."
+  },
+  {
+    "index": 1413,
+    "type": "field",
+    "url": "sus-num-u8.html#field.primitive_value",
+    "name": "primitive_value",
+    "full_name": "sus::num::u8::primitive_value",
+    "split_name": "sus num u8 primitive value",
+    "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with uint32_t{n} for a numeric value n."
+  },
+  {
+    "index": 1414,
+    "type": "constructor",
+    "url": "sus-num-u8.html#method.u8.ctor.unsigned.smallenumclass",
+    "name": "u8",
+    "full_name": "sus::num::u8::u8",
+    "split_name": "sus num u8 u8",
+    "summary": "Construction from unsigned enum class types where no bits are lost."
+  },
+  {
+    "index": 1415,
+    "type": "constructor",
+    "url": "sus-num-u8.html#method.u8.ctor.unsigned.smallenum",
+    "name": "u8",
+    "full_name": "sus::num::u8::u8",
+    "split_name": "sus num u8 u8",
+    "summary": "Construction from unsigned enum types where no bits are lost."
+  },
+  {
+    "index": 1416,
+    "type": "constructor",
+    "url": "sus-num-u8.html#method.u8.ctor.unsigned.small.primitive",
+    "name": "u8",
+    "full_name": "sus::num::u8::u8",
+    "split_name": "sus num u8 u8",
+    "summary": "Construction from unsigned primitive types where no bits are lost."
+  },
+  {
+    "index": 1417,
+    "type": "constructor",
+    "url": "sus-num-u8.html#method.u8.ctor.unsigned.small.typed",
+    "name": "u8",
+    "full_name": "sus::num::u8::u8",
+    "split_name": "sus num u8 u8",
+    "summary": "Construction from unsigned types where no bits are lost."
+  },
+  {
+    "index": 1418,
+    "type": "constructor",
+    "url": "sus-num-u8.html#method.u8.ctor.default",
+    "name": "u8",
+    "full_name": "sus::num::u8::u8",
+    "split_name": "sus num u8 u8",
+    "summary": "Default constructor, which sets the integer to 0."
+  },
+  {
+    "index": 1419,
+    "type": "conversion",
+    "url": "sus-num-u8.html#method.operator U",
+    "name": "operator U",
+    "full_name": "sus::num::u8::operator U",
+    "split_name": "sus num u8 operator U",
+    "summary": "Conversion from the numeric type to a C++ primitive type."
+  },
+  {
+    "index": 1420,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from_ne_bytes",
+    "name": "from_ne_bytes",
+    "full_name": "sus::num::u8::from_ne_bytes",
+    "split_name": "sus num u8 from ne bytes",
+    "summary": "Create an integer value from its memory representation as a byte array in native endianness."
+  },
+  {
+    "index": 1421,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from_le_bytes",
+    "name": "from_le_bytes",
+    "full_name": "sus::num::u8::from_le_bytes",
+    "split_name": "sus num u8 from le bytes",
+    "summary": "Create an integer value from its representation as a byte array in little endian."
+  },
+  {
+    "index": 1422,
+    "type": "method",
+    "url": "sus-num-u8.html#method.to_le_bytes",
+    "name": "to_le_bytes",
+    "full_name": "sus::num::u8::to_le_bytes",
+    "split_name": "sus num u8 to le bytes",
+    "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
+  },
+  {
+    "index": 1423,
+    "type": "method",
+    "url": "sus-num-u8.html#method.to_be_bytes",
+    "name": "to_be_bytes",
+    "full_name": "sus::num::u8::to_be_bytes",
+    "split_name": "sus num u8 to be bytes",
+    "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
+  },
+  {
+    "index": 1424,
+    "type": "method",
+    "url": "sus-num-u8.html#method.to_le",
+    "name": "to_le",
+    "full_name": "sus::num::u8::to_le",
+    "split_name": "sus num u8 to le",
+    "summary": "Converts self to little endian from the target's endianness."
+  },
+  {
+    "index": 1425,
+    "type": "method",
+    "url": "sus-num-u8.html#method.to_be",
+    "name": "to_be",
+    "full_name": "sus::num::u8::to_be",
+    "split_name": "sus num u8 to be",
+    "summary": "Converts self to big endian from the target's endianness."
+  },
+  {
+    "index": 1426,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from_le",
+    "name": "from_le",
+    "full_name": "sus::num::u8::from_le",
+    "split_name": "sus num u8 from le",
+    "summary": "Converts an integer from little endian to the target's endianness."
+  },
+  {
+    "index": 1427,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_next_power_of_two",
+    "name": "wrapping_next_power_of_two",
+    "full_name": "sus::num::u8::wrapping_next_power_of_two",
+    "split_name": "sus num u8 wrapping next power of two",
+    "summary": "Returns the smallest power of two greater than or equal to self."
+  },
+  {
+    "index": 1428,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_next_multiple_of",
+    "name": "checked_next_multiple_of",
+    "full_name": "sus::num::u8::checked_next_multiple_of",
+    "split_name": "sus num u8 checked next multiple of",
+    "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs. Returns None if rhs is zero or the operation would result in overflow."
+  },
+  {
+    "index": 1429,
+    "type": "method",
+    "url": "sus-num-u8.html#method.log10",
+    "name": "log10",
+    "full_name": "sus::num::u8::log10",
+    "split_name": "sus num u8 log10",
+    "summary": "Returns the base 10 logarithm of the number, rounded down."
+  },
+  {
+    "index": 1430,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_log10",
+    "name": "checked_log10",
+    "full_name": "sus::num::u8::checked_log10",
+    "split_name": "sus num u8 checked log10",
+    "summary": "Returns the base 10 logarithm of the number, rounded down."
+  },
+  {
+    "index": 1431,
+    "type": "method",
+    "url": "sus-num-u8.html#method.log2",
+    "name": "log2",
+    "full_name": "sus::num::u8::log2",
+    "split_name": "sus num u8 log2",
+    "summary": "Returns the base 2 logarithm of the number, rounded down."
+  },
+  {
+    "index": 1432,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_log2",
+    "name": "checked_log2",
+    "full_name": "sus::num::u8::checked_log2",
+    "split_name": "sus num u8 checked log2",
+    "summary": "Returns the base 2 logarithm of the number, rounded down."
+  },
+  {
+    "index": 1433,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_pow",
+    "name": "wrapping_pow",
+    "full_name": "sus::num::u8::wrapping_pow",
+    "split_name": "sus num u8 wrapping pow",
+    "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
+  },
+  {
+    "index": 1434,
+    "type": "method",
+    "url": "sus-num-u8.html#method.rotate_left",
+    "name": "rotate_left",
+    "full_name": "sus::num::u8::rotate_left",
+    "split_name": "sus num u8 rotate left",
+    "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
+  },
+  {
+    "index": 1435,
+    "type": "method",
+    "url": "sus-num-u8.html#method.reverse_bits",
+    "name": "reverse_bits",
+    "full_name": "sus::num::u8::reverse_bits",
+    "split_name": "sus num u8 reverse bits",
+    "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
+  },
+  {
+    "index": 1436,
+    "type": "method",
+    "url": "sus-num-u8.html#method.trailing_zeros",
+    "name": "trailing_zeros",
+    "full_name": "sus::num::u8::trailing_zeros",
+    "split_name": "sus num u8 trailing zeros",
+    "summary": "Returns the number of trailing zeros in the binary representation of the current value."
+  },
+  {
+    "index": 1437,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_sub",
+    "name": "wrapping_sub",
+    "full_name": "sus::num::u8::wrapping_sub",
+    "split_name": "sus num u8 wrapping sub",
+    "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
+  },
+  {
+    "index": 1438,
+    "type": "method",
+    "url": "sus-num-u8.html#method.log",
+    "name": "log",
+    "full_name": "sus::num::u8::log",
+    "split_name": "sus num u8 log",
+    "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
+  },
+  {
+    "index": 1439,
+    "type": "method",
+    "url": "sus-num-u8.html#method.unchecked_sub",
+    "name": "unchecked_sub",
+    "full_name": "sus::num::u8::unchecked_sub",
+    "split_name": "sus num u8 unchecked sub",
+    "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
+  },
+  {
+    "index": 1440,
+    "type": "method",
+    "url": "sus-num-u8.html#method.to_ne_bytes",
+    "name": "to_ne_bytes",
+    "full_name": "sus::num::u8::to_ne_bytes",
+    "split_name": "sus num u8 to ne bytes",
+    "summary": "Return the memory representation of this integer as a byte array in native byte order."
+  },
+  {
+    "index": 1441,
+    "type": "method",
+    "url": "sus-num-u8.html#method.saturating_sub",
+    "name": "saturating_sub",
+    "full_name": "sus::num::u8::saturating_sub",
+    "split_name": "sus num u8 saturating sub",
+    "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
+  },
+  {
+    "index": 1442,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_sub",
+    "name": "overflowing_sub",
+    "full_name": "sus::num::u8::overflowing_sub",
+    "split_name": "sus num u8 overflowing sub",
+    "summary": "Calculates self - rhs."
+  },
+  {
+    "index": 1443,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_sub",
+    "name": "checked_sub",
+    "full_name": "sus::num::u8::checked_sub",
+    "split_name": "sus num u8 checked sub",
+    "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
+  },
+  {
+    "index": 1444,
+    "type": "method",
+    "url": "sus-num-u8.html#method.count_zeros",
+    "name": "count_zeros",
+    "full_name": "sus::num::u8::count_zeros",
+    "split_name": "sus num u8 count zeros",
+    "summary": "Returns the number of zeros in the binary representation of the current value."
+  },
+  {
+    "index": 1445,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_shr",
+    "name": "overflowing_shr",
+    "full_name": "sus::num::u8::overflowing_shr",
+    "split_name": "sus num u8 overflowing shr",
+    "summary": "Shifts self right by rhs bits."
+  },
+  {
+    "index": 1446,
+    "type": "method",
+    "url": "sus-num-u8.html#method.next_power_of_two",
+    "name": "next_power_of_two",
+    "full_name": "sus::num::u8::next_power_of_two",
+    "split_name": "sus num u8 next power of two",
+    "summary": "Returns the smallest power of two greater than or equal to self."
+  },
+  {
+    "index": 1447,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_shr",
+    "name": "checked_shr",
+    "full_name": "sus::num::u8::checked_shr",
+    "split_name": "sus num u8 checked shr",
+    "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
+  },
+  {
+    "index": 1448,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_shl",
+    "name": "wrapping_shl",
+    "full_name": "sus::num::u8::wrapping_shl",
+    "split_name": "sus num u8 wrapping shl",
+    "summary": "Panic-free bitwise shift-left; yields self &lt;&lt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
+  },
+  {
+    "index": 1449,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_rem_euclid",
+    "name": "wrapping_rem_euclid",
+    "full_name": "sus::num::u8::wrapping_rem_euclid",
+    "split_name": "sus num u8 wrapping rem euclid",
+    "summary": "Wrapping Euclidean modulo. Computes self.rem_euclid(rhs). Wrapped modulo calculation on unsigned types is just the regular remainder calculation."
+  },
+  {
+    "index": 1450,
+    "type": "method",
+    "url": "sus-num-u8.html#method.abs_diff",
+    "name": "abs_diff",
+    "full_name": "sus::num::u8::abs_diff",
+    "split_name": "sus num u8 abs diff",
+    "summary": "Computes the absolute difference between self and other."
+  },
+  {
+    "index": 1451,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from_product",
+    "name": "from_product",
+    "full_name": "sus::num::u8::from_product",
+    "split_name": "sus num u8 from product",
+    "summary": "Constructs a u8 from an Iterator by computing the product of all elements in the iterator."
+  },
+  {
+    "index": 1452,
+    "type": "method",
+    "url": "sus-num-u8.html#method.swap_bytes",
+    "name": "swap_bytes",
+    "full_name": "sus::num::u8::swap_bytes",
+    "split_name": "sus num u8 swap bytes",
+    "summary": "Reverses the byte order of the integer."
+  },
+  {
+    "index": 1453,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_add",
+    "name": "overflowing_add",
+    "full_name": "sus::num::u8::overflowing_add",
+    "split_name": "sus num u8 overflowing add",
+    "summary": "Calculates self + rhs."
+  },
+  {
+    "index": 1454,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator>>=",
+    "name": "operator>>=",
+    "full_name": "sus::num::u8::operator>>=",
+    "split_name": "sus num u8 operator>>=",
+    "summary": "Shifts itself right by r bits."
+  },
+  {
+    "index": 1455,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator^=",
+    "name": "operator^=",
+    "full_name": "sus::num::u8::operator^=",
+    "split_name": "sus num u8 operator^=",
+    "summary": "Assigns the bitwise XOR of itself and r."
+  },
+  {
+    "index": 1456,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator|=",
+    "name": "operator|=",
+    "full_name": "sus::num::u8::operator|=",
+    "split_name": "sus num u8 operator|=",
+    "summary": "Assigns the bitwise OR of itself and r."
+  },
+  {
+    "index": 1457,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from.unsigned.from.unsignedprimitive",
+    "name": "from",
+    "full_name": "sus::num::u8::from",
+    "split_name": "sus num u8 from",
+    "summary": "Constructs a u8 from an unsigned primitive integer type (unsigned int, unsigned long, etc.) where no bits are lost."
+  },
+  {
+    "index": 1458,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator/=",
+    "name": "operator/=",
+    "full_name": "sus::num::u8::operator/=",
+    "split_name": "sus num u8 operator/=",
+    "summary": "Divides itself by r."
+  },
+  {
+    "index": 1459,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_rem_euclid",
+    "name": "overflowing_rem_euclid",
+    "full_name": "sus::num::u8::overflowing_rem_euclid",
+    "split_name": "sus num u8 overflowing rem euclid",
+    "summary": "Calculates the remainder self.rem_euclid(rhs) as if by Euclidean division."
+  },
+  {
+    "index": 1460,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator*=",
+    "name": "operator*=",
+    "full_name": "sus::num::u8::operator*=",
+    "split_name": "sus num u8 operator*=",
+    "summary": "Multiplies itself by r."
+  },
+  {
+    "index": 1461,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_div",
+    "name": "checked_div",
+    "full_name": "sus::num::u8::checked_div",
+    "split_name": "sus num u8 checked div",
+    "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0."
+  },
+  {
+    "index": 1462,
+    "type": "method",
+    "url": "sus-num-u8.html#method.leading_zeros",
+    "name": "leading_zeros",
+    "full_name": "sus::num::u8::leading_zeros",
+    "split_name": "sus num u8 leading zeros",
+    "summary": "Returns the number of leading zeros in the binary representation of the current value."
+  },
+  {
+    "index": 1463,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_shl",
+    "name": "overflowing_shl",
+    "full_name": "sus::num::u8::overflowing_shl",
+    "split_name": "sus num u8 overflowing shl",
+    "summary": "Shifts self left by rhs bits."
+  },
+  {
+    "index": 1464,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator-=",
+    "name": "operator-=",
+    "full_name": "sus::num::u8::operator-=",
+    "split_name": "sus num u8 operator-=",
+    "summary": "Subtracts r from itself."
+  },
+  {
+    "index": 1465,
+    "type": "method",
+    "url": "sus-num-u8.html#method.trailing_ones",
+    "name": "trailing_ones",
+    "full_name": "sus::num::u8::trailing_ones",
+    "split_name": "sus num u8 trailing ones",
+    "summary": "Returns the number of trailing ones in the binary representation of the current value."
+  },
+  {
+    "index": 1466,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator~",
+    "name": "operator~",
+    "full_name": "sus::num::u8::operator~",
+    "split_name": "sus num u8 operator~",
+    "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
+  },
+  {
+    "index": 1467,
+    "type": "method",
+    "url": "sus-num-u8.html#method.saturating_mul",
+    "name": "saturating_mul",
+    "full_name": "sus::num::u8::saturating_mul",
+    "split_name": "sus num u8 saturating mul",
+    "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
+  },
+  {
+    "index": 1468,
+    "type": "method",
+    "url": "sus-num-u8.html#method.as_mut_ptr",
+    "name": "as_mut_ptr",
+    "full_name": "sus::num::u8::as_mut_ptr",
+    "split_name": "sus num u8 as mut ptr",
+    "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
+  },
+  {
+    "index": 1469,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_div",
+    "name": "overflowing_div",
+    "full_name": "sus::num::u8::overflowing_div",
+    "split_name": "sus num u8 overflowing div",
+    "summary": "Calculates the divisor when self is divided by rhs."
+  },
+  {
+    "index": 1470,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_shr",
+    "name": "wrapping_shr",
+    "full_name": "sus::num::u8::wrapping_shr",
+    "split_name": "sus num u8 wrapping shr",
+    "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
+  },
+  {
+    "index": 1471,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from_sum",
+    "name": "from_sum",
+    "full_name": "sus::num::u8::from_sum",
+    "split_name": "sus num u8 from sum",
+    "summary": "Constructs a u8 from an Iterator by computing the sum of all elements in the itertor."
+  },
+  {
+    "index": 1472,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator=.assign.unsigned.small.typed",
+    "name": "operator=",
+    "full_name": "sus::num::u8::operator=",
+    "split_name": "sus num u8 operator=",
+    "summary": "Assignment from unsigned types (u8, u16, etc.) where no bits are lost."
+  },
+  {
+    "index": 1473,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_add",
+    "name": "checked_add",
+    "full_name": "sus::num::u8::checked_add",
+    "split_name": "sus num u8 checked add",
+    "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
+  },
+  {
+    "index": 1474,
+    "type": "method",
+    "url": "sus-num-u8.html#method.rotate_right",
+    "name": "rotate_right",
+    "full_name": "sus::num::u8::rotate_right",
+    "split_name": "sus num u8 rotate right",
+    "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
+  },
+  {
+    "index": 1475,
+    "type": "method",
+    "url": "sus-num-u8.html#method.try_from.unsigned.enum",
+    "name": "try_from",
+    "full_name": "sus::num::u8::try_from",
+    "split_name": "sus num u8 try from",
+    "summary": "Tries to construct a u8 from an unsigned enum type (or enum class)."
+  },
+  {
+    "index": 1476,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_log",
+    "name": "checked_log",
+    "full_name": "sus::num::u8::checked_log",
+    "split_name": "sus num u8 checked log",
+    "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
+  },
+  {
+    "index": 1477,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator&=",
+    "name": "operator&=",
+    "full_name": "sus::num::u8::operator&=",
+    "split_name": "sus num u8 operator&=",
+    "summary": "Assigns the bitwise AND of itself and r."
+  },
+  {
+    "index": 1478,
+    "type": "method",
+    "url": "sus-num-u8.html#method.try_from.unsigned",
+    "name": "try_from",
+    "full_name": "sus::num::u8::try_from",
+    "split_name": "sus num u8 try from",
+    "summary": "Tries to construct a u8 from an unsigned integer type (u8, u16, u32, etc.)."
+  },
+  {
+    "index": 1479,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator=.assign.unsigned.small.primitive",
+    "name": "operator=",
+    "full_name": "sus::num::u8::operator=",
+    "split_name": "sus num u8 operator=",
+    "summary": "Assignment from unsigned primitive types (unsigned int, unsigned long, etc.) where no bits are lost."
+  },
+  {
+    "index": 1480,
+    "type": "method",
+    "url": "sus-num-u8.html#method.try_from.signed",
+    "name": "try_from",
+    "full_name": "sus::num::u8::try_from",
+    "split_name": "sus num u8 try from",
+    "summary": "Tries to construct a u8 from a signed integer type (i8, i16, i32, etc.)."
+  },
+  {
+    "index": 1481,
+    "type": "method",
+    "url": "sus-num-u8.html#method.try_from.signed.primitive",
+    "name": "try_from",
+    "full_name": "sus::num::u8::try_from",
+    "split_name": "sus num u8 try from",
+    "summary": "Tries to construct a u8 from a signed primitive integer type ( int, long, etc.)."
+  },
+  {
+    "index": 1482,
+    "type": "method",
+    "url": "sus-num-u8.html#method.saturating_add_signed",
+    "name": "saturating_add_signed",
+    "full_name": "sus::num::u8::saturating_add_signed",
+    "split_name": "sus num u8 saturating add signed",
+    "summary": "Saturating integer addition with a signed rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
+  },
+  {
+    "index": 1483,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from.unsigned.from.unsigned",
+    "name": "from",
+    "full_name": "sus::num::u8::from",
+    "split_name": "sus num u8 from",
+    "summary": "Constructs a u8 from an unsigned integer type (u8, u16, u32, etc.) where no bits are lost."
+  },
+  {
+    "index": 1484,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from.unsigned.from.unsignedenum",
+    "name": "from",
+    "full_name": "sus::num::u8::from",
+    "split_name": "sus num u8 from",
+    "summary": "Constructs a u8 from an unsigned enum type (or enum class) where no bits are lost."
+  },
+  {
+    "index": 1485,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator+=",
+    "name": "operator+=",
+    "full_name": "sus::num::u8::operator+=",
+    "split_name": "sus num u8 operator+=",
+    "summary": "Adds r to itself."
+  },
+  {
+    "index": 1486,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_mul",
+    "name": "checked_mul",
+    "full_name": "sus::num::u8::checked_mul",
+    "split_name": "sus num u8 checked mul",
+    "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
+  },
+  {
+    "index": 1487,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_div",
+    "name": "wrapping_div",
+    "full_name": "sus::num::u8::wrapping_div",
+    "split_name": "sus num u8 wrapping div",
+    "summary": "Wrapping (modular) division. Computes self / rhs. Wrapped division on unsigned types is just normal division. There's no way wrapping could ever happen. This function exists, so that all operations are accounted for in the wrapping operations."
+  },
+  {
+    "index": 1488,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_rem_euclid",
+    "name": "checked_rem_euclid",
+    "full_name": "sus::num::u8::checked_rem_euclid",
+    "split_name": "sus num u8 checked rem euclid",
+    "summary": "Checked Euclidean modulo. Computes self.rem_euclid(rhs), returning None if rhs == 0."
+  },
+  {
+    "index": 1489,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from_be",
+    "name": "from_be",
+    "full_name": "sus::num::u8::from_be",
+    "split_name": "sus num u8 from be",
+    "summary": "Converts an integer from big endian to the target's endianness."
+  },
+  {
+    "index": 1490,
+    "type": "method",
+    "url": "sus-num-u8.html#method.try_from.signed.enum",
+    "name": "try_from",
+    "full_name": "sus::num::u8::try_from",
+    "split_name": "sus num u8 try from",
+    "summary": "Tries to construct a u8 from a signed enum type (or enum class)."
+  },
+  {
+    "index": 1491,
+    "type": "method",
+    "url": "sus-num-u8.html#method.as_ptr",
+    "name": "as_ptr",
+    "full_name": "sus::num::u8::as_ptr",
+    "split_name": "sus num u8 as ptr",
+    "summary": "Returns a const pointer to the underlying C++ primitive value type."
+  },
+  {
+    "index": 1492,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator<<=",
+    "name": "operator<<=",
+    "full_name": "sus::num::u8::operator<<=",
+    "split_name": "sus num u8 operator<<=",
+    "summary": "Shifts itself left by r bits."
+  },
+  {
+    "index": 1493,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_pow",
+    "name": "overflowing_pow",
+    "full_name": "sus::num::u8::overflowing_pow",
+    "split_name": "sus num u8 overflowing pow",
+    "summary": "Raises self to the power of exp, using exponentiation by squaring."
+  },
+  {
+    "index": 1494,
+    "type": "method",
+    "url": "sus-num-u8.html#method.pow",
+    "name": "pow",
+    "full_name": "sus::num::u8::pow",
+    "split_name": "sus num u8 pow",
+    "summary": "Raises self to the power of exp, using exponentiation by squaring."
+  },
+  {
+    "index": 1495,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_shl",
+    "name": "checked_shl",
+    "full_name": "sus::num::u8::checked_shl",
+    "split_name": "sus num u8 checked shl",
+    "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
+  },
+  {
+    "index": 1496,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator=.assign.unsigned.smallenum",
+    "name": "operator=",
+    "full_name": "sus::num::u8::operator=",
+    "split_name": "sus num u8 operator=",
+    "summary": "Assignment from unsigned enum types where no bits are lost."
+  },
+  {
+    "index": 1497,
+    "type": "method",
+    "url": "sus-num-u8.html#method.try_from.unsigned.primitive",
+    "name": "try_from",
+    "full_name": "sus::num::u8::try_from",
+    "split_name": "sus num u8 try from",
+    "summary": "Tries to construct a u8 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
+  },
+  {
+    "index": 1498,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_add_signed",
+    "name": "checked_add_signed",
+    "full_name": "sus::num::u8::checked_add_signed",
+    "split_name": "sus num u8 checked add signed",
+    "summary": "Checked integer addition with a signed rhs. Computes self + rhs, returning None if overflow occurred."
+  },
+  {
+    "index": 1499,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_neg",
+    "name": "overflowing_neg",
+    "full_name": "sus::num::u8::overflowing_neg",
+    "split_name": "sus num u8 overflowing neg",
+    "summary": "Negates self in an overflowing fashion."
+  },
+  {
+    "index": 1500,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_next_power_of_two",
+    "name": "checked_next_power_of_two",
+    "full_name": "sus::num::u8::checked_next_power_of_two",
+    "split_name": "sus num u8 checked next power of two",
+    "summary": "Returns the smallest power of two greater than or equal to self."
+  },
+  {
+    "index": 1501,
+    "type": "method",
+    "url": "sus-num-u8.html#method.operator%=",
+    "name": "operator%=",
+    "full_name": "sus::num::u8::operator%=",
+    "split_name": "sus num u8 operator%=",
+    "summary": "Assigns the remainder of dividing itself by r."
+  },
+  {
+    "index": 1502,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_add_signed",
+    "name": "overflowing_add_signed",
+    "full_name": "sus::num::u8::overflowing_add_signed",
+    "split_name": "sus num u8 overflowing add signed",
+    "summary": "Calculates self + rhs with a signed rhs."
+  },
+  {
+    "index": 1503,
+    "type": "method",
+    "url": "sus-num-u8.html#method.leading_ones",
+    "name": "leading_ones",
+    "full_name": "sus::num::u8::leading_ones",
+    "split_name": "sus num u8 leading ones",
+    "summary": "Returns the number of leading ones in the binary representation of the current value."
+  },
+  {
+    "index": 1504,
+    "type": "method",
+    "url": "sus-num-u8.html#method.saturating_add",
+    "name": "saturating_add",
+    "full_name": "sus::num::u8::saturating_add",
+    "split_name": "sus num u8 saturating add",
+    "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
+  },
+  {
+    "index": 1505,
+    "type": "method",
+    "url": "sus-num-u8.html#method.unchecked_add",
+    "name": "unchecked_add",
+    "full_name": "sus::num::u8::unchecked_add",
+    "split_name": "sus num u8 unchecked add",
+    "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
+  },
+  {
+    "index": 1506,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_pow",
+    "name": "checked_pow",
+    "full_name": "sus::num::u8::checked_pow",
+    "split_name": "sus num u8 checked pow",
+    "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
+  },
+  {
+    "index": 1507,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_add",
+    "name": "wrapping_add",
+    "full_name": "sus::num::u8::wrapping_add",
+    "split_name": "sus num u8 wrapping add",
+    "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
+  },
+  {
+    "index": 1508,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_add_signed",
+    "name": "wrapping_add_signed",
+    "full_name": "sus::num::u8::wrapping_add_signed",
+    "split_name": "sus num u8 wrapping add signed",
+    "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
+  },
+  {
+    "index": 1509,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_rem",
+    "name": "checked_rem",
+    "full_name": "sus::num::u8::checked_rem",
+    "split_name": "sus num u8 checked rem",
+    "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0."
+  },
+  {
+    "index": 1510,
+    "type": "method",
+    "url": "sus-num-u8.html#method.is_power_of_two",
+    "name": "is_power_of_two",
+    "full_name": "sus::num::u8::is_power_of_two",
+    "split_name": "sus num u8 is power of two",
+    "summary": "Returns true if and only if self == 2^k for some k."
+  },
+  {
+    "index": 1511,
+    "type": "method",
+    "url": "sus-num-u8.html#method.saturating_div",
+    "name": "saturating_div",
+    "full_name": "sus::num::u8::saturating_div",
+    "split_name": "sus num u8 saturating div",
+    "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing. Note that for unsigned integers overflow never occurs, so the value will always be strictly the result of division."
+  },
+  {
+    "index": 1512,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_neg",
+    "name": "wrapping_neg",
+    "full_name": "sus::num::u8::wrapping_neg",
+    "split_name": "sus num u8 wrapping neg",
+    "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
+  },
+  {
+    "index": 1513,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_mul",
+    "name": "overflowing_mul",
+    "full_name": "sus::num::u8::overflowing_mul",
+    "split_name": "sus num u8 overflowing mul",
+    "summary": "Calculates the multiplication of self and rhs."
+  },
+  {
+    "index": 1514,
+    "type": "method",
+    "url": "sus-num-u8.html#method.unchecked_mul",
+    "name": "unchecked_mul",
+    "full_name": "sus::num::u8::unchecked_mul",
+    "split_name": "sus num u8 unchecked mul",
+    "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
+  },
+  {
+    "index": 1515,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_mul",
+    "name": "wrapping_mul",
+    "full_name": "sus::num::u8::wrapping_mul",
+    "split_name": "sus num u8 wrapping mul",
+    "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
+  },
+  {
+    "index": 1516,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_rem",
+    "name": "overflowing_rem",
+    "full_name": "sus::num::u8::overflowing_rem",
+    "split_name": "sus num u8 overflowing rem",
+    "summary": "Calculates the remainder when self is divided by rhs."
+  },
+  {
+    "index": 1517,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_div_euclid",
+    "name": "wrapping_div_euclid",
+    "full_name": "sus::num::u8::wrapping_div_euclid",
+    "split_name": "sus num u8 wrapping div euclid",
+    "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs). Wrapped division on unsigned types is just normal division."
+  },
+  {
+    "index": 1518,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_neg",
+    "name": "checked_neg",
+    "full_name": "sus::num::u8::checked_neg",
+    "split_name": "sus num u8 checked neg",
+    "summary": "Checked negation. Computes -self, returning None unless self == 0."
+  },
+  {
+    "index": 1519,
+    "type": "method",
+    "url": "sus-num-u8.html#method.checked_div_euclid",
+    "name": "checked_div_euclid",
+    "full_name": "sus::num::u8::checked_div_euclid",
+    "split_name": "sus num u8 checked div euclid",
+    "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0."
+  },
+  {
+    "index": 1520,
+    "type": "method",
+    "url": "sus-num-u8.html#method.from_be_bytes",
+    "name": "from_be_bytes",
+    "full_name": "sus::num::u8::from_be_bytes",
+    "split_name": "sus num u8 from be bytes",
+    "summary": "Create an integer value from its representation as a byte array in big endian."
+  },
+  {
+    "index": 1521,
+    "type": "method",
+    "url": "sus-num-u8.html#method.next_multiple_of",
+    "name": "next_multiple_of",
+    "full_name": "sus::num::u8::next_multiple_of",
+    "split_name": "sus num u8 next multiple of",
+    "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs."
+  },
+  {
+    "index": 1522,
+    "type": "method",
+    "url": "sus-num-u8.html#method.wrapping_rem",
+    "name": "wrapping_rem",
+    "full_name": "sus::num::u8::wrapping_rem",
+    "split_name": "sus num u8 wrapping rem",
+    "summary": "Wrapping (modular) remainder. Computes self % rhs. Wrapped remainder calculation on unsigned types is just the regular remainder calculation."
+  },
+  {
+    "index": 1523,
+    "type": "method",
+    "url": "sus-num-u8.html#method.count_ones",
+    "name": "count_ones",
+    "full_name": "sus::num::u8::count_ones",
+    "split_name": "sus num u8 count ones",
+    "summary": "Returns the number of ones in the binary representation of the current value."
+  },
+  {
+    "index": 1524,
+    "type": "method",
+    "url": "sus-num-u8.html#method.div_ceil",
+    "name": "div_ceil",
+    "full_name": "sus::num::u8::div_ceil",
+    "split_name": "sus num u8 div ceil",
+    "summary": "Calculates the quotient of itself and rhs, rounding the result towards positive infinity."
+  },
+  {
+    "index": 1525,
+    "type": "method",
+    "url": "sus-num-u8.html#method.div_euclid",
+    "name": "div_euclid",
+    "full_name": "sus::num::u8::div_euclid",
+    "split_name": "sus num u8 div euclid",
+    "summary": "Performs Euclidean division."
+  },
+  {
+    "index": 1526,
+    "type": "method",
+    "url": "sus-num-u8.html#method.overflowing_div_euclid",
+    "name": "overflowing_div_euclid",
+    "full_name": "sus::num::u8::overflowing_div_euclid",
+    "split_name": "sus num u8 overflowing div euclid",
+    "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
+  },
+  {
+    "index": 1527,
+    "type": "method",
+    "url": "sus-num-u8.html#method.rem_euclid",
+    "name": "rem_euclid",
+    "full_name": "sus::num::u8::rem_euclid",
+    "split_name": "sus num u8 rem euclid",
+    "summary": "Calculates the least remainder of self (mod rhs)."
+  },
+  {
+    "index": 1528,
     "type": "struct",
     "url": "sus-num-u32.html",
     "name": "u32",
@@ -13515,7 +13420,7 @@ const g_search_db = [
     "summary": "A 32-bit unsigned integer."
   },
   {
-    "index": 1540,
+    "index": 1529,
     "type": "field",
     "url": "sus-num-u32.html#field.BITS",
     "name": "BITS",
@@ -13524,7 +13429,7 @@ const g_search_db = [
     "summary": "The size of and u32 in bits."
   },
   {
-    "index": 1541,
+    "index": 1530,
     "type": "field",
     "url": "sus-num-u32.html#field.MIN",
     "name": "MIN",
@@ -13533,7 +13438,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an u32."
   },
   {
-    "index": 1542,
+    "index": 1531,
     "type": "field",
     "url": "sus-num-u32.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -13542,7 +13447,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an u32, as a native C++ primitive."
   },
   {
-    "index": 1543,
+    "index": 1532,
     "type": "field",
     "url": "sus-num-u32.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -13551,7 +13456,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an u32, as a native C++ primitive."
   },
   {
-    "index": 1544,
+    "index": 1533,
     "type": "field",
     "url": "sus-num-u32.html#field.MAX",
     "name": "MAX",
@@ -13560,7 +13465,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an u32."
   },
   {
-    "index": 1545,
+    "index": 1534,
     "type": "field",
     "url": "sus-num-u32.html#field.primitive_value",
     "name": "primitive_value",
@@ -13569,7 +13474,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with uint32_t{n} for a numeric value n."
   },
   {
-    "index": 1546,
+    "index": 1535,
     "type": "constructor",
     "url": "sus-num-u32.html#method.u32.ctor.unsigned.smallenumclass",
     "name": "u32",
@@ -13578,7 +13483,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 1547,
+    "index": 1536,
     "type": "constructor",
     "url": "sus-num-u32.html#method.u32.ctor.unsigned.smallenum",
     "name": "u32",
@@ -13587,7 +13492,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 1548,
+    "index": 1537,
     "type": "constructor",
     "url": "sus-num-u32.html#method.u32.ctor.unsigned.small.primitive",
     "name": "u32",
@@ -13596,7 +13501,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 1549,
+    "index": 1538,
     "type": "constructor",
     "url": "sus-num-u32.html#method.u32.ctor.unsigned.small.typed",
     "name": "u32",
@@ -13605,7 +13510,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 1550,
+    "index": 1539,
     "type": "constructor",
     "url": "sus-num-u32.html#method.u32.ctor.default",
     "name": "u32",
@@ -13614,7 +13519,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 1551,
+    "index": 1540,
     "type": "conversion",
     "url": "sus-num-u32.html#method.operator U",
     "name": "operator U",
@@ -13623,7 +13528,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 1552,
+    "index": 1541,
     "type": "method",
     "url": "sus-num-u32.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -13632,7 +13537,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 1553,
+    "index": 1542,
     "type": "method",
     "url": "sus-num-u32.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -13641,7 +13546,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 1554,
+    "index": 1543,
     "type": "method",
     "url": "sus-num-u32.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -13650,7 +13555,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 1555,
+    "index": 1544,
     "type": "method",
     "url": "sus-num-u32.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -13659,7 +13564,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 1556,
+    "index": 1545,
     "type": "method",
     "url": "sus-num-u32.html#method.to_le",
     "name": "to_le",
@@ -13668,7 +13573,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 1557,
+    "index": 1546,
     "type": "method",
     "url": "sus-num-u32.html#method.to_be",
     "name": "to_be",
@@ -13677,7 +13582,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 1558,
+    "index": 1547,
     "type": "method",
     "url": "sus-num-u32.html#method.from_le",
     "name": "from_le",
@@ -13686,7 +13591,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 1559,
+    "index": 1548,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_next_power_of_two",
     "name": "wrapping_next_power_of_two",
@@ -13695,7 +13600,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1560,
+    "index": 1549,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_next_multiple_of",
     "name": "checked_next_multiple_of",
@@ -13704,7 +13609,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs. Returns None if rhs is zero or the operation would result in overflow."
   },
   {
-    "index": 1561,
+    "index": 1550,
     "type": "method",
     "url": "sus-num-u32.html#method.log10",
     "name": "log10",
@@ -13713,7 +13618,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 1562,
+    "index": 1551,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_log10",
     "name": "checked_log10",
@@ -13722,7 +13627,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 1563,
+    "index": 1552,
     "type": "method",
     "url": "sus-num-u32.html#method.log2",
     "name": "log2",
@@ -13731,7 +13636,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 1564,
+    "index": 1553,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_log2",
     "name": "checked_log2",
@@ -13740,7 +13645,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 1565,
+    "index": 1554,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -13749,7 +13654,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 1566,
+    "index": 1555,
     "type": "method",
     "url": "sus-num-u32.html#method.rotate_left",
     "name": "rotate_left",
@@ -13758,7 +13663,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 1567,
+    "index": 1556,
     "type": "method",
     "url": "sus-num-u32.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -13767,7 +13672,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 1568,
+    "index": 1557,
     "type": "method",
     "url": "sus-num-u32.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -13776,7 +13681,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 1569,
+    "index": 1558,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -13785,7 +13690,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1570,
+    "index": 1559,
     "type": "method",
     "url": "sus-num-u32.html#method.log",
     "name": "log",
@@ -13794,7 +13699,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 1571,
+    "index": 1560,
     "type": "method",
     "url": "sus-num-u32.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -13803,7 +13708,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1572,
+    "index": 1561,
     "type": "method",
     "url": "sus-num-u32.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -13812,7 +13717,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 1573,
+    "index": 1562,
     "type": "method",
     "url": "sus-num-u32.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -13821,7 +13726,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1574,
+    "index": 1563,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -13830,7 +13735,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 1575,
+    "index": 1564,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_sub",
     "name": "checked_sub",
@@ -13839,7 +13744,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 1576,
+    "index": 1565,
     "type": "method",
     "url": "sus-num-u32.html#method.count_zeros",
     "name": "count_zeros",
@@ -13848,7 +13753,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 1577,
+    "index": 1566,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -13857,7 +13762,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 1578,
+    "index": 1567,
     "type": "method",
     "url": "sus-num-u32.html#method.next_power_of_two",
     "name": "next_power_of_two",
@@ -13866,7 +13771,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1579,
+    "index": 1568,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_shr",
     "name": "checked_shr",
@@ -13875,7 +13780,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 1580,
+    "index": 1569,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -13884,7 +13789,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-left; yields self &lt;&lt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 1581,
+    "index": 1570,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -13893,7 +13798,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean modulo. Computes self.rem_euclid(rhs). Wrapped modulo calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 1582,
+    "index": 1571,
     "type": "method",
     "url": "sus-num-u32.html#method.abs_diff",
     "name": "abs_diff",
@@ -13902,7 +13807,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 1583,
+    "index": 1572,
     "type": "method",
     "url": "sus-num-u32.html#method.from_product",
     "name": "from_product",
@@ -13911,7 +13816,7 @@ const g_search_db = [
     "summary": "Constructs a u32 from an Iterator by computing the product of all elements in the iterator."
   },
   {
-    "index": 1584,
+    "index": 1573,
     "type": "method",
     "url": "sus-num-u32.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -13920,7 +13825,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 1585,
+    "index": 1574,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -13929,7 +13834,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 1586,
+    "index": 1575,
     "type": "method",
     "url": "sus-num-u32.html#method.operator>>=",
     "name": "operator>>=",
@@ -13938,7 +13843,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 1587,
+    "index": 1576,
     "type": "method",
     "url": "sus-num-u32.html#method.operator^=",
     "name": "operator^=",
@@ -13947,7 +13852,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 1588,
+    "index": 1577,
     "type": "method",
     "url": "sus-num-u32.html#method.operator|=",
     "name": "operator|=",
@@ -13956,7 +13861,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 1589,
+    "index": 1578,
     "type": "method",
     "url": "sus-num-u32.html#method.from.unsigned.from.unsignedprimitive",
     "name": "from",
@@ -13965,7 +13870,7 @@ const g_search_db = [
     "summary": "Constructs a u32 from an unsigned primitive integer type (unsigned int, unsigned long, etc.) where no bits are lost."
   },
   {
-    "index": 1590,
+    "index": 1579,
     "type": "method",
     "url": "sus-num-u32.html#method.operator/=",
     "name": "operator/=",
@@ -13974,7 +13879,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 1591,
+    "index": 1580,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -13983,7 +13888,7 @@ const g_search_db = [
     "summary": "Calculates the remainder self.rem_euclid(rhs) as if by Euclidean division."
   },
   {
-    "index": 1592,
+    "index": 1581,
     "type": "method",
     "url": "sus-num-u32.html#method.operator*=",
     "name": "operator*=",
@@ -13992,7 +13897,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 1593,
+    "index": 1582,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_div",
     "name": "checked_div",
@@ -14001,7 +13906,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0."
   },
   {
-    "index": 1594,
+    "index": 1583,
     "type": "method",
     "url": "sus-num-u32.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -14010,7 +13915,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 1595,
+    "index": 1584,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -14019,7 +13924,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 1596,
+    "index": 1585,
     "type": "method",
     "url": "sus-num-u32.html#method.operator-=",
     "name": "operator-=",
@@ -14028,7 +13933,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 1597,
+    "index": 1586,
     "type": "method",
     "url": "sus-num-u32.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -14037,7 +13942,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 1598,
+    "index": 1587,
     "type": "method",
     "url": "sus-num-u32.html#method.operator~",
     "name": "operator~",
@@ -14046,7 +13951,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 1599,
+    "index": 1588,
     "type": "method",
     "url": "sus-num-u32.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -14055,7 +13960,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1600,
+    "index": 1589,
     "type": "method",
     "url": "sus-num-u32.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -14064,7 +13969,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1601,
+    "index": 1590,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -14073,7 +13978,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 1602,
+    "index": 1591,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -14082,7 +13987,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 1603,
+    "index": 1592,
     "type": "method",
     "url": "sus-num-u32.html#method.from_sum",
     "name": "from_sum",
@@ -14091,7 +13996,7 @@ const g_search_db = [
     "summary": "Constructs a u32 from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 1604,
+    "index": 1593,
     "type": "method",
     "url": "sus-num-u32.html#method.operator=.assign.unsigned.small.typed",
     "name": "operator=",
@@ -14100,7 +14005,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned types (u8, u16, etc.) where no bits are lost."
   },
   {
-    "index": 1605,
+    "index": 1594,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_add",
     "name": "checked_add",
@@ -14109,7 +14014,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 1606,
+    "index": 1595,
     "type": "method",
     "url": "sus-num-u32.html#method.rotate_right",
     "name": "rotate_right",
@@ -14118,7 +14023,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 1607,
+    "index": 1596,
     "type": "method",
     "url": "sus-num-u32.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -14127,7 +14032,7 @@ const g_search_db = [
     "summary": "Tries to construct a u32 from an unsigned enum type (or enum class)."
   },
   {
-    "index": 1608,
+    "index": 1597,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_log",
     "name": "checked_log",
@@ -14136,7 +14041,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 1609,
+    "index": 1598,
     "type": "method",
     "url": "sus-num-u32.html#method.operator&=",
     "name": "operator&=",
@@ -14145,7 +14050,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 1610,
+    "index": 1599,
     "type": "method",
     "url": "sus-num-u32.html#method.try_from.unsigned",
     "name": "try_from",
@@ -14154,7 +14059,7 @@ const g_search_db = [
     "summary": "Tries to construct a u32 from an unsigned integer type (u8, u16, u32, etc.)."
   },
   {
-    "index": 1611,
+    "index": 1600,
     "type": "method",
     "url": "sus-num-u32.html#method.operator=.assign.unsigned.small.primitive",
     "name": "operator=",
@@ -14163,7 +14068,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned primitive types (unsigned int, unsigned long, etc.) where no bits are lost."
   },
   {
-    "index": 1612,
+    "index": 1601,
     "type": "method",
     "url": "sus-num-u32.html#method.try_from.signed",
     "name": "try_from",
@@ -14172,7 +14077,7 @@ const g_search_db = [
     "summary": "Tries to construct a u32 from a signed integer type (i8, i16, i32, etc.)."
   },
   {
-    "index": 1613,
+    "index": 1602,
     "type": "method",
     "url": "sus-num-u32.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -14181,7 +14086,7 @@ const g_search_db = [
     "summary": "Tries to construct a u32 from a signed primitive integer type ( int, long, etc.)."
   },
   {
-    "index": 1614,
+    "index": 1603,
     "type": "method",
     "url": "sus-num-u32.html#method.saturating_add_signed",
     "name": "saturating_add_signed",
@@ -14190,7 +14095,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with a signed rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1615,
+    "index": 1604,
     "type": "method",
     "url": "sus-num-u32.html#method.try_from",
     "name": "try_from",
@@ -14198,7 +14103,7 @@ const g_search_db = [
     "split_name": "sus num u32 try from"
   },
   {
-    "index": 1616,
+    "index": 1605,
     "type": "method",
     "url": "sus-num-u32.html#method.from.unsigned.from.unsigned",
     "name": "from",
@@ -14207,7 +14112,7 @@ const g_search_db = [
     "summary": "Constructs a u32 from an unsigned integer type (u8, u16, u32, etc.) where no bits are lost."
   },
   {
-    "index": 1617,
+    "index": 1606,
     "type": "method",
     "url": "sus-num-u32.html#method.from.unsigned.from.unsignedenum",
     "name": "from",
@@ -14216,7 +14121,7 @@ const g_search_db = [
     "summary": "Constructs a u32 from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 1618,
+    "index": 1607,
     "type": "method",
     "url": "sus-num-u32.html#method.operator+=",
     "name": "operator+=",
@@ -14225,7 +14130,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 1619,
+    "index": 1608,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_mul",
     "name": "checked_mul",
@@ -14234,7 +14139,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 1620,
+    "index": 1609,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -14243,7 +14148,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs. Wrapped division on unsigned types is just normal division. There's no way wrapping could ever happen. This function exists, so that all operations are accounted for in the wrapping operations."
   },
   {
-    "index": 1621,
+    "index": 1610,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -14252,7 +14157,7 @@ const g_search_db = [
     "summary": "Checked Euclidean modulo. Computes self.rem_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 1622,
+    "index": 1611,
     "type": "method",
     "url": "sus-num-u32.html#method.from_be",
     "name": "from_be",
@@ -14261,7 +14166,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 1623,
+    "index": 1612,
     "type": "method",
     "url": "sus-num-u32.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -14270,7 +14175,7 @@ const g_search_db = [
     "summary": "Tries to construct a u32 from a signed enum type (or enum class)."
   },
   {
-    "index": 1624,
+    "index": 1613,
     "type": "method",
     "url": "sus-num-u32.html#method.as_ptr",
     "name": "as_ptr",
@@ -14279,7 +14184,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1625,
+    "index": 1614,
     "type": "method",
     "url": "sus-num-u32.html#method.operator<<=",
     "name": "operator<<=",
@@ -14288,7 +14193,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 1626,
+    "index": 1615,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -14297,7 +14202,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 1627,
+    "index": 1616,
     "type": "method",
     "url": "sus-num-u32.html#method.pow",
     "name": "pow",
@@ -14306,7 +14211,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 1628,
+    "index": 1617,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_shl",
     "name": "checked_shl",
@@ -14315,7 +14220,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 1629,
+    "index": 1618,
     "type": "method",
     "url": "sus-num-u32.html#method.operator=.assign.unsigned.smallenum",
     "name": "operator=",
@@ -14324,7 +14229,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned enum types where no bits are lost."
   },
   {
-    "index": 1630,
+    "index": 1619,
     "type": "method",
     "url": "sus-num-u32.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -14333,7 +14238,7 @@ const g_search_db = [
     "summary": "Tries to construct a u32 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 1631,
+    "index": 1620,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_add_signed",
     "name": "checked_add_signed",
@@ -14342,7 +14247,7 @@ const g_search_db = [
     "summary": "Checked integer addition with a signed rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 1632,
+    "index": 1621,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -14351,7 +14256,7 @@ const g_search_db = [
     "summary": "Negates self in an overflowing fashion."
   },
   {
-    "index": 1633,
+    "index": 1622,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_next_power_of_two",
     "name": "checked_next_power_of_two",
@@ -14360,7 +14265,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1634,
+    "index": 1623,
     "type": "method",
     "url": "sus-num-u32.html#method.operator%=",
     "name": "operator%=",
@@ -14369,7 +14274,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 1635,
+    "index": 1624,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_add_signed",
     "name": "overflowing_add_signed",
@@ -14378,7 +14283,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with a signed rhs."
   },
   {
-    "index": 1636,
+    "index": 1625,
     "type": "method",
     "url": "sus-num-u32.html#method.leading_ones",
     "name": "leading_ones",
@@ -14387,7 +14292,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 1637,
+    "index": 1626,
     "type": "method",
     "url": "sus-num-u32.html#method.saturating_add",
     "name": "saturating_add",
@@ -14396,7 +14301,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1638,
+    "index": 1627,
     "type": "method",
     "url": "sus-num-u32.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -14405,7 +14310,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1639,
+    "index": 1628,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_pow",
     "name": "checked_pow",
@@ -14414,7 +14319,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 1640,
+    "index": 1629,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -14423,7 +14328,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1641,
+    "index": 1630,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_add_signed",
     "name": "wrapping_add_signed",
@@ -14432,7 +14337,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1642,
+    "index": 1631,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_rem",
     "name": "checked_rem",
@@ -14441,7 +14346,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0."
   },
   {
-    "index": 1643,
+    "index": 1632,
     "type": "method",
     "url": "sus-num-u32.html#method.is_power_of_two",
     "name": "is_power_of_two",
@@ -14450,7 +14355,7 @@ const g_search_db = [
     "summary": "Returns true if and only if self == 2^k for some k."
   },
   {
-    "index": 1644,
+    "index": 1633,
     "type": "method",
     "url": "sus-num-u32.html#method.saturating_div",
     "name": "saturating_div",
@@ -14459,7 +14364,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing. Note that for unsigned integers overflow never occurs, so the value will always be strictly the result of division."
   },
   {
-    "index": 1645,
+    "index": 1634,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -14468,7 +14373,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 1646,
+    "index": 1635,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -14477,7 +14382,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 1647,
+    "index": 1636,
     "type": "method",
     "url": "sus-num-u32.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -14486,7 +14391,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1648,
+    "index": 1637,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -14495,7 +14400,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1649,
+    "index": 1638,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -14504,7 +14409,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 1650,
+    "index": 1639,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -14513,7 +14418,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs). Wrapped division on unsigned types is just normal division."
   },
   {
-    "index": 1651,
+    "index": 1640,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_neg",
     "name": "checked_neg",
@@ -14522,7 +14427,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None unless self == 0."
   },
   {
-    "index": 1652,
+    "index": 1641,
     "type": "method",
     "url": "sus-num-u32.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -14531,7 +14436,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 1653,
+    "index": 1642,
     "type": "method",
     "url": "sus-num-u32.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -14540,7 +14445,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 1654,
+    "index": 1643,
     "type": "method",
     "url": "sus-num-u32.html#method.next_multiple_of",
     "name": "next_multiple_of",
@@ -14549,7 +14454,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs."
   },
   {
-    "index": 1655,
+    "index": 1644,
     "type": "method",
     "url": "sus-num-u32.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -14558,7 +14463,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs. Wrapped remainder calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 1656,
+    "index": 1645,
     "type": "method",
     "url": "sus-num-u32.html#method.count_ones",
     "name": "count_ones",
@@ -14567,7 +14472,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 1657,
+    "index": 1646,
     "type": "method",
     "url": "sus-num-u32.html#method.div_ceil",
     "name": "div_ceil",
@@ -14576,7 +14481,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of itself and rhs, rounding the result towards positive infinity."
   },
   {
-    "index": 1658,
+    "index": 1647,
     "type": "method",
     "url": "sus-num-u32.html#method.div_euclid",
     "name": "div_euclid",
@@ -14585,7 +14490,7 @@ const g_search_db = [
     "summary": "Performs Euclidean division."
   },
   {
-    "index": 1659,
+    "index": 1648,
     "type": "method",
     "url": "sus-num-u32.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -14594,7 +14499,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 1660,
+    "index": 1649,
     "type": "method",
     "url": "sus-num-u32.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -14603,7 +14508,7 @@ const g_search_db = [
     "summary": "Calculates the least remainder of self (mod rhs)."
   },
   {
-    "index": 1661,
+    "index": 1650,
     "type": "struct",
     "url": "sus-num-i16.html",
     "name": "i16",
@@ -14612,7 +14517,7 @@ const g_search_db = [
     "summary": "A 16-bit signed integer."
   },
   {
-    "index": 1662,
+    "index": 1651,
     "type": "field",
     "url": "sus-num-i16.html#field.MAX",
     "name": "MAX",
@@ -14621,7 +14526,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an i16."
   },
   {
-    "index": 1663,
+    "index": 1652,
     "type": "field",
     "url": "sus-num-i16.html#field.MIN",
     "name": "MIN",
@@ -14630,7 +14535,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an i16."
   },
   {
-    "index": 1664,
+    "index": 1653,
     "type": "field",
     "url": "sus-num-i16.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -14639,7 +14544,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an i16, as a native C++ primitive."
   },
   {
-    "index": 1665,
+    "index": 1654,
     "type": "field",
     "url": "sus-num-i16.html#field.BITS",
     "name": "BITS",
@@ -14648,7 +14553,7 @@ const g_search_db = [
     "summary": "The size of and i16 in bits."
   },
   {
-    "index": 1666,
+    "index": 1655,
     "type": "field",
     "url": "sus-num-i16.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -14657,7 +14562,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an i16, as a native C++ primitive."
   },
   {
-    "index": 1667,
+    "index": 1656,
     "type": "field",
     "url": "sus-num-i16.html#field.primitive_value",
     "name": "primitive_value",
@@ -14666,7 +14571,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with int32_t{n} for a numeric value n."
   },
   {
-    "index": 1668,
+    "index": 1657,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16.signedint.ctor.unsignedint.typed",
     "name": "i16",
@@ -14675,7 +14580,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 1669,
+    "index": 1658,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16.signedint.ctor.unsignedenumclass",
     "name": "i16",
@@ -14684,7 +14589,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 1670,
+    "index": 1659,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16.signedint.ctor.signedenumclass",
     "name": "i16",
@@ -14693,7 +14598,7 @@ const g_search_db = [
     "summary": "Construction from signed enum class types where no bits are lost."
   },
   {
-    "index": 1671,
+    "index": 1660,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16.signedint.ctor.signedenum",
     "name": "i16",
@@ -14702,7 +14607,7 @@ const g_search_db = [
     "summary": "Construction from signed enum types where no bits are lost."
   },
   {
-    "index": 1672,
+    "index": 1661,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16.signedint.ctor.signedint.primitive",
     "name": "i16",
@@ -14711,7 +14616,7 @@ const g_search_db = [
     "summary": "Construction from signed primitive types where no bits are lost."
   },
   {
-    "index": 1673,
+    "index": 1662,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16.signedint.ctor.unsignedint.primitive",
     "name": "i16",
@@ -14720,7 +14625,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 1674,
+    "index": 1663,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16.signedint.ctor.signedint.typed",
     "name": "i16",
@@ -14729,7 +14634,7 @@ const g_search_db = [
     "summary": "Construction from signed types where no bits are lost."
   },
   {
-    "index": 1675,
+    "index": 1664,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16.signedint.ctor.unsignedenum",
     "name": "i16",
@@ -14738,7 +14643,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 1676,
+    "index": 1665,
     "type": "constructor",
     "url": "sus-num-i16.html#method.i16",
     "name": "i16",
@@ -14747,7 +14652,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 1677,
+    "index": 1666,
     "type": "conversion",
     "url": "sus-num-i16.html#method.operator U",
     "name": "operator U",
@@ -14756,7 +14661,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 1678,
+    "index": 1667,
     "type": "method",
     "url": "sus-num-i16.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -14765,7 +14670,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 1679,
+    "index": 1668,
     "type": "method",
     "url": "sus-num-i16.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -14774,7 +14679,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 1680,
+    "index": 1669,
     "type": "method",
     "url": "sus-num-i16.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -14783,7 +14688,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 1681,
+    "index": 1670,
     "type": "method",
     "url": "sus-num-i16.html#method.to_le",
     "name": "to_le",
@@ -14792,7 +14697,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 1682,
+    "index": 1671,
     "type": "method",
     "url": "sus-num-i16.html#method.to_be",
     "name": "to_be",
@@ -14801,7 +14706,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 1683,
+    "index": 1672,
     "type": "method",
     "url": "sus-num-i16.html#method.from_le",
     "name": "from_le",
@@ -14810,7 +14715,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 1684,
+    "index": 1673,
     "type": "method",
     "url": "sus-num-i16.html#method.log10",
     "name": "log10",
@@ -14819,7 +14724,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 1685,
+    "index": 1674,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_log10",
     "name": "checked_log10",
@@ -14828,7 +14733,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 1686,
+    "index": 1675,
     "type": "method",
     "url": "sus-num-i16.html#method.log2",
     "name": "log2",
@@ -14837,7 +14742,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 1687,
+    "index": 1676,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_log2",
     "name": "checked_log2",
@@ -14846,7 +14751,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 1688,
+    "index": 1677,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -14855,7 +14760,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 1689,
+    "index": 1678,
     "type": "method",
     "url": "sus-num-i16.html#method.rotate_left",
     "name": "rotate_left",
@@ -14864,7 +14769,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 1690,
+    "index": 1679,
     "type": "method",
     "url": "sus-num-i16.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -14873,7 +14778,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 1691,
+    "index": 1680,
     "type": "method",
     "url": "sus-num-i16.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -14882,7 +14787,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 1692,
+    "index": 1681,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_sub_unsigned",
     "name": "wrapping_sub_unsigned",
@@ -14891,7 +14796,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction with an unsigned rhs. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1693,
+    "index": 1682,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -14900,7 +14805,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1694,
+    "index": 1683,
     "type": "method",
     "url": "sus-num-i16.html#method.log",
     "name": "log",
@@ -14909,7 +14814,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 1695,
+    "index": 1684,
     "type": "method",
     "url": "sus-num-i16.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -14918,7 +14823,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1696,
+    "index": 1685,
     "type": "method",
     "url": "sus-num-i16.html#method.saturating_sub_unsigned",
     "name": "saturating_sub_unsigned",
@@ -14927,7 +14832,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction with an unsigned rhs. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1697,
+    "index": 1686,
     "type": "method",
     "url": "sus-num-i16.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -14936,7 +14841,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 1698,
+    "index": 1687,
     "type": "method",
     "url": "sus-num-i16.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -14945,7 +14850,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1699,
+    "index": 1688,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -14954,7 +14859,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 1700,
+    "index": 1689,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_sub_unsigned",
     "name": "checked_sub_unsigned",
@@ -14963,7 +14868,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction with an unsigned rhs. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 1701,
+    "index": 1690,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_sub",
     "name": "checked_sub",
@@ -14972,7 +14877,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 1702,
+    "index": 1691,
     "type": "method",
     "url": "sus-num-i16.html#method.count_zeros",
     "name": "count_zeros",
@@ -14981,7 +14886,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 1703,
+    "index": 1692,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -14990,7 +14895,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 1704,
+    "index": 1693,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -14999,7 +14904,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 1705,
+    "index": 1694,
     "type": "method",
     "url": "sus-num-i16.html#method.pow",
     "name": "pow",
@@ -15008,7 +14913,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 1706,
+    "index": 1695,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_shl",
     "name": "checked_shl",
@@ -15017,7 +14922,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 1707,
+    "index": 1696,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -15026,7 +14931,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean remainder. Computes self.rem_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 1708,
+    "index": 1697,
     "type": "method",
     "url": "sus-num-i16.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -15035,7 +14940,7 @@ const g_search_db = [
     "summary": "Calculates the least nonnegative remainder of self (mod rhs)."
   },
   {
-    "index": 1709,
+    "index": 1698,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -15044,7 +14949,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 1710,
+    "index": 1699,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -15053,7 +14958,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 1711,
+    "index": 1700,
     "type": "method",
     "url": "sus-num-i16.html#method.div_euclid",
     "name": "div_euclid",
@@ -15062,7 +14967,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division of self by rhs."
   },
   {
-    "index": 1712,
+    "index": 1701,
     "type": "method",
     "url": "sus-num-i16.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -15071,7 +14976,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 1713,
+    "index": 1702,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -15080,7 +14985,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1714,
+    "index": 1703,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -15089,7 +14994,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 1715,
+    "index": 1704,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -15098,7 +15003,7 @@ const g_search_db = [
     "summary": "Negates self, overflowing if this is equal to the minimum value."
   },
   {
-    "index": 1716,
+    "index": 1705,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_neg",
     "name": "checked_neg",
@@ -15107,7 +15012,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None if self == MIN."
   },
   {
-    "index": 1717,
+    "index": 1706,
     "type": "method",
     "url": "sus-num-i16.html#method.operator/=",
     "name": "operator/=",
@@ -15116,7 +15021,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 1718,
+    "index": 1707,
     "type": "method",
     "url": "sus-num-i16.html#method.from.signedint.from.unsignedenum",
     "name": "from",
@@ -15125,7 +15030,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 1719,
+    "index": 1708,
     "type": "method",
     "url": "sus-num-i16.html#method.operator=.signedint.assign.signedint.typed",
     "name": "operator=",
@@ -15134,7 +15039,7 @@ const g_search_db = [
     "summary": "Assignment from signed types where no bits are lost."
   },
   {
-    "index": 1720,
+    "index": 1709,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -15143,7 +15048,7 @@ const g_search_db = [
     "summary": "Overflowing Euclidean remainder. Calculates self.rem_euclid(rhs)."
   },
   {
-    "index": 1721,
+    "index": 1710,
     "type": "method",
     "url": "sus-num-i16.html#method.operator*=",
     "name": "operator*=",
@@ -15152,7 +15057,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 1722,
+    "index": 1711,
     "type": "method",
     "url": "sus-num-i16.html#method.is_negative",
     "name": "is_negative",
@@ -15161,7 +15066,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is positive and false if the number is zero or negative."
   },
   {
-    "index": 1723,
+    "index": 1712,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_div",
     "name": "checked_div",
@@ -15170,7 +15075,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 1724,
+    "index": 1713,
     "type": "method",
     "url": "sus-num-i16.html#method.operator+=",
     "name": "operator+=",
@@ -15179,7 +15084,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 1725,
+    "index": 1714,
     "type": "method",
     "url": "sus-num-i16.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -15188,7 +15093,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 1726,
+    "index": 1715,
     "type": "method",
     "url": "sus-num-i16.html#method.operator=.signedint.assign.signedint.primitive",
     "name": "operator=",
@@ -15197,7 +15102,7 @@ const g_search_db = [
     "summary": "Assignment from signed primitive types where no bits are lost."
   },
   {
-    "index": 1727,
+    "index": 1716,
     "type": "method",
     "url": "sus-num-i16.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -15206,7 +15111,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 1728,
+    "index": 1717,
     "type": "method",
     "url": "sus-num-i16.html#method.operator~",
     "name": "operator~",
@@ -15215,7 +15120,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 1729,
+    "index": 1718,
     "type": "method",
     "url": "sus-num-i16.html#method.operator%=",
     "name": "operator%=",
@@ -15224,7 +15129,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 1730,
+    "index": 1719,
     "type": "method",
     "url": "sus-num-i16.html#method.signum",
     "name": "signum",
@@ -15233,7 +15138,7 @@ const g_search_db = [
     "summary": "Returns a number representing sign of the current value."
   },
   {
-    "index": 1731,
+    "index": 1720,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -15242,7 +15147,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 1732,
+    "index": 1721,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -15251,7 +15156,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 1733,
+    "index": 1722,
     "type": "method",
     "url": "sus-num-i16.html#method.from_sum",
     "name": "from_sum",
@@ -15260,7 +15165,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 1734,
+    "index": 1723,
     "type": "method",
     "url": "sus-num-i16.html#method.from.from.signed.prim",
     "name": "from",
@@ -15269,7 +15174,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from a signed primitive integer type (int, long, etc) where no bits are lost."
   },
   {
-    "index": 1735,
+    "index": 1724,
     "type": "method",
     "url": "sus-num-i16.html#method.from.from.signed",
     "name": "from",
@@ -15278,7 +15183,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from a signed integer type (i8, i16, i32, etc) where no bits are lost."
   },
   {
-    "index": 1736,
+    "index": 1725,
     "type": "method",
     "url": "sus-num-i16.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -15287,7 +15192,7 @@ const g_search_db = [
     "summary": "Tries to construct a i16 from a signed primitive integer type (int, long, etc)."
   },
   {
-    "index": 1737,
+    "index": 1726,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_rem",
     "name": "checked_rem",
@@ -15296,7 +15201,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 1738,
+    "index": 1727,
     "type": "method",
     "url": "sus-num-i16.html#method.from.from.unsigned",
     "name": "from",
@@ -15305,7 +15210,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from an unsigned integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 1739,
+    "index": 1728,
     "type": "method",
     "url": "sus-num-i16.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -15314,7 +15219,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1740,
+    "index": 1729,
     "type": "method",
     "url": "sus-num-i16.html#method.from.signedint.from.signedenum",
     "name": "from",
@@ -15323,7 +15228,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from a signed enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 1741,
+    "index": 1730,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_shr",
     "name": "checked_shr",
@@ -15332,7 +15237,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 1742,
+    "index": 1731,
     "type": "method",
     "url": "sus-num-i16.html#method.operator-",
     "name": "operator-",
@@ -15341,7 +15246,7 @@ const g_search_db = [
     "summary": "Computes the negation of the current value."
   },
   {
-    "index": 1743,
+    "index": 1732,
     "type": "method",
     "url": "sus-num-i16.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -15350,7 +15255,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1744,
+    "index": 1733,
     "type": "method",
     "url": "sus-num-i16.html#method.rotate_right",
     "name": "rotate_right",
@@ -15359,7 +15264,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 1745,
+    "index": 1734,
     "type": "method",
     "url": "sus-num-i16.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -15368,7 +15273,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from an unsigned enum type (or enum class)."
   },
   {
-    "index": 1746,
+    "index": 1735,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_add",
     "name": "checked_add",
@@ -15377,7 +15282,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 1747,
+    "index": 1736,
     "type": "method",
     "url": "sus-num-i16.html#method.from.from.unsigned.prim",
     "name": "from",
@@ -15386,7 +15291,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from an unsigned primitive integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 1748,
+    "index": 1737,
     "type": "method",
     "url": "sus-num-i16.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -15395,7 +15300,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1749,
+    "index": 1738,
     "type": "method",
     "url": "sus-num-i16.html#method.is_positive",
     "name": "is_positive",
@@ -15404,7 +15309,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is negative and false if the number is zero or positive."
   },
   {
-    "index": 1750,
+    "index": 1739,
     "type": "method",
     "url": "sus-num-i16.html#method.from_be",
     "name": "from_be",
@@ -15413,7 +15318,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 1751,
+    "index": 1740,
     "type": "method",
     "url": "sus-num-i16.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -15422,7 +15327,7 @@ const g_search_db = [
     "summary": "Tries to construct a i16 from a signed enum type (or enum class)."
   },
   {
-    "index": 1752,
+    "index": 1741,
     "type": "method",
     "url": "sus-num-i16.html#method.from_product",
     "name": "from_product",
@@ -15431,7 +15336,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from an Iterator by computing the product of all elements in the itertor."
   },
   {
-    "index": 1753,
+    "index": 1742,
     "type": "method",
     "url": "sus-num-i16.html#method.abs_diff",
     "name": "abs_diff",
@@ -15440,7 +15345,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 1754,
+    "index": 1743,
     "type": "method",
     "url": "sus-num-i16.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -15449,7 +15354,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 1755,
+    "index": 1744,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -15458,7 +15363,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 1756,
+    "index": 1745,
     "type": "method",
     "url": "sus-num-i16.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -15467,7 +15372,7 @@ const g_search_db = [
     "summary": "Constructs a i16 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 1757,
+    "index": 1746,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_log",
     "name": "checked_log",
@@ -15476,7 +15381,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 1758,
+    "index": 1747,
     "type": "method",
     "url": "sus-num-i16.html#method.try_from.unsigned",
     "name": "try_from",
@@ -15485,7 +15390,7 @@ const g_search_db = [
     "summary": "Try to construct a i16 from an unsigned integer type (u8, u16, u32, etc)."
   },
   {
-    "index": 1759,
+    "index": 1748,
     "type": "method",
     "url": "sus-num-i16.html#method.operator&=",
     "name": "operator&=",
@@ -15494,7 +15399,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 1760,
+    "index": 1749,
     "type": "method",
     "url": "sus-num-i16.html#method.operator^=",
     "name": "operator^=",
@@ -15503,7 +15408,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 1761,
+    "index": 1750,
     "type": "method",
     "url": "sus-num-i16.html#method.try_from.signed",
     "name": "try_from",
@@ -15512,7 +15417,7 @@ const g_search_db = [
     "summary": "Try to construct a i16 from a signed integer type (i8, i16, i32, etc)."
   },
   {
-    "index": 1762,
+    "index": 1751,
     "type": "method",
     "url": "sus-num-i16.html#method.abs",
     "name": "abs",
@@ -15521,7 +15426,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of itself."
   },
   {
-    "index": 1763,
+    "index": 1752,
     "type": "method",
     "url": "sus-num-i16.html#method.operator|=",
     "name": "operator|=",
@@ -15530,7 +15435,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 1764,
+    "index": 1753,
     "type": "method",
     "url": "sus-num-i16.html#method.as_ptr",
     "name": "as_ptr",
@@ -15539,7 +15444,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1765,
+    "index": 1754,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_abs",
     "name": "wrapping_abs",
@@ -15548,7 +15453,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) absolute value. Computes abs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1766,
+    "index": 1755,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_add_unsigned",
     "name": "checked_add_unsigned",
@@ -15557,7 +15462,7 @@ const g_search_db = [
     "summary": "Checked integer addition with an unsigned rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 1767,
+    "index": 1756,
     "type": "method",
     "url": "sus-num-i16.html#method.operator<<=",
     "name": "operator<<=",
@@ -15566,7 +15471,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 1768,
+    "index": 1757,
     "type": "method",
     "url": "sus-num-i16.html#method.operator>>=",
     "name": "operator>>=",
@@ -15575,7 +15480,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 1769,
+    "index": 1758,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -15584,7 +15489,7 @@ const g_search_db = [
     "summary": "Checked Euclidean remainder. Computes self.rem_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 1770,
+    "index": 1759,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -15593,7 +15498,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1771,
+    "index": 1760,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_mul",
     "name": "checked_mul",
@@ -15602,7 +15507,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 1772,
+    "index": 1761,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -15611,7 +15516,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 1773,
+    "index": 1762,
     "type": "method",
     "url": "sus-num-i16.html#method.saturating_neg",
     "name": "saturating_neg",
@@ -15620,7 +15525,7 @@ const g_search_db = [
     "summary": "Saturating integer negation. Computes -self, returning MAX if self == MIN instead of overflowing."
   },
   {
-    "index": 1774,
+    "index": 1763,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_abs",
     "name": "checked_abs",
@@ -15629,7 +15534,7 @@ const g_search_db = [
     "summary": "Checked absolute value. Computes abs, returning None if the current value is MIN."
   },
   {
-    "index": 1775,
+    "index": 1764,
     "type": "method",
     "url": "sus-num-i16.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -15638,7 +15543,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 1776,
+    "index": 1765,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -15647,7 +15552,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 1777,
+    "index": 1766,
     "type": "method",
     "url": "sus-num-i16.html#method.operator-=",
     "name": "operator-=",
@@ -15656,7 +15561,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 1778,
+    "index": 1767,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_abs",
     "name": "overflowing_abs",
@@ -15665,7 +15570,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self."
   },
   {
-    "index": 1779,
+    "index": 1768,
     "type": "method",
     "url": "sus-num-i16.html#method.saturating_abs",
     "name": "saturating_abs",
@@ -15674,7 +15579,7 @@ const g_search_db = [
     "summary": "Saturating absolute value. Computes abs, returning MAX if the current value is MIN instead of overflowing."
   },
   {
-    "index": 1780,
+    "index": 1769,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -15683,7 +15588,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 1781,
+    "index": 1770,
     "type": "method",
     "url": "sus-num-i16.html#method.unsigned_abs",
     "name": "unsigned_abs",
@@ -15692,7 +15597,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self without any wrapping or panicking."
   },
   {
-    "index": 1782,
+    "index": 1771,
     "type": "method",
     "url": "sus-num-i16.html#method.count_ones",
     "name": "count_ones",
@@ -15701,7 +15606,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 1783,
+    "index": 1772,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_add_unsigned",
     "name": "overflowing_add_unsigned",
@@ -15710,7 +15615,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with an unsigned rhs."
   },
   {
-    "index": 1784,
+    "index": 1773,
     "type": "method",
     "url": "sus-num-i16.html#method.leading_ones",
     "name": "leading_ones",
@@ -15719,7 +15624,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 1785,
+    "index": 1774,
     "type": "method",
     "url": "sus-num-i16.html#method.saturating_add",
     "name": "saturating_add",
@@ -15728,7 +15633,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1786,
+    "index": 1775,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_sub_unsigned",
     "name": "overflowing_sub_unsigned",
@@ -15737,7 +15642,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs with an unsigned rhs."
   },
   {
-    "index": 1787,
+    "index": 1776,
     "type": "method",
     "url": "sus-num-i16.html#method.saturating_add_unsigned",
     "name": "saturating_add_unsigned",
@@ -15746,7 +15651,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with an unsigned rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1788,
+    "index": 1777,
     "type": "method",
     "url": "sus-num-i16.html#method.operator=.signedint.assign.signedenum",
     "name": "operator=",
@@ -15755,7 +15660,7 @@ const g_search_db = [
     "summary": "Assignment from signed enum types where no bits are lost."
   },
   {
-    "index": 1789,
+    "index": 1778,
     "type": "method",
     "url": "sus-num-i16.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -15764,7 +15669,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1790,
+    "index": 1779,
     "type": "method",
     "url": "sus-num-i16.html#method.checked_pow",
     "name": "checked_pow",
@@ -15773,7 +15678,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 1791,
+    "index": 1780,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -15782,7 +15687,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1792,
+    "index": 1781,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -15791,7 +15696,7 @@ const g_search_db = [
     "summary": "what you want instead."
   },
   {
-    "index": 1793,
+    "index": 1782,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_add_unsigned",
     "name": "wrapping_add_unsigned",
@@ -15800,7 +15705,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1794,
+    "index": 1783,
     "type": "method",
     "url": "sus-num-i16.html#method.saturating_div",
     "name": "saturating_div",
@@ -15809,7 +15714,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1795,
+    "index": 1784,
     "type": "method",
     "url": "sus-num-i16.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -15818,7 +15723,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 1796,
+    "index": 1785,
     "type": "method",
     "url": "sus-num-i16.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -15827,7 +15732,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1797,
+    "index": 1786,
     "type": "struct",
     "url": "sus-num-u16.html",
     "name": "u16",
@@ -15836,7 +15741,7 @@ const g_search_db = [
     "summary": "A 16-bit unsigned integer."
   },
   {
-    "index": 1798,
+    "index": 1787,
     "type": "field",
     "url": "sus-num-u16.html#field.BITS",
     "name": "BITS",
@@ -15845,7 +15750,7 @@ const g_search_db = [
     "summary": "The size of and u16 in bits."
   },
   {
-    "index": 1799,
+    "index": 1788,
     "type": "field",
     "url": "sus-num-u16.html#field.MAX",
     "name": "MAX",
@@ -15854,7 +15759,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an u16."
   },
   {
-    "index": 1800,
+    "index": 1789,
     "type": "field",
     "url": "sus-num-u16.html#field.MIN",
     "name": "MIN",
@@ -15863,7 +15768,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an u16."
   },
   {
-    "index": 1801,
+    "index": 1790,
     "type": "field",
     "url": "sus-num-u16.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -15872,7 +15777,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an u16, as a native C++ primitive."
   },
   {
-    "index": 1802,
+    "index": 1791,
     "type": "field",
     "url": "sus-num-u16.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -15881,7 +15786,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an u16, as a native C++ primitive."
   },
   {
-    "index": 1803,
+    "index": 1792,
     "type": "field",
     "url": "sus-num-u16.html#field.primitive_value",
     "name": "primitive_value",
@@ -15890,7 +15795,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with uint32_t{n} for a numeric value n."
   },
   {
-    "index": 1804,
+    "index": 1793,
     "type": "constructor",
     "url": "sus-num-u16.html#method.u16.ctor.unsigned.smallenumclass",
     "name": "u16",
@@ -15899,7 +15804,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 1805,
+    "index": 1794,
     "type": "constructor",
     "url": "sus-num-u16.html#method.u16.ctor.unsigned.smallenum",
     "name": "u16",
@@ -15908,7 +15813,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 1806,
+    "index": 1795,
     "type": "constructor",
     "url": "sus-num-u16.html#method.u16.ctor.unsigned.small.primitive",
     "name": "u16",
@@ -15917,7 +15822,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 1807,
+    "index": 1796,
     "type": "constructor",
     "url": "sus-num-u16.html#method.u16.ctor.unsigned.small.typed",
     "name": "u16",
@@ -15926,7 +15831,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 1808,
+    "index": 1797,
     "type": "constructor",
     "url": "sus-num-u16.html#method.u16.ctor.default",
     "name": "u16",
@@ -15935,7 +15840,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 1809,
+    "index": 1798,
     "type": "conversion",
     "url": "sus-num-u16.html#method.operator U",
     "name": "operator U",
@@ -15944,7 +15849,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 1810,
+    "index": 1799,
     "type": "method",
     "url": "sus-num-u16.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -15953,7 +15858,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 1811,
+    "index": 1800,
     "type": "method",
     "url": "sus-num-u16.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -15962,7 +15867,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 1812,
+    "index": 1801,
     "type": "method",
     "url": "sus-num-u16.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -15971,7 +15876,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 1813,
+    "index": 1802,
     "type": "method",
     "url": "sus-num-u16.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -15980,7 +15885,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 1814,
+    "index": 1803,
     "type": "method",
     "url": "sus-num-u16.html#method.to_le",
     "name": "to_le",
@@ -15989,7 +15894,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 1815,
+    "index": 1804,
     "type": "method",
     "url": "sus-num-u16.html#method.to_be",
     "name": "to_be",
@@ -15998,7 +15903,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 1816,
+    "index": 1805,
     "type": "method",
     "url": "sus-num-u16.html#method.from_le",
     "name": "from_le",
@@ -16007,7 +15912,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 1817,
+    "index": 1806,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_next_power_of_two",
     "name": "wrapping_next_power_of_two",
@@ -16016,7 +15921,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1818,
+    "index": 1807,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_next_multiple_of",
     "name": "checked_next_multiple_of",
@@ -16025,7 +15930,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs. Returns None if rhs is zero or the operation would result in overflow."
   },
   {
-    "index": 1819,
+    "index": 1808,
     "type": "method",
     "url": "sus-num-u16.html#method.log10",
     "name": "log10",
@@ -16034,7 +15939,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 1820,
+    "index": 1809,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_log10",
     "name": "checked_log10",
@@ -16043,7 +15948,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 1821,
+    "index": 1810,
     "type": "method",
     "url": "sus-num-u16.html#method.log2",
     "name": "log2",
@@ -16052,7 +15957,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 1822,
+    "index": 1811,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_log2",
     "name": "checked_log2",
@@ -16061,7 +15966,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 1823,
+    "index": 1812,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -16070,7 +15975,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 1824,
+    "index": 1813,
     "type": "method",
     "url": "sus-num-u16.html#method.rotate_left",
     "name": "rotate_left",
@@ -16079,7 +15984,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 1825,
+    "index": 1814,
     "type": "method",
     "url": "sus-num-u16.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -16088,7 +15993,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 1826,
+    "index": 1815,
     "type": "method",
     "url": "sus-num-u16.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -16097,7 +16002,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 1827,
+    "index": 1816,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -16106,7 +16011,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1828,
+    "index": 1817,
     "type": "method",
     "url": "sus-num-u16.html#method.log",
     "name": "log",
@@ -16115,7 +16020,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 1829,
+    "index": 1818,
     "type": "method",
     "url": "sus-num-u16.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -16124,7 +16029,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1830,
+    "index": 1819,
     "type": "method",
     "url": "sus-num-u16.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -16133,7 +16038,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 1831,
+    "index": 1820,
     "type": "method",
     "url": "sus-num-u16.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -16142,7 +16047,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1832,
+    "index": 1821,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -16151,7 +16056,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 1833,
+    "index": 1822,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_sub",
     "name": "checked_sub",
@@ -16160,7 +16065,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 1834,
+    "index": 1823,
     "type": "method",
     "url": "sus-num-u16.html#method.count_zeros",
     "name": "count_zeros",
@@ -16169,7 +16074,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 1835,
+    "index": 1824,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -16178,7 +16083,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 1836,
+    "index": 1825,
     "type": "method",
     "url": "sus-num-u16.html#method.next_power_of_two",
     "name": "next_power_of_two",
@@ -16187,7 +16092,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1837,
+    "index": 1826,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_shr",
     "name": "checked_shr",
@@ -16196,7 +16101,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 1838,
+    "index": 1827,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -16205,7 +16110,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-left; yields self &lt;&lt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 1839,
+    "index": 1828,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -16214,7 +16119,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean modulo. Computes self.rem_euclid(rhs). Wrapped modulo calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 1840,
+    "index": 1829,
     "type": "method",
     "url": "sus-num-u16.html#method.abs_diff",
     "name": "abs_diff",
@@ -16223,7 +16128,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 1841,
+    "index": 1830,
     "type": "method",
     "url": "sus-num-u16.html#method.from_product",
     "name": "from_product",
@@ -16232,7 +16137,7 @@ const g_search_db = [
     "summary": "Constructs a u16 from an Iterator by computing the product of all elements in the iterator."
   },
   {
-    "index": 1842,
+    "index": 1831,
     "type": "method",
     "url": "sus-num-u16.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -16241,7 +16146,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 1843,
+    "index": 1832,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -16250,7 +16155,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 1844,
+    "index": 1833,
     "type": "method",
     "url": "sus-num-u16.html#method.operator>>=",
     "name": "operator>>=",
@@ -16259,7 +16164,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 1845,
+    "index": 1834,
     "type": "method",
     "url": "sus-num-u16.html#method.operator^=",
     "name": "operator^=",
@@ -16268,7 +16173,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 1846,
+    "index": 1835,
     "type": "method",
     "url": "sus-num-u16.html#method.operator|=",
     "name": "operator|=",
@@ -16277,7 +16182,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 1847,
+    "index": 1836,
     "type": "method",
     "url": "sus-num-u16.html#method.from.unsigned.from.unsignedprimitive",
     "name": "from",
@@ -16286,7 +16191,7 @@ const g_search_db = [
     "summary": "Constructs a u16 from an unsigned primitive integer type (unsigned int, unsigned long, etc.) where no bits are lost."
   },
   {
-    "index": 1848,
+    "index": 1837,
     "type": "method",
     "url": "sus-num-u16.html#method.operator/=",
     "name": "operator/=",
@@ -16295,7 +16200,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 1849,
+    "index": 1838,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -16304,7 +16209,7 @@ const g_search_db = [
     "summary": "Calculates the remainder self.rem_euclid(rhs) as if by Euclidean division."
   },
   {
-    "index": 1850,
+    "index": 1839,
     "type": "method",
     "url": "sus-num-u16.html#method.operator*=",
     "name": "operator*=",
@@ -16313,7 +16218,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 1851,
+    "index": 1840,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_div",
     "name": "checked_div",
@@ -16322,7 +16227,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0."
   },
   {
-    "index": 1852,
+    "index": 1841,
     "type": "method",
     "url": "sus-num-u16.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -16331,7 +16236,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 1853,
+    "index": 1842,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -16340,7 +16245,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 1854,
+    "index": 1843,
     "type": "method",
     "url": "sus-num-u16.html#method.operator-=",
     "name": "operator-=",
@@ -16349,7 +16254,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 1855,
+    "index": 1844,
     "type": "method",
     "url": "sus-num-u16.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -16358,7 +16263,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 1856,
+    "index": 1845,
     "type": "method",
     "url": "sus-num-u16.html#method.operator~",
     "name": "operator~",
@@ -16367,7 +16272,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 1857,
+    "index": 1846,
     "type": "method",
     "url": "sus-num-u16.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -16376,7 +16281,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1858,
+    "index": 1847,
     "type": "method",
     "url": "sus-num-u16.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -16385,7 +16290,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1859,
+    "index": 1848,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -16394,7 +16299,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 1860,
+    "index": 1849,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -16403,7 +16308,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 1861,
+    "index": 1850,
     "type": "method",
     "url": "sus-num-u16.html#method.from_sum",
     "name": "from_sum",
@@ -16412,7 +16317,7 @@ const g_search_db = [
     "summary": "Constructs a u16 from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 1862,
+    "index": 1851,
     "type": "method",
     "url": "sus-num-u16.html#method.operator=.assign.unsigned.small.typed",
     "name": "operator=",
@@ -16421,7 +16326,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned types (u8, u16, etc.) where no bits are lost."
   },
   {
-    "index": 1863,
+    "index": 1852,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_add",
     "name": "checked_add",
@@ -16430,7 +16335,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 1864,
+    "index": 1853,
     "type": "method",
     "url": "sus-num-u16.html#method.rotate_right",
     "name": "rotate_right",
@@ -16439,7 +16344,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 1865,
+    "index": 1854,
     "type": "method",
     "url": "sus-num-u16.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -16448,7 +16353,7 @@ const g_search_db = [
     "summary": "Tries to construct a u16 from an unsigned enum type (or enum class)."
   },
   {
-    "index": 1866,
+    "index": 1855,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_log",
     "name": "checked_log",
@@ -16457,7 +16362,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 1867,
+    "index": 1856,
     "type": "method",
     "url": "sus-num-u16.html#method.operator&=",
     "name": "operator&=",
@@ -16466,7 +16371,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 1868,
+    "index": 1857,
     "type": "method",
     "url": "sus-num-u16.html#method.try_from.unsigned",
     "name": "try_from",
@@ -16475,7 +16380,7 @@ const g_search_db = [
     "summary": "Tries to construct a u16 from an unsigned integer type (u8, u16, u32, etc.)."
   },
   {
-    "index": 1869,
+    "index": 1858,
     "type": "method",
     "url": "sus-num-u16.html#method.operator=.assign.unsigned.small.primitive",
     "name": "operator=",
@@ -16484,7 +16389,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned primitive types (unsigned int, unsigned long, etc.) where no bits are lost."
   },
   {
-    "index": 1870,
+    "index": 1859,
     "type": "method",
     "url": "sus-num-u16.html#method.try_from.signed",
     "name": "try_from",
@@ -16493,7 +16398,7 @@ const g_search_db = [
     "summary": "Tries to construct a u16 from a signed integer type (i8, i16, i32, etc.)."
   },
   {
-    "index": 1871,
+    "index": 1860,
     "type": "method",
     "url": "sus-num-u16.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -16502,7 +16407,7 @@ const g_search_db = [
     "summary": "Tries to construct a u16 from a signed primitive integer type ( int, long, etc.)."
   },
   {
-    "index": 1872,
+    "index": 1861,
     "type": "method",
     "url": "sus-num-u16.html#method.saturating_add_signed",
     "name": "saturating_add_signed",
@@ -16511,7 +16416,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with a signed rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1873,
+    "index": 1862,
     "type": "method",
     "url": "sus-num-u16.html#method.from.unsigned.from.unsigned",
     "name": "from",
@@ -16520,7 +16425,7 @@ const g_search_db = [
     "summary": "Constructs a u16 from an unsigned integer type (u8, u16, u32, etc.) where no bits are lost."
   },
   {
-    "index": 1874,
+    "index": 1863,
     "type": "method",
     "url": "sus-num-u16.html#method.from.unsigned.from.unsignedenum",
     "name": "from",
@@ -16529,7 +16434,7 @@ const g_search_db = [
     "summary": "Constructs a u16 from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 1875,
+    "index": 1864,
     "type": "method",
     "url": "sus-num-u16.html#method.operator+=",
     "name": "operator+=",
@@ -16538,7 +16443,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 1876,
+    "index": 1865,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_mul",
     "name": "checked_mul",
@@ -16547,7 +16452,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 1877,
+    "index": 1866,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -16556,7 +16461,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs. Wrapped division on unsigned types is just normal division. There's no way wrapping could ever happen. This function exists, so that all operations are accounted for in the wrapping operations."
   },
   {
-    "index": 1878,
+    "index": 1867,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -16565,7 +16470,7 @@ const g_search_db = [
     "summary": "Checked Euclidean modulo. Computes self.rem_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 1879,
+    "index": 1868,
     "type": "method",
     "url": "sus-num-u16.html#method.from_be",
     "name": "from_be",
@@ -16574,7 +16479,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 1880,
+    "index": 1869,
     "type": "method",
     "url": "sus-num-u16.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -16583,7 +16488,7 @@ const g_search_db = [
     "summary": "Tries to construct a u16 from a signed enum type (or enum class)."
   },
   {
-    "index": 1881,
+    "index": 1870,
     "type": "method",
     "url": "sus-num-u16.html#method.as_ptr",
     "name": "as_ptr",
@@ -16592,7 +16497,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1882,
+    "index": 1871,
     "type": "method",
     "url": "sus-num-u16.html#method.operator<<=",
     "name": "operator<<=",
@@ -16601,7 +16506,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 1883,
+    "index": 1872,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -16610,7 +16515,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 1884,
+    "index": 1873,
     "type": "method",
     "url": "sus-num-u16.html#method.pow",
     "name": "pow",
@@ -16619,7 +16524,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 1885,
+    "index": 1874,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_shl",
     "name": "checked_shl",
@@ -16628,7 +16533,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 1886,
+    "index": 1875,
     "type": "method",
     "url": "sus-num-u16.html#method.operator=.assign.unsigned.smallenum",
     "name": "operator=",
@@ -16637,7 +16542,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned enum types where no bits are lost."
   },
   {
-    "index": 1887,
+    "index": 1876,
     "type": "method",
     "url": "sus-num-u16.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -16646,7 +16551,7 @@ const g_search_db = [
     "summary": "Tries to construct a u16 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 1888,
+    "index": 1877,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_add_signed",
     "name": "checked_add_signed",
@@ -16655,7 +16560,7 @@ const g_search_db = [
     "summary": "Checked integer addition with a signed rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 1889,
+    "index": 1878,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -16664,7 +16569,7 @@ const g_search_db = [
     "summary": "Negates self in an overflowing fashion."
   },
   {
-    "index": 1890,
+    "index": 1879,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_next_power_of_two",
     "name": "checked_next_power_of_two",
@@ -16673,7 +16578,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 1891,
+    "index": 1880,
     "type": "method",
     "url": "sus-num-u16.html#method.operator%=",
     "name": "operator%=",
@@ -16682,7 +16587,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 1892,
+    "index": 1881,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_add_signed",
     "name": "overflowing_add_signed",
@@ -16691,7 +16596,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with a signed rhs."
   },
   {
-    "index": 1893,
+    "index": 1882,
     "type": "method",
     "url": "sus-num-u16.html#method.leading_ones",
     "name": "leading_ones",
@@ -16700,7 +16605,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 1894,
+    "index": 1883,
     "type": "method",
     "url": "sus-num-u16.html#method.saturating_add",
     "name": "saturating_add",
@@ -16709,7 +16614,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 1895,
+    "index": 1884,
     "type": "method",
     "url": "sus-num-u16.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -16718,7 +16623,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1896,
+    "index": 1885,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_pow",
     "name": "checked_pow",
@@ -16727,7 +16632,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 1897,
+    "index": 1886,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -16736,7 +16641,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1898,
+    "index": 1887,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_add_signed",
     "name": "wrapping_add_signed",
@@ -16745,7 +16650,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1899,
+    "index": 1888,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_rem",
     "name": "checked_rem",
@@ -16754,7 +16659,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0."
   },
   {
-    "index": 1900,
+    "index": 1889,
     "type": "method",
     "url": "sus-num-u16.html#method.is_power_of_two",
     "name": "is_power_of_two",
@@ -16763,7 +16668,7 @@ const g_search_db = [
     "summary": "Returns true if and only if self == 2^k for some k."
   },
   {
-    "index": 1901,
+    "index": 1890,
     "type": "method",
     "url": "sus-num-u16.html#method.saturating_div",
     "name": "saturating_div",
@@ -16772,7 +16677,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing. Note that for unsigned integers overflow never occurs, so the value will always be strictly the result of division."
   },
   {
-    "index": 1902,
+    "index": 1891,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -16781,7 +16686,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 1903,
+    "index": 1892,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -16790,7 +16695,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 1904,
+    "index": 1893,
     "type": "method",
     "url": "sus-num-u16.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -16799,7 +16704,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 1905,
+    "index": 1894,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -16808,7 +16713,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 1906,
+    "index": 1895,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -16817,7 +16722,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 1907,
+    "index": 1896,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -16826,7 +16731,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs). Wrapped division on unsigned types is just normal division."
   },
   {
-    "index": 1908,
+    "index": 1897,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_neg",
     "name": "checked_neg",
@@ -16835,7 +16740,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None unless self == 0."
   },
   {
-    "index": 1909,
+    "index": 1898,
     "type": "method",
     "url": "sus-num-u16.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -16844,7 +16749,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 1910,
+    "index": 1899,
     "type": "method",
     "url": "sus-num-u16.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -16853,7 +16758,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 1911,
+    "index": 1900,
     "type": "method",
     "url": "sus-num-u16.html#method.next_multiple_of",
     "name": "next_multiple_of",
@@ -16862,7 +16767,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs."
   },
   {
-    "index": 1912,
+    "index": 1901,
     "type": "method",
     "url": "sus-num-u16.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -16871,7 +16776,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs. Wrapped remainder calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 1913,
+    "index": 1902,
     "type": "method",
     "url": "sus-num-u16.html#method.count_ones",
     "name": "count_ones",
@@ -16880,7 +16785,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 1914,
+    "index": 1903,
     "type": "method",
     "url": "sus-num-u16.html#method.div_ceil",
     "name": "div_ceil",
@@ -16889,7 +16794,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of itself and rhs, rounding the result towards positive infinity."
   },
   {
-    "index": 1915,
+    "index": 1904,
     "type": "method",
     "url": "sus-num-u16.html#method.div_euclid",
     "name": "div_euclid",
@@ -16898,7 +16803,7 @@ const g_search_db = [
     "summary": "Performs Euclidean division."
   },
   {
-    "index": 1916,
+    "index": 1905,
     "type": "method",
     "url": "sus-num-u16.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -16907,7 +16812,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 1917,
+    "index": 1906,
     "type": "method",
     "url": "sus-num-u16.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -16916,7 +16821,7 @@ const g_search_db = [
     "summary": "Calculates the least remainder of self (mod rhs)."
   },
   {
-    "index": 1918,
+    "index": 1907,
     "type": "struct",
     "url": "sus-num-f64.html",
     "name": "f64",
@@ -16925,7 +16830,7 @@ const g_search_db = [
     "summary": "A 64-bit floating point type."
   },
   {
-    "index": 1919,
+    "index": 1908,
     "type": "field",
     "url": "sus-num-f64.html#field.NaN",
     "name": "NaN",
@@ -16934,7 +16839,7 @@ const g_search_db = [
     "summary": "Not a Number (NaN)."
   },
   {
-    "index": 1920,
+    "index": 1909,
     "type": "field",
     "url": "sus-num-f64.html#field.MAX_10_EXP",
     "name": "MAX_10_EXP",
@@ -16943,7 +16848,7 @@ const g_search_db = [
     "summary": "Maximum possible power of 10 exponent."
   },
   {
-    "index": 1921,
+    "index": 1910,
     "type": "field",
     "url": "sus-num-f64.html#field.primitive_value",
     "name": "primitive_value",
@@ -16952,7 +16857,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with float{n} for a numeric value n."
   },
   {
-    "index": 1922,
+    "index": 1911,
     "type": "field",
     "url": "sus-num-f64.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -16961,7 +16866,7 @@ const g_search_db = [
     "summary": "Smallest finite primitive value."
   },
   {
-    "index": 1923,
+    "index": 1912,
     "type": "field",
     "url": "sus-num-f64.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -16970,7 +16875,7 @@ const g_search_db = [
     "summary": "Largest finite primitive value."
   },
   {
-    "index": 1924,
+    "index": 1913,
     "type": "field",
     "url": "sus-num-f64.html#field.INF",
     "name": "INF",
@@ -16979,7 +16884,7 @@ const g_search_db = [
     "summary": "Infinity."
   },
   {
-    "index": 1925,
+    "index": 1914,
     "type": "field",
     "url": "sus-num-f64.html#field.MIN",
     "name": "MIN",
@@ -16988,7 +16893,7 @@ const g_search_db = [
     "summary": "Smallest finite f64."
   },
   {
-    "index": 1926,
+    "index": 1915,
     "type": "field",
     "url": "sus-num-f64.html#field.MANTISSA_DIGITS",
     "name": "MANTISSA_DIGITS",
@@ -16997,7 +16902,7 @@ const g_search_db = [
     "summary": "Approximate number of significant digits in base 2."
   },
   {
-    "index": 1927,
+    "index": 1916,
     "type": "field",
     "url": "sus-num-f64.html#field.MIN_POSITIVE",
     "name": "MIN_POSITIVE",
@@ -17006,7 +16911,7 @@ const g_search_db = [
     "summary": "Smallest positive normal f64 value."
   },
   {
-    "index": 1928,
+    "index": 1917,
     "type": "field",
     "url": "sus-num-f64.html#field.MIN_10_EXP",
     "name": "MIN_10_EXP",
@@ -17015,7 +16920,7 @@ const g_search_db = [
     "summary": "Minimum possible normal power of 10 exponent."
   },
   {
-    "index": 1929,
+    "index": 1918,
     "type": "field",
     "url": "sus-num-f64.html#field.RADIX",
     "name": "RADIX",
@@ -17024,7 +16929,7 @@ const g_search_db = [
     "summary": "The radix or base of the internal representation of f64."
   },
   {
-    "index": 1930,
+    "index": 1919,
     "type": "field",
     "url": "sus-num-f64.html#field.NEG_INF",
     "name": "NEG_INF",
@@ -17033,7 +16938,7 @@ const g_search_db = [
     "summary": "Negative infinity."
   },
   {
-    "index": 1931,
+    "index": 1920,
     "type": "field",
     "url": "sus-num-f64.html#field.EPSILON",
     "name": "EPSILON",
@@ -17042,7 +16947,7 @@ const g_search_db = [
     "summary": "Machine epsilon value for f64."
   },
   {
-    "index": 1932,
+    "index": 1921,
     "type": "field",
     "url": "sus-num-f64.html#field.MAX",
     "name": "MAX",
@@ -17051,7 +16956,7 @@ const g_search_db = [
     "summary": "Largest finite f64."
   },
   {
-    "index": 1933,
+    "index": 1922,
     "type": "field",
     "url": "sus-num-f64.html#field.DIGITS",
     "name": "DIGITS",
@@ -17060,7 +16965,7 @@ const g_search_db = [
     "summary": "Approximate number of significant digits in base 10."
   },
   {
-    "index": 1934,
+    "index": 1923,
     "type": "field",
     "url": "sus-num-f64.html#field.MIN_EXP",
     "name": "MIN_EXP",
@@ -17069,7 +16974,7 @@ const g_search_db = [
     "summary": "One greater than the minimum possible normal power of 2 exponent."
   },
   {
-    "index": 1935,
+    "index": 1924,
     "type": "field",
     "url": "sus-num-f64.html#field.MAX_EXP",
     "name": "MAX_EXP",
@@ -17078,7 +16983,7 @@ const g_search_db = [
     "summary": "Maximum possible power of 2 exponent."
   },
   {
-    "index": 1936,
+    "index": 1925,
     "type": "constructor",
     "url": "sus-num-f64.html#method.f64.ctor.from_primitive",
     "name": "f64",
@@ -17087,7 +16992,7 @@ const g_search_db = [
     "summary": "Construction from primitive types where no bits are lost."
   },
   {
-    "index": 1937,
+    "index": 1926,
     "type": "constructor",
     "url": "sus-num-f64.html#method.f64.ctor.from_float",
     "name": "f64",
@@ -17096,7 +17001,7 @@ const g_search_db = [
     "summary": "Construction from floating point types where no bits are lost."
   },
   {
-    "index": 1938,
+    "index": 1927,
     "type": "constructor",
     "url": "sus-num-f64.html#method.f64.ctor.default",
     "name": "f64",
@@ -17105,7 +17010,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the value to 0."
   },
   {
-    "index": 1939,
+    "index": 1928,
     "type": "conversion",
     "url": "sus-num-f64.html#method.operator U",
     "name": "operator U",
@@ -17114,7 +17019,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 1940,
+    "index": 1929,
     "type": "method",
     "url": "sus-num-f64.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -17123,7 +17028,7 @@ const g_search_db = [
     "summary": "Create a floating point value from its representation as a byte array in native endian."
   },
   {
-    "index": 1941,
+    "index": 1930,
     "type": "method",
     "url": "sus-num-f64.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -17132,7 +17037,7 @@ const g_search_db = [
     "summary": "Create a floating point value from its representation as a byte array in big endian."
   },
   {
-    "index": 1942,
+    "index": 1931,
     "type": "method",
     "url": "sus-num-f64.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -17141,7 +17046,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this floating point number as a byte array in native byte order."
   },
   {
-    "index": 1943,
+    "index": 1932,
     "type": "method",
     "url": "sus-num-f64.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -17150,7 +17055,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this floating point number as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 1944,
+    "index": 1933,
     "type": "method",
     "url": "sus-num-f64.html#method.div_euclid",
     "name": "div_euclid",
@@ -17159,7 +17064,7 @@ const g_search_db = [
     "summary": "Calculates Euclidean division, the matching method for rem_euclid."
   },
   {
-    "index": 1945,
+    "index": 1934,
     "type": "method",
     "url": "sus-num-f64.html#method.is_subnormal",
     "name": "is_subnormal",
@@ -17168,7 +17073,7 @@ const g_search_db = [
     "summary": "Returns true if the number is subnormal."
   },
   {
-    "index": 1946,
+    "index": 1935,
     "type": "method",
     "url": "sus-num-f64.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -17177,7 +17082,7 @@ const g_search_db = [
     "summary": "Calculates the least nonnegative remainder of self (mod rhs)."
   },
   {
-    "index": 1947,
+    "index": 1936,
     "type": "method",
     "url": "sus-num-f64.html#method.is_normal",
     "name": "is_normal",
@@ -17186,7 +17091,7 @@ const g_search_db = [
     "summary": "Returns true if the number is neither zero, infinite, subnormal, or NaN."
   },
   {
-    "index": 1948,
+    "index": 1937,
     "type": "method",
     "url": "sus-num-f64.html#method.classify",
     "name": "classify",
@@ -17195,7 +17100,7 @@ const g_search_db = [
     "summary": "Returns the floating point category of the number."
   },
   {
-    "index": 1949,
+    "index": 1938,
     "type": "method",
     "url": "sus-num-f64.html#method.to_bits",
     "name": "to_bits",
@@ -17204,7 +17109,7 @@ const g_search_db = [
     "summary": "Raw transmutation to ##UnsignedT##."
   },
   {
-    "index": 1950,
+    "index": 1939,
     "type": "method",
     "url": "sus-num-f64.html#method.from_bits",
     "name": "from_bits",
@@ -17213,7 +17118,7 @@ const g_search_db = [
     "summary": "Raw transmutation from ##_unsigned##."
   },
   {
-    "index": 1951,
+    "index": 1940,
     "type": "method",
     "url": "sus-num-f64.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -17222,7 +17127,7 @@ const g_search_db = [
     "summary": "Create a floating point value from its representation as a byte array in big endian."
   },
   {
-    "index": 1952,
+    "index": 1941,
     "type": "method",
     "url": "sus-num-f64.html#method.to_int_unchecked",
     "name": "to_int_unchecked",
@@ -17231,7 +17136,7 @@ const g_search_db = [
     "summary": "Rounds toward zero and converts to any safe integer type assuming that the value is finite and fits in that type."
   },
   {
-    "index": 1953,
+    "index": 1942,
     "type": "method",
     "url": "sus-num-f64.html#method.to_degrees",
     "name": "to_degrees",
@@ -17240,7 +17145,7 @@ const g_search_db = [
     "summary": "Converts radians to degrees."
   },
   {
-    "index": 1954,
+    "index": 1943,
     "type": "method",
     "url": "sus-num-f64.html#method.tanh",
     "name": "tanh",
@@ -17249,7 +17154,7 @@ const g_search_db = [
     "summary": "Hyperbolic tangent function."
   },
   {
-    "index": 1955,
+    "index": 1944,
     "type": "method",
     "url": "sus-num-f64.html#method.atan2",
     "name": "atan2",
@@ -17258,7 +17163,7 @@ const g_search_db = [
     "summary": "Computes the four quadrant arctangent of self (y) and other (x) in radians."
   },
   {
-    "index": 1956,
+    "index": 1945,
     "type": "method",
     "url": "sus-num-f64.html#method.atan",
     "name": "atan",
@@ -17267,7 +17172,7 @@ const g_search_db = [
     "summary": "Computes the arctangent of a number. Return value is in radians in the range [-pi/2, pi/2];"
   },
   {
-    "index": 1957,
+    "index": 1946,
     "type": "method",
     "url": "sus-num-f64.html#method.round_to_i32",
     "name": "round_to_i32",
@@ -17276,7 +17181,7 @@ const g_search_db = [
     "summary": "Returns the nearest i32 representable by self."
   },
   {
-    "index": 1958,
+    "index": 1947,
     "type": "method",
     "url": "sus-num-f64.html#method.asinh",
     "name": "asinh",
@@ -17285,7 +17190,7 @@ const g_search_db = [
     "summary": "Inverse hyperbolic sine function."
   },
   {
-    "index": 1959,
+    "index": 1948,
     "type": "method",
     "url": "sus-num-f64.html#method.atanh",
     "name": "atanh",
@@ -17294,7 +17199,7 @@ const g_search_db = [
     "summary": "Inverse hyperbolic tangent function."
   },
   {
-    "index": 1960,
+    "index": 1949,
     "type": "method",
     "url": "sus-num-f64.html#method.operator-=",
     "name": "operator-=",
@@ -17303,7 +17208,7 @@ const g_search_db = [
     "summary": "Satisfies the SubAssign&lt;f64&gt; concept."
   },
   {
-    "index": 1961,
+    "index": 1950,
     "type": "method",
     "url": "sus-num-f64.html#method.operator=.assign.from_primitive",
     "name": "operator=",
@@ -17312,7 +17217,7 @@ const g_search_db = [
     "summary": "Assignment from primitive types where no bits are lost."
   },
   {
-    "index": 1962,
+    "index": 1951,
     "type": "method",
     "url": "sus-num-f64.html#method.abs",
     "name": "abs",
@@ -17320,7 +17225,7 @@ const g_search_db = [
     "split_name": "sus num f64 abs"
   },
   {
-    "index": 1963,
+    "index": 1952,
     "type": "method",
     "url": "sus-num-f64.html#method.from.from.float",
     "name": "from",
@@ -17329,7 +17234,7 @@ const g_search_db = [
     "summary": "Construction from floating point types where no bits are lost."
   },
   {
-    "index": 1964,
+    "index": 1953,
     "type": "method",
     "url": "sus-num-f64.html#method.operator/=",
     "name": "operator/=",
@@ -17338,7 +17243,7 @@ const g_search_db = [
     "summary": "Satisfies the DivAssign&lt;f64&gt; concept."
   },
   {
-    "index": 1965,
+    "index": 1954,
     "type": "method",
     "url": "sus-num-f64.html#method.operator*=",
     "name": "operator*=",
@@ -17347,7 +17252,7 @@ const g_search_db = [
     "summary": "Satisfies the MulAssign&lt;f64&gt; concept."
   },
   {
-    "index": 1966,
+    "index": 1955,
     "type": "method",
     "url": "sus-num-f64.html#method.from.from.int",
     "name": "from",
@@ -17356,7 +17261,7 @@ const g_search_db = [
     "summary": "Construction from integer types where no bits are lost."
   },
   {
-    "index": 1967,
+    "index": 1956,
     "type": "method",
     "url": "sus-num-f64.html#method.operator%=",
     "name": "operator%=",
@@ -17365,7 +17270,7 @@ const g_search_db = [
     "summary": "Satisfies the RemAssign&lt;f64&gt; concept."
   },
   {
-    "index": 1968,
+    "index": 1957,
     "type": "method",
     "url": "sus-num-f64.html#method.from.from.primitive_int",
     "name": "from",
@@ -17374,7 +17279,7 @@ const g_search_db = [
     "summary": "Construction from integer types where no bits are lost."
   },
   {
-    "index": 1969,
+    "index": 1958,
     "type": "method",
     "url": "sus-num-f64.html#method.cbrt",
     "name": "cbrt",
@@ -17383,7 +17288,7 @@ const g_search_db = [
     "summary": "Returns the cube root of a number."
   },
   {
-    "index": 1970,
+    "index": 1959,
     "type": "method",
     "url": "sus-num-f64.html#method.hypot",
     "name": "hypot",
@@ -17392,7 +17297,7 @@ const g_search_db = [
     "summary": "Calculates the length of the hypotenuse of a right-angle triangle given legs of length x and y."
   },
   {
-    "index": 1971,
+    "index": 1960,
     "type": "method",
     "url": "sus-num-f64.html#method.is_sign_positive",
     "name": "is_sign_positive",
@@ -17401,7 +17306,7 @@ const g_search_db = [
     "summary": "Returns true if self has a positive sign, including +0.0, NaNs with positive sign bit and positive infinity."
   },
   {
-    "index": 1972,
+    "index": 1961,
     "type": "method",
     "url": "sus-num-f64.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -17410,7 +17315,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1973,
+    "index": 1962,
     "type": "method",
     "url": "sus-num-f64.html#method.floor",
     "name": "floor",
@@ -17419,7 +17324,7 @@ const g_search_db = [
     "summary": "Returns the largest integer less than or equal to self."
   },
   {
-    "index": 1974,
+    "index": 1963,
     "type": "method",
     "url": "sus-num-f64.html#method.trunc",
     "name": "trunc",
@@ -17428,7 +17333,7 @@ const g_search_db = [
     "summary": "Returns the integer part of self. This means that non-integer numbers are always truncated towards zero."
   },
   {
-    "index": 1975,
+    "index": 1964,
     "type": "method",
     "url": "sus-num-f64.html#method.operator+=",
     "name": "operator+=",
@@ -17437,7 +17342,7 @@ const g_search_db = [
     "summary": "Satisfies the AddAssign&lt;f64&gt; concept."
   },
   {
-    "index": 1976,
+    "index": 1965,
     "type": "method",
     "url": "sus-num-f64.html#method.exp_m1",
     "name": "exp_m1",
@@ -17446,7 +17351,7 @@ const g_search_db = [
     "summary": "Returns e^(self) - 1 in a way that is accurate even if the number is close to zero."
   },
   {
-    "index": 1977,
+    "index": 1966,
     "type": "method",
     "url": "sus-num-f64.html#method.from.from.primitive_float",
     "name": "from",
@@ -17455,7 +17360,7 @@ const g_search_db = [
     "summary": "Construction from primitive floating point types where no bits are lost."
   },
   {
-    "index": 1978,
+    "index": 1967,
     "type": "method",
     "url": "sus-num-f64.html#method.from_product",
     "name": "from_product",
@@ -17464,7 +17369,7 @@ const g_search_db = [
     "summary": "Constructs a f64  from an Iterator by computing the product of all elements in the iterator."
   },
   {
-    "index": 1979,
+    "index": 1968,
     "type": "method",
     "url": "sus-num-f64.html#method.from_sum",
     "name": "from_sum",
@@ -17473,7 +17378,7 @@ const g_search_db = [
     "summary": "Constructs a f64  from an Iterator by computing the sum of all elements in the iterator."
   },
   {
-    "index": 1980,
+    "index": 1969,
     "type": "method",
     "url": "sus-num-f64.html#method.acos",
     "name": "acos",
@@ -17482,7 +17387,7 @@ const g_search_db = [
     "summary": "Computes the arccosine of a number. Return value is in radians in the range [0, pi] or NaN if the number is outside the range [-1, 1]."
   },
   {
-    "index": 1981,
+    "index": 1970,
     "type": "method",
     "url": "sus-num-f64.html#method.sin",
     "name": "sin",
@@ -17491,7 +17396,7 @@ const g_search_db = [
     "summary": "Computes the sine of a number (in radians)."
   },
   {
-    "index": 1982,
+    "index": 1971,
     "type": "method",
     "url": "sus-num-f64.html#method.as_ptr",
     "name": "as_ptr",
@@ -17500,7 +17405,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 1983,
+    "index": 1972,
     "type": "method",
     "url": "sus-num-f64.html#method.operator=.assign.from_float",
     "name": "operator=",
@@ -17509,7 +17414,7 @@ const g_search_db = [
     "summary": "Assignment from floating point types where no bits are lost."
   },
   {
-    "index": 1984,
+    "index": 1973,
     "type": "method",
     "url": "sus-num-f64.html#method.asin",
     "name": "asin",
@@ -17518,7 +17423,7 @@ const g_search_db = [
     "summary": "Computes the arcsine of a number. Return value is in radians in the range [-pi/2, pi/2] or NaN if the number is outside the range [-1, 1]."
   },
   {
-    "index": 1985,
+    "index": 1974,
     "type": "method",
     "url": "sus-num-f64.html#method.is_nan",
     "name": "is_nan",
@@ -17527,7 +17432,7 @@ const g_search_db = [
     "summary": "Returns true if this value is NaN."
   },
   {
-    "index": 1986,
+    "index": 1975,
     "type": "method",
     "url": "sus-num-f64.html#method.operator-",
     "name": "operator-",
@@ -17536,7 +17441,7 @@ const g_search_db = [
     "summary": "Satisfies the Neg&lt;f64&gt; concept."
   },
   {
-    "index": 1987,
+    "index": 1976,
     "type": "method",
     "url": "sus-num-f64.html#method.round_ties",
     "name": "round_ties",
@@ -17545,7 +17450,7 @@ const g_search_db = [
     "summary": "Returns the nearest integer to self. If a value is half-way between two integers, respects the current rounding mode. The default mode will round ties to the nearest even number."
   },
   {
-    "index": 1988,
+    "index": 1977,
     "type": "method",
     "url": "sus-num-f64.html#method.acosh",
     "name": "acosh",
@@ -17554,7 +17459,7 @@ const g_search_db = [
     "summary": "Inverse hyperbolic cosine function, or NaN if the number is less than -1."
   },
   {
-    "index": 1989,
+    "index": 1978,
     "type": "method",
     "url": "sus-num-f64.html#method.is_infinite",
     "name": "is_infinite",
@@ -17563,7 +17468,7 @@ const g_search_db = [
     "summary": "Returns true if this value is positive infinity or negative infinity, and false otherwise."
   },
   {
-    "index": 1990,
+    "index": 1979,
     "type": "method",
     "url": "sus-num-f64.html#method.total_cmp",
     "name": "total_cmp",
@@ -17572,7 +17477,7 @@ const g_search_db = [
     "summary": "Return the ordering between *this and other."
   },
   {
-    "index": 1991,
+    "index": 1980,
     "type": "method",
     "url": "sus-num-f64.html#method.log2",
     "name": "log2",
@@ -17581,7 +17486,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number."
   },
   {
-    "index": 1992,
+    "index": 1981,
     "type": "method",
     "url": "sus-num-f64.html#method.round_to_isize",
     "name": "round_to_isize",
@@ -17590,7 +17495,7 @@ const g_search_db = [
     "summary": "Returns the nearest isize representable by self."
   },
   {
-    "index": 1993,
+    "index": 1982,
     "type": "method",
     "url": "sus-num-f64.html#method.cosh",
     "name": "cosh",
@@ -17599,7 +17504,7 @@ const g_search_db = [
     "summary": "Hyperbolic cosine function."
   },
   {
-    "index": 1994,
+    "index": 1983,
     "type": "method",
     "url": "sus-num-f64.html#method.exp",
     "name": "exp",
@@ -17608,7 +17513,7 @@ const g_search_db = [
     "summary": "Returns e^(self), (the exponential function)."
   },
   {
-    "index": 1995,
+    "index": 1984,
     "type": "method",
     "url": "sus-num-f64.html#method.ln",
     "name": "ln",
@@ -17617,7 +17522,7 @@ const g_search_db = [
     "summary": "Returns the natural logarithm of the number."
   },
   {
-    "index": 1996,
+    "index": 1985,
     "type": "method",
     "url": "sus-num-f64.html#method.log",
     "name": "log",
@@ -17626,7 +17531,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base."
   },
   {
-    "index": 1997,
+    "index": 1986,
     "type": "method",
     "url": "sus-num-f64.html#method.max",
     "name": "max",
@@ -17635,7 +17540,7 @@ const g_search_db = [
     "summary": "Returns the maximum of the two numbers, ignoring NaN."
   },
   {
-    "index": 1998,
+    "index": 1987,
     "type": "method",
     "url": "sus-num-f64.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -17644,7 +17549,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this floating point number as a byte array in little-endian byte order."
   },
   {
-    "index": 1999,
+    "index": 1988,
     "type": "method",
     "url": "sus-num-f64.html#method.sqrt",
     "name": "sqrt",
@@ -17653,7 +17558,7 @@ const g_search_db = [
     "summary": "Returns the square root of a number."
   },
   {
-    "index": 2000,
+    "index": 1989,
     "type": "method",
     "url": "sus-num-f64.html#method.min",
     "name": "min",
@@ -17662,7 +17567,7 @@ const g_search_db = [
     "summary": "Returns the minimum of the two numbers, ignoring NaN."
   },
   {
-    "index": 2001,
+    "index": 1990,
     "type": "method",
     "url": "sus-num-f64.html#method.mul_add",
     "name": "mul_add",
@@ -17671,7 +17576,7 @@ const g_search_db = [
     "summary": "Fused multiply-add. Computes (self * a) + b with only one rounding error, yielding a more accurate result than an unfused multiply-add."
   },
   {
-    "index": 2002,
+    "index": 1991,
     "type": "method",
     "url": "sus-num-f64.html#method.to_radians",
     "name": "to_radians",
@@ -17680,7 +17585,7 @@ const g_search_db = [
     "summary": "Converts degrees to radians."
   },
   {
-    "index": 2003,
+    "index": 1992,
     "type": "method",
     "url": "sus-num-f64.html#method.powi",
     "name": "powi",
@@ -17689,7 +17594,7 @@ const g_search_db = [
     "summary": "Raises a number to an integer point power."
   },
   {
-    "index": 2004,
+    "index": 1993,
     "type": "method",
     "url": "sus-num-f64.html#method.copysign",
     "name": "copysign",
@@ -17698,7 +17603,7 @@ const g_search_db = [
     "summary": "Returns a number composed of the magnitude of self and the sign of sign."
   },
   {
-    "index": 2005,
+    "index": 1994,
     "type": "method",
     "url": "sus-num-f64.html#method.next_toward",
     "name": "next_toward",
@@ -17707,7 +17612,7 @@ const g_search_db = [
     "summary": "Returns the next representable value of the float type after self in the direction of toward. If self == toward, toward is returned. If either self or toward is NaN, NaN is returned."
   },
   {
-    "index": 2006,
+    "index": 1995,
     "type": "method",
     "url": "sus-num-f64.html#method.cos",
     "name": "cos",
@@ -17716,7 +17621,7 @@ const g_search_db = [
     "summary": "Computes the cosine of a number (in radians)."
   },
   {
-    "index": 2007,
+    "index": 1996,
     "type": "method",
     "url": "sus-num-f64.html#method.powf",
     "name": "powf",
@@ -17725,7 +17630,7 @@ const g_search_db = [
     "summary": "Raises a number to a floating point power."
   },
   {
-    "index": 2008,
+    "index": 1997,
     "type": "method",
     "url": "sus-num-f64.html#method.clamp",
     "name": "clamp",
@@ -17734,7 +17639,7 @@ const g_search_db = [
     "summary": "Restrict a value to a certain interval unless it is NaN."
   },
   {
-    "index": 2009,
+    "index": 1998,
     "type": "method",
     "url": "sus-num-f64.html#method.is_sign_negative",
     "name": "is_sign_negative",
@@ -17743,7 +17648,7 @@ const g_search_db = [
     "summary": "Returns true if self has a negative sign, including -0.0, NaNs with negative sign bit and negative infinity."
   },
   {
-    "index": 2010,
+    "index": 1999,
     "type": "method",
     "url": "sus-num-f64.html#method.exp2",
     "name": "exp2",
@@ -17752,7 +17657,7 @@ const g_search_db = [
     "summary": "Returns 2^(self)."
   },
   {
-    "index": 2011,
+    "index": 2000,
     "type": "method",
     "url": "sus-num-f64.html#method.recip",
     "name": "recip",
@@ -17761,7 +17666,7 @@ const g_search_db = [
     "summary": "Takes the reciprocal (inverse) of a number, 1/x."
   },
   {
-    "index": 2012,
+    "index": 2001,
     "type": "method",
     "url": "sus-num-f64.html#method.round_to_i64",
     "name": "round_to_i64",
@@ -17770,7 +17675,7 @@ const g_search_db = [
     "summary": "Returns the nearest i64 representable by self."
   },
   {
-    "index": 2013,
+    "index": 2002,
     "type": "method",
     "url": "sus-num-f64.html#method.is_finite",
     "name": "is_finite",
@@ -17779,7 +17684,7 @@ const g_search_db = [
     "summary": "Returns true if this number is neither infinite nor NaN."
   },
   {
-    "index": 2014,
+    "index": 2003,
     "type": "method",
     "url": "sus-num-f64.html#method.round",
     "name": "round",
@@ -17788,7 +17693,7 @@ const g_search_db = [
     "summary": "Returns the nearest integer to self. If a value is half-way between two integers, round away from 0.0."
   },
   {
-    "index": 2015,
+    "index": 2004,
     "type": "method",
     "url": "sus-num-f64.html#method.round_to_i8",
     "name": "round_to_i8",
@@ -17797,7 +17702,7 @@ const g_search_db = [
     "summary": "Returns the nearest i8 representable by self."
   },
   {
-    "index": 2016,
+    "index": 2005,
     "type": "method",
     "url": "sus-num-f64.html#method.round_to_i16",
     "name": "round_to_i16",
@@ -17806,7 +17711,7 @@ const g_search_db = [
     "summary": "Returns the nearest i16 representable by self."
   },
   {
-    "index": 2017,
+    "index": 2006,
     "type": "method",
     "url": "sus-num-f64.html#method.ceil",
     "name": "ceil",
@@ -17815,7 +17720,7 @@ const g_search_db = [
     "summary": "Returns the smallest integer greater than or equal to self."
   },
   {
-    "index": 2018,
+    "index": 2007,
     "type": "method",
     "url": "sus-num-f64.html#method.ln_1p",
     "name": "ln_1p",
@@ -17824,7 +17729,7 @@ const g_search_db = [
     "summary": "Returns ln(1+n) (natural logarithm) more accurately than if the operations were performed separately."
   },
   {
-    "index": 2019,
+    "index": 2008,
     "type": "method",
     "url": "sus-num-f64.html#method.signum",
     "name": "signum",
@@ -17833,7 +17738,7 @@ const g_search_db = [
     "summary": "Returns a number that represents the sign of self."
   },
   {
-    "index": 2020,
+    "index": 2009,
     "type": "method",
     "url": "sus-num-f64.html#method.log10",
     "name": "log10",
@@ -17842,7 +17747,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number."
   },
   {
-    "index": 2021,
+    "index": 2010,
     "type": "method",
     "url": "sus-num-f64.html#method.sinh",
     "name": "sinh",
@@ -17851,7 +17756,7 @@ const g_search_db = [
     "summary": "Hyperbolic sine function."
   },
   {
-    "index": 2022,
+    "index": 2011,
     "type": "method",
     "url": "sus-num-f64.html#method.fract",
     "name": "fract",
@@ -17859,7 +17764,7 @@ const g_search_db = [
     "split_name": "sus num f64 fract"
   },
   {
-    "index": 2023,
+    "index": 2012,
     "type": "method",
     "url": "sus-num-f64.html#method.tan",
     "name": "tan",
@@ -17868,7 +17773,7 @@ const g_search_db = [
     "summary": "Computes the tangent of a number (in radians)."
   },
   {
-    "index": 2024,
+    "index": 2013,
     "type": "struct",
     "url": "sus-num-f64-consts.html",
     "name": "consts",
@@ -17876,7 +17781,7 @@ const g_search_db = [
     "split_name": "sus num f64 consts"
   },
   {
-    "index": 2025,
+    "index": 2014,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.PI",
     "name": "PI",
@@ -17885,7 +17790,7 @@ const g_search_db = [
     "summary": "Archimedes' constant (π)"
   },
   {
-    "index": 2026,
+    "index": 2015,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.LOG10_E",
     "name": "LOG10_E",
@@ -17894,7 +17799,7 @@ const g_search_db = [
     "summary": "log_10(e)"
   },
   {
-    "index": 2027,
+    "index": 2016,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.LOG10_2",
     "name": "LOG10_2",
@@ -17903,7 +17808,7 @@ const g_search_db = [
     "summary": "log_10(2)"
   },
   {
-    "index": 2028,
+    "index": 2017,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.LOG2_E",
     "name": "LOG2_E",
@@ -17912,7 +17817,7 @@ const g_search_db = [
     "summary": "log_2(e)"
   },
   {
-    "index": 2029,
+    "index": 2018,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.E",
     "name": "E",
@@ -17921,7 +17826,7 @@ const g_search_db = [
     "summary": "Euler's number (e)"
   },
   {
-    "index": 2030,
+    "index": 2019,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_1_PI",
     "name": "FRAC_1_PI",
@@ -17930,7 +17835,7 @@ const g_search_db = [
     "summary": "1/π"
   },
   {
-    "index": 2031,
+    "index": 2020,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.TAU",
     "name": "TAU",
@@ -17939,7 +17844,7 @@ const g_search_db = [
     "summary": "The full circle constant (τ)"
   },
   {
-    "index": 2032,
+    "index": 2021,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_1_SQRT_2",
     "name": "FRAC_1_SQRT_2",
@@ -17948,7 +17853,7 @@ const g_search_db = [
     "summary": "1/sqrt(2)"
   },
   {
-    "index": 2033,
+    "index": 2022,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_2_SQRT_PI",
     "name": "FRAC_2_SQRT_PI",
@@ -17957,7 +17862,7 @@ const g_search_db = [
     "summary": "2/sqrt(π)"
   },
   {
-    "index": 2034,
+    "index": 2023,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_2_PI",
     "name": "FRAC_2_PI",
@@ -17966,7 +17871,7 @@ const g_search_db = [
     "summary": "2/π"
   },
   {
-    "index": 2035,
+    "index": 2024,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_PI_2",
     "name": "FRAC_PI_2",
@@ -17975,7 +17880,7 @@ const g_search_db = [
     "summary": "π/2"
   },
   {
-    "index": 2036,
+    "index": 2025,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_PI_3",
     "name": "FRAC_PI_3",
@@ -17984,7 +17889,7 @@ const g_search_db = [
     "summary": "π/3"
   },
   {
-    "index": 2037,
+    "index": 2026,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.SQRT_2",
     "name": "SQRT_2",
@@ -17993,7 +17898,7 @@ const g_search_db = [
     "summary": "sqrt(2)"
   },
   {
-    "index": 2038,
+    "index": 2027,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_PI_4",
     "name": "FRAC_PI_4",
@@ -18002,7 +17907,7 @@ const g_search_db = [
     "summary": "π/4"
   },
   {
-    "index": 2039,
+    "index": 2028,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_PI_6",
     "name": "FRAC_PI_6",
@@ -18011,7 +17916,7 @@ const g_search_db = [
     "summary": "π/6"
   },
   {
-    "index": 2040,
+    "index": 2029,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.FRAC_PI_8",
     "name": "FRAC_PI_8",
@@ -18020,7 +17925,7 @@ const g_search_db = [
     "summary": "π/8"
   },
   {
-    "index": 2041,
+    "index": 2030,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.LN_10",
     "name": "LN_10",
@@ -18029,7 +17934,7 @@ const g_search_db = [
     "summary": "ln(10)"
   },
   {
-    "index": 2042,
+    "index": 2031,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.LN_2",
     "name": "LN_2",
@@ -18038,7 +17943,7 @@ const g_search_db = [
     "summary": "ln(2)"
   },
   {
-    "index": 2043,
+    "index": 2032,
     "type": "field",
     "url": "sus-num-consts-f64.html#field.LOG2_10",
     "name": "LOG2_10",
@@ -18047,7 +17952,7 @@ const g_search_db = [
     "summary": "log_2(10)"
   },
   {
-    "index": 2044,
+    "index": 2033,
     "type": "struct",
     "url": "sus-num-usize.html",
     "name": "usize",
@@ -18056,7 +17961,7 @@ const g_search_db = [
     "summary": "An address-sized unsigned integer."
   },
   {
-    "index": 2045,
+    "index": 2034,
     "type": "field",
     "url": "sus-num-usize.html#field.BITS",
     "name": "BITS",
@@ -18065,7 +17970,7 @@ const g_search_db = [
     "summary": "The size of and usize in bits."
   },
   {
-    "index": 2046,
+    "index": 2035,
     "type": "field",
     "url": "sus-num-usize.html#field.MAX",
     "name": "MAX",
@@ -18074,7 +17979,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an usize."
   },
   {
-    "index": 2047,
+    "index": 2036,
     "type": "field",
     "url": "sus-num-usize.html#field.MIN",
     "name": "MIN",
@@ -18083,7 +17988,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an usize."
   },
   {
-    "index": 2048,
+    "index": 2037,
     "type": "field",
     "url": "sus-num-usize.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -18092,7 +17997,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an usize, as a native C++ primitive."
   },
   {
-    "index": 2049,
+    "index": 2038,
     "type": "field",
     "url": "sus-num-usize.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -18101,7 +18006,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an usize, as a native C++ primitive."
   },
   {
-    "index": 2050,
+    "index": 2039,
     "type": "field",
     "url": "sus-num-usize.html#field.primitive_value",
     "name": "primitive_value",
@@ -18110,7 +18015,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with uint32_t{n} for a numeric value n."
   },
   {
-    "index": 2051,
+    "index": 2040,
     "type": "constructor",
     "url": "sus-num-usize.html#method.usize.ctor.unsigned.smallenumclass",
     "name": "usize",
@@ -18119,7 +18024,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 2052,
+    "index": 2041,
     "type": "constructor",
     "url": "sus-num-usize.html#method.usize.ctor.unsigned.smallenum",
     "name": "usize",
@@ -18128,7 +18033,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 2053,
+    "index": 2042,
     "type": "constructor",
     "url": "sus-num-usize.html#method.usize.ctor.unsigned.small.primitive",
     "name": "usize",
@@ -18137,7 +18042,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 2054,
+    "index": 2043,
     "type": "constructor",
     "url": "sus-num-usize.html#method.usize.ctor.unsigned.small.typed",
     "name": "usize",
@@ -18146,7 +18051,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 2055,
+    "index": 2044,
     "type": "constructor",
     "url": "sus-num-usize.html#method.usize.ctor.default",
     "name": "usize",
@@ -18155,7 +18060,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 2056,
+    "index": 2045,
     "type": "conversion",
     "url": "sus-num-usize.html#method.operator U",
     "name": "operator U",
@@ -18164,7 +18069,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 2057,
+    "index": 2046,
     "type": "method",
     "url": "sus-num-usize.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -18173,7 +18078,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 2058,
+    "index": 2047,
     "type": "method",
     "url": "sus-num-usize.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -18182,7 +18087,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 2059,
+    "index": 2048,
     "type": "method",
     "url": "sus-num-usize.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -18191,7 +18096,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 2060,
+    "index": 2049,
     "type": "method",
     "url": "sus-num-usize.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -18200,7 +18105,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 2061,
+    "index": 2050,
     "type": "method",
     "url": "sus-num-usize.html#method.to_le",
     "name": "to_le",
@@ -18209,7 +18114,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 2062,
+    "index": 2051,
     "type": "method",
     "url": "sus-num-usize.html#method.to_be",
     "name": "to_be",
@@ -18218,7 +18123,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 2063,
+    "index": 2052,
     "type": "method",
     "url": "sus-num-usize.html#method.from_le",
     "name": "from_le",
@@ -18227,7 +18132,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 2064,
+    "index": 2053,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_next_power_of_two",
     "name": "wrapping_next_power_of_two",
@@ -18236,7 +18141,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 2065,
+    "index": 2054,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_next_multiple_of",
     "name": "checked_next_multiple_of",
@@ -18245,7 +18150,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs. Returns None if rhs is zero or the operation would result in overflow."
   },
   {
-    "index": 2066,
+    "index": 2055,
     "type": "method",
     "url": "sus-num-usize.html#method.log10",
     "name": "log10",
@@ -18254,7 +18159,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2067,
+    "index": 2056,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_log10",
     "name": "checked_log10",
@@ -18263,7 +18168,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2068,
+    "index": 2057,
     "type": "method",
     "url": "sus-num-usize.html#method.log2",
     "name": "log2",
@@ -18272,7 +18177,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2069,
+    "index": 2058,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_log2",
     "name": "checked_log2",
@@ -18281,7 +18186,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2070,
+    "index": 2059,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -18290,7 +18195,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 2071,
+    "index": 2060,
     "type": "method",
     "url": "sus-num-usize.html#method.rotate_left",
     "name": "rotate_left",
@@ -18299,7 +18204,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 2072,
+    "index": 2061,
     "type": "method",
     "url": "sus-num-usize.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -18308,7 +18213,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 2073,
+    "index": 2062,
     "type": "method",
     "url": "sus-num-usize.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -18317,7 +18222,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 2074,
+    "index": 2063,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -18326,7 +18231,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2075,
+    "index": 2064,
     "type": "method",
     "url": "sus-num-usize.html#method.log",
     "name": "log",
@@ -18335,7 +18240,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2076,
+    "index": 2065,
     "type": "method",
     "url": "sus-num-usize.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -18344,7 +18249,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2077,
+    "index": 2066,
     "type": "method",
     "url": "sus-num-usize.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -18353,7 +18258,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 2078,
+    "index": 2067,
     "type": "method",
     "url": "sus-num-usize.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -18362,7 +18267,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2079,
+    "index": 2068,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -18371,7 +18276,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 2080,
+    "index": 2069,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_sub",
     "name": "checked_sub",
@@ -18380,7 +18285,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2081,
+    "index": 2070,
     "type": "method",
     "url": "sus-num-usize.html#method.count_zeros",
     "name": "count_zeros",
@@ -18389,7 +18294,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 2082,
+    "index": 2071,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -18398,7 +18303,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 2083,
+    "index": 2072,
     "type": "method",
     "url": "sus-num-usize.html#method.next_power_of_two",
     "name": "next_power_of_two",
@@ -18407,7 +18312,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 2084,
+    "index": 2073,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_shr",
     "name": "checked_shr",
@@ -18416,7 +18321,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2085,
+    "index": 2074,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -18425,7 +18330,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-left; yields self &lt;&lt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 2086,
+    "index": 2075,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -18434,7 +18339,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean modulo. Computes self.rem_euclid(rhs). Wrapped modulo calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 2087,
+    "index": 2076,
     "type": "method",
     "url": "sus-num-usize.html#method.abs_diff",
     "name": "abs_diff",
@@ -18443,7 +18348,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 2088,
+    "index": 2077,
     "type": "method",
     "url": "sus-num-usize.html#method.from_product",
     "name": "from_product",
@@ -18452,7 +18357,7 @@ const g_search_db = [
     "summary": "Constructs a usize from an Iterator by computing the product of all elements in the iterator."
   },
   {
-    "index": 2089,
+    "index": 2078,
     "type": "method",
     "url": "sus-num-usize.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -18461,7 +18366,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 2090,
+    "index": 2079,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -18470,7 +18375,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 2091,
+    "index": 2080,
     "type": "method",
     "url": "sus-num-usize.html#method.operator>>=",
     "name": "operator>>=",
@@ -18479,7 +18384,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 2092,
+    "index": 2081,
     "type": "method",
     "url": "sus-num-usize.html#method.operator^=",
     "name": "operator^=",
@@ -18488,7 +18393,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 2093,
+    "index": 2082,
     "type": "method",
     "url": "sus-num-usize.html#method.operator|=",
     "name": "operator|=",
@@ -18497,7 +18402,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 2094,
+    "index": 2083,
     "type": "method",
     "url": "sus-num-usize.html#method.from.unsigned.from.unsignedprimitive",
     "name": "from",
@@ -18506,7 +18411,7 @@ const g_search_db = [
     "summary": "Constructs a usize from an unsigned primitive integer type (unsigned int, unsigned long, etc.) where no bits are lost."
   },
   {
-    "index": 2095,
+    "index": 2084,
     "type": "method",
     "url": "sus-num-usize.html#method.operator/=",
     "name": "operator/=",
@@ -18515,7 +18420,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 2096,
+    "index": 2085,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -18524,7 +18429,7 @@ const g_search_db = [
     "summary": "Calculates the remainder self.rem_euclid(rhs) as if by Euclidean division."
   },
   {
-    "index": 2097,
+    "index": 2086,
     "type": "method",
     "url": "sus-num-usize.html#method.operator*=",
     "name": "operator*=",
@@ -18533,7 +18438,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 2098,
+    "index": 2087,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_div",
     "name": "checked_div",
@@ -18542,7 +18447,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0."
   },
   {
-    "index": 2099,
+    "index": 2088,
     "type": "method",
     "url": "sus-num-usize.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -18551,7 +18456,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 2100,
+    "index": 2089,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -18560,7 +18465,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 2101,
+    "index": 2090,
     "type": "method",
     "url": "sus-num-usize.html#method.operator-=",
     "name": "operator-=",
@@ -18569,7 +18474,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 2102,
+    "index": 2091,
     "type": "method",
     "url": "sus-num-usize.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -18578,7 +18483,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 2103,
+    "index": 2092,
     "type": "method",
     "url": "sus-num-usize.html#method.operator~",
     "name": "operator~",
@@ -18587,7 +18492,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 2104,
+    "index": 2093,
     "type": "method",
     "url": "sus-num-usize.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -18596,7 +18501,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2105,
+    "index": 2094,
     "type": "method",
     "url": "sus-num-usize.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -18605,7 +18510,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2106,
+    "index": 2095,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -18614,7 +18519,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 2107,
+    "index": 2096,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -18623,7 +18528,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 2108,
+    "index": 2097,
     "type": "method",
     "url": "sus-num-usize.html#method.from_sum",
     "name": "from_sum",
@@ -18632,7 +18537,7 @@ const g_search_db = [
     "summary": "Constructs a usize from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 2109,
+    "index": 2098,
     "type": "method",
     "url": "sus-num-usize.html#method.operator=.assign.unsigned.small.typed",
     "name": "operator=",
@@ -18641,7 +18546,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned types (u8, u16, etc.) where no bits are lost."
   },
   {
-    "index": 2110,
+    "index": 2099,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_add",
     "name": "checked_add",
@@ -18650,7 +18555,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2111,
+    "index": 2100,
     "type": "method",
     "url": "sus-num-usize.html#method.rotate_right",
     "name": "rotate_right",
@@ -18659,7 +18564,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 2112,
+    "index": 2101,
     "type": "method",
     "url": "sus-num-usize.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -18668,7 +18573,7 @@ const g_search_db = [
     "summary": "Tries to construct a usize from an unsigned enum type (or enum class)."
   },
   {
-    "index": 2113,
+    "index": 2102,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_log",
     "name": "checked_log",
@@ -18677,7 +18582,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2114,
+    "index": 2103,
     "type": "method",
     "url": "sus-num-usize.html#method.operator&=",
     "name": "operator&=",
@@ -18686,7 +18591,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 2115,
+    "index": 2104,
     "type": "method",
     "url": "sus-num-usize.html#method.try_from.unsigned",
     "name": "try_from",
@@ -18695,7 +18600,7 @@ const g_search_db = [
     "summary": "Tries to construct a usize from an unsigned integer type (u8, u16, u32, etc.)."
   },
   {
-    "index": 2116,
+    "index": 2105,
     "type": "method",
     "url": "sus-num-usize.html#method.operator=.assign.unsigned.small.primitive",
     "name": "operator=",
@@ -18704,7 +18609,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned primitive types (unsigned int, unsigned long, etc.) where no bits are lost."
   },
   {
-    "index": 2117,
+    "index": 2106,
     "type": "method",
     "url": "sus-num-usize.html#method.try_from.signed",
     "name": "try_from",
@@ -18713,7 +18618,7 @@ const g_search_db = [
     "summary": "Tries to construct a usize from a signed integer type (i8, i16, i32, etc.)."
   },
   {
-    "index": 2118,
+    "index": 2107,
     "type": "method",
     "url": "sus-num-usize.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -18722,7 +18627,7 @@ const g_search_db = [
     "summary": "Tries to construct a usize from a signed primitive integer type ( int, long, etc.)."
   },
   {
-    "index": 2119,
+    "index": 2108,
     "type": "method",
     "url": "sus-num-usize.html#method.saturating_add_signed",
     "name": "saturating_add_signed",
@@ -18731,7 +18636,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with a signed rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2120,
+    "index": 2109,
     "type": "method",
     "url": "sus-num-usize.html#method.from.unsigned.from.unsigned",
     "name": "from",
@@ -18740,7 +18645,7 @@ const g_search_db = [
     "summary": "Constructs a usize from an unsigned integer type (u8, u16, u32, etc.) where no bits are lost."
   },
   {
-    "index": 2121,
+    "index": 2110,
     "type": "method",
     "url": "sus-num-usize.html#method.from.unsigned.from.unsignedenum",
     "name": "from",
@@ -18749,7 +18654,7 @@ const g_search_db = [
     "summary": "Constructs a usize from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2122,
+    "index": 2111,
     "type": "method",
     "url": "sus-num-usize.html#method.operator+=",
     "name": "operator+=",
@@ -18758,7 +18663,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 2123,
+    "index": 2112,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_mul",
     "name": "checked_mul",
@@ -18767,7 +18672,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 2124,
+    "index": 2113,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -18776,7 +18681,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs. Wrapped division on unsigned types is just normal division. There's no way wrapping could ever happen. This function exists, so that all operations are accounted for in the wrapping operations."
   },
   {
-    "index": 2125,
+    "index": 2114,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -18785,7 +18690,7 @@ const g_search_db = [
     "summary": "Checked Euclidean modulo. Computes self.rem_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 2126,
+    "index": 2115,
     "type": "method",
     "url": "sus-num-usize.html#method.from_be",
     "name": "from_be",
@@ -18794,7 +18699,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 2127,
+    "index": 2116,
     "type": "method",
     "url": "sus-num-usize.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -18803,7 +18708,7 @@ const g_search_db = [
     "summary": "Tries to construct a usize from a signed enum type (or enum class)."
   },
   {
-    "index": 2128,
+    "index": 2117,
     "type": "method",
     "url": "sus-num-usize.html#method.as_ptr",
     "name": "as_ptr",
@@ -18812,7 +18717,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2129,
+    "index": 2118,
     "type": "method",
     "url": "sus-num-usize.html#method.operator<<=",
     "name": "operator<<=",
@@ -18821,7 +18726,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 2130,
+    "index": 2119,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -18830,7 +18735,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2131,
+    "index": 2120,
     "type": "method",
     "url": "sus-num-usize.html#method.pow",
     "name": "pow",
@@ -18839,7 +18744,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2132,
+    "index": 2121,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_shl",
     "name": "checked_shl",
@@ -18848,7 +18753,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2133,
+    "index": 2122,
     "type": "method",
     "url": "sus-num-usize.html#method.operator=.assign.unsigned.smallenum",
     "name": "operator=",
@@ -18857,7 +18762,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned enum types where no bits are lost."
   },
   {
-    "index": 2134,
+    "index": 2123,
     "type": "method",
     "url": "sus-num-usize.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -18866,7 +18771,7 @@ const g_search_db = [
     "summary": "Tries to construct a usize from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 2135,
+    "index": 2124,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_add_signed",
     "name": "checked_add_signed",
@@ -18875,7 +18780,7 @@ const g_search_db = [
     "summary": "Checked integer addition with a signed rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2136,
+    "index": 2125,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -18884,7 +18789,7 @@ const g_search_db = [
     "summary": "Negates self in an overflowing fashion."
   },
   {
-    "index": 2137,
+    "index": 2126,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_next_power_of_two",
     "name": "checked_next_power_of_two",
@@ -18893,7 +18798,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 2138,
+    "index": 2127,
     "type": "method",
     "url": "sus-num-usize.html#method.operator%=",
     "name": "operator%=",
@@ -18902,7 +18807,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 2139,
+    "index": 2128,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_add_signed",
     "name": "overflowing_add_signed",
@@ -18911,7 +18816,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with a signed rhs."
   },
   {
-    "index": 2140,
+    "index": 2129,
     "type": "method",
     "url": "sus-num-usize.html#method.leading_ones",
     "name": "leading_ones",
@@ -18920,7 +18825,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 2141,
+    "index": 2130,
     "type": "method",
     "url": "sus-num-usize.html#method.saturating_add",
     "name": "saturating_add",
@@ -18929,7 +18834,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2142,
+    "index": 2131,
     "type": "method",
     "url": "sus-num-usize.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -18938,7 +18843,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2143,
+    "index": 2132,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_pow",
     "name": "checked_pow",
@@ -18947,7 +18852,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 2144,
+    "index": 2133,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -18956,7 +18861,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2145,
+    "index": 2134,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_add_signed",
     "name": "wrapping_add_signed",
@@ -18965,7 +18870,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2146,
+    "index": 2135,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_rem",
     "name": "checked_rem",
@@ -18974,7 +18879,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0."
   },
   {
-    "index": 2147,
+    "index": 2136,
     "type": "method",
     "url": "sus-num-usize.html#method.is_power_of_two",
     "name": "is_power_of_two",
@@ -18983,7 +18888,7 @@ const g_search_db = [
     "summary": "Returns true if and only if self == 2^k for some k."
   },
   {
-    "index": 2148,
+    "index": 2137,
     "type": "method",
     "url": "sus-num-usize.html#method.saturating_div",
     "name": "saturating_div",
@@ -18992,7 +18897,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing. Note that for unsigned integers overflow never occurs, so the value will always be strictly the result of division."
   },
   {
-    "index": 2149,
+    "index": 2138,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -19001,7 +18906,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 2150,
+    "index": 2139,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -19010,7 +18915,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 2151,
+    "index": 2140,
     "type": "method",
     "url": "sus-num-usize.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -19019,7 +18924,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2152,
+    "index": 2141,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -19028,7 +18933,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2153,
+    "index": 2142,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -19037,7 +18942,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 2154,
+    "index": 2143,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -19046,7 +18951,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs). Wrapped division on unsigned types is just normal division."
   },
   {
-    "index": 2155,
+    "index": 2144,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_neg",
     "name": "checked_neg",
@@ -19055,7 +18960,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None unless self == 0."
   },
   {
-    "index": 2156,
+    "index": 2145,
     "type": "method",
     "url": "sus-num-usize.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -19064,7 +18969,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 2157,
+    "index": 2146,
     "type": "method",
     "url": "sus-num-usize.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -19073,7 +18978,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 2158,
+    "index": 2147,
     "type": "method",
     "url": "sus-num-usize.html#method.next_multiple_of",
     "name": "next_multiple_of",
@@ -19082,7 +18987,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs."
   },
   {
-    "index": 2159,
+    "index": 2148,
     "type": "method",
     "url": "sus-num-usize.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -19091,7 +18996,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs. Wrapped remainder calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 2160,
+    "index": 2149,
     "type": "method",
     "url": "sus-num-usize.html#method.count_ones",
     "name": "count_ones",
@@ -19100,7 +19005,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 2161,
+    "index": 2150,
     "type": "method",
     "url": "sus-num-usize.html#method.div_ceil",
     "name": "div_ceil",
@@ -19109,7 +19014,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of itself and rhs, rounding the result towards positive infinity."
   },
   {
-    "index": 2162,
+    "index": 2151,
     "type": "method",
     "url": "sus-num-usize.html#method.div_euclid",
     "name": "div_euclid",
@@ -19118,7 +19023,7 @@ const g_search_db = [
     "summary": "Performs Euclidean division."
   },
   {
-    "index": 2163,
+    "index": 2152,
     "type": "method",
     "url": "sus-num-usize.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -19127,7 +19032,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 2164,
+    "index": 2153,
     "type": "method",
     "url": "sus-num-usize.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -19136,7 +19041,7 @@ const g_search_db = [
     "summary": "Calculates the least remainder of self (mod rhs)."
   },
   {
-    "index": 2165,
+    "index": 2154,
     "type": "struct",
     "url": "sus-num-uptr.html",
     "name": "uptr",
@@ -19145,7 +19050,7 @@ const g_search_db = [
     "summary": "A pointer-sized unsigned integer."
   },
   {
-    "index": 2166,
+    "index": 2155,
     "type": "field",
     "url": "sus-num-uptr.html#field.MAX_BIT_PATTERN",
     "name": "MAX_BIT_PATTERN",
@@ -19154,7 +19059,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an uptr, if the size of a pointer is larger than the size of an address, this value will be larger than MAX_ADDR and will always be the maximum value for the integer type."
   },
   {
-    "index": 2167,
+    "index": 2156,
     "type": "field",
     "url": "sus-num-uptr.html#field.MAX_ADDR",
     "name": "MAX_ADDR",
@@ -19163,7 +19068,7 @@ const g_search_db = [
     "summary": "The largest address, the same value as usize::MAX but represented as a uptr."
   },
   {
-    "index": 2168,
+    "index": 2157,
     "type": "field",
     "url": "sus-num-uptr.html#field.MIN",
     "name": "MIN",
@@ -19172,7 +19077,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an uptr."
   },
   {
-    "index": 2169,
+    "index": 2158,
     "type": "field",
     "url": "sus-num-uptr.html#field.BITS",
     "name": "BITS",
@@ -19181,7 +19086,7 @@ const g_search_db = [
     "summary": "The size of and uptr in bits."
   },
   {
-    "index": 2170,
+    "index": 2159,
     "type": "field",
     "url": "sus-num-uptr.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -19190,7 +19095,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an uptr, as a native C++ primitive."
   },
   {
-    "index": 2171,
+    "index": 2160,
     "type": "field",
     "url": "sus-num-uptr.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -19199,7 +19104,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an uptr, as a native C++ primitive."
   },
   {
-    "index": 2172,
+    "index": 2161,
     "type": "field",
     "url": "sus-num-uptr.html#field.primitive_value",
     "name": "primitive_value",
@@ -19208,7 +19113,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with uint32_t{n} for a numeric value n."
   },
   {
-    "index": 2173,
+    "index": 2162,
     "type": "constructor",
     "url": "sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized.primitive",
     "name": "uptr",
@@ -19217,7 +19122,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types the same size as a pointer."
   },
   {
-    "index": 2174,
+    "index": 2163,
     "type": "constructor",
     "url": "sus-num-uptr.html#method.uptr.ctor.unsigned.ptrsized",
     "name": "uptr",
@@ -19226,7 +19131,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types of the same size as a pointer."
   },
   {
-    "index": 2175,
+    "index": 2164,
     "type": "constructor",
     "url": "sus-num-uptr.html#method.uptr.ctor.unsigned.nullptr",
     "name": "uptr",
@@ -19235,7 +19140,7 @@ const g_search_db = [
     "summary": "Construction from a null pointer."
   },
   {
-    "index": 2176,
+    "index": 2165,
     "type": "constructor",
     "url": "sus-num-uptr.html#method.uptr.ctor.unsigned.pointer",
     "name": "uptr",
@@ -19244,7 +19149,7 @@ const g_search_db = [
     "summary": "Construction from a pointer."
   },
   {
-    "index": 2177,
+    "index": 2166,
     "type": "constructor",
     "url": "sus-num-uptr.html#method.uptr.ctor.default",
     "name": "uptr",
@@ -19253,7 +19158,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 2178,
+    "index": 2167,
     "type": "conversion",
     "url": "sus-num-uptr.html#method.operator U",
     "name": "operator U",
@@ -19262,7 +19167,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 2179,
+    "index": 2168,
     "type": "method",
     "url": "sus-num-uptr.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -19271,7 +19176,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 2180,
+    "index": 2169,
     "type": "method",
     "url": "sus-num-uptr.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -19280,7 +19185,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 2181,
+    "index": 2170,
     "type": "method",
     "url": "sus-num-uptr.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -19289,7 +19194,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 2182,
+    "index": 2171,
     "type": "method",
     "url": "sus-num-uptr.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -19298,7 +19203,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 2183,
+    "index": 2172,
     "type": "method",
     "url": "sus-num-uptr.html#method.to_le",
     "name": "to_le",
@@ -19307,7 +19212,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 2184,
+    "index": 2173,
     "type": "method",
     "url": "sus-num-uptr.html#method.to_be",
     "name": "to_be",
@@ -19316,7 +19221,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 2185,
+    "index": 2174,
     "type": "method",
     "url": "sus-num-uptr.html#method.from_le",
     "name": "from_le",
@@ -19325,7 +19230,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 2186,
+    "index": 2175,
     "type": "method",
     "url": "sus-num-uptr.html#method.from_be",
     "name": "from_be",
@@ -19334,7 +19239,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 2187,
+    "index": 2176,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_next_power_of_two",
     "name": "wrapping_next_power_of_two",
@@ -19343,7 +19248,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 2188,
+    "index": 2177,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_next_multiple_of",
     "name": "checked_next_multiple_of",
@@ -19352,7 +19257,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs. Returns None if rhs is zero or the operation would result in overflow."
   },
   {
-    "index": 2189,
+    "index": 2178,
     "type": "method",
     "url": "sus-num-uptr.html#method.log10",
     "name": "log10",
@@ -19361,7 +19266,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2190,
+    "index": 2179,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_log10",
     "name": "checked_log10",
@@ -19370,7 +19275,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2191,
+    "index": 2180,
     "type": "method",
     "url": "sus-num-uptr.html#method.log2",
     "name": "log2",
@@ -19379,7 +19284,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2192,
+    "index": 2181,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_log2",
     "name": "checked_log2",
@@ -19388,7 +19293,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2193,
+    "index": 2182,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -19397,7 +19302,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 2194,
+    "index": 2183,
     "type": "method",
     "url": "sus-num-uptr.html#method.rotate_right",
     "name": "rotate_right",
@@ -19406,7 +19311,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 2195,
+    "index": 2184,
     "type": "method",
     "url": "sus-num-uptr.html#method.rotate_left",
     "name": "rotate_left",
@@ -19415,7 +19320,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 2196,
+    "index": 2185,
     "type": "method",
     "url": "sus-num-uptr.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -19424,7 +19329,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 2197,
+    "index": 2186,
     "type": "method",
     "url": "sus-num-uptr.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -19433,7 +19338,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 2198,
+    "index": 2187,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -19442,7 +19347,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2199,
+    "index": 2188,
     "type": "method",
     "url": "sus-num-uptr.html#method.log",
     "name": "log",
@@ -19451,7 +19356,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2200,
+    "index": 2189,
     "type": "method",
     "url": "sus-num-uptr.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -19460,7 +19365,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2201,
+    "index": 2190,
     "type": "method",
     "url": "sus-num-uptr.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -19469,7 +19374,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 2202,
+    "index": 2191,
     "type": "method",
     "url": "sus-num-uptr.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -19478,7 +19383,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2203,
+    "index": 2192,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -19487,7 +19392,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 2204,
+    "index": 2193,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_sub",
     "name": "checked_sub",
@@ -19496,7 +19401,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2205,
+    "index": 2194,
     "type": "method",
     "url": "sus-num-uptr.html#method.count_zeros",
     "name": "count_zeros",
@@ -19505,7 +19410,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 2206,
+    "index": 2195,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -19514,7 +19419,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 2207,
+    "index": 2196,
     "type": "method",
     "url": "sus-num-uptr.html#method.addr",
     "name": "addr",
@@ -19523,7 +19428,7 @@ const g_search_db = [
     "summary": "Returns the address portion of the pointer."
   },
   {
-    "index": 2208,
+    "index": 2197,
     "type": "method",
     "url": "sus-num-uptr.html#method.next_power_of_two",
     "name": "next_power_of_two",
@@ -19532,7 +19437,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 2209,
+    "index": 2198,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_shr",
     "name": "checked_shr",
@@ -19541,7 +19446,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2210,
+    "index": 2199,
     "type": "method",
     "url": "sus-num-uptr.html#method.abs_diff",
     "name": "abs_diff",
@@ -19550,7 +19455,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 2211,
+    "index": 2200,
     "type": "method",
     "url": "sus-num-uptr.html#method.from_product",
     "name": "from_product",
@@ -19559,7 +19464,7 @@ const g_search_db = [
     "summary": "Constructs a uptr from an Iterator by computing the product of all elements in the iterator."
   },
   {
-    "index": 2212,
+    "index": 2201,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator>>=",
     "name": "operator>>=",
@@ -19568,7 +19473,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 2213,
+    "index": 2202,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator^=",
     "name": "operator^=",
@@ -19577,7 +19482,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 2214,
+    "index": 2203,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator/=",
     "name": "operator/=",
@@ -19586,7 +19491,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 2215,
+    "index": 2204,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_div",
     "name": "checked_div",
@@ -19595,7 +19500,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0."
   },
   {
-    "index": 2216,
+    "index": 2205,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator+=",
     "name": "operator+=",
@@ -19604,7 +19509,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 2217,
+    "index": 2206,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_mul",
     "name": "checked_mul",
@@ -19613,7 +19518,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 2218,
+    "index": 2207,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -19622,7 +19527,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs. Wrapped division on unsigned types is just normal division. There's no way wrapping could ever happen. This function exists, so that all operations are accounted for in the wrapping operations."
   },
   {
-    "index": 2219,
+    "index": 2208,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -19631,7 +19536,7 @@ const g_search_db = [
     "summary": "Checked Euclidean modulo. Computes self.rem_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 2220,
+    "index": 2209,
     "type": "method",
     "url": "sus-num-uptr.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -19640,7 +19545,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2221,
+    "index": 2210,
     "type": "method",
     "url": "sus-num-uptr.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -19649,7 +19554,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2222,
+    "index": 2211,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -19658,7 +19563,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 2223,
+    "index": 2212,
     "type": "method",
     "url": "sus-num-uptr.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -19667,7 +19572,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 2224,
+    "index": 2213,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator~",
     "name": "operator~",
@@ -19676,7 +19581,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 2225,
+    "index": 2214,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator=.assign.unsigned.nullptr",
     "name": "operator=",
@@ -19685,7 +19590,7 @@ const g_search_db = [
     "summary": "Assignment from a null pointer."
   },
   {
-    "index": 2226,
+    "index": 2215,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -19694,7 +19599,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 2227,
+    "index": 2216,
     "type": "method",
     "url": "sus-num-uptr.html#method.from_sum",
     "name": "from_sum",
@@ -19703,7 +19608,7 @@ const g_search_db = [
     "summary": "Constructs a uptr from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 2228,
+    "index": 2217,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_add",
     "name": "checked_add",
@@ -19712,7 +19617,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2229,
+    "index": 2218,
     "type": "method",
     "url": "sus-num-uptr.html#method.as_ptr",
     "name": "as_ptr",
@@ -19721,7 +19626,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2230,
+    "index": 2219,
     "type": "method",
     "url": "sus-num-uptr.html#method.from.unsigned.from.unsignedprimitive",
     "name": "from",
@@ -19730,7 +19635,7 @@ const g_search_db = [
     "summary": "Constructs a uptr from an unsigned primitive integer type (unsigned int, unsigned long, etc.) with the same size as a pointer."
   },
   {
-    "index": 2231,
+    "index": 2220,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator|=",
     "name": "operator|=",
@@ -19739,7 +19644,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 2232,
+    "index": 2221,
     "type": "method",
     "url": "sus-num-uptr.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -19748,7 +19653,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 2233,
+    "index": 2222,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -19757,7 +19662,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 2234,
+    "index": 2223,
     "type": "method",
     "url": "sus-num-uptr.html#method.with_addr",
     "name": "with_addr",
@@ -19766,7 +19671,7 @@ const g_search_db = [
     "summary": "Creates a new pointer with the given address."
   },
   {
-    "index": 2235,
+    "index": 2224,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -19775,7 +19680,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-left; yields self &lt;&lt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 2236,
+    "index": 2225,
     "type": "method",
     "url": "sus-num-uptr.html#method.from.unsigned.from.unsigned",
     "name": "from",
@@ -19784,7 +19689,7 @@ const g_search_db = [
     "summary": "Constructs a uptr from an unsigned integer type (u8, u16, u32, etc) with the same size as a pointer."
   },
   {
-    "index": 2237,
+    "index": 2226,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_next_power_of_two",
     "name": "checked_next_power_of_two",
@@ -19793,7 +19698,7 @@ const g_search_db = [
     "summary": "Returns the smallest power of two greater than or equal to self."
   },
   {
-    "index": 2238,
+    "index": 2227,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator%=",
     "name": "operator%=",
@@ -19802,7 +19707,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 2239,
+    "index": 2228,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_log",
     "name": "checked_log",
@@ -19811,7 +19716,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2240,
+    "index": 2229,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator&=",
     "name": "operator&=",
@@ -19820,7 +19725,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 2241,
+    "index": 2230,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator=.assign.unsigned.small.primitive",
     "name": "operator=",
@@ -19829,7 +19734,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned primitive types with the same size as a pointer."
   },
   {
-    "index": 2242,
+    "index": 2231,
     "type": "method",
     "url": "sus-num-uptr.html#method.try_from.unsigned",
     "name": "try_from",
@@ -19838,7 +19743,7 @@ const g_search_db = [
     "summary": "Tries to construct a uptr from an unsigned integer type (u8, u16, u32, etc.) with the same size as a pointer."
   },
   {
-    "index": 2243,
+    "index": 2232,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator=.assign.unsigned.small.typed",
     "name": "operator=",
@@ -19847,7 +19752,7 @@ const g_search_db = [
     "summary": "Assignment from unsigned types with the same size as a pointer."
   },
   {
-    "index": 2244,
+    "index": 2233,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator*=",
     "name": "operator*=",
@@ -19856,7 +19761,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 2245,
+    "index": 2234,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -19865,7 +19770,7 @@ const g_search_db = [
     "summary": "Calculates the remainder self.rem_euclid(rhs) as if by Euclidean division."
   },
   {
-    "index": 2246,
+    "index": 2235,
     "type": "method",
     "url": "sus-num-uptr.html#method.try_from.ptr",
     "name": "try_from",
@@ -19874,7 +19779,7 @@ const g_search_db = [
     "summary": "Tries to construct a uptr from a pointer."
   },
   {
-    "index": 2247,
+    "index": 2236,
     "type": "method",
     "url": "sus-num-uptr.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -19883,7 +19788,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 2248,
+    "index": 2237,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator-=",
     "name": "operator-=",
@@ -19892,7 +19797,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 2249,
+    "index": 2238,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -19901,7 +19806,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 2250,
+    "index": 2239,
     "type": "method",
     "url": "sus-num-uptr.html#method.from.uptr.from.pointer",
     "name": "from",
@@ -19910,7 +19815,7 @@ const g_search_db = [
     "summary": "Constructs a uptr from a pointer."
   },
   {
-    "index": 2251,
+    "index": 2240,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator<<=",
     "name": "operator<<=",
@@ -19919,7 +19824,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 2252,
+    "index": 2241,
     "type": "method",
     "url": "sus-num-uptr.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -19928,7 +19833,7 @@ const g_search_db = [
     "summary": "Construct a uptr from an unsigned primitive integer type (unsigned int, unsigned long, etc.) with the same size as a pointer."
   },
   {
-    "index": 2253,
+    "index": 2242,
     "type": "method",
     "url": "sus-num-uptr.html#method.leading_ones",
     "name": "leading_ones",
@@ -19937,7 +19842,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 2254,
+    "index": 2243,
     "type": "method",
     "url": "sus-num-uptr.html#method.saturating_add",
     "name": "saturating_add",
@@ -19946,7 +19851,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2255,
+    "index": 2244,
     "type": "method",
     "url": "sus-num-uptr.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -19955,7 +19860,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2256,
+    "index": 2245,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_pow",
     "name": "checked_pow",
@@ -19964,7 +19869,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 2257,
+    "index": 2246,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -19973,7 +19878,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2258,
+    "index": 2247,
     "type": "method",
     "url": "sus-num-uptr.html#method.is_power_of_two",
     "name": "is_power_of_two",
@@ -19982,7 +19887,7 @@ const g_search_db = [
     "summary": "Returns true if and only if self == 2^k for some k."
   },
   {
-    "index": 2259,
+    "index": 2248,
     "type": "method",
     "url": "sus-num-uptr.html#method.saturating_div",
     "name": "saturating_div",
@@ -19991,7 +19896,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing. Note that for unsigned integers overflow never occurs, so the value will always be strictly the result of division."
   },
   {
-    "index": 2260,
+    "index": 2249,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -20000,7 +19905,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 2261,
+    "index": 2250,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -20009,7 +19914,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 2262,
+    "index": 2251,
     "type": "method",
     "url": "sus-num-uptr.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -20018,7 +19923,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2263,
+    "index": 2252,
     "type": "method",
     "url": "sus-num-uptr.html#method.operator=.assign.unsigned.pointer",
     "name": "operator=",
@@ -20027,7 +19932,7 @@ const g_search_db = [
     "summary": "Assignment from a pointer."
   },
   {
-    "index": 2264,
+    "index": 2253,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -20036,7 +19941,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2265,
+    "index": 2254,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -20045,7 +19950,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 2266,
+    "index": 2255,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -20054,7 +19959,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs). Wrapped division on unsigned types is just normal division."
   },
   {
-    "index": 2267,
+    "index": 2256,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_neg",
     "name": "checked_neg",
@@ -20063,7 +19968,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None unless self == 0."
   },
   {
-    "index": 2268,
+    "index": 2257,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -20072,7 +19977,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0."
   },
   {
-    "index": 2269,
+    "index": 2258,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -20081,7 +19986,7 @@ const g_search_db = [
     "summary": "Negates self in an overflowing fashion."
   },
   {
-    "index": 2270,
+    "index": 2259,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_rem",
     "name": "checked_rem",
@@ -20090,7 +19995,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0."
   },
   {
-    "index": 2271,
+    "index": 2260,
     "type": "method",
     "url": "sus-num-uptr.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -20099,7 +20004,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 2272,
+    "index": 2261,
     "type": "method",
     "url": "sus-num-uptr.html#method.next_multiple_of",
     "name": "next_multiple_of",
@@ -20108,7 +20013,7 @@ const g_search_db = [
     "summary": "Calculates the smallest value greater than or equal to itself that is a multiple of rhs."
   },
   {
-    "index": 2273,
+    "index": 2262,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -20117,7 +20022,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs. Wrapped remainder calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 2274,
+    "index": 2263,
     "type": "method",
     "url": "sus-num-uptr.html#method.count_ones",
     "name": "count_ones",
@@ -20126,7 +20031,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 2275,
+    "index": 2264,
     "type": "method",
     "url": "sus-num-uptr.html#method.div_ceil",
     "name": "div_ceil",
@@ -20135,7 +20040,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of itself and rhs, rounding the result towards positive infinity."
   },
   {
-    "index": 2276,
+    "index": 2265,
     "type": "method",
     "url": "sus-num-uptr.html#method.div_euclid",
     "name": "div_euclid",
@@ -20144,7 +20049,7 @@ const g_search_db = [
     "summary": "Performs Euclidean division."
   },
   {
-    "index": 2277,
+    "index": 2266,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -20153,7 +20058,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 2278,
+    "index": 2267,
     "type": "method",
     "url": "sus-num-uptr.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -20162,7 +20067,7 @@ const g_search_db = [
     "summary": "Calculates the least remainder of self (mod rhs)."
   },
   {
-    "index": 2279,
+    "index": 2268,
     "type": "method",
     "url": "sus-num-uptr.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -20171,7 +20076,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean modulo. Computes self.rem_euclid(rhs). Wrapped modulo calculation on unsigned types is just the regular remainder calculation."
   },
   {
-    "index": 2280,
+    "index": 2269,
     "type": "method",
     "url": "sus-num-uptr.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -20180,7 +20085,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2281,
+    "index": 2270,
     "type": "method",
     "url": "sus-num-uptr.html#method.pow",
     "name": "pow",
@@ -20189,7 +20094,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2282,
+    "index": 2271,
     "type": "method",
     "url": "sus-num-uptr.html#method.checked_shl",
     "name": "checked_shl",
@@ -20198,7 +20103,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2283,
+    "index": 2272,
     "type": "struct",
     "url": "sus-num-i32.html",
     "name": "i32",
@@ -20207,7 +20112,7 @@ const g_search_db = [
     "summary": "A 32-bit signed integer."
   },
   {
-    "index": 2284,
+    "index": 2273,
     "type": "field",
     "url": "sus-num-i32.html#field.BITS",
     "name": "BITS",
@@ -20216,7 +20121,7 @@ const g_search_db = [
     "summary": "The size of and i32 in bits."
   },
   {
-    "index": 2285,
+    "index": 2274,
     "type": "field",
     "url": "sus-num-i32.html#field.MAX",
     "name": "MAX",
@@ -20225,7 +20130,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an i32."
   },
   {
-    "index": 2286,
+    "index": 2275,
     "type": "field",
     "url": "sus-num-i32.html#field.MIN",
     "name": "MIN",
@@ -20234,7 +20139,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an i32."
   },
   {
-    "index": 2287,
+    "index": 2276,
     "type": "field",
     "url": "sus-num-i32.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -20243,7 +20148,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an i32, as a native C++ primitive."
   },
   {
-    "index": 2288,
+    "index": 2277,
     "type": "field",
     "url": "sus-num-i32.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -20252,7 +20157,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an i32, as a native C++ primitive."
   },
   {
-    "index": 2289,
+    "index": 2278,
     "type": "field",
     "url": "sus-num-i32.html#field.primitive_value",
     "name": "primitive_value",
@@ -20261,7 +20166,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with int32_t{n} for a numeric value n."
   },
   {
-    "index": 2290,
+    "index": 2279,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32.signedint.ctor.unsignedint.typed",
     "name": "i32",
@@ -20270,7 +20175,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 2291,
+    "index": 2280,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32.signedint.ctor.unsignedenumclass",
     "name": "i32",
@@ -20279,7 +20184,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 2292,
+    "index": 2281,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32.signedint.ctor.signedenumclass",
     "name": "i32",
@@ -20288,7 +20193,7 @@ const g_search_db = [
     "summary": "Construction from signed enum class types where no bits are lost."
   },
   {
-    "index": 2293,
+    "index": 2282,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32.signedint.ctor.signedenum",
     "name": "i32",
@@ -20297,7 +20202,7 @@ const g_search_db = [
     "summary": "Construction from signed enum types where no bits are lost."
   },
   {
-    "index": 2294,
+    "index": 2283,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32.signedint.ctor.signedint.primitive",
     "name": "i32",
@@ -20306,7 +20211,7 @@ const g_search_db = [
     "summary": "Construction from signed primitive types where no bits are lost."
   },
   {
-    "index": 2295,
+    "index": 2284,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32.signedint.ctor.unsignedint.primitive",
     "name": "i32",
@@ -20315,7 +20220,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 2296,
+    "index": 2285,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32.signedint.ctor.signedint.typed",
     "name": "i32",
@@ -20324,7 +20229,7 @@ const g_search_db = [
     "summary": "Construction from signed types where no bits are lost."
   },
   {
-    "index": 2297,
+    "index": 2286,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32.signedint.ctor.unsignedenum",
     "name": "i32",
@@ -20333,7 +20238,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 2298,
+    "index": 2287,
     "type": "constructor",
     "url": "sus-num-i32.html#method.i32",
     "name": "i32",
@@ -20342,7 +20247,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 2299,
+    "index": 2288,
     "type": "conversion",
     "url": "sus-num-i32.html#method.operator U",
     "name": "operator U",
@@ -20351,7 +20256,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 2300,
+    "index": 2289,
     "type": "method",
     "url": "sus-num-i32.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -20360,7 +20265,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 2301,
+    "index": 2290,
     "type": "method",
     "url": "sus-num-i32.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -20369,7 +20274,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 2302,
+    "index": 2291,
     "type": "method",
     "url": "sus-num-i32.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -20378,7 +20283,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 2303,
+    "index": 2292,
     "type": "method",
     "url": "sus-num-i32.html#method.to_le",
     "name": "to_le",
@@ -20387,7 +20292,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 2304,
+    "index": 2293,
     "type": "method",
     "url": "sus-num-i32.html#method.to_be",
     "name": "to_be",
@@ -20396,7 +20301,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 2305,
+    "index": 2294,
     "type": "method",
     "url": "sus-num-i32.html#method.from_le",
     "name": "from_le",
@@ -20405,7 +20310,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 2306,
+    "index": 2295,
     "type": "method",
     "url": "sus-num-i32.html#method.log10",
     "name": "log10",
@@ -20414,7 +20319,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2307,
+    "index": 2296,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_log10",
     "name": "checked_log10",
@@ -20423,7 +20328,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2308,
+    "index": 2297,
     "type": "method",
     "url": "sus-num-i32.html#method.log2",
     "name": "log2",
@@ -20432,7 +20337,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2309,
+    "index": 2298,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_log2",
     "name": "checked_log2",
@@ -20441,7 +20346,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2310,
+    "index": 2299,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -20450,7 +20355,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 2311,
+    "index": 2300,
     "type": "method",
     "url": "sus-num-i32.html#method.rotate_left",
     "name": "rotate_left",
@@ -20459,7 +20364,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 2312,
+    "index": 2301,
     "type": "method",
     "url": "sus-num-i32.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -20468,7 +20373,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 2313,
+    "index": 2302,
     "type": "method",
     "url": "sus-num-i32.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -20477,7 +20382,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 2314,
+    "index": 2303,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_sub_unsigned",
     "name": "wrapping_sub_unsigned",
@@ -20486,7 +20391,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction with an unsigned rhs. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2315,
+    "index": 2304,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -20495,7 +20400,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2316,
+    "index": 2305,
     "type": "method",
     "url": "sus-num-i32.html#method.log",
     "name": "log",
@@ -20504,7 +20409,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2317,
+    "index": 2306,
     "type": "method",
     "url": "sus-num-i32.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -20513,7 +20418,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2318,
+    "index": 2307,
     "type": "method",
     "url": "sus-num-i32.html#method.saturating_sub_unsigned",
     "name": "saturating_sub_unsigned",
@@ -20522,7 +20427,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction with an unsigned rhs. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2319,
+    "index": 2308,
     "type": "method",
     "url": "sus-num-i32.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -20531,7 +20436,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 2320,
+    "index": 2309,
     "type": "method",
     "url": "sus-num-i32.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -20540,7 +20445,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2321,
+    "index": 2310,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -20549,7 +20454,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 2322,
+    "index": 2311,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_sub_unsigned",
     "name": "checked_sub_unsigned",
@@ -20558,7 +20463,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction with an unsigned rhs. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2323,
+    "index": 2312,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_sub",
     "name": "checked_sub",
@@ -20567,7 +20472,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2324,
+    "index": 2313,
     "type": "method",
     "url": "sus-num-i32.html#method.count_zeros",
     "name": "count_zeros",
@@ -20576,7 +20481,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 2325,
+    "index": 2314,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -20585,7 +20490,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 2326,
+    "index": 2315,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -20594,7 +20499,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2327,
+    "index": 2316,
     "type": "method",
     "url": "sus-num-i32.html#method.pow",
     "name": "pow",
@@ -20603,7 +20508,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2328,
+    "index": 2317,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_shl",
     "name": "checked_shl",
@@ -20612,7 +20517,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2329,
+    "index": 2318,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -20621,7 +20526,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean remainder. Computes self.rem_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 2330,
+    "index": 2319,
     "type": "method",
     "url": "sus-num-i32.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -20630,7 +20535,7 @@ const g_search_db = [
     "summary": "Calculates the least nonnegative remainder of self (mod rhs)."
   },
   {
-    "index": 2331,
+    "index": 2320,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -20639,7 +20544,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 2332,
+    "index": 2321,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -20648,7 +20553,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 2333,
+    "index": 2322,
     "type": "method",
     "url": "sus-num-i32.html#method.div_euclid",
     "name": "div_euclid",
@@ -20657,7 +20562,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division of self by rhs."
   },
   {
-    "index": 2334,
+    "index": 2323,
     "type": "method",
     "url": "sus-num-i32.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -20666,7 +20571,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 2335,
+    "index": 2324,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -20675,7 +20580,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2336,
+    "index": 2325,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -20684,7 +20589,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 2337,
+    "index": 2326,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -20693,7 +20598,7 @@ const g_search_db = [
     "summary": "Negates self, overflowing if this is equal to the minimum value."
   },
   {
-    "index": 2338,
+    "index": 2327,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_neg",
     "name": "checked_neg",
@@ -20702,7 +20607,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None if self == MIN."
   },
   {
-    "index": 2339,
+    "index": 2328,
     "type": "method",
     "url": "sus-num-i32.html#method.operator/=",
     "name": "operator/=",
@@ -20711,7 +20616,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 2340,
+    "index": 2329,
     "type": "method",
     "url": "sus-num-i32.html#method.from.signedint.from.unsignedenum",
     "name": "from",
@@ -20720,7 +20625,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2341,
+    "index": 2330,
     "type": "method",
     "url": "sus-num-i32.html#method.operator=.signedint.assign.signedint.typed",
     "name": "operator=",
@@ -20729,7 +20634,7 @@ const g_search_db = [
     "summary": "Assignment from signed types where no bits are lost."
   },
   {
-    "index": 2342,
+    "index": 2331,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -20738,7 +20643,7 @@ const g_search_db = [
     "summary": "Overflowing Euclidean remainder. Calculates self.rem_euclid(rhs)."
   },
   {
-    "index": 2343,
+    "index": 2332,
     "type": "method",
     "url": "sus-num-i32.html#method.operator*=",
     "name": "operator*=",
@@ -20747,7 +20652,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 2344,
+    "index": 2333,
     "type": "method",
     "url": "sus-num-i32.html#method.is_negative",
     "name": "is_negative",
@@ -20756,7 +20661,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is positive and false if the number is zero or negative."
   },
   {
-    "index": 2345,
+    "index": 2334,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_div",
     "name": "checked_div",
@@ -20765,7 +20670,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2346,
+    "index": 2335,
     "type": "method",
     "url": "sus-num-i32.html#method.operator+=",
     "name": "operator+=",
@@ -20774,7 +20679,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 2347,
+    "index": 2336,
     "type": "method",
     "url": "sus-num-i32.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -20783,7 +20688,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 2348,
+    "index": 2337,
     "type": "method",
     "url": "sus-num-i32.html#method.operator=.signedint.assign.signedint.primitive",
     "name": "operator=",
@@ -20792,7 +20697,7 @@ const g_search_db = [
     "summary": "Assignment from signed primitive types where no bits are lost."
   },
   {
-    "index": 2349,
+    "index": 2338,
     "type": "method",
     "url": "sus-num-i32.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -20801,7 +20706,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 2350,
+    "index": 2339,
     "type": "method",
     "url": "sus-num-i32.html#method.operator~",
     "name": "operator~",
@@ -20810,7 +20715,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 2351,
+    "index": 2340,
     "type": "method",
     "url": "sus-num-i32.html#method.operator%=",
     "name": "operator%=",
@@ -20819,7 +20724,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 2352,
+    "index": 2341,
     "type": "method",
     "url": "sus-num-i32.html#method.signum",
     "name": "signum",
@@ -20828,7 +20733,7 @@ const g_search_db = [
     "summary": "Returns a number representing sign of the current value."
   },
   {
-    "index": 2353,
+    "index": 2342,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -20837,7 +20742,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 2354,
+    "index": 2343,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -20846,7 +20751,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 2355,
+    "index": 2344,
     "type": "method",
     "url": "sus-num-i32.html#method.from_sum",
     "name": "from_sum",
@@ -20855,7 +20760,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 2356,
+    "index": 2345,
     "type": "method",
     "url": "sus-num-i32.html#method.from.from.signed.prim",
     "name": "from",
@@ -20864,7 +20769,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from a signed primitive integer type (int, long, etc) where no bits are lost."
   },
   {
-    "index": 2357,
+    "index": 2346,
     "type": "method",
     "url": "sus-num-i32.html#method.from.from.signed",
     "name": "from",
@@ -20873,7 +20778,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from a signed integer type (i8, i16, i32, etc) where no bits are lost."
   },
   {
-    "index": 2358,
+    "index": 2347,
     "type": "method",
     "url": "sus-num-i32.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -20882,7 +20787,7 @@ const g_search_db = [
     "summary": "Tries to construct a i32 from a signed primitive integer type (int, long, etc)."
   },
   {
-    "index": 2359,
+    "index": 2348,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_rem",
     "name": "checked_rem",
@@ -20891,7 +20796,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2360,
+    "index": 2349,
     "type": "method",
     "url": "sus-num-i32.html#method.from.from.unsigned",
     "name": "from",
@@ -20900,7 +20805,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from an unsigned integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 2361,
+    "index": 2350,
     "type": "method",
     "url": "sus-num-i32.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -20909,7 +20814,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2362,
+    "index": 2351,
     "type": "method",
     "url": "sus-num-i32.html#method.from.signedint.from.signedenum",
     "name": "from",
@@ -20918,7 +20823,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from a signed enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2363,
+    "index": 2352,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_shr",
     "name": "checked_shr",
@@ -20927,7 +20832,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2364,
+    "index": 2353,
     "type": "method",
     "url": "sus-num-i32.html#method.operator-",
     "name": "operator-",
@@ -20936,7 +20841,7 @@ const g_search_db = [
     "summary": "Computes the negation of the current value."
   },
   {
-    "index": 2365,
+    "index": 2354,
     "type": "method",
     "url": "sus-num-i32.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -20945,7 +20850,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2366,
+    "index": 2355,
     "type": "method",
     "url": "sus-num-i32.html#method.rotate_right",
     "name": "rotate_right",
@@ -20954,7 +20859,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 2367,
+    "index": 2356,
     "type": "method",
     "url": "sus-num-i32.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -20963,7 +20868,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from an unsigned enum type (or enum class)."
   },
   {
-    "index": 2368,
+    "index": 2357,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_add",
     "name": "checked_add",
@@ -20972,7 +20877,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2369,
+    "index": 2358,
     "type": "method",
     "url": "sus-num-i32.html#method.from.from.unsigned.prim",
     "name": "from",
@@ -20981,7 +20886,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from an unsigned primitive integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 2370,
+    "index": 2359,
     "type": "method",
     "url": "sus-num-i32.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -20990,7 +20895,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2371,
+    "index": 2360,
     "type": "method",
     "url": "sus-num-i32.html#method.is_positive",
     "name": "is_positive",
@@ -20999,7 +20904,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is negative and false if the number is zero or positive."
   },
   {
-    "index": 2372,
+    "index": 2361,
     "type": "method",
     "url": "sus-num-i32.html#method.from_be",
     "name": "from_be",
@@ -21008,7 +20913,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 2373,
+    "index": 2362,
     "type": "method",
     "url": "sus-num-i32.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -21017,7 +20922,7 @@ const g_search_db = [
     "summary": "Tries to construct a i32 from a signed enum type (or enum class)."
   },
   {
-    "index": 2374,
+    "index": 2363,
     "type": "method",
     "url": "sus-num-i32.html#method.from_product",
     "name": "from_product",
@@ -21026,7 +20931,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from an Iterator by computing the product of all elements in the itertor."
   },
   {
-    "index": 2375,
+    "index": 2364,
     "type": "method",
     "url": "sus-num-i32.html#method.abs_diff",
     "name": "abs_diff",
@@ -21035,7 +20940,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 2376,
+    "index": 2365,
     "type": "method",
     "url": "sus-num-i32.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -21044,7 +20949,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 2377,
+    "index": 2366,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -21053,7 +20958,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 2378,
+    "index": 2367,
     "type": "method",
     "url": "sus-num-i32.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -21062,7 +20967,7 @@ const g_search_db = [
     "summary": "Constructs a i32 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 2379,
+    "index": 2368,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_log",
     "name": "checked_log",
@@ -21071,7 +20976,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2380,
+    "index": 2369,
     "type": "method",
     "url": "sus-num-i32.html#method.try_from.unsigned",
     "name": "try_from",
@@ -21080,7 +20985,7 @@ const g_search_db = [
     "summary": "Try to construct a i32 from an unsigned integer type (u8, u16, u32, etc)."
   },
   {
-    "index": 2381,
+    "index": 2370,
     "type": "method",
     "url": "sus-num-i32.html#method.operator&=",
     "name": "operator&=",
@@ -21089,7 +20994,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 2382,
+    "index": 2371,
     "type": "method",
     "url": "sus-num-i32.html#method.operator^=",
     "name": "operator^=",
@@ -21098,7 +21003,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 2383,
+    "index": 2372,
     "type": "method",
     "url": "sus-num-i32.html#method.try_from.signed",
     "name": "try_from",
@@ -21107,7 +21012,7 @@ const g_search_db = [
     "summary": "Try to construct a i32 from a signed integer type (i8, i16, i32, etc)."
   },
   {
-    "index": 2384,
+    "index": 2373,
     "type": "method",
     "url": "sus-num-i32.html#method.abs",
     "name": "abs",
@@ -21116,7 +21021,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of itself."
   },
   {
-    "index": 2385,
+    "index": 2374,
     "type": "method",
     "url": "sus-num-i32.html#method.operator|=",
     "name": "operator|=",
@@ -21125,7 +21030,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 2386,
+    "index": 2375,
     "type": "method",
     "url": "sus-num-i32.html#method.as_ptr",
     "name": "as_ptr",
@@ -21134,7 +21039,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2387,
+    "index": 2376,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_abs",
     "name": "wrapping_abs",
@@ -21143,7 +21048,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) absolute value. Computes abs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2388,
+    "index": 2377,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_add_unsigned",
     "name": "checked_add_unsigned",
@@ -21152,7 +21057,7 @@ const g_search_db = [
     "summary": "Checked integer addition with an unsigned rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2389,
+    "index": 2378,
     "type": "method",
     "url": "sus-num-i32.html#method.operator<<=",
     "name": "operator<<=",
@@ -21161,7 +21066,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 2390,
+    "index": 2379,
     "type": "method",
     "url": "sus-num-i32.html#method.operator>>=",
     "name": "operator>>=",
@@ -21170,7 +21075,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 2391,
+    "index": 2380,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -21179,7 +21084,7 @@ const g_search_db = [
     "summary": "Checked Euclidean remainder. Computes self.rem_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2392,
+    "index": 2381,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -21188,7 +21093,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2393,
+    "index": 2382,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_mul",
     "name": "checked_mul",
@@ -21197,7 +21102,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 2394,
+    "index": 2383,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -21206,7 +21111,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2395,
+    "index": 2384,
     "type": "method",
     "url": "sus-num-i32.html#method.saturating_neg",
     "name": "saturating_neg",
@@ -21215,7 +21120,7 @@ const g_search_db = [
     "summary": "Saturating integer negation. Computes -self, returning MAX if self == MIN instead of overflowing."
   },
   {
-    "index": 2396,
+    "index": 2385,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_abs",
     "name": "checked_abs",
@@ -21224,7 +21129,7 @@ const g_search_db = [
     "summary": "Checked absolute value. Computes abs, returning None if the current value is MIN."
   },
   {
-    "index": 2397,
+    "index": 2386,
     "type": "method",
     "url": "sus-num-i32.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -21233,7 +21138,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 2398,
+    "index": 2387,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -21242,7 +21147,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 2399,
+    "index": 2388,
     "type": "method",
     "url": "sus-num-i32.html#method.operator-=",
     "name": "operator-=",
@@ -21251,7 +21156,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 2400,
+    "index": 2389,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_abs",
     "name": "overflowing_abs",
@@ -21260,7 +21165,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self."
   },
   {
-    "index": 2401,
+    "index": 2390,
     "type": "method",
     "url": "sus-num-i32.html#method.saturating_abs",
     "name": "saturating_abs",
@@ -21269,7 +21174,7 @@ const g_search_db = [
     "summary": "Saturating absolute value. Computes abs, returning MAX if the current value is MIN instead of overflowing."
   },
   {
-    "index": 2402,
+    "index": 2391,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -21278,7 +21183,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 2403,
+    "index": 2392,
     "type": "method",
     "url": "sus-num-i32.html#method.unsigned_abs",
     "name": "unsigned_abs",
@@ -21287,7 +21192,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self without any wrapping or panicking."
   },
   {
-    "index": 2404,
+    "index": 2393,
     "type": "method",
     "url": "sus-num-i32.html#method.count_ones",
     "name": "count_ones",
@@ -21296,7 +21201,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 2405,
+    "index": 2394,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_add_unsigned",
     "name": "overflowing_add_unsigned",
@@ -21305,7 +21210,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with an unsigned rhs."
   },
   {
-    "index": 2406,
+    "index": 2395,
     "type": "method",
     "url": "sus-num-i32.html#method.leading_ones",
     "name": "leading_ones",
@@ -21314,7 +21219,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 2407,
+    "index": 2396,
     "type": "method",
     "url": "sus-num-i32.html#method.saturating_add",
     "name": "saturating_add",
@@ -21323,7 +21228,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2408,
+    "index": 2397,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_sub_unsigned",
     "name": "overflowing_sub_unsigned",
@@ -21332,7 +21237,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs with an unsigned rhs."
   },
   {
-    "index": 2409,
+    "index": 2398,
     "type": "method",
     "url": "sus-num-i32.html#method.saturating_add_unsigned",
     "name": "saturating_add_unsigned",
@@ -21341,7 +21246,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with an unsigned rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2410,
+    "index": 2399,
     "type": "method",
     "url": "sus-num-i32.html#method.operator=.signedint.assign.signedenum",
     "name": "operator=",
@@ -21350,7 +21255,7 @@ const g_search_db = [
     "summary": "Assignment from signed enum types where no bits are lost."
   },
   {
-    "index": 2411,
+    "index": 2400,
     "type": "method",
     "url": "sus-num-i32.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -21359,7 +21264,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2412,
+    "index": 2401,
     "type": "method",
     "url": "sus-num-i32.html#method.checked_pow",
     "name": "checked_pow",
@@ -21368,7 +21273,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 2413,
+    "index": 2402,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -21377,7 +21282,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2414,
+    "index": 2403,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -21386,7 +21291,7 @@ const g_search_db = [
     "summary": "what you want instead."
   },
   {
-    "index": 2415,
+    "index": 2404,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_add_unsigned",
     "name": "wrapping_add_unsigned",
@@ -21395,7 +21300,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2416,
+    "index": 2405,
     "type": "method",
     "url": "sus-num-i32.html#method.saturating_div",
     "name": "saturating_div",
@@ -21404,7 +21309,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2417,
+    "index": 2406,
     "type": "method",
     "url": "sus-num-i32.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -21413,7 +21318,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 2418,
+    "index": 2407,
     "type": "method",
     "url": "sus-num-i32.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -21422,7 +21327,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2419,
+    "index": 2408,
     "type": "struct",
     "url": "sus-num-f32.html",
     "name": "f32",
@@ -21431,7 +21336,7 @@ const g_search_db = [
     "summary": "A 32-bit floating point type."
   },
   {
-    "index": 2420,
+    "index": 2409,
     "type": "field",
     "url": "sus-num-f32.html#field.NaN",
     "name": "NaN",
@@ -21440,7 +21345,7 @@ const g_search_db = [
     "summary": "Not a Number (NaN)."
   },
   {
-    "index": 2421,
+    "index": 2410,
     "type": "field",
     "url": "sus-num-f32.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -21449,7 +21354,7 @@ const g_search_db = [
     "summary": "Smallest finite primitive value."
   },
   {
-    "index": 2422,
+    "index": 2411,
     "type": "field",
     "url": "sus-num-f32.html#field.DIGITS",
     "name": "DIGITS",
@@ -21458,7 +21363,7 @@ const g_search_db = [
     "summary": "Approximate number of significant digits in base 10."
   },
   {
-    "index": 2423,
+    "index": 2412,
     "type": "field",
     "url": "sus-num-f32.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -21467,7 +21372,7 @@ const g_search_db = [
     "summary": "Largest finite primitive value."
   },
   {
-    "index": 2424,
+    "index": 2413,
     "type": "field",
     "url": "sus-num-f32.html#field.MAX_10_EXP",
     "name": "MAX_10_EXP",
@@ -21476,7 +21381,7 @@ const g_search_db = [
     "summary": "Maximum possible power of 10 exponent."
   },
   {
-    "index": 2425,
+    "index": 2414,
     "type": "field",
     "url": "sus-num-f32.html#field.primitive_value",
     "name": "primitive_value",
@@ -21485,7 +21390,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with float{n} for a numeric value n."
   },
   {
-    "index": 2426,
+    "index": 2415,
     "type": "field",
     "url": "sus-num-f32.html#field.MANTISSA_DIGITS",
     "name": "MANTISSA_DIGITS",
@@ -21494,7 +21399,7 @@ const g_search_db = [
     "summary": "Approximate number of significant digits in base 2."
   },
   {
-    "index": 2427,
+    "index": 2416,
     "type": "field",
     "url": "sus-num-f32.html#field.EPSILON",
     "name": "EPSILON",
@@ -21503,7 +21408,7 @@ const g_search_db = [
     "summary": "Machine epsilon value for f32."
   },
   {
-    "index": 2428,
+    "index": 2417,
     "type": "field",
     "url": "sus-num-f32.html#field.MIN_10_EXP",
     "name": "MIN_10_EXP",
@@ -21512,7 +21417,7 @@ const g_search_db = [
     "summary": "Minimum possible normal power of 10 exponent."
   },
   {
-    "index": 2429,
+    "index": 2418,
     "type": "field",
     "url": "sus-num-f32.html#field.INF",
     "name": "INF",
@@ -21521,7 +21426,7 @@ const g_search_db = [
     "summary": "Infinity."
   },
   {
-    "index": 2430,
+    "index": 2419,
     "type": "field",
     "url": "sus-num-f32.html#field.MAX",
     "name": "MAX",
@@ -21530,7 +21435,7 @@ const g_search_db = [
     "summary": "Largest finite f32."
   },
   {
-    "index": 2431,
+    "index": 2420,
     "type": "field",
     "url": "sus-num-f32.html#field.RADIX",
     "name": "RADIX",
@@ -21539,7 +21444,7 @@ const g_search_db = [
     "summary": "The radix or base of the internal representation of f32."
   },
   {
-    "index": 2432,
+    "index": 2421,
     "type": "field",
     "url": "sus-num-f32.html#field.MIN_POSITIVE",
     "name": "MIN_POSITIVE",
@@ -21548,7 +21453,7 @@ const g_search_db = [
     "summary": "Smallest positive normal f32 value."
   },
   {
-    "index": 2433,
+    "index": 2422,
     "type": "field",
     "url": "sus-num-f32.html#field.NEG_INF",
     "name": "NEG_INF",
@@ -21557,7 +21462,7 @@ const g_search_db = [
     "summary": "Negative infinity."
   },
   {
-    "index": 2434,
+    "index": 2423,
     "type": "field",
     "url": "sus-num-f32.html#field.MIN",
     "name": "MIN",
@@ -21566,7 +21471,7 @@ const g_search_db = [
     "summary": "Smallest finite f32."
   },
   {
-    "index": 2435,
+    "index": 2424,
     "type": "field",
     "url": "sus-num-f32.html#field.MIN_EXP",
     "name": "MIN_EXP",
@@ -21575,7 +21480,7 @@ const g_search_db = [
     "summary": "One greater than the minimum possible normal power of 2 exponent."
   },
   {
-    "index": 2436,
+    "index": 2425,
     "type": "field",
     "url": "sus-num-f32.html#field.MAX_EXP",
     "name": "MAX_EXP",
@@ -21584,7 +21489,7 @@ const g_search_db = [
     "summary": "Maximum possible power of 2 exponent."
   },
   {
-    "index": 2437,
+    "index": 2426,
     "type": "constructor",
     "url": "sus-num-f32.html#method.f32.ctor.from_primitive",
     "name": "f32",
@@ -21593,7 +21498,7 @@ const g_search_db = [
     "summary": "Construction from primitive types where no bits are lost."
   },
   {
-    "index": 2438,
+    "index": 2427,
     "type": "constructor",
     "url": "sus-num-f32.html#method.f32.ctor.from_float",
     "name": "f32",
@@ -21602,7 +21507,7 @@ const g_search_db = [
     "summary": "Construction from floating point types where no bits are lost."
   },
   {
-    "index": 2439,
+    "index": 2428,
     "type": "constructor",
     "url": "sus-num-f32.html#method.f32.ctor.default",
     "name": "f32",
@@ -21611,7 +21516,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the value to 0."
   },
   {
-    "index": 2440,
+    "index": 2429,
     "type": "conversion",
     "url": "sus-num-f32.html#method.operator U",
     "name": "operator U",
@@ -21620,7 +21525,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 2441,
+    "index": 2430,
     "type": "method",
     "url": "sus-num-f32.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -21629,7 +21534,7 @@ const g_search_db = [
     "summary": "Create a floating point value from its representation as a byte array in native endian."
   },
   {
-    "index": 2442,
+    "index": 2431,
     "type": "method",
     "url": "sus-num-f32.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -21638,7 +21543,7 @@ const g_search_db = [
     "summary": "Create a floating point value from its representation as a byte array in big endian."
   },
   {
-    "index": 2443,
+    "index": 2432,
     "type": "method",
     "url": "sus-num-f32.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -21647,7 +21552,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this floating point number as a byte array in native byte order."
   },
   {
-    "index": 2444,
+    "index": 2433,
     "type": "method",
     "url": "sus-num-f32.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -21656,7 +21561,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this floating point number as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 2445,
+    "index": 2434,
     "type": "method",
     "url": "sus-num-f32.html#method.div_euclid",
     "name": "div_euclid",
@@ -21665,7 +21570,7 @@ const g_search_db = [
     "summary": "Calculates Euclidean division, the matching method for rem_euclid."
   },
   {
-    "index": 2446,
+    "index": 2435,
     "type": "method",
     "url": "sus-num-f32.html#method.is_subnormal",
     "name": "is_subnormal",
@@ -21674,7 +21579,7 @@ const g_search_db = [
     "summary": "Returns true if the number is subnormal."
   },
   {
-    "index": 2447,
+    "index": 2436,
     "type": "method",
     "url": "sus-num-f32.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -21683,7 +21588,7 @@ const g_search_db = [
     "summary": "Calculates the least nonnegative remainder of self (mod rhs)."
   },
   {
-    "index": 2448,
+    "index": 2437,
     "type": "method",
     "url": "sus-num-f32.html#method.is_normal",
     "name": "is_normal",
@@ -21692,7 +21597,7 @@ const g_search_db = [
     "summary": "Returns true if the number is neither zero, infinite, subnormal, or NaN."
   },
   {
-    "index": 2449,
+    "index": 2438,
     "type": "method",
     "url": "sus-num-f32.html#method.classify",
     "name": "classify",
@@ -21701,7 +21606,7 @@ const g_search_db = [
     "summary": "Returns the floating point category of the number."
   },
   {
-    "index": 2450,
+    "index": 2439,
     "type": "method",
     "url": "sus-num-f32.html#method.to_bits",
     "name": "to_bits",
@@ -21710,7 +21615,7 @@ const g_search_db = [
     "summary": "Raw transmutation to ##UnsignedT##."
   },
   {
-    "index": 2451,
+    "index": 2440,
     "type": "method",
     "url": "sus-num-f32.html#method.from_bits",
     "name": "from_bits",
@@ -21719,7 +21624,7 @@ const g_search_db = [
     "summary": "Raw transmutation from ##_unsigned##."
   },
   {
-    "index": 2452,
+    "index": 2441,
     "type": "method",
     "url": "sus-num-f32.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -21728,7 +21633,7 @@ const g_search_db = [
     "summary": "Create a floating point value from its representation as a byte array in big endian."
   },
   {
-    "index": 2453,
+    "index": 2442,
     "type": "method",
     "url": "sus-num-f32.html#method.to_int_unchecked",
     "name": "to_int_unchecked",
@@ -21737,7 +21642,7 @@ const g_search_db = [
     "summary": "Rounds toward zero and converts to any safe integer type assuming that the value is finite and fits in that type."
   },
   {
-    "index": 2454,
+    "index": 2443,
     "type": "method",
     "url": "sus-num-f32.html#method.to_degrees",
     "name": "to_degrees",
@@ -21746,7 +21651,7 @@ const g_search_db = [
     "summary": "Converts radians to degrees."
   },
   {
-    "index": 2455,
+    "index": 2444,
     "type": "method",
     "url": "sus-num-f32.html#method.tanh",
     "name": "tanh",
@@ -21755,7 +21660,7 @@ const g_search_db = [
     "summary": "Hyperbolic tangent function."
   },
   {
-    "index": 2456,
+    "index": 2445,
     "type": "method",
     "url": "sus-num-f32.html#method.atan2",
     "name": "atan2",
@@ -21764,7 +21669,7 @@ const g_search_db = [
     "summary": "Computes the four quadrant arctangent of self (y) and other (x) in radians."
   },
   {
-    "index": 2457,
+    "index": 2446,
     "type": "method",
     "url": "sus-num-f32.html#method.atan",
     "name": "atan",
@@ -21773,7 +21678,7 @@ const g_search_db = [
     "summary": "Computes the arctangent of a number. Return value is in radians in the range [-pi/2, pi/2];"
   },
   {
-    "index": 2458,
+    "index": 2447,
     "type": "method",
     "url": "sus-num-f32.html#method.round_to_i32",
     "name": "round_to_i32",
@@ -21782,7 +21687,7 @@ const g_search_db = [
     "summary": "Returns the nearest i32 representable by self."
   },
   {
-    "index": 2459,
+    "index": 2448,
     "type": "method",
     "url": "sus-num-f32.html#method.asinh",
     "name": "asinh",
@@ -21791,7 +21696,7 @@ const g_search_db = [
     "summary": "Inverse hyperbolic sine function."
   },
   {
-    "index": 2460,
+    "index": 2449,
     "type": "method",
     "url": "sus-num-f32.html#method.atanh",
     "name": "atanh",
@@ -21800,7 +21705,7 @@ const g_search_db = [
     "summary": "Inverse hyperbolic tangent function."
   },
   {
-    "index": 2461,
+    "index": 2450,
     "type": "method",
     "url": "sus-num-f32.html#method.operator-=",
     "name": "operator-=",
@@ -21809,7 +21714,7 @@ const g_search_db = [
     "summary": "Satisfies the SubAssign&lt;f32&gt; concept."
   },
   {
-    "index": 2462,
+    "index": 2451,
     "type": "method",
     "url": "sus-num-f32.html#method.operator=.assign.from_primitive",
     "name": "operator=",
@@ -21818,7 +21723,7 @@ const g_search_db = [
     "summary": "Assignment from primitive types where no bits are lost."
   },
   {
-    "index": 2463,
+    "index": 2452,
     "type": "method",
     "url": "sus-num-f32.html#method.abs",
     "name": "abs",
@@ -21826,7 +21731,7 @@ const g_search_db = [
     "split_name": "sus num f32 abs"
   },
   {
-    "index": 2464,
+    "index": 2453,
     "type": "method",
     "url": "sus-num-f32.html#method.from.from.float",
     "name": "from",
@@ -21835,7 +21740,7 @@ const g_search_db = [
     "summary": "Construction from floating point types where no bits are lost."
   },
   {
-    "index": 2465,
+    "index": 2454,
     "type": "method",
     "url": "sus-num-f32.html#method.operator/=",
     "name": "operator/=",
@@ -21844,7 +21749,7 @@ const g_search_db = [
     "summary": "Satisfies the DivAssign&lt;f32&gt; concept."
   },
   {
-    "index": 2466,
+    "index": 2455,
     "type": "method",
     "url": "sus-num-f32.html#method.operator*=",
     "name": "operator*=",
@@ -21853,7 +21758,7 @@ const g_search_db = [
     "summary": "Satisfies the MulAssign&lt;f32&gt; concept."
   },
   {
-    "index": 2467,
+    "index": 2456,
     "type": "method",
     "url": "sus-num-f32.html#method.from.from.int",
     "name": "from",
@@ -21862,7 +21767,7 @@ const g_search_db = [
     "summary": "Construction from integer types where no bits are lost."
   },
   {
-    "index": 2468,
+    "index": 2457,
     "type": "method",
     "url": "sus-num-f32.html#method.operator%=",
     "name": "operator%=",
@@ -21871,7 +21776,7 @@ const g_search_db = [
     "summary": "Satisfies the RemAssign&lt;f32&gt; concept."
   },
   {
-    "index": 2469,
+    "index": 2458,
     "type": "method",
     "url": "sus-num-f32.html#method.from.from.primitive_int",
     "name": "from",
@@ -21880,7 +21785,7 @@ const g_search_db = [
     "summary": "Construction from integer types where no bits are lost."
   },
   {
-    "index": 2470,
+    "index": 2459,
     "type": "method",
     "url": "sus-num-f32.html#method.cbrt",
     "name": "cbrt",
@@ -21889,7 +21794,7 @@ const g_search_db = [
     "summary": "Returns the cube root of a number."
   },
   {
-    "index": 2471,
+    "index": 2460,
     "type": "method",
     "url": "sus-num-f32.html#method.hypot",
     "name": "hypot",
@@ -21898,7 +21803,7 @@ const g_search_db = [
     "summary": "Calculates the length of the hypotenuse of a right-angle triangle given legs of length x and y."
   },
   {
-    "index": 2472,
+    "index": 2461,
     "type": "method",
     "url": "sus-num-f32.html#method.is_sign_positive",
     "name": "is_sign_positive",
@@ -21907,7 +21812,7 @@ const g_search_db = [
     "summary": "Returns true if self has a positive sign, including +0.0, NaNs with positive sign bit and positive infinity."
   },
   {
-    "index": 2473,
+    "index": 2462,
     "type": "method",
     "url": "sus-num-f32.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -21916,7 +21821,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2474,
+    "index": 2463,
     "type": "method",
     "url": "sus-num-f32.html#method.floor",
     "name": "floor",
@@ -21925,7 +21830,7 @@ const g_search_db = [
     "summary": "Returns the largest integer less than or equal to self."
   },
   {
-    "index": 2475,
+    "index": 2464,
     "type": "method",
     "url": "sus-num-f32.html#method.trunc",
     "name": "trunc",
@@ -21934,7 +21839,7 @@ const g_search_db = [
     "summary": "Returns the integer part of self. This means that non-integer numbers are always truncated towards zero."
   },
   {
-    "index": 2476,
+    "index": 2465,
     "type": "method",
     "url": "sus-num-f32.html#method.operator+=",
     "name": "operator+=",
@@ -21943,7 +21848,7 @@ const g_search_db = [
     "summary": "Satisfies the AddAssign&lt;f32&gt; concept."
   },
   {
-    "index": 2477,
+    "index": 2466,
     "type": "method",
     "url": "sus-num-f32.html#method.exp_m1",
     "name": "exp_m1",
@@ -21952,7 +21857,7 @@ const g_search_db = [
     "summary": "Returns e^(self) - 1 in a way that is accurate even if the number is close to zero."
   },
   {
-    "index": 2478,
+    "index": 2467,
     "type": "method",
     "url": "sus-num-f32.html#method.from.from.primitive_float",
     "name": "from",
@@ -21961,7 +21866,7 @@ const g_search_db = [
     "summary": "Construction from primitive floating point types where no bits are lost."
   },
   {
-    "index": 2479,
+    "index": 2468,
     "type": "method",
     "url": "sus-num-f32.html#method.from_product",
     "name": "from_product",
@@ -21970,7 +21875,7 @@ const g_search_db = [
     "summary": "Constructs a f32  from an Iterator by computing the product of all elements in the iterator."
   },
   {
-    "index": 2480,
+    "index": 2469,
     "type": "method",
     "url": "sus-num-f32.html#method.from_sum",
     "name": "from_sum",
@@ -21979,7 +21884,7 @@ const g_search_db = [
     "summary": "Constructs a f32  from an Iterator by computing the sum of all elements in the iterator."
   },
   {
-    "index": 2481,
+    "index": 2470,
     "type": "method",
     "url": "sus-num-f32.html#method.acos",
     "name": "acos",
@@ -21988,7 +21893,7 @@ const g_search_db = [
     "summary": "Computes the arccosine of a number. Return value is in radians in the range [0, pi] or NaN if the number is outside the range [-1, 1]."
   },
   {
-    "index": 2482,
+    "index": 2471,
     "type": "method",
     "url": "sus-num-f32.html#method.sin",
     "name": "sin",
@@ -21997,7 +21902,7 @@ const g_search_db = [
     "summary": "Computes the sine of a number (in radians)."
   },
   {
-    "index": 2483,
+    "index": 2472,
     "type": "method",
     "url": "sus-num-f32.html#method.as_ptr",
     "name": "as_ptr",
@@ -22006,7 +21911,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2484,
+    "index": 2473,
     "type": "method",
     "url": "sus-num-f32.html#method.operator=.assign.from_float",
     "name": "operator=",
@@ -22015,7 +21920,7 @@ const g_search_db = [
     "summary": "Assignment from floating point types where no bits are lost."
   },
   {
-    "index": 2485,
+    "index": 2474,
     "type": "method",
     "url": "sus-num-f32.html#method.asin",
     "name": "asin",
@@ -22024,7 +21929,7 @@ const g_search_db = [
     "summary": "Computes the arcsine of a number. Return value is in radians in the range [-pi/2, pi/2] or NaN if the number is outside the range [-1, 1]."
   },
   {
-    "index": 2486,
+    "index": 2475,
     "type": "method",
     "url": "sus-num-f32.html#method.is_nan",
     "name": "is_nan",
@@ -22033,7 +21938,7 @@ const g_search_db = [
     "summary": "Returns true if this value is NaN."
   },
   {
-    "index": 2487,
+    "index": 2476,
     "type": "method",
     "url": "sus-num-f32.html#method.operator-",
     "name": "operator-",
@@ -22042,7 +21947,7 @@ const g_search_db = [
     "summary": "Satisfies the Neg&lt;f32&gt; concept."
   },
   {
-    "index": 2488,
+    "index": 2477,
     "type": "method",
     "url": "sus-num-f32.html#method.round_ties",
     "name": "round_ties",
@@ -22051,7 +21956,7 @@ const g_search_db = [
     "summary": "Returns the nearest integer to self. If a value is half-way between two integers, respects the current rounding mode. The default mode will round ties to the nearest even number."
   },
   {
-    "index": 2489,
+    "index": 2478,
     "type": "method",
     "url": "sus-num-f32.html#method.acosh",
     "name": "acosh",
@@ -22060,7 +21965,7 @@ const g_search_db = [
     "summary": "Inverse hyperbolic cosine function, or NaN if the number is less than -1."
   },
   {
-    "index": 2490,
+    "index": 2479,
     "type": "method",
     "url": "sus-num-f32.html#method.is_infinite",
     "name": "is_infinite",
@@ -22069,7 +21974,7 @@ const g_search_db = [
     "summary": "Returns true if this value is positive infinity or negative infinity, and false otherwise."
   },
   {
-    "index": 2491,
+    "index": 2480,
     "type": "method",
     "url": "sus-num-f32.html#method.total_cmp",
     "name": "total_cmp",
@@ -22078,7 +21983,7 @@ const g_search_db = [
     "summary": "Return the ordering between *this and other."
   },
   {
-    "index": 2492,
+    "index": 2481,
     "type": "method",
     "url": "sus-num-f32.html#method.log2",
     "name": "log2",
@@ -22087,7 +21992,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number."
   },
   {
-    "index": 2493,
+    "index": 2482,
     "type": "method",
     "url": "sus-num-f32.html#method.round_to_isize",
     "name": "round_to_isize",
@@ -22096,7 +22001,7 @@ const g_search_db = [
     "summary": "Returns the nearest isize representable by self."
   },
   {
-    "index": 2494,
+    "index": 2483,
     "type": "method",
     "url": "sus-num-f32.html#method.cosh",
     "name": "cosh",
@@ -22105,7 +22010,7 @@ const g_search_db = [
     "summary": "Hyperbolic cosine function."
   },
   {
-    "index": 2495,
+    "index": 2484,
     "type": "method",
     "url": "sus-num-f32.html#method.exp",
     "name": "exp",
@@ -22114,7 +22019,7 @@ const g_search_db = [
     "summary": "Returns e^(self), (the exponential function)."
   },
   {
-    "index": 2496,
+    "index": 2485,
     "type": "method",
     "url": "sus-num-f32.html#method.ln",
     "name": "ln",
@@ -22123,7 +22028,7 @@ const g_search_db = [
     "summary": "Returns the natural logarithm of the number."
   },
   {
-    "index": 2497,
+    "index": 2486,
     "type": "method",
     "url": "sus-num-f32.html#method.log",
     "name": "log",
@@ -22132,7 +22037,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base."
   },
   {
-    "index": 2498,
+    "index": 2487,
     "type": "method",
     "url": "sus-num-f32.html#method.max",
     "name": "max",
@@ -22141,7 +22046,7 @@ const g_search_db = [
     "summary": "Returns the maximum of the two numbers, ignoring NaN."
   },
   {
-    "index": 2499,
+    "index": 2488,
     "type": "method",
     "url": "sus-num-f32.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -22150,7 +22055,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this floating point number as a byte array in little-endian byte order."
   },
   {
-    "index": 2500,
+    "index": 2489,
     "type": "method",
     "url": "sus-num-f32.html#method.sqrt",
     "name": "sqrt",
@@ -22159,7 +22064,7 @@ const g_search_db = [
     "summary": "Returns the square root of a number."
   },
   {
-    "index": 2501,
+    "index": 2490,
     "type": "method",
     "url": "sus-num-f32.html#method.min",
     "name": "min",
@@ -22168,7 +22073,7 @@ const g_search_db = [
     "summary": "Returns the minimum of the two numbers, ignoring NaN."
   },
   {
-    "index": 2502,
+    "index": 2491,
     "type": "method",
     "url": "sus-num-f32.html#method.mul_add",
     "name": "mul_add",
@@ -22177,7 +22082,7 @@ const g_search_db = [
     "summary": "Fused multiply-add. Computes (self * a) + b with only one rounding error, yielding a more accurate result than an unfused multiply-add."
   },
   {
-    "index": 2503,
+    "index": 2492,
     "type": "method",
     "url": "sus-num-f32.html#method.to_radians",
     "name": "to_radians",
@@ -22186,7 +22091,7 @@ const g_search_db = [
     "summary": "Converts degrees to radians."
   },
   {
-    "index": 2504,
+    "index": 2493,
     "type": "method",
     "url": "sus-num-f32.html#method.powi",
     "name": "powi",
@@ -22195,7 +22100,7 @@ const g_search_db = [
     "summary": "Raises a number to an integer point power."
   },
   {
-    "index": 2505,
+    "index": 2494,
     "type": "method",
     "url": "sus-num-f32.html#method.copysign",
     "name": "copysign",
@@ -22204,7 +22109,7 @@ const g_search_db = [
     "summary": "Returns a number composed of the magnitude of self and the sign of sign."
   },
   {
-    "index": 2506,
+    "index": 2495,
     "type": "method",
     "url": "sus-num-f32.html#method.next_toward",
     "name": "next_toward",
@@ -22213,7 +22118,7 @@ const g_search_db = [
     "summary": "Returns the next representable value of the float type after self in the direction of toward. If self == toward, toward is returned. If either self or toward is NaN, NaN is returned."
   },
   {
-    "index": 2507,
+    "index": 2496,
     "type": "method",
     "url": "sus-num-f32.html#method.cos",
     "name": "cos",
@@ -22222,7 +22127,7 @@ const g_search_db = [
     "summary": "Computes the cosine of a number (in radians)."
   },
   {
-    "index": 2508,
+    "index": 2497,
     "type": "method",
     "url": "sus-num-f32.html#method.powf",
     "name": "powf",
@@ -22231,7 +22136,7 @@ const g_search_db = [
     "summary": "Raises a number to a floating point power."
   },
   {
-    "index": 2509,
+    "index": 2498,
     "type": "method",
     "url": "sus-num-f32.html#method.clamp",
     "name": "clamp",
@@ -22240,7 +22145,7 @@ const g_search_db = [
     "summary": "Restrict a value to a certain interval unless it is NaN."
   },
   {
-    "index": 2510,
+    "index": 2499,
     "type": "method",
     "url": "sus-num-f32.html#method.is_sign_negative",
     "name": "is_sign_negative",
@@ -22249,7 +22154,7 @@ const g_search_db = [
     "summary": "Returns true if self has a negative sign, including -0.0, NaNs with negative sign bit and negative infinity."
   },
   {
-    "index": 2511,
+    "index": 2500,
     "type": "method",
     "url": "sus-num-f32.html#method.exp2",
     "name": "exp2",
@@ -22258,7 +22163,7 @@ const g_search_db = [
     "summary": "Returns 2^(self)."
   },
   {
-    "index": 2512,
+    "index": 2501,
     "type": "method",
     "url": "sus-num-f32.html#method.recip",
     "name": "recip",
@@ -22267,7 +22172,7 @@ const g_search_db = [
     "summary": "Takes the reciprocal (inverse) of a number, 1/x."
   },
   {
-    "index": 2513,
+    "index": 2502,
     "type": "method",
     "url": "sus-num-f32.html#method.round_to_i64",
     "name": "round_to_i64",
@@ -22276,7 +22181,7 @@ const g_search_db = [
     "summary": "Returns the nearest i64 representable by self."
   },
   {
-    "index": 2514,
+    "index": 2503,
     "type": "method",
     "url": "sus-num-f32.html#method.is_finite",
     "name": "is_finite",
@@ -22285,7 +22190,7 @@ const g_search_db = [
     "summary": "Returns true if this number is neither infinite nor NaN."
   },
   {
-    "index": 2515,
+    "index": 2504,
     "type": "method",
     "url": "sus-num-f32.html#method.round",
     "name": "round",
@@ -22294,7 +22199,7 @@ const g_search_db = [
     "summary": "Returns the nearest integer to self. If a value is half-way between two integers, round away from 0.0."
   },
   {
-    "index": 2516,
+    "index": 2505,
     "type": "method",
     "url": "sus-num-f32.html#method.round_to_i8",
     "name": "round_to_i8",
@@ -22303,7 +22208,7 @@ const g_search_db = [
     "summary": "Returns the nearest i8 representable by self."
   },
   {
-    "index": 2517,
+    "index": 2506,
     "type": "method",
     "url": "sus-num-f32.html#method.round_to_i16",
     "name": "round_to_i16",
@@ -22312,7 +22217,7 @@ const g_search_db = [
     "summary": "Returns the nearest i16 representable by self."
   },
   {
-    "index": 2518,
+    "index": 2507,
     "type": "method",
     "url": "sus-num-f32.html#method.ceil",
     "name": "ceil",
@@ -22321,7 +22226,7 @@ const g_search_db = [
     "summary": "Returns the smallest integer greater than or equal to self."
   },
   {
-    "index": 2519,
+    "index": 2508,
     "type": "method",
     "url": "sus-num-f32.html#method.ln_1p",
     "name": "ln_1p",
@@ -22330,7 +22235,7 @@ const g_search_db = [
     "summary": "Returns ln(1+n) (natural logarithm) more accurately than if the operations were performed separately."
   },
   {
-    "index": 2520,
+    "index": 2509,
     "type": "method",
     "url": "sus-num-f32.html#method.signum",
     "name": "signum",
@@ -22339,7 +22244,7 @@ const g_search_db = [
     "summary": "Returns a number that represents the sign of self."
   },
   {
-    "index": 2521,
+    "index": 2510,
     "type": "method",
     "url": "sus-num-f32.html#method.log10",
     "name": "log10",
@@ -22348,7 +22253,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number."
   },
   {
-    "index": 2522,
+    "index": 2511,
     "type": "method",
     "url": "sus-num-f32.html#method.sinh",
     "name": "sinh",
@@ -22357,7 +22262,7 @@ const g_search_db = [
     "summary": "Hyperbolic sine function."
   },
   {
-    "index": 2523,
+    "index": 2512,
     "type": "method",
     "url": "sus-num-f32.html#method.fract",
     "name": "fract",
@@ -22365,7 +22270,7 @@ const g_search_db = [
     "split_name": "sus num f32 fract"
   },
   {
-    "index": 2524,
+    "index": 2513,
     "type": "method",
     "url": "sus-num-f32.html#method.tan",
     "name": "tan",
@@ -22374,7 +22279,7 @@ const g_search_db = [
     "summary": "Computes the tangent of a number (in radians)."
   },
   {
-    "index": 2525,
+    "index": 2514,
     "type": "struct",
     "url": "sus-num-f32-consts.html",
     "name": "consts",
@@ -22382,7 +22287,7 @@ const g_search_db = [
     "split_name": "sus num f32 consts"
   },
   {
-    "index": 2526,
+    "index": 2515,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.SQRT_2",
     "name": "SQRT_2",
@@ -22391,7 +22296,7 @@ const g_search_db = [
     "summary": "sqrt(2)"
   },
   {
-    "index": 2527,
+    "index": 2516,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.PI",
     "name": "PI",
@@ -22400,7 +22305,7 @@ const g_search_db = [
     "summary": "Archimedes' constant (π)"
   },
   {
-    "index": 2528,
+    "index": 2517,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.LOG10_E",
     "name": "LOG10_E",
@@ -22409,7 +22314,7 @@ const g_search_db = [
     "summary": "log_10(e)"
   },
   {
-    "index": 2529,
+    "index": 2518,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.LOG10_2",
     "name": "LOG10_2",
@@ -22418,7 +22323,7 @@ const g_search_db = [
     "summary": "log_10(2)"
   },
   {
-    "index": 2530,
+    "index": 2519,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.E",
     "name": "E",
@@ -22427,7 +22332,7 @@ const g_search_db = [
     "summary": "Euler's number (e)"
   },
   {
-    "index": 2531,
+    "index": 2520,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_PI_2",
     "name": "FRAC_PI_2",
@@ -22436,7 +22341,7 @@ const g_search_db = [
     "summary": "π/2"
   },
   {
-    "index": 2532,
+    "index": 2521,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_PI_3",
     "name": "FRAC_PI_3",
@@ -22445,7 +22350,7 @@ const g_search_db = [
     "summary": "π/3"
   },
   {
-    "index": 2533,
+    "index": 2522,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_1_PI",
     "name": "FRAC_1_PI",
@@ -22454,7 +22359,7 @@ const g_search_db = [
     "summary": "1/π"
   },
   {
-    "index": 2534,
+    "index": 2523,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_2_SQRT_PI",
     "name": "FRAC_2_SQRT_PI",
@@ -22463,7 +22368,7 @@ const g_search_db = [
     "summary": "2/sqrt(π)"
   },
   {
-    "index": 2535,
+    "index": 2524,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_2_PI",
     "name": "FRAC_2_PI",
@@ -22472,7 +22377,7 @@ const g_search_db = [
     "summary": "2/π"
   },
   {
-    "index": 2536,
+    "index": 2525,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_PI_4",
     "name": "FRAC_PI_4",
@@ -22481,7 +22386,7 @@ const g_search_db = [
     "summary": "π/4"
   },
   {
-    "index": 2537,
+    "index": 2526,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_PI_6",
     "name": "FRAC_PI_6",
@@ -22490,7 +22395,7 @@ const g_search_db = [
     "summary": "π/6"
   },
   {
-    "index": 2538,
+    "index": 2527,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.LOG2_E",
     "name": "LOG2_E",
@@ -22499,7 +22404,7 @@ const g_search_db = [
     "summary": "log_2(e)"
   },
   {
-    "index": 2539,
+    "index": 2528,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_PI_8",
     "name": "FRAC_PI_8",
@@ -22508,7 +22413,7 @@ const g_search_db = [
     "summary": "π/8"
   },
   {
-    "index": 2540,
+    "index": 2529,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.TAU",
     "name": "TAU",
@@ -22517,7 +22422,7 @@ const g_search_db = [
     "summary": "The full circle constant (τ)"
   },
   {
-    "index": 2541,
+    "index": 2530,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.LN_2",
     "name": "LN_2",
@@ -22526,7 +22431,7 @@ const g_search_db = [
     "summary": "ln(2)"
   },
   {
-    "index": 2542,
+    "index": 2531,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.LN_10",
     "name": "LN_10",
@@ -22535,7 +22440,7 @@ const g_search_db = [
     "summary": "ln(10)"
   },
   {
-    "index": 2543,
+    "index": 2532,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.FRAC_1_SQRT_2",
     "name": "FRAC_1_SQRT_2",
@@ -22544,7 +22449,7 @@ const g_search_db = [
     "summary": "1/sqrt(2)"
   },
   {
-    "index": 2544,
+    "index": 2533,
     "type": "field",
     "url": "sus-num-consts-f32.html#field.LOG2_10",
     "name": "LOG2_10",
@@ -22553,7 +22458,7 @@ const g_search_db = [
     "summary": "log_2(10)"
   },
   {
-    "index": 2545,
+    "index": 2534,
     "type": "struct",
     "url": "sus-num-isize.html",
     "name": "isize",
@@ -22562,7 +22467,7 @@ const g_search_db = [
     "summary": "An address-sized signed integer."
   },
   {
-    "index": 2546,
+    "index": 2535,
     "type": "field",
     "url": "sus-num-isize.html#field.MAX",
     "name": "MAX",
@@ -22571,7 +22476,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an isize."
   },
   {
-    "index": 2547,
+    "index": 2536,
     "type": "field",
     "url": "sus-num-isize.html#field.MIN",
     "name": "MIN",
@@ -22580,7 +22485,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an isize."
   },
   {
-    "index": 2548,
+    "index": 2537,
     "type": "field",
     "url": "sus-num-isize.html#field.BITS",
     "name": "BITS",
@@ -22589,7 +22494,7 @@ const g_search_db = [
     "summary": "The size of and isize in bits."
   },
   {
-    "index": 2549,
+    "index": 2538,
     "type": "field",
     "url": "sus-num-isize.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -22598,7 +22503,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an isize, as a native C++ primitive."
   },
   {
-    "index": 2550,
+    "index": 2539,
     "type": "field",
     "url": "sus-num-isize.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -22607,7 +22512,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an isize, as a native C++ primitive."
   },
   {
-    "index": 2551,
+    "index": 2540,
     "type": "field",
     "url": "sus-num-isize.html#field.primitive_value",
     "name": "primitive_value",
@@ -22616,7 +22521,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with int32_t{n} for a numeric value n."
   },
   {
-    "index": 2552,
+    "index": 2541,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize.signedint.ctor.unsignedint.primitive",
     "name": "isize",
@@ -22625,7 +22530,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 2553,
+    "index": 2542,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize.signedint.ctor.unsignedint.typed",
     "name": "isize",
@@ -22634,7 +22539,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 2554,
+    "index": 2543,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize.signedint.ctor.unsignedenumclass",
     "name": "isize",
@@ -22643,7 +22548,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 2555,
+    "index": 2544,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize.signedint.ctor.signedenumclass",
     "name": "isize",
@@ -22652,7 +22557,7 @@ const g_search_db = [
     "summary": "Construction from signed enum class types where no bits are lost."
   },
   {
-    "index": 2556,
+    "index": 2545,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize.signedint.ctor.signedenum",
     "name": "isize",
@@ -22661,7 +22566,7 @@ const g_search_db = [
     "summary": "Construction from signed enum types where no bits are lost."
   },
   {
-    "index": 2557,
+    "index": 2546,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize.signedint.ctor.signedint.primitive",
     "name": "isize",
@@ -22670,7 +22575,7 @@ const g_search_db = [
     "summary": "Construction from signed primitive types where no bits are lost."
   },
   {
-    "index": 2558,
+    "index": 2547,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize.signedint.ctor.signedint.typed",
     "name": "isize",
@@ -22679,7 +22584,7 @@ const g_search_db = [
     "summary": "Construction from signed types where no bits are lost."
   },
   {
-    "index": 2559,
+    "index": 2548,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize.signedint.ctor.unsignedenum",
     "name": "isize",
@@ -22688,7 +22593,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 2560,
+    "index": 2549,
     "type": "constructor",
     "url": "sus-num-isize.html#method.isize",
     "name": "isize",
@@ -22697,7 +22602,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 2561,
+    "index": 2550,
     "type": "conversion",
     "url": "sus-num-isize.html#method.operator U",
     "name": "operator U",
@@ -22706,7 +22611,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 2562,
+    "index": 2551,
     "type": "method",
     "url": "sus-num-isize.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -22715,7 +22620,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 2563,
+    "index": 2552,
     "type": "method",
     "url": "sus-num-isize.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -22724,7 +22629,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 2564,
+    "index": 2553,
     "type": "method",
     "url": "sus-num-isize.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -22733,7 +22638,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 2565,
+    "index": 2554,
     "type": "method",
     "url": "sus-num-isize.html#method.to_le",
     "name": "to_le",
@@ -22742,7 +22647,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 2566,
+    "index": 2555,
     "type": "method",
     "url": "sus-num-isize.html#method.to_be",
     "name": "to_be",
@@ -22751,7 +22656,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 2567,
+    "index": 2556,
     "type": "method",
     "url": "sus-num-isize.html#method.from_le",
     "name": "from_le",
@@ -22760,7 +22665,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 2568,
+    "index": 2557,
     "type": "method",
     "url": "sus-num-isize.html#method.log10",
     "name": "log10",
@@ -22769,7 +22674,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2569,
+    "index": 2558,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_log10",
     "name": "checked_log10",
@@ -22778,7 +22683,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2570,
+    "index": 2559,
     "type": "method",
     "url": "sus-num-isize.html#method.log2",
     "name": "log2",
@@ -22787,7 +22692,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2571,
+    "index": 2560,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_log2",
     "name": "checked_log2",
@@ -22796,7 +22701,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2572,
+    "index": 2561,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -22805,7 +22710,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 2573,
+    "index": 2562,
     "type": "method",
     "url": "sus-num-isize.html#method.rotate_left",
     "name": "rotate_left",
@@ -22814,7 +22719,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 2574,
+    "index": 2563,
     "type": "method",
     "url": "sus-num-isize.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -22823,7 +22728,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 2575,
+    "index": 2564,
     "type": "method",
     "url": "sus-num-isize.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -22832,7 +22737,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 2576,
+    "index": 2565,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_sub_unsigned",
     "name": "wrapping_sub_unsigned",
@@ -22841,7 +22746,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction with an unsigned rhs. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2577,
+    "index": 2566,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -22850,7 +22755,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2578,
+    "index": 2567,
     "type": "method",
     "url": "sus-num-isize.html#method.log",
     "name": "log",
@@ -22859,7 +22764,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2579,
+    "index": 2568,
     "type": "method",
     "url": "sus-num-isize.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -22868,7 +22773,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2580,
+    "index": 2569,
     "type": "method",
     "url": "sus-num-isize.html#method.saturating_sub_unsigned",
     "name": "saturating_sub_unsigned",
@@ -22877,7 +22782,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction with an unsigned rhs. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2581,
+    "index": 2570,
     "type": "method",
     "url": "sus-num-isize.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -22886,7 +22791,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 2582,
+    "index": 2571,
     "type": "method",
     "url": "sus-num-isize.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -22895,7 +22800,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2583,
+    "index": 2572,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -22904,7 +22809,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 2584,
+    "index": 2573,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_sub_unsigned",
     "name": "checked_sub_unsigned",
@@ -22913,7 +22818,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction with an unsigned rhs. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2585,
+    "index": 2574,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_sub",
     "name": "checked_sub",
@@ -22922,7 +22827,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2586,
+    "index": 2575,
     "type": "method",
     "url": "sus-num-isize.html#method.count_zeros",
     "name": "count_zeros",
@@ -22931,7 +22836,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 2587,
+    "index": 2576,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -22940,7 +22845,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 2588,
+    "index": 2577,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -22949,7 +22854,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2589,
+    "index": 2578,
     "type": "method",
     "url": "sus-num-isize.html#method.pow",
     "name": "pow",
@@ -22958,7 +22863,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2590,
+    "index": 2579,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_shl",
     "name": "checked_shl",
@@ -22967,7 +22872,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2591,
+    "index": 2580,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -22976,7 +22881,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean remainder. Computes self.rem_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 2592,
+    "index": 2581,
     "type": "method",
     "url": "sus-num-isize.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -22985,7 +22890,7 @@ const g_search_db = [
     "summary": "Calculates the least nonnegative remainder of self (mod rhs)."
   },
   {
-    "index": 2593,
+    "index": 2582,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -22994,7 +22899,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 2594,
+    "index": 2583,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -23003,7 +22908,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 2595,
+    "index": 2584,
     "type": "method",
     "url": "sus-num-isize.html#method.div_euclid",
     "name": "div_euclid",
@@ -23012,7 +22917,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division of self by rhs."
   },
   {
-    "index": 2596,
+    "index": 2585,
     "type": "method",
     "url": "sus-num-isize.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -23021,7 +22926,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 2597,
+    "index": 2586,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -23030,7 +22935,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2598,
+    "index": 2587,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -23039,7 +22944,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 2599,
+    "index": 2588,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -23048,7 +22953,7 @@ const g_search_db = [
     "summary": "Negates self, overflowing if this is equal to the minimum value."
   },
   {
-    "index": 2600,
+    "index": 2589,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_neg",
     "name": "checked_neg",
@@ -23057,7 +22962,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None if self == MIN."
   },
   {
-    "index": 2601,
+    "index": 2590,
     "type": "method",
     "url": "sus-num-isize.html#method.operator/=",
     "name": "operator/=",
@@ -23066,7 +22971,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 2602,
+    "index": 2591,
     "type": "method",
     "url": "sus-num-isize.html#method.from.signedint.from.unsignedenum",
     "name": "from",
@@ -23075,7 +22980,7 @@ const g_search_db = [
     "summary": "Constructs a isize from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2603,
+    "index": 2592,
     "type": "method",
     "url": "sus-num-isize.html#method.operator=.signedint.assign.signedint.typed",
     "name": "operator=",
@@ -23084,7 +22989,7 @@ const g_search_db = [
     "summary": "Assignment from signed types where no bits are lost."
   },
   {
-    "index": 2604,
+    "index": 2593,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -23093,7 +22998,7 @@ const g_search_db = [
     "summary": "Overflowing Euclidean remainder. Calculates self.rem_euclid(rhs)."
   },
   {
-    "index": 2605,
+    "index": 2594,
     "type": "method",
     "url": "sus-num-isize.html#method.operator*=",
     "name": "operator*=",
@@ -23102,7 +23007,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 2606,
+    "index": 2595,
     "type": "method",
     "url": "sus-num-isize.html#method.is_negative",
     "name": "is_negative",
@@ -23111,7 +23016,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is positive and false if the number is zero or negative."
   },
   {
-    "index": 2607,
+    "index": 2596,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_div",
     "name": "checked_div",
@@ -23120,7 +23025,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2608,
+    "index": 2597,
     "type": "method",
     "url": "sus-num-isize.html#method.operator+=",
     "name": "operator+=",
@@ -23129,7 +23034,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 2609,
+    "index": 2598,
     "type": "method",
     "url": "sus-num-isize.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -23138,7 +23043,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 2610,
+    "index": 2599,
     "type": "method",
     "url": "sus-num-isize.html#method.operator=.signedint.assign.signedint.primitive",
     "name": "operator=",
@@ -23147,7 +23052,7 @@ const g_search_db = [
     "summary": "Assignment from signed primitive types where no bits are lost."
   },
   {
-    "index": 2611,
+    "index": 2600,
     "type": "method",
     "url": "sus-num-isize.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -23156,7 +23061,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 2612,
+    "index": 2601,
     "type": "method",
     "url": "sus-num-isize.html#method.operator~",
     "name": "operator~",
@@ -23165,7 +23070,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 2613,
+    "index": 2602,
     "type": "method",
     "url": "sus-num-isize.html#method.operator%=",
     "name": "operator%=",
@@ -23174,7 +23079,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 2614,
+    "index": 2603,
     "type": "method",
     "url": "sus-num-isize.html#method.signum",
     "name": "signum",
@@ -23183,7 +23088,7 @@ const g_search_db = [
     "summary": "Returns a number representing sign of the current value."
   },
   {
-    "index": 2615,
+    "index": 2604,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -23192,7 +23097,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 2616,
+    "index": 2605,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -23201,7 +23106,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 2617,
+    "index": 2606,
     "type": "method",
     "url": "sus-num-isize.html#method.from_sum",
     "name": "from_sum",
@@ -23210,7 +23115,7 @@ const g_search_db = [
     "summary": "Constructs a isize from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 2618,
+    "index": 2607,
     "type": "method",
     "url": "sus-num-isize.html#method.from.from.signed.prim",
     "name": "from",
@@ -23219,7 +23124,7 @@ const g_search_db = [
     "summary": "Constructs a isize from a signed primitive integer type (int, long, etc) where no bits are lost."
   },
   {
-    "index": 2619,
+    "index": 2608,
     "type": "method",
     "url": "sus-num-isize.html#method.from.from.signed",
     "name": "from",
@@ -23228,7 +23133,7 @@ const g_search_db = [
     "summary": "Constructs a isize from a signed integer type (i8, i16, i32, etc) where no bits are lost."
   },
   {
-    "index": 2620,
+    "index": 2609,
     "type": "method",
     "url": "sus-num-isize.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -23237,7 +23142,7 @@ const g_search_db = [
     "summary": "Tries to construct a isize from a signed primitive integer type (int, long, etc)."
   },
   {
-    "index": 2621,
+    "index": 2610,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_rem",
     "name": "checked_rem",
@@ -23246,7 +23151,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2622,
+    "index": 2611,
     "type": "method",
     "url": "sus-num-isize.html#method.from.from.unsigned",
     "name": "from",
@@ -23255,7 +23160,7 @@ const g_search_db = [
     "summary": "Constructs a isize from an unsigned integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 2623,
+    "index": 2612,
     "type": "method",
     "url": "sus-num-isize.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -23264,7 +23169,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2624,
+    "index": 2613,
     "type": "method",
     "url": "sus-num-isize.html#method.from.signedint.from.signedenum",
     "name": "from",
@@ -23273,7 +23178,7 @@ const g_search_db = [
     "summary": "Constructs a isize from a signed enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2625,
+    "index": 2614,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_shr",
     "name": "checked_shr",
@@ -23282,7 +23187,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2626,
+    "index": 2615,
     "type": "method",
     "url": "sus-num-isize.html#method.operator-",
     "name": "operator-",
@@ -23291,7 +23196,7 @@ const g_search_db = [
     "summary": "Computes the negation of the current value."
   },
   {
-    "index": 2627,
+    "index": 2616,
     "type": "method",
     "url": "sus-num-isize.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -23300,7 +23205,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2628,
+    "index": 2617,
     "type": "method",
     "url": "sus-num-isize.html#method.rotate_right",
     "name": "rotate_right",
@@ -23309,7 +23214,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 2629,
+    "index": 2618,
     "type": "method",
     "url": "sus-num-isize.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -23318,7 +23223,7 @@ const g_search_db = [
     "summary": "Constructs a isize from an unsigned enum type (or enum class)."
   },
   {
-    "index": 2630,
+    "index": 2619,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_add",
     "name": "checked_add",
@@ -23327,7 +23232,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2631,
+    "index": 2620,
     "type": "method",
     "url": "sus-num-isize.html#method.from.from.unsigned.prim",
     "name": "from",
@@ -23336,7 +23241,7 @@ const g_search_db = [
     "summary": "Constructs a isize from an unsigned primitive integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 2632,
+    "index": 2621,
     "type": "method",
     "url": "sus-num-isize.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -23345,7 +23250,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2633,
+    "index": 2622,
     "type": "method",
     "url": "sus-num-isize.html#method.is_positive",
     "name": "is_positive",
@@ -23354,7 +23259,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is negative and false if the number is zero or positive."
   },
   {
-    "index": 2634,
+    "index": 2623,
     "type": "method",
     "url": "sus-num-isize.html#method.from_be",
     "name": "from_be",
@@ -23363,7 +23268,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 2635,
+    "index": 2624,
     "type": "method",
     "url": "sus-num-isize.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -23372,7 +23277,7 @@ const g_search_db = [
     "summary": "Tries to construct a isize from a signed enum type (or enum class)."
   },
   {
-    "index": 2636,
+    "index": 2625,
     "type": "method",
     "url": "sus-num-isize.html#method.from_product",
     "name": "from_product",
@@ -23381,7 +23286,7 @@ const g_search_db = [
     "summary": "Constructs a isize from an Iterator by computing the product of all elements in the itertor."
   },
   {
-    "index": 2637,
+    "index": 2626,
     "type": "method",
     "url": "sus-num-isize.html#method.abs_diff",
     "name": "abs_diff",
@@ -23390,7 +23295,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 2638,
+    "index": 2627,
     "type": "method",
     "url": "sus-num-isize.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -23399,7 +23304,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 2639,
+    "index": 2628,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -23408,7 +23313,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 2640,
+    "index": 2629,
     "type": "method",
     "url": "sus-num-isize.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -23417,7 +23322,7 @@ const g_search_db = [
     "summary": "Constructs a isize from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 2641,
+    "index": 2630,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_log",
     "name": "checked_log",
@@ -23426,7 +23331,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2642,
+    "index": 2631,
     "type": "method",
     "url": "sus-num-isize.html#method.try_from.unsigned",
     "name": "try_from",
@@ -23435,7 +23340,7 @@ const g_search_db = [
     "summary": "Try to construct a isize from an unsigned integer type (u8, u16, u32, etc)."
   },
   {
-    "index": 2643,
+    "index": 2632,
     "type": "method",
     "url": "sus-num-isize.html#method.operator&=",
     "name": "operator&=",
@@ -23444,7 +23349,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 2644,
+    "index": 2633,
     "type": "method",
     "url": "sus-num-isize.html#method.operator^=",
     "name": "operator^=",
@@ -23453,7 +23358,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 2645,
+    "index": 2634,
     "type": "method",
     "url": "sus-num-isize.html#method.try_from.signed",
     "name": "try_from",
@@ -23462,7 +23367,7 @@ const g_search_db = [
     "summary": "Try to construct a isize from a signed integer type (i8, i16, i32, etc)."
   },
   {
-    "index": 2646,
+    "index": 2635,
     "type": "method",
     "url": "sus-num-isize.html#method.abs",
     "name": "abs",
@@ -23471,7 +23376,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of itself."
   },
   {
-    "index": 2647,
+    "index": 2636,
     "type": "method",
     "url": "sus-num-isize.html#method.operator|=",
     "name": "operator|=",
@@ -23480,7 +23385,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 2648,
+    "index": 2637,
     "type": "method",
     "url": "sus-num-isize.html#method.as_ptr",
     "name": "as_ptr",
@@ -23489,7 +23394,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2649,
+    "index": 2638,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_abs",
     "name": "wrapping_abs",
@@ -23498,7 +23403,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) absolute value. Computes abs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2650,
+    "index": 2639,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_add_unsigned",
     "name": "checked_add_unsigned",
@@ -23507,7 +23412,7 @@ const g_search_db = [
     "summary": "Checked integer addition with an unsigned rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2651,
+    "index": 2640,
     "type": "method",
     "url": "sus-num-isize.html#method.operator<<=",
     "name": "operator<<=",
@@ -23516,7 +23421,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 2652,
+    "index": 2641,
     "type": "method",
     "url": "sus-num-isize.html#method.operator>>=",
     "name": "operator>>=",
@@ -23525,7 +23430,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 2653,
+    "index": 2642,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -23534,7 +23439,7 @@ const g_search_db = [
     "summary": "Checked Euclidean remainder. Computes self.rem_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2654,
+    "index": 2643,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -23543,7 +23448,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2655,
+    "index": 2644,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_mul",
     "name": "checked_mul",
@@ -23552,7 +23457,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 2656,
+    "index": 2645,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -23561,7 +23466,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2657,
+    "index": 2646,
     "type": "method",
     "url": "sus-num-isize.html#method.saturating_neg",
     "name": "saturating_neg",
@@ -23570,7 +23475,7 @@ const g_search_db = [
     "summary": "Saturating integer negation. Computes -self, returning MAX if self == MIN instead of overflowing."
   },
   {
-    "index": 2658,
+    "index": 2647,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_abs",
     "name": "checked_abs",
@@ -23579,7 +23484,7 @@ const g_search_db = [
     "summary": "Checked absolute value. Computes abs, returning None if the current value is MIN."
   },
   {
-    "index": 2659,
+    "index": 2648,
     "type": "method",
     "url": "sus-num-isize.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -23588,7 +23493,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 2660,
+    "index": 2649,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -23597,7 +23502,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 2661,
+    "index": 2650,
     "type": "method",
     "url": "sus-num-isize.html#method.operator-=",
     "name": "operator-=",
@@ -23606,7 +23511,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 2662,
+    "index": 2651,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_abs",
     "name": "overflowing_abs",
@@ -23615,7 +23520,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self."
   },
   {
-    "index": 2663,
+    "index": 2652,
     "type": "method",
     "url": "sus-num-isize.html#method.saturating_abs",
     "name": "saturating_abs",
@@ -23624,7 +23529,7 @@ const g_search_db = [
     "summary": "Saturating absolute value. Computes abs, returning MAX if the current value is MIN instead of overflowing."
   },
   {
-    "index": 2664,
+    "index": 2653,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -23633,7 +23538,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 2665,
+    "index": 2654,
     "type": "method",
     "url": "sus-num-isize.html#method.unsigned_abs",
     "name": "unsigned_abs",
@@ -23642,7 +23547,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self without any wrapping or panicking."
   },
   {
-    "index": 2666,
+    "index": 2655,
     "type": "method",
     "url": "sus-num-isize.html#method.count_ones",
     "name": "count_ones",
@@ -23651,7 +23556,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 2667,
+    "index": 2656,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_add_unsigned",
     "name": "overflowing_add_unsigned",
@@ -23660,7 +23565,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with an unsigned rhs."
   },
   {
-    "index": 2668,
+    "index": 2657,
     "type": "method",
     "url": "sus-num-isize.html#method.leading_ones",
     "name": "leading_ones",
@@ -23669,7 +23574,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 2669,
+    "index": 2658,
     "type": "method",
     "url": "sus-num-isize.html#method.saturating_add",
     "name": "saturating_add",
@@ -23678,7 +23583,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2670,
+    "index": 2659,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_sub_unsigned",
     "name": "overflowing_sub_unsigned",
@@ -23687,7 +23592,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs with an unsigned rhs."
   },
   {
-    "index": 2671,
+    "index": 2660,
     "type": "method",
     "url": "sus-num-isize.html#method.saturating_add_unsigned",
     "name": "saturating_add_unsigned",
@@ -23696,7 +23601,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with an unsigned rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2672,
+    "index": 2661,
     "type": "method",
     "url": "sus-num-isize.html#method.operator=.signedint.assign.signedenum",
     "name": "operator=",
@@ -23705,7 +23610,7 @@ const g_search_db = [
     "summary": "Assignment from signed enum types where no bits are lost."
   },
   {
-    "index": 2673,
+    "index": 2662,
     "type": "method",
     "url": "sus-num-isize.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -23714,7 +23619,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2674,
+    "index": 2663,
     "type": "method",
     "url": "sus-num-isize.html#method.checked_pow",
     "name": "checked_pow",
@@ -23723,7 +23628,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 2675,
+    "index": 2664,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -23732,7 +23637,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2676,
+    "index": 2665,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -23741,7 +23646,7 @@ const g_search_db = [
     "summary": "what you want instead."
   },
   {
-    "index": 2677,
+    "index": 2666,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_add_unsigned",
     "name": "wrapping_add_unsigned",
@@ -23750,7 +23655,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2678,
+    "index": 2667,
     "type": "method",
     "url": "sus-num-isize.html#method.saturating_div",
     "name": "saturating_div",
@@ -23759,7 +23664,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2679,
+    "index": 2668,
     "type": "method",
     "url": "sus-num-isize.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -23768,7 +23673,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 2680,
+    "index": 2669,
     "type": "method",
     "url": "sus-num-isize.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -23777,7 +23682,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2681,
+    "index": 2670,
     "type": "struct",
     "url": "sus-num-i8.html",
     "name": "i8",
@@ -23786,7 +23691,7 @@ const g_search_db = [
     "summary": "An 8-bit signed integer."
   },
   {
-    "index": 2682,
+    "index": 2671,
     "type": "field",
     "url": "sus-num-i8.html#field.MAX",
     "name": "MAX",
@@ -23795,7 +23700,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an i8."
   },
   {
-    "index": 2683,
+    "index": 2672,
     "type": "field",
     "url": "sus-num-i8.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -23804,7 +23709,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an i8, as a native C++ primitive."
   },
   {
-    "index": 2684,
+    "index": 2673,
     "type": "field",
     "url": "sus-num-i8.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -23813,7 +23718,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an i8, as a native C++ primitive."
   },
   {
-    "index": 2685,
+    "index": 2674,
     "type": "field",
     "url": "sus-num-i8.html#field.BITS",
     "name": "BITS",
@@ -23822,7 +23727,7 @@ const g_search_db = [
     "summary": "The size of and i8 in bits."
   },
   {
-    "index": 2686,
+    "index": 2675,
     "type": "field",
     "url": "sus-num-i8.html#field.MIN",
     "name": "MIN",
@@ -23831,7 +23736,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an i8."
   },
   {
-    "index": 2687,
+    "index": 2676,
     "type": "field",
     "url": "sus-num-i8.html#field.primitive_value",
     "name": "primitive_value",
@@ -23840,7 +23745,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with int32_t{n} for a numeric value n."
   },
   {
-    "index": 2688,
+    "index": 2677,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8.signedint.ctor.unsignedint.primitive",
     "name": "i8",
@@ -23849,7 +23754,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 2689,
+    "index": 2678,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8.signedint.ctor.unsignedint.typed",
     "name": "i8",
@@ -23858,7 +23763,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 2690,
+    "index": 2679,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8.signedint.ctor.unsignedenumclass",
     "name": "i8",
@@ -23867,7 +23772,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 2691,
+    "index": 2680,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8.signedint.ctor.signedenumclass",
     "name": "i8",
@@ -23876,7 +23781,7 @@ const g_search_db = [
     "summary": "Construction from signed enum class types where no bits are lost."
   },
   {
-    "index": 2692,
+    "index": 2681,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8.signedint.ctor.signedenum",
     "name": "i8",
@@ -23885,7 +23790,7 @@ const g_search_db = [
     "summary": "Construction from signed enum types where no bits are lost."
   },
   {
-    "index": 2693,
+    "index": 2682,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8.signedint.ctor.signedint.primitive",
     "name": "i8",
@@ -23894,7 +23799,7 @@ const g_search_db = [
     "summary": "Construction from signed primitive types where no bits are lost."
   },
   {
-    "index": 2694,
+    "index": 2683,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8.signedint.ctor.signedint.typed",
     "name": "i8",
@@ -23903,7 +23808,7 @@ const g_search_db = [
     "summary": "Construction from signed types where no bits are lost."
   },
   {
-    "index": 2695,
+    "index": 2684,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8.signedint.ctor.unsignedenum",
     "name": "i8",
@@ -23912,7 +23817,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 2696,
+    "index": 2685,
     "type": "constructor",
     "url": "sus-num-i8.html#method.i8",
     "name": "i8",
@@ -23921,7 +23826,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 2697,
+    "index": 2686,
     "type": "conversion",
     "url": "sus-num-i8.html#method.operator U",
     "name": "operator U",
@@ -23930,7 +23835,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 2698,
+    "index": 2687,
     "type": "method",
     "url": "sus-num-i8.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -23939,7 +23844,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 2699,
+    "index": 2688,
     "type": "method",
     "url": "sus-num-i8.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -23948,7 +23853,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 2700,
+    "index": 2689,
     "type": "method",
     "url": "sus-num-i8.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -23957,7 +23862,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 2701,
+    "index": 2690,
     "type": "method",
     "url": "sus-num-i8.html#method.to_le",
     "name": "to_le",
@@ -23966,7 +23871,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 2702,
+    "index": 2691,
     "type": "method",
     "url": "sus-num-i8.html#method.to_be",
     "name": "to_be",
@@ -23975,7 +23880,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 2703,
+    "index": 2692,
     "type": "method",
     "url": "sus-num-i8.html#method.from_le",
     "name": "from_le",
@@ -23984,7 +23889,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 2704,
+    "index": 2693,
     "type": "method",
     "url": "sus-num-i8.html#method.log10",
     "name": "log10",
@@ -23993,7 +23898,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2705,
+    "index": 2694,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_log10",
     "name": "checked_log10",
@@ -24002,7 +23907,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2706,
+    "index": 2695,
     "type": "method",
     "url": "sus-num-i8.html#method.log2",
     "name": "log2",
@@ -24011,7 +23916,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2707,
+    "index": 2696,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_log2",
     "name": "checked_log2",
@@ -24020,7 +23925,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2708,
+    "index": 2697,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -24029,7 +23934,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 2709,
+    "index": 2698,
     "type": "method",
     "url": "sus-num-i8.html#method.rotate_left",
     "name": "rotate_left",
@@ -24038,7 +23943,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 2710,
+    "index": 2699,
     "type": "method",
     "url": "sus-num-i8.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -24047,7 +23952,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 2711,
+    "index": 2700,
     "type": "method",
     "url": "sus-num-i8.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -24056,7 +23961,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 2712,
+    "index": 2701,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_sub_unsigned",
     "name": "wrapping_sub_unsigned",
@@ -24065,7 +23970,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction with an unsigned rhs. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2713,
+    "index": 2702,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -24074,7 +23979,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2714,
+    "index": 2703,
     "type": "method",
     "url": "sus-num-i8.html#method.log",
     "name": "log",
@@ -24083,7 +23988,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2715,
+    "index": 2704,
     "type": "method",
     "url": "sus-num-i8.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -24092,7 +23997,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2716,
+    "index": 2705,
     "type": "method",
     "url": "sus-num-i8.html#method.saturating_sub_unsigned",
     "name": "saturating_sub_unsigned",
@@ -24101,7 +24006,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction with an unsigned rhs. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2717,
+    "index": 2706,
     "type": "method",
     "url": "sus-num-i8.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -24110,7 +24015,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 2718,
+    "index": 2707,
     "type": "method",
     "url": "sus-num-i8.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -24119,7 +24024,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2719,
+    "index": 2708,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -24128,7 +24033,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 2720,
+    "index": 2709,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_sub_unsigned",
     "name": "checked_sub_unsigned",
@@ -24137,7 +24042,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction with an unsigned rhs. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2721,
+    "index": 2710,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_sub",
     "name": "checked_sub",
@@ -24146,7 +24051,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2722,
+    "index": 2711,
     "type": "method",
     "url": "sus-num-i8.html#method.count_zeros",
     "name": "count_zeros",
@@ -24155,7 +24060,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 2723,
+    "index": 2712,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -24164,7 +24069,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 2724,
+    "index": 2713,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -24173,7 +24078,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2725,
+    "index": 2714,
     "type": "method",
     "url": "sus-num-i8.html#method.pow",
     "name": "pow",
@@ -24182,7 +24087,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2726,
+    "index": 2715,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_shl",
     "name": "checked_shl",
@@ -24191,7 +24096,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2727,
+    "index": 2716,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -24200,7 +24105,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean remainder. Computes self.rem_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 2728,
+    "index": 2717,
     "type": "method",
     "url": "sus-num-i8.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -24209,7 +24114,7 @@ const g_search_db = [
     "summary": "Calculates the least nonnegative remainder of self (mod rhs)."
   },
   {
-    "index": 2729,
+    "index": 2718,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -24218,7 +24123,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 2730,
+    "index": 2719,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -24227,7 +24132,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 2731,
+    "index": 2720,
     "type": "method",
     "url": "sus-num-i8.html#method.div_euclid",
     "name": "div_euclid",
@@ -24236,7 +24141,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division of self by rhs."
   },
   {
-    "index": 2732,
+    "index": 2721,
     "type": "method",
     "url": "sus-num-i8.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -24245,7 +24150,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 2733,
+    "index": 2722,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -24254,7 +24159,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2734,
+    "index": 2723,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -24263,7 +24168,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 2735,
+    "index": 2724,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -24272,7 +24177,7 @@ const g_search_db = [
     "summary": "Negates self, overflowing if this is equal to the minimum value."
   },
   {
-    "index": 2736,
+    "index": 2725,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_neg",
     "name": "checked_neg",
@@ -24281,7 +24186,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None if self == MIN."
   },
   {
-    "index": 2737,
+    "index": 2726,
     "type": "method",
     "url": "sus-num-i8.html#method.operator/=",
     "name": "operator/=",
@@ -24290,7 +24195,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 2738,
+    "index": 2727,
     "type": "method",
     "url": "sus-num-i8.html#method.from.signedint.from.unsignedenum",
     "name": "from",
@@ -24299,7 +24204,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2739,
+    "index": 2728,
     "type": "method",
     "url": "sus-num-i8.html#method.operator=.signedint.assign.signedint.typed",
     "name": "operator=",
@@ -24308,7 +24213,7 @@ const g_search_db = [
     "summary": "Assignment from signed types where no bits are lost."
   },
   {
-    "index": 2740,
+    "index": 2729,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -24317,7 +24222,7 @@ const g_search_db = [
     "summary": "Overflowing Euclidean remainder. Calculates self.rem_euclid(rhs)."
   },
   {
-    "index": 2741,
+    "index": 2730,
     "type": "method",
     "url": "sus-num-i8.html#method.operator*=",
     "name": "operator*=",
@@ -24326,7 +24231,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 2742,
+    "index": 2731,
     "type": "method",
     "url": "sus-num-i8.html#method.is_negative",
     "name": "is_negative",
@@ -24335,7 +24240,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is positive and false if the number is zero or negative."
   },
   {
-    "index": 2743,
+    "index": 2732,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_div",
     "name": "checked_div",
@@ -24344,7 +24249,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2744,
+    "index": 2733,
     "type": "method",
     "url": "sus-num-i8.html#method.operator+=",
     "name": "operator+=",
@@ -24353,7 +24258,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 2745,
+    "index": 2734,
     "type": "method",
     "url": "sus-num-i8.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -24362,7 +24267,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 2746,
+    "index": 2735,
     "type": "method",
     "url": "sus-num-i8.html#method.operator=.signedint.assign.signedint.primitive",
     "name": "operator=",
@@ -24371,7 +24276,7 @@ const g_search_db = [
     "summary": "Assignment from signed primitive types where no bits are lost."
   },
   {
-    "index": 2747,
+    "index": 2736,
     "type": "method",
     "url": "sus-num-i8.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -24380,7 +24285,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 2748,
+    "index": 2737,
     "type": "method",
     "url": "sus-num-i8.html#method.operator~",
     "name": "operator~",
@@ -24389,7 +24294,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 2749,
+    "index": 2738,
     "type": "method",
     "url": "sus-num-i8.html#method.operator%=",
     "name": "operator%=",
@@ -24398,7 +24303,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 2750,
+    "index": 2739,
     "type": "method",
     "url": "sus-num-i8.html#method.signum",
     "name": "signum",
@@ -24407,7 +24312,7 @@ const g_search_db = [
     "summary": "Returns a number representing sign of the current value."
   },
   {
-    "index": 2751,
+    "index": 2740,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -24416,7 +24321,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 2752,
+    "index": 2741,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -24425,7 +24330,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 2753,
+    "index": 2742,
     "type": "method",
     "url": "sus-num-i8.html#method.from_sum",
     "name": "from_sum",
@@ -24434,7 +24339,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 2754,
+    "index": 2743,
     "type": "method",
     "url": "sus-num-i8.html#method.from.from.signed.prim",
     "name": "from",
@@ -24443,7 +24348,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from a signed primitive integer type (int, long, etc) where no bits are lost."
   },
   {
-    "index": 2755,
+    "index": 2744,
     "type": "method",
     "url": "sus-num-i8.html#method.from.from.signed",
     "name": "from",
@@ -24452,7 +24357,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from a signed integer type (i8, i16, i32, etc) where no bits are lost."
   },
   {
-    "index": 2756,
+    "index": 2745,
     "type": "method",
     "url": "sus-num-i8.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -24461,7 +24366,7 @@ const g_search_db = [
     "summary": "Tries to construct a i8 from a signed primitive integer type (int, long, etc)."
   },
   {
-    "index": 2757,
+    "index": 2746,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_rem",
     "name": "checked_rem",
@@ -24470,7 +24375,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2758,
+    "index": 2747,
     "type": "method",
     "url": "sus-num-i8.html#method.from.from.unsigned",
     "name": "from",
@@ -24479,7 +24384,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from an unsigned integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 2759,
+    "index": 2748,
     "type": "method",
     "url": "sus-num-i8.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -24488,7 +24393,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2760,
+    "index": 2749,
     "type": "method",
     "url": "sus-num-i8.html#method.from.signedint.from.signedenum",
     "name": "from",
@@ -24497,7 +24402,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from a signed enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2761,
+    "index": 2750,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_shr",
     "name": "checked_shr",
@@ -24506,7 +24411,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2762,
+    "index": 2751,
     "type": "method",
     "url": "sus-num-i8.html#method.operator-",
     "name": "operator-",
@@ -24515,7 +24420,7 @@ const g_search_db = [
     "summary": "Computes the negation of the current value."
   },
   {
-    "index": 2763,
+    "index": 2752,
     "type": "method",
     "url": "sus-num-i8.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -24524,7 +24429,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2764,
+    "index": 2753,
     "type": "method",
     "url": "sus-num-i8.html#method.rotate_right",
     "name": "rotate_right",
@@ -24533,7 +24438,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 2765,
+    "index": 2754,
     "type": "method",
     "url": "sus-num-i8.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -24542,7 +24447,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from an unsigned enum type (or enum class)."
   },
   {
-    "index": 2766,
+    "index": 2755,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_add",
     "name": "checked_add",
@@ -24551,7 +24456,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2767,
+    "index": 2756,
     "type": "method",
     "url": "sus-num-i8.html#method.from.from.unsigned.prim",
     "name": "from",
@@ -24560,7 +24465,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from an unsigned primitive integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 2768,
+    "index": 2757,
     "type": "method",
     "url": "sus-num-i8.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -24569,7 +24474,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2769,
+    "index": 2758,
     "type": "method",
     "url": "sus-num-i8.html#method.is_positive",
     "name": "is_positive",
@@ -24578,7 +24483,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is negative and false if the number is zero or positive."
   },
   {
-    "index": 2770,
+    "index": 2759,
     "type": "method",
     "url": "sus-num-i8.html#method.from_be",
     "name": "from_be",
@@ -24587,7 +24492,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 2771,
+    "index": 2760,
     "type": "method",
     "url": "sus-num-i8.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -24596,7 +24501,7 @@ const g_search_db = [
     "summary": "Tries to construct a i8 from a signed enum type (or enum class)."
   },
   {
-    "index": 2772,
+    "index": 2761,
     "type": "method",
     "url": "sus-num-i8.html#method.from_product",
     "name": "from_product",
@@ -24605,7 +24510,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from an Iterator by computing the product of all elements in the itertor."
   },
   {
-    "index": 2773,
+    "index": 2762,
     "type": "method",
     "url": "sus-num-i8.html#method.abs_diff",
     "name": "abs_diff",
@@ -24614,7 +24519,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 2774,
+    "index": 2763,
     "type": "method",
     "url": "sus-num-i8.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -24623,7 +24528,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 2775,
+    "index": 2764,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -24632,7 +24537,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 2776,
+    "index": 2765,
     "type": "method",
     "url": "sus-num-i8.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -24641,7 +24546,7 @@ const g_search_db = [
     "summary": "Constructs a i8 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 2777,
+    "index": 2766,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_log",
     "name": "checked_log",
@@ -24650,7 +24555,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2778,
+    "index": 2767,
     "type": "method",
     "url": "sus-num-i8.html#method.try_from.unsigned",
     "name": "try_from",
@@ -24659,7 +24564,7 @@ const g_search_db = [
     "summary": "Try to construct a i8 from an unsigned integer type (u8, u16, u32, etc)."
   },
   {
-    "index": 2779,
+    "index": 2768,
     "type": "method",
     "url": "sus-num-i8.html#method.operator&=",
     "name": "operator&=",
@@ -24668,7 +24573,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 2780,
+    "index": 2769,
     "type": "method",
     "url": "sus-num-i8.html#method.operator^=",
     "name": "operator^=",
@@ -24677,7 +24582,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 2781,
+    "index": 2770,
     "type": "method",
     "url": "sus-num-i8.html#method.try_from.signed",
     "name": "try_from",
@@ -24686,7 +24591,7 @@ const g_search_db = [
     "summary": "Try to construct a i8 from a signed integer type (i8, i16, i32, etc)."
   },
   {
-    "index": 2782,
+    "index": 2771,
     "type": "method",
     "url": "sus-num-i8.html#method.abs",
     "name": "abs",
@@ -24695,7 +24600,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of itself."
   },
   {
-    "index": 2783,
+    "index": 2772,
     "type": "method",
     "url": "sus-num-i8.html#method.operator|=",
     "name": "operator|=",
@@ -24704,7 +24609,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 2784,
+    "index": 2773,
     "type": "method",
     "url": "sus-num-i8.html#method.as_ptr",
     "name": "as_ptr",
@@ -24713,7 +24618,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2785,
+    "index": 2774,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_abs",
     "name": "wrapping_abs",
@@ -24722,7 +24627,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) absolute value. Computes abs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2786,
+    "index": 2775,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_add_unsigned",
     "name": "checked_add_unsigned",
@@ -24731,7 +24636,7 @@ const g_search_db = [
     "summary": "Checked integer addition with an unsigned rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2787,
+    "index": 2776,
     "type": "method",
     "url": "sus-num-i8.html#method.operator<<=",
     "name": "operator<<=",
@@ -24740,7 +24645,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 2788,
+    "index": 2777,
     "type": "method",
     "url": "sus-num-i8.html#method.operator>>=",
     "name": "operator>>=",
@@ -24749,7 +24654,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 2789,
+    "index": 2778,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -24758,7 +24663,7 @@ const g_search_db = [
     "summary": "Checked Euclidean remainder. Computes self.rem_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2790,
+    "index": 2779,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -24767,7 +24672,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2791,
+    "index": 2780,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_mul",
     "name": "checked_mul",
@@ -24776,7 +24681,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 2792,
+    "index": 2781,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -24785,7 +24690,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2793,
+    "index": 2782,
     "type": "method",
     "url": "sus-num-i8.html#method.saturating_neg",
     "name": "saturating_neg",
@@ -24794,7 +24699,7 @@ const g_search_db = [
     "summary": "Saturating integer negation. Computes -self, returning MAX if self == MIN instead of overflowing."
   },
   {
-    "index": 2794,
+    "index": 2783,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_abs",
     "name": "checked_abs",
@@ -24803,7 +24708,7 @@ const g_search_db = [
     "summary": "Checked absolute value. Computes abs, returning None if the current value is MIN."
   },
   {
-    "index": 2795,
+    "index": 2784,
     "type": "method",
     "url": "sus-num-i8.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -24812,7 +24717,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 2796,
+    "index": 2785,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -24821,7 +24726,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 2797,
+    "index": 2786,
     "type": "method",
     "url": "sus-num-i8.html#method.operator-=",
     "name": "operator-=",
@@ -24830,7 +24735,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 2798,
+    "index": 2787,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_abs",
     "name": "overflowing_abs",
@@ -24839,7 +24744,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self."
   },
   {
-    "index": 2799,
+    "index": 2788,
     "type": "method",
     "url": "sus-num-i8.html#method.saturating_abs",
     "name": "saturating_abs",
@@ -24848,7 +24753,7 @@ const g_search_db = [
     "summary": "Saturating absolute value. Computes abs, returning MAX if the current value is MIN instead of overflowing."
   },
   {
-    "index": 2800,
+    "index": 2789,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -24857,7 +24762,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 2801,
+    "index": 2790,
     "type": "method",
     "url": "sus-num-i8.html#method.unsigned_abs",
     "name": "unsigned_abs",
@@ -24866,7 +24771,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self without any wrapping or panicking."
   },
   {
-    "index": 2802,
+    "index": 2791,
     "type": "method",
     "url": "sus-num-i8.html#method.count_ones",
     "name": "count_ones",
@@ -24875,7 +24780,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 2803,
+    "index": 2792,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_add_unsigned",
     "name": "overflowing_add_unsigned",
@@ -24884,7 +24789,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with an unsigned rhs."
   },
   {
-    "index": 2804,
+    "index": 2793,
     "type": "method",
     "url": "sus-num-i8.html#method.leading_ones",
     "name": "leading_ones",
@@ -24893,7 +24798,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 2805,
+    "index": 2794,
     "type": "method",
     "url": "sus-num-i8.html#method.saturating_add",
     "name": "saturating_add",
@@ -24902,7 +24807,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2806,
+    "index": 2795,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_sub_unsigned",
     "name": "overflowing_sub_unsigned",
@@ -24911,7 +24816,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs with an unsigned rhs."
   },
   {
-    "index": 2807,
+    "index": 2796,
     "type": "method",
     "url": "sus-num-i8.html#method.saturating_add_unsigned",
     "name": "saturating_add_unsigned",
@@ -24920,7 +24825,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with an unsigned rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2808,
+    "index": 2797,
     "type": "method",
     "url": "sus-num-i8.html#method.operator=.signedint.assign.signedenum",
     "name": "operator=",
@@ -24929,7 +24834,7 @@ const g_search_db = [
     "summary": "Assignment from signed enum types where no bits are lost."
   },
   {
-    "index": 2809,
+    "index": 2798,
     "type": "method",
     "url": "sus-num-i8.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -24938,7 +24843,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2810,
+    "index": 2799,
     "type": "method",
     "url": "sus-num-i8.html#method.checked_pow",
     "name": "checked_pow",
@@ -24947,7 +24852,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 2811,
+    "index": 2800,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -24956,7 +24861,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2812,
+    "index": 2801,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -24965,7 +24870,7 @@ const g_search_db = [
     "summary": "what you want instead."
   },
   {
-    "index": 2813,
+    "index": 2802,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_add_unsigned",
     "name": "wrapping_add_unsigned",
@@ -24974,7 +24879,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2814,
+    "index": 2803,
     "type": "method",
     "url": "sus-num-i8.html#method.saturating_div",
     "name": "saturating_div",
@@ -24983,7 +24888,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2815,
+    "index": 2804,
     "type": "method",
     "url": "sus-num-i8.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -24992,7 +24897,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 2816,
+    "index": 2805,
     "type": "method",
     "url": "sus-num-i8.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -25001,7 +24906,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2817,
+    "index": 2806,
     "type": "struct",
     "url": "sus-num-i64.html",
     "name": "i64",
@@ -25010,7 +24915,7 @@ const g_search_db = [
     "summary": "A 64-bit signed integer."
   },
   {
-    "index": 2818,
+    "index": 2807,
     "type": "field",
     "url": "sus-num-i64.html#field.BITS",
     "name": "BITS",
@@ -25019,7 +24924,7 @@ const g_search_db = [
     "summary": "The size of and i64 in bits."
   },
   {
-    "index": 2819,
+    "index": 2808,
     "type": "field",
     "url": "sus-num-i64.html#field.MAX",
     "name": "MAX",
@@ -25028,7 +24933,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an i64."
   },
   {
-    "index": 2820,
+    "index": 2809,
     "type": "field",
     "url": "sus-num-i64.html#field.MIN",
     "name": "MIN",
@@ -25037,7 +24942,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an i64."
   },
   {
-    "index": 2821,
+    "index": 2810,
     "type": "field",
     "url": "sus-num-i64.html#field.MAX_PRIMITIVE",
     "name": "MAX_PRIMITIVE",
@@ -25046,7 +24951,7 @@ const g_search_db = [
     "summary": "The largest value that can be represented by an i64, as a native C++ primitive."
   },
   {
-    "index": 2822,
+    "index": 2811,
     "type": "field",
     "url": "sus-num-i64.html#field.MIN_PRIMITIVE",
     "name": "MIN_PRIMITIVE",
@@ -25055,7 +24960,7 @@ const g_search_db = [
     "summary": "The smallest value that can be represented by an i64, as a native C++ primitive."
   },
   {
-    "index": 2823,
+    "index": 2812,
     "type": "field",
     "url": "sus-num-i64.html#field.primitive_value",
     "name": "primitive_value",
@@ -25064,7 +24969,7 @@ const g_search_db = [
     "summary": "The inner primitive value. Prefer to cast to the desired primitive type, such as with int32_t{n} for a numeric value n."
   },
   {
-    "index": 2824,
+    "index": 2813,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64.signedint.ctor.unsignedint.primitive",
     "name": "i64",
@@ -25073,7 +24978,7 @@ const g_search_db = [
     "summary": "Construction from unsigned primitive types where no bits are lost."
   },
   {
-    "index": 2825,
+    "index": 2814,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64.signedint.ctor.unsignedint.typed",
     "name": "i64",
@@ -25082,7 +24987,7 @@ const g_search_db = [
     "summary": "Construction from unsigned types where no bits are lost."
   },
   {
-    "index": 2826,
+    "index": 2815,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64.signedint.ctor.unsignedenumclass",
     "name": "i64",
@@ -25091,7 +24996,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum class types where no bits are lost."
   },
   {
-    "index": 2827,
+    "index": 2816,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64.signedint.ctor.signedenumclass",
     "name": "i64",
@@ -25100,7 +25005,7 @@ const g_search_db = [
     "summary": "Construction from signed enum class types where no bits are lost."
   },
   {
-    "index": 2828,
+    "index": 2817,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64.signedint.ctor.signedenum",
     "name": "i64",
@@ -25109,7 +25014,7 @@ const g_search_db = [
     "summary": "Construction from signed enum types where no bits are lost."
   },
   {
-    "index": 2829,
+    "index": 2818,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64.signedint.ctor.signedint.primitive",
     "name": "i64",
@@ -25118,7 +25023,7 @@ const g_search_db = [
     "summary": "Construction from signed primitive types where no bits are lost."
   },
   {
-    "index": 2830,
+    "index": 2819,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64.signedint.ctor.signedint.typed",
     "name": "i64",
@@ -25127,7 +25032,7 @@ const g_search_db = [
     "summary": "Construction from signed types where no bits are lost."
   },
   {
-    "index": 2831,
+    "index": 2820,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64.signedint.ctor.unsignedenum",
     "name": "i64",
@@ -25136,7 +25041,7 @@ const g_search_db = [
     "summary": "Construction from unsigned enum types where no bits are lost."
   },
   {
-    "index": 2832,
+    "index": 2821,
     "type": "constructor",
     "url": "sus-num-i64.html#method.i64",
     "name": "i64",
@@ -25145,7 +25050,7 @@ const g_search_db = [
     "summary": "Default constructor, which sets the integer to 0."
   },
   {
-    "index": 2833,
+    "index": 2822,
     "type": "conversion",
     "url": "sus-num-i64.html#method.operator U",
     "name": "operator U",
@@ -25154,7 +25059,7 @@ const g_search_db = [
     "summary": "Conversion from the numeric type to a C++ primitive type."
   },
   {
-    "index": 2834,
+    "index": 2823,
     "type": "method",
     "url": "sus-num-i64.html#method.from_ne_bytes",
     "name": "from_ne_bytes",
@@ -25163,7 +25068,7 @@ const g_search_db = [
     "summary": "Create an integer value from its memory representation as a byte array in native endianness."
   },
   {
-    "index": 2835,
+    "index": 2824,
     "type": "method",
     "url": "sus-num-i64.html#method.from_le_bytes",
     "name": "from_le_bytes",
@@ -25172,7 +25077,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in little endian."
   },
   {
-    "index": 2836,
+    "index": 2825,
     "type": "method",
     "url": "sus-num-i64.html#method.to_be_bytes",
     "name": "to_be_bytes",
@@ -25181,7 +25086,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in big-endian (network) byte order."
   },
   {
-    "index": 2837,
+    "index": 2826,
     "type": "method",
     "url": "sus-num-i64.html#method.to_le",
     "name": "to_le",
@@ -25190,7 +25095,7 @@ const g_search_db = [
     "summary": "Converts self to little endian from the target's endianness."
   },
   {
-    "index": 2838,
+    "index": 2827,
     "type": "method",
     "url": "sus-num-i64.html#method.to_be",
     "name": "to_be",
@@ -25199,7 +25104,7 @@ const g_search_db = [
     "summary": "Converts self to big endian from the target's endianness."
   },
   {
-    "index": 2839,
+    "index": 2828,
     "type": "method",
     "url": "sus-num-i64.html#method.from_le",
     "name": "from_le",
@@ -25208,7 +25113,7 @@ const g_search_db = [
     "summary": "Converts an integer from little endian to the target's endianness."
   },
   {
-    "index": 2840,
+    "index": 2829,
     "type": "method",
     "url": "sus-num-i64.html#method.log10",
     "name": "log10",
@@ -25217,7 +25122,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2841,
+    "index": 2830,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_log10",
     "name": "checked_log10",
@@ -25226,7 +25131,7 @@ const g_search_db = [
     "summary": "Returns the base 10 logarithm of the number, rounded down."
   },
   {
-    "index": 2842,
+    "index": 2831,
     "type": "method",
     "url": "sus-num-i64.html#method.log2",
     "name": "log2",
@@ -25235,7 +25140,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2843,
+    "index": 2832,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_log2",
     "name": "checked_log2",
@@ -25244,7 +25149,7 @@ const g_search_db = [
     "summary": "Returns the base 2 logarithm of the number, rounded down."
   },
   {
-    "index": 2844,
+    "index": 2833,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_pow",
     "name": "wrapping_pow",
@@ -25253,7 +25158,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) exponentiation. Computes pow, wrapping around at the boundary of the type."
   },
   {
-    "index": 2845,
+    "index": 2834,
     "type": "method",
     "url": "sus-num-i64.html#method.rotate_left",
     "name": "rotate_left",
@@ -25262,7 +25167,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the left by a specified amount, n, wrapping the truncated bits to the end of the resulting integer."
   },
   {
-    "index": 2846,
+    "index": 2835,
     "type": "method",
     "url": "sus-num-i64.html#method.reverse_bits",
     "name": "reverse_bits",
@@ -25271,7 +25176,7 @@ const g_search_db = [
     "summary": "Reverses the order of bits in the integer. The least significant bit becomes the most significant bit, second least-significant bit becomes second most-significant bit, etc."
   },
   {
-    "index": 2847,
+    "index": 2836,
     "type": "method",
     "url": "sus-num-i64.html#method.trailing_zeros",
     "name": "trailing_zeros",
@@ -25280,7 +25185,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing zeros in the binary representation of the current value."
   },
   {
-    "index": 2848,
+    "index": 2837,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_sub_unsigned",
     "name": "wrapping_sub_unsigned",
@@ -25289,7 +25194,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction with an unsigned rhs. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2849,
+    "index": 2838,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_sub",
     "name": "wrapping_sub",
@@ -25298,7 +25203,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) subtraction. Computes self - rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2850,
+    "index": 2839,
     "type": "method",
     "url": "sus-num-i64.html#method.log",
     "name": "log",
@@ -25307,7 +25212,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2851,
+    "index": 2840,
     "type": "method",
     "url": "sus-num-i64.html#method.unchecked_sub",
     "name": "unchecked_sub",
@@ -25316,7 +25221,7 @@ const g_search_db = [
     "summary": "Unchecked integer subtraction. Computes self - rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2852,
+    "index": 2841,
     "type": "method",
     "url": "sus-num-i64.html#method.saturating_sub_unsigned",
     "name": "saturating_sub_unsigned",
@@ -25325,7 +25230,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction with an unsigned rhs. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2853,
+    "index": 2842,
     "type": "method",
     "url": "sus-num-i64.html#method.to_ne_bytes",
     "name": "to_ne_bytes",
@@ -25334,7 +25239,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in native byte order."
   },
   {
-    "index": 2854,
+    "index": 2843,
     "type": "method",
     "url": "sus-num-i64.html#method.saturating_sub",
     "name": "saturating_sub",
@@ -25343,7 +25248,7 @@ const g_search_db = [
     "summary": "Saturating integer subtraction. Computes self - rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2855,
+    "index": 2844,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_sub",
     "name": "overflowing_sub",
@@ -25352,7 +25257,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs."
   },
   {
-    "index": 2856,
+    "index": 2845,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_sub_unsigned",
     "name": "checked_sub_unsigned",
@@ -25361,7 +25266,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction with an unsigned rhs. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2857,
+    "index": 2846,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_sub",
     "name": "checked_sub",
@@ -25370,7 +25275,7 @@ const g_search_db = [
     "summary": "Checked integer subtraction. Computes self - rhs, returning None if overflow occurred."
   },
   {
-    "index": 2858,
+    "index": 2847,
     "type": "method",
     "url": "sus-num-i64.html#method.count_zeros",
     "name": "count_zeros",
@@ -25379,7 +25284,7 @@ const g_search_db = [
     "summary": "Returns the number of zeros in the binary representation of the current value."
   },
   {
-    "index": 2859,
+    "index": 2848,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_shr",
     "name": "overflowing_shr",
@@ -25388,7 +25293,7 @@ const g_search_db = [
     "summary": "Shifts self right by rhs bits."
   },
   {
-    "index": 2860,
+    "index": 2849,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_pow",
     "name": "overflowing_pow",
@@ -25397,7 +25302,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2861,
+    "index": 2850,
     "type": "method",
     "url": "sus-num-i64.html#method.pow",
     "name": "pow",
@@ -25406,7 +25311,7 @@ const g_search_db = [
     "summary": "Raises self to the power of exp, using exponentiation by squaring."
   },
   {
-    "index": 2862,
+    "index": 2851,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_shl",
     "name": "checked_shl",
@@ -25415,7 +25320,7 @@ const g_search_db = [
     "summary": "Checked shift left. Computes self &lt;&lt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2863,
+    "index": 2852,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_rem_euclid",
     "name": "wrapping_rem_euclid",
@@ -25424,7 +25329,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean remainder. Computes self.rem_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 2864,
+    "index": 2853,
     "type": "method",
     "url": "sus-num-i64.html#method.rem_euclid",
     "name": "rem_euclid",
@@ -25433,7 +25338,7 @@ const g_search_db = [
     "summary": "Calculates the least nonnegative remainder of self (mod rhs)."
   },
   {
-    "index": 2865,
+    "index": 2854,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_div_euclid",
     "name": "wrapping_div_euclid",
@@ -25442,7 +25347,7 @@ const g_search_db = [
     "summary": "Wrapping Euclidean division. Computes self.div_euclid(rhs), wrapping around at the boundary of the type."
   },
   {
-    "index": 2866,
+    "index": 2855,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_div_euclid",
     "name": "overflowing_div_euclid",
@@ -25451,7 +25356,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division self.div_euclid(rhs)."
   },
   {
-    "index": 2867,
+    "index": 2856,
     "type": "method",
     "url": "sus-num-i64.html#method.div_euclid",
     "name": "div_euclid",
@@ -25460,7 +25365,7 @@ const g_search_db = [
     "summary": "Calculates the quotient of Euclidean division of self by rhs."
   },
   {
-    "index": 2868,
+    "index": 2857,
     "type": "method",
     "url": "sus-num-i64.html#method.from_be_bytes",
     "name": "from_be_bytes",
@@ -25469,7 +25374,7 @@ const g_search_db = [
     "summary": "Create an integer value from its representation as a byte array in big endian."
   },
   {
-    "index": 2869,
+    "index": 2858,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_rem",
     "name": "wrapping_rem",
@@ -25478,7 +25383,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) remainder. Computes self % rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2870,
+    "index": 2859,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_neg",
     "name": "wrapping_neg",
@@ -25487,7 +25392,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) negation. Computes -self, wrapping around at the boundary of the type."
   },
   {
-    "index": 2871,
+    "index": 2860,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_neg",
     "name": "overflowing_neg",
@@ -25496,7 +25401,7 @@ const g_search_db = [
     "summary": "Negates self, overflowing if this is equal to the minimum value."
   },
   {
-    "index": 2872,
+    "index": 2861,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_neg",
     "name": "checked_neg",
@@ -25505,7 +25410,7 @@ const g_search_db = [
     "summary": "Checked negation. Computes -self, returning None if self == MIN."
   },
   {
-    "index": 2873,
+    "index": 2862,
     "type": "method",
     "url": "sus-num-i64.html#method.operator/=",
     "name": "operator/=",
@@ -25514,7 +25419,7 @@ const g_search_db = [
     "summary": "Divides itself by r."
   },
   {
-    "index": 2874,
+    "index": 2863,
     "type": "method",
     "url": "sus-num-i64.html#method.from.signedint.from.unsignedenum",
     "name": "from",
@@ -25523,7 +25428,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from an unsigned enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2875,
+    "index": 2864,
     "type": "method",
     "url": "sus-num-i64.html#method.operator=.signedint.assign.signedint.typed",
     "name": "operator=",
@@ -25532,7 +25437,7 @@ const g_search_db = [
     "summary": "Assignment from signed types where no bits are lost."
   },
   {
-    "index": 2876,
+    "index": 2865,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_rem_euclid",
     "name": "overflowing_rem_euclid",
@@ -25541,7 +25446,7 @@ const g_search_db = [
     "summary": "Overflowing Euclidean remainder. Calculates self.rem_euclid(rhs)."
   },
   {
-    "index": 2877,
+    "index": 2866,
     "type": "method",
     "url": "sus-num-i64.html#method.operator*=",
     "name": "operator*=",
@@ -25550,7 +25455,7 @@ const g_search_db = [
     "summary": "Multiplies itself by r."
   },
   {
-    "index": 2878,
+    "index": 2867,
     "type": "method",
     "url": "sus-num-i64.html#method.is_negative",
     "name": "is_negative",
@@ -25559,7 +25464,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is positive and false if the number is zero or negative."
   },
   {
-    "index": 2879,
+    "index": 2868,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_div",
     "name": "checked_div",
@@ -25568,7 +25473,7 @@ const g_search_db = [
     "summary": "Checked integer division. Computes self / rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2880,
+    "index": 2869,
     "type": "method",
     "url": "sus-num-i64.html#method.operator+=",
     "name": "operator+=",
@@ -25577,7 +25482,7 @@ const g_search_db = [
     "summary": "Adds r to itself."
   },
   {
-    "index": 2881,
+    "index": 2870,
     "type": "method",
     "url": "sus-num-i64.html#method.to_le_bytes",
     "name": "to_le_bytes",
@@ -25586,7 +25491,7 @@ const g_search_db = [
     "summary": "Return the memory representation of this integer as a byte array in little-endian byte order."
   },
   {
-    "index": 2882,
+    "index": 2871,
     "type": "method",
     "url": "sus-num-i64.html#method.operator=.signedint.assign.signedint.primitive",
     "name": "operator=",
@@ -25595,7 +25500,7 @@ const g_search_db = [
     "summary": "Assignment from signed primitive types where no bits are lost."
   },
   {
-    "index": 2883,
+    "index": 2872,
     "type": "method",
     "url": "sus-num-i64.html#method.trailing_ones",
     "name": "trailing_ones",
@@ -25604,7 +25509,7 @@ const g_search_db = [
     "summary": "Returns the number of trailing ones in the binary representation of the current value."
   },
   {
-    "index": 2884,
+    "index": 2873,
     "type": "method",
     "url": "sus-num-i64.html#method.operator~",
     "name": "operator~",
@@ -25613,7 +25518,7 @@ const g_search_db = [
     "summary": "Computes the bitwise complement (bitwise inverse) of the current value."
   },
   {
-    "index": 2885,
+    "index": 2874,
     "type": "method",
     "url": "sus-num-i64.html#method.operator%=",
     "name": "operator%=",
@@ -25622,7 +25527,7 @@ const g_search_db = [
     "summary": "Assigns the remainder of dividing itself by r."
   },
   {
-    "index": 2886,
+    "index": 2875,
     "type": "method",
     "url": "sus-num-i64.html#method.signum",
     "name": "signum",
@@ -25631,7 +25536,7 @@ const g_search_db = [
     "summary": "Returns a number representing sign of the current value."
   },
   {
-    "index": 2887,
+    "index": 2876,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_div",
     "name": "overflowing_div",
@@ -25640,7 +25545,7 @@ const g_search_db = [
     "summary": "Calculates the divisor when self is divided by rhs."
   },
   {
-    "index": 2888,
+    "index": 2877,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_shr",
     "name": "wrapping_shr",
@@ -25649,7 +25554,7 @@ const g_search_db = [
     "summary": "Panic-free bitwise shift-right; yields self &gt;&gt; mask(rhs), where mask removes any high-order bits of rhs that would cause the shift to exceed the bitwidth of the type."
   },
   {
-    "index": 2889,
+    "index": 2878,
     "type": "method",
     "url": "sus-num-i64.html#method.from_sum",
     "name": "from_sum",
@@ -25658,7 +25563,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from an Iterator by computing the sum of all elements in the itertor."
   },
   {
-    "index": 2890,
+    "index": 2879,
     "type": "method",
     "url": "sus-num-i64.html#method.from.from.signed.prim",
     "name": "from",
@@ -25667,7 +25572,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from a signed primitive integer type (int, long, etc) where no bits are lost."
   },
   {
-    "index": 2891,
+    "index": 2880,
     "type": "method",
     "url": "sus-num-i64.html#method.from.from.signed",
     "name": "from",
@@ -25676,7 +25581,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from a signed integer type (i8, i16, i32, etc) where no bits are lost."
   },
   {
-    "index": 2892,
+    "index": 2881,
     "type": "method",
     "url": "sus-num-i64.html#method.try_from.signed.primitive",
     "name": "try_from",
@@ -25685,7 +25590,7 @@ const g_search_db = [
     "summary": "Tries to construct a i64 from a signed primitive integer type (int, long, etc)."
   },
   {
-    "index": 2893,
+    "index": 2882,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_rem",
     "name": "checked_rem",
@@ -25694,7 +25599,7 @@ const g_search_db = [
     "summary": "Checked integer remainder. Computes self % rhs, returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2894,
+    "index": 2883,
     "type": "method",
     "url": "sus-num-i64.html#method.from.from.unsigned",
     "name": "from",
@@ -25703,7 +25608,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from an unsigned integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 2895,
+    "index": 2884,
     "type": "method",
     "url": "sus-num-i64.html#method.as_mut_ptr",
     "name": "as_mut_ptr",
@@ -25712,7 +25617,7 @@ const g_search_db = [
     "summary": "Returns a mutable pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2896,
+    "index": 2885,
     "type": "method",
     "url": "sus-num-i64.html#method.from.signedint.from.signedenum",
     "name": "from",
@@ -25721,7 +25626,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from a signed enum type (or enum class) where no bits are lost."
   },
   {
-    "index": 2897,
+    "index": 2886,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_shr",
     "name": "checked_shr",
@@ -25730,7 +25635,7 @@ const g_search_db = [
     "summary": "Checked shift right. Computes self &gt;&gt; rhs, returning None if rhs is larger than or equal to the number of bits in self."
   },
   {
-    "index": 2898,
+    "index": 2887,
     "type": "method",
     "url": "sus-num-i64.html#method.operator-",
     "name": "operator-",
@@ -25739,7 +25644,7 @@ const g_search_db = [
     "summary": "Computes the negation of the current value."
   },
   {
-    "index": 2899,
+    "index": 2888,
     "type": "method",
     "url": "sus-num-i64.html#method.unchecked_mul",
     "name": "unchecked_mul",
@@ -25748,7 +25653,7 @@ const g_search_db = [
     "summary": "Unchecked integer multiplication. Computes self * rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2900,
+    "index": 2889,
     "type": "method",
     "url": "sus-num-i64.html#method.rotate_right",
     "name": "rotate_right",
@@ -25757,7 +25662,7 @@ const g_search_db = [
     "summary": "Shifts the bits to the right by a specified amount, n, wrapping the truncated bits to the beginning of the resulting integer."
   },
   {
-    "index": 2901,
+    "index": 2890,
     "type": "method",
     "url": "sus-num-i64.html#method.try_from.unsigned.enum",
     "name": "try_from",
@@ -25766,7 +25671,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from an unsigned enum type (or enum class)."
   },
   {
-    "index": 2902,
+    "index": 2891,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_add",
     "name": "checked_add",
@@ -25775,7 +25680,7 @@ const g_search_db = [
     "summary": "Checked integer addition. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2903,
+    "index": 2892,
     "type": "method",
     "url": "sus-num-i64.html#method.from.from.unsigned.prim",
     "name": "from",
@@ -25784,7 +25689,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from an unsigned primitive integer type (unsigned int, unsigned long, etc) where no bits are lost."
   },
   {
-    "index": 2904,
+    "index": 2893,
     "type": "method",
     "url": "sus-num-i64.html#method.saturating_mul",
     "name": "saturating_mul",
@@ -25793,7 +25698,7 @@ const g_search_db = [
     "summary": "Saturating integer multiplication. Computes self * rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2905,
+    "index": 2894,
     "type": "method",
     "url": "sus-num-i64.html#method.is_positive",
     "name": "is_positive",
@@ -25802,7 +25707,7 @@ const g_search_db = [
     "summary": "Returns true if the current value is negative and false if the number is zero or positive."
   },
   {
-    "index": 2906,
+    "index": 2895,
     "type": "method",
     "url": "sus-num-i64.html#method.from_be",
     "name": "from_be",
@@ -25811,7 +25716,7 @@ const g_search_db = [
     "summary": "Converts an integer from big endian to the target's endianness."
   },
   {
-    "index": 2907,
+    "index": 2896,
     "type": "method",
     "url": "sus-num-i64.html#method.try_from.signed.enum",
     "name": "try_from",
@@ -25820,7 +25725,7 @@ const g_search_db = [
     "summary": "Tries to construct a i64 from a signed enum type (or enum class)."
   },
   {
-    "index": 2908,
+    "index": 2897,
     "type": "method",
     "url": "sus-num-i64.html#method.from_product",
     "name": "from_product",
@@ -25829,7 +25734,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from an Iterator by computing the product of all elements in the itertor."
   },
   {
-    "index": 2909,
+    "index": 2898,
     "type": "method",
     "url": "sus-num-i64.html#method.abs_diff",
     "name": "abs_diff",
@@ -25838,7 +25743,7 @@ const g_search_db = [
     "summary": "Computes the absolute difference between self and other."
   },
   {
-    "index": 2910,
+    "index": 2899,
     "type": "method",
     "url": "sus-num-i64.html#method.swap_bytes",
     "name": "swap_bytes",
@@ -25847,7 +25752,7 @@ const g_search_db = [
     "summary": "Reverses the byte order of the integer."
   },
   {
-    "index": 2911,
+    "index": 2900,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_add",
     "name": "overflowing_add",
@@ -25856,7 +25761,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs."
   },
   {
-    "index": 2912,
+    "index": 2901,
     "type": "method",
     "url": "sus-num-i64.html#method.try_from.unsigned.primitive",
     "name": "try_from",
@@ -25865,7 +25770,7 @@ const g_search_db = [
     "summary": "Constructs a i64 from an unsigned primitive integer type (unsigned int, unsigned long, etc)."
   },
   {
-    "index": 2913,
+    "index": 2902,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_log",
     "name": "checked_log",
@@ -25874,7 +25779,7 @@ const g_search_db = [
     "summary": "Returns the logarithm of the number with respect to an arbitrary base, rounded down."
   },
   {
-    "index": 2914,
+    "index": 2903,
     "type": "method",
     "url": "sus-num-i64.html#method.try_from.unsigned",
     "name": "try_from",
@@ -25883,7 +25788,7 @@ const g_search_db = [
     "summary": "Try to construct a i64 from an unsigned integer type (u8, u16, u32, etc)."
   },
   {
-    "index": 2915,
+    "index": 2904,
     "type": "method",
     "url": "sus-num-i64.html#method.operator&=",
     "name": "operator&=",
@@ -25892,7 +25797,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise AND of itself and r."
   },
   {
-    "index": 2916,
+    "index": 2905,
     "type": "method",
     "url": "sus-num-i64.html#method.operator^=",
     "name": "operator^=",
@@ -25901,7 +25806,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise XOR of itself and r."
   },
   {
-    "index": 2917,
+    "index": 2906,
     "type": "method",
     "url": "sus-num-i64.html#method.try_from.signed",
     "name": "try_from",
@@ -25910,7 +25815,7 @@ const g_search_db = [
     "summary": "Try to construct a i64 from a signed integer type (i8, i16, i32, etc)."
   },
   {
-    "index": 2918,
+    "index": 2907,
     "type": "method",
     "url": "sus-num-i64.html#method.abs",
     "name": "abs",
@@ -25919,7 +25824,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of itself."
   },
   {
-    "index": 2919,
+    "index": 2908,
     "type": "method",
     "url": "sus-num-i64.html#method.operator|=",
     "name": "operator|=",
@@ -25928,7 +25833,7 @@ const g_search_db = [
     "summary": "Assigns the bitwise OR of itself and r."
   },
   {
-    "index": 2920,
+    "index": 2909,
     "type": "method",
     "url": "sus-num-i64.html#method.as_ptr",
     "name": "as_ptr",
@@ -25937,7 +25842,7 @@ const g_search_db = [
     "summary": "Returns a const pointer to the underlying C++ primitive value type."
   },
   {
-    "index": 2921,
+    "index": 2910,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_abs",
     "name": "wrapping_abs",
@@ -25946,7 +25851,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) absolute value. Computes abs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2922,
+    "index": 2911,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_add_unsigned",
     "name": "checked_add_unsigned",
@@ -25955,7 +25860,7 @@ const g_search_db = [
     "summary": "Checked integer addition with an unsigned rhs. Computes self + rhs, returning None if overflow occurred."
   },
   {
-    "index": 2923,
+    "index": 2912,
     "type": "method",
     "url": "sus-num-i64.html#method.operator<<=",
     "name": "operator<<=",
@@ -25964,7 +25869,7 @@ const g_search_db = [
     "summary": "Shifts itself left by r bits."
   },
   {
-    "index": 2924,
+    "index": 2913,
     "type": "method",
     "url": "sus-num-i64.html#method.operator>>=",
     "name": "operator>>=",
@@ -25973,7 +25878,7 @@ const g_search_db = [
     "summary": "Shifts itself right by r bits."
   },
   {
-    "index": 2925,
+    "index": 2914,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_rem_euclid",
     "name": "checked_rem_euclid",
@@ -25982,7 +25887,7 @@ const g_search_db = [
     "summary": "Checked Euclidean remainder. Computes self.rem_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2926,
+    "index": 2915,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_div",
     "name": "wrapping_div",
@@ -25991,7 +25896,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) division. Computes self / rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2927,
+    "index": 2916,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_mul",
     "name": "checked_mul",
@@ -26000,7 +25905,7 @@ const g_search_db = [
     "summary": "Checked integer multiplication. Computes self * rhs, returning None if overflow occurred."
   },
   {
-    "index": 2928,
+    "index": 2917,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_div_euclid",
     "name": "checked_div_euclid",
@@ -26009,7 +25914,7 @@ const g_search_db = [
     "summary": "Checked Euclidean division. Computes self.div_euclid(rhs), returning None if rhs == 0 or the division results in overflow."
   },
   {
-    "index": 2929,
+    "index": 2918,
     "type": "method",
     "url": "sus-num-i64.html#method.saturating_neg",
     "name": "saturating_neg",
@@ -26018,7 +25923,7 @@ const g_search_db = [
     "summary": "Saturating integer negation. Computes -self, returning MAX if self == MIN instead of overflowing."
   },
   {
-    "index": 2930,
+    "index": 2919,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_abs",
     "name": "checked_abs",
@@ -26027,7 +25932,7 @@ const g_search_db = [
     "summary": "Checked absolute value. Computes abs, returning None if the current value is MIN."
   },
   {
-    "index": 2931,
+    "index": 2920,
     "type": "method",
     "url": "sus-num-i64.html#method.leading_zeros",
     "name": "leading_zeros",
@@ -26036,7 +25941,7 @@ const g_search_db = [
     "summary": "Returns the number of leading zeros in the binary representation of the current value."
   },
   {
-    "index": 2932,
+    "index": 2921,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_shl",
     "name": "overflowing_shl",
@@ -26045,7 +25950,7 @@ const g_search_db = [
     "summary": "Shifts self left by rhs bits."
   },
   {
-    "index": 2933,
+    "index": 2922,
     "type": "method",
     "url": "sus-num-i64.html#method.operator-=",
     "name": "operator-=",
@@ -26054,7 +25959,7 @@ const g_search_db = [
     "summary": "Subtracts r from itself."
   },
   {
-    "index": 2934,
+    "index": 2923,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_abs",
     "name": "overflowing_abs",
@@ -26063,7 +25968,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self."
   },
   {
-    "index": 2935,
+    "index": 2924,
     "type": "method",
     "url": "sus-num-i64.html#method.saturating_abs",
     "name": "saturating_abs",
@@ -26072,7 +25977,7 @@ const g_search_db = [
     "summary": "Saturating absolute value. Computes abs, returning MAX if the current value is MIN instead of overflowing."
   },
   {
-    "index": 2936,
+    "index": 2925,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_rem",
     "name": "overflowing_rem",
@@ -26081,7 +25986,7 @@ const g_search_db = [
     "summary": "Calculates the remainder when self is divided by rhs."
   },
   {
-    "index": 2937,
+    "index": 2926,
     "type": "method",
     "url": "sus-num-i64.html#method.unsigned_abs",
     "name": "unsigned_abs",
@@ -26090,7 +25995,7 @@ const g_search_db = [
     "summary": "Computes the absolute value of self without any wrapping or panicking."
   },
   {
-    "index": 2938,
+    "index": 2927,
     "type": "method",
     "url": "sus-num-i64.html#method.count_ones",
     "name": "count_ones",
@@ -26099,7 +26004,7 @@ const g_search_db = [
     "summary": "Returns the number of ones in the binary representation of the current value."
   },
   {
-    "index": 2939,
+    "index": 2928,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_add_unsigned",
     "name": "overflowing_add_unsigned",
@@ -26108,7 +26013,7 @@ const g_search_db = [
     "summary": "Calculates self + rhs with an unsigned rhs."
   },
   {
-    "index": 2940,
+    "index": 2929,
     "type": "method",
     "url": "sus-num-i64.html#method.leading_ones",
     "name": "leading_ones",
@@ -26117,7 +26022,7 @@ const g_search_db = [
     "summary": "Returns the number of leading ones in the binary representation of the current value."
   },
   {
-    "index": 2941,
+    "index": 2930,
     "type": "method",
     "url": "sus-num-i64.html#method.saturating_add",
     "name": "saturating_add",
@@ -26126,7 +26031,7 @@ const g_search_db = [
     "summary": "Saturating integer addition. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2942,
+    "index": 2931,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_sub_unsigned",
     "name": "overflowing_sub_unsigned",
@@ -26135,7 +26040,7 @@ const g_search_db = [
     "summary": "Calculates self - rhs with an unsigned rhs."
   },
   {
-    "index": 2943,
+    "index": 2932,
     "type": "method",
     "url": "sus-num-i64.html#method.saturating_add_unsigned",
     "name": "saturating_add_unsigned",
@@ -26144,7 +26049,7 @@ const g_search_db = [
     "summary": "Saturating integer addition with an unsigned rhs. Computes self + rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2944,
+    "index": 2933,
     "type": "method",
     "url": "sus-num-i64.html#method.operator=.signedint.assign.signedenum",
     "name": "operator=",
@@ -26153,7 +26058,7 @@ const g_search_db = [
     "summary": "Assignment from signed enum types where no bits are lost."
   },
   {
-    "index": 2945,
+    "index": 2934,
     "type": "method",
     "url": "sus-num-i64.html#method.unchecked_add",
     "name": "unchecked_add",
@@ -26162,7 +26067,7 @@ const g_search_db = [
     "summary": "Unchecked integer addition. Computes self + rhs, assuming overflow cannot occur."
   },
   {
-    "index": 2946,
+    "index": 2935,
     "type": "method",
     "url": "sus-num-i64.html#method.checked_pow",
     "name": "checked_pow",
@@ -26171,7 +26076,7 @@ const g_search_db = [
     "summary": "Checked exponentiation. Computes pow, returning None if overflow occurred."
   },
   {
-    "index": 2947,
+    "index": 2936,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_add",
     "name": "wrapping_add",
@@ -26180,7 +26085,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2948,
+    "index": 2937,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_shl",
     "name": "wrapping_shl",
@@ -26189,7 +26094,7 @@ const g_search_db = [
     "summary": "what you want instead."
   },
   {
-    "index": 2949,
+    "index": 2938,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_add_unsigned",
     "name": "wrapping_add_unsigned",
@@ -26198,7 +26103,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) addition with an unsigned rhs. Computes self + rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2950,
+    "index": 2939,
     "type": "method",
     "url": "sus-num-i64.html#method.saturating_div",
     "name": "saturating_div",
@@ -26207,7 +26112,7 @@ const g_search_db = [
     "summary": "Saturating integer division. Computes self / rhs, saturating at the numeric bounds instead of overflowing."
   },
   {
-    "index": 2951,
+    "index": 2940,
     "type": "method",
     "url": "sus-num-i64.html#method.overflowing_mul",
     "name": "overflowing_mul",
@@ -26216,7 +26121,7 @@ const g_search_db = [
     "summary": "Calculates the multiplication of self and rhs."
   },
   {
-    "index": 2952,
+    "index": 2941,
     "type": "method",
     "url": "sus-num-i64.html#method.wrapping_mul",
     "name": "wrapping_mul",
@@ -26225,15 +26130,7 @@ const g_search_db = [
     "summary": "Wrapping (modular) multiplication. Computes self * rhs, wrapping around at the boundary of the type."
   },
   {
-    "index": 2953,
-    "type": "function",
-    "url": "sus-num-fn.operator_eq.html",
-    "name": "operator==",
-    "full_name": "sus::num::operator==",
-    "split_name": "sus num operator=="
-  },
-  {
-    "index": 2954,
+    "index": 2942,
     "type": "function",
     "url": "sus-num-fn.operator_rem.html",
     "name": "operator%",
@@ -26241,60 +26138,7 @@ const g_search_db = [
     "split_name": "sus num operator%"
   },
   {
-    "index": 2955,
-    "type": "function",
-    "url": "sus-num-fn.operator_sub.html",
-    "name": "operator-",
-    "full_name": "sus::num::operator-",
-    "split_name": "sus num operator-"
-  },
-  {
-    "index": 2956,
-    "type": "function",
-    "url": "sus-num-fn.operator_mul.float._mul.html",
-    "name": "operator*",
-    "full_name": "sus::num::operator*",
-    "split_name": "sus num operator*",
-    "summary": "Satisfies the Mul concept for floating point values."
-  },
-  {
-    "index": 2957,
-    "type": "function",
-    "url": "sus-num-fn.operator_plus.float._plus.html",
-    "name": "operator+",
-    "full_name": "sus::num::operator+",
-    "split_name": "sus num operator+",
-    "summary": "Satisfies the Add concept for floating point values."
-  },
-  {
-    "index": 2958,
-    "type": "function",
-    "url": "sus-num-fn.operator_spaceship.float.partialord.html",
-    "name": "operator<=>",
-    "full_name": "sus::num::operator<=>",
-    "split_name": "sus num operator<=>",
-    "summary": "Satisfies the PartialOrd concept for floating point numbers."
-  },
-  {
-    "index": 2959,
-    "type": "function",
-    "url": "sus-num-fn.operator_rightshift.signedint._rightshift.html",
-    "name": "operator>>",
-    "full_name": "sus::num::operator>>",
-    "split_name": "sus num operator>>",
-    "summary": "Satisfies the Shr concept for signed integers."
-  },
-  {
-    "index": 2960,
-    "type": "function",
-    "url": "sus-num-fn.operator_leftshift.signedint._leftshift.html",
-    "name": "operator<<",
-    "full_name": "sus::num::operator<<",
-    "split_name": "sus num operator<<",
-    "summary": "Satisfies the Shl concept for signed integers."
-  },
-  {
-    "index": 2961,
+    "index": 2943,
     "type": "function",
     "url": "sus-num-fn.operator_mul.html",
     "name": "operator*",
@@ -26302,239 +26146,15 @@ const g_search_db = [
     "split_name": "sus num operator*"
   },
   {
-    "index": 2962,
+    "index": 2944,
     "type": "function",
-    "url": "sus-num-fn.operator_sub=.ptr.sub.isize.html",
-    "name": "operator-=",
-    "full_name": "sus::num::operator-=",
-    "split_name": "sus num operator-=",
-    "summary": "Satisfies the SubAssign concept for pointers (T*) with isize."
-  },
-  {
-    "index": 2963,
-    "type": "function",
-    "url": "sus-num-fn.operator_sub.ptr.sub.isize.html",
+    "url": "sus-num-fn.operator_sub.html",
     "name": "operator-",
     "full_name": "sus::num::operator-",
-    "split_name": "sus num operator-",
-    "summary": "Satisfies the Sub concept for pointers (T*) with isize."
+    "split_name": "sus num operator-"
   },
   {
-    "index": 2964,
-    "type": "function",
-    "url": "sus-num-fn.operator_plus=.ptr.add.isize.html",
-    "name": "operator+=",
-    "full_name": "sus::num::operator+=",
-    "split_name": "sus num operator+=",
-    "summary": "Satisfies the AddAssign concept for pointers (T*) with isize."
-  },
-  {
-    "index": 2965,
-    "type": "function",
-    "url": "sus-num-fn.operator_sub.ptr.sub.usize.html",
-    "name": "operator-",
-    "full_name": "sus::num::operator-",
-    "split_name": "sus num operator-",
-    "summary": "Satisfies the Sub concept for pointers (T*) with usize."
-  },
-  {
-    "index": 2966,
-    "type": "function",
-    "url": "sus-num-fn.operator_plus.unsignedint._plus.html",
-    "name": "operator+",
-    "full_name": "sus::num::operator+",
-    "split_name": "sus num operator+",
-    "summary": "Computes l summed with r."
-  },
-  {
-    "index": 2967,
-    "type": "function",
-    "url": "sus-num-fn.operator_rem.float._rem.html",
-    "name": "operator%",
-    "full_name": "sus::num::operator%",
-    "split_name": "sus num operator%",
-    "summary": "Satisfies the Rem concept for floating point values."
-  },
-  {
-    "index": 2968,
-    "type": "function",
-    "url": "sus-num-fn.operator_sub.float._sub.html",
-    "name": "operator-",
-    "full_name": "sus::num::operator-",
-    "split_name": "sus num operator-",
-    "summary": "Satisfies the Sub concept for floating point values."
-  },
-  {
-    "index": 2969,
-    "type": "function",
-    "url": "sus-num-fn.operator_eq.float.eq.html",
-    "name": "operator==",
-    "full_name": "sus::num::operator==",
-    "split_name": "sus num operator==",
-    "summary": "Satisfies the Eq concept for floating point numbers."
-  },
-  {
-    "index": 2970,
-    "type": "function",
-    "url": "sus-num-fn.operator_plus.ptr.add.usize.html",
-    "name": "operator+",
-    "full_name": "sus::num::operator+",
-    "split_name": "sus num operator+",
-    "summary": "Satisfies the Add concept for pointers (T*) with usize."
-  },
-  {
-    "index": 2971,
-    "type": "function",
-    "url": "sus-num-fn.operator_rem.unsignedint._rem.html",
-    "name": "operator%",
-    "full_name": "sus::num::operator%",
-    "split_name": "sus num operator%",
-    "summary": "Computes the remainder of l divided by r, also known as the modulo operation."
-  },
-  {
-    "index": 2972,
-    "type": "function",
-    "url": "sus-num-fn.operator_rightshift.unsignedint._rightshift.html",
-    "name": "operator>>",
-    "full_name": "sus::num::operator>>",
-    "split_name": "sus num operator>>",
-    "summary": "Satisfies the Shr concept for unsigned integers."
-  },
-  {
-    "index": 2973,
-    "type": "function",
-    "url": "sus-num-fn.operator_div.html",
-    "name": "operator/",
-    "full_name": "sus::num::operator/",
-    "split_name": "sus num operator/"
-  },
-  {
-    "index": 2974,
-    "type": "function",
-    "url": "sus-num-fn.operator_mul.unsignedint._mul.html",
-    "name": "operator*",
-    "full_name": "sus::num::operator*",
-    "split_name": "sus num operator*",
-    "summary": "Computes l multiplied by r."
-  },
-  {
-    "index": 2975,
-    "type": "function",
-    "url": "sus-num-fn.operator_and.unsignedint._and.html",
-    "name": "operator&",
-    "full_name": "sus::num::operator&",
-    "split_name": "sus num operator&",
-    "summary": "Performs the bitwise operation l AND r."
-  },
-  {
-    "index": 2976,
-    "type": "function",
-    "url": "sus-num-fn.operator_xor.unsignedint._xor.html",
-    "name": "operator^",
-    "full_name": "sus::num::operator^",
-    "split_name": "sus num operator^",
-    "summary": "Performs the bitwise operation l XOR r."
-  },
-  {
-    "index": 2977,
-    "type": "function",
-    "url": "sus-num-fn.operator_plus.signedint._plus.html",
-    "name": "operator+",
-    "full_name": "sus::num::operator+",
-    "split_name": "sus num operator+",
-    "summary": "Computes l summed with r."
-  },
-  {
-    "index": 2978,
-    "type": "function",
-    "url": "sus-num-fn.operator_plus.html",
-    "name": "operator+",
-    "full_name": "sus::num::operator+",
-    "split_name": "sus num operator+"
-  },
-  {
-    "index": 2979,
-    "type": "function",
-    "url": "sus-num-fn.operator_or.unsignedint._or.html",
-    "name": "operator|",
-    "full_name": "sus::num::operator|",
-    "split_name": "sus num operator|",
-    "summary": "Performs the bitwise operation l OR r."
-  },
-  {
-    "index": 2980,
-    "type": "function",
-    "url": "sus-num-fn.operator_rightshift.signed.prim._rightshiftu64.html",
-    "name": "operator>>",
-    "full_name": "sus::num::operator>>",
-    "split_name": "sus num operator>>",
-    "summary": "Satisfies the Shr concept for signed primitive integers shifted by u64."
-  },
-  {
-    "index": 2981,
-    "type": "function",
-    "url": "sus-num-fn.operator_sub=.ptr.sub.usize.html",
-    "name": "operator-=",
-    "full_name": "sus::num::operator-=",
-    "split_name": "sus num operator-=",
-    "summary": "Satisfies the SubAssign concept for pointers (T*) with usize."
-  },
-  {
-    "index": 2982,
-    "type": "function",
-    "url": "sus-num-fn.operator_div.float._div.html",
-    "name": "operator/",
-    "full_name": "sus::num::operator/",
-    "split_name": "sus num operator/",
-    "summary": "Satisfies the Div concept for floating point values."
-  },
-  {
-    "index": 2983,
-    "type": "function",
-    "url": "sus-num-fn.operator_plus=.ptr.add.usize.html",
-    "name": "operator+=",
-    "full_name": "sus::num::operator+=",
-    "split_name": "sus num operator+=",
-    "summary": "Satisfies the AddAssign concept for pointers (T*) with usize."
-  },
-  {
-    "index": 2984,
-    "type": "function",
-    "url": "sus-num-fn.operator_leftshift.unsigned.prim._leftshiftu64.html",
-    "name": "operator<<",
-    "full_name": "sus::num::operator<<",
-    "split_name": "sus num operator<<",
-    "summary": "Satisfies the Shl concept for unsigned primitive integers shifted by u64."
-  },
-  {
-    "index": 2985,
-    "type": "function",
-    "url": "sus-num-fn.operator_spaceship.uint.strongord.html",
-    "name": "operator<=>",
-    "full_name": "sus::num::operator<=>",
-    "split_name": "sus num operator<=>",
-    "summary": "Returns the ordering of l and r for unsigned integers."
-  },
-  {
-    "index": 2986,
-    "type": "function",
-    "url": "sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu64.html",
-    "name": "operator>>",
-    "full_name": "sus::num::operator>>",
-    "split_name": "sus num operator>>",
-    "summary": "Satisfies the Shr concept for unsigned primitive integers shifted by u64."
-  },
-  {
-    "index": 2987,
-    "type": "function",
-    "url": "sus-num-fn.operator_eq.int.eq.html",
-    "name": "operator==",
-    "full_name": "sus::num::operator==",
-    "split_name": "sus num operator==",
-    "summary": "Returns whether l and r are equal for signed integers."
-  },
-  {
-    "index": 2988,
+    "index": 2945,
     "type": "function",
     "url": "sus-num-fn.operator_spaceship.int.strongord.html",
     "name": "operator<=>",
@@ -26543,7 +26163,69 @@ const g_search_db = [
     "summary": "Returns the ordering of l and r for signed integers."
   },
   {
-    "index": 2989,
+    "index": 2946,
+    "type": "function",
+    "url": "sus-num-fn.operator_rem.unsignedint._rem.html",
+    "name": "operator%",
+    "full_name": "sus::num::operator%",
+    "split_name": "sus num operator%",
+    "summary": "Computes the remainder of l divided by r, also known as the modulo operation."
+  },
+  {
+    "index": 2947,
+    "type": "function",
+    "url": "sus-num-fn.operator_spaceship.float.partialord.html",
+    "name": "operator<=>",
+    "full_name": "sus::num::operator<=>",
+    "split_name": "sus num operator<=>",
+    "summary": "Satisfies the PartialOrd concept for floating point numbers."
+  },
+  {
+    "index": 2948,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.unsignedint._plus.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+",
+    "summary": "Computes l summed with r."
+  },
+  {
+    "index": 2949,
+    "type": "function",
+    "url": "sus-num-fn.operator_div.html",
+    "name": "operator/",
+    "full_name": "sus::num::operator/",
+    "split_name": "sus num operator/"
+  },
+  {
+    "index": 2950,
+    "type": "function",
+    "url": "sus-num-fn.operator_mul.unsignedint._mul.html",
+    "name": "operator*",
+    "full_name": "sus::num::operator*",
+    "split_name": "sus num operator*",
+    "summary": "Computes l multiplied by r."
+  },
+  {
+    "index": 2951,
+    "type": "function",
+    "url": "sus-num-fn.operator_and.unsignedint._and.html",
+    "name": "operator&",
+    "full_name": "sus::num::operator&",
+    "split_name": "sus num operator&",
+    "summary": "Performs the bitwise operation l AND r."
+  },
+  {
+    "index": 2952,
+    "type": "function",
+    "url": "sus-num-fn.operator_xor.unsignedint._xor.html",
+    "name": "operator^",
+    "full_name": "sus::num::operator^",
+    "split_name": "sus num operator^",
+    "summary": "Performs the bitwise operation l XOR r."
+  },
+  {
+    "index": 2953,
     "type": "function",
     "url": "sus-num-fn.operator_spaceship.html",
     "name": "operator<=>",
@@ -26551,16 +26233,7 @@ const g_search_db = [
     "split_name": "sus num operator<=>"
   },
   {
-    "index": 2990,
-    "type": "function",
-    "url": "sus-num-fn.operator_eq.uint.eq.html",
-    "name": "operator==",
-    "full_name": "sus::num::operator==",
-    "split_name": "sus num operator==",
-    "summary": "Returns whether l and r are equal for unsigned integers."
-  },
-  {
-    "index": 2991,
+    "index": 2954,
     "type": "function",
     "url": "sus-num-fn.operator_rem.signedint._rem.html",
     "name": "operator%",
@@ -26569,7 +26242,61 @@ const g_search_db = [
     "summary": "Computes the remainder of l divided by r, also known as the modulo operation."
   },
   {
-    "index": 2992,
+    "index": 2955,
+    "type": "function",
+    "url": "sus-num-fn.operator_eq.uint.eq.html",
+    "name": "operator==",
+    "full_name": "sus::num::operator==",
+    "split_name": "sus num operator==",
+    "summary": "Returns whether l and r are equal for unsigned integers."
+  },
+  {
+    "index": 2956,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.signedint._plus.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+",
+    "summary": "Computes l summed with r."
+  },
+  {
+    "index": 2957,
+    "type": "function",
+    "url": "sus-num-fn.operator_eq.int.eq.html",
+    "name": "operator==",
+    "full_name": "sus::num::operator==",
+    "split_name": "sus num operator==",
+    "summary": "Returns whether l and r are equal for signed integers."
+  },
+  {
+    "index": 2958,
+    "type": "function",
+    "url": "sus-num-fn.operator_spaceship.uint.strongord.html",
+    "name": "operator<=>",
+    "full_name": "sus::num::operator<=>",
+    "split_name": "sus num operator<=>",
+    "summary": "Returns the ordering of l and r for unsigned integers."
+  },
+  {
+    "index": 2959,
+    "type": "function",
+    "url": "sus-num-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::num::operator==",
+    "split_name": "sus num operator==",
+    "summary": "Satisfies the Eq concept."
+  },
+  {
+    "index": 2960,
+    "type": "function",
+    "url": "sus-num-fn.operator_div.float._div.html",
+    "name": "operator/",
+    "full_name": "sus::num::operator/",
+    "split_name": "sus num operator/",
+    "summary": "Satisfies the Div concept for floating point values."
+  },
+  {
+    "index": 2961,
     "type": "function",
     "url": "sus-num-fn.operator_sub.unsignedint._sub.html",
     "name": "operator-",
@@ -26578,7 +26305,7 @@ const g_search_db = [
     "summary": "Computes l subtracted by r."
   },
   {
-    "index": 2993,
+    "index": 2962,
     "type": "function",
     "url": "sus-num-fn.operator_sub.signedint._sub.html",
     "name": "operator-",
@@ -26587,16 +26314,7 @@ const g_search_db = [
     "summary": "Computes l subtracted by r."
   },
   {
-    "index": 2994,
-    "type": "function",
-    "url": "sus-num-fn.operator_leftshift.unsignedint._leftshift.html",
-    "name": "operator<<",
-    "full_name": "sus::num::operator<<",
-    "split_name": "sus num operator<<",
-    "summary": "Satisfies the Shl concept for unsigned integers."
-  },
-  {
-    "index": 2995,
+    "index": 2963,
     "type": "function",
     "url": "sus-num-fn.operator_mul.signedint._mul.html",
     "name": "operator*",
@@ -26605,16 +26323,7 @@ const g_search_db = [
     "summary": "Computes l multiplied by r."
   },
   {
-    "index": 2996,
-    "type": "function",
-    "url": "sus-num-fn.operator_leftshift.signed.prim._leftshiftu64.html",
-    "name": "operator<<",
-    "full_name": "sus::num::operator<<",
-    "split_name": "sus num operator<<",
-    "summary": "Satisfies the Shl concept for signed primitive integers shifted by u64."
-  },
-  {
-    "index": 2997,
+    "index": 2964,
     "type": "function",
     "url": "sus-num-fn.operator_div.unsignedint._div.html",
     "name": "operator/",
@@ -26623,7 +26332,7 @@ const g_search_db = [
     "summary": "Computes l divided by r."
   },
   {
-    "index": 2998,
+    "index": 2965,
     "type": "function",
     "url": "sus-num-fn.operator_div.signedint._div.html",
     "name": "operator/",
@@ -26632,7 +26341,25 @@ const g_search_db = [
     "summary": "Computes l divided by r."
   },
   {
-    "index": 2999,
+    "index": 2966,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.float._plus.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+",
+    "summary": "Satisfies the Add concept for floating point values."
+  },
+  {
+    "index": 2967,
+    "type": "function",
+    "url": "sus-num-fn.operator_mul.float._mul.html",
+    "name": "operator*",
+    "full_name": "sus::num::operator*",
+    "split_name": "sus num operator*",
+    "summary": "Satisfies the Mul concept for floating point values."
+  },
+  {
+    "index": 2968,
     "type": "function",
     "url": "sus-num-fn.operator_and.signedint._and.html",
     "name": "operator&",
@@ -26641,7 +26368,7 @@ const g_search_db = [
     "summary": "Performs the bitwise operation l AND r."
   },
   {
-    "index": 3000,
+    "index": 2969,
     "type": "function",
     "url": "sus-num-fn.operator_or.signedint._or.html",
     "name": "operator|",
@@ -26650,7 +26377,24 @@ const g_search_db = [
     "summary": "Performs the bitwise operation l OR r."
   },
   {
-    "index": 3001,
+    "index": 2970,
+    "type": "function",
+    "url": "sus-num-fn.operator_or.unsignedint._or.html",
+    "name": "operator|",
+    "full_name": "sus::num::operator|",
+    "split_name": "sus num operator|",
+    "summary": "Performs the bitwise operation l OR r."
+  },
+  {
+    "index": 2971,
+    "type": "function",
+    "url": "sus-num-fn.operator_plus.html",
+    "name": "operator+",
+    "full_name": "sus::num::operator+",
+    "split_name": "sus num operator+"
+  },
+  {
+    "index": 2972,
     "type": "function",
     "url": "sus-num-fn.operator_xor.signedint._xor.html",
     "name": "operator^",
@@ -26659,16 +26403,34 @@ const g_search_db = [
     "summary": "Performs the bitwise operation l XOR r."
   },
   {
-    "index": 3002,
+    "index": 2973,
     "type": "function",
-    "url": "sus-num-fn.operator_plus.ptr.add.isize.html",
-    "name": "operator+",
-    "full_name": "sus::num::operator+",
-    "split_name": "sus num operator+",
-    "summary": "Satisfies the Add concept for pointers (T*) with isize."
+    "url": "sus-num-fn.operator_eq.float.eq.html",
+    "name": "operator==",
+    "full_name": "sus::num::operator==",
+    "split_name": "sus num operator==",
+    "summary": "Satisfies the Eq concept for floating point numbers."
   },
   {
-    "index": 3003,
+    "index": 2974,
+    "type": "function",
+    "url": "sus-num-fn.operator_rem.float._rem.html",
+    "name": "operator%",
+    "full_name": "sus::num::operator%",
+    "split_name": "sus num operator%",
+    "summary": "Satisfies the Rem concept for floating point values."
+  },
+  {
+    "index": 2975,
+    "type": "function",
+    "url": "sus-num-fn.operator_sub.float._sub.html",
+    "name": "operator-",
+    "full_name": "sus::num::operator-",
+    "split_name": "sus num operator-",
+    "summary": "Satisfies the Sub concept for floating point values."
+  },
+  {
+    "index": 2976,
     "url": "sus-namespace.option.html",
     "type": "namespace",
     "name": "option",
@@ -26677,7 +26439,7 @@ const g_search_db = [
     "summary": "The Option type, and the some and none type-deduction constructor functions."
   },
   {
-    "index": 3004,
+    "index": 2977,
     "type": "function alias",
     "url": "sus-iter-fn.end.html",
     "name": "end",
@@ -26686,7 +26448,7 @@ const g_search_db = [
     "summary": "Implicit for-ranged loop iteration via Option::iter."
   },
   {
-    "index": 3005,
+    "index": 2978,
     "type": "function alias",
     "url": "sus-iter-fn.begin.html",
     "name": "begin",
@@ -26695,7 +26457,7 @@ const g_search_db = [
     "summary": "Implicit for-ranged loop iteration via Option::iter."
   },
   {
-    "index": 3006,
+    "index": 2979,
     "type": "class",
     "url": "sus-option-OptionIter.html",
     "name": "OptionIter",
@@ -26704,7 +26466,7 @@ const g_search_db = [
     "summary": "An iterator over the element from an Option."
   },
   {
-    "index": 3007,
+    "index": 2980,
     "type": "constructor",
     "url": "sus-option-OptionIter.html#method.OptionIter",
     "name": "OptionIter",
@@ -26712,7 +26474,7 @@ const g_search_db = [
     "split_name": "sus option Option Iter Option Iter"
   },
   {
-    "index": 3008,
+    "index": 2981,
     "type": "method",
     "url": "sus-option-OptionIter.html#method.exact_size_hint",
     "name": "exact_size_hint",
@@ -26721,7 +26483,7 @@ const g_search_db = [
     "summary": "ExactSizeIterator"
   },
   {
-    "index": 3009,
+    "index": 2982,
     "type": "method",
     "url": "sus-option-OptionIter.html#method.next_back",
     "name": "next_back",
@@ -26730,7 +26492,7 @@ const g_search_db = [
     "summary": "DoubleEndedIterator"
   },
   {
-    "index": 3010,
+    "index": 2983,
     "type": "method",
     "url": "sus-option-OptionIter.html#method.next",
     "name": "next",
@@ -26738,7 +26500,7 @@ const g_search_db = [
     "split_name": "sus option Option Iter next"
   },
   {
-    "index": 3011,
+    "index": 2984,
     "type": "method",
     "url": "sus-option-OptionIter.html#method.size_hint",
     "name": "size_hint",
@@ -26747,7 +26509,7 @@ const g_search_db = [
     "summary": "Iterator"
   },
   {
-    "index": 3012,
+    "index": 2985,
     "type": "method",
     "url": "sus-option-OptionIter.html#method.clone",
     "name": "clone",
@@ -26755,7 +26517,7 @@ const g_search_db = [
     "split_name": "sus option Option Iter clone"
   },
   {
-    "index": 3013,
+    "index": 2986,
     "type": "method",
     "url": "sus-option-OptionIter.html#method.operator=",
     "name": "operator=",
@@ -26763,7 +26525,7 @@ const g_search_db = [
     "split_name": "sus option Option Iter operator="
   },
   {
-    "index": 3014,
+    "index": 2987,
     "type": "type alias",
     "url": "TODO",
     "name": "Item",
@@ -26772,7 +26534,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 3015,
+    "index": 2988,
     "type": "class",
     "url": "sus-option-Option.html",
     "name": "Option",
@@ -26781,7 +26543,7 @@ const g_search_db = [
     "summary": "The Option type."
   },
   {
-    "index": 3016,
+    "index": 2989,
     "type": "constructor",
     "url": "sus-option-Option.html#method.Option.ctor.optional",
     "name": "Option",
@@ -26790,7 +26552,7 @@ const g_search_db = [
     "summary": "Implicit conversion from std::optional."
   },
   {
-    "index": 3017,
+    "index": 2990,
     "type": "constructor",
     "url": "sus-option-Option.html#method.Option.move",
     "name": "Option",
@@ -26799,7 +26561,7 @@ const g_search_db = [
     "summary": "Move constructor for Option&lt;T&gt; which will satisfy Move&lt;Option&lt;T&gt;&gt; if Move&lt;T&gt; is satisfied."
   },
   {
-    "index": 3018,
+    "index": 2991,
     "type": "constructor",
     "url": "sus-option-Option.html#method.Option.copy",
     "name": "Option",
@@ -26808,7 +26570,7 @@ const g_search_db = [
     "summary": "Copy constructor for Option&lt;T&gt; which will satisfy Copy&lt;Option&lt;T&gt;&gt; if Copy&lt;T&gt; is satisfied."
   },
   {
-    "index": 3019,
+    "index": 2992,
     "type": "constructor",
     "url": "sus-option-Option.html#method.Option.ctor.convert",
     "name": "Option",
@@ -26817,7 +26579,7 @@ const g_search_db = [
     "summary": "Converts from Option&lt;X&gt; to Option&lt;Y&gt; if X is convertible to Y."
   },
   {
-    "index": 3020,
+    "index": 2993,
     "type": "constructor",
     "url": "sus-option-Option.html#method.Option.ctor.some",
     "name": "Option",
@@ -26826,7 +26588,7 @@ const g_search_db = [
     "summary": "Construct an option that is holding the given value."
   },
   {
-    "index": 3021,
+    "index": 2994,
     "type": "constructor",
     "url": "sus-option-Option.html#method.Option.ctor.none",
     "name": "Option",
@@ -26835,7 +26597,7 @@ const g_search_db = [
     "summary": "Default-construct an option that is holding no value."
   },
   {
-    "index": 3022,
+    "index": 2995,
     "type": "conversion",
     "url": "sus-option-Option.html#method.operator optional",
     "name": "operator optional",
@@ -26844,7 +26606,7 @@ const g_search_db = [
     "summary": "Implicit conversion to std::optional."
   },
   {
-    "index": 3023,
+    "index": 2996,
     "type": "conversion",
     "url": "sus-option-Option.html#method.operator State",
     "name": "operator State",
@@ -26853,7 +26615,7 @@ const g_search_db = [
     "summary": "An operator which returns the state of the option, either Some or None."
   },
   {
-    "index": 3024,
+    "index": 2997,
     "type": "method",
     "url": "sus-option-Option.html#method.iter",
     "name": "iter",
@@ -26862,7 +26624,7 @@ const g_search_db = [
     "summary": "Produces an Iterator over the single item in the Option, or an empty iterator. The iterator will return a const reference."
   },
   {
-    "index": 3025,
+    "index": 2998,
     "type": "method",
     "url": "sus-option-Option.html#method.as_mut",
     "name": "as_mut",
@@ -26871,7 +26633,7 @@ const g_search_db = [
     "summary": "Returns an Option&lt;T&amp;&gt; from this Option&lt;T&gt;, that either holds None or a reference to the value in this option."
   },
   {
-    "index": 3026,
+    "index": 2999,
     "type": "method",
     "url": "sus-option-Option.html#method.as_ref",
     "name": "as_ref",
@@ -26880,7 +26642,7 @@ const g_search_db = [
     "summary": "Returns an Option&lt;const T&amp;&gt; from this Option&lt;T&gt;, that either holds None or a reference to the value in this option."
   },
   {
-    "index": 3027,
+    "index": 3000,
     "type": "method",
     "url": "sus-option-Option.html#method.flatten",
     "name": "flatten",
@@ -26889,7 +26651,7 @@ const g_search_db = [
     "summary": "Maps an Option&lt;Option&lt;T&gt;&gt; to an Option&lt;T&gt;."
   },
   {
-    "index": 3028,
+    "index": 3001,
     "type": "method",
     "url": "sus-option-Option.html#method.unzip",
     "name": "unzip",
@@ -26898,7 +26660,7 @@ const g_search_db = [
     "summary": "Unzips an option holding a Tuple of two values into a Tuple of two Options."
   },
   {
-    "index": 3029,
+    "index": 3002,
     "type": "method",
     "url": "sus-option-Option.html#method.zip",
     "name": "zip",
@@ -26907,7 +26669,7 @@ const g_search_db = [
     "summary": "Zips self with another option."
   },
   {
-    "index": 3030,
+    "index": 3003,
     "type": "method",
     "url": "sus-option-Option.html#method.copied",
     "name": "copied",
@@ -26916,7 +26678,7 @@ const g_search_db = [
     "summary": "Maps an Option&lt;T&amp;&gt; to an Option&lt;T&gt; by copying the referenced T."
   },
   {
-    "index": 3031,
+    "index": 3004,
     "type": "method",
     "url": "sus-option-Option.html#method.ok_or_else",
     "name": "ok_or_else",
@@ -26925,7 +26687,7 @@ const g_search_db = [
     "summary": "Transforms the Option&lt;T&gt; into a Result&lt;T, E&gt;, mapping Some(v) to Ok(v) and None to Err(f())."
   },
   {
-    "index": 3032,
+    "index": 3005,
     "type": "method",
     "url": "sus-option-Option.html#method.cloned",
     "name": "cloned",
@@ -26934,7 +26696,7 @@ const g_search_db = [
     "summary": "Maps an Option&lt;T&amp;&gt; to an Option&lt;T&gt; by cloning the referenced T."
   },
   {
-    "index": 3033,
+    "index": 3006,
     "type": "method",
     "url": "sus-option-Option.html#method.ok_or",
     "name": "ok_or",
@@ -26943,7 +26705,7 @@ const g_search_db = [
     "summary": "Transforms the Option&lt;T&gt; into a Result&lt;T, E&gt;, mapping Some(v) to Ok(v) and None to Err(e)."
   },
   {
-    "index": 3034,
+    "index": 3007,
     "type": "method",
     "url": "sus-option-Option.html#method.xor_that",
     "name": "xor_that",
@@ -26952,7 +26714,7 @@ const g_search_db = [
     "summary": "Consumes this option and returns an option holding the value from either this option or that option if exactly one of them holds a value, otherwise returns an empty Option."
   },
   {
-    "index": 3035,
+    "index": 3008,
     "type": "method",
     "url": "sus-option-Option.html#method.or_else",
     "name": "or_else",
@@ -26961,7 +26723,7 @@ const g_search_db = [
     "summary": "Consumes and returns an option with the same value if this option contains a value, otherwise returns the option returned by f."
   },
   {
-    "index": 3036,
+    "index": 3009,
     "type": "method",
     "url": "sus-option-Option.html#method.replace",
     "name": "replace",
@@ -26970,7 +26732,7 @@ const g_search_db = [
     "summary": "Replaces whatever the option is currently holding with value and returns an Option holding what was there previously, which may be empty."
   },
   {
-    "index": 3037,
+    "index": 3010,
     "type": "method",
     "url": "sus-option-Option.html#method.and_that",
     "name": "and_that",
@@ -26979,7 +26741,7 @@ const g_search_db = [
     "summary": "Consumes this option and returns an option with None if this option holds None, otherwise returns that option."
   },
   {
-    "index": 3038,
+    "index": 3011,
     "type": "method",
     "url": "sus-option-Option.html#method.into_iter",
     "name": "into_iter",
@@ -26988,7 +26750,7 @@ const g_search_db = [
     "summary": "Produces an Iterator over the single item in the Option, or an empty iterator. If the option holds a value, the iterator will return ownership of the value. If the option holds a reference, it will return that reference."
   },
   {
-    "index": 3039,
+    "index": 3012,
     "type": "method",
     "url": "sus-option-Option.html#method.filter",
     "name": "filter",
@@ -26997,7 +26759,7 @@ const g_search_db = [
     "summary": "Consumes the option and applies a predicate function to the value contained in the option. Returns a new option with the same value if the predicate returns true, otherwise returns an empty Option."
   },
   {
-    "index": 3040,
+    "index": 3013,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap_or_else",
     "name": "unwrap_or_else",
@@ -27006,7 +26768,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option, if there is one. Otherwise, returns the result of the given function."
   },
   {
-    "index": 3041,
+    "index": 3014,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap",
     "name": "unwrap",
@@ -27015,7 +26777,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option."
   },
   {
-    "index": 3042,
+    "index": 3015,
     "type": "method",
     "url": "sus-option-Option.html#method.clone",
     "name": "clone",
@@ -27024,7 +26786,7 @@ const g_search_db = [
     "summary": "Satisifies the Clone concept when Option is not Copy."
   },
   {
-    "index": 3043,
+    "index": 3016,
     "type": "method",
     "url": "sus-option-Option.html#method.operator=.move",
     "name": "operator=",
@@ -27033,7 +26795,7 @@ const g_search_db = [
     "summary": "Move assignment for Option which will satisfy Move for &lt;Option&lt;T&gt; if T satisifies Move."
   },
   {
-    "index": 3044,
+    "index": 3017,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap_or_default",
     "name": "unwrap_or_default",
@@ -27042,7 +26804,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option, if there is one. Otherwise, constructs a default value for the type and returns that."
   },
   {
-    "index": 3045,
+    "index": 3018,
     "type": "method",
     "url": "sus-option-Option.html#method.get_or_insert",
     "name": "get_or_insert",
@@ -27051,7 +26813,7 @@ const g_search_db = [
     "summary": "If the option holds a value, returns a mutable reference to it. Otherwise, stores value inside the option and returns a mutable reference to it."
   },
   {
-    "index": 3046,
+    "index": 3019,
     "type": "method",
     "url": "sus-option-Option.html#method.operator=.copy",
     "name": "operator=",
@@ -27060,7 +26822,7 @@ const g_search_db = [
     "summary": "Copy assignment for Option which will satisfy Copy for Option&lt;T&gt; if T satisifes Copy."
   },
   {
-    "index": 3047,
+    "index": 3020,
     "type": "method",
     "url": "sus-option-Option.html#method.clone_from",
     "name": "clone_from",
@@ -27069,7 +26831,7 @@ const g_search_db = [
     "summary": "Satisifies the CloneFrom concept."
   },
   {
-    "index": 3048,
+    "index": 3021,
     "type": "method",
     "url": "sus-option-Option.html#method.from_product",
     "name": "from_product",
@@ -27078,7 +26840,7 @@ const g_search_db = [
     "summary": "Computes the product of an iterator over Option&lt;T&gt; as long as there is no None found. If a None is found, the function returns None."
   },
   {
-    "index": 3049,
+    "index": 3022,
     "type": "method",
     "url": "sus-option-Option.html#method.from_sum",
     "name": "from_sum",
@@ -27087,7 +26849,7 @@ const g_search_db = [
     "summary": "Computes the sum of an iterator over Option&lt;T&gt; as long as there is no None found. If a None is found, the function returns None."
   },
   {
-    "index": 3050,
+    "index": 3023,
     "type": "method",
     "url": "sus-option-Option.html#method.as_value_unchecked",
     "name": "as_value_unchecked",
@@ -27096,7 +26858,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the contained value inside the option."
   },
   {
-    "index": 3051,
+    "index": 3024,
     "type": "method",
     "url": "sus-option-Option.html#method.as_value_mut",
     "name": "as_value_mut",
@@ -27105,7 +26867,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the contained value inside the option."
   },
   {
-    "index": 3052,
+    "index": 3025,
     "type": "method",
     "url": "sus-option-Option.html#method.operator*",
     "name": "operator*",
@@ -27114,7 +26876,7 @@ const g_search_db = [
     "summary": "Returns a reference to the contained value inside the option."
   },
   {
-    "index": 3053,
+    "index": 3026,
     "type": "method",
     "url": "sus-option-Option.html#method.insert",
     "name": "insert",
@@ -27123,7 +26885,7 @@ const g_search_db = [
     "summary": "Inserts value into the option, then returns a mutable reference to it."
   },
   {
-    "index": 3054,
+    "index": 3027,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap_or",
     "name": "unwrap_or",
@@ -27132,7 +26894,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option, if there is one. Otherwise, returns default_result."
   },
   {
-    "index": 3055,
+    "index": 3028,
     "type": "method",
     "url": "sus-option-Option.html#method.is_some",
     "name": "is_some",
@@ -27141,7 +26903,7 @@ const g_search_db = [
     "summary": "Returns whether the option currently contains a value."
   },
   {
-    "index": 3056,
+    "index": 3029,
     "type": "method",
     "url": "sus-option-Option.html#method.transpose",
     "name": "transpose",
@@ -27150,7 +26912,7 @@ const g_search_db = [
     "summary": "Transposes an Option of a Result into a Result of an Option."
   },
   {
-    "index": 3057,
+    "index": 3030,
     "type": "method",
     "url": "sus-option-Option.html#method.from.from.t",
     "name": "from",
@@ -27159,7 +26921,7 @@ const g_search_db = [
     "summary": "Moves or copies val into a new option holding Some(val)."
   },
   {
-    "index": 3058,
+    "index": 3031,
     "type": "method",
     "url": "sus-option-Option.html#method.map_or_else",
     "name": "map_or_else",
@@ -27168,7 +26930,7 @@ const g_search_db = [
     "summary": "Computes a default function result (if none), or applies a different function to the contained value (if any)."
   },
   {
-    "index": 3059,
+    "index": 3032,
     "type": "method",
     "url": "sus-option-Option.html#method.unwrap_unchecked",
     "name": "unwrap_unchecked",
@@ -27177,7 +26939,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option."
   },
   {
-    "index": 3060,
+    "index": 3033,
     "type": "method",
     "url": "sus-option-Option.html#method.get_or_insert_default",
     "name": "get_or_insert_default",
@@ -27186,7 +26948,7 @@ const g_search_db = [
     "summary": "If the option holds a value, returns a mutable reference to it. Otherwise, constructs a default value T, stores it inside the option and returns a mutable reference to the new value."
   },
   {
-    "index": 3061,
+    "index": 3034,
     "type": "method",
     "url": "sus-option-Option.html#method.iter_mut",
     "name": "iter_mut",
@@ -27195,7 +26957,7 @@ const g_search_db = [
     "summary": "Produces an Iterator over the single item in the Option, or an empty iterator. If the Option holds a value, the iterator will return a mutable reference to it. If the Option holds a reference, it will return that reference."
   },
   {
-    "index": 3062,
+    "index": 3035,
     "type": "method",
     "url": "sus-option-Option.html#method.expect",
     "name": "expect",
@@ -27204,7 +26966,7 @@ const g_search_db = [
     "summary": "Returns the contained value inside the option."
   },
   {
-    "index": 3063,
+    "index": 3036,
     "type": "method",
     "url": "sus-option-Option.html#method.is_none",
     "name": "is_none",
@@ -27213,7 +26975,7 @@ const g_search_db = [
     "summary": "Returns whether the option is currently empty, containing no value."
   },
   {
-    "index": 3064,
+    "index": 3037,
     "type": "method",
     "url": "sus-option-Option.html#method.as_value",
     "name": "as_value",
@@ -27222,7 +26984,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the contained value inside the option."
   },
   {
-    "index": 3065,
+    "index": 3038,
     "type": "method",
     "url": "sus-option-Option.html#method.as_value_unchecked_mut",
     "name": "as_value_unchecked_mut",
@@ -27231,7 +26993,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the contained value inside the option."
   },
   {
-    "index": 3066,
+    "index": 3039,
     "type": "method",
     "url": "sus-option-Option.html#method.operator->",
     "name": "operator->",
@@ -27240,7 +27002,7 @@ const g_search_db = [
     "summary": "Returns a pointer to the contained value inside the option."
   },
   {
-    "index": 3067,
+    "index": 3040,
     "type": "method",
     "url": "sus-option-Option.html#method.map",
     "name": "map",
@@ -27249,7 +27011,7 @@ const g_search_db = [
     "summary": "Maps the option's value through a function."
   },
   {
-    "index": 3068,
+    "index": 3041,
     "type": "method",
     "url": "sus-option-Option.html#method.or_that",
     "name": "or_that",
@@ -27258,7 +27020,7 @@ const g_search_db = [
     "summary": "Consumes and returns an option with the same value if this option contains a value, otherwise returns that option."
   },
   {
-    "index": 3069,
+    "index": 3042,
     "type": "method",
     "url": "sus-option-Option.html#method.get_or_insert_with",
     "name": "get_or_insert_with",
@@ -27267,7 +27029,7 @@ const g_search_db = [
     "summary": "If the option holds a value, returns a mutable reference to it. Otherwise, constructs a T by calling f, stores it inside the option and returns a mutable reference to the new value."
   },
   {
-    "index": 3070,
+    "index": 3043,
     "type": "method",
     "url": "sus-option-Option.html#method.and_then",
     "name": "and_then",
@@ -27276,7 +27038,7 @@ const g_search_db = [
     "summary": "Consumes this option and returns an option with None if this option holds None, otherwise calls f with the contained value and returns the result."
   },
   {
-    "index": 3071,
+    "index": 3044,
     "type": "method",
     "url": "sus-option-Option.html#method.take",
     "name": "take",
@@ -27285,7 +27047,7 @@ const g_search_db = [
     "summary": "Returns a new option containing whatever was inside the current option."
   },
   {
-    "index": 3072,
+    "index": 3045,
     "type": "method",
     "url": "sus-option-Option.html#method.map_or",
     "name": "map_or",
@@ -27294,7 +27056,7 @@ const g_search_db = [
     "summary": "Returns the provided default result (if none), or applies a function to the contained value (if any)."
   },
   {
-    "index": 3073,
+    "index": 3046,
     "type": "function",
     "url": "sus-option-fn.none.html",
     "name": "none",
@@ -27303,7 +27065,7 @@ const g_search_db = [
     "summary": "Used to construct an option with a None value."
   },
   {
-    "index": 3074,
+    "index": 3047,
     "type": "function",
     "url": "sus-option-fn.operator_spaceship.html",
     "name": "operator<=>",
@@ -27312,7 +27074,7 @@ const g_search_db = [
     "summary": "Compares two options. This function requires that T is ordered. An empty option always compares less than a non-empty option."
   },
   {
-    "index": 3075,
+    "index": 3048,
     "type": "function",
     "url": "sus-option-fn.some.html",
     "name": "some",
@@ -27321,7 +27083,7 @@ const g_search_db = [
     "summary": "Used to construct an option with a Some(t) value."
   },
   {
-    "index": 3076,
+    "index": 3049,
     "type": "function",
     "url": "sus-option-fn.operator_eq.html",
     "name": "operator==",
@@ -27330,7 +27092,7 @@ const g_search_db = [
     "summary": "Satisfies the Eq&lt;Option&lt;U&gt;&gt; concept."
   },
   {
-    "index": 3077,
+    "index": 3050,
     "url": "sus-namespace.result.html",
     "type": "namespace",
     "name": "result",
@@ -27339,7 +27101,7 @@ const g_search_db = [
     "summary": "The Result type, and the ok and err type-deduction constructor functions."
   },
   {
-    "index": 3078,
+    "index": 3051,
     "type": "function alias",
     "url": "sus-iter-fn.end.html",
     "name": "end",
@@ -27348,7 +27110,7 @@ const g_search_db = [
     "summary": "Implicit for-ranged loop iteration via Result::iter()."
   },
   {
-    "index": 3079,
+    "index": 3052,
     "type": "function alias",
     "url": "sus-iter-fn.begin.html",
     "name": "begin",
@@ -27357,7 +27119,7 @@ const g_search_db = [
     "summary": "Implicit for-ranged loop iteration via Result::iter()."
   },
   {
-    "index": 3080,
+    "index": 3053,
     "type": "type alias",
     "url": "sus-iter-Once.html",
     "name": "Once",
@@ -27366,7 +27128,7 @@ const g_search_db = [
     "summary": "An Iterator that walks over at most a single Item."
   },
   {
-    "index": 3081,
+    "index": 3054,
     "type": "class",
     "url": "sus-result-Result.html",
     "name": "Result",
@@ -27374,7 +27136,7 @@ const g_search_db = [
     "split_name": "sus result Result"
   },
   {
-    "index": 3082,
+    "index": 3055,
     "type": "constructor",
     "url": "sus-result-Result.html#method.Result.move",
     "name": "Result",
@@ -27383,7 +27145,7 @@ const g_search_db = [
     "summary": "Move constructor for Result&lt;T, E&gt; which satisfies Move, if T and E both satisfy Move."
   },
   {
-    "index": 3083,
+    "index": 3056,
     "type": "constructor",
     "url": "sus-result-Result.html#method.Result.copy",
     "name": "Result",
@@ -27392,7 +27154,7 @@ const g_search_db = [
     "summary": "Copy constructor for Result&lt;T, E&gt; which satisfies sus::mem::Copy&lt;Result&lt;T, E&gt;&gt; if Copy&lt;T&gt; and Copy&lt;E&gt; are satisfied."
   },
   {
-    "index": 3084,
+    "index": 3057,
     "type": "constructor",
     "url": "sus-result-Result.html#method.Result.ctor.ok",
     "name": "Result",
@@ -27401,7 +27163,7 @@ const g_search_db = [
     "summary": "Construct an Result that is holding the given success value."
   },
   {
-    "index": 3085,
+    "index": 3058,
     "type": "conversion",
     "url": "sus-result-Result.html#method.operator State",
     "name": "operator State",
@@ -27410,7 +27172,7 @@ const g_search_db = [
     "summary": "An operator which returns the state of the Result, either #Ok or #Err."
   },
   {
-    "index": 3086,
+    "index": 3059,
     "type": "method",
     "url": "sus-result-Result.html#method.iter_mut",
     "name": "iter_mut",
@@ -27418,7 +27180,7 @@ const g_search_db = [
     "split_name": "sus result Result iter mut"
   },
   {
-    "index": 3087,
+    "index": 3060,
     "type": "method",
     "url": "sus-result-Result.html#method.iter",
     "name": "iter",
@@ -27426,7 +27188,7 @@ const g_search_db = [
     "split_name": "sus result Result iter"
   },
   {
-    "index": 3088,
+    "index": 3061,
     "type": "method",
     "url": "sus-result-Result.html#method.into_iter",
     "name": "into_iter",
@@ -27434,7 +27196,7 @@ const g_search_db = [
     "split_name": "sus result Result into iter"
   },
   {
-    "index": 3089,
+    "index": 3062,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_or_else",
     "name": "unwrap_or_else",
@@ -27443,7 +27205,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value or computes it from a closure."
   },
   {
-    "index": 3090,
+    "index": 3063,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_err_unchecked",
     "name": "unwrap_err_unchecked",
@@ -27452,7 +27214,7 @@ const g_search_db = [
     "summary": "Returns the contained Err value, consuming the self value, without checking that the value is not an Ok."
   },
   {
-    "index": 3091,
+    "index": 3064,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_err",
     "name": "unwrap_err",
@@ -27461,7 +27223,7 @@ const g_search_db = [
     "summary": "Returns the contained Err value, consuming the self value."
   },
   {
-    "index": 3092,
+    "index": 3065,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_unchecked",
     "name": "unwrap_unchecked",
@@ -27470,7 +27232,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value, consuming the self value, without checking that the value is not an Err."
   },
   {
-    "index": 3093,
+    "index": 3066,
     "type": "method",
     "url": "sus-result-Result.html#method.expect",
     "name": "expect",
@@ -27479,7 +27241,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value, consuming the self value."
   },
   {
-    "index": 3094,
+    "index": 3067,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap",
     "name": "unwrap",
@@ -27488,7 +27250,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value, consuming the self value."
   },
   {
-    "index": 3095,
+    "index": 3068,
     "type": "method",
     "url": "sus-result-Result.html#method.with_err",
     "name": "with_err",
@@ -27497,7 +27259,7 @@ const g_search_db = [
     "summary": "Construct an Result that is holding the given error value."
   },
   {
-    "index": 3096,
+    "index": 3069,
     "type": "method",
     "url": "sus-result-Result.html#method.as_value",
     "name": "as_value",
@@ -27506,7 +27268,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the contained Ok value."
   },
   {
-    "index": 3097,
+    "index": 3070,
     "type": "method",
     "url": "sus-result-Result.html#method.operator=.copy",
     "name": "operator=",
@@ -27515,7 +27277,7 @@ const g_search_db = [
     "summary": "Copy assignment for Result&lt;T, E&gt; which satisfies sus::mem::Copy&lt;Result&lt;T, E&gt;&gt; if Copy&lt;T&gt; and Copy&lt;E&gt; are satisfied."
   },
   {
-    "index": 3098,
+    "index": 3071,
     "type": "method",
     "url": "sus-result-Result.html#method.as_err",
     "name": "as_err",
@@ -27524,7 +27286,7 @@ const g_search_db = [
     "summary": "Returns a const reference to the contained Err value."
   },
   {
-    "index": 3099,
+    "index": 3072,
     "type": "method",
     "url": "sus-result-Result.html#method.ok",
     "name": "ok",
@@ -27533,7 +27295,7 @@ const g_search_db = [
     "summary": "Converts from Result&lt;T, E&gt; to Option&lt;T&gt;."
   },
   {
-    "index": 3100,
+    "index": 3073,
     "type": "method",
     "url": "sus-result-Result.html#method.unwrap_or_default",
     "name": "unwrap_or_default",
@@ -27542,7 +27304,7 @@ const g_search_db = [
     "summary": "Returns the contained Ok value or a default."
   },
   {
-    "index": 3101,
+    "index": 3074,
     "type": "method",
     "url": "sus-result-Result.html#method.operator=.move",
     "name": "operator=",
@@ -27551,7 +27313,7 @@ const g_search_db = [
     "summary": "Move assignment for Result&lt;T, E&gt; which satisfies Move, if T and E both satisfy Move."
   },
   {
-    "index": 3102,
+    "index": 3075,
     "type": "method",
     "url": "sus-result-Result.html#method.as_value_mut",
     "name": "as_value_mut",
@@ -27560,7 +27322,7 @@ const g_search_db = [
     "summary": "Returns a mutable reference to the contained Ok value."
   },
   {
-    "index": 3103,
+    "index": 3076,
     "type": "method",
     "url": "sus-result-Result.html#method.from_sum",
     "name": "from_sum",
@@ -27569,7 +27331,7 @@ const g_search_db = [
     "summary": "Computes the sum of an iterator over Result&lt;T, E&gt; as long as there is no Err found. If an Err is found, the function returns the first Err."
   },
   {
-    "index": 3104,
+    "index": 3077,
     "type": "method",
     "url": "sus-result-Result.html#method.clone_from",
     "name": "clone_from",
@@ -27577,7 +27339,7 @@ const g_search_db = [
     "split_name": "sus result Result clone from"
   },
   {
-    "index": 3105,
+    "index": 3078,
     "type": "method",
     "url": "sus-result-Result.html#method.from_product",
     "name": "from_product",
@@ -27586,7 +27348,7 @@ const g_search_db = [
     "summary": "Computes the product of an iterator over Result&lt;T, E&gt; as long as there is no Err found. If an Err is found, the function returns the first Err."
   },
   {
-    "index": 3106,
+    "index": 3079,
     "type": "method",
     "url": "sus-result-Result.html#method.is_err",
     "name": "is_err",
@@ -27595,7 +27357,7 @@ const g_search_db = [
     "summary": "Returns true if the result is Err."
   },
   {
-    "index": 3107,
+    "index": 3080,
     "type": "method",
     "url": "sus-result-Result.html#method.err",
     "name": "err",
@@ -27604,7 +27366,7 @@ const g_search_db = [
     "summary": "Converts from Result&lt;T, E&gt; to Option&lt;E&gt;."
   },
   {
-    "index": 3108,
+    "index": 3081,
     "type": "method",
     "url": "sus-result-Result.html#method.is_ok",
     "name": "is_ok",
@@ -27613,7 +27375,7 @@ const g_search_db = [
     "summary": "Returns true if the result is Ok."
   },
   {
-    "index": 3109,
+    "index": 3082,
     "type": "method",
     "url": "sus-result-Result.html#method.clone",
     "name": "clone",
@@ -27621,7 +27383,7 @@ const g_search_db = [
     "split_name": "sus result Result clone"
   },
   {
-    "index": 3110,
+    "index": 3083,
     "type": "method",
     "url": "sus-result-Result.html#method.and_then",
     "name": "and_then",
@@ -27630,7 +27392,7 @@ const g_search_db = [
     "summary": "Calls op if the result is Ok, otherwise returns the Err value of self."
   },
   {
-    "index": 3111,
+    "index": 3084,
     "type": "type alias",
     "url": "TODO",
     "name": "ErrType",
@@ -27639,7 +27401,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 3112,
+    "index": 3085,
     "type": "type alias",
     "url": "TODO",
     "name": "OkType",
@@ -27648,7 +27410,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 3113,
+    "index": 3086,
     "type": "struct",
     "url": "sus-result-OkVoid.html",
     "name": "OkVoid",
@@ -27657,7 +27419,7 @@ const g_search_db = [
     "summary": "A marker type for constructing Result with an Ok(void) value."
   },
   {
-    "index": 3114,
+    "index": 3087,
     "type": "function",
     "url": "sus-result-fn.err.html",
     "name": "err",
@@ -27666,7 +27428,7 @@ const g_search_db = [
     "summary": "Used to construct a Result&lt;T, E&gt; with an Err(e) value."
   },
   {
-    "index": 3115,
+    "index": 3088,
     "type": "function",
     "url": "sus-result-fn.ok.html",
     "name": "ok",
@@ -27675,7 +27437,7 @@ const g_search_db = [
     "summary": "Used to construct a Result&lt;T, E&gt; with an Ok(t) value."
   },
   {
-    "index": 3116,
+    "index": 3089,
     "type": "function",
     "url": "sus-result-fn.operator_spaceship.html",
     "name": "operator<=>",
@@ -27684,7 +27446,7 @@ const g_search_db = [
     "summary": "Compares two Results for their ordering if the types inside can be compared."
   },
   {
-    "index": 3117,
+    "index": 3090,
     "type": "function",
     "url": "sus-result-fn.operator_eq.html",
     "name": "operator==",
@@ -27693,7 +27455,7 @@ const g_search_db = [
     "summary": "Compares two Results for equality if the types inside satisfy Eq."
   },
   {
-    "index": 3118,
+    "index": 3091,
     "url": "sus-namespace.error.html",
     "type": "namespace",
     "name": "error",
@@ -27702,7 +27464,7 @@ const g_search_db = [
     "summary": "Interfaces for working with Errors."
   },
   {
-    "index": 3119,
+    "index": 3092,
     "type": "concept",
     "url": "sus-error-Error.html",
     "name": "Error",
@@ -27711,7 +27473,7 @@ const g_search_db = [
     "summary": "Error"
   },
   {
-    "index": 3120,
+    "index": 3093,
     "type": "struct",
     "url": "sus-error-ErrorImpl.html",
     "name": "ErrorImpl",
@@ -27719,7 +27481,7 @@ const g_search_db = [
     "split_name": "sus error Error Impl"
   },
   {
-    "index": 3121,
+    "index": 3094,
     "type": "method",
     "url": "sus-error-ErrorImpl.html#method.source",
     "name": "source",
@@ -27727,7 +27489,7 @@ const g_search_db = [
     "split_name": "sus error Error Impl source"
   },
   {
-    "index": 3122,
+    "index": 3095,
     "type": "method",
     "url": "sus-error-ErrorImpl.html#method.display",
     "name": "display",
@@ -27735,7 +27497,7 @@ const g_search_db = [
     "split_name": "sus error Error Impl display"
   },
   {
-    "index": 3123,
+    "index": 3096,
     "type": "type alias",
     "url": "TODO",
     "name": "StringError",
@@ -27744,7 +27506,7 @@ const g_search_db = [
     "summary": ""
   },
   {
-    "index": 3124,
+    "index": 3097,
     "type": "struct",
     "url": "sus-error-DynError.html",
     "name": "DynError",
@@ -27753,7 +27515,7 @@ const g_search_db = [
     "summary": "A type-erased Error object."
   },
   {
-    "index": 3125,
+    "index": 3098,
     "type": "method",
     "url": "sus-error-DynError.html#method.source",
     "name": "source",
@@ -27762,7 +27524,7 @@ const g_search_db = [
     "summary": "Forwards to the Error implementation of E."
   },
   {
-    "index": 3126,
+    "index": 3099,
     "type": "method",
     "url": "sus-error-DynError.html#method.display",
     "name": "display",
@@ -27771,7 +27533,7 @@ const g_search_db = [
     "summary": "Forwards to the Error implementation of E."
   },
   {
-    "index": 3127,
+    "index": 3100,
     "type": "function",
     "url": "sus-error-fn.error_source.html",
     "name": "error_source",
@@ -27780,7 +27542,7 @@ const g_search_db = [
     "summary": "Gets a the source Error, type-erased as DynError, which caused the error to occur."
   },
   {
-    "index": 3128,
+    "index": 3101,
     "type": "function",
     "url": "sus-error-fn.error_display.html",
     "name": "error_display",
@@ -27789,7 +27551,7 @@ const g_search_db = [
     "summary": "Gets a string describing the error from an Error object."
   },
   {
-    "index": 3129,
+    "index": 3102,
     "url": "sus-namespace.tuple_type.html",
     "type": "namespace",
     "name": "tuple_type",
@@ -27798,7 +27560,7 @@ const g_search_db = [
     "summary": "The Tuple type, and the tuple type-deduction constructor function."
   },
   {
-    "index": 3130,
+    "index": 3103,
     "type": "class",
     "url": "sus-tuple_type-Tuple.html",
     "name": "Tuple",
@@ -27807,7 +27569,7 @@ const g_search_db = [
     "summary": "A Tuple is a finite sequence of one or more heterogeneous values."
   },
   {
-    "index": 3131,
+    "index": 3104,
     "type": "constructor",
     "url": "sus-tuple_type-Tuple.html#method.Tuple.ctor.convert",
     "name": "Tuple",
@@ -27816,7 +27578,7 @@ const g_search_db = [
     "summary": "Converts from Tuple&lt;X', Y', Z'&gt; to Tuple&lt;X, Y, Z&gt; when X', Y', and Z' can be converted to X, Y, and Z."
   },
   {
-    "index": 3132,
+    "index": 3105,
     "type": "constructor",
     "url": "sus-tuple_type-Tuple.html#method.Tuple.ctor.values",
     "name": "Tuple",
@@ -27825,7 +27587,7 @@ const g_search_db = [
     "summary": "Construct a Tuple with the given values."
   },
   {
-    "index": 3133,
+    "index": 3106,
     "type": "constructor",
     "url": "sus-tuple_type-Tuple.html#method.Tuple.ctor.default",
     "name": "Tuple",
@@ -27834,7 +27596,7 @@ const g_search_db = [
     "summary": "Construct a Tuple with the default value for the types it contains."
   },
   {
-    "index": 3134,
+    "index": 3107,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.extend",
     "name": "extend",
@@ -27843,25 +27605,7 @@ const g_search_db = [
     "summary": "Satisfies sus::iter::Extend for a Tuple of collections that each satisfies Extend for its position-relative type in the iterator of tuples."
   },
   {
-    "index": 3135,
-    "type": "method",
-    "url": "sus-tuple_type-Tuple.html#method.operator<=>",
-    "name": "operator<=>",
-    "full_name": "sus::tuple_type::Tuple::operator<=>",
-    "split_name": "sus tuple type Tuple operator<=>",
-    "summary": "Compares two Tuples."
-  },
-  {
-    "index": 3136,
-    "type": "method",
-    "url": "sus-tuple_type-Tuple.html#method.operator==",
-    "name": "operator==",
-    "full_name": "sus::tuple_type::Tuple::operator==",
-    "split_name": "sus tuple type Tuple operator==",
-    "summary": "Satisfies the Eq concept if the types inside satisfy Eq."
-  },
-  {
-    "index": 3137,
+    "index": 3108,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.into_inner",
     "name": "into_inner",
@@ -27870,7 +27614,7 @@ const g_search_db = [
     "summary": "Removes the Ith element from the tuple, leaving the Tuple in a moved-from state where it should no longer be used."
   },
   {
-    "index": 3138,
+    "index": 3109,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.at_mut",
     "name": "at_mut",
@@ -27879,7 +27623,7 @@ const g_search_db = [
     "summary": "Gets a mutable reference to the Ith element in the tuple."
   },
   {
-    "index": 3139,
+    "index": 3110,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.at",
     "name": "at",
@@ -27888,7 +27632,7 @@ const g_search_db = [
     "summary": "Gets a const reference to the Ith element in the tuple."
   },
   {
-    "index": 3140,
+    "index": 3111,
     "type": "method",
     "url": "sus-tuple_type-Tuple.html#method.clone",
     "name": "clone",
@@ -27897,15 +27641,7 @@ const g_search_db = [
     "summary": "sus::mem::Clone trait."
   },
   {
-    "index": 3141,
-    "type": "function",
-    "url": "sus-tuple_type-fn.operator_leftshift.html",
-    "name": "operator<<",
-    "full_name": "sus::tuple_type::operator<<",
-    "split_name": "sus tuple type operator<<"
-  },
-  {
-    "index": 3142,
+    "index": 3112,
     "type": "function",
     "url": "sus-tuple_type-fn.tuple.html",
     "name": "tuple",
@@ -27914,7 +27650,7 @@ const g_search_db = [
     "summary": "Used to construct a Tuple with the parameters as its values."
   },
   {
-    "index": 3143,
+    "index": 3113,
     "type": "function",
     "url": "sus-tuple_type-fn.get.html",
     "name": "get",
@@ -27922,7 +27658,25 @@ const g_search_db = [
     "split_name": "sus tuple type get"
   },
   {
-    "index": 3144,
+    "index": 3114,
+    "type": "function",
+    "url": "sus-tuple_type-fn.operator_spaceship.html",
+    "name": "operator<=>",
+    "full_name": "sus::tuple_type::operator<=>",
+    "split_name": "sus tuple type operator<=>",
+    "summary": "Compares two Tuples."
+  },
+  {
+    "index": 3115,
+    "type": "function",
+    "url": "sus-tuple_type-fn.operator_eq.html",
+    "name": "operator==",
+    "full_name": "sus::tuple_type::operator==",
+    "split_name": "sus tuple type operator==",
+    "summary": "Satisfies the Eq concept if the types inside satisfy Eq."
+  },
+  {
+    "index": 3116,
     "type": "function",
     "url": "fn._u8 literal.html",
     "name": "_u8 literal",
@@ -27931,7 +27685,7 @@ const g_search_db = [
     "summary": "For writing u8 literals."
   },
   {
-    "index": 3145,
+    "index": 3117,
     "type": "function",
     "url": "fn._rs literal.html",
     "name": "_rs literal",
@@ -27940,7 +27694,7 @@ const g_search_db = [
     "summary": "Constructs an isize range from a literal."
   },
   {
-    "index": 3146,
+    "index": 3118,
     "type": "function",
     "url": "fn._usize literal.html",
     "name": "_usize literal",
@@ -27949,7 +27703,7 @@ const g_search_db = [
     "summary": "For writing usize literals."
   },
   {
-    "index": 3147,
+    "index": 3119,
     "type": "function",
     "url": "fn._i64 literal.html",
     "name": "_i64 literal",
@@ -27958,7 +27712,7 @@ const g_search_db = [
     "summary": "For writing i64 literals."
   },
   {
-    "index": 3148,
+    "index": 3120,
     "type": "function",
     "url": "fn._r literal.html",
     "name": "_r literal",
@@ -27967,7 +27721,7 @@ const g_search_db = [
     "summary": "Constructs a usize range from a literal."
   },
   {
-    "index": 3149,
+    "index": 3121,
     "type": "function",
     "url": "fn._u16 literal.html",
     "name": "_u16 literal",
@@ -27976,7 +27730,7 @@ const g_search_db = [
     "summary": "For writing u16 literals."
   },
   {
-    "index": 3150,
+    "index": 3122,
     "type": "function",
     "url": "fn._u32 literal.html",
     "name": "_u32 literal",
@@ -27985,7 +27739,7 @@ const g_search_db = [
     "summary": "For writing u32 literals."
   },
   {
-    "index": 3151,
+    "index": 3123,
     "type": "function",
     "url": "fn._f32 literal.html",
     "name": "_f32 literal",
@@ -27994,7 +27748,7 @@ const g_search_db = [
     "summary": "For writing f32 literals."
   },
   {
-    "index": 3152,
+    "index": 3124,
     "type": "function",
     "url": "fn._u64 literal.html",
     "name": "_u64 literal",
@@ -28003,7 +27757,7 @@ const g_search_db = [
     "summary": "For writing u64 literals."
   },
   {
-    "index": 3153,
+    "index": 3125,
     "type": "function",
     "url": "fn._i8 literal.html",
     "name": "_i8 literal",
@@ -28012,7 +27766,7 @@ const g_search_db = [
     "summary": "For writing i8 literals."
   },
   {
-    "index": 3154,
+    "index": 3126,
     "type": "function",
     "url": "fn._i16 literal.html",
     "name": "_i16 literal",
@@ -28021,7 +27775,7 @@ const g_search_db = [
     "summary": "For writing i16 literals."
   },
   {
-    "index": 3155,
+    "index": 3127,
     "type": "function",
     "url": "fn._i32 literal.html",
     "name": "_i32 literal",
@@ -28030,7 +27784,7 @@ const g_search_db = [
     "summary": "For writing i32 literals."
   },
   {
-    "index": 3156,
+    "index": 3128,
     "type": "function",
     "url": "fn._isize literal.html",
     "name": "_isize literal",
@@ -28039,7 +27793,7 @@ const g_search_db = [
     "summary": "For writing isize literals."
   },
   {
-    "index": 3157,
+    "index": 3129,
     "type": "function",
     "url": "fn._f64 literal.html",
     "name": "_f64 literal",
@@ -28048,7 +27802,7 @@ const g_search_db = [
     "summary": "For writing f64 literals."
   },
   {
-    "index": 3158,
+    "index": 3130,
     "type": "macro",
     "url": "macro.sus_debug_check.html",
     "name": "sus_debug_check",
@@ -28057,34 +27811,7 @@ const g_search_db = [
     "summary": "Check a condition in debug builds, causing a sus_panic() if the condition fails. Nothing is checked in release builds."
   },
   {
-    "index": 3159,
-    "type": "macro",
-    "url": "macro.sus_choice_types.html",
-    "name": "sus_choice_types",
-    "full_name": "sus_choice_types",
-    "split_name": "sus choice types",
-    "summary": "A macro used to declare the value-type pairings in a Choice. See the Choice type for examples of its use."
-  },
-  {
-    "index": 3160,
-    "type": "macro",
-    "url": "macro.sus_check_with_message.html",
-    "name": "sus_check_with_message",
-    "full_name": "sus_check_with_message",
-    "split_name": "sus check with message",
-    "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
-  },
-  {
-    "index": 3161,
-    "type": "macro",
-    "url": "macro.sus_panic_with_message.html",
-    "name": "sus_panic_with_message",
-    "full_name": "sus_panic_with_message",
-    "split_name": "sus panic with message",
-    "summary": "Terminate the program, after printing a message."
-  },
-  {
-    "index": 3162,
+    "index": 3131,
     "type": "macro",
     "url": "macro.sus_panic.html",
     "name": "sus_panic",
@@ -28093,7 +27820,34 @@ const g_search_db = [
     "summary": "Terminate the program."
   },
   {
-    "index": 3163,
+    "index": 3132,
+    "type": "macro",
+    "url": "macro.sus_choice_types.html",
+    "name": "sus_choice_types",
+    "full_name": "sus_choice_types",
+    "split_name": "sus choice types",
+    "summary": "A macro used to declare the value-type pairings in a Choice. See the Choice type for examples of its use."
+  },
+  {
+    "index": 3133,
+    "type": "macro",
+    "url": "macro.sus_check_with_message.html",
+    "name": "sus_check_with_message",
+    "full_name": "sus_check_with_message",
+    "split_name": "sus check with message",
+    "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
+  },
+  {
+    "index": 3134,
+    "type": "macro",
+    "url": "macro.sus_panic_with_message.html",
+    "name": "sus_panic_with_message",
+    "full_name": "sus_panic_with_message",
+    "split_name": "sus panic with message",
+    "summary": "Terminate the program, after printing a message."
+  },
+  {
+    "index": 3135,
     "type": "macro",
     "url": "macro.sus_dyn_concept.html",
     "name": "sus_dyn_concept",
@@ -28102,7 +27856,7 @@ const g_search_db = [
     "summary": "Macro to help implement DynC for a concept C. The macro is placed in the body of the DynC class."
   },
   {
-    "index": 3164,
+    "index": 3136,
     "type": "macro",
     "url": "macro.sus_class_never_value_field.html",
     "name": "sus_class_never_value_field",
@@ -28111,7 +27865,7 @@ const g_search_db = [
     "summary": "Mark a class field as never being a specific value, often a zero, after a constructor has run and before the destructor has completed. This allows querying if a class is constructed in a memory location, since the class is constructed iff the value of the field is not the never-value."
   },
   {
-    "index": 3165,
+    "index": 3137,
     "type": "macro",
     "url": "macro.sus_check.html",
     "name": "sus_check",
@@ -28120,7 +27874,7 @@ const g_search_db = [
     "summary": "Verifies that the input, evaluated to a bool, is true. Otherwise, it will panic, printing a message and terminating the program."
   },
   {
-    "index": 3166,
+    "index": 3138,
     "type": "macro",
     "url": "macro.sus_dyn_concept_typed.html",
     "name": "sus_dyn_concept_typed",
@@ -28129,16 +27883,7 @@ const g_search_db = [
     "summary": "Macro to help implement DynCTyped for a concept C. The macro is placed in the body of the DynCTyped class."
   },
   {
-    "index": 3167,
-    "type": "macro",
-    "url": "macro.sus_unreachable_unchecked.html",
-    "name": "sus_unreachable_unchecked",
-    "full_name": "sus_unreachable_unchecked",
-    "split_name": "sus unreachable unchecked",
-    "summary": "Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."
-  },
-  {
-    "index": 3168,
+    "index": 3139,
     "type": "macro",
     "url": "macro.sus_unreachable.html",
     "name": "sus_unreachable",
@@ -28147,7 +27892,16 @@ const g_search_db = [
     "summary": "Indicates to the developer that the location should not be reached, and terminates the program with a panic."
   },
   {
-    "index": 3169,
+    "index": 3140,
+    "type": "macro",
+    "url": "macro.sus_unreachable_unchecked.html",
+    "name": "sus_unreachable_unchecked",
+    "full_name": "sus_unreachable_unchecked",
+    "split_name": "sus unreachable unchecked",
+    "summary": "Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."
+  },
+  {
+    "index": 3141,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if.html",
     "name": "sus_class_trivially_relocatable_if",
@@ -28156,7 +27910,7 @@ const g_search_db = [
     "summary": "Mark a class as trivially relocatable based on a compile-time condition."
   },
   {
-    "index": 3170,
+    "index": 3142,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable.html",
     "name": "sus_class_trivially_relocatable",
@@ -28165,7 +27919,7 @@ const g_search_db = [
     "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
   },
   {
-    "index": 3171,
+    "index": 3143,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_unchecked.html",
     "name": "sus_class_trivially_relocatable_unchecked",
@@ -28174,7 +27928,7 @@ const g_search_db = [
     "summary": "Mark a class as unconditionally trivially relocatable, without any additional assertion to help verify correctness."
   },
   {
-    "index": 3172,
+    "index": 3144,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",

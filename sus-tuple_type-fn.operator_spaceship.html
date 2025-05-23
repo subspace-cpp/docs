@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta property="og:type" content="website"></meta>
     <meta property="og:site_name" content="Subspace"></meta>
-    <meta property="og:url" content="https://suslib.cc/sus-num-fn.operator_sub.ptr.sub.isize.html"></meta>
-    <title>sus::num::operator- - Subspace</title>
-    <meta property="og:title" content="sus::num::operator- - Subspace"></meta>
-    <meta name="description" content="Satisfies the Sub concept for pointers (T*) with isize."></meta>
-    <meta property="og:description" content="Satisfies the Sub concept for pointers (T*) with isize."></meta>
+    <meta property="og:url" content="https://suslib.cc/sus-tuple_type-fn.operator_spaceship.html"></meta>
+    <title>sus::tuple_type::operator&lt;=&gt; - Subspace</title>
+    <meta property="og:title" content="sus::tuple_type::operator&lt;=&gt; - Subspace"></meta>
+    <meta name="description" content="Compares two Tuples."></meta>
+    <meta property="og:description" content="Compares two Tuples."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -268,7 +268,7 @@
         </div></a>
       <span class="topbar-text-area">
         <span class="topbar-title">
-          <a href="#">operator-</a>
+          <a href="#">operator&lt;=&gt;</a>
         </span>
       </span>
     </nav>
@@ -280,7 +280,7 @@
         function
       </div>
       <div class="sidebar-title sidebar-text">
-        <a href="#">operator-</a>
+        <a href="#">operator&lt;=&gt;</a>
       </div>
       <div class="sidebar-subtitle sidebar-text">
       </div>
@@ -314,20 +314,45 @@
               <span class="namespace-dots">::</span>
               <a class="namespace-name" href="namespace.sus.html">sus</a>
               <span class="namespace-dots">::</span>
-              <a class="namespace-name" href="sus-namespace.num.html">num</a>
+              <a class="namespace-name" href="sus-namespace.tuple_type.html">tuple_type</a>
               <span class="namespace-dots">::</span>
-              <a class="function-name" href="#">operator-</a>
+              <a class="function-name" href="#">operator&lt;=&gt;</a>
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/signed_integer.h#L163">source</a></div><div class="template">template &lt;class T&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator-</a>(T* t, <a class="type-name" href="sus-num-isize.html" title="sus::num::isize">isize</a> offset) -&gt; T*</div>
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#L280">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) -&gt; std::strong_ordering<div class="requires">
+                    <span class="requires-keyword keyword">
+                      requires
+                    </span>
+                    <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::cmp::StrongOrd&lt;T&gt; && ... && ::sus::cmp::StrongOrd&lt;Ts&gt;)</pre></div>
+                  </div></div>
+              </div>
+              <div class="overload">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#L280">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) -&gt; std::weak_ordering<div class="requires">
+                    <span class="requires-keyword keyword">
+                      requires
+                    </span>
+                    <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::cmp::StrongOrd&lt;T&gt; && ... && ::sus::cmp::StrongOrd&lt;Ts&gt;)</pre></div>
+                    <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::cmp::Ord&lt;T&gt; && ... && ::sus::cmp::Ord&lt;Ts&gt;)</pre></div>
+                  </div></div>
+              </div>
+              <div class="overload">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#L280">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&lt;=&gt;</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) -&gt; std::partial_ordering<div class="requires">
+                    <span class="requires-keyword keyword">
+                      requires
+                    </span>
+                    <div class="requires-constraint"><pre class="requires-constraint-line">!(::sus::cmp::Ord&lt;T&gt; && ... && ::sus::cmp::Ord&lt;Ts&gt;)</pre></div>
+                    <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::cmp::PartialOrd&lt;T&gt; && ... && ::sus::cmp::PartialOrd&lt;Ts&gt;)</pre></div>
+                  </div></div>
               </div>
             </div>
             <div class="description long">
-              <p>Satisfies the <a href="sus-num-Sub.html"><code>Sub</code></a> concept for pointers
-(<code>T*</code>) with <a href="sus-num-isize.html"><code>isize</code></a>.</p>
-<p>Subtracts a <a href="sus-num-isize.html"><code>isize</code></a> from a pointer, returning the
-resulting pointer.</p>
+              <p>Compares two Tuples.</p>
+<p>Satisfies sus::cmp::StrongOrd&lt;Tuple&lt;...&gt;&gt; if sus::cmp::StrongOrd&lt;...&gt;.
+Satisfies sus::cmp::Ord&lt;Tuple&lt;...&gt;&gt; if sus::cmp::Ord&lt;...&gt;.
+Satisfies sus::cmp::PartialOrd&lt;Tuple&lt;...&gt;&gt; if sus::cmp::PartialOrd&lt;...&gt;.</p>
+<p>The non-template overloads allow tuple() marker types to convert to
+Tuple for comparison.</p>
 
             </div>
           </div>

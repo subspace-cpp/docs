@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta property="og:type" content="website"></meta>
     <meta property="og:site_name" content="Subspace"></meta>
-    <meta property="og:url" content="https://suslib.cc/sus-num-fn.operator_rightshift.unsigned.prim._rightshiftu64.html"></meta>
-    <title>sus::num::operator&gt;&gt; - Subspace</title>
-    <meta property="og:title" content="sus::num::operator&gt;&gt; - Subspace"></meta>
-    <meta name="description" content="Satisfies the Shr concept for unsigned primitive integers shifted by u64."></meta>
-    <meta property="og:description" content="Satisfies the Shr concept for unsigned primitive integers shifted by u64."></meta>
+    <meta property="og:url" content="https://suslib.cc/sus-tuple_type-fn.operator_eq.html"></meta>
+    <title>sus::tuple_type::operator== - Subspace</title>
+    <meta property="og:title" content="sus::tuple_type::operator== - Subspace"></meta>
+    <meta name="description" content="Satisfies the Eq concept if the types inside satisfy Eq."></meta>
+    <meta property="og:description" content="Satisfies the Eq concept if the types inside satisfy Eq."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -268,7 +268,7 @@
         </div></a>
       <span class="topbar-text-area">
         <span class="topbar-title">
-          <a href="#">operator&gt;&gt;</a>
+          <a href="#">operator==</a>
         </span>
       </span>
     </nav>
@@ -280,7 +280,7 @@
         function
       </div>
       <div class="sidebar-title sidebar-text">
-        <a href="#">operator&gt;&gt;</a>
+        <a href="#">operator==</a>
       </div>
       <div class="sidebar-subtitle sidebar-text">
       </div>
@@ -314,37 +314,26 @@
               <span class="namespace-dots">::</span>
               <a class="namespace-name" href="namespace.sus.html">sus</a>
               <span class="namespace-dots">::</span>
-              <a class="namespace-name" href="sus-namespace.num.html">num</a>
+              <a class="namespace-name" href="sus-namespace.tuple_type.html">tuple_type</a>
               <span class="namespace-dots">::</span>
-              <a class="function-name" href="#">operator&gt;&gt;</a>
+              <a class="function-name" href="#">operator==</a>
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/unsigned_integer.h#L260">source</a></div><div class="template">template &lt;class P, class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&gt;&gt;</a>(P l, U r) -&gt; P<div class="requires">
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/tuple/tuple.h#L255">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">operator==</a>(<span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& l, <span class="const">const</span> <a class="type-name" href="sus-tuple_type-Tuple.html" title="sus::tuple_type::Tuple">Tuple</a>&lt;T, Ts...&gt;& r) -&gt; bool<div class="requires">
                     <span class="requires-keyword keyword">
                       requires
                     </span>
-                    <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;U&gt;</pre></div>
-                    <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedPrimitiveInteger&lt;P&gt; || UnsignedPrimitiveEnum&lt;P&gt;</pre></div>
-                    <div class="requires-constraint"><pre class="requires-constraint-line">std::convertible_to&lt;U, u64&gt;</pre></div>
-                  </div></div>
-              </div>
-              <div class="overload">
-                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/num/unsigned_integer.h#L260">source</a></div><div class="template">template &lt;class P, class U&gt;</div><span class="function-auto">auto</span> <a class="function-name" href="#">operator&gt;&gt;</a>(P l, U r) -&gt; P<div class="requires">
-                    <span class="requires-keyword keyword">
-                      requires
-                    </span>
-                    <div class="requires-constraint"><pre class="requires-constraint-line">sus::num::Integer&lt;U&gt;</pre></div>
-                    <div class="requires-constraint"><pre class="requires-constraint-line">UnsignedPrimitiveInteger&lt;P&gt; || UnsignedPrimitiveEnum&lt;P&gt;</pre></div>
-                    <div class="requires-constraint"><pre class="requires-constraint-line">!std::convertible_to&lt;U, u64&gt;</pre></div>
-                  </div><div class="deleted">
-                    deleted
+                    <div class="requires-constraint"><pre class="requires-constraint-line">(::sus::cmp::Eq&lt;T&gt; && ... && ::sus::cmp::Eq&lt;Ts&gt;)</pre></div>
                   </div></div>
               </div>
             </div>
             <div class="description long">
-              <p>Satisfies the <a href="sus-num-Shr.html"><code>Shr</code></a> concept for unsigned primitive
-integers shifted by <a href="sus-num-u64.html"><code>u64</code></a>.</p>
+              <p>Satisfies the <a href="sus-cmp-Eq.html"><code>Eq</code></a> concept if the types inside satisfy
+<code>Eq</code>.</p>
+<h1><a name="implementation-note" href="#implementation-note">Implementation Note</a></h1>
+<p>The non-template overload allows tuple() marker types to convert to
+Tuple for comparison.</p>
 
             </div>
           </div>
