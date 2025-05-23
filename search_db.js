@@ -28059,15 +28059,6 @@ const g_search_db = [
   {
     "index": 3159,
     "type": "macro",
-    "url": "macro.sus_panic.html",
-    "name": "sus_panic",
-    "full_name": "sus_panic",
-    "split_name": "sus panic",
-    "summary": "Terminate the program."
-  },
-  {
-    "index": 3160,
-    "type": "macro",
     "url": "macro.sus_choice_types.html",
     "name": "sus_choice_types",
     "full_name": "sus_choice_types",
@@ -28075,7 +28066,7 @@ const g_search_db = [
     "summary": "A macro used to declare the value-type pairings in a Choice. See the Choice type for examples of its use."
   },
   {
-    "index": 3161,
+    "index": 3160,
     "type": "macro",
     "url": "macro.sus_check_with_message.html",
     "name": "sus_check_with_message",
@@ -28084,7 +28075,7 @@ const g_search_db = [
     "summary": "Verifies that the input cond, evaluated to a bool, is true. Otherwise, it will panic, printing a customized message, and terminating the program."
   },
   {
-    "index": 3162,
+    "index": 3161,
     "type": "macro",
     "url": "macro.sus_panic_with_message.html",
     "name": "sus_panic_with_message",
@@ -28093,25 +28084,16 @@ const g_search_db = [
     "summary": "Terminate the program, after printing a message."
   },
   {
+    "index": 3162,
+    "type": "macro",
+    "url": "macro.sus_panic.html",
+    "name": "sus_panic",
+    "full_name": "sus_panic",
+    "split_name": "sus panic",
+    "summary": "Terminate the program."
+  },
+  {
     "index": 3163,
-    "type": "macro",
-    "url": "macro.sus_check.html",
-    "name": "sus_check",
-    "full_name": "sus_check",
-    "split_name": "sus check",
-    "summary": "Verifies that the input, evaluated to a bool, is true. Otherwise, it will panic, printing a message and terminating the program."
-  },
-  {
-    "index": 3164,
-    "type": "macro",
-    "url": "macro.sus_dyn_concept_typed.html",
-    "name": "sus_dyn_concept_typed",
-    "full_name": "sus_dyn_concept_typed",
-    "split_name": "sus dyn concept typed",
-    "summary": "Macro to help implement DynCTyped for a concept C. The macro is placed in the body of the DynCTyped class."
-  },
-  {
-    "index": 3165,
     "type": "macro",
     "url": "macro.sus_dyn_concept.html",
     "name": "sus_dyn_concept",
@@ -28120,13 +28102,31 @@ const g_search_db = [
     "summary": "Macro to help implement DynC for a concept C. The macro is placed in the body of the DynC class."
   },
   {
-    "index": 3166,
+    "index": 3164,
     "type": "macro",
     "url": "macro.sus_class_never_value_field.html",
     "name": "sus_class_never_value_field",
     "full_name": "sus_class_never_value_field",
     "split_name": "sus class never value field",
     "summary": "Mark a class field as never being a specific value, often a zero, after a constructor has run and before the destructor has completed. This allows querying if a class is constructed in a memory location, since the class is constructed iff the value of the field is not the never-value."
+  },
+  {
+    "index": 3165,
+    "type": "macro",
+    "url": "macro.sus_check.html",
+    "name": "sus_check",
+    "full_name": "sus_check",
+    "split_name": "sus check",
+    "summary": "Verifies that the input, evaluated to a bool, is true. Otherwise, it will panic, printing a message and terminating the program."
+  },
+  {
+    "index": 3166,
+    "type": "macro",
+    "url": "macro.sus_dyn_concept_typed.html",
+    "name": "sus_dyn_concept_typed",
+    "full_name": "sus_dyn_concept_typed",
+    "split_name": "sus dyn concept typed",
+    "summary": "Macro to help implement DynCTyped for a concept C. The macro is placed in the body of the DynCTyped class."
   },
   {
     "index": 3167,
