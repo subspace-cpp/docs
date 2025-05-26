@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta property="og:type" content="website"></meta>
     <meta property="og:site_name" content="Subspace"></meta>
-    <meta property="og:url" content="https://suslib.cc/macro.sus_unreachable_unchecked.html"></meta>
-    <title>sus_unreachable_unchecked - Subspace</title>
-    <meta property="og:title" content="sus_unreachable_unchecked - Subspace"></meta>
-    <meta name="description" content="Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."></meta>
-    <meta property="og:description" content="Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."></meta>
+    <meta property="og:url" content="https://suslib.cc/sus-assertions-fn.unreachable.html"></meta>
+    <title>sus::assertions::unreachable - Subspace</title>
+    <meta property="og:title" content="sus::assertions::unreachable - Subspace"></meta>
+    <meta name="description" content="Indicates to the developer that the location should not be reached, and terminates the program with a panic."></meta>
+    <meta property="og:description" content="Indicates to the developer that the location should not be reached, and terminates the program with a panic."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -268,7 +268,7 @@
         </div></a>
       <span class="topbar-text-area">
         <span class="topbar-title">
-          <a href="#">sus_unreachable_unchecked</a>
+          <a href="#">unreachable</a>
         </span>
       </span>
     </nav>
@@ -277,10 +277,10 @@
           <img class="sidebar-logo" src="logo.png"></img>
         </div></a>
       <div class="sidebar-pretitle sidebar-text">
-        macro
+        function
       </div>
       <div class="sidebar-title sidebar-text">
-        <a href="#">sus_unreachable_unchecked</a>
+        <a href="#">unreachable</a>
       </div>
       <div class="sidebar-subtitle sidebar-text">
       </div>
@@ -304,28 +304,38 @@
       </section>
       <section class="main-content">
         <script>maybeShowSearchResults()</script>
-        <div class="macro">
+        <div class="function">
           <div class="section overview">
             <h1 class="section-header">
               <span>
-                Macro
+                Function
               </span>
               <a class="project-name" href="index.html">Subspace</a>
               <span class="namespace-dots">::</span>
-              <a class="macro-name" href="#">sus_unreachable_unchecked</a>
+              <a class="namespace-name" href="namespace.sus.html">sus</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
+              <span class="namespace-dots">::</span>
+              <a class="function-name" href="#">unreachable</a>
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="macro-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/assertions/unreachable.h#L55">source</a></div><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_unreachable_unchecked</a>(unsafe_fn_marker)</div>
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/assertions/unreachable.h#L43">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">unreachable</a>(<a class="type-name" href="sus-assertions-PanicLocation.html" title="sus::assertions::PanicLocation">PanicLocation</a> loc) -&gt; void</div>
               </div>
             </div>
             <div class="description long">
-              <p>Indicates to the compiler that the location will never be reached, allowing
-it to optimize code generation accordingly. If this function is actually
-reached, Undefined Behaviour will occur.</p>
-<p>This is similar to <a href="https://en.cppreference.com/w/cpp/utility/unreachable"><code>std::unreachable</code></a>.</p>
-<h1><a name="safety" href="#safety">Safety</a></h1>
-<p>This function must never actually be reached, or Undefined Behaviour occurs.</p>
+              <p>Indicates to the developer that the location should not be reached, and
+terminates the program with a <a href="sus-panic.html"><code>panic</code></a>.</p>
+<p>This is similar to <a href="https://doc.rust-lang.org/stable/std/macro.unreachable.html"><code>std::unreachable!</code></a> in Rust,
+and in the default build configuration will print an error message
+indicating the location where the panic occurred.</p>
+<p>Note that this is <em>not</em> the same as <a href="https://en.cppreference.com/w/cpp/utility/unreachable"><code>std::unreachable</code></a> in C++ which is
+Undefined Behaviour if reached. It is closer to <a href="https://en.cppreference.com/w/cpp/utility/program/abort"><code>std::abort</code></a> except built on
+top of <a href="sus-panic.html"><code>sus::panic</code></a>.
+The Subspace library matches the safer behaviour of Rust to avoid confusion
+and security bugs when working across languages. Use
+<a href="sus-unreachable_unchecked.html"><code>sus::unreachable_unchecked</code></a> to
+indicate to the compiler the code is not reachable.</p>
 
             </div>
           </div>

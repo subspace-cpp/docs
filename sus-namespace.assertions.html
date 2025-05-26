@@ -9,8 +9,8 @@
     <meta property="og:url" content="https://suslib.cc/sus-namespace.assertions.html"></meta>
     <title>sus::assertions - Subspace</title>
     <meta property="og:title" content="sus::assertions - Subspace"></meta>
-    <meta name="description" content="Checking for (e.g. sus_check) and handling (e.g. sus_panic, sus_unreachable) unexpected runtime conditions."></meta>
-    <meta property="og:description" content="Checking for (e.g. sus_check) and handling (e.g. sus_panic, sus_unreachable) unexpected runtime conditions."></meta>
+    <meta name="description" content="Checking for (e.g. sus_check) and handling (e.g. sus::panic, sus::unreachable) unexpected runtime conditions."></meta>
+    <meta property="og:description" content="Checking for (e.g. sus_check) and handling (e.g. sus::panic, sus::unreachable) unexpected runtime conditions."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -292,6 +292,18 @@
           <li>
             <a class="sidebar-item" href="sus-assertions-PanicLocation.html">PanicLocation</a>
           </li>
+          <li>
+            <a class="sidebar-header" href="#functions">Functions</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-assertions-fn.panic.html">panic</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-assertions-fn.unreachable.html">unreachable</a>
+          </li>
+          <li>
+            <a class="sidebar-item" href="sus-assertions-fn.unreachable_unchecked.html">unreachable_unchecked</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -314,7 +326,7 @@
           <div class="section overview">
             <h1 class="section-header">
               <div>
-                <div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/assertions/panic.h#L30">source</a></div>
+                <div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/assertions/panic.h#L31">source</a></div>
                 <span>
                   Namespace
                 </span>
@@ -327,8 +339,8 @@
             </h1>
             <div class="description long">
               <p>Checking for (e.g. <a href="macro.sus_check.html"><code>sus_check</code></a>) and handling
-(e.g. <a href="macro.sus_panic.html"><code>sus_panic</code></a>,
-<a href="macro.sus_unreachable.html"><code>sus_unreachable</code></a>) unexpected runtime
+(e.g. <a href="sus-panic.html"><code>sus::panic</code></a>,
+<a href="sus-unreachable.html"><code>sus::unreachable</code></a>) unexpected runtime
 conditions.</p>
 
             </div>
@@ -344,6 +356,45 @@ conditions.</p>
                 </div>
                 <div class="description short">
                   <p>Records the location where a panic occured.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section functions">
+            <h1 class="section-header">
+              <a name="functions" href="#functions">Functions</a>
+            </h1>
+            <ul class="section-items item-table">
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-assertions-fn.panic.html">panic</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-assertions-fn.unreachable.html">unreachable</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Indicates to the developer that the location should not be reached, and
+terminates the program with a <a href="sus-panic.html"><code>panic</code></a>.</p>
+                </div>
+              </li>
+              <li class="section-item">
+                <div class="overload-set item-name">
+                  <div class="overload">
+                    <div class="function-signature"><a class="function-name" href="sus-assertions-fn.unreachable_unchecked.html">unreachable_unchecked</a></div>
+                  </div>
+                </div>
+                <div class="description short">
+                  <p>Indicates to the compiler that the location will never be reached, allowing
+it to optimize code generation accordingly. If this function is actually
+reached, Undefined Behaviour will occur.</p>
                 </div>
               </li>
             </ul>

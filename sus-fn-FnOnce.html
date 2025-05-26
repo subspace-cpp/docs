@@ -355,10 +355,10 @@ This ensures the
 correct overload is called on the object and that method pointers are
 called correctly. It is moved-from after calling, and it should only be
 called once.</p>
-<p>Calling a <code>FnOnce</code> multiple times may <a href="macro.sus_panic.html"><code>panic</code></a>
+<p>Calling a <code>FnOnce</code> multiple times may <a href="sus-panic.html"><code>panic</code></a>
 or cause Undefined Behaviour.
 Not moving the <code>FnOnce</code> when calling it may fail to compile,
-<a href="macro.sus_panic.html"><code>panic</code></a>, or cause Undefined Behaviour depending on the type
+<a href="sus-panic.html"><code>panic</code></a>, or cause Undefined Behaviour depending on the type
 that is being used to satisfy <code>FnOnce</code>.</p>
 <h1><a name="type-erasure" href="#type-erasure">Type erasure</a></h1>
 <p>Using a concept like <code>FnOnce</code> in a function parameter requires the function

@@ -493,18 +493,6 @@
           <li>
             <a class="sidebar-item" href="macro.sus_dyn_concept_typed.html">sus_dyn_concept_typed</a>
           </li>
-          <li>
-            <a class="sidebar-item" href="macro.sus_panic.html">sus_panic</a>
-          </li>
-          <li>
-            <a class="sidebar-item" href="macro.sus_panic_with_message.html">sus_panic_with_message</a>
-          </li>
-          <li>
-            <a class="sidebar-item" href="macro.sus_unreachable.html">sus_unreachable</a>
-          </li>
-          <li>
-            <a class="sidebar-item" href="macro.sus_unreachable_unchecked.html">sus_unreachable_unchecked</a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -582,8 +570,8 @@ included:</p>
                 </div>
                 <div class="description short">
                   <p>Checking for (e.g. <a href="macro.sus_check.html"><code>sus_check</code></a>) and handling
-(e.g. <a href="macro.sus_panic.html"><code>sus_panic</code></a>,
-<a href="macro.sus_unreachable.html"><code>sus_unreachable</code></a>) unexpected runtime
+(e.g. <a href="sus-panic.html"><code>sus::panic</code></a>,
+<a href="sus-unreachable.html"><code>sus::unreachable</code></a>) unexpected runtime
 conditions.</p>
                 </div>
               </li>
@@ -1068,7 +1056,7 @@ passed to unsafe functions. See the <a href="sus-marker-UnsafeFnMarker.html"><co
                 </div>
                 <div class="description short">
                   <p>Verifies that the input, evaluated to a <code>bool</code>, is true. Otherwise, it will
-<a href="macro.sus_panic.html"><code>panic</code></a>, printing a message and terminating the program.</p>
+<a href="sus-panic.html"><code>panic</code></a>, printing a message and terminating the program.</p>
                 </div>
               </li>
               <li class="section-item">
@@ -1079,7 +1067,7 @@ passed to unsafe functions. See the <a href="sus-marker-UnsafeFnMarker.html"><co
                 </div>
                 <div class="description short">
                   <p>Verifies that the input <code>cond</code>, evaluated to a <code>bool</code>, is true. Otherwise,
-it will <a href="macro.sus_panic.html"><code>panic</code></a>, printing a customized message, and
+it will <a href="sus-panic.html"><code>panic</code></a>, printing a customized message, and
 terminating the program.</p>
                 </div>
               </li>
@@ -1156,7 +1144,7 @@ additional assertion to help verify correctness.</p>
                   </div>
                 </div>
                 <div class="description short">
-                  <p>Check a condition in debug builds, causing a <code>sus_panic()</code> if the condition
+                  <p>Check a condition in debug builds, causing a <code>sus::panic()</code> if the condition
 fails. Nothing is checked in release builds.</p>
                 </div>
               </li>
@@ -1180,49 +1168,6 @@ body of the <code>DynC</code> class.</p>
                 <div class="description short">
                   <p>Macro to help implement <code>DynCTyped</code> for a concept <code>C</code>. The macro is placed
 in the body of the <code>DynCTyped</code> class.</p>
-                </div>
-              </li>
-              <li class="section-item">
-                <div class="overload-set item-name">
-                  <div class="overload">
-                    <div class="macro-signature"> <a class="macro-name" href="macro.sus_panic.html">sus_panic</a></div>
-                  </div>
-                </div>
-                <div class="description short">
-                  <p>Terminate the program.</p>
-                </div>
-              </li>
-              <li class="section-item">
-                <div class="overload-set item-name">
-                  <div class="overload">
-                    <div class="macro-signature"> <a class="macro-name" href="macro.sus_panic_with_message.html">sus_panic_with_message</a></div>
-                  </div>
-                </div>
-                <div class="description short">
-                  <p>Terminate the program, after printing a message.</p>
-                </div>
-              </li>
-              <li class="section-item">
-                <div class="overload-set item-name">
-                  <div class="overload">
-                    <div class="macro-signature"> <a class="macro-name" href="macro.sus_unreachable.html">sus_unreachable</a></div>
-                  </div>
-                </div>
-                <div class="description short">
-                  <p>Indicates to the developer that the location should not be reached, and
-terminates the program with a <a href="macro.sus_panic.html"><code>panic</code></a>.</p>
-                </div>
-              </li>
-              <li class="section-item">
-                <div class="overload-set item-name">
-                  <div class="overload">
-                    <div class="macro-signature"> <a class="macro-name" href="macro.sus_unreachable_unchecked.html">sus_unreachable_unchecked</a></div>
-                  </div>
-                </div>
-                <div class="description short">
-                  <p>Indicates to the compiler that the location will never be reached, allowing
-it to optimize code generation accordingly. If this function is actually
-reached, Undefined Behaviour will occur.</p>
                 </div>
               </li>
             </ul>

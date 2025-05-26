@@ -9,8 +9,8 @@
     <meta property="og:url" content="https://suslib.cc/macro.sus_debug_check.html"></meta>
     <title>sus_debug_check - Subspace</title>
     <meta property="og:title" content="sus_debug_check - Subspace"></meta>
-    <meta name="description" content="Check a condition in debug builds, causing a sus_panic() if the condition fails. Nothing is checked in release builds."></meta>
-    <meta property="og:description" content="Check a condition in debug builds, causing a sus_panic() if the condition fails. Nothing is checked in release builds."></meta>
+    <meta name="description" content="Check a condition in debug builds, causing a sus::panic() if the condition fails. Nothing is checked in release builds."></meta>
+    <meta property="og:description" content="Check a condition in debug builds, causing a sus::panic() if the condition fails. Nothing is checked in release builds."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -320,7 +320,7 @@
               </div>
             </div>
             <div class="description long">
-              <p>Check a condition in debug builds, causing a <code>sus_panic()</code> if the condition
+              <p>Check a condition in debug builds, causing a <code>sus::panic()</code> if the condition
 fails. Nothing is checked in release builds.</p>
 <p>The condition must not have side effects, and should not call any functions
 or methods (including operator methods), as it will often not have any

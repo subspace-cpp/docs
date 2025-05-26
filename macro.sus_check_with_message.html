@@ -321,12 +321,12 @@
             </div>
             <div class="description long">
               <p>Verifies that the input <code>cond</code>, evaluated to a <code>bool</code>, is true. Otherwise,
-it will <a href="macro.sus_panic.html"><code>panic</code></a>, printing a customized message, and
+it will <a href="sus-panic.html"><code>panic</code></a>, printing a customized message, and
 terminating the program.</p>
 <p>Use <a href="macro.sus_check.html"><code>sus_check</code></a> when there's nothing useful to add
 in the message.</p>
 <p>The displayed output can be controlled by overriding the behaviour of
-<a href="macro.sus_panic.html"><code>sus_panic</code></a> as described there. If the
+<a href="sus-panic.html"><code>sus::panic</code></a> as described there. If the
 <code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER</code> macro does not consume the <code>msg</code>,
 this macro will avoid instantiating it at all.</p>
 

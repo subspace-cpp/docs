@@ -433,7 +433,7 @@ constructed from the constructor arguments by
 <a href="sus-boxed-Box.html#method.with_args"><code>with_args</code></a>, like <a href="https://en.cppreference.com/w/cpp/memory/unique_ptr/make_unique"><code>std::make_unique</code></a>
 but built into the type.
 A moved-from <code>Box</code> may not be used except to be assigned to or destroyed.
-Using a moved-from <code>Box</code> will <a href="macro.sus_panic.html"><code>panic</code></a> and
+Using a moved-from <code>Box</code> will <a href="sus-panic.html"><code>panic</code></a> and
 terminate the program rather than operate on a null. This prevents
 Undefined Behaviour and memory bugs caused by dereferencing null or using
 null in unintended ways.</li>

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta property="og:type" content="website"></meta>
     <meta property="og:site_name" content="Subspace"></meta>
-    <meta property="og:url" content="https://suslib.cc/macro.sus_panic_with_message.html"></meta>
-    <title>sus_panic_with_message - Subspace</title>
-    <meta property="og:title" content="sus_panic_with_message - Subspace"></meta>
-    <meta name="description" content="Terminate the program, after printing a message."></meta>
-    <meta property="og:description" content="Terminate the program, after printing a message."></meta>
+    <meta property="og:url" content="https://suslib.cc/sus-assertions-fn.unreachable_unchecked.html"></meta>
+    <title>sus::assertions::unreachable_unchecked - Subspace</title>
+    <meta property="og:title" content="sus::assertions::unreachable_unchecked - Subspace"></meta>
+    <meta name="description" content="Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."></meta>
+    <meta property="og:description" content="Indicates to the compiler that the location will never be reached, allowing it to optimize code generation accordingly. If this function is actually reached, Undefined Behaviour will occur."></meta>
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="./search_db.js"></script>
     <script>
@@ -268,7 +268,7 @@
         </div></a>
       <span class="topbar-text-area">
         <span class="topbar-title">
-          <a href="#">sus_panic_with_message</a>
+          <a href="#">unreachable_unchecked</a>
         </span>
       </span>
     </nav>
@@ -277,10 +277,10 @@
           <img class="sidebar-logo" src="logo.png"></img>
         </div></a>
       <div class="sidebar-pretitle sidebar-text">
-        macro
+        function
       </div>
       <div class="sidebar-title sidebar-text">
-        <a href="#">sus_panic_with_message</a>
+        <a href="#">unreachable_unchecked</a>
       </div>
       <div class="sidebar-subtitle sidebar-text">
       </div>
@@ -304,37 +304,32 @@
       </section>
       <section class="main-content">
         <script>maybeShowSearchResults()</script>
-        <div class="macro">
+        <div class="function">
           <div class="section overview">
             <h1 class="section-header">
               <span>
-                Macro
+                Function
               </span>
               <a class="project-name" href="index.html">Subspace</a>
               <span class="namespace-dots">::</span>
-              <a class="macro-name" href="#">sus_panic_with_message</a>
+              <a class="namespace-name" href="namespace.sus.html">sus</a>
+              <span class="namespace-dots">::</span>
+              <a class="namespace-name" href="sus-namespace.assertions.html">assertions</a>
+              <span class="namespace-dots">::</span>
+              <a class="function-name" href="#">unreachable_unchecked</a>
             </h1>
             <div class="overload-set">
               <div class="overload">
-                <div class="macro-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/assertions/panic.h#L132">source</a></div><span class="macro-define">#define</span> <a class="macro-name" href="#">sus_panic_with_message</a>(msg)</div>
+                <div class="function-signature"><div class="src rightside"><a href="https://github.com/chromium/subspace/blob/main/sus/assertions/unreachable.h#L57">source</a></div><span class="function-auto">auto</span> <a class="function-name" href="#">unreachable_unchecked</a>(<a class="type-name" href="sus-marker-UnsafeFnMarker.html" title="sus::marker::UnsafeFnMarker">UnsafeFnMarker</a>) -&gt; void</div>
               </div>
             </div>
             <div class="description long">
-              <p>Terminate the program, after printing a message.</p>
-<p>The default behaviour of this function is to abort(). The behaviour of this
-function can be overridden by defining a <code>SUS_PROVIDE_PANIC_HANDLER()</code> macro
-when compiling the library.</p>
-<p>The panic message will be printed to stderr before aborting. This behaviour
-can be overridden by defining a <code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER()</code>
-macro when compiling the library. The
-<code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER()</code> macro receives two arguments:</p>
-<ul>
-<li>A message, which is a <code>const char*</code>, a <code>std::string_view</code> or a
-<code>std::string</code>. Overloads should be used to handle each case.</li>
-<li>A <a href="sus-assertions-PanicLocation.html"><code>PanicLocation</code></a>.
-If the <code>SUS_PROVIDE_PRINT_PANIC_MESSAGE_HANDLER</code> macro does not consume the
-<code>msg</code>, this macro will avoid instantiating it at all.</li>
-</ul>
+              <p>Indicates to the compiler that the location will never be reached, allowing
+it to optimize code generation accordingly. If this function is actually
+reached, Undefined Behaviour will occur.</p>
+<p>This is similar to <a href="https://en.cppreference.com/w/cpp/utility/unreachable"><code>std::unreachable</code></a>.</p>
+<h1><a name="safety" href="#safety">Safety</a></h1>
+<p>This function must never actually be reached, or Undefined Behaviour occurs.</p>
 
             </div>
           </div>
