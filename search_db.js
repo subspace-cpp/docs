@@ -27875,20 +27875,20 @@ const g_search_db = [
   {
     "index": 3138,
     "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable_if.html",
-    "name": "sus_class_trivially_relocatable_if",
-    "full_name": "sus_class_trivially_relocatable_if",
-    "split_name": "sus class trivially relocatable if",
-    "summary": "Mark a class as trivially relocatable based on a compile-time condition."
-  },
-  {
-    "index": 3139,
-    "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
     "full_name": "sus_class_trivially_relocatable_if_types",
     "split_name": "sus class trivially relocatable if types",
     "summary": "Mark a class as trivially relocatable if the types passed as arguments are all trivially relocatable."
+  },
+  {
+    "index": 3139,
+    "type": "macro",
+    "url": "macro.sus_class_trivially_relocatable_if.html",
+    "name": "sus_class_trivially_relocatable_if",
+    "full_name": "sus_class_trivially_relocatable_if",
+    "split_name": "sus class trivially relocatable if",
+    "summary": "Mark a class as trivially relocatable based on a compile-time condition."
   },
   {
     "index": 3140,
