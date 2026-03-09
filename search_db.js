@@ -27857,23 +27857,14 @@ const g_search_db = [
   {
     "index": 3136,
     "type": "macro",
-    "url": "macro.sus_debug_check.html",
-    "name": "sus_debug_check",
-    "full_name": "sus_debug_check",
-    "split_name": "sus debug check",
-    "summary": "Check a condition in debug builds, causing a sus::panic() if the condition fails. Nothing is checked in release builds."
+    "url": "macro.sus_class_trivially_relocatable_if.html",
+    "name": "sus_class_trivially_relocatable_if",
+    "full_name": "sus_class_trivially_relocatable_if",
+    "split_name": "sus class trivially relocatable if",
+    "summary": "Mark a class as trivially relocatable based on a compile-time condition."
   },
   {
     "index": 3137,
-    "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable.html",
-    "name": "sus_class_trivially_relocatable",
-    "full_name": "sus_class_trivially_relocatable",
-    "split_name": "sus class trivially relocatable",
-    "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
-  },
-  {
-    "index": 3138,
     "type": "macro",
     "url": "macro.sus_class_trivially_relocatable_if_types.html",
     "name": "sus_class_trivially_relocatable_if_types",
@@ -27882,13 +27873,22 @@ const g_search_db = [
     "summary": "Mark a class as trivially relocatable if the types passed as arguments are all trivially relocatable."
   },
   {
+    "index": 3138,
+    "type": "macro",
+    "url": "macro.sus_debug_check.html",
+    "name": "sus_debug_check",
+    "full_name": "sus_debug_check",
+    "split_name": "sus debug check",
+    "summary": "Check a condition in debug builds, causing a sus::panic() if the condition fails. Nothing is checked in release builds."
+  },
+  {
     "index": 3139,
     "type": "macro",
-    "url": "macro.sus_class_trivially_relocatable_if.html",
-    "name": "sus_class_trivially_relocatable_if",
-    "full_name": "sus_class_trivially_relocatable_if",
-    "split_name": "sus class trivially relocatable if",
-    "summary": "Mark a class as trivially relocatable based on a compile-time condition."
+    "url": "macro.sus_class_trivially_relocatable.html",
+    "name": "sus_class_trivially_relocatable",
+    "full_name": "sus_class_trivially_relocatable",
+    "split_name": "sus class trivially relocatable",
+    "summary": "Mark a class as unconditionally trivially relocatable while also asserting that all of the types passed as arguments are also marked as such."
   },
   {
     "index": 3140,
